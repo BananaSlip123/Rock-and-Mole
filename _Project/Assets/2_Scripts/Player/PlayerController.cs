@@ -16,7 +16,7 @@ namespace PlayerComponents
 
         private Vector2 movement = new Vector2();
 
-        public Transform calculoMovimiento;
+        //public Transform calculoMovimiento;
 
         // Update is called once per frame
         void Update()
@@ -36,10 +36,10 @@ namespace PlayerComponents
         }
 
         #region Movement
-        /// <Movement>
+        /// <summary>
         /// CallBack para el movimeinto del jugador
         /// Si el valor cambia se comprueba si ha dejado de moverse
-        /// </Movement>
+        /// </summary>
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -66,9 +66,16 @@ namespace PlayerComponents
             transform.position += positionChange;
         }
         #endregion
+
+        /// <summary>
+        /// Transforma una dirección en coordenadas isométricas
+        /// </summary>
+        /// <param name="vectorToChange"></param>
+        /// <returns></returns>
         private Vector3 VectorConeverter(Vector3 vectorToChange)
         {
-            Quaternion rotation = Quaternion.Euler(0, Vector3.Angle(Vector3.forward, calculoMovimiento.transform.forward), 0);
+            //Quaternion rotation = Quaternion.Euler(0, Vector3.Angle(Vector3.forward, calculoMovimiento.transform.forward), 0);
+            Quaternion rotation = Quaternion.Euler(0, 45f, 0);
             Matrix4x4 matrix = Matrix4x4.Rotate(rotation);
             Vector3 vectorConverted = matrix.MultiplyPoint3x4(vectorToChange);
             return vectorConverted;

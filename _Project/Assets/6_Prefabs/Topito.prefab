@@ -244,3 +244,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   damage: 0
+  calculoMovimiento: {fileID: 4592850466059809632, guid: 1316e9090d365c445b5b55702d156457, type: 3}
