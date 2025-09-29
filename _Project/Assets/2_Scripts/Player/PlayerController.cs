@@ -1,3 +1,4 @@
+using Codice.CM.Common.Checkin.Partial;
 using PlayerComponents;
 using Unity.Plastic.Newtonsoft.Json.Linq;
 using Unity.VisualScripting.YamlDotNet.Core.Tokens;
@@ -10,20 +11,16 @@ namespace PlayerComponents
     {
         [SerializeField] private float speed = 5f;
         [SerializeField] private float damage = 0f;
-        private Vector2 movement = new Vector2();
+
         private bool isMoving = false;
 
-        [SerializeField] private InputAction moveCommand;
+        private Vector2 movement = new Vector2();
+
+        public Transform calculoMovimiento;
 
         // Update is called once per frame
         void Update()
         {
-            /*
-            isMoving = moveCommand.triggered;
-            Debug.Log("ACCION: " + moveCommand.triggered);
-            
-            */
-
             if (isMoving)
             {
                 Move(movement);
@@ -38,9 +35,10 @@ namespace PlayerComponents
             Debug.Log("PICAAAAAAASO");
         }
 
+        #region Movement
         /// <Movement>
-        /// Método de movimiento del jugador
-        /// Usa la posición de la cámara para moverse
+        /// CallBack para el movimeinto del jugador
+        /// Si el valor cambia se comprueba si ha dejado de moverse
         /// </Movement>
 
         public void OnMove(InputAction.CallbackContext context)
@@ -60,7 +58,21 @@ namespace PlayerComponents
 
         public void Move(Vector2 movement)
         {
-            Debug.Log("CAMINAAAAAAANDO: " + movement);
+            Vector3 positionChange = new Vector3(movement.x,0,movement.y);
+            positionChange = VectorConeverter(positionChange);
+
+            positionChange = positionChange * Time.deltaTime * speed;
+
+            transform.position += positionChange;
         }
+        #endregion
+        private Vector3 VectorConeverter(Vector3 vectorToChange)
+        {
+            Quaternion rotation = Quaternion.Euler(0, Vector3.Angle(Vector3.forward, calculoMovimiento.transform.forward), 0);
+            Matrix4x4 matrix = Matrix4x4.Rotate(rotation);
+            Vector3 vectorConverted = matrix.MultiplyPoint3x4(vectorToChange);
+            return vectorConverted;
+        }
+
     }
 }
