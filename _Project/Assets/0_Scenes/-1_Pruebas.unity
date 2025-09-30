@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3270345985510126209, guid: 2f01edc73969315479e666196310494e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8559116585686124911, guid: 2f01edc73969315479e666196310494e, type: 3}
       propertyPath: m_Name
       value: Topito
