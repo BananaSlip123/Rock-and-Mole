@@ -9,9 +9,6 @@ namespace PlayerComponents
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private float speed = 5f;
-        [SerializeField] private float damage = 0f;
-
         [SerializeField] private PlayerAttackComponent attackComponent;
         [SerializeField] private PlayerMovementComponent moveComponent;
 
