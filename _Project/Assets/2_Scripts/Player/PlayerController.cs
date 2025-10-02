@@ -11,6 +11,7 @@ namespace PlayerComponents
     {
         [SerializeField] private PlayerAttackComponent attackComponent;
         [SerializeField] private PlayerMovementComponent moveComponent;
+        [SerializeField] private ISkillComponent dashComponent;
 
         //public Transform calculoMovimiento;
 
@@ -36,6 +37,11 @@ namespace PlayerComponents
         public void OnMove(InputAction.CallbackContext context)
         {
             moveComponent.isPlayerMoving(context.ReadValue<Vector2>());
+        }
+
+        public void OnDash(InputAction.CallbackContext context)
+        {
+            dashComponent.DoSpecialSkill();
         }
     }
 }
