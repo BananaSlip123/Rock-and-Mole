@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8064359}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 889498750}
+        m_TargetAssemblyTypeName: MainMenuUI, UIAssembly
+        m_MethodName: SwitchToGameScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8064359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,7 +532,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 278116543}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 889498750}
+        m_TargetAssemblyTypeName: MainMenuUI, UIAssembly
+        m_MethodName: SwitchToMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &278116543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,7 +731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 524037252}
   m_Layer: 0
-  m_Name: MENU ENTRY POINT
+  m_Name: MAIN WINDOW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,7 +841,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 666868001}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 889498750}
+        m_TargetAssemblyTypeName: MainMenuUI, UIAssembly
+        m_MethodName: SwitchToCredits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &666868001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,6 +1136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc9d2a345a32c844a017c8e48c336c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  go_mainWindow: {fileID: 524037251}
+  go_settingsWindow: {fileID: 1154312940}
+  go_creditsWindow: {fileID: 1963745730}
+  go_closeIcon: {fileID: 278116540}
 --- !u!4 &889498751
 Transform:
   m_ObjectHideFlags: 0
@@ -1486,7 +1526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1154312941}
   m_Layer: 0
-  m_Name: SETTINGS
+  m_Name: SETTINGS WINDOW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1875,7 +1915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1963745731}
   m_Layer: 0
-  m_Name: CREDITS
+  m_Name: CREDITS WINDOW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2121,7 +2161,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2132390509}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 889498750}
+        m_TargetAssemblyTypeName: MainMenuUI, UIAssembly
+        m_MethodName: SwitchToSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2132390509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2166,6 +2218,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 71974464}
   - {fileID: 1639654230}
+  - {fileID: 889498751}
   - {fileID: 245802887}
   - {fileID: 793743039}
-  - {fileID: 889498751}
