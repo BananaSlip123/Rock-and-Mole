@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
-public class InventoryUI : MonoBehaviour
+
+public class RunInventoryUI : MonoBehaviour
 {
     //used in the village scene
     #region SERIALIZABLE
@@ -14,19 +15,18 @@ public class InventoryUI : MonoBehaviour
     const int SIZE_X = 3;
     const int SIZE_Y = 4;
     const int SIZE = SIZE_X * SIZE_Y;
-    SlotUI[,] slots = new SlotUI[SIZE_Y,SIZE_X];
+    SlotUI[,] slots = new SlotUI[SIZE_Y, SIZE_X];
     #endregion
     #region PUBLIC VARS
     #endregion
     #region PRIVATE FUNCS
     private void Awake()
     {
-        //Crear Slots
-        for(int x=0; x< SIZE_X; x++)
+        for (int x = 0; x < SIZE_X; x++)
         {
             for (int y = 0; y < SIZE_Y; y++)
             {
-                slots[y,x] = Instantiate(go_slotPrefab).GetComponent<SlotUI>();
+                slots[y, x] = Instantiate(go_slotPrefab).GetComponent<SlotUI>();
                 float coordX = initialX + distanceX * x;
                 float coordY = initialY + distanceY * y;
                 slots[y, x].Init(new Vector3(coordX, coordY, 2));
@@ -35,9 +35,8 @@ public class InventoryUI : MonoBehaviour
     }
     private void OnEnable()//al inicio y al activar un objeto
     {
-        //Actualizar inventario cada vez q se activa (al abrir menú de inventario)
         int position = 0;
-        foreach (MaterialName key in GameData.Inventory.Objects.Keys)
+        foreach (MaterialName key in GameData.RunInventory.Objects.Keys)
         {
             position++;
 
@@ -45,16 +44,11 @@ public class InventoryUI : MonoBehaviour
             {
                 int x = position % SIZE_X;
                 int y = position / SIZE_X;
-                slots[y, x].UpdateSlot(key, GameData.Inventory.GetAmount(key));
+                slots[y, x].UpdateSlot(key, GameData.RunInventory.GetAmount(key));
             }
+
         }
 
-        //Hacer callbacks para q se actualize la UI
-
-    }
-    private void OnDisable()
-    {
-        //borrar los callbacks
     }
     #endregion
     #region PUBLIC FUNCS

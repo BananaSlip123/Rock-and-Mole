@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 public static class GameData
@@ -15,8 +16,9 @@ public static class GameData
 
     #endregion
     #region PUBLIC VARS
-    public readonly static Dictionary<MaterialNames, int> MaterialsValues = new Dictionary<MaterialNames, int>();
-
+    public readonly static Dictionary<MaterialName, int> MaterialsValues = new Dictionary<MaterialName, int>();
+    public static Inventory Inventory => _inventory;
+    public static Inventory RunInventory => _runInventory;
     #endregion
 
     #region PRIVATE FUNCS
@@ -37,16 +39,16 @@ public static class GameData
     public static void Init()
     {
         //INICIAR VALORES
-        MaterialsValues.Add(MaterialNames.Hierro, 4);
-        MaterialsValues.Add(MaterialNames.Carbon, 8);
-        MaterialsValues.Add(MaterialNames.Bronce, 8);
-        MaterialsValues.Add(MaterialNames.Cuarzo, 15);
-        MaterialsValues.Add(MaterialNames.Obsidiana, 15);
-        MaterialsValues.Add(MaterialNames.RolloTela, 30);
-        MaterialsValues.Add(MaterialNames.Ambar, 8);
-        MaterialsValues.Add(MaterialNames.Esmeralda, 10);
-        MaterialsValues.Add(MaterialNames.Rubi, 15);
-        MaterialsValues.Add(MaterialNames.Diamante, 100);
+        MaterialsValues.Add(MaterialName.Hierro, 4);
+        MaterialsValues.Add(MaterialName.Carbon, 8);
+        MaterialsValues.Add(MaterialName.Bronce, 8);
+        MaterialsValues.Add(MaterialName.Cuarzo, 15);
+        MaterialsValues.Add(MaterialName.Obsidiana, 15);
+        MaterialsValues.Add(MaterialName.RolloTela, 30);
+        MaterialsValues.Add(MaterialName.Ambar, 8);
+        MaterialsValues.Add(MaterialName.Esmeralda, 10);
+        MaterialsValues.Add(MaterialName.Rubi, 15);
+        MaterialsValues.Add(MaterialName.Diamante, 100);
 
         LoadData();
     }
@@ -68,52 +70,76 @@ public class Inventory
 {
     int _maxSize;
     string _name;
-    static Dictionary<MaterialNames, int> _objectsAmount = new Dictionary<MaterialNames, int>();//q materiales y en q cantidad  tienes
+
+    //queremos q siempre q mostremos el inventario muestre un orden coherente
+    SortedDictionary<MaterialName, int> _objectsAmount = new SortedDictionary<MaterialName, int>();//q materiales y en q cantidad  tienes
+    public SortedDictionary<MaterialName, int> Objects => _objectsAmount;
+
+    
     public Inventory(int maxSize, string name)
     {
         _maxSize = maxSize;
         _name = name;
     }
-    public void AddObject(MaterialNames name, int amount)
+    public int GetAmount(MaterialName key) => _objectsAmount[key];
+    public void AddObject(MaterialName name, int amount)
     {
-        int oldAmount = 0;
-        _objectsAmount.TryGetValue(name, out oldAmount);
+        if (amount < 0) throw new Exception("Must be positive number");
 
-        int newAmount = oldAmount + amount;
-        if (newAmount > 0)
-            _objectsAmount[name] = newAmount;
+        if (_objectsAmount.ContainsKey(name))
+        {
+            _objectsAmount[name] += amount;
+        }
         else
-            _objectsAmount.Remove(name);
+        {
+            _objectsAmount.Add(name, amount);
+        }
+    }
+    public bool TryRemoveObject(MaterialName name, int amount)
+    {
+        if (amount < 0) throw new Exception("Must be positive number");
+
+        if (_objectsAmount.ContainsKey(name))
+        {
+            int newAmount = _objectsAmount[name] - amount;
+            if (newAmount > 0)
+                _objectsAmount[name] = newAmount;
+            else if (newAmount == 0)
+                _objectsAmount.Remove(name);
+            else return false;
+        }
+        else return false;
+        return true;
     }
 
     public void SaveData()
     {
-        foreach (MaterialNames key in _objectsAmount.Keys)
+        foreach (MaterialName key in _objectsAmount.Keys)
         {
-            PlayerPrefs.SetInt(_name + (int)key, _objectsAmount[key]);
+            PlayerPrefs.SetInt(_name + key.ToString(), _objectsAmount[key]);
         }
     }
 
     public void LoadData()
     {
-        foreach (MaterialNames key in _objectsAmount.Keys)
+        foreach (MaterialName key in _objectsAmount.Keys)
         {
-            _objectsAmount[key] = PlayerPrefs.GetInt(_name + (int)key, 0);
+            _objectsAmount[key] = PlayerPrefs.GetInt(_name + key.ToString(), 0);
         }
 
     }
 }
 
-public enum MaterialNames
+public enum MaterialName
 {
-    Hierro = 0,
-    Carbon = 1,
-    Bronce = 2,
-    Cuarzo = 3,
-    Obsidiana = 4,
-    RolloTela = 5,
-    Ambar = 6,
-    Esmeralda = 7,
-    Rubi = 8,
-    Diamante = 9,
+    Hierro,
+    Carbon,
+    Bronce,
+    RolloTela,
+    Cuarzo,
+    Obsidiana,
+    Ambar,
+    Esmeralda,
+    Rubi,
+    Diamante,
 }

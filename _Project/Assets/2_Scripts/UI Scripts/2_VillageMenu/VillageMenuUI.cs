@@ -5,13 +5,25 @@ public class VillageMenuUI : MonoBehaviour
 {
     #region SERIALIZABLE
     [SerializeField] GameObject go_mainWindow;
+    [SerializeField] GameObject go_pauseWindow;
     [SerializeField] GameObject go_settingsWindow;
+    [SerializeField] GameObject go_inventoryWindow;
+    [SerializeField] GameObject go_shopWindow;
+    [SerializeField] GameObject go_inventory; //used by shop & inventory windows
+    [SerializeField] GameObject go_forgeWindow; 
+    [SerializeField] GameObject go_wardrobeWindow; 
+
     #endregion
     #region PUBLIC VARS
     public enum Windows
     {
         Main,
+        Pause,
         Settings,
+        Inventory,
+        Shop,
+        Forge,
+        Wardrobe,
     }
     #endregion
     #region PRIVATE FUNCS
