@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public static class GameData
 {
     //Se encarga del guardado de datos en disco

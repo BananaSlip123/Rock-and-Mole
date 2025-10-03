@@ -1,0 +1,16 @@
+{
+    "name": "InventoryUI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c17ff5bc373c31248bba58abb3013523"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
