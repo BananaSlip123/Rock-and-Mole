@@ -33,9 +33,9 @@ public class InventoryUI : MonoBehaviour
             }
         }
     }
-    private void OnEnable()//al inicio y al activar un objeto
+
+    private void UpdateInventory()
     {
-        //Actualizar inventario cada vez q se activa (al abrir menú de inventario)
         int position = 0;
         foreach (MaterialName key in GameData.Inventory.Objects.Keys)
         {
@@ -46,15 +46,30 @@ public class InventoryUI : MonoBehaviour
                 int x = position % SIZE_X;
                 int y = position / SIZE_X;
                 slots[y, x].UpdateSlot(key, GameData.Inventory.GetAmount(key));
+
+                GameData.Inventory.SetToSlotChange(key,(int value) =>
+                { //le añadimos un callback a los materiales de la UI
+                    slots[y, x].UpdateSlot(key, value);
+                });
             }
         }
+    }
+    private void OnEnable()//al inicio y al activar un objeto
+    {
+        //Actualizar inventario cada vez q se activa (al abrir menú de inventario)
+        UpdateInventory();
 
         //Hacer callbacks para q se actualize la UI
-
+        GameData.Inventory.SubscribeToInventoryChange(() =>
+        {
+            UpdateInventory();
+        });
     }
+    
     private void OnDisable()
     {
         //borrar los callbacks
+        GameData.Inventory.CleanAllCallbacks();
     }
     #endregion
     #region PUBLIC FUNCS
