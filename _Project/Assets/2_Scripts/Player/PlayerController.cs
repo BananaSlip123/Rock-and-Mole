@@ -10,17 +10,12 @@ namespace PlayerComponents
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private PlayerAttackComponent attackComponent;
-        [SerializeField] private IMoveComponent moveComponent;
-        [SerializeField] private ISkillComponent dashComponent;
+        [SerializeField] private PlayerMovementComponent moveComponent;
 
         //public Transform calculoMovimiento;
-        private void Awake()
-        {
-            moveComponent = GetComponent<IMoveComponent>();
-            dashComponent = GetComponent<ISkillComponent>();
-        }
+
         // Update is called once per frame
-        void FixedUpdate()
+        void Update()
         {
             moveComponent.Move();
         }
@@ -40,12 +35,7 @@ namespace PlayerComponents
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            moveComponent.IsMoving(context.ReadValue<Vector2>());
-        }
-
-        public void OnDash(InputAction.CallbackContext context)
-        {
-            dashComponent.DoSpecialSkill();
+            moveComponent.isPlayerMoving(context.ReadValue<Vector2>());
         }
     }
 }
