@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-public class GolemWanderState : MonoBehaviour, IStateComponent, IMoveComponent
+public class GolemWanderState : IStateComponent, IMoveComponent
 {
     [SerializeField] float speed = 3f;
     const float MAXMOVE = 2f;
@@ -17,6 +17,7 @@ public class GolemWanderState : MonoBehaviour, IStateComponent, IMoveComponent
     IStateMachineComponent mStateMachine;
 
     Transform enemyTransform;
+
     public GolemWanderState(IStateMachineComponent m, Transform enemyTransform)
     {
         mStateMachine = m;
@@ -42,7 +43,7 @@ public class GolemWanderState : MonoBehaviour, IStateComponent, IMoveComponent
 
     public void Exit()
     {
-        //mStateMachine.ChangeState();
+        
     }
 
     void IStateComponent.Update()
@@ -53,11 +54,29 @@ public class GolemWanderState : MonoBehaviour, IStateComponent, IMoveComponent
             isMoving = true;
 
             timeMovement = UnityEngine.Random.Range(MINMOVE, MAXMOVE);
-        }
+        }        
     }
 
     void IStateComponent.FixedUpdate()
     {
+        Collider[] p = Physics.OverlapSphere(enemyTransform.position, 5f);
+        bool player = false;
+
+        foreach(Collider detected in p)
+        {
+            if(detected.CompareTag("Player"))
+            {
+                player = true;
+                break;
+            }
+        }
+
+        if (player)
+        {
+            mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine));
+            return;
+        }
+
         if (!isMoving)
             return;
 
