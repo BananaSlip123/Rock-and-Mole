@@ -43,8 +43,9 @@ namespace PlayerComponents
                 hitColliders = EnemiesCanBeDamaged();
                 Collider[] localEnemies = hitColliders.ToArray();
 
-                if (isHitingAnEnemy(localEnemies))
+                if (IsHitingAnEnemy(localEnemies))
                     DoDamage(localEnemies);
+                    
 
                 if (timeHitbox >= TIME_HITBOX)
                 {
@@ -52,7 +53,10 @@ namespace PlayerComponents
                     timeHitbox = 0f;
                     foreach(Collider c in hitColliders)
                     {
-                        c.gameObject.GetComponent<IDamageableComponent>().ResetHasBeenDamaged();
+                        if (c != null)
+                        {
+                            c.gameObject.GetComponent<IDamageableComponent>().ResetHasBeenDamaged();
+                        }                      
                     }
                     hitColliders.Clear();
                 }
@@ -80,15 +84,18 @@ namespace PlayerComponents
         {
             foreach(Collider hitCollider in hitColliders)
             {
-                if (!hitCollider.gameObject.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
+                if (hitCollider != null)
                 {
-                    hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(actualPickaxeStats.damage);
-                    Debug.Log("He golpeado a: " + hitCollider.gameObject.name);
+                    if (!hitCollider.gameObject.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
+                    {
+                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(actualPickaxeStats.damage);
+                        Debug.Log("He golpeado a: " + hitCollider.gameObject.name);
+                    }
                 }
             }          
         }
 
-        private bool isHitingAnEnemy(Collider[] hitColliders)
+        private bool IsHitingAnEnemy(Collider[] hitColliders)
         {
             return hitColliders.Length > 0;
         }
@@ -100,7 +107,7 @@ namespace PlayerComponents
 
             foreach(Collider enemy in enemies)
             {
-                if(enemy.CompareTag("Enemy") && !enemy.gameObject.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
+                if(enemy.CompareTag("Enemy") || enemy.CompareTag("Rock") && !enemy.gameObject.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
                 {
                     Debug.Log("ENEMIGO: " + enemy.name);
                     enemiesToHit.Enqueue(enemy);
