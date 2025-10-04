@@ -65,7 +65,7 @@ namespace PlayerComponents
             if (!isMoving)
                 return;
 
-            transform.position += SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);
+            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);
         }
 
         public void InitializeSpecialSkill()
@@ -82,7 +82,7 @@ namespace PlayerComponents
 
         public void DoSpecialSkill()
         {                        
-            transform.position += SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y), speedDash);           
+            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y), speedDash);           
 
             if(timeDashing < DASH_TIME)
                 timeDashing += Time.fixedDeltaTime;
@@ -93,29 +93,6 @@ namespace PlayerComponents
 
                 Debug.Log("He terminado el dash");
             }
-        }
-
-        private Vector3 SetVectorToIsoCoords(Vector3 vector, float speed)
-        {
-            vector = VectorConeverter(vector);
-
-            vector = speed * Time.fixedDeltaTime * vector;
-
-            return vector;
-        }
-
-        /// <summary>
-        /// Transforma una dirección en coordenadas isométricas
-        /// </summary>
-        /// <param name="vectorToChange">Vector a cambiar de coordenadas</param>
-        /// <returns>El vector convertido en coordenadas isométricas</returns>
-        private Vector3 VectorConeverter(Vector3 vectorToChange)
-        {
-            //Quaternion rotation = Quaternion.Euler(0, Vector3.Angle(Vector3.forward, calculoMovimiento.transform.forward), 0);
-            Quaternion rotation = Quaternion.Euler(0, 45f, 0);
-            Matrix4x4 matrix = Matrix4x4.Rotate(rotation);
-            Vector3 vectorConverted = matrix.MultiplyPoint3x4(vectorToChange);
-            return vectorConverted;
         }
     }
 }
