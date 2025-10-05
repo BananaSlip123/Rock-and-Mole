@@ -4,14 +4,17 @@ using UnityEngine.SceneManagement;
 public class VillageMenuUI : MonoBehaviour
 {
     #region SERIALIZABLE
+    [Header("NAVEGATION WINDOWS")]
     [SerializeField] GameObject go_mainWindow;
     [SerializeField] GameObject go_pauseWindow;
     [SerializeField] GameObject go_settingsWindow;
     [SerializeField] GameObject go_inventoryWindow;
     [SerializeField] GameObject go_shopWindow;
+    [SerializeField] GameObject go_forgeWindow;
+    [SerializeField] GameObject go_wardrobeWindow;
+    [Header("COMMON ELEMENTS")] //elementos compartidos por varias ventanas
     [SerializeField] GameObject go_inventory; //used by shop & inventory windows
-    [SerializeField] GameObject go_forgeWindow; 
-    [SerializeField] GameObject go_wardrobeWindow; 
+    [SerializeField] GameObject go_closeIcon;
 
     #endregion
     #region PUBLIC VARS

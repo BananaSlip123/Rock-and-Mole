@@ -76,64 +76,60 @@ public class Inventory
     public SortedDictionary<MaterialName, int> Objects => _objectsAmount;
 
     Action _onInventoryChange; //cuando se borra o añade un material
-    Dictionary<MaterialName, Action<int>> _dict_onSlotValueChange; //cuando cambia un valor
+    Dictionary<MaterialName, Action<int>> _dict_onSlotValueChange = new Dictionary<MaterialName, Action<int>>(); //cuando cambia un valor
 
+    public Inventory(int maxSize, string name)
+    {
+        if (Enum.GetValues(typeof(MaterialName)).Length > maxSize)
+            throw new Exception("The size of the inventory must >= than the number of materials");
+
+        foreach (MaterialName material in Enum.GetValues(typeof(MaterialName)))
+        {
+            _objectsAmount.Add(material, 0);
+            _dict_onSlotValueChange.Add(material,null);
+        }
+        _maxSize = maxSize;
+        _name = name;
+    }
     public void SubscribeToInventoryChange(Action action) => _onInventoryChange += action;//se recarga la UI entera
     public void SetToSlotChange(MaterialName name, Action<int> action)//se recarga en la UI un material especifico
     {
-        if (_dict_onSlotValueChange.ContainsKey(name))
-            _dict_onSlotValueChange[name] = action;
-        else
-            _dict_onSlotValueChange.Add(name, action);
+        _dict_onSlotValueChange[name] = action;
     }
     public void CleanAllCallbacks()
     {
         _onInventoryChange = null;
         foreach (MaterialName key in _dict_onSlotValueChange.Keys) _dict_onSlotValueChange[key] = null;
     }
-    public Inventory(int maxSize, string name)
-    {
-        _maxSize = maxSize;
-        _name = name;
-    }
+    
     public int GetAmount(MaterialName key) => _objectsAmount[key];
     public void AddObject(MaterialName name, int amount)
     {
         if (amount < 0) throw new Exception("Must be positive number");
 
-        if (_objectsAmount.ContainsKey(name))
-        {
-            _objectsAmount[name] += amount;
-            _dict_onSlotValueChange[name].Invoke(amount);
-        }
-        else
-        {
-            _objectsAmount.Add(name, amount);
-            _onInventoryChange?.Invoke();
-        }
+        int oldVal = _objectsAmount[name];
+        _objectsAmount[name] = oldVal + amount;
+
+        if (oldVal == 0) _onInventoryChange?.Invoke();
+        else _dict_onSlotValueChange[name]?.Invoke(amount);
     }
     public bool TryRemoveObject(MaterialName name, int amount)
     {
         //si tenemos 5 piedras e intentamos quitar 6 mantenemos las 5 y devolvemos false
         //se usará al comprar objetos con materiales
         if (amount < 0) throw new Exception("Must be positive number");
-
-        if (!_objectsAmount.ContainsKey(name)) return false;
         
         int newAmount = _objectsAmount[name] - amount;
-        if (newAmount > 0)
-        {
-            _objectsAmount[name] = newAmount;
-            _dict_onSlotValueChange[name].Invoke(amount);
-        }
-        else if (newAmount == 0)
-        {
-            _objectsAmount.Remove(name);
-            _dict_onSlotValueChange.Remove(name); //no queremos callback para el material en la ui ya q no existe
-            _onInventoryChange?.Invoke(); //avisamos de q se actualize el inventario entero
-        }
-        else return false;
 
+        if (newAmount < 0) return false;
+
+        _objectsAmount[name] = newAmount;
+
+        if (newAmount == 0)
+            _onInventoryChange?.Invoke();
+        else
+            _dict_onSlotValueChange[name]?.Invoke(amount);
+        
         return true;
     }
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 public class InventoryUI : MonoBehaviour
 {
     //used in the village scene
@@ -19,16 +20,16 @@ public class InventoryUI : MonoBehaviour
     #region PUBLIC VARS
     #endregion
     #region PRIVATE FUNCS
-    private void Awake()
+    private void Start()
     {
         //Crear Slots
         for(int x=0; x< SIZE_X; x++)
         {
             for (int y = 0; y < SIZE_Y; y++)
             {
-                slots[y,x] = Instantiate(go_slotPrefab).GetComponent<SlotUI>();
+                slots[y,x] = Instantiate(go_slotPrefab,this.transform).GetComponent<SlotUI>();
                 float coordX = initialX + distanceX * x;
-                float coordY = initialY + distanceY * y;
+                float coordY = initialY - distanceY * y;
                 slots[y, x].Init(new Vector3(coordX, coordY, 2));
             }
         }
@@ -39,19 +40,27 @@ public class InventoryUI : MonoBehaviour
         int position = 0;
         foreach (MaterialName key in GameData.Inventory.Objects.Keys)
         {
-            position++;
-
-            if (position < SIZE)
+            int amount = GameData.Inventory.GetAmount(key);
+            if (amount != 0)//ignoramos los huecos vacios
             {
-                int x = position % SIZE_X;
-                int y = position / SIZE_X;
-                slots[y, x].UpdateSlot(key, GameData.Inventory.GetAmount(key));
+                if (position < SIZE)
+                {
+                    int x = position % SIZE_X;
+                    int y = position / SIZE_X;
+                    slots[y, x].UpdateSlot(key, amount);
 
-                GameData.Inventory.SetToSlotChange(key,(int value) =>
-                { //le añadimos un callback a los materiales de la UI
-                    slots[y, x].UpdateSlot(key, value);
-                });
-            }
+                    GameData.Inventory.SetToSlotChange(key, (int value) =>
+                    { //le añadimos un callback a los materiales de la UI
+                        slots[y, x].UpdateSlot(key, value);
+                    });
+                }
+                position++;
+            }   
+        }
+        while(position<SIZE)
+        {
+            throw new NotImplementedException();
+            position++;
         }
     }
     private void OnEnable()//al inicio y al activar un objeto
