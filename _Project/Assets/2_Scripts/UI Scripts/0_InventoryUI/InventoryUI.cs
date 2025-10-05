@@ -20,7 +20,7 @@ public class InventoryUI : MonoBehaviour
     #region PUBLIC VARS
     #endregion
     #region PRIVATE FUNCS
-    private void Start()
+    private void Awake()
     {
         //Crear Slots
         for(int x=0; x< SIZE_X; x++)
@@ -41,25 +41,30 @@ public class InventoryUI : MonoBehaviour
         foreach (MaterialName key in GameData.Inventory.Objects.Keys)
         {
             int amount = GameData.Inventory.GetAmount(key);
-            if (amount != 0)//ignoramos los huecos vacios
+            if (amount != 0 && position < SIZE)//ignoramos los huecos vacíos
             {
-                if (position < SIZE)
-                {
-                    int x = position % SIZE_X;
-                    int y = position / SIZE_X;
-                    slots[y, x].UpdateSlot(key, amount);
+                
+                int x = position % SIZE_X;
+                int y = position / SIZE_X;
 
-                    GameData.Inventory.SetToSlotChange(key, (int value) =>
-                    { //le añadimos un callback a los materiales de la UI
-                        slots[y, x].UpdateSlot(key, value);
-                    });
-                }
+                slots[y, x].UpdateSlot(key, amount);
+
+                GameData.Inventory.SetToSlotChange(key, (int value) =>
+                { //le añadimos un callback a los materiales de la UI
+                    slots[y, x].UpdateSlot(key, value);
+                });
                 position++;
-            }   
+            }
+            else
+                GameData.Inventory.SetToSlotChange(key, null);
         }
-        while(position<SIZE)
+        while(position < SIZE)
         {
-            throw new NotImplementedException();
+            //Inactivar el resto de huecos
+            int x = position % SIZE_X;
+            int y = position / SIZE_X;
+            slots[y, x].Enabled = false;
+
             position++;
         }
     }
@@ -82,6 +87,13 @@ public class InventoryUI : MonoBehaviour
     }
     #endregion
     #region PUBLIC FUNCS
-
+    public void AddRandomMat()
+    {
+        
+        System.Random r = new System.Random();
+        int name = r.Next(Enum.GetValues(typeof(MaterialName)).Length);
+        int amount = r.Next(5);
+        GameData.Inventory.AddObject((MaterialName)name, amount);
+    }
     #endregion
 }

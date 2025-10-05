@@ -39,6 +39,7 @@ public class SlotUI : MonoBehaviour
 
     #region PRIVATE VARS
     int _amount;
+    bool _enabled = true;
     
     #endregion
     #region PUBLIC VARS
@@ -52,6 +53,15 @@ public class SlotUI : MonoBehaviour
                 _amount = value;
                 txt_amount.text = value.ToString();
             }
+        }
+    }
+    public bool Enabled
+    {
+        get => _enabled;
+        set
+        {
+            _enabled = value;
+            go_Info.SetActive(value);
         }
     }
     #endregion
@@ -71,11 +81,11 @@ public class SlotUI : MonoBehaviour
     #region PUBLIC FUNCS
     public void UpdateSlot(MaterialName name, int amount)
     {
+        Enabled = true;
         img_imageComponent.sprite = Icons[name].Sprite;
         img_imageComponent.color = Icons[name].Color;
         Amount = amount;
     }
-    public void EnableSlot(bool enable) => go_Info.SetActive(enable);
     public void Init(Vector3 pos)
     {
         Init();

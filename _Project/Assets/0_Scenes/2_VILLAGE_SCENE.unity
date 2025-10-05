@@ -1883,7 +1883,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 90.5, y: -26.350021}
-  m_SizeDelta: {x: 268.1, y: 432.6}
+  m_SizeDelta: {x: 270, y: 400}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1433211461
 MonoBehaviour:
@@ -1936,10 +1936,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go_slotPrefab: {fileID: 5058712721116915281, guid: 20609365069ba174bb40719730250bca, type: 3}
-  initialX: -90
-  initialY: 180
-  distanceX: 60
-  distanceY: 60
+  initialX: 55
+  initialY: -55
+  distanceX: 80
+  distanceY: 80
 --- !u!1 &1713315217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,9 +2334,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenuUI, UIAssembly
-        m_MethodName: SwitchToMain
+      - m_Target: {fileID: 1433211463}
+        m_TargetAssemblyTypeName: InventoryUI, InventoryUI
+        m_MethodName: AddRandomMat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

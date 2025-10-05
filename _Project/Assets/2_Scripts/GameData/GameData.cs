@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 public static class GameData
 {
@@ -99,7 +100,8 @@ public class Inventory
     public void CleanAllCallbacks()
     {
         _onInventoryChange = null;
-        foreach (MaterialName key in _dict_onSlotValueChange.Keys) _dict_onSlotValueChange[key] = null;
+        foreach (MaterialName key in _dict_onSlotValueChange.Keys.ToList())
+            _dict_onSlotValueChange[key] = null;
     }
     
     public int GetAmount(MaterialName key) => _objectsAmount[key];
@@ -110,8 +112,9 @@ public class Inventory
         int oldVal = _objectsAmount[name];
         _objectsAmount[name] = oldVal + amount;
 
-        if (oldVal == 0) _onInventoryChange?.Invoke();
-        else _dict_onSlotValueChange[name]?.Invoke(amount);
+        //if (oldVal == 0) _onInventoryChange?.Invoke();
+        //else _dict_onSlotValueChange[name]?.Invoke(amount);
+        _onInventoryChange?.Invoke();
     }
     public bool TryRemoveObject(MaterialName name, int amount)
     {
@@ -125,11 +128,12 @@ public class Inventory
 
         _objectsAmount[name] = newAmount;
 
-        if (newAmount == 0)
-            _onInventoryChange?.Invoke();
-        else
-            _dict_onSlotValueChange[name]?.Invoke(amount);
-        
+        //if (newAmount == 0)
+        //    _onInventoryChange?.Invoke();
+        //else
+        //    _dict_onSlotValueChange[name]?.Invoke(amount);
+
+        _onInventoryChange?.Invoke();
         return true;
     }
 
