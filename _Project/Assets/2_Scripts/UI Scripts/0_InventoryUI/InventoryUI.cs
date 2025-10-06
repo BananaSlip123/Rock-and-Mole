@@ -49,14 +49,14 @@ public class InventoryUI : MonoBehaviour
 
                 slots[y, x].UpdateSlot(key, amount);
 
-                GameData.Inventory.SetToSlotChange(key, (int value) =>
-                { //le añadimos un callback a los materiales de la UI
-                    slots[y, x].UpdateSlot(key, value);
-                });
+                //GameData.Inventory.SetToSlotChange(key, (int value) =>
+                //{ //le añadimos un callback a los materiales de la UI
+                //    slots[y, x].UpdateSlot(key, value);
+                //});
                 position++;
             }
-            else
-                GameData.Inventory.SetToSlotChange(key, null);
+            //else
+               // GameData.Inventory.SetToSlotChange(key, null);
         }
         while(position < SIZE)
         {
