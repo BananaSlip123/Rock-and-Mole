@@ -1,7 +1,7 @@
 using UnityEngine;
 
-public class EnemyMoveComponent : MonoBehaviour, IMoveComponent
-{   
+public class Bullets : MonoBehaviour, IPooleableObject
+{
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,13 +14,23 @@ public class EnemyMoveComponent : MonoBehaviour, IMoveComponent
         
     }
 
-    public void IsMoving(Vector2 m)
+    public IPrototype Clone()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Move()
+    public bool IsActive()
+    {
+        return enabled;
+    }
+
+    public void Reset()
     {
         throw new System.NotImplementedException();
+    }
+
+    public void SetActive(bool b)
+    {
+        enabled = b;
     }
 }
