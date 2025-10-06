@@ -16,6 +16,8 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         health -= damage;
         hasBeenDamaged = true;
 
+        if(health <= 0)
+            Death();
         Debug.Log("Me han quitado vida");
     }
 
@@ -28,5 +30,10 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     {
         hasBeenDamaged = false;
         Debug.Log("He salido del area");
+    }
+
+    private void Death()
+    {
+        Destroy(this.gameObject);
     }
 }
