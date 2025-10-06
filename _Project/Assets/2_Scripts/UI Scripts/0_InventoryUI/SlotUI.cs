@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 public class SlotUI : MonoBehaviour
 {
     //A inventory has many slots, there is a slot prefab
@@ -39,8 +40,10 @@ public class SlotUI : MonoBehaviour
 
     #region PRIVATE VARS
     int _amount;
+    bool _selected = false;
     bool _enabled = true;
-    
+    Action _onSelection;
+    MaterialName _materialAssigned;
     #endregion
     #region PUBLIC VARS
     public int Amount
@@ -62,12 +65,44 @@ public class SlotUI : MonoBehaviour
         {
             _enabled = value;
             go_Info.SetActive(value);
+            if (!value)
+                Selected = false;
+        }
+    }
+
+    public bool Selected
+    {
+        get => _selected;
+        set
+        {
+            if(value != _selected && Enabled)
+            {
+                _selected = value;
+                GetComponent<Image>().enabled = value;
+
+                if (value) _onSelection?.Invoke();
+            }
+            
+        }
+    }
+    public MaterialName MaterialAssigned
+    {
+        get => _materialAssigned;
+        set
+        {
+            if (value != _materialAssigned && Enabled)
+            {
+                _materialAssigned = value;
+                img_imageComponent.sprite = Icons[value].Sprite;
+                img_imageComponent.color = Icons[value].Color;
+            }
         }
     }
     #endregion
     #region PRIVATE FUNCS
     void Init()
     {
+        Selected = false;
         if (!IsInit) //las variables estáticas queremos q las inicialice solo uno, nos da igual quien sea
         {
             IsInit = true;
@@ -82,9 +117,8 @@ public class SlotUI : MonoBehaviour
     public void UpdateSlot(MaterialName name, int amount)
     {
         Enabled = true;
-        img_imageComponent.sprite = Icons[name].Sprite;
-        img_imageComponent.color = Icons[name].Color;
         Amount = amount;
+        MaterialAssigned = name;
     }
     public void Init(Vector3 pos)
     {
@@ -92,5 +126,12 @@ public class SlotUI : MonoBehaviour
         RectTransform rectTransform = GetComponent<RectTransform>();
         rectTransform.anchoredPosition = pos;
     }
+
+    public void Button_Select() => Selected = !Selected;
+    public void SubscribeToOnSelected(Action onSelectedCallback)
+    {
+        _onSelection = onSelectedCallback;
+    }
+    public void CleanCallBacks() =>_onSelection = null;
     #endregion
 }

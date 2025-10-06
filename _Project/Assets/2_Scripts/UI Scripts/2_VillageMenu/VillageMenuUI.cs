@@ -72,6 +72,7 @@ public class VillageMenuUI : MonoBehaviour
     }
     public void Button_Pause() => CurrentWindow = Windows.Pause;
     public void Button_OpenInventory() => CurrentWindow = Windows.Inventory;
+    public void Button_OpenShop() => CurrentWindow = Windows.Shop;
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
     public void Button_ReturnToMain() => CurrentWindow = Windows.Main;
     public void Button_ReturnToMenuScene() => SceneManager.LoadScene("1_MAIN_SCENE");

@@ -15,9 +15,21 @@ public class InventoryUI : MonoBehaviour
     const int SIZE_X = 3;
     const int SIZE_Y = 4;
     const int SIZE = SIZE_X * SIZE_Y;
-    SlotUI[,] slots = new SlotUI[SIZE_Y,SIZE_X];
+    SlotUI[,] slots = new SlotUI[SIZE_Y, SIZE_X];
+    SlotUI _selectedSlot = null;
+
     #endregion
     #region PUBLIC VARS
+    SlotUI SelectedSlot
+    {
+        get => _selectedSlot;
+        set
+        {
+            _selectedSlot = value;
+            OnSelectedMaterialChanged?.Invoke(_selectedSlot.MaterialAssigned);
+        }
+    }
+    public Action<MaterialName> OnSelectedMaterialChanged { get; set; } = null;
     #endregion
     #region PRIVATE FUNCS
     private void Awake()
@@ -49,6 +61,12 @@ public class InventoryUI : MonoBehaviour
 
                 slots[y, x].UpdateSlot(key, amount);
 
+                slots[y, x].SubscribeToOnSelected(()=>{
+                    //Deseleccionar anterior seleccionado
+                    if(SelectedSlot != null) SelectedSlot.Selected = false;
+                    //Marcar nuevo seleccionado
+                    SelectedSlot = slots[y,x];
+                });
                 //GameData.Inventory.SetToSlotChange(key, (int value) =>
                 //{ //le añadimos un callback a los materiales de la UI
                 //    slots[y, x].UpdateSlot(key, value);
@@ -64,7 +82,7 @@ public class InventoryUI : MonoBehaviour
             int x = position % SIZE_X;
             int y = position / SIZE_X;
             slots[y, x].Enabled = false;
-
+            slots[y, x].CleanCallBacks();
             position++;
         }
     }
@@ -84,6 +102,10 @@ public class InventoryUI : MonoBehaviour
     {
         //borrar los callbacks
         GameData.Inventory.CleanAllCallbacks();
+
+        foreach(SlotUI slot in slots)
+            slot.CleanCallBacks();
+        
     }
     #endregion
     #region PUBLIC FUNCS

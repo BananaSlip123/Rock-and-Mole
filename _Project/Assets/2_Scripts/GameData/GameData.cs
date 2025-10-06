@@ -12,8 +12,8 @@ public static class GameData
     const int INVENTORY_SIZE = 12;
 
     static int _coins = -1;
-    static Inventory _inventory = new Inventory(INVENTORY_SIZE, "INV");//q materiales y en q cantidad  tienes
-    static Inventory _runInventory = new Inventory(INVENTORY_SIZE, "R_INV");//los q consigues en cada run
+    static PersistentInventory _inventory = new PersistentInventory("INV");//q materiales y en q cantidad  tienes
+    static Inventory _runInventory = new Inventory();//los q consigues en cada run
 
     #endregion
     #region PUBLIC VARS
@@ -30,7 +30,7 @@ public static class GameData
         { MaterialName.Rubi, 15 },
         { MaterialName.Diamante, 100 }
     };
-    public static Inventory Inventory => _inventory;
+    public static PersistentInventory Inventory => _inventory;
     public static Inventory RunInventory => _runInventory;
 
     public static int Coins
@@ -70,9 +70,8 @@ public static class GameData
     #endregion
 }
 
-public class Inventory
+public class PersistentInventory
 {
-    int _maxSize;
     string _name;
 
     //queremos q siempre q mostremos el inventario muestre un orden coherente
@@ -82,12 +81,8 @@ public class Inventory
     Action _onInventoryChange; //cuando se borra o añade un material
    // Dictionary<MaterialName, Action<int>> _dict_onSlotValueChange = new Dictionary<MaterialName, Action<int>>(); //cuando cambia un valor
 
-    public Inventory(int maxSize, string name)
+    public PersistentInventory(string name)
     {
-        if (Enum.GetValues(typeof(MaterialName)).Length > maxSize)
-            throw new Exception("The size of the inventory must >= than the number of materials");
-
-        _maxSize = maxSize;
         _name = name;
 
         foreach (MaterialName material in Enum.GetValues(typeof(MaterialName)))
@@ -135,7 +130,7 @@ public class Inventory
         if (newAmount < 0) return false;
 
         _objectsAmount[name] = newAmount;
-
+        SaveMaterial(name);
         //if (newAmount == 0)
         //    _onInventoryChange?.Invoke();
         //else
@@ -162,6 +157,55 @@ public class Inventory
     
 }
 
+public class Inventory
+{
+    //queremos q siempre q mostremos el inventario muestre un orden coherente
+    SortedDictionary<MaterialName, int> _objectsAmount = new SortedDictionary<MaterialName, int>();//q materiales y en q cantidad  tienes
+    public SortedDictionary<MaterialName, int> Objects => _objectsAmount;
+
+    Action _onInventoryChange; //cuando se borra o añade un material
+                               // Dictionary<MaterialName, Action<int>> _dict_onSlotValueChange = new Dictionary<MaterialName, Action<int>>(); //cuando cambia un valor
+
+    public Inventory()
+    {
+        foreach (MaterialName material in Enum.GetValues(typeof(MaterialName)))
+        {
+            _objectsAmount.Add(material, 0);
+        }
+
+    }
+    public void SubscribeToInventoryChange(Action action) => _onInventoryChange += action;//se recarga el inventario entero en la UI
+
+    public void CleanAllCallbacks()
+    {
+        _onInventoryChange = null;
+    }
+
+    public int GetAmount(MaterialName key) => _objectsAmount[key];
+    public void AddObject(MaterialName name, int amount)
+    {
+        if (amount < 0) throw new Exception("Must be positive number");
+
+        int oldVal = _objectsAmount[name];
+        _objectsAmount[name] = oldVal + amount;
+        _onInventoryChange?.Invoke();
+    }
+    public bool TryRemoveObject(MaterialName name, int amount)
+    {
+        //si tenemos 5 piedras e intentamos quitar 6 mantenemos las 5 y devolvemos false
+        //se usará al comprar objetos con materiales
+        if (amount < 0) throw new Exception("Must be positive number");
+
+        int newAmount = _objectsAmount[name] - amount;
+
+        if (newAmount < 0) return false;
+
+        _objectsAmount[name] = newAmount;
+
+        _onInventoryChange?.Invoke();
+        return true;
+    }
+}
 public enum MaterialName
 {
     Hierro,
