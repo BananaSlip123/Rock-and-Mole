@@ -4,5 +4,33 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/0_Scenes/-1_Pruebas.unity
+    guid: 093e6e5ae4c08294cb6ce4b8ab61531a
+  - enabled: 1
+    path: Assets/0_Scenes/0_Main.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/0_Scenes/1_Lobby.unity
+    guid: 76adddc93892e1341a3e543bd3438c97
+  - enabled: 1
+    path: Assets/0_Scenes/2_CombatRoom.unity
+    guid: 8dea2df785374b84aa70b34f16fa91d8
+  - enabled: 1
+    path: Assets/0_Scenes/3_MiningRoom.unity
+    guid: 84c9f8293b95f7e46a9473ef8d82cb36
+  - enabled: 1
+    path: Assets/0_Scenes/4_TresaureRoom.unity
+    guid: 278c8a232914c8e47892b811a7bc3789
+  - enabled: 1
+    path: Assets/0_Scenes/5_RescueRoom.unity
+    guid: eb6f1c5b9d40fcf4088042a34403a8f7
+  - enabled: 1
+    path: Assets/0_Scenes/6_CampamentRoom.unity
+    guid: 1be806fe53c8f434695909657bad8999
+  - enabled: 1
+    path: Assets/0_Scenes/7_DarkRoom.unity
+    guid: c0a34360e347f4e4ea0a7909bc16df9f
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

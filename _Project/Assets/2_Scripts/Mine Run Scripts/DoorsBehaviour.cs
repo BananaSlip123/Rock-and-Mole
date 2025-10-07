@@ -2,9 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour
+public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemies
 {
     Action enterBehaviour;
+    [SerializeField] Collider hitbox;
 
     enum typeOfBehaviour
     {
@@ -62,11 +63,17 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour
         enterBehaviour = behaviour;
     }
 
+    public void Active()
+    {
+        hitbox.enabled = true;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         EnterToRoom();
     }
 
+    #region Comportamiento de puertas
     private void CombatBehaviour()
     {
         SceneManager.LoadScene("2_CombatRoom");
@@ -95,5 +102,6 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour
     private void RescueBehaviour()
     {
         SceneManager.LoadScene("5_RescueRoom");
-    }
+    }   
+    #endregion
 }

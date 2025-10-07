@@ -1,14 +1,13 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorsManagement : MonoBehaviour, IDoorsManagement
+public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
 {
     [SerializeField] SO_DoorsProbabilities probabilities;
+    GameObject[] doors;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");   
+        doors = GameObject.FindGameObjectsWithTag("Door");   
         
         foreach(GameObject go in doors)
         {
@@ -42,5 +41,13 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement
             puerta.ChooseEvent(2);
         else
             puerta.ChooseEvent(3);
+    }
+
+    public void ThereIsNoEnemies()
+    {
+        foreach (GameObject door in doors)
+        {
+            door.GetComponent<IActiveNoMoreEnemies>().Active();
+        }
     }
 }
