@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour
 {
@@ -68,30 +69,31 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour
 
     private void CombatBehaviour()
     {
-
+        SceneManager.LoadScene("2_CombatRoom");
     }
 
     private void MiningBehaviour()
     {
-
+        SceneManager.LoadScene("3_MiningRoom");
     }
 
     private void CampamentBehaviour()
     {
-
+        SceneManager.LoadScene("6_CampamentRoom");
     }
 
     private void TreasureBehaviour()
     {
-
+        SceneManager.LoadScene("4_TreasureRoom");
     }
+
     private void DarkBehaviour()
     {
-
+        SceneManager.LoadScene("7_DarkRoom");
     }
 
     private void RescueBehaviour()
     {
-
+        SceneManager.LoadScene("5_RescueRoom");
     }
 }

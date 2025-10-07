@@ -8,7 +8,7 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        GameObject[] doors = GameObject.FindGameObjectsWithTag("Doors");   
+        GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");   
         
         foreach(GameObject go in doors)
         {
@@ -18,8 +18,8 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement
 
     public void ChooseRoom(IDoorBehaviour puerta)
     {
-        float random = Random.Range(0f, 99f);
-
+        float random = Random.Range(0f, 0.99f);
+        Debug.Log("RANDOM ROOM: " + random);
         if(random < probabilities.combatProb)
             puerta.ChooseBehaviour(0);
         else if(random < probabilities.miningProb)
@@ -30,7 +30,9 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement
 
     public void ChooseEventType(IDoorBehaviour puerta)
     {
-        float random = Random.Range(0f, 99f);
+        float random = Random.Range(0f, 0.99f);
+
+        Debug.Log("RANDOM EVENT: " + random);
 
         if (random < probabilities.campamentProb)
             puerta.ChooseEvent(0);
