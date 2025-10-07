@@ -1,0 +1,97 @@
+using System;
+using UnityEngine;
+
+public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour
+{
+    Action enterBehaviour;
+
+    enum typeOfBehaviour
+    {
+        Combat,
+        Mining,
+    }
+
+    enum typeOfEvent
+    {
+        Campament,
+        Rescue,
+        Treasure,
+        Dark
+    }
+
+    public void ChooseBehaviour(int behaviour)
+    {
+        switch(behaviour)
+        {
+            case (int) typeOfBehaviour.Combat:
+                ChangeBehaviour(CombatBehaviour);
+                break;
+            case (int) typeOfBehaviour.Mining:
+                ChangeBehaviour(MiningBehaviour);
+                break;
+        }
+    }
+
+    public void ChooseEvent(int tEvent)
+    {
+        switch(tEvent)
+        {
+            case (int) typeOfEvent.Campament:
+                ChangeBehaviour(CampamentBehaviour);
+                break;
+            case (int) typeOfEvent.Treasure:
+                ChangeBehaviour(TreasureBehaviour);
+                break;
+            case (int) typeOfEvent.Rescue:
+                ChangeBehaviour(RescueBehaviour);
+                break;
+            case (int)typeOfEvent.Dark:
+                ChangeBehaviour(DarkBehaviour);
+                break;
+        }
+    }
+
+    public void EnterToRoom()
+    {
+        enterBehaviour.Invoke();
+    }
+
+    public void ChangeBehaviour(Action behaviour)
+    {
+        enterBehaviour = behaviour;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        EnterToRoom();
+    }
+
+    private void CombatBehaviour()
+    {
+
+    }
+
+    private void MiningBehaviour()
+    {
+
+    }
+
+    private void CampamentBehaviour()
+    {
+
+    }
+
+    private void TreasureBehaviour()
+    {
+
+    }
+    private void DarkBehaviour()
+    {
+
+    }
+
+    private void RescueBehaviour()
+    {
+
+    }
+}
