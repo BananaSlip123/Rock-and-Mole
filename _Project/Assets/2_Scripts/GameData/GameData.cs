@@ -17,7 +17,7 @@ public static class GameData
 
     #endregion
     #region PUBLIC VARS
-    public readonly static Dictionary<MaterialName, int> MaterialsValues = new Dictionary<MaterialName, int>
+    public readonly static Dictionary<MaterialName, int> MaterialsPrices = new Dictionary<MaterialName, int>
     {
         { MaterialName.Hierro, 4 },
         { MaterialName.Carbon, 8 },
@@ -46,11 +46,13 @@ public static class GameData
             if(value != _coins)
             {
                 _coins = value;
+                OnCoinsChange?.Invoke(value);
                 PlayerPrefs.SetInt("COINS", _coins);
                 PlayerPrefs.Save();
             }
         }
     }
+    public static Action<int> OnCoinsChange = null;
     #endregion
 
     #region PRIVATE FUNCS
@@ -79,8 +81,8 @@ public class PersistentInventory
     public SortedDictionary<MaterialName, int> Objects => _objectsAmount;
 
     Action _onInventoryChange; //cuando se borra o añade un material
-   // Dictionary<MaterialName, Action<int>> _dict_onSlotValueChange = new Dictionary<MaterialName, Action<int>>(); //cuando cambia un valor
-
+    // Dictionary<MaterialName, Action<int>> _dict_onSlotValueChange = new Dictionary<MaterialName, Action<int>>(); //cuando cambia un valor
+    Action<MaterialName> _onMaterialDeleted;
     public PersistentInventory(string name)
     {
         _name = name;
@@ -95,6 +97,7 @@ public class PersistentInventory
         
     }
     public void SubscribeToInventoryChange(Action action) => _onInventoryChange += action;//se recarga el inventario entero en la UI
+    public void SubscribeToMaterialDeleted(Action<MaterialName> action) => _onMaterialDeleted += action;
 
     //public void SetToSlotChange(MaterialName name, Action<int> action)//se recarga en la UI un material especifico
     //{
@@ -105,6 +108,7 @@ public class PersistentInventory
         _onInventoryChange = null;
         //foreach (MaterialName key in _dict_onSlotValueChange.Keys.ToList())
         //    _dict_onSlotValueChange[key] = null;
+        _onMaterialDeleted = null;
     }
     
     public int GetAmount(MaterialName key) => _objectsAmount[key];
@@ -135,8 +139,10 @@ public class PersistentInventory
         //    _onInventoryChange?.Invoke();
         //else
         //    _dict_onSlotValueChange[name]?.Invoke(amount);
-
+        if (newAmount == 0) _onMaterialDeleted.Invoke(name);
         _onInventoryChange?.Invoke();
+        
+
         return true;
     }
 
@@ -165,7 +171,7 @@ public class Inventory
 
     Action _onInventoryChange; //cuando se borra o añade un material
                                // Dictionary<MaterialName, Action<int>> _dict_onSlotValueChange = new Dictionary<MaterialName, Action<int>>(); //cuando cambia un valor
-
+    Action<MaterialName> _onMaterialDeleted;
     public Inventory()
     {
         foreach (MaterialName material in Enum.GetValues(typeof(MaterialName)))
@@ -175,7 +181,7 @@ public class Inventory
 
     }
     public void SubscribeToInventoryChange(Action action) => _onInventoryChange += action;//se recarga el inventario entero en la UI
-
+    public void SubscribeToMaterialDeleted(Action<MaterialName> action) => _onMaterialDeleted += action;
     public void CleanAllCallbacks()
     {
         _onInventoryChange = null;
@@ -201,8 +207,10 @@ public class Inventory
         if (newAmount < 0) return false;
 
         _objectsAmount[name] = newAmount;
-
+        
+        if (newAmount == 0) _onMaterialDeleted.Invoke(name);
         _onInventoryChange?.Invoke();
+
         return true;
     }
 }

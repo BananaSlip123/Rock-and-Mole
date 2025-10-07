@@ -42,7 +42,7 @@ public class SlotUI : MonoBehaviour
     int _amount;
     bool _selected = false;
     bool _enabled = true;
-    Action _onSelection;
+    Action _onSelection, _onUnselection;
     MaterialName _materialAssigned;
     #endregion
     #region PUBLIC VARS
@@ -81,6 +81,7 @@ public class SlotUI : MonoBehaviour
                 GetComponent<Image>().enabled = value;
 
                 if (value) _onSelection?.Invoke();
+                else _onUnselection?.Invoke();
             }
             
         }
@@ -128,10 +129,12 @@ public class SlotUI : MonoBehaviour
     }
 
     public void Button_Select() => Selected = !Selected;
-    public void SubscribeToOnSelected(Action onSelectedCallback)
+    public void SubscribeToOnSelected(Action onSelectedCallback) =>_onSelection = onSelectedCallback;
+    public void SubscribeToOnUnselected(Action onUnselectedCallback) => _onUnselection = onUnselectedCallback;
+    public void CleanCallBacks()
     {
-        _onSelection = onSelectedCallback;
+        _onSelection = null;
+        _onUnselection = null;
     }
-    public void CleanCallBacks() =>_onSelection = null;
     #endregion
 }
