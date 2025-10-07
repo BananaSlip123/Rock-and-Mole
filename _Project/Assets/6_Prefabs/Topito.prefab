@@ -70,9 +70,10 @@ GameObject:
   - component: {fileID: 7072675569967448827}
   - component: {fileID: 1411762379138361720}
   - component: {fileID: 777582931479185327}
+  - component: {fileID: 5167273528164019003}
   m_Layer: 0
   m_Name: Topito
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,6 +294,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 832e0632-79bd-4901-83f4-7c77d16f5c24
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7072675569967448827}
+        m_TargetAssemblyTypeName: PlayerComponents.PlayerController, PlayerComponents
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9258cffb-7bf3-4b94-a95d-3aae3ba25a75
+    m_ActionName: Player/Dash
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -311,7 +328,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackComponent: {fileID: 1411762379138361720}
-  moveComponent: {fileID: 777582931479185327}
 --- !u!114 &1411762379138361720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +355,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  speedDash: 10
+  isDashing: 0
+--- !u!114 &5167273528164019003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559116585686124911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71dcd453ddade524890ba245318855fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
 --- !u!1 &8835747590914146617
 GameObject:
   m_ObjectHideFlags: 0
