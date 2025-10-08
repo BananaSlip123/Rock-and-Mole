@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DamageableComponent : MonoBehaviour, IDamageableComponent
@@ -6,6 +7,21 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 
     [SerializeField] private int health = 50;
 
+    public int Health
+    {
+        get => health;
+        private set
+        {
+            if(value != health)
+            {
+                health = value;
+                OnHealthChange?.Invoke(value);
+            }
+            
+        }
+    }
+
+    public Action<int> OnHealthChange;
     private void FixedUpdate()
     {
         
@@ -13,10 +29,10 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 
     public void RecieveDamage(int damage)
     {
-        health -= damage;
+        Health -= damage;
         hasBeenDamaged = true;
 
-        if(health <= 0)
+        if(Health <= 0)
             Death();
         Debug.Log("Me han quitado vida");
     }
