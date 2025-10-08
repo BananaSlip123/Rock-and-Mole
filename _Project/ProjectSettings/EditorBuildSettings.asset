@@ -32,5 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0_Scenes/7_DarkRoom.unity
     guid: c0a34360e347f4e4ea0a7909bc16df9f
+    path: Assets/0_Scenes/0_Main.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/0_Scenes/1_MAIN_SCENE.unity
+    guid: cb2ab00008aff0448aaf589c60cef98e
+  - enabled: 1
+    path: Assets/0_Scenes/2_GAME_SCENE.unity
+    guid: badbcc6fb9420074f81527f4dbfd317c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
