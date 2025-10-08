@@ -63,20 +63,13 @@ public class VillageMenuUI : MonoBehaviour
     #endregion
 
     #region PUBLIC FUNCS
-    public void Button_OnClose()
-    {
-        if (CurrentWindow == Windows.Settings)
-            CurrentWindow = Windows.Pause;
-        else
-            CurrentWindow = Windows.Main;
-    }
-    public void Button_Pause() => CurrentWindow = Windows.Pause;
+    public void Button_OpenPause() => CurrentWindow = Windows.Pause;
     public void Button_OpenInventory() => CurrentWindow = Windows.Inventory;
     public void Button_OpenShop() => CurrentWindow = Windows.Shop;
     public void Button_OpenForge() => CurrentWindow = Windows.Forge;
     public void Button_OpenWardrobe() => CurrentWindow = Windows.Wardrobe;
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
-    public void Button_ReturnToMain() => CurrentWindow = Windows.Main;
+    public void Button_OpenMain() => CurrentWindow = Windows.Main;
     public void Button_ReturnToMenuScene() => SceneManager.LoadScene("1_MAIN_SCENE");
     #endregion
 }

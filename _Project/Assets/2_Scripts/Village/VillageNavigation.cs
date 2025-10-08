@@ -32,7 +32,7 @@ public class VillageNavigation : MonoBehaviour
     public void OnVillageEntry()
     {
         //sales de la forja/tienda/mina a la calle
-        villageMenuUI.Button_ReturnToMain();
+        villageMenuUI.Button_OpenMain();
     }
     public void OnMineEntry()
     {
