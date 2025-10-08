@@ -22,17 +22,19 @@ public class VillageNavigation : MonoBehaviour
     {
         //q te meta en la tienda por dentro
 
-        villageMenuUI.Button_OpenShop();
+        OnSellInteraction();//esto no deberia ir aqui realmente, de momento si
     }
+    public void OnSellInteraction() => villageMenuUI.Button_OpenShop();
     public void OnForgeEntry()
     {
         //q te meta en la forja por dentro
-        villageMenuUI.Button_OpenForge();
+        OnForgeInteraction();
     }
+    public void OnForgeInteraction() => villageMenuUI.Button_OpenForge();
     public void OnVillageEntry()
     {
         //sales de la forja/tienda/mina a la calle
-        villageMenuUI.Button_OpenMain();
+        //villageMenuUI.Button_OpenMain();
     }
     public void OnMineEntry()
     {
