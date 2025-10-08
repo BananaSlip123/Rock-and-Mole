@@ -184,6 +184,7 @@ public class ShopUI : MonoBehaviour
 
     public void SellMaterial()
     {
+        if (_selectedAmount == 0) return;
         if (_canSell)
         {
             bool selled = GameData.Inventory.TryRemoveObject(_materialSelected, _selectedAmount);
