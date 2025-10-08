@@ -17,6 +17,7 @@ public class InventoryUI : MonoBehaviour
     const int SIZE = SIZE_X * SIZE_Y;
     SlotUI[,] slots = new SlotUI[SIZE_Y, SIZE_X];
     SlotUI _selectedSlot = null;
+    MaterialName _lastSelectedMaterial;
 
     #endregion
     #region PUBLIC VARS
@@ -27,7 +28,10 @@ public class InventoryUI : MonoBehaviour
         {
             _selectedSlot = value;
             if (value != null)
+            {
                 OnSelectedMaterial?.Invoke(SelectedMaterial);
+                _lastSelectedMaterial = _selectedSlot.MaterialAssigned;
+            }
             else
                 OnUnSelectedMaterial?.Invoke();
         }
@@ -64,11 +68,19 @@ public class InventoryUI : MonoBehaviour
         });
         GameData.Inventory.SubscribeToMaterialDeleted((MaterialName name) =>
         {
-            if(SelectedMaterial == name)
+            if (SelectedSlot == null) return;
+            if (SelectedMaterial == name)
             {
                 SelectedSlot.Selected = false;
                 SelectedSlot = null;
             }
+        });
+        
+        GameData.Inventory.SubscribeToMaterialAdded(() =>
+        {
+            if (SelectedSlot == null) return;
+            SelectedSlot.Selected = false;
+            SelectedSlot = null;
         });
     }
 
@@ -79,7 +91,6 @@ public class InventoryUI : MonoBehaviour
 
         foreach (SlotUI slot in slots)
             slot.CleanCallBacks();
-
     }
     private void UpdateInventory()
     {
@@ -106,6 +117,8 @@ public class InventoryUI : MonoBehaviour
                     if (SelectedSlot == slots[y, x])
                         SelectedSlot = null;
                 });
+
+                
                 //GameData.Inventory.SetToSlotChange(key, (int value) =>
                 //{ //le añadimos un callback a los materiales de la UI
                 //    slots[y, x].UpdateSlot(key, value);
@@ -133,7 +146,7 @@ public class InventoryUI : MonoBehaviour
         
         System.Random r = new System.Random();
         int name = r.Next(Enum.GetValues(typeof(MaterialName)).Length);
-        int amount = r.Next(5);
+        int amount = r.Next(5)+1;
         GameData.Inventory.AddObject((MaterialName)name, amount);
     }
     #endregion
