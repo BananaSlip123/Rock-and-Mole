@@ -238,6 +238,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f01edc73969315479e666196310494e, type: 3}
+--- !u!114 &1261799477 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5167273528164019003, guid: 2f01edc73969315479e666196310494e, type: 3}
+  m_PrefabInstance: {fileID: 1261799476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71dcd453ddade524890ba245318855fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1633320650
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +354,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 380892532684601300, guid: 1316e9090d365c445b5b55702d156457, type: 3}
+      propertyPath: damageableComponent
+      value: 
+      objectReference: {fileID: 1261799477}
     - target: {fileID: 6868441561298026386, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_Name
       value: Main Camera
