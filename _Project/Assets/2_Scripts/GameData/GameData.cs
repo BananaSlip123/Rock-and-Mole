@@ -60,7 +60,29 @@ public static class GameData
     #endregion
 
     #region PUBLIC FUNCS
-    
+    public static Dictionary<MaterialName, int> Put_RunInventory_Into_Inventory(int savedPercent)
+    {
+        if (savedPercent > 100 || savedPercent < 0) throw new Exception("Invalid percent insert");
+
+        Dictionary<MaterialName, int> MaterialsCollected = new Dictionary<MaterialName, int>();
+
+        foreach(KeyValuePair<MaterialName,int> materialData in RunInventory.Objects)
+        {
+            int amount = materialData.Value;
+
+            int savedAmount = savedPercent * amount / 100;
+
+            if(savedAmount != 0)
+            {
+                MaterialsCollected.Add(materialData.Key, savedAmount);
+                Inventory.AddObject(materialData.Key, savedAmount);
+            }
+
+            RunInventory.Objects[materialData.Key] = 0;
+        }
+
+        return MaterialsCollected;
+    }
     public static void SaveCrucialData()
     {
         //usar player prefbs :)

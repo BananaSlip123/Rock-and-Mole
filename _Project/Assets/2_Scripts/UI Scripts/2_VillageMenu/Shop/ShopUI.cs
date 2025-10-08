@@ -99,14 +99,19 @@ public class ShopUI : MonoBehaviour
         _init = true;
         go_error.SetActive(false);
 
+        UpdateShopUI();
+
+        //Añadir callback sobre el material seleccionado en InventoryUI
+        inventory.OnSelectedMaterial += OnSelectedMaterial;
+        inventory.OnUnSelectedMaterial += OnUnSelectedMaterial;
+    }
+
+    private void UpdateShopUI()
+    {
         if (inventory.HasMaterialSelected)
             OnSelectedMaterial(inventory.SelectedMaterial);
         else
             OnUnSelectedMaterial();
-            
-        //Añadir callback sobre el material seleccionado en InventoryUI
-        inventory.OnSelectedMaterial += OnSelectedMaterial;
-        inventory.OnUnSelectedMaterial += OnUnSelectedMaterial;
     }
 
     private void OnDisable()
@@ -121,6 +126,7 @@ public class ShopUI : MonoBehaviour
         IsMaterialSelected = true;
         AvailableAmount = GameData.Inventory.GetAmount(material);
         Price =  GameData.MaterialsPrices[material];
+        ProcesarNumeroIngresado(_selectedAmount);
     }
     private void OnUnSelectedMaterial()
     {
@@ -188,6 +194,7 @@ public class ShopUI : MonoBehaviour
         {
             ShowErrorMessage();
         }
+        UpdateShopUI();
     }
     #endregion
 }
