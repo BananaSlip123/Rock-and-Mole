@@ -6,6 +6,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] int nEnemies = 0;
 
+    [SerializeField] bool spawnEnemy = true;
+
     public static LevelManager instance;
 
     INoMoreEnemies doorsManagementEnemies;
@@ -25,10 +27,11 @@ public class LevelManager : MonoBehaviour
 
         Instantiate(rooms[0]);
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
 
+    private void Start()
+    {
+        if(!spawnEnemy)
+            doorsManagementEnemies.ThereIsNoEnemies();
     }
 
     // Update is called once per frame
