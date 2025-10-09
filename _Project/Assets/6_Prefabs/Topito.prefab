@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  go: {fileID: 0}
   speedDash: 10
   isDashing: 0
 --- !u!114 &5167273528164019003
