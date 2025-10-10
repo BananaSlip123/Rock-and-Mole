@@ -38,10 +38,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nEnemies <= 0)
-        {
-            doorsManagementEnemies.ThereIsNoEnemies();
-        }
+
     }
 
     public void EnemyDead()

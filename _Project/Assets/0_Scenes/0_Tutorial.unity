@@ -171,11 +171,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7243360363326767555, guid: e44bc6add05a42d40b28be0924b9749a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6661247945561125561, guid: e44bc6add05a42d40b28be0924b9749a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 221187183594571674, guid: e44bc6add05a42d40b28be0924b9749a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 56222153}
   m_SourcePrefab: {fileID: 100100000, guid: e44bc6add05a42d40b28be0924b9749a, type: 3}
+--- !u!1 &56222151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 221187183594571674, guid: e44bc6add05a42d40b28be0924b9749a, type: 3}
+  m_PrefabInstance: {fileID: 56222150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &56222152 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7243360363326767555, guid: e44bc6add05a42d40b28be0924b9749a, type: 3}
+  m_PrefabInstance: {fileID: 56222150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &56222153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56222151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4867cef33236e54394578a3c4cf54d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 56222152}
+  escena: 0_TutorialCombate
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769295073}
   - component: {fileID: 769295072}
-  - component: {fileID: 769295071}
+  - component: {fileID: 769295074}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -291,19 +323,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &769295071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769295070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17918aa874ca2e0419559e47e6f2b13e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  probabilities: {fileID: 11400000, guid: 035370b1de1bf534d8eb07ff388e45aa, type: 2}
 --- !u!114 &769295072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rooms: []
   nEnemies: 0
-  spawnEnemy: 0
+  spawnEnemy: 1
 --- !u!4 &769295073
 Transform:
   m_ObjectHideFlags: 0
@@ -334,6 +353,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769295074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769295070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17918aa874ca2e0419559e47e6f2b13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probabilities: {fileID: 11400000, guid: 035370b1de1bf534d8eb07ff388e45aa, type: 2}
 --- !u!1001 &3757991951202508621
 PrefabInstance:
   m_ObjectHideFlags: 0

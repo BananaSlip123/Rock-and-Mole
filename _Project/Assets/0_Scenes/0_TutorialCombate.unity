@@ -283,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1121752906}
   - component: {fileID: 1121752905}
-  - component: {fileID: 1121752904}
+  - component: {fileID: 1121752907}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -291,19 +291,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1121752904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121752903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17918aa874ca2e0419559e47e6f2b13e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  probabilities: {fileID: 11400000, guid: 035370b1de1bf534d8eb07ff388e45aa, type: 2}
 --- !u!114 &1121752905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +321,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1121752907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121752903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17918aa874ca2e0419559e47e6f2b13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probabilities: {fileID: 11400000, guid: 035370b1de1bf534d8eb07ff388e45aa, type: 2}
 --- !u!1001 &7191499151135706438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386,11 +386,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5763312614418495816, guid: b6d2795d05186fb47a2872fd6f048226, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8579201300019087922, guid: b6d2795d05186fb47a2872fd6f048226, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2913585985508589329, guid: b6d2795d05186fb47a2872fd6f048226, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7191499151135706441}
   m_SourcePrefab: {fileID: 100100000, guid: b6d2795d05186fb47a2872fd6f048226, type: 3}
+--- !u!1 &7191499151135706439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2913585985508589329, guid: b6d2795d05186fb47a2872fd6f048226, type: 3}
+  m_PrefabInstance: {fileID: 7191499151135706438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7191499151135706440 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5763312614418495816, guid: b6d2795d05186fb47a2872fd6f048226, type: 3}
+  m_PrefabInstance: {fileID: 7191499151135706438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7191499151135706441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191499151135706439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4867cef33236e54394578a3c4cf54d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 7191499151135706440}
+  escena: 0_TutorialCombateMining
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
