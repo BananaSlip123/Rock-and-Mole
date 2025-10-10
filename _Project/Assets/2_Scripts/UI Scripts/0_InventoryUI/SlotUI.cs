@@ -43,6 +43,7 @@ public class SlotUI : MonoBehaviour
     bool _selected = false;
     bool _enabled = true;
     Action _onSelection, _onUnselection;
+    bool _hasMaterialAssigned = false;
     MaterialName _materialAssigned;
     #endregion
     #region PUBLIC VARS
@@ -91,8 +92,10 @@ public class SlotUI : MonoBehaviour
         get => _materialAssigned;
         set
         {
-            if (value != _materialAssigned && Enabled)
+            
+            if (!_hasMaterialAssigned || value != _materialAssigned && Enabled)
             {
+                _hasMaterialAssigned = true;
                 _materialAssigned = value;
                 img_imageComponent.sprite = Icons[value].Sprite;
                 img_imageComponent.color = Icons[value].Color;

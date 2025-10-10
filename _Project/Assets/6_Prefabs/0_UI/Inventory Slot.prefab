@@ -438,34 +438,34 @@ MonoBehaviour:
   go_Info: {fileID: 1245654543337454272}
   inspectorIcons:
   - _name: 0
-    _sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    _color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+    _sprite: {fileID: 21300000, guid: 0c6929e8fe8fb9049bfc4df216080a6b, type: 3}
+    _color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   - _name: 1
-    _sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    _color: {r: 0.22264141, g: 0.22264141, b: 0.22264141, a: 1}
+    _sprite: {fileID: 21300000, guid: 3443d0a64e8525f4aae655e0304e1317, type: 3}
+    _color: {r: 0.4113207, g: 0.4113207, b: 0.4113207, a: 1}
   - _name: 2
-    _sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    _color: {r: 0.6830188, g: 0.5185789, b: 0, a: 1}
+    _sprite: {fileID: 21300000, guid: 0c6929e8fe8fb9049bfc4df216080a6b, type: 3}
+    _color: {r: 1, g: 0.8182824, b: 0.2471698, a: 1}
   - _name: 3
-    _sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    _color: {r: 0.8113208, g: 0.7206789, b: 0.43321463, a: 1}
+    _sprite: {fileID: 21300000, guid: 8b04ae19018f8cd42be895f0febaaa73, type: 3}
+    _color: {r: 1, g: 0.69143337, b: 0.53396225, a: 1}
   - _name: 4
-    _sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    _sprite: {fileID: 21300000, guid: 34e295fe49e2ad54a8e88424b24f88f5, type: 3}
     _color: {r: 0.390566, g: 1, b: 0.9611814, a: 1}
   - _name: 5
-    _sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    _sprite: {fileID: 21300000, guid: 3b326c19660ceb442a7755f59d182df2, type: 3}
     _color: {r: 0.7672654, g: 0.39215684, b: 1, a: 1}
   - _name: 6
-    _sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    _sprite: {fileID: 21300000, guid: 3443d0a64e8525f4aae655e0304e1317, type: 3}
     _color: {r: 1, g: 0.6423768, b: 0, a: 1}
   - _name: 7
-    _sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    _sprite: {fileID: 21300000, guid: a116c3e5ed030c944bdd470640f0c95d, type: 3}
     _color: {r: 0.07747769, g: 1, b: 0, a: 1}
   - _name: 8
-    _sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-    _color: {r: 1, g: 0, b: 0.005244732, a: 1}
+    _sprite: {fileID: 21300000, guid: 34e295fe49e2ad54a8e88424b24f88f5, type: 3}
+    _color: {r: 1, g: 0.41320753, b: 0.41550866, a: 1}
   - _name: 9
-    _sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    _sprite: {fileID: 21300000, guid: 988779d5f58b95042b89f5a8abf9160b, type: 3}
     _color: {r: 0.8584906, g: 0.99541605, b: 1, a: 1}
 --- !u!222 &2574480364183842791
 CanvasRenderer:
