@@ -3,7 +3,7 @@ using UnityEngine;
 public class GolemAttackState : IStateComponent, IAttackComponent
 {
 
-    const float COOLDOWN = 0.2f;
+    const float COOLDOWN = 0.5f;
     const float TIME_HITBOX = 0.1f;
 
     private float timeToAttack = 0f;
@@ -50,10 +50,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     }
 
     public void FixedUpdate()
-    {
-        if (!TakePlayerPosition())
-            mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine));
-
+    {       
         if (isInCooldown)
         {
             timeToAttack += Time.fixedDeltaTime;
@@ -62,6 +59,8 @@ public class GolemAttackState : IStateComponent, IAttackComponent
             {
                 isInCooldown = false;
                 timeToAttack = 0f;
+
+                mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine));
             }
 
             return;
@@ -69,7 +68,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
         else
         {
             ActiveHitbox();
-        }
+        }           
 
         if (attackHitbox.enabled)
         {
@@ -82,7 +81,8 @@ public class GolemAttackState : IStateComponent, IAttackComponent
             {
                 attackHitbox.enabled = false;
                 timeHitbox = 0f;
-                playerHealth.ResetHasBeenDamaged();
+                isInCooldown = true;
+                playerHealth.ResetHasBeenDamaged();               
             }
         }
     }

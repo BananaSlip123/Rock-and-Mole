@@ -25,7 +25,8 @@ public class LevelManager : MonoBehaviour
 
         doorsManagementEnemies = GetComponent<INoMoreEnemies>();
 
-        Instantiate(rooms[0]);
+        if(rooms.Length != 0)
+            Instantiate(rooms[0]);
     }
 
     private void Start()
