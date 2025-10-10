@@ -1,5 +1,6 @@
 using Codice.CM.Common;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace PlayerComponents
 {
@@ -7,6 +8,7 @@ namespace PlayerComponents
     {
         #region Movimiento
         [SerializeField] private float speed;
+        [SerializeField] Transform go;
 
         private bool isMoving = false;
         #endregion
@@ -65,7 +67,10 @@ namespace PlayerComponents
             if (!isMoving)
                 return;
 
-            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);
+            go.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);
+            Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-movement.y, 0, movement.x).normalized), Vector3.up);
+
+            transform.rotation = rotation;
         }
 
         public void InitializeSpecialSkill()
