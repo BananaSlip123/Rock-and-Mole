@@ -25,7 +25,8 @@ public class LevelManager : MonoBehaviour
 
         doorsManagementEnemies = GetComponent<INoMoreEnemies>();
 
-        Instantiate(rooms[0]);
+        if(rooms.Length != 0)
+            Instantiate(rooms[0]);
     }
 
     private void Start()
@@ -37,10 +38,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nEnemies <= 0)
-        {
-            doorsManagementEnemies.ThereIsNoEnemies();
-        }
+
     }
 
     public void EnemyDead()
