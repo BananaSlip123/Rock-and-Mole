@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/0_Scenes/0_Tutorial.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/0_Scenes/0_TutorialBossFight.unity
+    guid: 97e9c899fc3f9d54bb000ba66e6303e0
+  - enabled: 1
+    path: Assets/0_Scenes/0_TutorialCombate.unity
+    guid: bb5ef7227e4458d44befb93885bae91c
+  - enabled: 1
+    path: Assets/0_Scenes/0_TutorialCombateMining.unity
+    guid: 028aabf240b57084b98aef1a8fa3bba4
+  - enabled: 1
     path: Assets/0_Scenes/1_Lobby.unity
     guid: 76adddc93892e1341a3e543bd3438c97
   - enabled: 1

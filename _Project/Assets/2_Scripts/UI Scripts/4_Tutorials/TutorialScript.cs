@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TutorialScript : MonoBehaviour
 {
@@ -6,8 +7,8 @@ public class TutorialScript : MonoBehaviour
 	[SerializeField] GameObject go_callOut;
 	[SerializeField] TutorialScene scene;
 	[SerializeField] string[] dialogsToShow;
-
-	CallOut callOut;
+	[SerializeField] PlayerInput playerInput;
+    CallOut callOut;
 	enum TutorialScene
 	{
 		Village,
@@ -19,7 +20,7 @@ public class TutorialScript : MonoBehaviour
     private void OnEnable()
     {
 		if (dialogsToShow.Length == 0) return;
-		if (scene == TutorialScene.Village && !GameData.NeedsTutorial)
+		if (!GameData.NeedsTutorial)
 		{
             gameObject.SetActive(false);
 			return;
@@ -27,7 +28,9 @@ public class TutorialScript : MonoBehaviour
 		callOut = go_callOut.GetComponent<CallOut>();
 		if (callOut == null) throw new System.Exception("go_CallOut must have a callout component");
 
-		InitCallOut();
+        playerInput.defaultActionMap.Replace("Player", "UI");
+
+        InitCallOut();
     }
     private void OnDisable()
     {
@@ -44,6 +47,7 @@ public class TutorialScript : MonoBehaviour
     void DialogEnded()
 	{
 		Debug.Log("fin");
-	}
+        playerInput.defaultActionMap.Replace("UI", "Player");
+    }
     #endregion
 }

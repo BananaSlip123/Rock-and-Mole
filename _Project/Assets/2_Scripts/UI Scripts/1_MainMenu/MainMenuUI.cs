@@ -39,7 +39,8 @@ public class MainMenuUI : MonoBehaviour
     {
         if (GameData.NeedsTutorial)
             SceneManager.LoadScene("0_Tutorial");
-        SceneManager.LoadScene("2_VILLAGE_SCENE");
+        else
+            SceneManager.LoadScene("2_VILLAGE_SCENE");
     } 
     #endregion
 }
