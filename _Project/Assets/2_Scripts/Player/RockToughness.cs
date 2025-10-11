@@ -3,7 +3,7 @@ using UnityEngine;
 public class RockToughness : MonoBehaviour, IDamageableComponent
 {
     [SerializeField]int toughness = 2;
-    [SerializeField] float numberProbability = 10f;
+    [SerializeField] float numberProbability = 0.10f;
 
     int numberOfHits = 0;
     bool hasBeenHit = false;
@@ -22,7 +22,8 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
     {
         Destroy(gameObject);
 
-        //PARA UNAI HACER QUE SE AÑADAN AL INVENTARIO EN ESTA FUNCION
+        if (Random.Range(0f, 0.11f) < numberProbability)
+            GameData.RunInventory.AddObject(MaterialName.Carbon, Random.Range(1,3));
     }
 
     public void RecieveDamage(int damage)
