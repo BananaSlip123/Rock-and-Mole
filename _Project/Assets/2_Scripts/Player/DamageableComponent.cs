@@ -52,6 +52,6 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     private void Death()
     {
         Destroy(this.gameObject);
-        //GameData.RunInventory.
+        GameData.Put_RunInventory_Into_Inventory(70);
     }
 }
