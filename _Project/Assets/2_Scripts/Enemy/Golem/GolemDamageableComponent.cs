@@ -39,6 +39,7 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
         if(LevelManager.instance != null)
         {
             LevelManager.instance.EnemyDead();
+            GameData.RunInventory.AddObject(MaterialName.Hierro, Random.Range(1,4));
         }
     }
 }
