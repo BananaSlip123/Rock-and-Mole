@@ -35,6 +35,11 @@ public class MainMenuUI : MonoBehaviour
     public void SwitchToMain() => SwitchWindow(Windows.Main);
     public void SwitchToSettings() => SwitchWindow(Windows.Settings);
     public void SwitchToCredits() => SwitchWindow(Windows.Credits);
-    public void SwitchToGameScene() => SceneManager.LoadScene("2_VILLAGE_SCENE");
+    public void SwitchToGameScene()
+    {
+        if (GameData.NeedsTutorial)
+            SceneManager.LoadScene("0_Tutorial");
+        SceneManager.LoadScene("2_VILLAGE_SCENE");
+    } 
     #endregion
 }

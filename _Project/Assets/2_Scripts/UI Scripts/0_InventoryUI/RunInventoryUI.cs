@@ -1,7 +1,5 @@
 using UnityEngine;
-using TMPro;
 using System;
-
 public class RunInventoryUI : MonoBehaviour
 {
     //used in the village scene
@@ -18,7 +16,7 @@ public class RunInventoryUI : MonoBehaviour
     const int SIZE = SIZE_X * SIZE_Y;
     SlotUI[,] slots = new SlotUI[SIZE_Y, SIZE_X];
     SlotUI _selectedSlot = null;
-    Action _onSelectedSlotChanged = null;
+
     #endregion
     #region PUBLIC VARS
     SlotUI SelectedSlot
@@ -27,9 +25,18 @@ public class RunInventoryUI : MonoBehaviour
         set
         {
             _selectedSlot = value;
-            _onSelectedSlotChanged?.Invoke();
+            if (value != null)
+            {
+                OnSelectedMaterial?.Invoke(SelectedMaterial);
+            }
+            else
+                OnUnSelectedMaterial?.Invoke();
         }
     }
+    public bool HasMaterialSelected => _selectedSlot != null;
+    public MaterialName SelectedMaterial => _selectedSlot.MaterialAssigned;
+    public Action<MaterialName> OnSelectedMaterial { get; set; } = null;
+    public Action OnUnSelectedMaterial { get; set; } = null;
     #endregion
     #region PRIVATE FUNCS
     private void Awake()
@@ -46,7 +53,43 @@ public class RunInventoryUI : MonoBehaviour
             }
         }
     }
+    private void OnEnable()//al inicio y al activar un objeto
+    {
+        //Actualizar inventario cada vez q se activa (al abrir menú de inventario)
+        UpdateInventory();
 
+        //Hacer callbacks para q se actualize la UI
+        GameData.RunInventory.SubscribeToInventoryChange(() =>
+        {
+            UpdateInventory();
+        });
+        GameData.RunInventory.SubscribeToMaterialDeleted((MaterialName name) =>
+        {
+            if (SelectedSlot == null) return;
+            if (SelectedMaterial == name)
+            {
+                SelectedSlot.Selected = false;
+                SelectedSlot = null;
+            }
+        });
+
+        GameData.RunInventory.SubscribeToMaterialAdded(() =>
+        {
+            if (SelectedSlot == null) return;
+            SelectedSlot.Selected = false;
+            SelectedSlot = null;
+        });
+    }
+
+    private void OnDisable()
+    {
+        //borrar los callbacks
+        GameData.RunInventory.CleanAllCallbacks();
+
+        foreach (SlotUI slot in slots)
+            slot.CleanCallBacks();
+
+    }
     private void UpdateInventory()
     {
         int position = 0;
@@ -55,7 +98,6 @@ public class RunInventoryUI : MonoBehaviour
             int amount = GameData.RunInventory.GetAmount(key);
             if (amount != 0 && position < SIZE)//ignoramos los huecos vacíos
             {
-
                 int x = position % SIZE_X;
                 int y = position / SIZE_X;
 
@@ -67,6 +109,12 @@ public class RunInventoryUI : MonoBehaviour
                     //Marcar nuevo seleccionado
                     SelectedSlot = slots[y, x];
                 });
+                slots[y, x].SubscribeToOnUnselected(() =>
+                {
+                    if (SelectedSlot == slots[y, x])
+                        SelectedSlot = null;
+                });
+
                 position++;
             }
         }
@@ -80,27 +128,7 @@ public class RunInventoryUI : MonoBehaviour
             position++;
         }
     }
-    private void OnEnable()//al inicio y al activar un objeto
-    {
-        //Actualizar inventario cada vez q se activa (al abrir menú de inventario)
-        UpdateInventory();
 
-        //Hacer callbacks para q se actualize la UI
-        GameData.RunInventory.SubscribeToInventoryChange(() =>
-        {
-            UpdateInventory();
-        });
-    }
-
-    private void OnDisable()
-    {
-        //borrar los callbacks
-        GameData.RunInventory.CleanAllCallbacks();
-
-        foreach (SlotUI slot in slots)
-            slot.CleanCallBacks();
-
-    }
     #endregion
     #region PUBLIC FUNCS
     public void AddRandomMat()

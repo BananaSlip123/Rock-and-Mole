@@ -12,6 +12,7 @@ public static class GameData
     const int INVENTORY_SIZE = 12;
 
     static int _coins = -1;
+    static bool? _needsTutorial = null;
     static PersistentInventory _inventory = new PersistentInventory("INV");//q materiales y en q cantidad  tienes
     static Inventory _runInventory = new Inventory();//los q consigues en cada run
 
@@ -48,6 +49,25 @@ public static class GameData
                 _coins = value;
                 OnCoinsChange?.Invoke(value);
                 PlayerPrefs.SetInt("COINS", _coins);
+                PlayerPrefs.Save();
+            }
+        }
+    }
+    public static bool NeedsTutorial
+    {
+        get
+        {
+            if ( ! _needsTutorial.HasValue)
+                _needsTutorial = PlayerPrefs.GetInt("TUT", 1) == 1; //por defecto es true
+            return _needsTutorial.Value;
+        }
+        set
+        {
+            if(value != _needsTutorial.Value)
+            {
+                _needsTutorial = value;
+                int value2Int = value ?  1 : 0;
+                PlayerPrefs.SetInt("TUT", value2Int);
                 PlayerPrefs.Save();
             }
         }

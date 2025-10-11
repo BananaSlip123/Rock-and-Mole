@@ -3,14 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class VillageNavigation : MonoBehaviour
 {
+    public static VillageNavigation Instance { get; private set; }
+
     [SerializeField] VillageMenuUI villageMenuUI;
     [SerializeField] GameObject go_village;
     [SerializeField] GameObject go_shop;
 
-    //[SerializeField] GameObject go_playerRef;
     //[SerializeField] GameObject go_forge;
-
-    public static VillageNavigation Instance { get; private set; }
 
     enum Locations
     {
@@ -33,7 +32,7 @@ public class VillageNavigation : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {

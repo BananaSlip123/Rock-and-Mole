@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System;
 using TMPro;
-using NUnit.Framework;
 public class CallOut : MonoBehaviour
 {
     //Dentro de un prefab (con un cuadro de texto y un botón)
@@ -18,7 +18,6 @@ public class CallOut : MonoBehaviour
     string[] _dialogs;
     int _currentDialog = 0;
     State _state = State.disabled;
-
     #endregion
 
     #region PUBLIC PROPERTIES
@@ -38,7 +37,7 @@ public class CallOut : MonoBehaviour
             switch (value) //acción especifica a cada nuevo valor
             {
                 case State.disabled:
-                    gameObject.SetActive(false);
+                    Disable();
                     _dialogs = null;
                     break;
                 case State.writingText:
@@ -52,6 +51,9 @@ public class CallOut : MonoBehaviour
     }
     #endregion
 
+    #region PUBLIC VARS
+    public Action OnCallOutDisable = null;
+    #endregion
     #region PUBLIC FUNCS
     public void StartCallOut(string[] dialogs)
     {
@@ -65,34 +67,44 @@ public class CallOut : MonoBehaviour
     {
         //llamada al hacer click o con alguna tecla 
         //pasa los diálogos
-        if (_state == State.writingText) StopWriting();
-        else if (_state == State.showText) AdvanceDialog();
+        
+      //  if (_state == State.writingText) StopWriting();
+        if (_state == State.showText) AdvanceDialog();
+    }
+
+    public void Disable()
+    {
+        StopAllCoroutines();
+
+        gameObject.SetActive(false);
     }
     #endregion
 
     #region PRIVATE FUNCS
-    private void Awake()
-    {
-        gameObject.SetActive(false);
-    }
 
+    IEnumerator DelayedAction(Action a, float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        a.Invoke();
+    }
     IEnumerator Writing()
     {
         string text = "";
 
-        try
+        
+        foreach (char Character in _dialogs[_currentDialog])
         {
-            foreach (char Character in _dialogs[_currentDialog])
-            {
-                text += Character;
-                CurrentText = text;
-                yield return new WaitForSeconds(0.2f);
-            }
+            text += Character;
+            CurrentText = text;
+            yield return new WaitForSeconds(0.14f);
         }
-        finally //tanto si usas stop como si acaba el for
-        {
-            StateValue = State.showText;
-        }
+       
+        StateValue = State.showText;
+    }
+
+    private void OnEnable()
+    {
+        //_canInteract = true;
     }
     void StopWriting()
     {
@@ -105,6 +117,7 @@ public class CallOut : MonoBehaviour
         if(_currentDialog == _dialogs.Length-1) //saltas el ultimo
         {
             StateValue = State.disabled;
+            OnCallOutDisable?.Invoke();
         }
         else
         {

@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 using System;
 public class InventoryUI : MonoBehaviour
 {
@@ -17,7 +16,6 @@ public class InventoryUI : MonoBehaviour
     const int SIZE = SIZE_X * SIZE_Y;
     SlotUI[,] slots = new SlotUI[SIZE_Y, SIZE_X];
     SlotUI _selectedSlot = null;
-    MaterialName _lastSelectedMaterial;
 
     #endregion
     #region PUBLIC VARS
@@ -30,7 +28,6 @@ public class InventoryUI : MonoBehaviour
             if (value != null)
             {
                 OnSelectedMaterial?.Invoke(SelectedMaterial);
-                _lastSelectedMaterial = _selectedSlot.MaterialAssigned;
             }
             else
                 OnUnSelectedMaterial?.Invoke();
@@ -45,11 +42,11 @@ public class InventoryUI : MonoBehaviour
     private void Awake()
     {
         //Crear Slots
-        for(int x=0; x< SIZE_X; x++)
+        for (int x = 0; x < SIZE_X; x++)
         {
             for (int y = 0; y < SIZE_Y; y++)
             {
-                slots[y,x] = Instantiate(go_slotPrefab,this.transform).GetComponent<SlotUI>();
+                slots[y, x] = Instantiate(go_slotPrefab, this.transform).GetComponent<SlotUI>();
                 float coordX = initialX + distanceX * x;
                 float coordY = initialY - distanceY * y;
                 slots[y, x].Init(new Vector3(coordX, coordY, 2));
@@ -100,7 +97,6 @@ public class InventoryUI : MonoBehaviour
             int amount = GameData.Inventory.GetAmount(key);
             if (amount != 0 && position < SIZE)//ignoramos los huecos vacíos
             {
-                
                 int x = position % SIZE_X;
                 int y = position / SIZE_X;
 
