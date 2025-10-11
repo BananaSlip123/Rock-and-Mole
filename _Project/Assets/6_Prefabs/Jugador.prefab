@@ -127,6 +127,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 130.29993
       objectReference: {fileID: 0}
+    - target: {fileID: 2845827949408424097, guid: 1316e9090d365c445b5b55702d156457, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 4328044369882156702}
+    - target: {fileID: 2845827949408424097, guid: 1316e9090d365c445b5b55702d156457, type: 3}
+      propertyPath: offset.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845827949408424097, guid: 1316e9090d365c445b5b55702d156457, type: 3}
+      propertyPath: offset.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845827949408424097, guid: 1316e9090d365c445b5b55702d156457, type: 3}
+      propertyPath: offset.z
+      value: -13
+      objectReference: {fileID: 0}
     - target: {fileID: 6868441561298026386, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_Name
       value: Main Camera

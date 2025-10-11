@@ -66,7 +66,7 @@ namespace PlayerComponents
             if (!isMoving)
                 return;
 
-            go.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);
+            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);
             Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-movement.y, 0, movement.x).normalized), Vector3.up);
 
             transform.rotation = rotation;
