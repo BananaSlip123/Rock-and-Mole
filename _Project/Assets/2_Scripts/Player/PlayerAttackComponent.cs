@@ -70,8 +70,8 @@ namespace PlayerComponents
                 isInCooldown = true;
                 ActiveHitbox();
             }
-            else
-                Debug.Log("Estoy en cooldown");
+            //else
+                //Debug.Log("Estoy en cooldown");
             
         }
 

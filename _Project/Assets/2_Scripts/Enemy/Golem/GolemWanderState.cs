@@ -104,6 +104,8 @@ public class GolemWanderState : IStateComponent, IMoveComponent
     public void Move()
     {
         enemyTransform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(directionChoosed.x, 0, directionChoosed.y), speed);
+        Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-directionChoosed.y, 0, directionChoosed.x).normalized), Vector3.up);
+        enemyTransform.rotation = rotation;
     }
 
     Vector2 InitializeMovement()

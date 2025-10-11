@@ -18,13 +18,15 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     IDamageableComponent playerHealth;
 
     Transform enemyTransform;
+    Transform playerTransform;
 
     Collider attackHitbox;
 
-    public GolemAttackState(IStateMachineComponent m, Transform e, IDamageableComponent p)
+    public GolemAttackState(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t)
     {
         mStateMachine = m;
         enemyTransform = e;
+        playerTransform = t;
         playerHealth = p;
     }
 
@@ -50,7 +52,10 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     }
 
     public void FixedUpdate()
-    {       
+    {
+        Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-playerTransform.position.y, 0, playerTransform.position.x).normalized), Vector3.up);
+
+        enemyTransform.rotation = rotation;
         if (isInCooldown)
         {
             timeToAttack += Time.fixedDeltaTime;
