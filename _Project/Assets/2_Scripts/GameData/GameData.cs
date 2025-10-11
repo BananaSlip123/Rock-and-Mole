@@ -166,7 +166,7 @@ public class PersistentInventory
         SaveMaterial(name);
         //if (oldVal == 0) _onInventoryChange?.Invoke();
         //else _dict_onSlotValueChange[name]?.Invoke(amount);
-        if (oldVal == 0) _onMaterialAdded.Invoke();
+        if (oldVal == 0) _onMaterialAdded?.Invoke();
         _onInventoryChange?.Invoke();
     }
     public bool TryRemoveObject(MaterialName name, int amount)
@@ -185,7 +185,7 @@ public class PersistentInventory
         //    _onInventoryChange?.Invoke();
         //else
         //    _dict_onSlotValueChange[name]?.Invoke(amount);
-        if (newAmount == 0) _onMaterialDeleted.Invoke(name);
+        if (newAmount == 0) _onMaterialDeleted?.Invoke(name);
         _onInventoryChange?.Invoke();
         
 
