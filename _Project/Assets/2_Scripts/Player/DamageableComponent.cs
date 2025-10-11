@@ -1,3 +1,4 @@
+using Codice.Client.Common.GameUI.Checkin;
 using System;
 using UnityEngine;
 
@@ -51,5 +52,6 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     private void Death()
     {
         Destroy(this.gameObject);
+        GameData.Put_RunInventory_Into_Inventory(70);
     }
 }
