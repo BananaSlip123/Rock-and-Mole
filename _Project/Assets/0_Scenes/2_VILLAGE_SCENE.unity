@@ -4110,6 +4110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jugador
       objectReference: {fileID: 0}
+    - target: {fileID: 4328044369882156702, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6411353102807914056, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.61
@@ -5731,7 +5735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -17.5}
+  m_AnchoredPosition: {x: -49.999985, y: -17.5}
   m_SizeDelta: {x: -400, y: -94.999985}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1170272647
@@ -5829,7 +5833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -17.5}
+  m_AnchoredPosition: {x: -49.999985, y: -17.5}
   m_SizeDelta: {x: -400, y: -94.999985}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1194614128
@@ -7298,10 +7302,14 @@ MonoBehaviour:
   go_callOut: {fileID: 1753518846}
   scene: 0
   dialogsToShow:
-  - Bienvenido
-  - Wraaaaaaaaaaa
-  - Popolote
-  - "A\xF1a A\xF1a a\xF1a"
+  - "\xA1No hay lugar m\xE1s acogedor que el hogar!"
+  - "Al volver de la mina podr\xE1s visitar la tienda y la forja"
+  - "En la forja, el herrero te podr\xE1 ayudar a mejorar el pico"
+  - "Un buen pico te ayuda a picar m\xE1s r\xE1pido..."
+  - "\xA1Y a ser implacable contra los enemigos!"
+  - "En la tienda podr\xE1s vender materiales y comprar equipamiento"
+  - "Dentro del ba\xFAl podr\xE1s ver los materiales que traes de tus expediciones"
+  - "Si quieres volver a bajar a la mina, solo dir\xEDgete a esa puerta de all\xED"
   playerInput: {fileID: 302192425}
 --- !u!1 &1541318219
 GameObject:
@@ -8000,14 +8008,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 2
+  m_ContentType: 9
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 2
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 2
+  m_CharacterValidation: 1
   m_RegexValue: 
   m_GlobalPointSize: 14
   m_CharacterLimit: 4
@@ -9362,6 +9370,10 @@ PrefabInstance:
     - target: {fileID: 2340062443692536746, guid: f6206968907f7e84db3a01ec8d15863a, type: 3}
       propertyPath: m_Name
       value: CallOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340062443692536746, guid: f6206968907f7e84db3a01ec8d15863a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4148162251804715230, guid: f6206968907f7e84db3a01ec8d15863a, type: 3}
       propertyPath: m_Pivot.x

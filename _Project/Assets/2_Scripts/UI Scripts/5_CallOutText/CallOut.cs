@@ -75,7 +75,8 @@ public class CallOut : MonoBehaviour
     public void Disable()
     {
         StopAllCoroutines();
-
+        _dialogs = null;
+        _currentDialog = 0;
         gameObject.SetActive(false);
     }
     #endregion
