@@ -18,10 +18,13 @@ public class GolemWanderState : IStateComponent, IMoveComponent
 
     Transform enemyTransform;
 
-    public GolemWanderState(IStateMachineComponent m, Transform enemyTransform)
+    Animator animator;
+
+    public GolemWanderState(IStateMachineComponent m, Transform enemyTransform, Animator a)
     {
         mStateMachine = m;
         this.enemyTransform = enemyTransform;
+        animator = a;
     }
 
     enum Directions
@@ -73,7 +76,7 @@ public class GolemWanderState : IStateComponent, IMoveComponent
 
         if (player)
         {
-            mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine));
+            mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine, animator));
             return;
         }
 

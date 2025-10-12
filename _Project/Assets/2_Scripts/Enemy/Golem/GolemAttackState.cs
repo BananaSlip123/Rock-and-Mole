@@ -22,12 +22,15 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     Collider attackHitbox;
 
-    public GolemAttackState(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t)
+    Animator animator;
+
+    public GolemAttackState(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t, Animator a)
     {
         mStateMachine = m;
         enemyTransform = e;
         playerTransform = t;
         playerHealth = p;
+        animator = a;
     }
 
     public void ActiveHitbox()
@@ -44,18 +47,16 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     {
         attackHitbox = enemyTransform.GetComponentInChildren<Collider>();
         Debug.Log("ESTOY ATACANDO");
+        animator.SetBool("Atacar", true);
     }
 
     public void Exit()
     {
-
+        animator.SetBool("Atacar", false);
     }
 
     public void FixedUpdate()
     {
-        Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-playerTransform.position.y, 0, playerTransform.position.x).normalized), Vector3.up);
-
-        enemyTransform.rotation = rotation;
         if (isInCooldown)
         {
             timeToAttack += Time.fixedDeltaTime;
@@ -65,7 +66,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
                 isInCooldown = false;
                 timeToAttack = 0f;
 
-                mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine));
+                mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine, animator));
             }
 
             return;

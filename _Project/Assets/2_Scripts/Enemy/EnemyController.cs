@@ -5,9 +5,11 @@ public class EnemyController : MonoBehaviour, IStateMachineComponent
     [SerializeField] IStateComponent actualState;
     [SerializeField] IStateComponent lastState;
 
+    [SerializeField]Animator animator;
+
     void Awake()
     {
-        actualState = new GolemWanderState(this, transform);
+        actualState = new GolemWanderState(this, transform, animator);
         actualState.Enter();
     }
 

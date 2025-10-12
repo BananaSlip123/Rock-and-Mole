@@ -26,6 +26,7 @@ namespace PlayerComponents
         #endregion
 
         private Vector2 movement = new Vector2();
+        [SerializeField] Animator animator;
 
         public void IsMoving(Vector2 valor)
         {
@@ -33,11 +34,14 @@ namespace PlayerComponents
             {
                 isMoving = false;
                 movement = Vector2.zero;
+
+                animator.SetBool("Andar", false);
                 return;
             }
 
             isMoving = true;
             movement = valor;
+            animator.SetBool("Andar", true);
         }
 
         public bool IsPlayerDashing()

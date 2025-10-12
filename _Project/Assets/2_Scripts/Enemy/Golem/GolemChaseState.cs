@@ -5,15 +5,32 @@ public class GolemChaseState : IStateComponent, IMoveComponent
 {
     Transform enemyTransform;
     [SerializeField] float speed = 5f;
+    float radiusToAttack = 1f;
+    float radiusToStopChasing = 1f;
 
     Vector3 playerPosition;
 
     IStateMachineComponent mStateMachine;
 
-    public GolemChaseState(Transform e, IStateMachineComponent mStateMachine)
+    Animator animator;
+
+    public GolemChaseState(Transform e, IStateMachineComponent mStateMachine, Animator a)
     {
         enemyTransform = e;
         this.mStateMachine = mStateMachine;
+        animator = a;
+
+        if (animator.CompareTag("Chikito"))
+        {
+            radiusToAttack = 2f;
+            radiusToStopChasing = 5f;
+        }    
+        else
+        {
+            radiusToAttack = 10f;
+            radiusToStopChasing = 15f;
+        }
+            
     }
 
     public void Enter()
@@ -36,14 +53,14 @@ public class GolemChaseState : IStateComponent, IMoveComponent
         if(TakePlayerPosition())
         {
             Move();
-            if ((enemyTransform.position - playerPosition).magnitude < 10f)
+            if ((enemyTransform.position - playerPosition).magnitude < radiusToAttack)
             {
-                mStateMachine.ChangeState(new GolemAttackState(mStateMachine, enemyTransform, GameObject.FindGameObjectWithTag("Player").GetComponent<IDamageableComponent>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>()));
+                mStateMachine.ChangeState(new GolemAttackState(mStateMachine, enemyTransform, GameObject.FindGameObjectWithTag("Player").GetComponent<IDamageableComponent>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(), animator));
             }
         }
         else
         {
-            mStateMachine.ChangeState(new GolemWanderState(mStateMachine, enemyTransform));
+            mStateMachine.ChangeState(new GolemWanderState(mStateMachine, enemyTransform, animator));
         }
     }
 
@@ -64,7 +81,7 @@ public class GolemChaseState : IStateComponent, IMoveComponent
 
     private bool TakePlayerPosition()
     {
-        Collider[] p = Physics.OverlapSphere(enemyTransform.position, 15f);
+        Collider[] p = Physics.OverlapSphere(enemyTransform.position, radiusToStopChasing);
 
         foreach (Collider c in p)
         {

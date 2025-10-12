@@ -20,6 +20,9 @@ namespace PlayerComponents
 
         [SerializeField] Collider attackHitbox;
         [SerializeField] PickaxeStatsScripteableObject actualPickaxeStats;
+        [SerializeField] Animator animator;
+        [SerializeField] Animator animatorPickaxe;
+
 
         void FixedUpdate()
         {
@@ -45,12 +48,15 @@ namespace PlayerComponents
 
                 if (IsHitingAnEnemy(localEnemies))
                     DoDamage(localEnemies);
-                    
 
                 if (timeHitbox >= TIME_HITBOX)
                 {
+                    animator.SetBool("Atacar", false);
+                    animatorPickaxe.SetBool("Atacar", false);
+                    HidePickaxe.instance.HidePickaxeAnimation(false);
                     attackHitbox.enabled = false;
                     timeHitbox = 0f;
+
                     foreach(Collider c in hitColliders)
                     {
                         if (c != null)
@@ -69,6 +75,13 @@ namespace PlayerComponents
             {
                 isInCooldown = true;
                 ActiveHitbox();
+
+                if (!animator.GetBool("Atacar"))
+                    animator.SetBool("Atacar", true);
+
+                animatorPickaxe.SetBool("Atacar", true);
+
+                HidePickaxe.instance.HidePickaxeAnimation(true);
             }
             //else
                 //Debug.Log("Estoy en cooldown");
@@ -81,8 +94,8 @@ namespace PlayerComponents
         }
 
         public void DoDamage(Collider[] hitColliders)
-        {
-            foreach(Collider hitCollider in hitColliders)
+        {           
+            foreach (Collider hitCollider in hitColliders)
             {
                 if (hitCollider != null)
                 {
