@@ -86,7 +86,7 @@ public static class GameData
 
         Dictionary<MaterialName, int> MaterialsCollected = new Dictionary<MaterialName, int>();
 
-        foreach(KeyValuePair<MaterialName,int> materialData in RunInventory.Objects)
+        foreach(KeyValuePair<MaterialName,int> materialData in RunInventory.Objects.ToArray())
         {
             int amount = materialData.Value;
 
@@ -245,7 +245,7 @@ public class Inventory
         int oldVal = _objectsAmount[name];
         _objectsAmount[name] = oldVal + amount;
 
-        if (oldVal == 0) _onMaterialAdded.Invoke();
+        if (oldVal == 0) _onMaterialAdded?.Invoke();
         _onInventoryChange?.Invoke();
     }
     public bool TryRemoveObject(MaterialName name, int amount)
@@ -260,7 +260,7 @@ public class Inventory
 
         _objectsAmount[name] = newAmount;
         
-        if (newAmount == 0) _onMaterialDeleted.Invoke(name);
+        if (newAmount == 0) _onMaterialDeleted?.Invoke(name);
         _onInventoryChange?.Invoke();
 
         return true;
