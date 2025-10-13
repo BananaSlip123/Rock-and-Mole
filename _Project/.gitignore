@@ -48,7 +48,7 @@ ExportedObj/
 *.VC.db
 
 # Ignorar archivos meta de FBX
-*.fbx.meta
+#*.fbx.meta
 
 # Unity3D generated meta files
 *.pidb.meta
