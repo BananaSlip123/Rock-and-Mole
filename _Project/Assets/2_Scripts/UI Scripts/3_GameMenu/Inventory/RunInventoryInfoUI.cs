@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class InventoryInfoUI : MonoBehaviour
+public class RunInventoryInfoUI : MonoBehaviour
 {
     //used in the village scene
     #region SERIALIZABLE
@@ -13,7 +13,7 @@ public class InventoryInfoUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI txt_materialName;
     [SerializeField] TextMeshProUGUI txt_materialInfo;
 
-    [SerializeField] InventoryUI inventory;
+    [SerializeField] RunInventoryUI runInventory;
 
     #endregion
     #region PRIVATE VARS
@@ -106,14 +106,14 @@ public class InventoryInfoUI : MonoBehaviour
         UpdateInfoUI();
 
         //Añadir callback sobre el material seleccionado en InventoryUI
-        inventory.OnSelectedMaterial += OnSelectedMaterial;
-        inventory.OnUnSelectedMaterial += OnUnSelectedMaterial;
+        runInventory.OnSelectedMaterial += OnSelectedMaterial;
+        runInventory.OnUnSelectedMaterial += OnUnSelectedMaterial;
     }
 
     private void UpdateInfoUI()
     {
-        if (inventory.HasMaterialSelected)
-            OnSelectedMaterial(inventory.SelectedMaterial);
+        if (runInventory.HasMaterialSelected)
+            OnSelectedMaterial(runInventory.SelectedMaterial);
         else
             OnUnSelectedMaterial();
     }
@@ -121,14 +121,14 @@ public class InventoryInfoUI : MonoBehaviour
     private void OnDisable()
     {
         _init = false;
-        inventory.OnSelectedMaterial -= OnSelectedMaterial;
+        runInventory.OnSelectedMaterial -= OnSelectedMaterial;
     }
 
     private void OnSelectedMaterial(MaterialName material)
     {
         MaterialSelected = material;
         IsMaterialSelected = true;
-        AvailableAmount = GameData.Inventory.GetAmount(material);
+        AvailableAmount = GameData.RunInventory.GetAmount(material);
         Price = GameData.MaterialsPrices[material];
     }
     private void OnUnSelectedMaterial()

@@ -14,7 +14,7 @@ public class VillageMenuUI : MonoBehaviour
     [SerializeField] GameObject go_wardrobeWindow;
     [Header("COMMON ELEMENTS")] //elementos compartidos por varias ventanas
     [SerializeField] GameObject go_inventory; //used by shop & inventory windows
-    [SerializeField] GameObject go_closeIcon;
+   // [SerializeField] GameObject go_closeIcon;
 
     #endregion
     #region PRIVATE VARS
@@ -58,7 +58,7 @@ public class VillageMenuUI : MonoBehaviour
         go_wardrobeWindow.SetActive(nextWindow == Windows.Wardrobe);
 
         go_inventory.SetActive(nextWindow == Windows.Shop || nextWindow == Windows.Inventory);
-        go_closeIcon.SetActive(nextWindow != Windows.Main && nextWindow != Windows.Pause);
+        //go_closeIcon.SetActive(nextWindow != Windows.Main && nextWindow != Windows.Pause);
     }
     #endregion
 

@@ -135,7 +135,7 @@ public class RunInventoryUI : MonoBehaviour
     {
         System.Random r = new System.Random();
         int name = r.Next(Enum.GetValues(typeof(MaterialName)).Length);
-        int amount = r.Next(5);
+        int amount = r.Next(5)+1;
         GameData.RunInventory.AddObject((MaterialName)name, amount);
     }
     #endregion

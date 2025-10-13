@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef6ffb691bc696c429e58439cb422269
+guid: c4a274c42bacbbe499279dff5a3a63cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ventanasUI_512x512_0
+      name: ventanasUI_gradient2_border_512x512_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 325c0992ca86b5346a10ebb87ba05bb9
-      internalID: -2110957822
+      spriteID: fbc3866649d6d1e4691d4159f1e3f890
+      internalID: 1641920790
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 1e979b4af991a654fbfd28ff1f51e22c
     internalID: 0
     vertices: []
     indices: 
@@ -145,7 +145,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ventanasUI_512x512_0: -2110957822
+      ventanasUI_gradient2_border_512x512_0: 1641920790
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

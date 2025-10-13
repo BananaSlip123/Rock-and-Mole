@@ -1,33 +1,60 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
-    [SerializeField] GameObject go_RunInventory;
-    [SerializeField] GameObject go_LifeBar;
-    [SerializeField] GameObject go_RunInventoryButton;
+    #region SERIALIZABLE
+    [SerializeField] GameObject go_mainWindow;
+    [SerializeField] GameObject go_pauseWindow;
+    [SerializeField] GameObject go_settingsWindow;
+    [SerializeField] GameObject go_runInventoryWindow;
+    [SerializeField] GameObject go_runInventoryInfoWindow;
+    [SerializeField] GameObject go_lifeBar;
+    #endregion
 
-    [SerializeField]  bool showLifeBar = true;
-    [SerializeField]  bool showInventory = true;
+    #region PRIVATE VARS
+    Windows _currentWindow = Windows.Main;
+    #endregion
+    #region PUBLIC VARS
+    public enum Windows
+    {
+        Main,
+        Pause,
+        Settings,
+        RunInventory,
+    }
 
+    public Windows CurrentWindow
+    {
+        get => _currentWindow;
+        set
+        {
+            SwitchWindow(value);
+            _currentWindow = value;
+        }
+    }
+    #endregion
+    #region PRIVATE FUNCS
     private void Awake()
     {
-        go_LifeBar.SetActive(showLifeBar);
-        go_RunInventoryButton.SetActive(showInventory);
-        go_RunInventory.SetActive(false);
+        SwitchWindow(Windows.Main);
     }
-    public void OnInventoryButtonClick()
+    void SwitchWindow(Windows nextWindow)
     {
-        go_RunInventory.SetActive(showInventory);
-        go_LifeBar.SetActive(false);
-        go_RunInventoryButton.SetActive(false);
+        go_mainWindow.SetActive(nextWindow == Windows.Main);
+        go_settingsWindow.SetActive(nextWindow == Windows.Settings);
+        go_pauseWindow.SetActive(nextWindow == Windows.Pause);
+        go_runInventoryWindow.SetActive(nextWindow == Windows.RunInventory);
+        go_runInventoryInfoWindow.SetActive(nextWindow == Windows.RunInventory);
+        go_lifeBar.SetActive(nextWindow == Windows.Main);
     }
+    #endregion
 
-    public void OnCloseInventoryClick()
-    {
-        go_RunInventoryButton.SetActive(showInventory);
-        go_LifeBar.SetActive(showLifeBar);
-        go_RunInventory.SetActive(false);
-    }
+    #region PUBLIC FUNCS
+    public void Button_OpenPause() => CurrentWindow = Windows.Pause;
+    public void Button_OpenRunInventory() => CurrentWindow = Windows.RunInventory;
+    public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
+    public void Button_OpenMain() => CurrentWindow = Windows.Main;
 
-
+    #endregion
 }

@@ -8,6 +8,7 @@ public class SlotUI : MonoBehaviour
     //A inventory has many slots, there is a slot prefab
     #region SERIALIZABLE
     [SerializeField] Image img_imageComponent;
+    [SerializeField] Image img_lightBorder;
     [SerializeField] TextMeshProUGUI txt_amount;
     [SerializeField] GameObject go_Info;//cuando desactivemos el objeto del inventario, q ocultamos
     [SerializeField] IconDataInspector[] inspectorIcons;
@@ -79,7 +80,7 @@ public class SlotUI : MonoBehaviour
             if(value != _selected && Enabled)
             {
                 _selected = value;
-                GetComponent<Image>().enabled = value;
+                img_lightBorder.enabled = value;
 
                 if (value) _onSelection?.Invoke();
                 else _onUnselection?.Invoke();
@@ -104,6 +105,10 @@ public class SlotUI : MonoBehaviour
     }
     #endregion
     #region PRIVATE FUNCS
+    private void Awake()
+    {
+        img_lightBorder.enabled = false;
+    }
     void Init()
     {
         Selected = false;
