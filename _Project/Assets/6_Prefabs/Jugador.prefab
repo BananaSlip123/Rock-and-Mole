@@ -168,18 +168,6 @@ PrefabInstance:
       propertyPath: go
       value: 
       objectReference: {fileID: 6411353102807914056}
-    - target: {fileID: 1411762379138361720, guid: 2f01edc73969315479e666196310494e, type: 3}
-      propertyPath: animatorPickaxe
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2463134159168281087, guid: 2f01edc73969315479e666196310494e, type: 3}
-      propertyPath: attackPickaxe
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2463134159168281087, guid: 2f01edc73969315479e666196310494e, type: 3}
-      propertyPath: walkingPickaxe
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2636274778658534371, guid: 2f01edc73969315479e666196310494e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
