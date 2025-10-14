@@ -22,8 +22,12 @@
   --bs-teal: #1abc9c;
   --bs-cyan: #0dcaf0;
   /*Colores nuestros*/
-  --bs-golden: #cac3ad;
-  --bs-dark-golden: #888270;
+  --bs-golden: #cac3ad; /*rgb: 202, 195, 173*/
+  --bs-golden-rgb: 202, 195, 173;
+  --bs-dark-golden: #888270; /*rgb: 109, 103, 85*/
+  --bs-dark-golden-rgb: 109, 103, 85;
+  --bs-darkest-golden: #37342b; /*rgb: 55, 52, 43*/
+  --bs-darkest-golden-rgb: 55, 52, 43;
   /*----------------*/
   --bs-black: #000;
   --bs-white: #fff;
@@ -2848,21 +2852,22 @@ textarea.form-control-lg {
   opacity: var(--bs-btn-disabled-opacity);
 }
 
+/*Colores botones que cierran portfolio, el de cerrar ventana*/
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #a9ede0;
-  --bs-btn-border-color: #1abc9c;
+  --bs-btn-bg: var(--bs-dark-golden);
+  --bs-btn-border-color: var(--bs-dark-golden);
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #16a085;
-  --bs-btn-hover-border-color: #15967d;
+  --bs-btn-hover-bg: var(--bs-darkest-golden);
+  --bs-btn-hover-border-color: var(--bs-darkest-golden);
   --bs-btn-focus-shadow-rgb: 60, 198, 171;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #15967d;
-  --bs-btn-active-border-color: #148d75;
+  --bs-btn-active-bg: var(--bs-darkest-golden);
+  --bs-btn-active-border-color: var(--bs-darkest-golden);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #1abc9c;
-  --bs-btn-disabled-border-color: #1abc9c;
+  --bs-btn-disabled-bg: var(--bs-golden);
+  --bs-btn-disabled-border-color: var(--bs-golden);
 }
 
 .btn-secondary {
@@ -3086,15 +3091,16 @@ textarea.form-control-lg {
   --bs-gradient: none;
 }
 
+/*Colores botones redes sociales*/
 .btn-outline-light {
   --bs-btn-color: #f8f9fa;
   --bs-btn-border-color: #f8f9fa;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #f8f9fa;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #888270;
   --bs-btn-hover-border-color: #f8f9fa;
   --bs-btn-focus-shadow-rgb: 248, 249, 250;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #f8f9fa;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #37342b;
   --bs-btn-active-border-color: #f8f9fa;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #f8f9fa;
@@ -8043,9 +8049,10 @@ textarea.form-control-lg {
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
 }
 
+/*Text de título dentro de portfolio*/
 .text-secondary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(var(--bs-darkest-golden-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-success {
@@ -10856,13 +10863,15 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+/*Color líneas banner de la estrella*/
 .divider-custom .divider-custom-line {
   width: 100%;
   max-width: 7rem;
   height: 0.25rem;
-  background-color: #2c3e50;
+  background-color: var(--bs-darkest-golden);
   border-radius: 1rem;
-  border-color: #2c3e50;
+  border-color: var(--bs-darkest-golden);
 }
 .divider-custom .divider-custom-line:first-child {
   margin-right: 1rem;
@@ -10871,7 +10880,7 @@ html {
   margin-left: 1rem;
 }
 .divider-custom .divider-custom-icon {
-  color: #2c3e50;  /* color estrella portfolio*/
+  color: var(--bs-darkest-golden);  /* color estrella portfolio*/
   font-size: 2rem;
 }
 .divider-custom.divider-light .divider-custom-line {
@@ -10903,13 +10912,13 @@ html {
   font-weight: 700;
 }
 #mainNav .navbar-brand {
-  color: #fff; /*color START BOOTSTRAP*/
+  color: #000; /*color START BOOTSTRAP*/
 }
 #mainNav .navbar-nav {
   margin-top: 1rem;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link {
-  color: #fff; /*color letras PORTFOLIO, ABOUT, CONTACT de arriba*/
+  color: #000; /*color letras PORTFOLIO, ABOUT, CONTACT de arriba*/
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
   color: var(--bs-dark-golden); /*color que aparece al pasar el ratón por encima de PORTFOLIO,etc*/
@@ -10944,7 +10953,7 @@ html {
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
     color: #fff;
-    background: var(--bs-dark-golden); /*color de la zona en la que estamos al pasar el ratón por encima*/
+    background: var(--bs-darkest-golden); /*color de la zona en la que estamos al pasar el ratón por encima*/
   }
   #mainNav.navbar-shrink {
     padding-top: 0.5rem;
@@ -11013,13 +11022,15 @@ html {
   border-radius: 0.5rem;
   overflow: hidden;
 }
+
+/*Cuando pasas por encima de imágenes en portfolio*/
 .portfolio .portfolio-item .portfolio-item-caption {
   position: absolute;
   top: 0;
   left: 0;
   transition: all 0.2s ease-in-out;
   opacity: 0;
-  background-color: rgba(26, 188, 156, 0.9);
+  background-color: rgba(var(--bs-darkest-golden-rgb), 0.9);
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
