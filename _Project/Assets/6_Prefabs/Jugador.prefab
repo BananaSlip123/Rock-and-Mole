@@ -47,7 +47,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 369561775301436898, guid: 2c8fa728a0fe5a949983103b2807704a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1777966728293580949, guid: 2c8fa728a0fe5a949983103b2807704a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -694,6 +694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PAUSE WINDOW
       objectReference: {fileID: 0}
+    - target: {fileID: 5138399853336259424, guid: 5d6cc4c9427559a439eedff4ac64cbc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9197936184210096141, guid: 5d6cc4c9427559a439eedff4ac64cbc7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -744,15 +748,15 @@ PrefabInstance:
       objectReference: {fileID: 6859113592076703302}
     - target: {fileID: 1131538000382262491, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 1131538000382262491, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 1131538000382262491, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 1131538000382262491, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_LocalPosition.z
@@ -760,7 +764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131538000382262491, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 142
+      value: 162.2
       objectReference: {fileID: 0}
     - target: {fileID: 1131538000382262491, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1038,6 +1042,10 @@ PrefabInstance:
     - target: {fileID: 8979064816349871652, guid: 549fbd2af836e674989afb437ea745ce, type: 3}
       propertyPath: m_Name
       value: MAIN WINDOW
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979064816349871652, guid: 549fbd2af836e674989afb437ea745ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
