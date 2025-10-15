@@ -12,35 +12,35 @@ Banana Slip
    
 ## 1.1. DESCRIPCIÓN DEL CONTENIDO
 
-Rock & Mole es un juego de aventura y acción con vista cenital en 3D, ambientado en un pueblo subterráneo habitado por animales excavadores. El jugador controla a un joven topo que se adentra en una mina compuesta por salas diseñadas manualmente que se reorganizan aleatoriamente en cada run. A lo largo de la exploración, combate enemigos, encuentra eventos especiales y recolecta recursos que pueden venderse en la tienda para conseguir monedas o usarse para mejorar las armas y armaduras.
+*Rock & Mole* es un juego de aventura y acción con vista cenital en 3D, ambientado en un pueblo subterráneo habitado por animales excavadores. El jugador controla a un joven topo que se adentra en una mina compuesta por salas diseñadas manualmente que se reorganizan aleatoriamente en cada run. A lo largo de la exploración, combate enemigos, encuentra eventos especiales y recolecta recursos que pueden venderse en la tienda para conseguir monedas o usarse para mejorar las armas y armaduras.
 
 ## 1.2. CARACTERÍSTICAS PRINCIPALES
 
-Exploración modular y rejugable: La mina está compuesta por salas diseñadas manualmente que se reorganizan aleatoriamente en cada partida. 
+**Exploración modular y rejugable:** La mina está compuesta por salas diseñadas manualmente que se reorganizan aleatoriamente en cada partida. 
 
-Combate estratégico y ágil: El jugador combate con un pico en enfrentamientos cuerpo a cuerpo contra enemigos con patrones definidos, lo que obliga a pensar tácticamente. La dificultad aumenta con la profundidad.
+**Combate estratégico y ágil:** El jugador combate con un pico en enfrentamientos cuerpo a cuerpo contra enemigos con patrones definidos, lo que obliga a pensar tácticamente. La dificultad aumenta con la profundidad.
 
-Mejora persistente de equipo: Aunque cada run reinicia la mina, el progreso de armas y armaduras se conservan. Los materiales recolectados permiten mejorar el pico, la vestimenta y el casco. Esta progresión persistente motiva al jugador a seguir explorando.
+**Mejora persistente de equipo:** Aunque cada run reinicia la mina, el progreso de armas y armaduras se conservan. Los materiales recolectados permiten mejorar el pico, la vestimenta y el casco. Esta progresión persistente motiva al jugador a seguir explorando.
 
-Eventos especiales y salas únicas: Durante la exploración el jugador puede encontrar eventos especiales con salas únicas: cofres raros, zonas oscuras, rescates de NPCs o campamentos de descanso. Estos eventos aportan dinamismo y rejugabilidad.
+**Eventos especiales y salas únicas:** Durante la exploración el jugador puede encontrar eventos especiales con salas únicas: cofres raros, zonas oscuras, rescates de NPCs o campamentos de descanso. Estos eventos aportan dinamismo y rejugabilidad.
 
-Gestión y comercio en el pueblo:  Fuera de la mina el jugador interactúa con NPCs que permiten vender objetos y mejorar equipo. El pueblo funciona como centro de operaciones, ofreciendo una pausa entre runs y reforzando el vínculo con la historia.
+**Gestión y comercio en el pueblo:** Fuera de la mina el jugador interactúa con NPCs que permiten vender objetos y mejorar equipo. El pueblo funciona como centro de operaciones, ofreciendo una pausa entre runs y reforzando el vínculo con la historia.
 
-Gestión activa de la tienda: El jugador no solo vende los objetos recolectados, sino que gestiona su propia tienda dentro del pueblo. Puede decidir qué objetos poner a la venta, establecer los precios de cada uno, y observar cómo reaccionan los aldeanos ante sus decisiones comerciales.  Esta mecánica añade una capa estratégica y económica al juego.
+**Gestión activa de la tienda:** El jugador no solo vende los objetos recolectados, sino que gestiona su propia tienda dentro del pueblo. Puede decidir qué objetos poner a la venta, establecer los precios de cada uno, y observar cómo reaccionan los aldeanos ante sus decisiones comerciales.  Esta mecánica añade una capa estratégica y económica al juego.
 
-Diseño escalable y expansible: El juego está diseñado para crecer: nuevos biomas, enemigos, materiales y eventos pueden añadirse fácilmente gracias a una arquitectura modular. Esto permite actualizaciones constantes y contenido adicional sin comprometer la estabilidad del sistema base.
+**Diseño escalable y expansible:** El juego está diseñado para crecer: nuevos biomas, enemigos, materiales y eventos pueden añadirse fácilmente gracias a una arquitectura modular. Esto permite actualizaciones constantes y contenido adicional sin comprometer la estabilidad del sistema base.
 
 ## 1.3. GÉNERO
 
-Rock & Mole se encuentra dentro del género de aventura y acción, con presencia de mecánicas de gestión. El jugador no sólo explora y combate, sino que también administra su propia tienda, decide precios y mejora su equipo, añadiendo una capa de estrategia al juego. La estructura del juego cumple con los pilares de un roguelite, en el que cada partida presenta una mina distinta gracias a la reorganización aleatoria de salas, pero con una progresión persistente que permite conservar mejoras en armas y armaduras entre runs.
+*Rock & Mole* se encuentra dentro del género de aventura y acción, con presencia de mecánicas de gestión. El jugador no sólo explora y combate, sino que también administra su propia tienda, decide precios y mejora su equipo, añadiendo una capa de estrategia al juego. La estructura del juego cumple con los pilares de un roguelite, en el que cada partida presenta una mina distinta gracias a la reorganización aleatoria de salas, pero con una progresión persistente que permite conservar mejoras en armas y armaduras entre runs.
 
 ## 1.4. PLATAFORMAS
 
-Rock & Mole se desarrolla como un juego web, accesible desde navegadores en PC y dispositivos móviles. En ordenadores, el jugador podrá utilizar teclado y ratón y en móviles controles táctiles.
+*Rock & Mole* se desarrolla como un juego web, accesible desde navegadores en PC y dispositivos móviles. En ordenadores, el jugador podrá utilizar teclado y ratón y en móviles controles táctiles.
 
 ## 1.5. ESTILO VISUAL
 
-El estilo visual del juego combina una estética top-down en 3D con un estilo low poly con una ambientación cálida y subterránea. La dirección artística se inspira en títulos como Moonlighter 2, especialmente en el uso de colores suaves e iluminación ambiental, con texturas planas y simples.
+El estilo visual del juego combina una estética top-down en 3D con un estilo low poly con una ambientación cálida y subterránea. La dirección artística se inspira en títulos como *Moonlighter 2*, especialmente en el uso de colores suaves e iluminación ambiental, con texturas planas y simples.
 
 El protagonista y los NPCs están basados en animales que habitan bajo tierra, como topos o musarañas. Los enemigos representan una fusión entre criaturas animales (corrompidas) y elementos fantásticos.
 
@@ -54,7 +54,7 @@ El juego está dirigido a un público que abarca principalmente jóvenes y adult
 
 # 2. MONETIZACIÓN Y MODELO DE NEGOCIO
 
-El modelo de monetización de Rock & Mole se basa en un sistema Buy to Play, es decir, un pago único por el juego base. Esta decisión busca ofrecer una experiencia completa y accesible para el jugador.
+El modelo de monetización de *Rock & Mole* se basa en un sistema Buy to Play, es decir, un pago único por el juego base. Esta decisión busca ofrecer una experiencia completa y accesible para el jugador.
 
 Para mantener la viabilidad económica del proyecto a largo plazo, se implementará además una estrategia de monetización mediante DLCs (contenido descargable). Estos se lanzarán periódicamente una vez que la actividad de los jugadores en el juego base comience a disminuir. Cada DLC incluirá contenido significativo como nuevos niveles de la mina, enemigos, materiales recogibles adicionales y mejoras para el equipo del jugador.
 
@@ -71,21 +71,22 @@ El protagonista, un joven topo, vive en un pueblo subterráneo que depende de lo
 # 4. MECÁNICAS
 ## 4.1. JUGABILIDAD
 
-Estructura de las runs: Cada partida se desarrolla en una mina subterránea compuesta por salas conectadas. En cada run, el jugador desciende hacia niveles más profundos, enfrentándose a enemigos, recolectando materiales y descubriendo eventos especiales. Las salas están diseñadas manualmente pero se reorganizan de forma aleatoria en cada intento.
+**Estructura de las runs:** Cada partida se desarrolla en una mina subterránea compuesta por salas conectadas. En cada run, el jugador desciende hacia niveles más profundos, enfrentándose a enemigos, recolectando materiales y descubriendo eventos especiales. Las salas están diseñadas manualmente pero se reorganizan de forma aleatoria en cada intento.
 
 Las salas pueden contener enemigos, recursos mineros, cofres o eventos únicos. El objetivo es llegar lo más lejos posible, recolectar materiales valiosos y regresar al pueblo para mejorar el equipo. La partida termina si el jugador es derrotado o si logra llegar al final del nivel y vencer al jefe.
 
-Dificultad progresiva: La dificultad aumenta conforme se desciende en la mina. Los enemigos se vuelven más agresivos, aparecen nuevos tipos de enemigos y los recursos se vuelven más escasos. La intensidad de cada run está determinada por la profundidad, el tipo de enemigos y la combinación de salas.
+**Dificultad progresiva:** La dificultad aumenta conforme se desciende en la mina. Los enemigos se vuelven más agresivos, aparecen nuevos tipos de enemigos y los recursos se vuelven más escasos. La intensidad de cada run está determinada por la profundidad, el tipo de enemigos y la combinación de salas.
 
-Combate: El sistema de combate es en tiempo real, con un enfoque táctico. El jugador ataca con su pico, puede esquivar con un dash y debe aprender los patrones de los enemigos para sobrevivir. Cada criatura tiene comportamientos definidos.
+**Combate:** El sistema de combate es en tiempo real, con un enfoque táctico. El jugador ataca con su pico, puede esquivar con un dash y debe aprender los patrones de los enemigos para sobrevivir. Cada criatura tiene comportamientos definidos.
 
-Recursos y minería: Los materiales recogidos en la mina tienen un doble propósito: pueden venderse en la tienda gestionada por el jugador para obtener dinero o utilizarse en la herrería y en la tienda de ropa para mejorar el pico, la armadura y el casco. La gestión de estos recursos es clave para progresar en el juego.
+**Recursos y minería:** Los materiales recogidos en la mina tienen un doble propósito: pueden venderse en la tienda gestionada por el jugador para obtener dinero o utilizarse en la herrería y en la tienda de ropa para mejorar el pico, la armadura y el casco. La gestión de estos recursos es clave para progresar en el juego.
 
-Gestión de la tienda: Al regresar al pueblo, el jugador puede acceder a su propia tienda, donde gestionar la venta de materiales. Puede organizar los objetos que ha recolectado y establecer el precio de cada uno. Los NPCs del pueblo visitan la tienda y, según el precio, la rareza y su interés, pueden comprar o ignorar los productos. Vender a buen precio permite obtener monedas para invertir en mejoras, pero si los precios son demasiado altos, los aldeanos no comprarán. La tienda evoluciona con el progreso del jugador.
+**Gestión de la tienda:** Al regresar al pueblo, el jugador puede acceder a su propia tienda, donde gestionar la venta de materiales. Puede organizar los objetos que ha recolectado y establecer el precio de cada uno. Los NPCs del pueblo visitan la tienda y, según el precio, la rareza y su interés, pueden comprar o ignorar los productos. Vender a buen precio permite obtener monedas para invertir en mejoras, pero si los precios son demasiado altos, los aldeanos no comprarán. La tienda evoluciona con el progreso del jugador.
 
-Progresión del jugador: Aunque cada run comienza desde cero, el jugador mantiene las mejoras de equipo obtenidas. Esto permite avanzar más en cada intento, enfrentarse a enemigos más fuertes y acceder a salas más complejas.
+**Progresión del jugador:** Aunque cada run comienza desde cero, el jugador mantiene las mejoras de equipo obtenidas. Esto permite avanzar más en cada intento, enfrentarse a enemigos más fuertes y acceder a salas más complejas.
 
-Planificación y estrategia: Antes de cada run, el jugador debe decidir si quiere mantener el equipo actual o invertir en mejoras. No hay selección de habilidades como tal, pero el tipo de armadura, casco y pico equipado influye directamente en el rendimiento.
+**Planificación y estrategia:** Antes de cada run, el jugador debe decidir si quiere mantener el equipo actual o invertir en mejoras. No hay selección de habilidades como tal, pero el tipo de armadura, casco y pico equipado influye directamente en el rendimiento.
+
 ## 4.2. CONTROLES
 
 El juego está diseñado para jugarse tanto en PC como en dispositivos móviles. En ordenador, el jugador puede utilizar teclado y ratón o con mando tanto de Xbox como de PlayStation. En móvil, el juego requiere el uso de mando conectado, ya que no está optimizado para controles táctiles.
@@ -94,50 +95,50 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 
 ## 4.3. PERSONAJES
 
-Protagonista:
+**Protagonista:**
 
-Nombre: (Por determinar).
-Especie: Topo.
-Rol: Explorador y comerciante. Es el personaje controlado por el jugador
+* **Nombre:** (Por determinar).
+* **Especie:** Topo.
+* **Rol:** Explorador y comerciante. Es el personaje controlado por el jugador.
 
-Vendedor:
+**Vendedor:**
 
-Nombre: Telmo.
-Especie: Ratón.
-Rol: Compra objetos del jugador y vende armaduras y vestimentas. Telmo regenta la tienda de ropa del pueblo. Aunque su local parece especializado en moda, es el lugar donde el jugador puede vender los materiales recogidos en la mina y adquirir nuevas piezas de equipo.
+* **Nombre:** Telmo.
+* **Especie:** Ratón.
+* **Rol:** Compra objetos del jugador y vende armaduras y vestimentas. Telmo regenta la tienda de ropa del pueblo. Aunque su local parece especializado en moda, es el lugar donde el jugador puede vender los materiales recogidos en la mina y adquirir nuevas piezas de equipo.
 
-Herrero:
+**Herrero:**
 
-Nombre: Bruno.
-Especie: Topo.
-Rol: Mejora armas. Bruno es el herrero del pueblo. Se encarga de reforzar el pico, la armadura y el casco del jugador utilizando los materiales obtenidos en la mina. Su taller es el corazón del progreso mecánico del juego.
+* **Nombre:** Bruno.
+* **Especie:** Topo.
+* **Rol:** Mejora armas. Bruno es el herrero del pueblo. Se encarga de reforzar el pico, la armadura y el casco del jugador utilizando los materiales obtenidos en la mina. Su taller es el corazón del progreso mecánico del juego.
 
-Aldeanos:
+**Aldeanos:**
 
-Especie: Variadas (musarañas, ratones, topos, tejones, etc.)
-Rol: Ambientación, dan consejos, reaccionan al progreso del jugador. Los aldeanos aportan vida al pueblo. Algunos ofrecen consejos útiles, otros comentan los avances del jugador.
+* **Especie:** Variadas (musarañas, ratones, topos, tejones, etc).
+* **Rol:** Ambientación, dan consejos, reaccionan al progreso del jugador. Los aldeanos aportan vida al pueblo. Algunos ofrecen consejos útiles, otros comentan los avances del jugador.
 
 ## 4.4. ENEMIGOS
 ### 4.4.1. GOLEMS
 
-Tipo: Enemigo estándar.
-Comportamiento: Cuando el jugador entra en su área de detección, el golem lo persigue y ataca.
-Características: daño y velocidad moderados. Su presencia es común en las salas de combate.
-Función: Introduce al jugador en el sistema de combate básico y sirve como enemigo recurrente.
+* **Tipo:** Enemigo estándar.
+* **Comportamiento:** Cuando el jugador entra en su área de detección, el golem lo persigue y ataca.
+* **Características:** daño y velocidad moderados. Su presencia es común en las salas de combate.
+* **Función:** Introduce al jugador en el sistema de combate básico y sirve como enemigo recurrente.
 
-Golem pequeño: 
+**Golem pequeño:** 
 
-Tipo: Enemigo menor
-Comportamiento: Persigue al jugador si entra en su área, pero con menor alcance.
-Características: Menor daño y velocidad. Aparecen en grupo o como resultado de la división del golem grande.
-Función: Añade presión en combate por número. Su baja resistencia permite al jugador practicar esquivas y ataques rápidos.
+* **Tipo:** Enemigo menor
+* **Comportamiento:** Persigue al jugador si entra en su área, pero con menor alcance.
+* **Características:** Menor daño y velocidad. Aparecen en grupo o como resultado de la división del golem grande.
+* **Función:** Añade presión en combate por número. Su baja resistencia permite al jugador practicar esquivas y ataques rápidos.
 
-Golem grande: 
+**Golem grande:**
 
-Tipo: Mini-jefe de nivel.
-Comportamiento: Posee un área de detección más amplia y causa mayor daño.
-Características: Al ser derrotado, se divide en dos golems pequeños, lo que prolonga el combate.
-Función: Marca el final de un nivel. Su derrota permite completar la run actual. Representa un desafío táctico por su tamaño y transformación.
+* **Tipo:** Mini-jefe de nivel.
+* **Comportamiento:** Posee un área de detección más amplia y causa mayor daño.
+* **Características:** Al ser derrotado, se divide en dos golems pequeños, lo que prolonga el combate.
+* **Función:** Marca el final de un nivel. Su derrota permite completar la run actual. Representa un desafío táctico por su tamaño y transformación.
 
 ## 4.5. ARMAS Y ARMADURAS
 
@@ -165,8 +166,8 @@ Los cascos afectan la iluminación, la defensa y la velocidad. Se fabrican en la
 
 Durante la exploración de la mina, el jugador puede recolectar materiales que se dividen en dos categorías:
 
-Materiales de venta: Valiosos por su rareza o belleza, se venden en la tienda de ropa para obtener monedas.
-Materiales de mejora: Utilizados para mejorar el equipo, aunque también pueden venderse.
+**Materiales de venta:** Valiosos por su rareza o belleza, se venden en la tienda de ropa para obtener monedas.
+**Materiales de mejora:** Utilizados para mejorar el equipo, aunque también pueden venderse.
 
 (TABLA)
 
@@ -181,13 +182,13 @@ La mina está dividida en niveles progresivos, cada uno con su propio entorno, e
 
 Durante la exploración de la mina, el jugador puede encontrarse con salas especiales que aparecen de forma aleatoria, según un porcentaje de aparición predefinido. Estos eventos aportan variedad, sorpresa y decisiones tácticas que enriquecen el desarrollo de cada run.
 
-Sala del Tesoro: Esta sala aparece sin enemigos. En el centro se encuentra un gran cofre que puede contener objetos raros, materiales valiosos o grandes cantidades de dinero. Su aparición es poco frecuente
+**Sala del Tesoro:** Esta sala aparece sin enemigos. En el centro se encuentra un gran cofre que puede contener objetos raros, materiales valiosos o grandes cantidades de dinero. Su aparición es poco frecuente
 
-Sala Oscura: En esta sala no hay iluminación ambiental, por lo que el jugador debe depender exclusivamente de la luz que emite su casco. Los enemigos se ocultan en las sombras, dificultando su detección y aumentando la tensión del combate.
+**Sala Oscura:** En esta sala no hay iluminación ambiental, por lo que el jugador debe depender exclusivamente de la luz que emite su casco. Los enemigos se ocultan en las sombras, dificultando su detección y aumentando la tensión del combate.
 
-Sala de Rescate: Aquí el jugador encuentra a un NPC atrapado por enemigos. Para completar el evento, debe enfrentarse a los enemigos que rodean al personaje y liberarlo. Si lo consigue, el NPC puede ofrecer una recompensa o iniciar un intercambio.
+**Sala de Rescate:** Aquí el jugador encuentra a un NPC atrapado por enemigos. Para completar el evento, debe enfrentarse a los enemigos que rodean al personaje y liberarlo. Si lo consigue, el NPC puede ofrecer una recompensa o iniciar un intercambio.
 
-Sala de Campamento: Esta sala ofrece un momento de calma dentro de la mina. En ella, el jugador encuentra un pequeño campamento con una hoguera encendida. Junto a la hoguera se encuentra Pico, el canario del tutorial, que actúa como personaje de apoyo. Si el jugador habla con él, puede recuperar parte de su salud, lo que convierte esta sala en un punto estratégico para continuar la exploración.
+**Sala de Campamento:** Esta sala ofrece un momento de calma dentro de la mina. En ella, el jugador encuentra un pequeño campamento con una hoguera encendida. Junto a la hoguera se encuentra Pico, el canario del tutorial, que actúa como personaje de apoyo. Si el jugador habla con él, puede recuperar parte de su salud, lo que convierte esta sala en un punto estratégico para continuar la exploración.
 
 ### 4.6.3. MISIONES
 
