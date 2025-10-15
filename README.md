@@ -226,3 +226,8 @@ Durante la exploración de la mina, el jugador puede encontrarse con salas espec
 ### 4.6.3. MISIONES
 
 Las misiones se integran dentro de los eventos, especialmente en las salas de rescate. Cuando el jugador encuentra un NPC atrapado, se activa la misión de rescatarlo de los enemigos. Si tiene éxito, el NPC puede ofrecer una recompensa directa, un intercambio de objetos o desbloquear contenido adicional. Estas misiones aportan variedad narrativa y recompensas únicas dentro de la estructura de las runs.
+
+5. INTERFAZ
+5.1. DIAGRAMA DE FLUJO
+
+A continuación se muestra el diagrama de flujo de las interfaces del juego, donde se representa cómo se conectan entre sí las distintas pantallas y menús.
