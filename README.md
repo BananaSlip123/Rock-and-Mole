@@ -91,7 +91,11 @@ Las salas pueden contener enemigos, recursos mineros, cofres o eventos únicos. 
 
 El juego está diseñado para jugarse tanto en PC como en dispositivos móviles. En ordenador, el jugador puede utilizar teclado y ratón o con mando tanto de Xbox como de PlayStation. En móvil, el juego requiere el uso de mando conectado, ya que no está optimizado para controles táctiles.
 
-(TABLA)
+| Acción | Teclado y ratón (PC) | Mando Xbox | Mando PlayStation |
+| :----: | :------------------: | :--------: | :---------------: |
+| Moverse | Teclas WASD         | Joystick izquierdo | Joystick izquierdo |
+| Atacar | Click izquierdo | RT (gatillo derecho) | R2 (gatillo derecho) |
+| Dash | Shift | LT (gatillo izquierdo) | L2 (gatillo izquierdo) |
 
 ## 4.3. PERSONAJES
 
@@ -148,30 +152,59 @@ La progresión del jugador se basa en la mejora del equipo mediante los material
 
 El pico es el arma principal del jugador. Se mejora en la herrería, utilizando materiales específicos. Cada nivel incrementa el daño por segundo y la velocidad de ataque.
 
-(TABLA)
+| Nivel | Nombre | Efecto | Precio |
+| :---: | :----: | :----: | :----: |
+| 1 | Pico oxidado | Daño básico | Arma inicial |
+| 2 | Pico reforzado | +10% daño y +10% velocidad de ataque | 70 monedas y 15 lingotes de hierro |
+| 3 | Pico afilado | +15% daño y +20% velocidad de ataque | 100 monedas, 25 lingotes de hierro y 5 piedras de carbón |
+| 4 | Pico endurecido | +20% daño y +30% velocidad de ataque | 200 monedas, 40 lingotes, 10 piedras de carbón y 5 piedras de obsidiana |
+| 5 | Pico maestro | +30% daño y +40% velocidad de ataque | 300 monedas, 45 lingotes de hierro, 15 piedras de carbón y 15 piedras de obsidiana |
 
 ### 4.5.2. VESTUARIO - PRENDAS DEL TOPO
 
 Las prendas modifican la velocidad de movimiento y la defensa del jugador. Se adquieren en la tienda de ropa, utilizando rollos de tela o lingotes de bronce.
 
-(TABLA)
+| Nombre | Efecto | Precio |
+| :---: | :----: | :----: |
+| Chaleco reforzado | Sin efectos | Prenda inicial |
+| Túnica de minero | +15% velocidad y -25% defensa | 300 monedas y 30 rollos de tela |
+| Armadura pesada | +25% defensa y -15% velocidad | 300 monedas y 50 lingotes de bronce | 
 
 ### 4.5.3. VESTUARIO - CASCOS
 
 Los cascos afectan la iluminación, la defensa y la velocidad. Se fabrican en la tienda de ropa, utilizando lingotes de bronce y cristales de cuarzo.
 
-(TABLA)
+| Nombre | Efecto | Precio |
+| :---: | :----: | :----: |
+| Casco de minero | Iluminación básica | Casco inicial |
+| Casco reforzado | +50% iluminación, +10% defensa y -5% velocidad | 200 monedas, 10 lingotes de bronce y 5 piedras de cuerzo |
+| Casco blindado | +50% iluminación, +25% defensa y -5% velocidad | 800 monedas, 50 lingotes de bronce y 15 piedras de cuarzo |
+| Casco ligero | +50% iluminación y +5% velocidad | 180 monedas, 10 lingotes de bronce y 5 piedras de cuarzo |
 
 ### 4.5.4. MATERIALES RECOGIBLES
 
 Durante la exploración de la mina, el jugador puede recolectar materiales que se dividen en dos categorías:
 
 **Materiales de venta:** Valiosos por su rareza o belleza, se venden en la tienda de ropa para obtener monedas.
+
+| Nombre | Rareza | Precio |
+| :---: | :----: | :----: |
+| Ámbar | Común | 8 monedas |
+| Esmeralda | Raro | 10 monedas |
+| Rubí | Raro | 15 monedas |
+| Diamante | Muy raro | 100 monedas |
+<br>
+
 **Materiales de mejora:** Utilizados para mejorar el equipo, aunque también pueden venderse.
 
-(TABLA)
-
-(TABLA)
+| Nombre | Utilidad | Rareza | Precio |
+| :---: | :----: | :----: | :-------: |
+| Lingotes de hierro | Mejora de armas | Común | 4 monedas |
+| Rollos de tela | Fabricación de prendas | Común | 30 monedas |
+| Carbón | Mejora de armas | Raro | 8 monedas |
+| Lingotes de bronce | Fabricación de armaduras y cascos | Raro | 8 monedas |
+| Cristales de cuarzo | Fabricación de cascos | Muy raro | 15 monedas |
+| Cristales de obsidiana | Mejora de armas | Muy raro | 15 monedas |
 
 ## 4.6. NIVELES, EVENTOS Y MISIONES
 ### 4.6.1. NIVELES DE PROFUNDIDAD
