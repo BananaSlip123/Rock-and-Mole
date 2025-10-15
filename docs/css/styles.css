@@ -82,7 +82,7 @@
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
   --bs-link-color: #151e1c; /*color link de abajo en contacto*/
-  --bs-link-hover-color: #15967d; /*color del mismo link cuando se pasa ratón por encima*/
+  --bs-link-hover-color: var(--bs-dark-golden); /*color del mismo link cuando se pasa ratón por encima*/
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -10912,19 +10912,19 @@ html {
   font-weight: 700;
 }
 #mainNav .navbar-brand {
-  color: #000; /*color START BOOTSTRAP*/
+  color: var(--bs-darkest-golden); /*color START BOOTSTRAP*/
 }
 #mainNav .navbar-nav {
   margin-top: 1rem;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link {
-  color: #000; /*color letras PORTFOLIO, ABOUT, CONTACT de arriba*/
+  color: var(--bs-darkest-golden); /*color letras PORTFOLIO, ABOUT, CONTACT de arriba*/
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
   color: var(--bs-dark-golden); /*color que aparece al pasar el ratón por encima de PORTFOLIO,etc*/
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
-  color: #000; /*color que sale cuando clickas en PORTFOLIO, etc*/
+  color: var(--bs-darkest-golden); /*color que sale cuando clickas en PORTFOLIO, etc*/
 }
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
   color: var(--bs-dark-golden); /*color de la zona en la que estamos al abrir MENU*/
