@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class VillageMenuUI : MonoBehaviour
 {
     #region SERIALIZABLE
+    [Header("PLAYER INPUT")]
+    [SerializeField] PlayerInput playerInput;
     [Header("NAVEGATION WINDOWS")]
     [SerializeField] GameObject go_mainWindow;
     [SerializeField] GameObject go_pauseWindow;
@@ -37,7 +40,7 @@ public class VillageMenuUI : MonoBehaviour
         get => _currentWindow;
         set
         {
-            SwitchWindow(value);
+            SwitchWindow(_currentWindow, value);
             _currentWindow = value;
         }
     }
@@ -45,11 +48,12 @@ public class VillageMenuUI : MonoBehaviour
     #region PRIVATE FUNCS
     private void Awake()
     {
-        SwitchWindow(Windows.Main);
+        SwitchWindow(null, Windows.Main);
     }
-    void SwitchWindow(Windows nextWindow)
+    void SwitchWindow(Windows? lastWindow, Windows nextWindow)
     {
-        go_mainWindow.SetActive(nextWindow == Windows.Main);
+        bool isMain = nextWindow == Windows.Main;
+        go_mainWindow.SetActive(isMain);
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
         go_pauseWindow.SetActive(nextWindow == Windows.Pause);
         go_inventoryWindow.SetActive(nextWindow == Windows.Inventory);
@@ -58,6 +62,14 @@ public class VillageMenuUI : MonoBehaviour
         go_wardrobeWindow.SetActive(nextWindow == Windows.Wardrobe);
 
         go_inventory.SetActive(nextWindow == Windows.Shop || nextWindow == Windows.Inventory);
+
+        bool isInit = !lastWindow.HasValue;
+
+        if (isMain && (isInit || lastWindow.Value != Windows.Main)) //si isInit entra en el if y no accede a value
+            playerInput.SwitchCurrentActionMap("Player");
+        else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
+            playerInput.SwitchCurrentActionMap("UI");
+
         //go_closeIcon.SetActive(nextWindow != Windows.Main && nextWindow != Windows.Pause);
     }
     #endregion

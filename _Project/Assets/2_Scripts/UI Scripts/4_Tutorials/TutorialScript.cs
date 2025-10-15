@@ -7,7 +7,6 @@ public class TutorialScript : MonoBehaviour
 	[SerializeField] GameObject go_callOut;
 	[SerializeField] TutorialScene scene;
 	[SerializeField] string[] dialogsToShow;
-	[SerializeField] PlayerInput playerInput;
     CallOut callOut;
 	enum TutorialScene
 	{
@@ -17,7 +16,7 @@ public class TutorialScript : MonoBehaviour
 		Room3, 
 		Room4
 	}
-    private void OnEnable()
+    private void Start()
     {
 		if (dialogsToShow.Length == 0) return;
 		if (!GameData.NeedsTutorial)
@@ -28,11 +27,9 @@ public class TutorialScript : MonoBehaviour
 		callOut = go_callOut.GetComponent<CallOut>();
 		if (callOut == null) throw new System.Exception("go_CallOut must have a callout component");
 
-        playerInput.defaultActionMap.Replace("Player", "UI");
-
         InitCallOut();
     }
-    private void OnDisable()
+    private void OnDestroy()
     {
         if (callOut != null)
             callOut.OnCallOutDisable = null;
@@ -41,13 +38,14 @@ public class TutorialScript : MonoBehaviour
     {
         Debug.Log("Init");
         callOut.enabled = true;
+        callOut.gameObject.SetActive(true);
         callOut.OnCallOutDisable += DialogEnded;
         callOut.StartCallOut(dialogsToShow);
     }
     void DialogEnded()
 	{
 		Debug.Log("fin");
-        playerInput.defaultActionMap.Replace("UI", "Player");
+        this.gameObject.SetActive(false);
     }
     #endregion
 }

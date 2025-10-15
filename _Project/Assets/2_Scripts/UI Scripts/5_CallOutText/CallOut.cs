@@ -82,7 +82,10 @@ public class CallOut : MonoBehaviour
     #endregion
 
     #region PRIVATE FUNCS
-
+    private void Awake()
+    {
+        this.gameObject.SetActive(false); //un tutorial script lo despierta
+    }
     IEnumerator DelayedAction(Action a, float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -102,7 +105,7 @@ public class CallOut : MonoBehaviour
        
         StateValue = State.showText;
     }
-
+    
     private void OnEnable()
     {
         //_canInteract = true;

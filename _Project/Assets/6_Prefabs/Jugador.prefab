@@ -55,7 +55,7 @@ PrefabInstance:
       objectReference: {fileID: 8758680433641810749}
     - target: {fileID: 1777966728293580949, guid: 2c8fa728a0fe5a949983103b2807704a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Button_OpenPause
+      value: Button_OpenMain
       objectReference: {fileID: 0}
     - target: {fileID: 1777966728293580949, guid: 2c8fa728a0fe5a949983103b2807704a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -218,6 +218,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f01edc73969315479e666196310494e, type: 3}
+--- !u!114 &4002487706911268651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3390667089863221846, guid: 2f01edc73969315479e666196310494e, type: 3}
+  m_PrefabInstance: {fileID: 1766995029122350461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4328044369882156702 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2636274778658534371, guid: 2f01edc73969315479e666196310494e, type: 3}
@@ -764,7 +775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131538000382262491, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 162.2
+      value: 162.20001
       objectReference: {fileID: 0}
     - target: {fileID: 1131538000382262491, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -907,6 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e97edf890733046aa851b3f969eeda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 4002487706911268651}
   go_mainWindow: {fileID: 122072021622820671}
   go_pauseWindow: {fileID: 2298309202776679571}
   go_settingsWindow: {fileID: 1651766751918434012}

@@ -1,14 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.InputSystem;
 public class GameMenu : MonoBehaviour
 {
     #region SERIALIZABLE
+    [Header("PLAYER INPUT")]
+    [SerializeField] PlayerInput playerInput;
+    [Header("NAVIGATION WINDOWS")]
     [SerializeField] GameObject go_mainWindow;
     [SerializeField] GameObject go_pauseWindow;
     [SerializeField] GameObject go_settingsWindow;
     [SerializeField] GameObject go_runInventoryWindow;
     [SerializeField] GameObject go_runInventoryInfoWindow;
+    [Header("LIFE BAR")]
     [SerializeField] GameObject go_lifeBar;
     #endregion
 
@@ -29,7 +33,7 @@ public class GameMenu : MonoBehaviour
         get => _currentWindow;
         set
         {
-            SwitchWindow(value);
+            SwitchWindow(_currentWindow, value);
             _currentWindow = value;
         }
     }
@@ -37,16 +41,24 @@ public class GameMenu : MonoBehaviour
     #region PRIVATE FUNCS
     private void Awake()
     {
-        SwitchWindow(Windows.Main);
+        SwitchWindow(null, Windows.Main);
     }
-    void SwitchWindow(Windows nextWindow)
+    void SwitchWindow(Windows? lastWindow, Windows nextWindow)
     {
-        go_mainWindow.SetActive(nextWindow == Windows.Main);
+        bool isMain = nextWindow == Windows.Main;
+        go_mainWindow.SetActive(isMain);
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
         go_pauseWindow.SetActive(nextWindow == Windows.Pause);
         go_runInventoryWindow.SetActive(nextWindow == Windows.RunInventory);
         go_runInventoryInfoWindow.SetActive(nextWindow == Windows.RunInventory);
-        go_lifeBar.SetActive(nextWindow == Windows.Main);
+        go_lifeBar.SetActive(isMain);
+
+        bool isInit = !lastWindow.HasValue;
+
+        if (isMain && (isInit || lastWindow.Value != Windows.Main)) //si isInit entra en el if y no accede a value
+            playerInput.SwitchCurrentActionMap("Player");
+        else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
+            playerInput.SwitchCurrentActionMap("UI");
     }
     #endregion
 
