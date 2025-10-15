@@ -45,7 +45,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     public void Enter()
     {
-        attackHitbox = enemyTransform.GetComponentInChildren<Collider>();
+        attackHitbox = enemyTransform.GetChild(1).GetComponent<Collider>();
         Debug.Log("ESTOY ATACANDO");
         animator.SetBool("Atacar", true);
     }
