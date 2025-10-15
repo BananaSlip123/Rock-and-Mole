@@ -100,7 +100,7 @@ public class CallOut : MonoBehaviour
         {
             text += Character;
             CurrentText = text;
-            yield return new WaitForSeconds(0.06f);
+            yield return new WaitForSeconds(0.01f);
         }
        
         StateValue = State.showText;

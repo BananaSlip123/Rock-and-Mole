@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class TutorialScript : MonoBehaviour
 {
 	#region PRIVATE VARS
+    [SerializeField] PlayerInput playerInput;
 	[SerializeField] GameObject go_callOut;
 	[SerializeField] TutorialScene scene;
 	[SerializeField] string[] dialogsToShow;
@@ -16,6 +17,13 @@ public class TutorialScript : MonoBehaviour
 		Room3, 
 		Room4
 	}
+
+    public void OnPassDialog()=> callOut.OnInteraction();
+
+    private void OnEnable()
+    {
+        playerInput.SwitchCurrentActionMap("CallOutDialog");
+    }
     private void Start()
     {
 		if (dialogsToShow.Length == 0) return;
@@ -28,6 +36,10 @@ public class TutorialScript : MonoBehaviour
 		if (callOut == null) throw new System.Exception("go_CallOut must have a callout component");
 
         InitCallOut();
+    }
+    private void OnDisable()
+    {
+        playerInput.SwitchCurrentActionMap("Player");
     }
     private void OnDestroy()
     {

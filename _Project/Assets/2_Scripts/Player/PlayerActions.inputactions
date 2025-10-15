@@ -617,6 +617,67 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "CallOutDialog",
+            "id": "389a84d3-a768-4a68-9954-0dcf29f48911",
+            "actions": [
+                {
+                    "name": "PassDialog",
+                    "type": "Button",
+                    "id": "9f5f1c03-f299-442f-b624-fcc12d01c23d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "965da612-a77b-4322-b5dc-f131f2824cb7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PassDialog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "598f5d96-8872-4c42-838e-52bf081514ab",
+                    "path": "<DualShockGamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PassDialog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b38602a3-3568-4d24-a364-eec8ab5370a7",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PassDialog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0836680-6a6a-49ed-a9b5-a8ad245f79d8",
+                    "path": "<SwitchProControllerHID>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PassDialog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
