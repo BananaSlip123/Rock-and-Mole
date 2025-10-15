@@ -12,7 +12,7 @@ Banana Slip
    
 ## 1.1. DESCRIPCIÓN DEL CONTENIDO
 
-*Rock & Mole* es un juego de aventura y acción con vista cenital en 3D, ambientado en un pueblo subterráneo habitado por animales excavadores. El jugador controla a un joven topo que se adentra en una mina compuesta por salas diseñadas manualmente que se reorganizan aleatoriamente en cada run. A lo largo de la exploración, combate enemigos, encuentra eventos especiales y recolecta recursos que pueden venderse en la tienda para conseguir monedas o usarse para mejorar las armas y armaduras.
+*Rock & Mole* es un juego de aventura y acción con vista isométrica en 3D, ambientado en un pueblo subterráneo habitado por animales excavadores. El jugador controla a un joven topo que se adentra en una mina compuesta por salas diseñadas manualmente que se reorganizan aleatoriamente en cada run. A lo largo de la exploración, combate enemigos, encuentra eventos especiales y recolecta recursos que pueden venderse en la tienda para conseguir monedas o usarse para mejorar las armas y armaduras.
 
 ## 1.2. CARACTERÍSTICAS PRINCIPALES
 
