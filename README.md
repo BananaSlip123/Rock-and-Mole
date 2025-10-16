@@ -100,7 +100,8 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 | Atacar | Click izquierdo | RT (gatillo derecho) | R2 (gatillo derecho) |
 | Dash | Shift | LT (gatillo izquierdo) | L2 (gatillo izquierdo) |
 
-  
+<br>  
+
 ## 4.3. PERSONAJES
 
 **Protagonista:**
@@ -165,7 +166,8 @@ El pico es el arma principal del jugador. Se mejora en la herrería, utilizando 
 | 4 | Pico endurecido | +20% daño y +30% velocidad de ataque | 200 monedas, 40 lingotes, 10 piedras de carbón y 5 piedras de obsidiana |
 | 5 | Pico maestro | +30% daño y +40% velocidad de ataque | 300 monedas, 45 lingotes de hierro, 15 piedras de carbón y 15 piedras de obsidiana |
 
-  
+<br>
+
 ### 4.5.2. VESTUARIO - PRENDAS DEL TOPO
 
 Las prendas modifican la velocidad de movimiento y la defensa del jugador. Se adquieren en la tienda de ropa, utilizando rollos de tela o lingotes de bronce.
@@ -176,6 +178,7 @@ Las prendas modifican la velocidad de movimiento y la defensa del jugador. Se ad
 | Túnica de minero | +15% velocidad y -25% defensa | 300 monedas y 30 rollos de tela |
 | Armadura pesada | +25% defensa y -15% velocidad | 300 monedas y 50 lingotes de bronce | 
 
+<br>
   
 ### 4.5.3. VESTUARIO - CASCOS
 
@@ -188,6 +191,7 @@ Los cascos afectan la iluminación, la defensa y la velocidad. Se fabrican en la
 | Casco blindado | +50% iluminación, +25% defensa y -5% velocidad | 800 monedas, 50 lingotes de bronce y 15 piedras de cuarzo |
 | Casco ligero | +50% iluminación y +5% velocidad | 180 monedas, 10 lingotes de bronce y 5 piedras de cuarzo |
 
+<br>
   
 ### 4.5.4. MATERIALES RECOGIBLES
 
@@ -201,6 +205,7 @@ Durante la exploración de la mina, el jugador puede recolectar materiales que s
 | Esmeralda | Raro | 10 monedas |
 | Rubí | Raro | 15 monedas |
 | Diamante | Muy raro | 100 monedas |
+
 <br>
 
 **Materiales de mejora:** Utilizados para mejorar el equipo, aunque también pueden venderse.
@@ -214,7 +219,8 @@ Durante la exploración de la mina, el jugador puede recolectar materiales que s
 | Cristales de cuarzo | Fabricación de cascos | Muy raro | 15 monedas |
 | Cristales de obsidiana | Mejora de armas | Muy raro | 15 monedas |
 
-  
+<br>
+
 ## 4.6. NIVELES, EVENTOS Y MISIONES
 ### 4.6.1. NIVELES DE PROFUNDIDAD
 
@@ -242,7 +248,8 @@ Las misiones se integran dentro de los eventos, especialmente en las salas de re
 
 A continuación se muestra el diagrama de flujo de las interfaces del juego, donde se representa cómo se conectan entre sí las distintas pantallas y menús.
 
-![Imagen del diagrama de flujo de las interfaces](/Fotos_README/Flujo_de_interfaces.png "Diagrama de flujo de las interfaces")
+![Imagen del diagrama de flujo de las interfaces](/Fotos_README/Flujo_de_interfaces.png "Diagrama de flujo de las interfaces")  
+<div align="center"><p><i>Imagen 1: Diagrama de flujo de las interfaces</i></p></div>
 
 ---
 
@@ -255,14 +262,30 @@ En este apartado se muestran los elementos visuales principales del juego, aquel
 
 #### 6.1.1. CONCEPTS
 
-![Imagen de los objetos que lleva el personaje encima](/_Project/Assets/Concept_art/Objetos_personaje.png "Objetos que lleva el personaje encima")
-![Imagen del diseño del protagonista](/_Project/Assets/Concept_art/Turnaround_topo.png "Diseño del protagonista")
-![Imagen del diseño de la vagoneta](/_Project/Assets/Concept_art/Turnaround_vagon.png "Diseño de la vagoneta")
-![Imagen del diseño del barril](/_Project/Assets/Concept_art/Turnaround_barril.png "Diseño del barril")
-![Imagen del diseño de las cajas](/_Project/Assets/Concept_art/Turnaround_cajas.png "Diseño de las cajas")
-![Imagen del diseño del golem](/_Project/Assets/Concept_art/Turnaround_golem.png "Diseño del golem")
-![Imagen del diseño del primer set de rocas](/_Project/Assets/Concept_art/Turnaround_rocas.png "Diseño del primer set de rocas")
-![Imagen del diseño del segundo set de rocas](/_Project/Assets/Concept_art/Turnaround_rocas2.png "Diseño del segundo set de rocas")
+<div align="center"><img src="/_Project/Assets/Concept_art/Objetos_personaje.png" alt="Objetos que lleva el personaje encima" width="400"></img></div>  
+<div align="center"><p><i>Imagen 2: Diseño de los objetos que lleva el personaje encima</i></p></div>  
+<br><br>
+<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_topo.PNG" alt="Diseño del protagonista" width="400"></img></div> 
+<div align="center"><p><i>Imagen 3: Diseño del protagonista</i></p></div>
+<br><br>
+<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_vagon.PNG" alt="Diseño de la vagoneta" width="400"></img></div>  
+<div align="center"><p><i>Imagen 4: Diseño de la vagoneta</i></p></div>
+<br><br>
+<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_barril.png" alt="Diseño del barril" width="400"></img></div>  
+<div align="center"><p><i>Imagen 5: Diseño del barril</i></p></div>
+<br><br>
+<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_cajas.PNG" alt="Diseño de las cajas" width="400"></img></div>  
+<div align="center"><p><i>Imagen 6: Diseño de las cajas</i></p></div>
+<br><br>
+<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_golem.png" alt="Diseño del golem" width="400"></img></div>  
+<div align="center"><p><i>Imagen 7: Diseño del golem</i></p></div>
+<br><br>
+<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_rocas.png" alt="Diseño del primer set de rocas" width="400"></img></div>  
+<div align="center"><p><i>Imagen 8: Diseño del primer set de rocas</i></p></div>
+<br><br>
+<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_rocas2.PNG" alt="Diseño del segundo set de rocas" width="400"></img></div>  
+<div align="center"><p><i>Imagen 9: Diseño del segundo set de rocas</i></p></div>
+<br><br>
 
 ### 6.2. MÚSICA Y EFECTOS DE SONIDO
 
