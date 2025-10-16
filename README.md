@@ -262,9 +262,20 @@ Música ambiental para el pueblo.
 Música ambiental para la mina.
 Música para la tienda.
 Música para combate contra enemigos.
+
 6.3.2. EFECTOS DE SONIDO
 
 Sonido de jugador caminando.
 Sonido de jugador atacando.
 Sonido de enemigo muerto.
+
+7. EQUIPO
+
+Lara Sánchez Sanz: Modelado y animación 3D de personajes.
+Jesus Mercado Rioja: Diseño 2D y modelado 3D de escenarios.
+Ana María Caamaño del Amo: Modelado 3D de props.
+Javier Martín Mulero: Programación de mecánicas principales.
+Unai Pastrana Torres: Diseño y programación de interfaces.
+Santiago Varela Rey: Música y efectos de sonido.
+
 
