@@ -243,3 +243,28 @@ Las misiones se integran dentro de los eventos, especialmente en las salas de re
 A continuación se muestra el diagrama de flujo de las interfaces del juego, donde se representa cómo se conectan entre sí las distintas pantallas y menús.
 
 ![Imagen del diagrama de flujo de las interfaces](/Fotos_README/Flujo_de_interfaces.png "Diagrama de flujo de las interfaces")
+
+6. ARTE
+
+En este apartado se muestran los elementos visuales principales del juego, aquellos que aportan un estilo y características únicas.
+
+6.1. ARTE 2D
+6.1.1. CONCEPTS
+
+(FOTOS)
+
+6.3. MÚSICA Y EFECTOS DE SONIDO
+
+El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experiencia del jugador. La música y los efectos de sonido están diseñados para ser coherentes con la estética visual y narrativa del juego.
+6.3.1. MÚSICA
+
+Música ambiental para el pueblo.
+Música ambiental para la mina.
+Música para la tienda.
+Música para combate contra enemigos.
+6.3.2. EFECTOS DE SONIDO
+
+Sonido de jugador caminando.
+Sonido de jugador atacando.
+Sonido de enemigo muerto.
+
