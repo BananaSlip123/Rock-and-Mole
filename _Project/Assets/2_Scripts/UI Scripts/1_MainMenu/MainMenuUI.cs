@@ -1,13 +1,26 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using static Codice.CM.Common.CmCallContext;
 public class MainMenuUI : MonoBehaviour
 {
     #region SERIALIZABLE
+    [Header("NAVIGATION WINDOWS")]
     [SerializeField] GameObject go_mainWindow;
     [SerializeField] GameObject go_settingsWindow;
     [SerializeField] GameObject go_creditsWindow;
     [SerializeField] GameObject go_closeIcon;
+    [Header("INPUT NAVIGATION")]
+    [SerializeField] PlayerInput playerInput;
+    [SerializeField] EventSystem eventSystem;
+    [SerializeField] Selectable firstSelected_main;
+    [SerializeField] Selectable firstSelected_settings;
+    [SerializeField] Selectable firstSelected_credits;
+
+    Selectable lastSelected;
+    Windows current;
     #endregion
     #region PUBLIC VARS
     public enum Windows
@@ -21,6 +34,7 @@ public class MainMenuUI : MonoBehaviour
     private void Awake()
     {
         SwitchWindow(Windows.Main);
+        playerInput.SwitchCurrentActionMap("UI");
     }
     void SwitchWindow(Windows nextWindow)
     {
@@ -28,6 +42,20 @@ public class MainMenuUI : MonoBehaviour
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
         go_creditsWindow.SetActive(nextWindow == Windows.Credits);
         go_closeIcon.SetActive(nextWindow != Windows.Main);
+
+        current = nextWindow;
+
+        UpdateSelectedButton();
+    }
+
+    void UpdateSelectedButton( )
+    {
+        if (current == Windows.Main)
+            firstSelected_main.Select();
+        else if (current == Windows.Settings)
+            firstSelected_settings.Select();
+        else if (current == Windows.Credits)
+            firstSelected_credits.Select();
     }
     #endregion
 
@@ -41,6 +69,16 @@ public class MainMenuUI : MonoBehaviour
             SceneManager.LoadScene("0_Tutorial");
         else
             SceneManager.LoadScene("2_VILLAGE_SCENE");
-    } 
+    }
+
+    public void onPointer() => eventSystem.SetSelectedGameObject(null);
+    public void onNavigation()
+    {
+        if (eventSystem.currentSelectedGameObject == null)
+        {
+            //me falta que solo se llame cuando no haya ningun selectable seleccionado en EventSystem este a null
+            UpdateSelectedButton();
+        }
+    }
     #endregion
 }

@@ -1210,6 +1210,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameMenu, GameMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5587308233408984703, guid: 549fbd2af836e674989afb437ea745ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a50c999c8614d8142b0eaea5d7a23c63, type: 3}
     - target: {fileID: 8745685495149034824, guid: 549fbd2af836e674989afb437ea745ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1228,7 +1232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8979064816349871652, guid: 549fbd2af836e674989afb437ea745ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
