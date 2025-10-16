@@ -244,38 +244,52 @@ A continuación se muestra el diagrama de flujo de las interfaces del juego, don
 
 ![Imagen del diagrama de flujo de las interfaces](/Fotos_README/Flujo_de_interfaces.png "Diagrama de flujo de las interfaces")
 
-6. ARTE
+---
 
-En este apartado se muestran los elementos visuales principales del juego, aquellos que aportan un estilo y características únicas.
+## 6. ARTE
 
-6.1. ARTE 2D
-6.1.1. CONCEPTS
+En este apartado se muestran los elementos visuales principales del juego, aquellos que aportan un estilo y características únicas.  
 
-(FOTOS)
 
-6.3. MÚSICA Y EFECTOS DE SONIDO
+### 6.1. ARTE 2D  
 
-El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experiencia del jugador. La música y los efectos de sonido están diseñados para ser coherentes con la estética visual y narrativa del juego.
-6.3.1. MÚSICA
+#### 6.1.1. CONCEPTS
 
-Música ambiental para el pueblo.
-Música ambiental para la mina.
-Música para la tienda.
-Música para combate contra enemigos.
+![Imagen de los objetos que lleva el personaje encima](/_Project/Assets/Concept_art/Objetos_personaje.png "Objetos que lleva el personaje encima")
+![Imagen del diseño del protagonista](/_Project/Assets/Concept_art/Turnaround_topo.png "Diseño del protagonista")
+![Imagen del diseño de la vagoneta](/_Project/Assets/Concept_art/Turnaround_vagon.png "Diseño de la vagoneta")
+![Imagen del diseño del barril](/_Project/Assets/Concept_art/Turnaround_barril.png "Diseño del barril")
+![Imagen del diseño de las cajas](/_Project/Assets/Concept_art/Turnaround_cajas.png "Diseño de las cajas")
+![Imagen del diseño del golem](/_Project/Assets/Concept_art/Turnaround_golem.png "Diseño del golem")
+![Imagen del diseño del primer set de rocas](/_Project/Assets/Concept_art/Turnaround_rocas.png "Diseño del primer set de rocas")
+![Imagen del diseño del segundo set de rocas](/_Project/Assets/Concept_art/Turnaround_rocas2.png "Diseño del segundo set de rocas")
 
-6.3.2. EFECTOS DE SONIDO
+### 6.2. MÚSICA Y EFECTOS DE SONIDO
 
-Sonido de jugador caminando.
-Sonido de jugador atacando.
-Sonido de enemigo muerto.
+El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experiencia del jugador. La música y los efectos de sonido están diseñados para ser coherentes con la estética visual y narrativa del juego.  
 
-7. EQUIPO
+#### 6.3.1. MÚSICA
 
-Lara Sánchez Sanz: Modelado y animación 3D de personajes.
-Jesus Mercado Rioja: Diseño 2D y modelado 3D de escenarios.
-Ana María Caamaño del Amo: Modelado 3D de props.
-Javier Martín Mulero: Programación de mecánicas principales.
-Unai Pastrana Torres: Diseño y programación de interfaces.
-Santiago Varela Rey: Música y efectos de sonido.
+* Música ambiental para el pueblo.
+* Música ambiental para la mina.
+* Música para la tienda.
+* Música para combate contra enemigos.
+
+#### 6.3.2. EFECTOS DE SONIDO
+
+* Sonido de jugador caminando.
+* Sonido de jugador atacando.
+* Sonido de enemigo muerto.
+
+---
+
+### 7. EQUIPO
+
+**Lara Sánchez Sanz:** Modelado y animación 3D de personajes.  
+**Jesús Mercado Rioja:** Diseño 2D y modelado 3D de escenarios.  
+**Ana María Caamaño del Amo:** Modelado 3D de props.  
+**Javier Martín Mulero:** Programación de mecánicas principales.  
+**Unai Pastrana Torres:** Diseño y programación de interfaces.  
+**Santiago Varela Rey:** Música y efectos de sonido.
 
 
