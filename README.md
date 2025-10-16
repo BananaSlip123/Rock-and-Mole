@@ -52,6 +52,7 @@ El juego está dirigido a un público que abarca principalmente jóvenes y adult
 
 ---
 
+  
 # 2. MONETIZACIÓN Y MODELO DE NEGOCIO
 
 El modelo de monetización de *Rock & Mole* se basa en un sistema Buy to Play, es decir, un pago único por el juego base. Esta decisión busca ofrecer una experiencia completa y accesible para el jugador.
@@ -62,12 +63,14 @@ Entre los lanzamientos de DLCs, se realizará la publicación de actualizaciones
 
 ---
 
+  
 # 3. HISTORIA
 
 El protagonista, un joven topo, vive en un pueblo subterráneo que depende de los minerales de una antigua mina. Tras un misterioso cierre, la mina se volvió peligrosa y oscura. Para salvar a su comunidad y descubrir qué ocurrió, el topo decide adentrarse en sus profundidades, enfrentando criaturas corrompidas y buscando recuperar los recursos perdidos.
 
 ---
 
+  
 # 4. MECÁNICAS
 ## 4.1. JUGABILIDAD
 
@@ -97,6 +100,7 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 | Atacar | Click izquierdo | RT (gatillo derecho) | R2 (gatillo derecho) |
 | Dash | Shift | LT (gatillo izquierdo) | L2 (gatillo izquierdo) |
 
+  
 ## 4.3. PERSONAJES
 
 **Protagonista:**
@@ -122,6 +126,7 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 * **Especie:** Variadas (musarañas, ratones, topos, tejones, etc).
 * **Rol:** Ambientación, dan consejos, reaccionan al progreso del jugador. Los aldeanos aportan vida al pueblo. Algunos ofrecen consejos útiles, otros comentan los avances del jugador.
 
+  
 ## 4.4. ENEMIGOS
 ### 4.4.1. GOLEMS
 
@@ -160,6 +165,7 @@ El pico es el arma principal del jugador. Se mejora en la herrería, utilizando 
 | 4 | Pico endurecido | +20% daño y +30% velocidad de ataque | 200 monedas, 40 lingotes, 10 piedras de carbón y 5 piedras de obsidiana |
 | 5 | Pico maestro | +30% daño y +40% velocidad de ataque | 300 monedas, 45 lingotes de hierro, 15 piedras de carbón y 15 piedras de obsidiana |
 
+  
 ### 4.5.2. VESTUARIO - PRENDAS DEL TOPO
 
 Las prendas modifican la velocidad de movimiento y la defensa del jugador. Se adquieren en la tienda de ropa, utilizando rollos de tela o lingotes de bronce.
@@ -170,6 +176,7 @@ Las prendas modifican la velocidad de movimiento y la defensa del jugador. Se ad
 | Túnica de minero | +15% velocidad y -25% defensa | 300 monedas y 30 rollos de tela |
 | Armadura pesada | +25% defensa y -15% velocidad | 300 monedas y 50 lingotes de bronce | 
 
+  
 ### 4.5.3. VESTUARIO - CASCOS
 
 Los cascos afectan la iluminación, la defensa y la velocidad. Se fabrican en la tienda de ropa, utilizando lingotes de bronce y cristales de cuarzo.
@@ -181,6 +188,7 @@ Los cascos afectan la iluminación, la defensa y la velocidad. Se fabrican en la
 | Casco blindado | +50% iluminación, +25% defensa y -5% velocidad | 800 monedas, 50 lingotes de bronce y 15 piedras de cuarzo |
 | Casco ligero | +50% iluminación y +5% velocidad | 180 monedas, 10 lingotes de bronce y 5 piedras de cuarzo |
 
+  
 ### 4.5.4. MATERIALES RECOGIBLES
 
 Durante la exploración de la mina, el jugador puede recolectar materiales que se dividen en dos categorías:
@@ -206,6 +214,7 @@ Durante la exploración de la mina, el jugador puede recolectar materiales que s
 | Cristales de cuarzo | Fabricación de cascos | Muy raro | 15 monedas |
 | Cristales de obsidiana | Mejora de armas | Muy raro | 15 monedas |
 
+  
 ## 4.6. NIVELES, EVENTOS Y MISIONES
 ### 4.6.1. NIVELES DE PROFUNDIDAD
 
@@ -227,7 +236,10 @@ Durante la exploración de la mina, el jugador puede encontrarse con salas espec
 
 Las misiones se integran dentro de los eventos, especialmente en las salas de rescate. Cuando el jugador encuentra un NPC atrapado, se activa la misión de rescatarlo de los enemigos. Si tiene éxito, el NPC puede ofrecer una recompensa directa, un intercambio de objetos o desbloquear contenido adicional. Estas misiones aportan variedad narrativa y recompensas únicas dentro de la estructura de las runs.
 
-5. INTERFAZ
-5.1. DIAGRAMA DE FLUJO
+  
+## 5. INTERFAZ  
+### 5.1. DIAGRAMA DE FLUJO
 
 A continuación se muestra el diagrama de flujo de las interfaces del juego, donde se representa cómo se conectan entre sí las distintas pantallas y menús.
+
+![Imagen del diagrama de flujo de las interfaces](/Fotos_README/Flujo_de_interfaces.png "Diagrama de flujo de las interfaces")
