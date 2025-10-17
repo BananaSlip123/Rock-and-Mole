@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using static Codice.CM.Common.CmCallContext;
 public class MainMenuUI : MonoBehaviour
 {
     #region SERIALIZABLE
@@ -76,7 +75,6 @@ public class MainMenuUI : MonoBehaviour
     {
         if (eventSystem.currentSelectedGameObject == null)
         {
-            //me falta que solo se llame cuando no haya ningun selectable seleccionado en EventSystem este a null
             UpdateSelectedButton();
         }
     }

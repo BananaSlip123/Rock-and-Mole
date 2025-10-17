@@ -57,6 +57,8 @@ public class TutorialScript : MonoBehaviour
     void DialogEnded()
 	{
 		Debug.Log("fin");
+        if (scene == TutorialScene.Village)
+            GameData.NeedsTutorial = false;
         this.gameObject.SetActive(false);
     }
     #endregion

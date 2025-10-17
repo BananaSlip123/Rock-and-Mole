@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 public class GameMenu : MonoBehaviour
 {
     #region SERIALIZABLE
-    [Header("PLAYER INPUT")]
-    [SerializeField] PlayerInput playerInput;
     [Header("NAVIGATION WINDOWS")]
     [SerializeField] GameObject go_mainWindow;
     [SerializeField] GameObject go_pauseWindow;
@@ -14,6 +14,11 @@ public class GameMenu : MonoBehaviour
     [SerializeField] GameObject go_runInventoryInfoWindow;
     [Header("LIFE BAR")]
     [SerializeField] GameObject go_lifeBar;
+    [Header("INPUT NAVIGATION")]
+    [SerializeField] PlayerInput playerInput;
+    [SerializeField] EventSystem eventSystem;
+    [SerializeField] Selectable firstSelected_main;
+    [SerializeField] Selectable firstSelected_settings;
     #endregion
 
     #region PRIVATE VARS
@@ -60,6 +65,11 @@ public class GameMenu : MonoBehaviour
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
             playerInput.SwitchCurrentActionMap("UI");
     }
+
+    void UpdateSelectedButton()
+    {
+
+    }
     #endregion
 
     #region PUBLIC FUNCS
@@ -68,5 +78,13 @@ public class GameMenu : MonoBehaviour
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
     public void Button_OpenMain() => CurrentWindow = Windows.Main;
 
+    public void onPointer() => eventSystem.SetSelectedGameObject(null);
+    public void onNavigation()
+    {
+        if (eventSystem.currentSelectedGameObject == null)
+        {
+            UpdateSelectedButton();
+        }
+    }
     #endregion
 }

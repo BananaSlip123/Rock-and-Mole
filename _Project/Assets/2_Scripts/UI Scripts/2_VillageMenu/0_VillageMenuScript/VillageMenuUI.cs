@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 public class VillageMenuUI : MonoBehaviour
 {
     #region SERIALIZABLE
-    [Header("PLAYER INPUT")]
-    [SerializeField] PlayerInput playerInput;
     [Header("NAVEGATION WINDOWS")]
     [SerializeField] GameObject go_mainWindow;
     [SerializeField] GameObject go_pauseWindow;
@@ -18,6 +17,12 @@ public class VillageMenuUI : MonoBehaviour
     [Header("COMMON ELEMENTS")] //elementos compartidos por varias ventanas
     [SerializeField] GameObject go_inventory; //used by shop & inventory windows
    // [SerializeField] GameObject go_closeIcon;
+    
+    [Header("INPUT NAVIGATION")]
+    [SerializeField] PlayerInput playerInput;
+    [SerializeField] EventSystem eventSystem;
+    [SerializeField] Selectable firstSelected_main;
+    [SerializeField] Selectable firstSelected_settings;
 
     #endregion
     #region PRIVATE VARS
@@ -72,6 +77,11 @@ public class VillageMenuUI : MonoBehaviour
 
         //go_closeIcon.SetActive(nextWindow != Windows.Main && nextWindow != Windows.Pause);
     }
+
+    void UpdateSelectedButton()
+    {
+
+    }
     #endregion
 
     #region PUBLIC FUNCS
@@ -83,5 +93,14 @@ public class VillageMenuUI : MonoBehaviour
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
     public void Button_OpenMain() => CurrentWindow = Windows.Main;
     public void Button_ReturnToMenuScene() => SceneManager.LoadScene("1_MAIN_SCENE");
+
+    public void onPointer() => eventSystem.SetSelectedGameObject(null);
+    public void onNavigation()
+    {
+        if (eventSystem.currentSelectedGameObject == null)
+        {
+            UpdateSelectedButton();
+        }
+    }
     #endregion
 }
