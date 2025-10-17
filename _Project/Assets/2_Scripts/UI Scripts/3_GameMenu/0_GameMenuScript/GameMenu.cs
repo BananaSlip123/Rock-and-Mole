@@ -17,12 +17,13 @@ public class GameMenu : MonoBehaviour
     [Header("INPUT NAVIGATION")]
     [SerializeField] PlayerInput playerInput;
     [SerializeField] EventSystem eventSystem;
-    [SerializeField] Selectable firstSelected_main;
     [SerializeField] Selectable firstSelected_settings;
+    [SerializeField] Selectable firstSelected_pause;
     #endregion
 
     #region PRIVATE VARS
     Windows _currentWindow = Windows.Main;
+    RunInventoryUI inventoryReference;
     #endregion
     #region PUBLIC VARS
     public enum Windows
@@ -40,6 +41,7 @@ public class GameMenu : MonoBehaviour
         {
             SwitchWindow(_currentWindow, value);
             _currentWindow = value;
+            UpdateSelectedButton();
         }
     }
     #endregion
@@ -47,6 +49,7 @@ public class GameMenu : MonoBehaviour
     private void Awake()
     {
         SwitchWindow(null, Windows.Main);
+        inventoryReference = go_runInventoryWindow.GetComponent<RunInventoryUI>();
     }
     void SwitchWindow(Windows? lastWindow, Windows nextWindow)
     {
@@ -68,7 +71,16 @@ public class GameMenu : MonoBehaviour
 
     void UpdateSelectedButton()
     {
-
+        if (CurrentWindow == Windows.Settings)
+            firstSelected_settings.Select();
+        else if (CurrentWindow == Windows.Pause)
+            firstSelected_pause.Select();
+        else if (CurrentWindow == Windows.RunInventory)
+        {
+            Selectable firstSlot = inventoryReference.FirstElementToSelect;
+            if (firstSlot == null) CurrentWindow = Windows.Main;
+            else firstSlot.Select();
+        }
     }
     #endregion
 

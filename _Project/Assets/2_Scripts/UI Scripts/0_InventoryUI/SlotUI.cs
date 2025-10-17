@@ -135,7 +135,23 @@ public class SlotUI : MonoBehaviour
         RectTransform rectTransform = GetComponent<RectTransform>();
         rectTransform.anchoredPosition = pos;
     }
-
+    public Selectable GetSelectable() => GetComponentInChildren<Button>(false);
+    
+    public enum Direction { Left, Right, Down, Up }
+    public void SetNavigation(Selectable selectable, Direction direction)
+    {
+        //decirle q al navegar hacia la izquierta lo haga con el selectable recibido
+        Navigation nav = GetSelectable().navigation;
+        switch (direction)
+        {
+            case Direction.Left: nav.selectOnLeft = selectable; break;
+            case Direction.Right: nav.selectOnRight = selectable; break;
+            case Direction.Up: nav.selectOnUp = selectable; break;
+            case Direction.Down: nav.selectOnDown = selectable; break;
+        }
+        
+        GetSelectable().navigation = nav;
+    }
     public void Button_Select() => Selected = !Selected;
     public void SubscribeToOnSelected(Action onSelectedCallback) =>_onSelection = onSelectedCallback;
     public void SubscribeToOnUnselected(Action onUnselectedCallback) => _onUnselection = onUnselectedCallback;

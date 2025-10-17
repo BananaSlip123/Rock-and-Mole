@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6342483598332486897
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25,7 +25,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369561775301436898}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0005875, y: 1.0005875, z: 1.0005875}
   m_ConstrainProportionsScale: 1
@@ -226,6 +226,10 @@ PrefabInstance:
       value: GoBack_X_
       objectReference: {fileID: 0}
     - target: {fileID: 6440049614583174216, guid: 7e07f7cf7c525104bbf27dcb8c51a2d6, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440049614583174216, guid: 7e07f7cf7c525104bbf27dcb8c51a2d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Button_OpenPause
       objectReference: {fileID: 0}
@@ -255,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6907141815247005657, guid: 7e07f7cf7c525104bbf27dcb8c51a2d6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 35.28
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6907141815247005657, guid: 7e07f7cf7c525104bbf27dcb8c51a2d6, type: 3}
       propertyPath: m_SizeDelta.y
@@ -271,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6907141815247005657, guid: 7e07f7cf7c525104bbf27dcb8c51a2d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 6907141815247005657, guid: 7e07f7cf7c525104bbf27dcb8c51a2d6, type: 3}
       propertyPath: m_LocalRotation.w

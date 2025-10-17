@@ -1,10 +1,12 @@
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     //used in the village scene
     #region SERIALIZABLE
     [SerializeField] GameObject go_slotPrefab;//duplicamos este prefab
+    [SerializeField] Selectable objectToNavigate;
     [SerializeField] float initialX;
     [SerializeField] float initialY;
     [SerializeField] float distanceX;
@@ -16,9 +18,6 @@ public class InventoryUI : MonoBehaviour
     const int SIZE = SIZE_X * SIZE_Y;
     SlotUI[,] slots = new SlotUI[SIZE_Y, SIZE_X];
     SlotUI _selectedSlot = null;
-
-    #endregion
-    #region PUBLIC VARS
     SlotUI SelectedSlot
     {
         get => _selectedSlot;
@@ -32,6 +31,12 @@ public class InventoryUI : MonoBehaviour
             else
                 OnUnSelectedMaterial?.Invoke();
         }
+    }
+    #endregion
+    #region PUBLIC VARS
+    public Selectable FirstElementToSelect
+    {
+        get => slots[0, 0].GetSelectable();
     }
     public bool HasMaterialSelected => _selectedSlot != null;
     public MaterialName SelectedMaterial => _selectedSlot.MaterialAssigned;
@@ -52,6 +57,53 @@ public class InventoryUI : MonoBehaviour
                 slots[y, x].Init(new Vector3(coordX, coordY, 2));
             }
         }
+
+        AddNavigationToSlots();
+    }
+    private void AddNavigationToSlots()
+    {
+        Navigation nav = objectToNavigate.navigation; //el menu de tienda
+        nav.selectOnLeft = slots[0, SIZE_X - 1].GetSelectable();
+        objectToNavigate.navigation = nav;
+
+        for (int x = 0; x < SIZE_X; x++)
+        {
+            for (int y = 0; y < SIZE_Y; y++)
+            {
+                if (x == 0)//izq del todo
+                {
+                    slots[y, x].SetNavigation(objectToNavigate, SlotUI.Direction.Left);
+                    slots[y, x].SetNavigation(slots[y, 1].GetSelectable(), SlotUI.Direction.Right);
+                }
+                else if (x == SIZE_X - 1)//derecha del todo
+                {
+                    slots[y, x].SetNavigation(slots[y, x - 1].GetSelectable(), SlotUI.Direction.Left);
+                    slots[y, x].SetNavigation(objectToNavigate, SlotUI.Direction.Right);
+                }
+                else //medio
+                {
+                    slots[y, x].SetNavigation(slots[y, x - 1].GetSelectable(), SlotUI.Direction.Left);
+                    slots[y, x].SetNavigation(slots[y, x + 1].GetSelectable(), SlotUI.Direction.Right);
+                }
+
+                if(y == 0)
+                {
+                    slots[y, x].SetNavigation(slots[SIZE_Y - 1, x].GetSelectable(), SlotUI.Direction.Up);
+                    slots[y, x].SetNavigation(slots[y + 1, x].GetSelectable(), SlotUI.Direction.Down);
+                }
+                else if (y == SIZE_Y - 1)
+                {
+                    slots[y, x].SetNavigation(slots[y - 1, x].GetSelectable(), SlotUI.Direction.Up);
+                    slots[y, x].SetNavigation(slots[0, x].GetSelectable(), SlotUI.Direction.Down);
+                }
+                else
+                {
+                    slots[y, x].SetNavigation(slots[y - 1, x].GetSelectable(), SlotUI.Direction.Up);
+                    slots[y, x].SetNavigation(slots[y + 1, x].GetSelectable(), SlotUI.Direction.Down);
+                }
+            }
+        }
+        
     }
     private void OnEnable()//al inicio y al activar un objeto
     {

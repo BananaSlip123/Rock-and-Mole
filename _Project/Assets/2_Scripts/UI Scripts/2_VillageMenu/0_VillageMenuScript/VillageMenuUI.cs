@@ -21,12 +21,15 @@ public class VillageMenuUI : MonoBehaviour
     [Header("INPUT NAVIGATION")]
     [SerializeField] PlayerInput playerInput;
     [SerializeField] EventSystem eventSystem;
-    [SerializeField] Selectable firstSelected_main;
+    [SerializeField] Selectable firstSelected_pause;
     [SerializeField] Selectable firstSelected_settings;
+    [SerializeField] Selectable firstSelected_forge;
+    [SerializeField] Selectable firstSelected_wardrobe;
 
     #endregion
     #region PRIVATE VARS
     Windows _currentWindow = Windows.Main;
+    InventoryUI inventoryReference;
     #endregion
     #region PUBLIC VARS
     public enum Windows
@@ -34,7 +37,7 @@ public class VillageMenuUI : MonoBehaviour
         Main,
         Pause,
         Settings,
-        Inventory,
+        InventoryInfo,
         Shop,
         Forge,
         Wardrobe,
@@ -47,6 +50,7 @@ public class VillageMenuUI : MonoBehaviour
         {
             SwitchWindow(_currentWindow, value);
             _currentWindow = value;
+            UpdateSelectedButton();
         }
     }
     #endregion
@@ -54,6 +58,7 @@ public class VillageMenuUI : MonoBehaviour
     private void Awake()
     {
         SwitchWindow(null, Windows.Main);
+        inventoryReference = go_inventory.GetComponent<InventoryUI>();
     }
     void SwitchWindow(Windows? lastWindow, Windows nextWindow)
     {
@@ -61,12 +66,12 @@ public class VillageMenuUI : MonoBehaviour
         go_mainWindow.SetActive(isMain);
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
         go_pauseWindow.SetActive(nextWindow == Windows.Pause);
-        go_inventoryWindow.SetActive(nextWindow == Windows.Inventory);
+        go_inventoryWindow.SetActive(nextWindow == Windows.InventoryInfo);
         go_shopWindow.SetActive(nextWindow == Windows.Shop);
         go_forgeWindow.SetActive(nextWindow == Windows.Forge);
         go_wardrobeWindow.SetActive(nextWindow == Windows.Wardrobe);
 
-        go_inventory.SetActive(nextWindow == Windows.Shop || nextWindow == Windows.Inventory);
+        go_inventory.SetActive(nextWindow == Windows.Shop || nextWindow == Windows.InventoryInfo);
 
         bool isInit = !lastWindow.HasValue;
 
@@ -80,13 +85,26 @@ public class VillageMenuUI : MonoBehaviour
 
     void UpdateSelectedButton()
     {
-
+        if (CurrentWindow == Windows.Settings)
+            firstSelected_settings.Select();
+        else if (CurrentWindow == Windows.Pause)
+            firstSelected_pause.Select();
+        else if (CurrentWindow == Windows.InventoryInfo || CurrentWindow == Windows.Shop)
+        {
+            Selectable firstSlot = inventoryReference.FirstElementToSelect;
+            if (firstSlot == null) CurrentWindow = Windows.Main;
+            else firstSlot.Select();
+        }
+        else if (CurrentWindow == Windows.Wardrobe)
+            firstSelected_wardrobe.Select();
+        else if (CurrentWindow == Windows.Forge)
+            firstSelected_forge.Select();
     }
     #endregion
 
     #region PUBLIC FUNCS
     public void Button_OpenPause() => CurrentWindow = Windows.Pause;
-    public void Button_OpenInventory() => CurrentWindow = Windows.Inventory;
+    public void Button_OpenInventory() => CurrentWindow = Windows.InventoryInfo;
     public void Button_OpenShop() => CurrentWindow = Windows.Shop;
     public void Button_OpenForge() => CurrentWindow = Windows.Forge;
     public void Button_OpenWardrobe() => CurrentWindow = Windows.Wardrobe;

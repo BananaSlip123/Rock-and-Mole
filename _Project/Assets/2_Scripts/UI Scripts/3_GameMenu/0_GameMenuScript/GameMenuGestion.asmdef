@@ -2,7 +2,8 @@
     "name": "GameMenuGestion",
     "rootNamespace": "",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c"
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:e2aa420fc6db9d3469a5922d54758c67"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

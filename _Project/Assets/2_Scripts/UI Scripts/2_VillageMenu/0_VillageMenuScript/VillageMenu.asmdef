@@ -2,7 +2,8 @@
     "name": "VillageMenuGestion",
     "rootNamespace": "",
     "references": [
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "InventoryUI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
