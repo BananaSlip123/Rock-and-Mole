@@ -9,6 +9,7 @@ public class LifeBarUI : MonoBehaviour
     private void OnEnable()
     {
         MaxLife = damageableComponent.Health;
+        OnHealthChange(MaxLife);
         damageableComponent.OnHealthChange += OnHealthChange;
     }
     private void OnDisable()=> damageableComponent.OnHealthChange -= OnHealthChange;

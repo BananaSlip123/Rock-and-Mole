@@ -235,20 +235,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &460010441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: UI/Cancel
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -944628639613478452, guid: 5975711f5a388e64cb8dee3dec339645, type: 3}
-  m_ActionId: cb8d2c4f-b8b1-440e-b5c7-321a833f7e69
 --- !u!114 &666872084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,7 +598,7 @@ MonoBehaviour:
   m_PointAction: {fileID: 341775079}
   m_MoveAction: {fileID: 1673614038}
   m_SubmitAction: {fileID: 1222894008}
-  m_CancelAction: {fileID: 460010441}
+  m_CancelAction: {fileID: 0}
   m_LeftClickAction: {fileID: 1103545836}
   m_MiddleClickAction: {fileID: 919841617}
   m_RightClickAction: {fileID: 714029718}

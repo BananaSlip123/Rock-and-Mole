@@ -78,7 +78,11 @@ public class GameMenu : MonoBehaviour
         else if (CurrentWindow == Windows.RunInventory)
         {
             Selectable firstSlot = inventoryReference.FirstElementToSelect;
-            if (firstSlot == null) CurrentWindow = Windows.Main;
+            if (firstSlot == null)
+            {
+                Debug.Log("grr");
+                CurrentWindow = Windows.Main;
+            }
             else firstSlot.Select();
         }
     }
