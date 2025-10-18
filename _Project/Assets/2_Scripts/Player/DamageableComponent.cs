@@ -1,6 +1,8 @@
 using Codice.Client.Common.GameUI.Checkin;
 using System;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DamageableComponent : MonoBehaviour, IDamageableComponent
 {
@@ -53,5 +55,6 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     {
         Destroy(this.gameObject);
         GameData.Put_RunInventory_Into_Inventory(70);
+        SceneManager.LoadScene("2_VILLAGE_SCENE");
     }
 }
