@@ -324,37 +324,39 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 **Unai Pastrana Torres:** Diseño y programación de interfaces.  
 **Santiago Varela Rey:** Música y efectos de sonido.
 
-8. POSTMORTEM
-8.1. INDIVIDUAL
-8.1.1. QUÉ SALIÓ BIEN
+---
 
-Ana María Caamaño del Amo: se ha avanzado en el desarrollo del juego de manera constante, lo que ha permitido que para la entrega de la alfa esté implementado todo lo que queríamos. Respecto al modelado, la comunicación con el concept artist fue bastante fluida, por lo que los modelados pudieron comenzarse a realizar temprano en el desarrollo. 
+### 8. POSTMORTEM
+#### 8.1. INDIVIDUAL
+##### 8.1.1. QUÉ SALIÓ BIEN
 
-Javier Martín Mulero: se han cumplido los plazos establecidos por el equipo, llegando a hacer incluso más de lo que se había pensado en un principio para la alfa. El desarrollo del juego en todos sus apartados está siendo correcto.
+**Ana María Caamaño del Amo:** se ha avanzado en el desarrollo del juego de manera constante, lo que ha permitido que para la entrega de la alfa esté implementado todo lo que queríamos. Respecto al modelado, la comunicación con el concept artist fue bastante fluida, por lo que los modelados pudieron comenzarse a realizar temprano en el desarrollo. 
 
-Lara Sánchez Sanz: la organización del equipo fue bastante efectiva desde el inicio, lo que nos ha permitido completar la entrega alfa sin problemas. La comunicación entre todos los miembros del equipo en general fue bastante fluida y continua, el Teams se ha usado de manera constante para compartir la información de los avances del equipo. Para ser el primer trabajo completo en 3D del grupo, el equipo se adaptó bastante bien al proceso, aprendiendo sobre la marcha.
+**Javier Martín Mulero:** se han cumplido los plazos establecidos por el equipo, llegando a hacer incluso más de lo que se había pensado en un principio para la alfa. El desarrollo del juego en todos sus apartados está siendo correcto.
 
-Jesús Mercado Rioja: se ha desarrollado el juego de forma correcta en base a los objetivos planteados al comienzo del proyecto para la fase alfa, en este sentido el equipo supo cómo dar prioridad a unas tareas sobre otras, permitiendo alcanzar estos objetivos de forma más rápida. Respecto al apartado artístico del juego, esto se aplicó tanto en el diseño como en el modelado 3D de los diferentes personajes, props, etc. Destacando la importancia de unos sobre otros, y por tanto marcando cuáles de ellos se debían desarrollar primero.
+**Lara Sánchez Sanz:** la organización del equipo fue bastante efectiva desde el inicio, lo que nos ha permitido completar la entrega alfa sin problemas. La comunicación entre todos los miembros del equipo en general fue bastante fluida y continua, el Teams se ha usado de manera constante para compartir la información de los avances del equipo. Para ser el primer trabajo completo en 3D del grupo, el equipo se adaptó bastante bien al proceso, aprendiendo sobre la marcha.
 
-Unai Pastrana Torres: 
+**Jesús Mercado Rioja:** se ha desarrollado el juego de forma correcta en base a los objetivos planteados al comienzo del proyecto para la fase alfa, en este sentido el equipo supo cómo dar prioridad a unas tareas sobre otras, permitiendo alcanzar estos objetivos de forma más rápida. Respecto al apartado artístico del juego, esto se aplicó tanto en el diseño como en el modelado 3D de los diferentes personajes, props, etc. Destacando la importancia de unos sobre otros, y por tanto marcando cuáles de ellos se debían desarrollar primero.
+
+**Unai Pastrana Torres:**
 En la alfa dió tiempo a programar las mecánicas principales (movimiento, salud y venta de objetos, así como un buen feedback visual en las interfaces.
 Además, se realizó la persistencia básica de la información de partida.
 Se logró un apartado artístico definido, así como la actividad básica en redes sociales.
 
-Santiago Varela Rey: la selección y edición de efectos de sonido y música se ha supervisado por el resto del equipo y se ha recibido feedback por parte de compañeros para que elementos como la música, sean más acordes a la estética cartoon del producto.
+**Santiago Varela Rey:** la selección y edición de efectos de sonido y música se ha supervisado por el resto del equipo y se ha recibido feedback por parte de compañeros para que elementos como la música, sean más acordes a la estética cartoon del producto.
 
 
-8.1.2. QUÉ SALIÓ MAL
+##### 8.1.2. QUÉ SALIÓ MAL
 
-Ana María Caamaño del Amo: no se usó de forma correcta Trello para el seguimiento de tareas, se usó decentemente al comienzo del desarrollo y según se fue avanzando su uso decayó: surgieron nuevas tareas que no se incluyeron, no se marcaron qué tareas estaban en desarrollo y cuáles acabadas, etc. Lo que provocó que miembros del equipo tuviesen que ir preguntando personalmente al resto. Otra cosa serían las redes sociales, en las cuales se comenzaron a publicar cosas de forma tardía y esporádica cuando se debería haber hecho de forma más constante.
+**Ana María Caamaño del Amo:** no se usó de forma correcta Trello para el seguimiento de tareas, se usó decentemente al comienzo del desarrollo y según se fue avanzando su uso decayó: surgieron nuevas tareas que no se incluyeron, no se marcaron qué tareas estaban en desarrollo y cuáles acabadas, etc. Lo que provocó que miembros del equipo tuviesen que ir preguntando personalmente al resto. Otra cosa serían las redes sociales, en las cuales se comenzaron a publicar cosas de forma tardía y esporádica cuando se debería haber hecho de forma más constante.
 
-Javier Martín Mulero: no considero que haya una mala organización pero si hay una mala comunicación entre todos los miembros del equipo. Además hay elementos de diseño que se han cambiado a mitad de la alfa. Por último, hay miembros del equipo que no han usado del todo bien la tabla de Trello que tenemos para organizar las tareas para la alfa, olvidándose de marcarlas como completadas una vez hechas o una vez empezadas a hacer no ponerlas como que se estaban haciendo.
+**Javier Martín Mulero:** no considero que haya una mala organización pero si hay una mala comunicación entre todos los miembros del equipo. Además hay elementos de diseño que se han cambiado a mitad de la alfa. Por último, hay miembros del equipo que no han usado del todo bien la tabla de Trello que tenemos para organizar las tareas para la alfa, olvidándose de marcarlas como completadas una vez hechas o una vez empezadas a hacer no ponerlas como que se estaban haciendo.
 
-Lara Sánchez Sanz: aunque al inicio había una comunicación entre todos los miembros, también hubo cierta falta de seguimiento en tareas compartidas, no utilizando correctamente y de manera constante las herramientas para ello como Trello. En cuanto a la narrativa, faltó tiempo para dramatizar mejor ciertos eventos y reforzar la atmósfera en algunas salas.
+**Lara Sánchez Sanz:** aunque al inicio había una comunicación entre todos los miembros, también hubo cierta falta de seguimiento en tareas compartidas, no utilizando correctamente y de manera constante las herramientas para ello como Trello. En cuanto a la narrativa, faltó tiempo para dramatizar mejor ciertos eventos y reforzar la atmósfera en algunas salas.
 
-Jesús Mercado Rioja: si bien se consiguieron acabar los objetivos planteados para esta fase, se podrían haber desarrollado muchas más cosas si hubiera habido una mejor comunicación entre los miembros del equipo, ya fuera por mensajes o por  llamadas que permitieran poner en común la opinión de todos sobre diferentes aspectos del juego. Ya que en muchas ocasiones la comunicación se basó en preguntar a personas de forma privada, esto provocado a su vez por esa falta de comunicación grupal notable en el uso incorrecto de Trello, hacía que los integrantes del grupo no tuviéramos claro qué tareas se habían finalizado y cuáles no.
+**Jesús Mercado Rioja:** si bien se consiguieron acabar los objetivos planteados para esta fase, se podrían haber desarrollado muchas más cosas si hubiera habido una mejor comunicación entre los miembros del equipo, ya fuera por mensajes o por  llamadas que permitieran poner en común la opinión de todos sobre diferentes aspectos del juego. Ya que en muchas ocasiones la comunicación se basó en preguntar a personas de forma privada, esto provocado a su vez por esa falta de comunicación grupal notable en el uso incorrecto de Trello, hacía que los integrantes del grupo no tuviéramos claro qué tareas se habían finalizado y cuáles no.
 
-Unai Pastrana Torres: 
+**Unai Pastrana Torres:** 
 
 Se podría haber logrado una mejor organización de tareas en trello, muchas de ellas no las pude marcar hasta el final, porque eran muy genéricas.
 
@@ -362,53 +364,57 @@ Se decidió recortar bastante el sistema de gestión de recursos y si se se deci
 
 Tuve que rehacer ciertas cosas en Unity por no plantear el diseño de las interfaces de forma modular con prefabs desde el principio.
 
-Santiago Varela Rey: las tareas relacionadas con sonido y música se han realizado, desde mi punto de vista, de forma lenta. Se podría haber optimizado el trabajo y realizado otras tareas del desarrollo si se hubiesen terminado desde el principio.
+**Santiago Varela Rey:** las tareas relacionadas con sonido y música se han realizado, desde mi punto de vista, de forma lenta. Se podría haber optimizado el trabajo y realizado otras tareas del desarrollo si se hubiesen terminado desde el principio.
 
-8.1.3. QUÉ SE PUEDE MEJORAR
+##### 8.1.3. QUÉ SE PUEDE MEJORAR
 
-Ana María Caamaño del Amo: en el apartado de 3D considero que habría que controlar mejor la cantidad de vértices y polígonos que tienen los modelos para asegurarse de que estén lo más optimizados posibles y no lleguen a dar algún problema. También habría que mejorar la comunicación con los miembros de ámbitos diferentes, ya que considero que cada uno solo se centraba en lo que le tocaba y no en los demás aspecto del juego.
+**Ana María Caamaño del Amo:** en el apartado de 3D considero que habría que controlar mejor la cantidad de vértices y polígonos que tienen los modelos para asegurarse de que estén lo más optimizados posibles y no lleguen a dar algún problema. También habría que mejorar la comunicación con los miembros de ámbitos diferentes, ya que considero que cada uno solo se centraba en lo que le tocaba y no en los demás aspecto del juego.
 
-Javier Martín Mulero: haría que la comunicación fuera diferente; sobre todo, más directa entre los compañeros del equipo. De cara a la beta en la parte del código, intentar mejorarlo ya que hay sistemas del juego que no considero que estén bien programados.Aún así, creo que la alfa ha salido bastante bien a pesar de que ha habido algún problema.
+**Javier Martín Mulero:** haría que la comunicación fuera diferente; sobre todo, más directa entre los compañeros del equipo. De cara a la beta en la parte del código, intentar mejorarlo ya que hay sistemas del juego que no considero que estén bien programados.Aún así, creo que la alfa ha salido bastante bien a pesar de que ha habido algún problema.
 
-Lara Sánchez Sanz: sería útil establecer un mejor sistema de tareas completadas y por hacer, uno que el equipo pueda usar de forma constante. También creo que aunque el ritmo del equipo ha sido bastante bueno, podríamos gestionar mejor el tiempo para la siguiente entrega para seguir trabajando sin retrasos ni problemas de entrega.
+**Lara Sánchez Sanz:** sería útil establecer un mejor sistema de tareas completadas y por hacer, uno que el equipo pueda usar de forma constante. También creo que aunque el ritmo del equipo ha sido bastante bueno, podríamos gestionar mejor el tiempo para la siguiente entrega para seguir trabajando sin retrasos ni problemas de entrega.
 
-Jesús Mercado Rioja: se debería mejorar la comunicación del equipo, intentando que esta involucre a todos los miembros del equipo y no solo a aquellos que formen parte del  mismo ámbito del trabajo. En el apartado artístico del juego, se podrían simplificar algunos de los diseños para hacer así que los modelados 3D sean acordes a la idea  low poly del proyecto.
+**Jesús Mercado Rioja:** se debería mejorar la comunicación del equipo, intentando que esta involucre a todos los miembros del equipo y no solo a aquellos que formen parte del  mismo ámbito del trabajo. En el apartado artístico del juego, se podrían simplificar algunos de los diseños para hacer así que los modelados 3D sean acordes a la idea  low poly del proyecto.
 
-Unai Pastrana Torres: 
+**Unai Pastrana Torres:** 
 Definir bien el código y la gestión de prefabs para que resulte fácil hacer cambios que se propaguen rápido por todas las escenas y objetos del proyecto.
 Llevar las tareas de trello al día para facilitar la coordinación con los compañeros.
 
-Santiago Varela Rey: resultaría más acertado el resolver las tareas de forma más eficaz para evitar acumular otras tareas más importantes para el desarrollo. Para futuras versiones se pretenderá corregir esto.
-8.1.4. CONCLUSIÓN
+**Santiago Varela Rey:** resultaría más acertado el resolver las tareas de forma más eficaz para evitar acumular otras tareas más importantes para el desarrollo. Para futuras versiones se pretenderá corregir esto.  
 
-Ana María Caamaño del Amo: a pesar de los problemas de comunicación, la alfa ha salido incluso mejor de lo que se esperaba; lo que va a motivar al equipo a seguir esforzándose y mejorar para asegurarse de que la beta quede lo mejor posible.
+##### 8.1.4. CONCLUSIÓN
 
-Javier Martín Mulero: creo que a todos nos ha gustado cómo ha quedado la alfa, más completa de la que lo habíamos planteado. Personalmente, creo que es un impacto positivo en el equipo que haya salido así y de cara a la beta si mejoramos lo que ha salido mal seguro que sale mejor que la alfa.
+**Ana María Caamaño del Amo:** a pesar de los problemas de comunicación, la alfa ha salido incluso mejor de lo que se esperaba; lo que va a motivar al equipo a seguir esforzándose y mejorar para asegurarse de que la beta quede lo mejor posible.
 
-Lara Sánchez Sanz: la entrega alfa ha salido bastante bien, incluso mejor de lo que esperábamos, teniendo en cuenta que es el primer proyecto 3D del equipo. Hemos conseguido una base sólida sobre la que seguir trabajando, y ahora partimos de un buen punto para la beta.
+**Javier Martín Mulero:** creo que a todos nos ha gustado cómo ha quedado la alfa, más completa de la que lo habíamos planteado. Personalmente, creo que es un impacto positivo en el equipo que haya salido así y de cara a la beta si mejoramos lo que ha salido mal seguro que sale mejor que la alfa.
 
-Jesús Mercado Rioja: la fase alfa ha salido mejor de lo esperado, y a pesar de la falta de comunicación que se ha tenido en algunos momentos, el equipo ha sabido resolver cualquier problema que iba surgiendo para obtener un resultado acorde con los objetivos marcados. Además, esto permitirá al equipo partir de una base sólida y una experiencia previa que ayudará a mejorar la eficiencia del desarrollo durante la fase beta.
+**Lara Sánchez Sanz:** la entrega alfa ha salido bastante bien, incluso mejor de lo que esperábamos, teniendo en cuenta que es el primer proyecto 3D del equipo. Hemos conseguido una base sólida sobre la que seguir trabajando, y ahora partimos de un buen punto para la beta.
 
-Unai Pastrana Torres: el desarrollo avanzó en jugabilidad y arte, pero la falta de una planificación detallada afectó al flujo de trabajo.
+**Jesús Mercado Rioja:** la fase alfa ha salido mejor de lo esperado, y a pesar de la falta de comunicación que se ha tenido en algunos momentos, el equipo ha sabido resolver cualquier problema que iba surgiendo para obtener un resultado acorde con los objetivos marcados. Además, esto permitirá al equipo partir de una base sólida y una experiencia previa que ayudará a mejorar la eficiencia del desarrollo durante la fase beta.
 
-Santiago Varela Rey: estoy satisfecho con el resultado de la versión alfa. Cada uno hemos realizado las tareas correspondientes y la comunicación entre los miembros ha agilizado el desarrollo y uniformizado el concepto del videojuego.
-8.2. GRUPAL
-8.2.1. QUÉ SALIÓ BIEN
+**Unai Pastrana Torres:** el desarrollo avanzó en jugabilidad y arte, pero la falta de una planificación detallada afectó al flujo de trabajo.
+
+**Santiago Varela Rey:** estoy satisfecho con el resultado de la versión alfa. Cada uno hemos realizado las tareas correspondientes y la comunicación entre los miembros ha agilizado el desarrollo y uniformizado el concepto del videojuego.  
+
+#### 8.2. GRUPAL
+##### 8.2.1. QUÉ SALIÓ BIEN
 
 El equipo ha logrado avanzar de forma constante y cumplir los objetivos de la entrega alfa. La organización inicial fue efectiva, con un reparto de tareas claro y una comunicación fluida, se usó Teams de forma constante para compartir avances y coordinar el trabajo.
 
-A nivel técnico, se implementaron las mecánicas principales y se logró el estilo artístico esperado en los modelos 3D. 
-8.2.2. QUÉ SALIÓ MAL
+A nivel técnico, se implementaron las mecánicas principales y se logró el estilo artístico esperado en los modelos 3D.  
+
+##### 8.2.2. QUÉ SALIÓ MAL
 
 Uno de los principales problemas fue el uso de Trello. Aunque se utilizó al principio, su seguimiento decayó con el tiempo: no se registraron nuevas tareas, no se marcaban como completadas; y esto obligó a resolver dudas de forma individual. La comunicación grupal se vio afectada, con decisiones tomadas en privado y falta de reuniones que permitieran poner ideas en común.
 
 
-8.2.3. QUÉ SE PUEDE MEJORAR
+##### 8.2.3. QUÉ SE PUEDE MEJORAR
 
 De cara a la beta, es necesario reforzar la comunicación entre áreas y mantener un sistema de seguimiento de tareas constante y actualizado. 
 
-A nivel técnico se propone mejorar ciertos elementos como el uso de prefabs y la modularidad del código. A nivel artístico, se recomienda controlar mejor la optimización de  los modelos 3D.
-8.2.4. CONCLUSIÓN
+A nivel técnico se propone mejorar ciertos elementos como el uso de prefabs y la modularidad del código. A nivel artístico, se recomienda controlar mejor la optimización de los modelos 3D.  
+
+##### 8.2.4. CONCLUSIÓN
 
 A parte de los problemas de comunicación y organización, la versión alfa ha superado las expectativas del equipo. Se ha conseguido una base sólida sobre la que seguir trabajando, y el resultado ha motivado al grupo a continuar con energía y compromiso. Si se aplican las mejoras detectadas, la beta tiene potencial para ser aún más completa y pulida.
 
