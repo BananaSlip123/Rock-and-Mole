@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DamageableComponent : MonoBehaviour, IDamageableComponent
 {
@@ -6,6 +8,21 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 
     [SerializeField] private int health = 50;
 
+    public int Health
+    {
+        get => health;
+        private set
+        {
+            if(value != health)
+            {
+                health = value;
+                OnHealthChange?.Invoke(value);
+            }
+            
+        }
+    }
+
+    public Action<int> OnHealthChange;
     private void FixedUpdate()
     {
         
@@ -13,9 +30,11 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 
     public void RecieveDamage(int damage)
     {
-        health -= damage;
+        Health -= damage;
         hasBeenDamaged = true;
 
+        if(Health <= 0)
+            Death();
         Debug.Log("Me han quitado vida");
     }
 
@@ -28,5 +47,12 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     {
         hasBeenDamaged = false;
         Debug.Log("He salido del area");
+    }
+
+    private void Death()
+    {
+        Destroy(this.gameObject);
+        GameData.Put_RunInventory_Into_Inventory(70);
+        SceneManager.LoadScene("2_VILLAGE_SCENE");
     }
 }

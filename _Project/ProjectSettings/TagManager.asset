@@ -6,14 +6,17 @@ TagManager:
   tags:
   - Enemy
   - HitboxPickaxe
+  - Rock
+  - Door
+  - Chikito
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
