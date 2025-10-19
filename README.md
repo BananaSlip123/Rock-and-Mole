@@ -1,5 +1,5 @@
 # <div align="center"> ROCK & MOLE </div>
-<div align="center">GAME DESIGN DOCUMENT</div>
+<div align="center">GAME DESIGN DOCUMENT - v0.1.0</div>
 
 <br><br><br><br>
 
@@ -94,13 +94,22 @@ Las salas pueden contener enemigos, recursos mineros, cofres o eventos únicos. 
 
 El juego está diseñado para jugarse tanto en PC como en dispositivos móviles. En ordenador, el jugador puede utilizar teclado y ratón o con mando de Xbox, PlayStation y Nintendo. En móvil, el juego requiere el uso de mando conectado, ya que no está optimizado para controles táctiles.
 
-| Acción | Teclado y ratón (PC) | Mando Xbox | Mando PlayStation |
-| :----: | :------------------: | :--------: | :---------------: |
-| Moverse | Teclas WASD         | Joystick izquierdo | Joystick izquierdo |
-| Atacar | Click izquierdo | RT (gatillo derecho) | R2 (gatillo derecho) |
-| Dash | Shift | LT (gatillo izquierdo) | L2 (gatillo izquierdo) |
+| Acción | Teclado y ratón (PC) | Mando Xbox | Mando PlayStation | Mando Nintendo |
+| :----: | :------------------: | :--------: | :---------------: | :-------------: |
+| Moverse | Teclas WASD         | Joystick izquierdo | Joystick izquierdo | Joystick izquierdo |
+| Atacar | Click izquierdo | RT (gatillo derecho) | R2 (gatillo derecho) | ZR (gatillo derecho) |
+| Dash | Shift | LT (gatillo izquierdo) | L2 (gatillo izquierdo) | ZL (gatillo izquierdo) |
 
 <br>  
+
+| Interfaz | Teclado y ratón (PC) | Mando Xbox | Mando PlayStation | Mando Nintendo |
+| :----: | :------------------: | :--------: | :---------------: | :-------------: |
+| Pausa | Esc         | ≡ | Options | + |
+| Inventario | Tab | Y | △ | X |
+| Aceptar | Clic | A | X | A |
+| Diálogos | Espacio/Clic | A | X | A |
+
+<br>
 
 ## 4.3. PERSONAJES
 
@@ -158,7 +167,7 @@ La progresión del jugador se basa en la mejora del equipo mediante los material
 
 El pico es el arma principal del jugador. Se mejora en la herrería, utilizando materiales específicos. Cada nivel incrementa el daño y la velocidad de ataque.
 
-| Nivel | Nombre | Efecto | Precio |
+| Nivel | Nombre | Efecto | Precio de mejora |
 | :---: | :----: | :----: | :----: |
 | 1 | Pico oxidado | Daño básico | Arma inicial |
 | 2 | Pico reforzado | +10% daño y +10% velocidad de ataque | 70 monedas y 15 lingotes de hierro |
@@ -213,11 +222,11 @@ Durante la exploración de la mina, el jugador puede recolectar materiales que s
 | Nombre | Utilidad | Rareza | Precio |
 | :---: | :----: | :----: | :-------: |
 | Lingotes de hierro | Mejora de armas | Común | 4 monedas |
-| Rollos de tela | Fabricación de prendas | Común | 30 monedas |
-| Carbón | Mejora de armas | Raro | 8 monedas |
-| Lingotes de bronce | Fabricación de armaduras y cascos | Raro | 8 monedas |
-| Cristales de cuarzo | Fabricación de cascos | Muy raro | 15 monedas |
-| Cristales de obsidiana | Mejora de armas | Muy raro | 15 monedas |
+| Carbón | Mejora de armas | Raro | 15 monedas |
+| Lingotes de bronce | Fabricación de armaduras y cascos | Raro | 25 monedas |
+| Cristales de cuarzo | Fabricación de cascos | Muy raro | 50 monedas |
+| Rollos de tela | Fabricación de prendas | Muy raro | 50 monedas |
+| Cristales de obsidiana | Mejora de armas | Muy raro | 50 monedas |
 
 <br>
 
