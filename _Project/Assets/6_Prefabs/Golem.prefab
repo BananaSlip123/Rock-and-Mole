@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 924566223467400}
   - component: {fileID: 870731423749373896}
   - component: {fileID: 8270225429929596011}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Golem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2686146746383417494}
   - component: {fileID: 2334363033604286082}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HitboxAtaque
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,10 +231,46 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7960783426449211329, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7916011882528917670, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7841824994988191163, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7611589330529233451, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6417981583675412927, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6264648377952512750, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -5992487101480201693, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: dee520fb0fe44414dada5bc94180b564, type: 2}
+    - target: {fileID: -5097557480111196234, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5045069282678677994, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370111678170979691, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -1911442275809941585, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -243,18 +279,54 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: dee520fb0fe44414dada5bc94180b564, type: 2}
+    - target: {fileID: -831692607592565241, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -155925767101806249, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 509555940847924167, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
       propertyPath: m_Name
       value: Golem.P
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
       propertyPath: m_TagString
       value: Chikito
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207793194445991111, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412148025322019163, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1524325039038164168, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: dee520fb0fe44414dada5bc94180b564, type: 2}
+    - target: {fileID: 3439300763897880096, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368002659860420144, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7706110884207132511, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -263,6 +335,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: dee520fb0fe44414dada5bc94180b564, type: 2}
+    - target: {fileID: 8402621823960547408, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
