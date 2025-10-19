@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d651f979b66904094e1d0d5a7560a4, type: 3}
   m_Name: AlfaDoorsProbabilities
   m_EditorClassIdentifier: 
-  combatProb: 0.5
-  miningProb: 0.8
-  eventProb: 1
-  campamentProb: 0.3
-  rescueProb: 0.55
-  tresaureProb: 0.75
-  darkProb: 1
+  combatProb: 0.6
+  miningProb: 1
+  eventProb: 0
+  campamentProb: 0
+  rescueProb: 0
+  tresaureProb: 0
+  darkProb: 0
