@@ -253,6 +253,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f802ae06-26a3-44fe-a1ab-56f26fb47659",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b2dec4cf-a106-44f6-ac86-f1c3989edb3a",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
