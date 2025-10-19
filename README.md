@@ -36,11 +36,11 @@ Banana Slip
 
 ## 1.4. PLATAFORMAS
 
-*Rock & Mole* se desarrolla como un juego web, accesible desde navegadores en PC y dispositivos móviles. En ordenadores, el jugador podrá utilizar teclado y ratón y en móviles controles táctiles.
+*Rock & Mole* se desarrolla como un juego web, accesible desde navegadores en PC y dispositivos móviles. En ordenadores, los jugadores pueden utilizar teclado y ratón, o bien jugar con mando y en móviles, sólo es posible conectar un mando externo para jugar.
 
 ## 1.5. ESTILO VISUAL
 
-El estilo visual del juego combina una estética top-down en 3D con un estilo low poly con una ambientación cálida y subterránea. La dirección artística se inspira en títulos como *Moonlighter 2*, especialmente en el uso de colores suaves e iluminación ambiental, con texturas planas y simples.
+El estilo visual del juego combina una estética low- poly en 3D con vista isométrica y una ambientación cálida y subterránea. La dirección artística se inspira en títulos como *Moonlighter 2*, especialmente en el uso de colores suaves e iluminación ambiental, con texturas planas y simples.
 
 El protagonista y los NPCs están basados en animales que habitan bajo tierra, como topos o musarañas. Los enemigos representan una fusión entre criaturas animales (corrompidas) y elementos fantásticos.
 
@@ -92,7 +92,7 @@ Las salas pueden contener enemigos, recursos mineros, cofres o eventos únicos. 
 
 ## 4.2. CONTROLES
 
-El juego está diseñado para jugarse tanto en PC como en dispositivos móviles. En ordenador, el jugador puede utilizar teclado y ratón o con mando tanto de Xbox como de PlayStation. En móvil, el juego requiere el uso de mando conectado, ya que no está optimizado para controles táctiles.
+El juego está diseñado para jugarse tanto en PC como en dispositivos móviles. En ordenador, el jugador puede utilizar teclado y ratón o con mando de Xbox, PlayStation y Nintendo. En móvil, el juego requiere el uso de mando conectado, ya que no está optimizado para controles táctiles.
 
 | Acción | Teclado y ratón (PC) | Mando Xbox | Mando PlayStation |
 | :----: | :------------------: | :--------: | :---------------: |
@@ -106,7 +106,7 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 
 **Protagonista:**
 
-* **Nombre:** (Por determinar).
+* **Nombre:** Otto.
 * **Especie:** Topo.
 * **Rol:** Explorador y comerciante. Es el personaje controlado por el jugador.
 
@@ -156,7 +156,7 @@ La progresión del jugador se basa en la mejora del equipo mediante los material
 
 ### 4.5.1. MEJORA DE ARMA - PICO
 
-El pico es el arma principal del jugador. Se mejora en la herrería, utilizando materiales específicos. Cada nivel incrementa el daño por segundo y la velocidad de ataque.
+El pico es el arma principal del jugador. Se mejora en la herrería, utilizando materiales específicos. Cada nivel incrementa el daño y la velocidad de ataque.
 
 | Nivel | Nombre | Efecto | Precio |
 | :---: | :----: | :----: | :----: |
