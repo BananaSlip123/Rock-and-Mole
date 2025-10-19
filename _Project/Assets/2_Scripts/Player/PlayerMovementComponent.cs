@@ -14,7 +14,7 @@ namespace PlayerComponents
 
         #region Dash
         const float COOLDOWN = 0.2f;
-        const float DASH_TIME = 0.1f;
+        const float DASH_TIME = 1f;
 
         float timeCooldown = 0f;
         float timeDashing = 0f;
@@ -64,6 +64,7 @@ namespace PlayerComponents
                 else
                 {
                     IsInCooldown = false;
+                    timeCooldown = 0f;
                 }
             }
                 
@@ -98,6 +99,7 @@ namespace PlayerComponents
             {
                 isDashing = false;
                 IsInCooldown = true;
+                timeDashing = 0f;
 
                 Debug.Log("He terminado el dash");
             }

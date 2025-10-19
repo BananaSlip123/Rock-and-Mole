@@ -68,7 +68,7 @@ Transform:
   m_GameObject: {fileID: 3876774126850002278}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.022265, y: 1.2217932, z: 6.9135838}
+  m_LocalPosition: {x: -8.56, y: 1.2217932, z: 1.91}
   m_LocalScale: {x: 2.9, y: 1, z: 5.96}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -105,7 +105,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ad1cef049af252d49be0f94d7452d684, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesPrefabs:
   - {fileID: 3666153045942041263, guid: 2cc472ce8692def4d8fd611cfcacb381, type: 3}
-  limitX: {x: -12, y: -9}
-  limitZ: {x: -23, y: -17}
+  limitX: {x: -46, y: -43}
+  limitZ: {x: -33, y: -27}
   minMaxEnemies: {x: 1, y: 3}
 --- !u!1 &4392862752905347638
 GameObject:

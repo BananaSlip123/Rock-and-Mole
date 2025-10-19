@@ -3,7 +3,7 @@ using UnityEngine;
 public class GolemAttackState : IStateComponent, IAttackComponent
 {
 
-    const float COOLDOWN = 0.5f;
+    const float COOLDOWN = 2.5f;
     const float TIME_HITBOX = 0.1f;
 
     private float timeToAttack = 0f;
@@ -48,6 +48,9 @@ public class GolemAttackState : IStateComponent, IAttackComponent
         attackHitbox = enemyTransform.GetChild(1).GetComponent<Collider>();
         Debug.Log("ESTOY ATACANDO");
         animator.SetBool("Atacar", true);
+
+        if (enemyTransform.gameObject.name == "GolemBoss")
+            damage = 20;
     }
 
     public void Exit()
@@ -100,7 +103,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     private bool isHitingPlayer()
     {
-        Collider[] p = Physics.OverlapBox(enemyTransform.position, new Vector3(2.5f,2.5f,2.5f), Quaternion.identity);
+        Collider[] p = Physics.OverlapBox(enemyTransform.position, attackHitbox.bounds.size/2, Quaternion.identity);
 
         foreach (Collider c in p)
         {

@@ -24,9 +24,13 @@ public class RockGenerator : MonoBehaviour, IEnemyGenerator
 
     public void SpawnEnemy(GameObject prefab)
     {
-        float randomZ = UnityEngine.Random.Range(limitZ.x, limitZ.y);
-        float randomX = UnityEngine.Random.Range(limitX.x, limitX.y);
+        Collider collider = GetComponent<Collider>();
+        //float randomZ = UnityEngine.Random.Range(limitZ.x, limitZ.y);
+        //float randomX = UnityEngine.Random.Range(limitX.x, limitX.y);
 
-        Instantiate(prefab, new Vector3(randomX, 4.5f, randomZ), Quaternion.identity);
+        float randomX = UnityEngine.Random.Range(collider.bounds.min.x,collider.bounds.max.x);
+        float randomZ = UnityEngine.Random.Range(collider.bounds.min.z, collider.bounds.max.z);
+
+        Instantiate(prefab, new Vector3(randomX, transform.position.y, randomZ), Quaternion.identity);
     }
 }

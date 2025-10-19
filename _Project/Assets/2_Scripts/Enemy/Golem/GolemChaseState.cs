@@ -1,10 +1,9 @@
-using PlasticGui.Diff.Annotate;
 using UnityEngine;
 
 public class GolemChaseState : IStateComponent, IMoveComponent
 {
     Transform enemyTransform;
-    [SerializeField] float speed = 5f;
+    [SerializeField] float speed = 2.5f;
     float radiusToAttack = 1f;
     float radiusToStopChasing = 1f;
 

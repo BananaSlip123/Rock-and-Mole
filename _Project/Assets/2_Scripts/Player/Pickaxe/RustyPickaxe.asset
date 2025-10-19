@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84634d842323ea24da69fc6b0b98fcdc, type: 3}
   m_Name: RustyPickaxe
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 10
   critMultiplier: 1.5
   critProbability: 0.05

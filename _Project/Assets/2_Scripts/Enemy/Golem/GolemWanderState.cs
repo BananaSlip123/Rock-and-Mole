@@ -3,7 +3,7 @@ using System;
 
 public class GolemWanderState : IStateComponent, IMoveComponent
 {
-    [SerializeField] float speed = 3f;
+    [SerializeField] float speed = 1f;
     const float MAXMOVE = 2f;
     const float MINMOVE = 1f;
     float timeMovement = 0f;
