@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6855759495932676303}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5710001, y: 0.88, z: -0.61100006}
+  m_LocalPosition: {x: 0.34, y: 0.288, z: -0.61100006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51,7 +51,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.59, y: 1.74, z: 2.146986}
+  m_Size: {x: 1.19, y: 1.74, z: 1.46}
   m_Center: {x: 0.84, y: -0.24789071, z: 0.63}
 --- !u!1 &8559116585686124911
 GameObject:
@@ -419,6 +419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personaje.V2
       objectReference: {fileID: 0}
+    - target: {fileID: 958861272315367556, guid: 9ce73f29ad685694d823f9794db89f1b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 868a30962625a004fb09f00d2e6e0262, type: 2}
     - target: {fileID: 6367558256920647340, guid: 9ce73f29ad685694d823f9794db89f1b, type: 3}
       propertyPath: m_IsActive
       value: 0
