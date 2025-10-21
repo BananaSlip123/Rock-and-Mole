@@ -103,12 +103,15 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     private bool isHitingPlayer()
     {
-        Collider[] p = Physics.OverlapBox(enemyTransform.position, attackHitbox.bounds.size/2, Quaternion.identity);
+        Collider[] p = Physics.OverlapBox(attackHitbox.bounds.center, attackHitbox.bounds.extents, attackHitbox.transform.rotation);
 
         foreach (Collider c in p)
         {
             if (c.CompareTag("Player"))
             {
+                if (playerHealth.GetHasBeenDamaged())
+                    return false;
+
                 return true;
             }
         }
