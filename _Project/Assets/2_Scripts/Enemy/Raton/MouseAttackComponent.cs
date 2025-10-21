@@ -19,6 +19,12 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
 
     Transform enemyTransform;
 
+    public MouseAttackComponent(Transform enemy, IStateMachineComponent stateM)
+    {
+        enemyTransform = enemy;
+        mStateMachine = stateM;
+    }
+
     public void ActiveHitbox()
     {
 
@@ -26,13 +32,13 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
 
     public void Attack()
     {
-        playerHealth.RecieveDamage(damage);
+        Debug.Log("He atacado");
     }
 
     public void Enter()
     {
         //attackHitbox = enemyTransform.GetChild(1).GetComponent<Collider>();
-        Debug.Log("ESTOY ATACANDO");
+        //Debug.Log("ESTOY ATACANDO");
         //animator.SetBool("Atacar", true);
     }
 
@@ -43,6 +49,9 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
 
     public void FixedUpdate()
     {
+        if (!PlayerInRange())
+            mStateMachine.ChangeState(new MouseWanderState(mStateMachine, enemyTransform));
+
         if (isInCooldown)
         {
             timeToAttack += Time.fixedDeltaTime;
@@ -51,37 +60,35 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
             {
                 isInCooldown = false;
                 timeToAttack = 0f;
-                //mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine, animator));
+                
             }
 
             return;
         }
-        else
-        {
-            ActiveHitbox();
-        }
-
-        /*
-        if (attackHitbox.enabled)
-        {
-            timeHitbox += Time.fixedDeltaTime;
-
-            if (isHitingPlayer())
-                Attack();
-
-            if (timeHitbox >= TIME_HITBOX)
-            {
-                attackHitbox.enabled = false;
-                timeHitbox = 0f;
-                isInCooldown = true;
-                playerHealth.ResetHasBeenDamaged();
-            }
-        }
-        */
     }
 
     void IStateComponent.Update()
     {
+        if(!isInCooldown)
+        {
+            Attack();
 
+            isInCooldown = true;
+        }
+    }
+
+    bool PlayerInRange()
+    {
+        Collider[] p = Physics.OverlapSphere(enemyTransform.position, 10f);
+
+        foreach (Collider detected in p)
+        {
+            if (detected.CompareTag("Player"))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

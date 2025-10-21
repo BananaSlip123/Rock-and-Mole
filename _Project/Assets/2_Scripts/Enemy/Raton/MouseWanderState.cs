@@ -64,8 +64,9 @@ public class MouseWanderState : IStateComponent, IMoveComponent
 
         if (player)
         {
-            //mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine, animator));
-            Debug.Log("He detectado al jugador");
+            //mStateMachine.ChangeState(new MouseAttackComponent(enemyTransform, mStateMachine, animator));
+            mStateMachine.ChangeState(new MouseAttackComponent(enemyTransform, mStateMachine));
+            //Debug.Log("He detectado al jugador");
             return;
         }
 
