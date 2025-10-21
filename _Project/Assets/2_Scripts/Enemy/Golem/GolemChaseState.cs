@@ -26,8 +26,8 @@ public class GolemChaseState : IStateComponent, IMoveComponent
         }    
         else
         {
-            radiusToAttack = 10f;
-            radiusToStopChasing = 15f;
+            radiusToAttack = 5f;
+            radiusToStopChasing = 10f;
         }
             
     }
@@ -54,6 +54,7 @@ public class GolemChaseState : IStateComponent, IMoveComponent
             Move();
             if ((enemyTransform.position - playerPosition).magnitude < radiusToAttack)
             {
+                Debug.Log("DISTANCIA: " + (enemyTransform.position - playerPosition).magnitude);
                 mStateMachine.ChangeState(new GolemAttackState(mStateMachine, enemyTransform, GameObject.FindGameObjectWithTag("Player").GetComponent<IDamageableComponent>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(), animator));
             }
         }

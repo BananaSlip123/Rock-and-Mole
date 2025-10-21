@@ -4,7 +4,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 {
 
     const float COOLDOWN = 2.5f;
-    const float TIME_HITBOX = 0.1f;
+    float TIME_HITBOX = 0.1f;
 
     private float timeToAttack = 0f;
     private float timeHitbox = 0f;
@@ -40,14 +40,18 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     public void Attack()
     {
+        animator.SetBool("Atacar", true);
         playerHealth.RecieveDamage(damage);
     }
 
     public void Enter()
     {
         attackHitbox = enemyTransform.GetChild(1).GetComponent<Collider>();
-        Debug.Log("ESTOY ATACANDO");
+        //Debug.Log("ESTOY ATACANDO");
         animator.SetBool("Atacar", true);
+
+        Debug.Log("DURACION: " + animator.GetCurrentAnimatorStateInfo(0).length);
+        TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(0).length;
 
         if (enemyTransform.gameObject.name == "GolemBoss")
             damage = 20;
@@ -62,6 +66,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     {
         if (isInCooldown)
         {
+            //animator.SetBool("Atacar", false);
             timeToAttack += Time.fixedDeltaTime;
 
             if (timeToAttack >= COOLDOWN)
@@ -71,37 +76,32 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
                 mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine, animator));
             }
-
-            return;
         }
         else
-        {
-            ActiveHitbox();
-        }           
-
-        if (attackHitbox.enabled)
-        {
+        {           
             timeHitbox += Time.fixedDeltaTime;
 
-            if (isHitingPlayer())
+            if (IsHitingPlayer())
                 Attack();
 
-            if (timeHitbox >= TIME_HITBOX)
-            {
-                attackHitbox.enabled = false;
-                timeHitbox = 0f;
-                isInCooldown = true;
-                playerHealth.ResetHasBeenDamaged();               
-            }
-        }
+            if(timeHitbox >= 0.7f)
+                ActiveHitbox();
+        }                  
     }
 
     void IStateComponent.Update()
     {
-
+        if (timeHitbox >= TIME_HITBOX)
+        {
+            animator.SetBool("Atacar", false);
+            attackHitbox.enabled = false;
+            timeHitbox = 0f;
+            isInCooldown = true;
+            playerHealth.ResetHasBeenDamaged();         
+        }
     }
 
-    private bool isHitingPlayer()
+    private bool IsHitingPlayer()
     {
         Collider[] p = Physics.OverlapBox(attackHitbox.bounds.center, attackHitbox.bounds.extents, attackHitbox.transform.rotation);
 
@@ -109,10 +109,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
         {
             if (c.CompareTag("Player"))
             {
-                if (playerHealth.GetHasBeenDamaged())
-                    return false;
-
-                return true;
+                return !playerHealth.GetHasBeenDamaged();
             }
         }
 
