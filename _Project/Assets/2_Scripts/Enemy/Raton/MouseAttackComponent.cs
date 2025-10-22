@@ -17,6 +17,8 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
 
     IDamageableComponent playerHealth;
 
+    IObjectPool pool;
+
     Transform enemyTransform;
 
     public MouseAttackComponent(Transform enemy, IStateMachineComponent stateM)
@@ -33,6 +35,7 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
     public void Attack()
     {
         Debug.Log("He atacado");
+        pool.Get().Init(Vector3.back - enemyTransform.position, enemyTransform.position);
     }
 
     public void Enter()
@@ -40,6 +43,8 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
         //attackHitbox = enemyTransform.GetChild(1).GetComponent<Collider>();
         //Debug.Log("ESTOY ATACANDO");
         //animator.SetBool("Atacar", true);
+
+        pool = GameObject.FindGameObjectWithTag("PoolBullet").GetComponent<IObjectPool>();
     }
 
     public void Exit()
@@ -74,6 +79,7 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
             Attack();
 
             isInCooldown = true;
+            timeToAttack = 0f;
         }
     }
 
