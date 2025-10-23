@@ -65,7 +65,7 @@ public class MouseWanderState : IStateComponent, IMoveComponent
         if (player)
         {
             //mStateMachine.ChangeState(new MouseAttackComponent(enemyTransform, mStateMachine, animator));
-            mStateMachine.ChangeState(new MouseAttackComponent(enemyTransform, mStateMachine));
+            mStateMachine.ChangeState(new MouseAttackComponent(enemyTransform, GameObject.FindGameObjectWithTag("Player").transform, mStateMachine));
             //Debug.Log("He detectado al jugador");
             return;
         }

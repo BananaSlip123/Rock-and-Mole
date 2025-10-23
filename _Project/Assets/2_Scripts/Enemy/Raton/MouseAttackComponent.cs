@@ -20,10 +20,12 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
     IObjectPool pool;
 
     Transform enemyTransform;
+    Transform playerPosition;
 
-    public MouseAttackComponent(Transform enemy, IStateMachineComponent stateM)
+    public MouseAttackComponent(Transform enemy, Transform player, IStateMachineComponent stateM)
     {
         enemyTransform = enemy;
+        playerPosition = player;
         mStateMachine = stateM;
     }
 
@@ -35,7 +37,7 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
     public void Attack()
     {
         Debug.Log("He atacado");
-        pool.Get().Init(Vector3.back - enemyTransform.position, enemyTransform.position);
+        pool.Get().Init(playerPosition.position - enemyTransform.position, enemyTransform.position);
     }
 
     public void Enter()

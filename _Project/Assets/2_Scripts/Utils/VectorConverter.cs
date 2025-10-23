@@ -20,6 +20,13 @@ public class VectorConverter : MonoBehaviour
     {
         vector = VectorConeverter(vector);
 
+        vector = MovingVector(vector, speed);
+
+        return vector;
+    }
+
+    public static Vector3 MovingVector(Vector3 vector, float speed)
+    {
         vector = speed * Time.fixedDeltaTime * vector;
 
         return vector;

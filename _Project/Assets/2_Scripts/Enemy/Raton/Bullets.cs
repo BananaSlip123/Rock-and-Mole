@@ -4,12 +4,18 @@ using UnityEngine;
 public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent
 {
     Vector3 direction;
-    const float SPEED = 1f;
+    const float SPEED = 5f;
 
-    float TIME_DESPAWN = 1f;
+    float TIME_DESPAWN = 5f;
     float timeToDespawn = 0f;
 
+    [SerializeField] GameObject poolO;
     IObjectPool pool;
+
+    void Awake()
+    {
+        pool = poolO.GetComponent<IObjectPool>();
+    }
 
     void FixedUpdate()
     {
@@ -36,7 +42,9 @@ public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent
 
     public IPrototype Clone()
     {
-        throw new System.NotImplementedException();
+        GameObject b = Instantiate(gameObject);
+        Bullets bala = b.GetComponent<Bullets>();
+        return bala;
     }
 
     public bool IsActive()
@@ -49,11 +57,14 @@ public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent
         SetActive(false);
         pool.Release(this);
         direction = Vector3.zero;
+
+        timeToDespawn = 0f;
     }
 
     public void SetActive(bool b)
     {
         enabled = b;
+        gameObject.SetActive(b);
     }
 
     public void IsMoving(Vector2 m)
@@ -63,9 +74,11 @@ public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent
 
     public void Move()
     {
-        Vector3 positionToMove = VectorConverter.SetVectorToIsoCoords((direction).normalized, SPEED);
+        Vector3 positionToMove = VectorConverter.MovingVector((direction).normalized, SPEED);
         positionToMove.y = 0;
 
+        Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
         transform.position += positionToMove;
+        transform.rotation = rotation;
     }
 }

@@ -4,15 +4,20 @@ using UnityEngine;
 public class BulletsPool : MonoBehaviour, IObjectPool
 {
     Queue<IPooleableObject> bullets = new Queue<IPooleableObject>();
-    [SerializeField] List<IPooleableObject> bulletsList = new List<IPooleableObject>();
+    [SerializeField] GameObject prefab;
+
+    const short LIMIT = 40;
+
     void Awake()
     {
-        foreach(IPooleableObject p in bulletsList)
-        {
-            bullets.Enqueue(p);
-        }
+        IPrototype cloneable = prefab.GetComponent<IPrototype>();
 
-        bulletsList = null;
+        for(int i = 0; i < LIMIT; i++)
+        {
+            IPooleableObject objectToEnqueue = (IPooleableObject)cloneable.Clone();
+            objectToEnqueue.SetActive(false);
+            bullets.Enqueue(objectToEnqueue);
+        }
     }
 
     public IPooleableObject Get()
