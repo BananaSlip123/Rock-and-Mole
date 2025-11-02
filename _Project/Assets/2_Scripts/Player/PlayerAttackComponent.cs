@@ -101,7 +101,13 @@ namespace PlayerComponents
                 {
                     if (!hitCollider.gameObject.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
                     {
-                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(actualPickaxeStats.damage);
+                        int hitCrit = Random.Range(0,100);
+                        int damage = actualPickaxeStats.damage;
+                        if(hitCrit < actualPickaxeStats.critProbability)
+                        {
+                            damage = (int) (actualPickaxeStats.critMultiplier * damage);
+                        }
+                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(damage);
                         Debug.Log("He golpeado a: " + hitCollider.gameObject.name);
                     }
                 }
