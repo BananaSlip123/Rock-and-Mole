@@ -8,6 +8,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     private bool hasBeenDamaged = false;
 
     [SerializeField] private int health = 50;
+    public float defense;
 
     public int Health
     {
@@ -27,6 +28,11 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     private void FixedUpdate()
     {
         
+    }
+
+    public void SetHealth(int health)
+    {
+        Health = health;
     }
 
     public void RecieveDamage(int damage)
