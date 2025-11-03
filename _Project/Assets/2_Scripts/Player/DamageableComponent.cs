@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,7 +32,14 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     public void RecieveDamage(int damage)
     {
         Health -= damage;
-        hasBeenDamaged = true;
+
+        if(!hasBeenDamaged)
+        {
+            hasBeenDamaged = true;
+
+            ResetHasBeenDamaged();
+        }
+        
 
         if(Health <= 0)
             Death();
@@ -45,8 +53,14 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 
     public void ResetHasBeenDamaged()
     {
+        StartCoroutine(InvencivilityTime());
+    }
+
+    IEnumerator InvencivilityTime()
+    {
+        yield return new WaitForSeconds(2f);
+
         hasBeenDamaged = false;
-        Debug.Log("He salido del area");
     }
 
     private void Death()
