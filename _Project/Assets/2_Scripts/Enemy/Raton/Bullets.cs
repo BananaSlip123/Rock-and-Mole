@@ -86,9 +86,10 @@ public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent, IAttackC
         transform.rotation = rotation;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        Debug.Log("Colisioneeeeeee: " + other.gameObject.name);
+        if (other.gameObject.CompareTag("Player"))
         {
             Attack();
         }
@@ -96,7 +97,9 @@ public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent, IAttackC
 
     public void Attack()
     {
-        player.RecieveDamage(DAMAGE);               
+        player.RecieveDamage(DAMAGE);
+
+        ResetObject();
     }
 
     public void ActiveHitbox()
