@@ -48,6 +48,8 @@ public class VillageMenuUI : MonoBehaviour
         get => _currentWindow;
         set
         {
+            Debug.Log("Current Window: "+_currentWindow.ToString());
+            Debug.Log("Next Window: " + value.ToString());
             SwitchWindow(_currentWindow, value);
             _currentWindow = value;
             UpdateSelectedButton();
