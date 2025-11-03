@@ -8,17 +8,35 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance { get; private set; }
     #endregion
     #region SERIALIZABLE VARIABLES
-    [Header("UI Sounds")]
-    [SerializeField] private AudioClip uiClickSound;
 
     [Header("Music Settings")]
     [SerializeField] private List<MusicEntry> musicEntries = new List<MusicEntry>();
+
+    [Header("Audio Settings")]
+    [SerializeField] private List<AudioEntry> audioEntries = new List<AudioEntry>();
 
     [System.Serializable]
     public enum MusicType
     {
         MenuMusic,
         VillageMusic,
+        EnemyFightMusic,
+        StoreMusic,
+        StoreMusic2
+        //las que sean
+    }
+
+    [System.Serializable]
+    public enum AudioType
+    {
+        WalkSound,
+        DeathEnemySound,
+        DeathPlayerSound,
+        AttackToEnemySound,
+        AttackToPlayerSound,
+        ClickerSound,
+        MineSound,
+        CollectObjectsSound
         //las que sean
     }
 
@@ -26,6 +44,12 @@ public class AudioManager : MonoBehaviour
     public struct MusicEntry
     {
         public MusicType type;
+        public AudioClip clip;
+    }
+
+    public struct AudioEntry
+    {
+        public AudioType type;
         public AudioClip clip;
     }
     #endregion
