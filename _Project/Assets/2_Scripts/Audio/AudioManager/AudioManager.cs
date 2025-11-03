@@ -124,10 +124,10 @@ public class AudioManager : MonoBehaviour
 
     private void OnButtonClick()
     {
-        if (uiClickSound != null)
-        {
-            sfxSource.PlayOneShot(uiClickSound);
-        }
+        //if (uiClickSound != null)
+        //{
+        //    sfxSource.PlayOneShot(uiClickSound);
+        //}
     }
     #endregion
 
