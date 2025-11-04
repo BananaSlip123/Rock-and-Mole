@@ -1,4 +1,5 @@
 using PlayerComponents;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,8 @@ namespace PlayerComponents
         [SerializeField] private PlayerAttackComponent attackComponent;
         [SerializeField] private IMoveComponent moveComponent;
         [SerializeField] private ISkillComponent dashComponent;
+
+        public Action pressButtonA;
 
         //public Transform calculoMovimiento;
         private void Awake()
@@ -43,6 +46,11 @@ namespace PlayerComponents
         public void OnDash(InputAction.CallbackContext context)
         {
             dashComponent.DoSpecialSkill();
+        }
+
+        public void OnButtonA(InputAction.CallbackContext context)
+        {
+            pressButtonA?.Invoke();
         }
     }
 }

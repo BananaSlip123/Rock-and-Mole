@@ -2,7 +2,8 @@
     "name": "MineAssemby",
     "rootNamespace": "",
     "references": [
-        "GUID:8cb876c56ff9054478fa90b8c26431b8"
+        "GUID:8cb876c56ff9054478fa90b8c26431b8",
+        "GUID:b69b9941861653241852ac36aa4f2140"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
