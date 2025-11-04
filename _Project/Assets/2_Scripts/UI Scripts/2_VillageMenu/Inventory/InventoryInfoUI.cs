@@ -69,7 +69,7 @@ public class InventoryInfoUI : MonoBehaviour
                 case MaterialName.Ambar:
                     return "Ámbar";
                 case MaterialName.Bronce:
-                    return "Lingote de Bronce";
+                    return "Bronce";
                 case MaterialName.Carbon:
                     return "Carbón";
                 case MaterialName.Cuarzo:
@@ -79,7 +79,7 @@ public class InventoryInfoUI : MonoBehaviour
                 case MaterialName.Esmeralda:
                     return "Esmeralda";
                 case MaterialName.Hierro:
-                    return "Lingote de Hierro";
+                    return "Hierro";
                 case MaterialName.Obsidiana:
                     return "Obsidiana";
                 case MaterialName.RolloTela:
