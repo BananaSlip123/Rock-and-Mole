@@ -575,13 +575,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1022060054869691410}
     m_Modifications:
+    - target: {fileID: 814929094227399686, guid: 80dd87b3f1dfb58498d100467df4a3bf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 495.11
+      objectReference: {fileID: 0}
     - target: {fileID: 934709012449668192, guid: 80dd87b3f1dfb58498d100467df4a3bf, type: 3}
       propertyPath: m_Name
       value: INVENTORY
       objectReference: {fileID: 0}
     - target: {fileID: 934709012449668192, guid: 80dd87b3f1dfb58498d100467df4a3bf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648276744855522977, guid: 80dd87b3f1dfb58498d100467df4a3bf, type: 3}
+      propertyPath: m_text
+      value: Mochila
       objectReference: {fileID: 0}
     - target: {fileID: 2571370984636591578, guid: 80dd87b3f1dfb58498d100467df4a3bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -876,17 +884,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8241598778116146400, guid: 56403cfd7b4504941b9627e8338d241d, type: 3}
   m_PrefabInstance: {fileID: 5951406741406714466}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4643346871593871749 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1362303182900798439, guid: 56403cfd7b4504941b9627e8338d241d, type: 3}
-  m_PrefabInstance: {fileID: 5951406741406714466}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5208825805142307944 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1936217569049230858, guid: 56403cfd7b4504941b9627e8338d241d, type: 3}
@@ -908,7 +905,7 @@ MonoBehaviour:
   go_materialSelectedUI: {fileID: 2375559236215213698}
   txt_amountAvailable: {fileID: 7248721905520463522}
   txt_price: {fileID: 7079902762541514540}
-  txt_materialName: {fileID: 4643346871593871749}
+  txt_materialName: {fileID: 0}
   txt_materialInfo: {fileID: 6408874100062373071}
   runInventory: {fileID: 8164228789816652083}
 --- !u!114 &6408874100062373071 stripped
