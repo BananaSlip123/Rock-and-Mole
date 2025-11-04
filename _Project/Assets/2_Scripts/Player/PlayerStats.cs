@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour, IPlayerStats
 {
+    public int actualHealth
+    {
+        get => actualHealth;
+        private set
+        {
+            if (value != actualHealth)
+            {
+                if (value > health)
+                    actualHealth = health;
+                else
+                    actualHealth = value;
+                playerHealth.SetHealth(value);
+            }
+        }
+    }
+
     public int health
     {
         get => health;
@@ -12,7 +28,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             if (value != health)
             {
                 health = value;
-                playerHealth.SetHealth(value);
+                actualHealth = value;
             }
         }
     }
@@ -108,5 +124,10 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         critProbability = 0;
         speed = 5f;
         defense = 0f;
+    }
+
+    public void HealPlayer(int healing)
+    {
+        actualHealth += healing;
     }
 }

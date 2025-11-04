@@ -11,7 +11,7 @@ namespace PlayerComponents
         [SerializeField] private IMoveComponent moveComponent;
         [SerializeField] private ISkillComponent dashComponent;
 
-        public Action pressButtonA;
+        public Action pressButtonA = null;
 
         //public Transform calculoMovimiento;
         private void Awake()

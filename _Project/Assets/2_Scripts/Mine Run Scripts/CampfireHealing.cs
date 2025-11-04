@@ -5,7 +5,7 @@ public class CampfireHealing : MonoBehaviour
 {
     [SerializeField] const int healing = 20;
     PlayerController player;
-    
+    [SerializeField]PlayerStats stats;
 
     void Awake()
     {
@@ -36,6 +36,6 @@ public class CampfireHealing : MonoBehaviour
 
     private void HealPlayer()
     {
-
+        stats.HealPlayer(healing);
     }
 }
