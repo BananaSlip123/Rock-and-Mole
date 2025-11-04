@@ -96,8 +96,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
             animator.SetBool("Atacar", false);
             attackHitbox.enabled = false;
             timeHitbox = 0f;
-            isInCooldown = true;
-            playerHealth.ResetHasBeenDamaged();         
+            isInCooldown = true;     
         }
     }
 

@@ -1,20 +1,24 @@
 using Codice.CM.Common;
+using System.Collections;
 using UnityEngine;
 
-public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent
+public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent, IAttackComponent
 {
     Vector3 direction;
     const float SPEED = 5f;
+    const int DAMAGE = 10;
 
     float TIME_DESPAWN = 5f;
     float timeToDespawn = 0f;
 
     [SerializeField] GameObject poolO;
     IObjectPool pool;
+    IDamageableComponent player;
 
     void Awake()
     {
         pool = poolO.GetComponent<IObjectPool>();
+        player = GameObject.FindWithTag("Player").GetComponent<IDamageableComponent>();
     }
 
     void FixedUpdate()
@@ -80,5 +84,26 @@ public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent
         Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
         transform.position += positionToMove;
         transform.rotation = rotation;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Colisioneeeeeee: " + other.gameObject.name);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Attack();
+        }
+    }
+
+    public void Attack()
+    {
+        player.RecieveDamage(DAMAGE);
+
+        ResetObject();
+    }
+
+    public void ActiveHitbox()
+    {
+        
     }
 }
