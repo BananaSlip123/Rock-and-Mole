@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
 {
     public int actualHealth
     {
-        get => actualHealth;
+        get => 1;
         private set
         {
             if (value != actualHealth)
@@ -19,10 +19,9 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             }
         }
     }
-
     public int health
     {
-        get => health;
+        get => 50;
         private set
         {
             if (value != health)
