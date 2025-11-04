@@ -31,6 +31,12 @@ public static class GameData
         { MaterialName.Rubi, 15 },
         { MaterialName.Diamante, 100 }
     };
+
+    public readonly static Dictionary<MaterialName, MaterialRarity> MaterialsRarity = new Dictionary<MaterialName, MaterialRarity>
+    {
+        { MaterialName.Hierro, MaterialRarity.Common }
+    };
+
     public static PersistentInventory Inventory => _inventory;
     public static Inventory RunInventory => _runInventory;
 
@@ -109,6 +115,49 @@ public static class GameData
 
         //GUARDAR INVENTARIO
         _inventory.SaveData();
+    }
+
+    public static Dictionary<MaterialName, int> MaterialsChest(int amount)
+    {
+        Dictionary<MaterialName, int> generated = new Dictionary<MaterialName, int>();
+        MaterialRarity rarity;
+        MaterialName material;
+
+        for (int i = 0; i < amount; i++)
+        {
+            rarity = RandomRarity();
+            material = RandomMaterial(rarity);
+            if (!generated.TryAdd(material, 1))
+                generated[material] += 1;
+        }
+
+        return generated;
+    }
+
+    private static MaterialRarity RandomRarity()
+    {
+        float random = UnityEngine.Random.Range(0f,1f);
+
+        if (random < 0.4)
+            return MaterialRarity.Common;
+        else if (random < 0.65)
+            return MaterialRarity.Rare;
+        else
+            return MaterialRarity.Very_Rare;
+    }
+
+    public static MaterialName RandomMaterial(MaterialRarity rarity)
+    {
+        List<MaterialName> sortedMaterials = SortedMaterialsByRarity(rarity);
+        return sortedMaterials[UnityEngine.Random.Range(0,sortedMaterials.Count)];
+    }
+
+    public static List<MaterialName> SortedMaterialsByRarity(MaterialRarity rarity)
+    {
+        return MaterialsRarity
+            .Where(pair => pair.Value == rarity)
+            .Select(pair => pair.Key)
+            .ToList();
     }
 
     #endregion
@@ -278,4 +327,11 @@ public enum MaterialName
     Esmeralda,
     Rubi,
     Diamante,
+}
+
+public enum MaterialRarity
+{
+    Common,
+    Rare,
+    Very_Rare
 }
