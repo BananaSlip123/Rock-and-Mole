@@ -99,4 +99,14 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         critMultiplier = newPickaxe.critMultiplier;
         critProbability = newPickaxe.critProbability;
     }
+
+    public void ResetStats()
+    {
+        health = 50;
+        damage = 0;
+        critMultiplier = 0;
+        critProbability = 0;
+        speed = 5f;
+        defense = 0f;
+    }
 }
