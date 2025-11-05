@@ -704,22 +704,6 @@ PrefabInstance:
       propertyPath: m_text
       value: "Programaci\xF3n \nJuego"
       objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_fontSize
-      value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_lineSpacing
-      value: -19.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_characterSpacing
-      value: -8.2
-      objectReference: {fileID: 0}
     - target: {fileID: 4830597884540119561, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_Name
       value: SUBTILTE
@@ -755,18 +739,6 @@ PrefabInstance:
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.y
       value: 86.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -815,10 +787,6 @@ PrefabInstance:
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3232,23 +3200,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_text
-      value: "Programaci\xF3n \nInterfaces"
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_fontSize
-      value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_lineSpacing
-      value: -19.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_characterSpacing
-      value: -8.2
+      value: "Programaci\xF3n\nInterfaces"
       objectReference: {fileID: 0}
     - target: {fileID: 4830597884540119561, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_Name
@@ -3285,18 +3237,6 @@ PrefabInstance:
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.y
       value: 86.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3345,10 +3285,6 @@ PrefabInstance:
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4267,18 +4203,6 @@ PrefabInstance:
       propertyPath: m_text
       value: Arte 3D
       objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_fontSize
-      value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_characterSpacing
-      value: -8.2
-      objectReference: {fileID: 0}
     - target: {fileID: 4830597884540119561, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_Name
       value: SUBTILTE
@@ -4314,18 +4238,6 @@ PrefabInstance:
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.y
       value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4374,10 +4286,6 @@ PrefabInstance:
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4716,8 +4624,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 463025329}
   m_HandleRect: {fileID: 463025328}
   m_Direction: 2
-  m_Value: 1.0000008
-  m_Size: 0.29124323
+  m_Value: 1.0000001
+  m_Size: 0.29124317
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4800,7 +4708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0005660405}
+  m_AnchoredPosition: {x: 0, y: -0.00010124271}
   m_SizeDelta: {x: 0, y: 1103.9}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &2088462089 stripped
