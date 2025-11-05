@@ -522,7 +522,7 @@ MonoBehaviour:
     _color: {r: 0.4113207, g: 0.4113207, b: 0.4113207, a: 1}
   - _name: 2
     _sprite: {fileID: 21300000, guid: 0c6929e8fe8fb9049bfc4df216080a6b, type: 3}
-    _color: {r: 1, g: 0.8182824, b: 0.2471698, a: 1}
+    _color: {r: 0.7584905, g: 0.47353512, b: 0.20464928, a: 1}
   - _name: 3
     _sprite: {fileID: 21300000, guid: 8b04ae19018f8cd42be895f0febaaa73, type: 3}
     _color: {r: 1, g: 0.69143337, b: 0.53396225, a: 1}
