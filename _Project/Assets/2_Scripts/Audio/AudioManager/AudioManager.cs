@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     #region STATIC INSTANCE
     public static AudioManager Instance { get; private set; }
     #endregion
+
     #region SERIALIZABLE VARIABLES
 
     [Header("Music Settings")]
@@ -47,6 +48,7 @@ public class AudioManager : MonoBehaviour
         public AudioClip clip;
     }
 
+    [System.Serializable]
     public struct AudioEntry
     {
         public AudioType type;
@@ -58,6 +60,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource musicSource;
     private AudioSource sfxSource;
     private Dictionary<MusicType, AudioClip> musicDictionary;
+    private Dictionary<AudioType, AudioClip> audioDictionary;
     #endregion
 
 
@@ -70,6 +73,7 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             SetupAudioSources();
             BuildMusicDictionary();
+            BuildAudioDictionary();
         }
         else
         {
@@ -90,6 +94,7 @@ public class AudioManager : MonoBehaviour
 
         musicSource.loop = true;
         musicSource.playOnAwake = false;
+        sfxSource.playOnAwake = false;
     }
 
     private void BuildMusicDictionary()
@@ -109,13 +114,29 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void BuildAudioDictionary()
+    {
+        audioDictionary = new Dictionary<AudioType, AudioClip>();
+
+        foreach (AudioEntry entry in audioEntries)
+        {
+            if (!audioDictionary.ContainsKey(entry.type))
+            {
+                audioDictionary.Add(entry.type, entry.clip);
+            }
+            else
+            {
+                Debug.LogWarning($"Audio type {entry.type} is duplicated in the list");
+            }
+        }
+    }
+
     private void AssignClickSoundToAllButtons()
     {
         Button[] allButtons = FindObjectsByType<Button>(FindObjectsSortMode.None);
 
         foreach (Button button in allButtons)
         {
-            button.onClick.RemoveAllListeners();
             button.onClick.AddListener(OnButtonClick);
         }
 
@@ -124,9 +145,9 @@ public class AudioManager : MonoBehaviour
 
     private void OnButtonClick()
     {
-        if (uiClickSound != null)
+        if (audioDictionary != null && audioDictionary.TryGetValue(AudioType.ClickerSound, out AudioClip clip))
         {
-            sfxSource.PlayOneShot(uiClickSound);
+            sfxSource.PlayOneShot(clip);
         }
     }
     #endregion
@@ -134,9 +155,9 @@ public class AudioManager : MonoBehaviour
     #region PUBLIC FUNCS
     public void PlayMusic(MusicType musicType)
     {
-        if (musicDictionary != null && musicDictionary.ContainsKey(musicType))
+        if (musicDictionary != null && musicDictionary.TryGetValue(musicType, out AudioClip clip))
         {
-            musicSource.clip = musicDictionary[musicType];
+            musicSource.clip = clip;
             musicSource.Play();
         }
         else
@@ -145,10 +166,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayAudio(AudioType audioType)
+    {
+        if (audioDictionary != null && audioDictionary.TryGetValue(audioType, out AudioClip clip))
+        {
+            sfxSource.PlayOneShot(clip);
+        }
+        else
+        {
+            Debug.LogWarning($"Audio clip for {audioType} not found!");
+        }
+    }
+
     public void StopMusic()
     {
         musicSource.Stop();
     }
     #endregion
-
 }
