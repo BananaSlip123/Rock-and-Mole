@@ -571,6 +571,7 @@ MonoBehaviour:
     clip: {fileID: 0}
   - type: 0
     clip: {fileID: 0}
+  audioEntries: []
 --- !u!4 &237699189
 Transform:
   m_ObjectHideFlags: 0
@@ -704,6 +705,14 @@ PrefabInstance:
       propertyPath: m_text
       value: "Programaci\xF3n \nJuego"
       objectReference: {fileID: 0}
+    - target: {fileID: 1085945088517072812, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -10.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085945088517072812, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.215
+      objectReference: {fileID: 0}
     - target: {fileID: 4830597884540119561, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_Name
       value: SUBTILTE
@@ -734,11 +743,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 276.6
+      value: 325.9
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 86.6
+      value: 102.3
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2553,16 +2562,8 @@ PrefabInstance:
       value: Arte 2D
       objectReference: {fileID: 0}
     - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_fontSize
-      value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_fontSizeBase
       value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_characterSpacing
-      value: -8.2
       objectReference: {fileID: 0}
     - target: {fileID: 4830597884540119561, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_Name
@@ -2599,18 +2600,6 @@ PrefabInstance:
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.y
       value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2659,10 +2648,6 @@ PrefabInstance:
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3064,16 +3049,8 @@ PrefabInstance:
       value: Concept Art
       objectReference: {fileID: 0}
     - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_fontSize
-      value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_fontSizeBase
       value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_characterSpacing
-      value: -8.2
       objectReference: {fileID: 0}
     - target: {fileID: 4830597884540119561, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_Name
@@ -3105,7 +3082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 250
+      value: 293.55
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3202,6 +3179,14 @@ PrefabInstance:
       propertyPath: m_text
       value: "Programaci\xF3n\nInterfaces"
       objectReference: {fileID: 0}
+    - target: {fileID: 1085945088517072812, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -8.699998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085945088517072812, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.350001
+      objectReference: {fileID: 0}
     - target: {fileID: 4830597884540119561, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_Name
       value: SUBTILTE
@@ -3232,11 +3217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 276.6
+      value: 328.9
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 86.6
+      value: 100.9
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3575,20 +3560,12 @@ PrefabInstance:
       value: "M\xFAsica y Audio"
       objectReference: {fileID: 0}
     - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_fontSize
-      value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_lineSpacing
       value: -19.9
       objectReference: {fileID: 0}
     - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_fontSizeBase
       value: 25.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
-      propertyPath: m_characterSpacing
-      value: -8.2
       objectReference: {fileID: 0}
     - target: {fileID: 4830597884540119561, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_Name
@@ -3620,7 +3597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 315.5
+      value: 362.4
       objectReference: {fileID: 0}
     - target: {fileID: 5342180666820559103, guid: 3dac958999b7b744aaa2b7a866c4ff26, type: 3}
       propertyPath: m_SizeDelta.y
@@ -4624,8 +4601,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 463025329}
   m_HandleRect: {fileID: 463025328}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.29124317
+  m_Value: 1.00001
+  m_Size: 0.29110512
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4708,7 +4685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00010124271}
+  m_AnchoredPosition: {x: 0, y: -0.007819052}
   m_SizeDelta: {x: 0, y: 1103.9}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &2088462089 stripped
