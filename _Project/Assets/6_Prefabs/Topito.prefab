@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 777582931479185327}
   - component: {fileID: 5167273528164019003}
   - component: {fileID: 2463134159168281087}
+  - component: {fileID: 7706169458359262311}
   m_Layer: 6
   m_Name: Topito
   m_TagString: Player
@@ -273,6 +274,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9f5f1c03-f299-442f-b624-fcc12d01c23d
     m_ActionName: 'CallOutDialog/PassDialog[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7072675569967448827}
+        m_TargetAssemblyTypeName: PlayerComponents.PlayerController, PlayerComponents
+        m_MethodName: OnButtonA
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7a64b9a3-10d8-4500-a9cd-4b3ccd2ea46b
+    m_ActionName: 'Player/PressA[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -303,6 +320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19526a5567848e4988a047c31e395e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  critMultiplier: 0
+  critProbability: 0
   attackHitbox: {fileID: 2638161093646874771}
   actualPickaxeStats: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
   animator: {fileID: 5082706206047228746}
@@ -337,6 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  defense: 0
 --- !u!114 &2463134159168281087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +372,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingPickaxe: {fileID: 5682983459129718260}
   attackPickaxe: {fileID: 994297096839894002}
+--- !u!114 &7706169458359262311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559116585686124911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310d3ff3e029ce9469f0af0fe0182ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6166113497580324190
 PrefabInstance:
   m_ObjectHideFlags: 0

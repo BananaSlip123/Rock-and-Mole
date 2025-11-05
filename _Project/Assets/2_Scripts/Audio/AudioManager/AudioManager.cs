@@ -145,10 +145,15 @@ public class AudioManager : MonoBehaviour
 
     private void OnButtonClick()
     {
+
         if (audioDictionary != null && audioDictionary.TryGetValue(AudioType.ClickerSound, out AudioClip clip))
         {
             sfxSource.PlayOneShot(clip);
         }
+        //if (uiClickSound != null)
+        //{
+        //    sfxSource.PlayOneShot(uiClickSound);
+        //}
     }
     #endregion
 

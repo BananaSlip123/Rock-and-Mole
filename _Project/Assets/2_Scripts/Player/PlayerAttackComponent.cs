@@ -16,6 +16,10 @@ namespace PlayerComponents
 
         private bool isInCooldown = false;
 
+        public int damage;
+        public float critMultiplier;
+        public float critProbability;
+
         private Queue<Collider> hitColliders = new Queue<Collider>();
 
         [SerializeField] Collider attackHitbox;
@@ -88,7 +92,6 @@ namespace PlayerComponents
             }
             //else
                 //Debug.Log("Estoy en cooldown");
-            
         }
 
         public void ActiveHitbox()
@@ -104,7 +107,13 @@ namespace PlayerComponents
                 {
                     if (!hitCollider.gameObject.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
                     {
-                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(actualPickaxeStats.damage);
+                        float hitCrit = Random.Range(0,1);
+                        int damage = this.damage;
+                        if(hitCrit < critProbability)
+                        {
+                            damage = (int) (critMultiplier * damage);
+                        }
+                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(damage);
                         Debug.Log("He golpeado a: " + hitCollider.gameObject.name);
                     }
                 }

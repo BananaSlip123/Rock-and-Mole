@@ -6,7 +6,7 @@ namespace PlayerComponents
     public class PlayerMovementComponent : MonoBehaviour, IMoveComponent, ISkillComponent
     {
         #region Movimiento
-        [SerializeField] private float speed;
+        [SerializeField] public float speed;
         [SerializeField] Transform go;
 
         private bool isMoving = false;
