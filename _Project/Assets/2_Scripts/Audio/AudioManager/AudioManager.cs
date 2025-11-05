@@ -182,5 +182,38 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.Stop();
     }
+
+    //Reproduce en bucle
+    public void PlayLoopedAudio(AudioType audioType)
+    {
+        if (audioDictionary.TryGetValue(audioType, out AudioClip clip))
+        {
+            if (sfxSource.clip != clip || !sfxSource.isPlaying)
+            {
+                sfxSource.clip = clip;
+                sfxSource.loop = true;
+                sfxSource.Play();
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Audio clip for {audioType} not found!");
+        }
+    }
+
+
+    //Detiene el audio
+    public void StopAudio(AudioType audioType)
+    {
+        if (audioDictionary.TryGetValue(audioType, out AudioClip clip))
+        {
+            if (sfxSource.clip == clip)
+            {
+                sfxSource.Stop();
+                sfxSource.loop = false;
+                sfxSource.clip = null;
+            }
+        }
+    }
     #endregion
 }

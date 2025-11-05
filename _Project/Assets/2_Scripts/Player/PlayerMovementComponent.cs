@@ -36,12 +36,18 @@ namespace PlayerComponents
                 movement = Vector2.zero;
 
                 animator.SetBool("Andar", false);
+
+                //Detener sonido de caminar
+                AudioManager.Instance.StopAudio(AudioManager.AudioType.WalkSound);
                 return;
             }
 
             isMoving = true;
             movement = valor;
             animator.SetBool("Andar", true);
+
+            //Reproducir sonido de caminar si no se está reproduciendo
+            AudioManager.Instance.PlayLoopedAudio(AudioManager.AudioType.WalkSound);
         }
 
         public bool IsPlayerDashing()
