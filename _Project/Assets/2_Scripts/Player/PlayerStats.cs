@@ -98,8 +98,8 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
 
     private void Awake()
     {
-        ResetStats();
         FindComponents();
+        ResetStats();
 
         DontDestroyOnLoad(this.gameObject);
     }
