@@ -203,7 +203,19 @@ MonoBehaviour:
     m_ActionId: b4f3fc40-4ed4-4f6a-8ac6-490ed6ca987a
     m_ActionName: 'Player/Fire[/Mouse/leftButton]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
+        m_MethodName: onNavigation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 26fedea4-0eb4-40c7-9469-aaa84cee9cc1
     m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
@@ -211,7 +223,19 @@ MonoBehaviour:
     m_ActionId: 30aeb025-f9a6-440e-8dbe-955ce2e9ef17
     m_ActionName: 'UI/Submit[/Keyboard/enter]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
+        m_MethodName: Button_OpenMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: cb8d2c4f-b8b1-440e-b5c7-321a833f7e69
     m_ActionName: 'UI/Cancel[/Keyboard/escape]'
   - m_PersistentCalls:
@@ -231,15 +255,55 @@ MonoBehaviour:
     m_ActionId: 9258cffb-7bf3-4b94-a95d-3aae3ba25a75
     m_ActionName: Player/Dash
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
+        m_MethodName: Button_OpenPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 68441674-6d9a-4ff8-ab32-0594858722ca
     m_ActionName: 'Player/Pause[/Keyboard/escape]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
+        m_MethodName: Button_Inventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ad7dca80-6684-4b0d-9cf7-de60ab6db4e2
     m_ActionName: 'Player/Inventory[/Keyboard/tab]'
   - m_PersistentCalls:
       m_Calls: []
+    m_ActionId: 9f5f1c03-f299-442f-b624-fcc12d01c23d
+    m_ActionName: 'CallOutDialog/PassDialog[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
+        m_MethodName: onPointer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 85b2db0b-c0f2-4b2d-902d-5f134e1dcfb9
     m_ActionName: 'UI/Point[/Mouse/position,/Pen/position]'
   - m_PersistentCalls:
@@ -271,10 +335,6 @@ MonoBehaviour:
     m_ActionId: 20de671c-cebc-4f82-9588-16caef2bc0d1
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9f5f1c03-f299-442f-b624-fcc12d01c23d
-    m_ActionName: 'CallOutDialog/PassDialog[/Keyboard/space]'
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7072675569967448827}
         m_TargetAssemblyTypeName: PlayerComponents.PlayerController, PlayerComponents
@@ -290,6 +350,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7a64b9a3-10d8-4500-a9cd-4b3ccd2ea46b
     m_ActionName: 'Player/PressA[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
+        m_MethodName: Button_Inventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 63e3b80f-3268-4037-a87c-1f9611c151dc
+    m_ActionName: 'UI/Inventory[/Keyboard/tab]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

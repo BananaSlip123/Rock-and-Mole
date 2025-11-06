@@ -3379,6 +3379,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5161455498266146226, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6411353102807914056, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.61
@@ -8894,9 +8898,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4860474134389329398, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Size.x
+      value: 3.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860474134389329398, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Size.y
+      value: 3.18
+      objectReference: {fileID: 0}
     - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.03
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8904,7 +8924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.23
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_ConstrainProportionsScale
