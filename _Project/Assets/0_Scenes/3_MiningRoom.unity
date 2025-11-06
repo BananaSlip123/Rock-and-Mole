@@ -380,6 +380,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1397535199679150023, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069881886316550123, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -51.299988
+      objectReference: {fileID: 0}
     - target: {fileID: 3619511605535715795, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_Name
       value: Jugador
@@ -388,6 +396,10 @@ PrefabInstance:
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 1076435522}
+    - target: {fileID: 5629852950263752104, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6411353102807914056, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.4
@@ -427,6 +439,10 @@ PrefabInstance:
     - target: {fileID: 6411353102807914056, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424738190622207880, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 73.79999
       objectReference: {fileID: 0}
     - target: {fileID: 8758680433641810749, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: eventSystem
