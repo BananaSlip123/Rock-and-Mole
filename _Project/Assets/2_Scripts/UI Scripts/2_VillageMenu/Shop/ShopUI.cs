@@ -16,6 +16,9 @@ public class ShopUI : MonoBehaviour
     [SerializeField] InventoryUI inventory;
     
     [SerializeField] GameObject go_error; //salta si intentas comprar y no tienes suficientes materiales?
+
+    [SerializeField] Color col_NormalColor;
+    [SerializeField] Color col_ErrorColor;
     #endregion
     #region PRIVATE VARS
     bool _init = false;
@@ -35,9 +38,9 @@ public class ShopUI : MonoBehaviour
             _canSell = _selectedAmount <= _availableAmount;
 
             if (_canSell)
-                txt_amountAvailable.color = new Color(0, 0, 0);
+                txt_amountAvailable.color = col_NormalColor;
             else
-                txt_amountAvailable.color = new Color(1, 0, 0);
+                txt_amountAvailable.color = col_ErrorColor;
         }
     }
     int Profit
@@ -83,10 +86,42 @@ public class ShopUI : MonoBehaviour
         set
         {
             _materialSelected = value;
-            txt_materialName.text = value.ToString();
+            txt_materialName.text = MaterialSelected2String;
+        }
+    }
+    string MaterialSelected2String
+    {
+        get
+        {
+            switch (_materialSelected)
+            {
+                case MaterialName.Ambar:
+                    return "Ámbar";
+                case MaterialName.Bronce:
+                    return "Bronce";
+                case MaterialName.Carbon:
+                    return "Carbón";
+                case MaterialName.Cuarzo:
+                    return "Cuarzo";
+                case MaterialName.Diamante:
+                    return "Diamante";
+                case MaterialName.Esmeralda:
+                    return "Esmeralda";
+                case MaterialName.Hierro:
+                    return "Hierro";
+                case MaterialName.Obsidiana:
+                    return "Obsidiana";
+                case MaterialName.RolloTela:
+                    return "Rollo de Tela";
+                case MaterialName.Rubi:
+                    return "Rubí";
+                default:
+                    return "NotAssigned";
+            }
         }
     }
     #endregion
+
     #region PUBLIC VARS
     #endregion
     #region PRIVATE FUNCS

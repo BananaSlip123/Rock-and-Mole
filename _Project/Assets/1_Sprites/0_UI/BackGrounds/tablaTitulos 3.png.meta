@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a6c83c4de159604a8cb31666fe9e9b1
+guid: caae7f6b3e69c2f46b421f10fdf9b9c5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,12 +108,34 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tablaTitulos 3_0
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 571
+        width: 1341
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 100, y: 71, z: 113, w: 80}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52484a1fc1da886448ad2113c17ba598
+      internalID: 1868601381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 557106739012a7c418ec90acaf9dace9
     internalID: 0
     vertices: []
     indices: 
@@ -122,7 +144,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tablaTitulos 3_0: 1868601381
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

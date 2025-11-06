@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
     #region STATIC INSTANCE
     public static AudioManager Instance { get; private set; }
     #endregion
+
     #region SERIALIZABLE VARIABLES
 
     [Header("Music Settings")]
@@ -22,7 +24,9 @@ public class AudioManager : MonoBehaviour
         VillageMusic,
         EnemyFightMusic,
         StoreMusic,
-        StoreMusic2
+        StoreMusic2,
+        MineMusic,
+        TownMusic,
         //las que sean
     }
 
@@ -47,6 +51,7 @@ public class AudioManager : MonoBehaviour
         public AudioClip clip;
     }
 
+    [System.Serializable]
     public struct AudioEntry
     {
         public AudioType type;
@@ -58,6 +63,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource musicSource;
     private AudioSource sfxSource;
     private Dictionary<MusicType, AudioClip> musicDictionary;
+    private Dictionary<AudioType, AudioClip> audioDictionary;
     #endregion
 
 
@@ -70,6 +76,7 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             SetupAudioSources();
             BuildMusicDictionary();
+            BuildAudioDictionary();
         }
         else
         {
@@ -90,6 +97,7 @@ public class AudioManager : MonoBehaviour
 
         musicSource.loop = true;
         musicSource.playOnAwake = false;
+        sfxSource.playOnAwake = false;
     }
 
     private void BuildMusicDictionary()
@@ -109,21 +117,42 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void BuildAudioDictionary()
+    {
+        audioDictionary = new Dictionary<AudioType, AudioClip>();
+
+        foreach (AudioEntry entry in audioEntries)
+        {
+            if (!audioDictionary.ContainsKey(entry.type))
+            {
+                audioDictionary.Add(entry.type, entry.clip);
+            }
+            else
+            {
+                Debug.LogWarning($"Audio type {entry.type} is duplicated in the list");
+            }
+        }
+    }
+
     private void AssignClickSoundToAllButtons()
     {
         Button[] allButtons = FindObjectsByType<Button>(FindObjectsSortMode.None);
 
         foreach (Button button in allButtons)
         {
-            button.onClick.RemoveAllListeners();
             button.onClick.AddListener(OnButtonClick);
         }
 
-        Debug.Log($"Se asign� sonido de click a {allButtons.Length} botones");
+        Debug.Log($"Se asign� sonido de click a {allButtons.Length} botones");
     }
 
     private void OnButtonClick()
     {
+
+        if (audioDictionary != null && audioDictionary.TryGetValue(AudioType.ClickerSound, out AudioClip clip))
+        {
+            sfxSource.PlayOneShot(clip);
+        }
         //if (uiClickSound != null)
         //{
         //    sfxSource.PlayOneShot(uiClickSound);
@@ -132,16 +161,31 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region PUBLIC FUNCS
-    public void PlayMusic(MusicType musicType)
+    public void PlayMusic(MusicType type)
+{
+    if (!musicDictionary.TryGetValue(type, out AudioClip clip))
     {
-        if (musicDictionary != null && musicDictionary.ContainsKey(musicType))
+        Debug.LogWarning($"No se encontró clip de música para {type}");
+        return;
+    }
+
+    // Si ya está sonando la misma canción, no hace nada
+    if (musicSource.clip == clip && musicSource.isPlaying)
+        return;
+
+    // Detiene la música anterior antes de cambiar
+    StartCoroutine(SwitchMusicCoroutine(clip));
+}
+
+    public void PlayAudio(AudioType audioType)
+    {
+        if (audioDictionary != null && audioDictionary.TryGetValue(audioType, out AudioClip clip))
         {
-            musicSource.clip = musicDictionary[musicType];
-            musicSource.Play();
+            sfxSource.PlayOneShot(clip);
         }
         else
         {
-            Debug.LogWarning($"Music clip for {musicType} not found!");
+            Debug.LogWarning($"Audio clip for {audioType} not found!");
         }
     }
 
@@ -149,6 +193,70 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.Stop();
     }
-    #endregion
 
+    //Reproduce en bucle
+    public void PlayLoopedAudio(AudioType audioType)
+    {
+        if (audioDictionary.TryGetValue(audioType, out AudioClip clip))
+        {
+            if (sfxSource.clip != clip || !sfxSource.isPlaying)
+            {
+                sfxSource.clip = clip;
+                sfxSource.loop = true;
+                sfxSource.Play();
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Audio clip for {audioType} not found!");
+        }
+    }
+
+
+    //Detiene el audio
+    public void StopAudio(AudioType audioType)
+    {
+        if (audioDictionary.TryGetValue(audioType, out AudioClip clip))
+        {
+            if (sfxSource.clip == clip)
+            {
+                sfxSource.Stop();
+                sfxSource.loop = false;
+                sfxSource.clip = null;
+            }
+        }
+    }
+
+
+
+    private IEnumerator SwitchMusicCoroutine(AudioClip newClip)
+    {
+        float fadeDuration = 1.5f; // segundos
+        float startVolume = musicSource.volume;
+
+        // Fade out
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            musicSource.volume = Mathf.Lerp(startVolume, 0, t / fadeDuration);
+            yield return null;
+        }
+
+        // Pausar y cambiar el clip
+        musicSource.Pause();
+        musicSource.clip = newClip;
+        musicSource.Play();
+
+        // Fade in
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            musicSource.volume = Mathf.Lerp(0, startVolume, t / fadeDuration);
+            yield return null;
+        }
+
+        // Asegura volumen final
+        musicSource.volume = startVolume;
+    }
+
+
+    #endregion
 }

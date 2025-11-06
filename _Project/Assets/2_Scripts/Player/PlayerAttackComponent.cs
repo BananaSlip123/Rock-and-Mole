@@ -86,6 +86,9 @@ namespace PlayerComponents
                 animatorPickaxe.SetBool("Atacar", true);
 
                 HidePickaxe.instance.HidePickaxeAnimation(true);
+
+                //Reproducir sonido de ataque a enemigo
+                AudioManager.Instance.PlayAudio(AudioManager.AudioType.AttackToEnemySound);
             }
             //else
                 //Debug.Log("Estoy en cooldown");

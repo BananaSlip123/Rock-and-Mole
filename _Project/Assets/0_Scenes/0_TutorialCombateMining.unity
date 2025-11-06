@@ -525,12 +525,12 @@ MonoBehaviour:
   scene: 3
   dialogsToShow:
   - "Bueno, ya sabes picar y pelear. Lo b\xE1sico est\xE1 cubierto."
-  - "Te estar\xE1s preguntando que es esa barra amarilla que ves en pantalla"
-  - "\xA1Es tu SALUD! Tras recibir varios golpes ver\xE1s como se reduce"
+  - "Te estar\xE1s preguntando que es esa barra amarilla que ves en pantalla."
+  - "\xA1Es tu SALUD! Tras recibir varios golpes ver\xE1s como se reduce."
   - "Si llega al m\xEDnimo morir\xE1s, \xA1asi que ten cuidado!"
-  - "Si mueres antes de completar la mazmorra perder\xE1s gran parte de los materiales"
+  - "Si mueres antes de completar la mazmorra perder\xE1s gran parte de los materiales."
   - "Recuerda que si pulsas en el bot\xF3n de la mochila podr\xE1s ver que materiales
-    tienes"
+    tienes."
 --- !u!4 &1177003782
 Transform:
   m_ObjectHideFlags: 0
