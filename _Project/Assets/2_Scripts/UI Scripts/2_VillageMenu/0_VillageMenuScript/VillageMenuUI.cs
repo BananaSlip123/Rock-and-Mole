@@ -106,7 +106,14 @@ public class VillageMenuUI : MonoBehaviour
 
     #region PUBLIC FUNCS
     public void Button_OpenPause() => CurrentWindow = Windows.Pause;
-    public void Button_OpenInventory() => CurrentWindow = Windows.InventoryInfo;
+
+    public void Button_Inventory()
+    {
+        if (CurrentWindow == Windows.InventoryInfo)
+            CurrentWindow = Windows.Main;
+        else
+            CurrentWindow = Windows.InventoryInfo;
+    }
     public void Button_OpenShop() => CurrentWindow = Windows.Shop;
     public void Button_OpenForge() => CurrentWindow = Windows.Forge;
     public void Button_OpenWardrobe() => CurrentWindow = Windows.Wardrobe;
