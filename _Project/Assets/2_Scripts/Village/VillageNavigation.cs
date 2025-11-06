@@ -78,12 +78,15 @@ public class VillageNavigation : MonoBehaviour
         //escena de mina
         int random = Random.Range(0,2);
         if(random == 0)
+        {
             SceneManager.LoadScene("3_MiningRoom");
             AudioManager.Instance.PlayMusic(AudioManager.MusicType.MineMusic);
+        }
         else
+        {
             SceneManager.LoadScene("2_CombatRoom");
             AudioManager.Instance.PlayMusic(AudioManager.MusicType.EnemyFightMusic);
-
+        }
     }
     #endregion
 }

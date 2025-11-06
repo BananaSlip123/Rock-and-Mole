@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class AudioManager : MonoBehaviour
         VillageMusic,
         EnemyFightMusic,
         StoreMusic,
-        StoreMusic2
+        StoreMusic2,
+        MineMusic,
+        TownMusic,
         //las que sean
     }
 
