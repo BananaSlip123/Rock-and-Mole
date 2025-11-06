@@ -140,7 +140,7 @@ public class AudioManager : MonoBehaviour
             button.onClick.AddListener(OnButtonClick);
         }
 
-        Debug.Log($"Se asign� sonido de click a {allButtons.Length} botones");
+        Debug.Log($"Se asign� sonido de click a {allButtons.Length} botones");
     }
 
     private void OnButtonClick()
@@ -158,18 +158,21 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region PUBLIC FUNCS
-    public void PlayMusic(MusicType musicType)
+    public void PlayMusic(MusicType type)
+{
+    if (!musicDictionary.TryGetValue(type, out AudioClip clip))
     {
-        if (musicDictionary != null && musicDictionary.TryGetValue(musicType, out AudioClip clip))
-        {
-            musicSource.clip = clip;
-            musicSource.Play();
-        }
-        else
-        {
-            Debug.LogWarning($"Music clip for {musicType} not found!");
-        }
+        Debug.LogWarning($"No se encontró clip de música para {type}");
+        return;
     }
+
+    // Si ya está sonando la misma canción, no hace nada
+    if (musicSource.clip == clip && musicSource.isPlaying)
+        return;
+
+    // Detiene la música anterior antes de cambiar
+    StartCoroutine(SwitchMusicCoroutine(clip));
+}
 
     public void PlayAudio(AudioType audioType)
     {
@@ -220,5 +223,37 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
+
+
+    private IEnumerator SwitchMusicCoroutine(AudioClip newClip)
+    {
+        float fadeDuration = 1.5f; // segundos
+        float startVolume = musicSource.volume;
+
+        // Fade out
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            musicSource.volume = Mathf.Lerp(startVolume, 0, t / fadeDuration);
+            yield return null;
+        }
+
+        // Pausar y cambiar el clip
+        musicSource.Pause();
+        musicSource.clip = newClip;
+        musicSource.Play();
+
+        // Fade in
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            musicSource.volume = Mathf.Lerp(0, startVolume, t / fadeDuration);
+            yield return null;
+        }
+
+        // Asegura volumen final
+        musicSource.volume = startVolume;
+    }
+
+
     #endregion
 }

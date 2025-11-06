@@ -43,6 +43,13 @@ public class VillageNavigation : MonoBehaviour
     #region PUBLIC FUNCS
     public void OnShopEntry()
     {
+
+        // Reproducir música de tienda
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayMusic(AudioManager.MusicType.StoreMusic);
+            //AudioManager.Instance.PlayMusic(AudioManager.MusicType.StoreMusic2);
+
+
         //q te meta en la tienda por dentro
         Location = Locations.shop;
 
@@ -57,6 +64,10 @@ public class VillageNavigation : MonoBehaviour
     public void OnForgeInteraction() => villageMenuUI.Button_OpenForge();
     public void OnVillageEntry()
     {
+
+        AudioManager.Instance.PlayMusic(AudioManager.MusicType.TownMusic);
+
+
         //sales de la forja/tienda/mina a la calle
         //villageMenuUI.Button_OpenMain();
 
@@ -68,8 +79,10 @@ public class VillageNavigation : MonoBehaviour
         int random = Random.Range(0,2);
         if(random == 0)
             SceneManager.LoadScene("3_MiningRoom");
+            AudioManager.Instance.PlayMusic(AudioManager.MusicType.MineMusic);
         else
             SceneManager.LoadScene("2_CombatRoom");
+            AudioManager.Instance.PlayMusic(AudioManager.MusicType.EnemyFightMusic);
 
     }
     #endregion
