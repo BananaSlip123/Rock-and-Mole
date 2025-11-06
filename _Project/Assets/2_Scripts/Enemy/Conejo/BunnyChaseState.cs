@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class GolemChaseState : IStateComponent, IMoveComponent
+public class BunnyChaseState : IStateComponent, IMoveComponent
 {
     Transform enemyTransform;
     [SerializeField] float speed = 2.5f;
     float radiusToAttack = 1f;
-    float radiusToStopChasing = 1f;
+    float radiusToStopChasing = 4f;
 
     Vector3 playerPosition;
 
@@ -13,41 +13,17 @@ public class GolemChaseState : IStateComponent, IMoveComponent
 
     Animator animator;
 
-    public GolemChaseState(Transform e, IStateMachineComponent mStateMachine, Animator a)
+    public BunnyChaseState(Transform e, IStateMachineComponent mStateMachine, Animator a)
     {
         enemyTransform = e;
         this.mStateMachine = mStateMachine;
         animator = a;
-
-        if (animator.CompareTag("Chikito"))
-        {
-            radiusToAttack = 2f;
-            radiusToStopChasing = 5f;
-        }    
-        else
-        {
-            radiusToAttack = 5f;
-            radiusToStopChasing = 10f;
-        }
-            
     }
 
-    public GolemChaseState(Transform e, IStateMachineComponent mStateMachine)
+    public BunnyChaseState(Transform e, IStateMachineComponent mStateMachine)
     {
         enemyTransform = e;
         this.mStateMachine = mStateMachine;
-
-        if (animator.CompareTag("Chikito"))
-        {
-            radiusToAttack = 2f;
-            radiusToStopChasing = 5f;
-        }
-        else
-        {
-            radiusToAttack = 5f;
-            radiusToStopChasing = 10f;
-        }
-
     }
 
     public void Enter()
@@ -57,7 +33,7 @@ public class GolemChaseState : IStateComponent, IMoveComponent
 
     public void Exit()
     {
-        
+
     }
 
     void IStateComponent.Update()
@@ -65,20 +41,21 @@ public class GolemChaseState : IStateComponent, IMoveComponent
 
     }
 
-    public void FixedUpdate()
+    void IStateComponent.FixedUpdate()
     {
-        if(TakePlayerPosition())
+        if (TakePlayerPosition())
         {
             Move();
             if ((enemyTransform.position - playerPosition).magnitude < radiusToAttack)
             {
                 Debug.Log("DISTANCIA: " + (enemyTransform.position - playerPosition).magnitude);
-                mStateMachine.ChangeState(new GolemAttackState(mStateMachine, enemyTransform, GameObject.FindGameObjectWithTag("Player").GetComponent<IDamageableComponent>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(), animator));
+                mStateMachine.ChangeState(new BunnyAttackComponent(mStateMachine, enemyTransform, GameObject.FindGameObjectWithTag("Player").GetComponent<IDamageableComponent>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(), animator));
             }
         }
         else
         {
-            mStateMachine.ChangeState(new GolemWanderState(mStateMachine, enemyTransform, animator));
+            //mStateMachine.ChangeState(new BunnyWanderState(mStateMachine, enemyTransform, animator));
+            mStateMachine.ChangeState(new BunnyWanderState(mStateMachine, enemyTransform));
         }
     }
 
@@ -107,7 +84,7 @@ public class GolemChaseState : IStateComponent, IMoveComponent
             {
                 playerPosition = c.transform.position;
                 return true;
-            }              
+            }
         }
 
         return false;
