@@ -6,7 +6,14 @@ using System.Collections;
 public class AudioManager : MonoBehaviour
 {
     #region STATIC INSTANCE
-    public static AudioManager Instance { get; private set; }
+    static AudioManager _instance = null;
+    public static AudioManager Instance {
+        get
+        {
+            if (_instance == null) throw new System.Exception("Añade un AudioManager en la escena");
+            return _instance;
+        }
+    }
     #endregion
 
     #region SERIALIZABLE VARIABLES
@@ -70,9 +77,9 @@ public class AudioManager : MonoBehaviour
     #region PRIVATE FUNCS
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject);
             SetupAudioSources();
             BuildMusicDictionary();

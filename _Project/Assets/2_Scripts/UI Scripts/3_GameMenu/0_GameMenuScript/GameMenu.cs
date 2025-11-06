@@ -92,7 +92,13 @@ public class GameMenu : MonoBehaviour
 
     #region PUBLIC FUNCS
     public void Button_OpenPause() => CurrentWindow = Windows.Pause;
-    public void Button_OpenRunInventory() => CurrentWindow = Windows.RunInventory;
+    public void Button_Inventory()
+    {
+        if (CurrentWindow == Windows.RunInventory)
+            CurrentWindow = Windows.Main;
+        else
+            CurrentWindow = Windows.RunInventory;
+    }
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
     public void Button_OpenMain() => CurrentWindow = Windows.Main;
 
