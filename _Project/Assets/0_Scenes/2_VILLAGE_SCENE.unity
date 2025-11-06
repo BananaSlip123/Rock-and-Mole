@@ -6821,6 +6821,7 @@ MonoBehaviour:
   - "Un buen pico te ayuda a picar m\xE1s r\xE1pido..."
   - "\xA1Y a ser implacable contra los enemigos!"
   - "En la tienda podr\xE1s vender materiales y comprar equipamiento."
+  - "Dentro del ba\xFAl podr\xE1s ver los materiales que traes de tus expediciones."
   - "Si quieres volver a bajar a la mina, solo dir\xEDgete a esa puerta de all\xED."
 --- !u!1 &1541318219
 GameObject:
