@@ -5608,7 +5608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1194614127
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8794,9 +8794,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 997971942}
     m_Modifications:
+    - target: {fileID: 2359905069365418979, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3053556902134959682, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221308413449667285, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955360710633754274, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Name
+      value: NavigationTrigger_Mines
       objectReference: {fileID: 0}
     - target: {fileID: 4104703543558507531, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_Enabled
@@ -8842,6 +8854,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5975950891150620531, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -8849,6 +8877,14 @@ PrefabInstance:
     - target: {fileID: 6520835794219943993, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_Name
       value: VILLAGE
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933753140019634597, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933946572249394610, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
