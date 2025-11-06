@@ -1,93 +1,93 @@
 using PickaxeStats;
 using PlayerComponents;
+using System;
+using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour, IPlayerStats
 {
+    private int _actualHealth;
     public int actualHealth
     {
-        get => 1;
+        get => _actualHealth;
         private set
         {
             if (value != actualHealth)
             {
                 if (value > health)
-                    actualHealth = health;
+                    _actualHealth = health;
                 else
-                    actualHealth = value;
+                    _actualHealth = value;
                 playerHealth.SetHealth(value);
             }
         }
     }
+
+    private int _health;
     public int health
     {
-        get => 50;
+        get => _health;
         private set
         {
             if (value != health)
             {
-                health = value;
+                _health = value;
                 actualHealth = value;
             }
         }
     }
+    private int _damage;
     public int damage
     {
-        get => damage;
+        get => _damage;
         private set
         {
             if (value != damage)
             {
-                damage = value;
+                _damage = value;
                 playerAttack.damage = value;
             }
         }
     }
+
+    private float _critMultiplier;
     public float critMultiplier 
     { 
-        get => critMultiplier; 
+        get => _critMultiplier; 
         private set 
         { 
             if(value != critMultiplier)
             {
-                critMultiplier = value;
+                _critMultiplier = value;
                 playerAttack.critMultiplier = value;
             }
         } 
     }
+    private float _critProbability;
     public float critProbability
     {
-        get => critProbability;
+        get => _critProbability;
         private set
         {
             if (value != critProbability)
             {
-                critProbability = value;
+                _critProbability = value;
                 playerAttack.critProbability = value;
             }
         }
     }
+
+    private float _speed;
     public float speed 
     {
-        get => speed;
+        get => _speed;
         private set
         {
             if (value != speed)
             {
-                speed = value;
+                _speed = value;
                 playerSpeed.speed = value;
-            }
-        }
-    }
-    public float defense 
-    {
-        get => defense;
-        private set
-        {
-            if (value != defense)
-            {
-                defense = value;
-                playerHealth.defense = value;
             }
         }
     }
@@ -98,21 +98,81 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
 
     private void Awake()
     {
-        playerHealth = GetComponent<DamageableComponent>();
-        playerAttack = GetComponent<PlayerAttackComponent>();
-        playerSpeed = GetComponent<PlayerMovementComponent>();
+        ResetStats();
+        FindComponents();
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    public void ChangeClothes()
+
+    void Start()
     {
-        throw new System.NotImplementedException();
+        SceneManager.sceneLoaded += OnSceneChange;
+    }
+
+    private void OnSceneChange(Scene scene, LoadSceneMode  mode)
+    {
+        FindComponents();
+
+        playerHealth.SetHealth(actualHealth);
+        playerAttack.critMultiplier = critMultiplier;
+        playerAttack.critProbability = critProbability;
+        playerAttack.damage = damage;
+        playerSpeed.speed = speed;
+    }
+
+    private void FindComponents()
+    {
+        GameObject go = GameObject.FindGameObjectWithTag("Player");
+
+        playerHealth = go.GetComponent<DamageableComponent>();
+        playerAttack = go.GetComponent<PlayerAttackComponent>();
+        playerSpeed = go.GetComponent<PlayerMovementComponent>();
+    }
+
+    public void ChangeClothes(ClothStatsScripteableObject newCloth)
+    {
+        foreach(ModifierStats mod in newCloth.modifiers)
+        {
+            SetModifier(mod);
+        }
+    }
+
+    private void SetModifier(ModifierStats mod)
+    {
+        switch (mod.stat)
+        {
+            case Stats.health:
+                health += (int) mod.value;
+                break;
+            case Stats.speed:
+                speed += mod.value;
+                break;
+            case Stats.critMultiplier:
+                critMultiplier += mod.value;
+                break;
+            case Stats.critProbability:
+                critProbability += mod.value;
+                break;
+            case Stats.damage:
+                damage += (int) mod.value;
+                break;
+        }
     }
 
     public void ChangePickaxe(PickaxeStatsScripteableObject newPickaxe)
+    {       
+        damage += newPickaxe.damage;
+        critMultiplier += newPickaxe.critMultiplier;
+        critProbability += newPickaxe.critProbability;
+    }
+
+    public void ChangeSomething(PickaxeStatsScripteableObject newPickaxe, ClothStatsScripteableObject newCloth)
     {
-        damage = newPickaxe.damage;
-        critMultiplier = newPickaxe.critMultiplier;
-        critProbability = newPickaxe.critProbability;
+        ResetStats();
+
+        ChangePickaxe(newPickaxe);
+        ChangeClothes(newCloth);
     }
 
     public void ResetStats()
@@ -122,7 +182,6 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         critMultiplier = 0;
         critProbability = 0;
         speed = 5f;
-        defense = 0f;
     }
 
     public void HealPlayer(int healing)
