@@ -13,17 +13,21 @@ public class BunnyChaseState : IStateComponent, IMoveComponent
 
     Animator animator;
 
-    public BunnyChaseState(Transform e, IStateMachineComponent mStateMachine, Animator a)
+    GameObject explosion;
+
+    public BunnyChaseState(Transform e, IStateMachineComponent mStateMachine, Animator a, GameObject c)
     {
         enemyTransform = e;
         this.mStateMachine = mStateMachine;
         animator = a;
+        explosion = c;
     }
 
-    public BunnyChaseState(Transform e, IStateMachineComponent mStateMachine)
+    public BunnyChaseState(Transform e, IStateMachineComponent mStateMachine, GameObject c)
     {
         enemyTransform = e;
         this.mStateMachine = mStateMachine;
+        explosion = c;
     }
 
     public void Enter()
@@ -49,13 +53,13 @@ public class BunnyChaseState : IStateComponent, IMoveComponent
             if ((enemyTransform.position - playerPosition).magnitude < radiusToAttack)
             {
                 Debug.Log("DISTANCIA: " + (enemyTransform.position - playerPosition).magnitude);
-                mStateMachine.ChangeState(new BunnyAttackComponent(mStateMachine, enemyTransform, GameObject.FindGameObjectWithTag("Player").GetComponent<IDamageableComponent>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(), animator));
+                mStateMachine.ChangeState(new BunnyAttackComponent(mStateMachine, enemyTransform, GameObject.FindGameObjectWithTag("Player").GetComponent<IDamageableComponent>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(), explosion));
             }
         }
         else
         {
             //mStateMachine.ChangeState(new BunnyWanderState(mStateMachine, enemyTransform, animator));
-            mStateMachine.ChangeState(new BunnyWanderState(mStateMachine, enemyTransform));
+            mStateMachine.ChangeState(new BunnyWanderState(mStateMachine, enemyTransform, explosion));
         }
     }
 
