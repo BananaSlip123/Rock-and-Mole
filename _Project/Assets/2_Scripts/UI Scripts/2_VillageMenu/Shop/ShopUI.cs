@@ -86,10 +86,42 @@ public class ShopUI : MonoBehaviour
         set
         {
             _materialSelected = value;
-            txt_materialName.text = value.ToString();
+            txt_materialName.text = MaterialSelected2String;
+        }
+    }
+    string MaterialSelected2String
+    {
+        get
+        {
+            switch (_materialSelected)
+            {
+                case MaterialName.Ambar:
+                    return "Ámbar";
+                case MaterialName.Bronce:
+                    return "Bronce";
+                case MaterialName.Carbon:
+                    return "Carbón";
+                case MaterialName.Cuarzo:
+                    return "Cuarzo";
+                case MaterialName.Diamante:
+                    return "Diamante";
+                case MaterialName.Esmeralda:
+                    return "Esmeralda";
+                case MaterialName.Hierro:
+                    return "Hierro";
+                case MaterialName.Obsidiana:
+                    return "Obsidiana";
+                case MaterialName.RolloTela:
+                    return "Rollo de Tela";
+                case MaterialName.Rubi:
+                    return "Rubí";
+                default:
+                    return "NotAssigned";
+            }
         }
     }
     #endregion
+
     #region PUBLIC VARS
     #endregion
     #region PRIVATE FUNCS
