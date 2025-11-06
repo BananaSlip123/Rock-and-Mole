@@ -564,9 +564,9 @@ MonoBehaviour:
   - Bien, ya sabes picar. Ahora toca defenderte.
   - "Esos golems peque\xF1os no son muy listos, pero te atacar\xE1n si te acercas."
   - "Golp\xE9alos con tu pico cuando est\xE9n cerca."
-  - "Necesitar\xE1s el CLICK IZQUIERDO o el GATILLO DERECHO del mando"
+  - "Necesitar\xE1s el CLICK IZQUIERDO o el GATILLO DERECHO del mando."
   - "Y si ves que te van a dar\u2026 usa el dash para esquivar."
-  - Activa el dash con SHIFT o con el GATILLO IZQUIERDO
+  - Activa el dash con SHIFT o con el GATILLO IZQUIERDO.
 --- !u!4 &1123508947
 Transform:
   m_ObjectHideFlags: 0

@@ -782,9 +782,9 @@ MonoBehaviour:
   go_callOut: {fileID: 1219847563}
   scene: 4
   dialogsToShow:
-  - "A partir de aqu\xED, te dejo a tu aire"
-  - Ya tienes lo necesario para explorar las minas por tu cuenta
-  - "Observa, decide, esquiva, golpea\u2026"
+  - "A partir de aqu\xED, te dejo a tu aire."
+  - Ya tienes lo necesario para explorar las minas por tu cuenta.
+  - Observa, decide, esquiva, golpea...
   - "Pero sobre todo, \xA1recoge lo que puedas!"
   - "\xA1Suerte ah\xED dentro!"
 --- !u!4 &1471094428
