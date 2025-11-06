@@ -1,16 +1,16 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
-public class BunnyAttackComponent : IStateComponent, IAttackComponent
+public class BunnyAttackComponent : MonoBehaviour, IStateComponent, IAttackComponent
 {
 
     const float COOLDOWN = 2.5f;
-    float TIME_HITBOX = 0.1f;
 
     private float timeToAttack = 0f;
-    private float timeHitbox = 0f;
 
     private bool isInCooldown = true;
+    private bool hasAttacked = false;
 
     int damage = 20;
 
@@ -21,25 +21,31 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
     Transform enemyTransform;
     Transform playerTransform;
 
+    GameObject explosion;
+
     Collider attackHitbox;
 
     Animator animator;
 
-    public BunnyAttackComponent(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t, Animator a)
+    public BunnyAttackComponent(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t, Animator a, GameObject c)
     {
         mStateMachine = m;
         enemyTransform = e;
         playerTransform = t;
         playerHealth = p;
         animator = a;
+
+        explosion = c;
     }
 
-    public BunnyAttackComponent(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t)
+    public BunnyAttackComponent(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t, GameObject c)
     {
         mStateMachine = m;
         enemyTransform = e;
         playerTransform = t;
         playerHealth = p;
+
+        explosion = c;
     }
 
     public void ActiveHitbox()
@@ -51,7 +57,11 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
     {
         //animator.SetBool("Atacar", true);
         playerHealth.RecieveDamage(damage);
-        GameObject.Destroy(enemyTransform.gameObject);
+        hasAttacked = true;
+
+        Instantiate(explosion, enemyTransform.position, enemyTransform.rotation).SetActive(true);
+
+        Destroy(enemyTransform.gameObject);
     }
 
     public void Enter()
@@ -83,12 +93,12 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
                 timeToAttack = 0f;
             }
 
-            if (!isInCooldown)
+            if (!isInCooldown && !hasAttacked)
                 Attack();
         }
         else
         {
-            mStateMachine.ChangeState(new BunnyChaseState(enemyTransform, mStateMachine));
+            mStateMachine.ChangeState(new BunnyChaseState(enemyTransform, mStateMachine, explosion));
             //mStateMachine.ChangeState(new BunnyChaseState(enemyTransform, mStateMachine, animator));
         }
     }
