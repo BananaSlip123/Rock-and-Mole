@@ -16,6 +16,9 @@ public class ShopUI : MonoBehaviour
     [SerializeField] InventoryUI inventory;
     
     [SerializeField] GameObject go_error; //salta si intentas comprar y no tienes suficientes materiales?
+
+    [SerializeField] Color col_NormalColor;
+    [SerializeField] Color col_ErrorColor;
     #endregion
     #region PRIVATE VARS
     bool _init = false;
@@ -35,9 +38,9 @@ public class ShopUI : MonoBehaviour
             _canSell = _selectedAmount <= _availableAmount;
 
             if (_canSell)
-                txt_amountAvailable.color = new Color(0, 0, 0);
+                txt_amountAvailable.color = col_NormalColor;
             else
-                txt_amountAvailable.color = new Color(1, 0, 0);
+                txt_amountAvailable.color = col_ErrorColor;
         }
     }
     int Profit

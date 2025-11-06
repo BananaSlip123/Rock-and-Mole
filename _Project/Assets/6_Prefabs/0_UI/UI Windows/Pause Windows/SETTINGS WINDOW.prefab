@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6342483598332486897
 RectTransform:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Efectos de Sonido
+  m_text: Efectos de sonido
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d85e5f3f501e164dab528d388692e39, type: 2}
   m_sharedMaterial: {fileID: 6624265146440007285, guid: 2d85e5f3f501e164dab528d388692e39, type: 2}
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Volumen M\xFAsica"
+  m_text: "Volumen m\xFAsica"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d85e5f3f501e164dab528d388692e39, type: 2}
   m_sharedMaterial: {fileID: 6624265146440007285, guid: 2d85e5f3f501e164dab528d388692e39, type: 2}
@@ -375,7 +375,7 @@ PrefabInstance:
       objectReference: {fileID: 6061063790191137255}
     - target: {fileID: 3268377038584287241, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5116571325113143762, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
       propertyPath: m_Name
@@ -383,7 +383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793477023658803518, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7851415364343458696, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
       propertyPath: m_Pivot.x
@@ -634,7 +634,7 @@ PrefabInstance:
       objectReference: {fileID: 260829235874251265}
     - target: {fileID: 3268377038584287241, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5116571325113143762, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
       propertyPath: m_Name
@@ -642,7 +642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793477023658803518, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7851415364343458696, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
       propertyPath: m_Pivot.x
