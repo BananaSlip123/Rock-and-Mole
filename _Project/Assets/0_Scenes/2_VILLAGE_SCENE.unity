@@ -8846,13 +8846,37 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3053556902134959682, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Center.x
+      value: 6.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053556902134959682, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Center.z
+      value: 14.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3221308413449667285, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3744729067269657979, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Size.x
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744729067269657979, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Size.y
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744729067269657979, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_Size.z
+      value: 0.97
+      objectReference: {fileID: 0}
     - target: {fileID: 3955360710633754274, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_Name
       value: NavigationTrigger_Mines
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955360710633754274, guid: 6ac1d798902527949ad0f50124996205, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4104703543558507531, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_Enabled
@@ -8924,7 +8948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 5597810111284850826, guid: 6ac1d798902527949ad0f50124996205, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -8947,7 +8971,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3955360710633754274, guid: 6ac1d798902527949ad0f50124996205, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ac1d798902527949ad0f50124996205, type: 3}

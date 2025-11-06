@@ -477,11 +477,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8, y: 1.67, z: 1.2247275}
+  m_Size: {x: 0.34, y: 1.11, z: 1.2247275}
   m_Center: {x: -0.5126524, y: 3.1496065, z: 0.84858423}
 --- !u!4 &6321470744687279111 stripped
 Transform:
