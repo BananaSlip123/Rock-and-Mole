@@ -3,10 +3,14 @@ using UnityEngine;
 public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
 {
     [SerializeField] SO_DoorsProbabilities probabilities;
+    [SerializeField] int NUMBER_TO_BOSS = 10;
+
     GameObject[] doors;
+    PlayerStats access;
 
     void Awake()
     {
+        access = GameObject.Find("PlayerStats").GetComponent<PlayerStats>(); ;
         doors = GameObject.FindGameObjectsWithTag("Door");   
         
         foreach(GameObject go in doors)
@@ -17,6 +21,12 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
 
     public void ChooseRoom(IDoorBehaviour puerta)
     {
+        if(access.roomNumber >= NUMBER_TO_BOSS)
+        {
+            puerta.ChooseBehaviour(2);
+            return;
+        }
+
         float random = Random.Range(0f, 0.99f);
         Debug.Log("RANDOM ROOM: " + random);
         if(random < probabilities.combatProb)

@@ -11,6 +11,7 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     {
         Combat,
         Mining,
+        Boss
     }
 
     enum typeOfEvent
@@ -30,6 +31,9 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
                 break;
             case (int) typeOfBehaviour.Mining:
                 ChangeBehaviour(MiningBehaviour);
+                break;
+            case (int)typeOfBehaviour.Boss:
+                ChangeBehaviour(BossBehaviour);
                 break;
         }
     }
@@ -55,7 +59,7 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
 
     public void EnterToRoom()
     {
-        enterBehaviour.Invoke();
+        enterBehaviour?.Invoke();
     }
 
     public void ChangeBehaviour(Action behaviour)
@@ -102,6 +106,11 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     private void RescueBehaviour()
     {
         SceneManager.LoadScene("5_RescueRoom");
-    }   
+    }
+
+    private void BossBehaviour()
+    {
+        SceneManager.LoadScene("8_BossRoom");
+    }
     #endregion
 }
