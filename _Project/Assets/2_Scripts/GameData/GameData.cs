@@ -22,13 +22,13 @@ public static class GameData
     {
         { MaterialName.Hierro, 4 },
         { MaterialName.Carbon, 8 },
-        { MaterialName.Bronce, 8 },
-        { MaterialName.Cuarzo, 15 },
-        { MaterialName.Obsidiana, 15 },
-        { MaterialName.RolloTela, 30 },
+        { MaterialName.Bronce, 25 },
+        { MaterialName.Cuarzo, 50 },
+        { MaterialName.Obsidiana, 50 },
+        { MaterialName.RolloTela, 50 },
         { MaterialName.Ambar, 8 },
-        { MaterialName.Esmeralda, 10 },
-        { MaterialName.Rubi, 15 },
+        { MaterialName.Esmeralda, 50 },
+        { MaterialName.Rubi, 75 },
         { MaterialName.Diamante, 100 }
     };
 
