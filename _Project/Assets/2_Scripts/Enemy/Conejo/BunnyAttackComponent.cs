@@ -61,6 +61,7 @@ public class BunnyAttackComponent : MonoBehaviour, IStateComponent, IAttackCompo
 
         Instantiate(explosion, enemyTransform.position, enemyTransform.rotation).SetActive(true);
 
+        enemyTransform.GetComponent<BunnyDamageableComponent>().Exploded();
         Destroy(enemyTransform.gameObject);
     }
 

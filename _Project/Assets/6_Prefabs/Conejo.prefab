@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8825305859827538483}
   - component: {fileID: 3423339525810544663}
   - component: {fileID: 718123770884307660}
+  - component: {fileID: 7416262397294858059}
   m_Layer: 3
   m_Name: Conejo
   m_TagString: Enemy
@@ -126,6 +127,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 2676216064840999038, guid: 064caf97e8d388b45899b4f271597157, type: 3}
+--- !u!114 &7416262397294858059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666173133458897332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b16bab1253cab4cadaa89d8d0980ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  animator: {fileID: 0}
 --- !u!1 &8234661505634160133
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 6837582247576469606}
   - component: {fileID: 4542339628906375947}
   - component: {fileID: 1921032584563998797}
-  m_Layer: 0
+  - component: {fileID: 623913944763096519}
+  m_Layer: 3
   m_Name: Rata
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,3 +152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d75fe891229a594dbed3a2a441ae910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &623913944763096519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878699387242084105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88a600c92da5ad4e9dfe578e8c7f761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  animator: {fileID: 0}
