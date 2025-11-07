@@ -71,7 +71,6 @@ GameObject:
   - component: {fileID: 777582931479185327}
   - component: {fileID: 5167273528164019003}
   - component: {fileID: 2463134159168281087}
-  - component: {fileID: 7706169458359262311}
   m_Layer: 6
   m_Name: Topito
   m_TagString: Player
@@ -397,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19526a5567848e4988a047c31e395e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  COOLDOWN: 0.4
   damage: 0
   critMultiplier: 0
   critProbability: 0
@@ -448,18 +448,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingPickaxe: {fileID: 5682983459129718260}
   attackPickaxe: {fileID: 994297096839894002}
---- !u!114 &7706169458359262311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8559116585686124911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 310d3ff3e029ce9469f0af0fe0182ff4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6166113497580324190
 PrefabInstance:
   m_ObjectHideFlags: 0
