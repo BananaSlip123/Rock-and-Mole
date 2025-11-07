@@ -15,6 +15,7 @@ public enum Stats
     speed,
     critMultiplier,
     critProbability,
+    attackSpeed
 }
 
 [System.Serializable]
