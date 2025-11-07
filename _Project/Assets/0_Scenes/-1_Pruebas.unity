@@ -222,7 +222,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[9].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6411353102807914056, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
@@ -281,7 +289,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8247340886053101850, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2140294366677525144, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
     - {fileID: 2087736156329804711, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
@@ -435,6 +444,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310d3ff3e029ce9469f0af0fe0182ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomNumber: 0
+  actualPickaxe: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
+  actualCloth: {fileID: 11400000, guid: 29f03d92d9e823b4fbd490d993c8cbac, type: 2}
 --- !u!4 &1311430036
 Transform:
   m_ObjectHideFlags: 0

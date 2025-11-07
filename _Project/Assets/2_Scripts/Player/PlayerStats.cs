@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour, IPlayerStats
 {
+    public int roomNumber = 0;
+
     private int _actualHealth;
     public int actualHealth
     {
@@ -96,10 +98,14 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     PlayerAttackComponent playerAttack;
     PlayerMovementComponent playerSpeed;
 
+    public PickaxeStatsScripteableObject actualPickaxe;
+    public ClothStatsScripteableObject actualCloth;
+
     private void Awake()
     {
         FindComponents();
-        ResetStats();
+
+        ChangeSomething(actualPickaxe, actualCloth);
 
         DontDestroyOnLoad(this.gameObject);
     }
@@ -114,11 +120,22 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     {
         FindComponents();
 
-        playerHealth.SetHealth(actualHealth);
-        playerAttack.critMultiplier = critMultiplier;
-        playerAttack.critProbability = critProbability;
-        playerAttack.damage = damage;
-        playerSpeed.speed = speed;
+        if(SceneManager.GetActiveScene().name == "1_VILLAGE_SCENE")
+        {
+            roomNumber = 0;
+
+            playerHealth.SetHealth(health);
+        }
+        else
+        {
+            playerHealth.SetHealth(actualHealth);
+            playerAttack.critMultiplier = critMultiplier;
+            playerAttack.critProbability = critProbability;
+            playerAttack.damage = damage;
+            playerSpeed.speed = speed;
+
+            roomNumber += 1;
+        }       
     }
 
     private void FindComponents()
@@ -161,7 +178,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     }
 
     public void ChangePickaxe(PickaxeStatsScripteableObject newPickaxe)
-    {       
+    {
         damage += newPickaxe.damage;
         critMultiplier += newPickaxe.critMultiplier;
         critProbability += newPickaxe.critProbability;
