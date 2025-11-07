@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probabilities: {fileID: 11400000, guid: 035370b1de1bf534d8eb07ff388e45aa, type: 2}
+  NUMBER_TO_BOSS: 10
 --- !u!1 &1311430034
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1583624390
 Light:
   m_ObjectHideFlags: 0
@@ -679,7 +680,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cadb7e8b0d44a854ca96f8effd1b3e99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -781,6 +782,120 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69862c6b45b72344b9361daba04c3377, type: 3}
+--- !u!1001 &1485349771330306611
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1045750961895265100, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045750961895265100, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045750961895265100, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045750961895265100, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045750961895265100, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045750961895265100, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045750961895265100, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045750961895265100, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045750961895265100, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045750961895265100, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320799056432137214, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+      propertyPath: m_Name
+      value: Foco centro sala
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 162f41a9ac750df46b87fa7e1ff8e780, type: 3}
+--- !u!1001 &1626912457014436768
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044491591228737559, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_Name
+      value: PuntoLuz
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
 --- !u!1001 &6356953513880366038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -976,3 +1091,5 @@ SceneRoots:
   - {fileID: 1914823407}
   - {fileID: 725658947}
   - {fileID: 155158907}
+  - {fileID: 1626912457014436768}
+  - {fileID: 1485349771330306611}
