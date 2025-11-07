@@ -16,7 +16,6 @@ public class RockGenerator : MonoBehaviour, IEnemyGenerator
         for (int i = 0; i < random; i++)
         {
             SpawnEnemy(rockPrefabs[0]);
-            LevelManager.instance.EnemyHasSpawned();
         }
 
         gameObject.SetActive(false);
