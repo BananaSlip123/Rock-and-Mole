@@ -6165,20 +6165,8 @@ PrefabInstance:
       value: Materiales necesarios
       objectReference: {fileID: 0}
     - target: {fileID: 446160165329051043, guid: 4af9d44d824453149aaac33d25828cec, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.03529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 4af9d44d824453149aaac33d25828cec, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.34901962
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 4af9d44d824453149aaac33d25828cec, type: 3}
       propertyPath: m_fontSizeBase
       value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 446160165329051043, guid: 4af9d44d824453149aaac33d25828cec, type: 3}
-      propertyPath: m_characterSpacing
-      value: -5.4
       objectReference: {fileID: 0}
     - target: {fileID: 446160165329051043, guid: 4af9d44d824453149aaac33d25828cec, type: 3}
       propertyPath: m_fontColor32.rgba
