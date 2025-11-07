@@ -8,7 +8,7 @@ namespace PlayerComponents
 {
     public class PlayerAttackComponent : MonoBehaviour, IAttackComponent
     {
-        const float COOLDOWN = 0.2f;
+        [SerializeField] public float COOLDOWN = 0.4f;
         const float TIME_HITBOX = 0.1f;
 
         private float timeToAttack = 0f;

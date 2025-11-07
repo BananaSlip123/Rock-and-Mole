@@ -53,6 +53,20 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         }
     }
 
+    private float _attackSpeed;
+    public float attackSpeed
+    {
+        get => _attackSpeed;
+        private set
+        {
+            if (value != attackSpeed)
+            {
+                _attackSpeed = value;
+                playerAttack.COOLDOWN = value;
+            }
+        }
+    }
+
     private float _critMultiplier;
     public float critMultiplier 
     { 
@@ -133,6 +147,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             playerAttack.critProbability = critProbability;
             playerAttack.damage = damage;
             playerSpeed.speed = speed;
+            playerAttack.COOLDOWN = attackSpeed;
 
             roomNumber += 1;
         }       
@@ -182,6 +197,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         damage += newPickaxe.damage;
         critMultiplier += newPickaxe.critMultiplier;
         critProbability += newPickaxe.critProbability;
+        attackSpeed -= newPickaxe.attackSpeed;
     }
 
     public void ChangeSomething(PickaxeStatsScripteableObject newPickaxe, ClothStatsScripteableObject newCloth)
@@ -199,6 +215,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         critMultiplier = 0;
         critProbability = 0;
         speed = 5f;
+        attackSpeed = 0.4f;
     }
 
     public void HealPlayer(int healing)

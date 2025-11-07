@@ -9,5 +9,7 @@ namespace PickaxeStats
 
         public float critMultiplier;
         public float critProbability;
+
+        public float attackSpeed;
     }
 }
