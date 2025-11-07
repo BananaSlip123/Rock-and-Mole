@@ -4,8 +4,6 @@ using UnityEngine;
 public class EnemyGenerator : MonoBehaviour, IEnemyGenerator
 {
     [SerializeField] GameObject[] enemiesPrefabs;
-    [SerializeField] Vector2Int limitX;
-    [SerializeField] Vector2Int limitZ;
     [SerializeField] Vector2Int minMaxEnemies;
 
     void Start()
@@ -24,8 +22,7 @@ public class EnemyGenerator : MonoBehaviour, IEnemyGenerator
     public void SpawnEnemy(GameObject prefab)
     {
         Collider collider = GetComponent<Collider>();
-        //float randomZ = UnityEngine.Random.Range(, limitZ.y);
-        //float randomX = UnityEngine.Random.Range(limitX.x, limitX.y);
+
         float randomX = UnityEngine.Random.Range(collider.bounds.min.x, collider.bounds.max.x);
         float randomZ = UnityEngine.Random.Range(collider.bounds.min.z, collider.bounds.max.z);
 
