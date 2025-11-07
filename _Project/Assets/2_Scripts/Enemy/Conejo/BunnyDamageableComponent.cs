@@ -11,6 +11,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
 
     private void FixedUpdate()
     {
+        /*
         if (animator.GetBool("Morir"))
         {
             timeToDeath += Time.fixedDeltaTime;
@@ -18,6 +19,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
             if (timeToDeath >= TIME_TO_DEATH)
                 DeathLogic();
         }
+        */
     }
 
     public void RecieveDamage(int damage)
@@ -43,7 +45,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
 
     private void Death()
     {
-        animator.SetBool("Morir", true);
+        //animator.SetBool("Morir", true);
 
         //Reproducir sonido de muerte
         AudioManager.Instance.PlayAudio(AudioManager.AudioType.DeathEnemySound);

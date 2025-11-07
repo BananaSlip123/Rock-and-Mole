@@ -90,7 +90,7 @@ public class GolemChaseState : IStateComponent, IMoveComponent
     public void Move()
     {
         Vector3 direction = playerPosition - enemyTransform.position;
-        Vector3 positionToMove = VectorConverter.SetVectorToIsoCoords((direction).normalized, speed);
+        Vector3 positionToMove = speed * Time.fixedDeltaTime * direction.normalized;
         positionToMove.y = 0;
         Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
         enemyTransform.position += positionToMove;
