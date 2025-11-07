@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class VillageMenuUI : MonoBehaviour
@@ -19,7 +19,8 @@ public class VillageMenuUI : MonoBehaviour
    // [SerializeField] GameObject go_closeIcon;
     
     [Header("INPUT NAVIGATION")]
-    [SerializeField] PlayerInput playerInput;
+    //[SerializeField] PlayerInput playerInput;
+    [SerializeField] InputMapsManager playerInputMapsManager;
     [SerializeField] EventSystem eventSystem;
     [SerializeField] Selectable firstSelected_pause;
     [SerializeField] Selectable firstSelected_settings;
@@ -57,7 +58,7 @@ public class VillageMenuUI : MonoBehaviour
     }
     #endregion
     #region PRIVATE FUNCS
-    private void Awake()
+    private void Start()
     {
         SwitchWindow(null, Windows.Main);
         inventoryReference = go_inventory.GetComponent<InventoryUI>();
@@ -78,11 +79,11 @@ public class VillageMenuUI : MonoBehaviour
         bool isInit = !lastWindow.HasValue;
 
         if (isMain && (isInit || lastWindow.Value != Windows.Main)) //si isInit entra en el if y no accede a value
-            playerInput.SwitchCurrentActionMap("Player");
+            //playerInputMapsManager.SwitchCurrentActionMap("Player");
+            playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
-            playerInput.SwitchCurrentActionMap("UI");
-
-        //go_closeIcon.SetActive(nextWindow != Windows.Main && nextWindow != Windows.Pause);
+            //playerInputMapsManager.SwitchCurrentActionMap("UI");
+            playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.uiNavigation;
     }
 
     void UpdateSelectedButton()
@@ -109,7 +110,7 @@ public class VillageMenuUI : MonoBehaviour
 
     public void Button_Inventory()
     {
-        if (CurrentWindow == Windows.InventoryInfo)
+        if (CurrentWindow == Windows.InventoryInfo || CurrentWindow  == Windows.Shop)
             CurrentWindow = Windows.Main;
         else
             CurrentWindow = Windows.InventoryInfo;

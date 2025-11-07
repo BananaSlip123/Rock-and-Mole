@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class GameMenu : MonoBehaviour
@@ -15,7 +15,8 @@ public class GameMenu : MonoBehaviour
     [Header("LIFE BAR")]
     [SerializeField] GameObject go_lifeBar;
     [Header("INPUT NAVIGATION")]
-    [SerializeField] PlayerInput playerInput;
+    //[SerializeField] PlayerInput playerInput;
+    [SerializeField] InputMapsManager playerInputMapsManager;
     [SerializeField] EventSystem eventSystem;
     [SerializeField] Selectable firstSelected_settings;
     [SerializeField] Selectable firstSelected_pause;
@@ -48,7 +49,7 @@ public class GameMenu : MonoBehaviour
     }
     #endregion
     #region PRIVATE FUNCS
-    private void Awake()
+    private void Start()
     {
         SwitchWindow(null, Windows.Main);
         inventoryReference = go_runInventoryWindow.GetComponent<RunInventoryUI>();
@@ -66,9 +67,11 @@ public class GameMenu : MonoBehaviour
         bool isInit = !lastWindow.HasValue;
 
         if (isMain && (isInit || lastWindow.Value != Windows.Main)) //si isInit entra en el if y no accede a value
-            playerInput.SwitchCurrentActionMap("Player");
+            //playerInputMapsManager.SwitchCurrentActionMap("Player");
+            playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
-            playerInput.SwitchCurrentActionMap("UI");
+            //playerInputMapsManager.SwitchCurrentActionMap("UI");
+            playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.uiNavigation;
     }
 
     void UpdateSelectedButton()

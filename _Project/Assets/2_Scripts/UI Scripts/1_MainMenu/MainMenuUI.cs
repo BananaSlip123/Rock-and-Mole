@@ -13,6 +13,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] GameObject go_closeIcon;
     [Header("INPUT NAVIGATION")]
     [SerializeField] PlayerInput playerInput;
+
     [SerializeField] EventSystem eventSystem;
     [SerializeField] Selectable firstSelected_main;
     [SerializeField] Selectable firstSelected_settings;

@@ -1,10 +1,11 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class TutorialScript : MonoBehaviour
 {
 	#region PRIVATE VARS
-    [SerializeField] PlayerInput playerInput;
+    //[SerializeField] PlayerInput playerInput;
+    [SerializeField] InputMapsManager playerInputMapsManager;
 	[SerializeField] GameObject go_callOut;
 	[SerializeField] TutorialScene scene;
 	[SerializeField] string[] dialogsToShow;
@@ -22,7 +23,8 @@ public class TutorialScript : MonoBehaviour
 
     private void OnEnable()
     {
-        playerInput.SwitchCurrentActionMap("CallOutDialog");
+        //playerInputMapsManager.SwitchCurrentActionMap("CallOutDialog");
+        playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.tutorialCallOut;
     }
     private void Start()
     {
@@ -39,7 +41,8 @@ public class TutorialScript : MonoBehaviour
     }
     private void OnDisable()
     {
-        playerInput.SwitchCurrentActionMap("Player");
+        //playerInputMapsManager.SwitchCurrentActionMap("Player");
+        playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
     }
     private void OnDestroy()
     {

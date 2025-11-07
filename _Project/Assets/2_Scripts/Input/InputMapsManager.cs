@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour
+public class InputMapsManager : MonoBehaviour
 {
     [Header("Player Input")]
     [SerializeField] private PlayerInput playerInput;
@@ -15,12 +15,10 @@ public class InputManager : MonoBehaviour
     InputActionMap map_Player;
     InputActionMap map_CallOut;
 
-    InputMap? _inputMap = null;
     public InputMap InputMapProperty
     {
         set
         {
-            _inputMap = value;
             switch (value)
             {
                 case InputMap.tutorialCallOut:
@@ -49,7 +47,7 @@ public class InputManager : MonoBehaviour
         uiNavigation,
         playerAndUi,
     }
-    private void Start()
+    private void Awake()
     {
         // Validar que tenemos PlayerInput
         if (playerInput == null)
@@ -62,8 +60,13 @@ public class InputManager : MonoBehaviour
             }
         }
         map_UI = playerInput.actions.FindActionMap(uiActionMap, true);
+        if (map_UI == null) throw new System.Exception($"Mapa  {uiActionMap} no encontrado");
+
         map_Player = playerInput.actions.FindActionMap(playerActionMap, true);
+        if (map_Player == null) throw new System.Exception($"Mapa  {playerActionMap} no encontrado");
+
         map_CallOut = playerInput.actions.FindActionMap(callOutActionMap, true);
+        if (map_CallOut == null) throw new System.Exception($"Mapa  {callOutActionMap} no encontrado");
 
         InputMapProperty = InputMap.playerAndUi;
     }
