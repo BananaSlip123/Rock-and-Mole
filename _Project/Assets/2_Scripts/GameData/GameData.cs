@@ -69,7 +69,7 @@ public static class GameData
         }
         set
         {
-            if(value != _needsTutorial.Value)
+            if(!_needsTutorial.HasValue || value != _needsTutorial.Value)
             {
                 _needsTutorial = value;
                 int value2Int = value ?  1 : 0;

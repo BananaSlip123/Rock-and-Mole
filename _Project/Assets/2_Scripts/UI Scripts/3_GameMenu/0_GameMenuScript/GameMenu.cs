@@ -66,9 +66,13 @@ public class GameMenu : MonoBehaviour
 
         bool isInit = !lastWindow.HasValue;
 
-        if (isMain && (isInit || lastWindow.Value != Windows.Main)) //si isInit entra en el if y no accede a value
+        if (isMain && (isInit || lastWindow.Value != Windows.Main)) 
+        {
+            //si isInit entra en el if y no accede a value
             //playerInputMapsManager.SwitchCurrentActionMap("Player");
-            playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
+            if (!GameData.NeedsTutorial)
+                playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
+        }   
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
             //playerInputMapsManager.SwitchCurrentActionMap("UI");
             playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.uiNavigation;
@@ -105,10 +109,10 @@ public class GameMenu : MonoBehaviour
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
     public void Button_OpenMain() => CurrentWindow = Windows.Main;
 
-    public void onPointer() => eventSystem.SetSelectedGameObject(null);
+    public void onPointer() => eventSystem?.SetSelectedGameObject(null);
     public void onNavigation()
     {
-        if (eventSystem.currentSelectedGameObject == null)
+        if (eventSystem?.currentSelectedGameObject == null)
         {
             UpdateSelectedButton();
         }

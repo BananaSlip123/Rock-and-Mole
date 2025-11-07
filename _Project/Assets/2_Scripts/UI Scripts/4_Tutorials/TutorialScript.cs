@@ -23,13 +23,17 @@ public class TutorialScript : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("Enable");
         //playerInputMapsManager.SwitchCurrentActionMap("CallOutDialog");
         playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.tutorialCallOut;
     }
     private void Start()
     {
-		if (dialogsToShow.Length == 0) return;
-		if (!GameData.NeedsTutorial)
+        Debug.Log("Start");
+        if (dialogsToShow.Length == 0) return;
+        //GameData.NeedsTutorial = true;
+
+        if (!GameData.NeedsTutorial)
 		{
             gameObject.SetActive(false);
 			return;
@@ -41,6 +45,7 @@ public class TutorialScript : MonoBehaviour
     }
     private void OnDisable()
     {
+        Debug.Log("Disable");
         //playerInputMapsManager.SwitchCurrentActionMap("Player");
         playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
     }

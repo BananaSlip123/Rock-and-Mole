@@ -11,6 +11,8 @@ public class InputMapsManager : MonoBehaviour
     [SerializeField] private string playerActionMap = "Player";
     [SerializeField] private string callOutActionMap = "CallOutDialog";
 
+    bool _isInit = false;
+    InputMap? delayedInputMap = null;
     InputActionMap map_UI;
     InputActionMap map_Player;
     InputActionMap map_CallOut;
@@ -19,6 +21,12 @@ public class InputMapsManager : MonoBehaviour
     {
         set
         {
+            if (!_isInit)
+            {
+                delayedInputMap = value;
+                return;
+            }
+            Debug.Log("El mapa de accion es: "+ value.ToString());
             switch (value)
             {
                 case InputMap.tutorialCallOut:
@@ -68,7 +76,12 @@ public class InputMapsManager : MonoBehaviour
         map_CallOut = playerInput.actions.FindActionMap(callOutActionMap, true);
         if (map_CallOut == null) throw new System.Exception($"Mapa  {callOutActionMap} no encontrado");
 
-        InputMapProperty = InputMap.playerAndUi;
+        _isInit = true;
+        
+        if(delayedInputMap.HasValue)
+            InputMapProperty = delayedInputMap.Value;
+        else
+            InputMapProperty = InputMap.playerAndUi;
     }
 
 

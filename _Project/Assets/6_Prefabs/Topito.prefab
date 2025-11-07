@@ -272,22 +272,6 @@ MonoBehaviour:
     m_ActionId: 68441674-6d9a-4ff8-ab32-0594858722ca
     m_ActionName: 'Player/Pause[/Keyboard/escape]'
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
-        m_MethodName: Button_Inventory
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ad7dca80-6684-4b0d-9cf7-de60ab6db4e2
-    m_ActionName: 'Player/Inventory[/Keyboard/tab]'
-  - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 9f5f1c03-f299-442f-b624-fcc12d01c23d
     m_ActionName: 'CallOutDialog/PassDialog[/Keyboard/space]'
@@ -369,7 +353,7 @@ MonoBehaviour:
     m_ActionName: 'UI/Inventory[/Keyboard/tab]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 3270081623354919900, guid: 1316e9090d365c445b5b55702d156457, type: 3}
 --- !u!114 &7419851051377191263
