@@ -1181,7 +1181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -37.700073}
+  m_AnchoredPosition: {x: 0, y: -37.70009}
   m_SizeDelta: {x: -39.999992, y: -137.59999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &560040375
@@ -1771,8 +1771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNumber: 0
-  actualPickaxe: {fileID: 0}
-  actualCloth: {fileID: 0}
+  actualPickaxe: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
+  actualCloth: {fileID: 11400000, guid: 29f03d92d9e823b4fbd490d993c8cbac, type: 2}
 --- !u!4 &858169842
 Transform:
   m_ObjectHideFlags: 0

@@ -83,7 +83,9 @@ public class GameMenu : MonoBehaviour
         {
             //si isInit entra en el if y no accede a value
             //playerInputMapsManager.SwitchCurrentActionMap("Player");
-            if (!GameData.NeedsTutorial)
+
+            //si es init y estamos en tutorial no se llama, ya q se llamara a el mapa TutorialCallout
+            if (!GameData.NeedsTutorial || !isInit)
                 playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
         }   
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
@@ -122,7 +124,7 @@ public class GameMenu : MonoBehaviour
     }
     public void Button_ReturnToVillage()
     {
-        SceneManager.LoadScene("2_VILLAGE_SCENE");
+        SceneManager.LoadScene("1_VILLAGE_SCENE");
     }
     public void Button_OpenPause() => CurrentWindow = Windows.Pause;
     public void Button_Inventory()
