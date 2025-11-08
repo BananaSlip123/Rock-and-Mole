@@ -20,7 +20,8 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
                     _actualHealth = health;
                 else
                     _actualHealth = value;
-                playerHealth.SetHealth(value);
+                if(playerHealth != null)
+                    playerHealth.SetHealth(value);
             }
         }
     }
@@ -47,7 +48,8 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             if (value != damage)
             {
                 _damage = value;
-                playerAttack.damage = value;
+                if (playerAttack != null)
+                    playerAttack.damage = value;
             }
         }
     }
@@ -61,7 +63,8 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             if (value != attackSpeed)
             {
                 _attackSpeed = value;
-                playerAttack.COOLDOWN = value;
+                if (playerAttack != null)
+                    playerAttack.COOLDOWN = value;
             }
         }
     }
@@ -75,7 +78,8 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             if(value != critMultiplier)
             {
                 _critMultiplier = value;
-                playerAttack.critMultiplier = value;
+                if (playerAttack != null)
+                    playerAttack.critMultiplier = value;
             }
         } 
     }
@@ -88,7 +92,8 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             if (value != critProbability)
             {
                 _critProbability = value;
-                playerAttack.critProbability = value;
+                if (playerAttack != null)
+                    playerAttack.critProbability = value;
             }
         }
     }
@@ -102,7 +107,8 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             if (value != speed)
             {
                 _speed = value;
-                playerSpeed.speed = value;
+                if (playerSpeed != null)
+                    playerSpeed.speed = value;
             }
         }
     }
@@ -157,6 +163,8 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     {
         GameObject go = GameObject.FindGameObjectWithTag("Player");
 
+        if (go == null)
+            return;
         playerHealth = go.GetComponent<DamageableComponent>();
         playerAttack = go.GetComponent<PlayerAttackComponent>();
         playerSpeed = go.GetComponent<PlayerMovementComponent>();
