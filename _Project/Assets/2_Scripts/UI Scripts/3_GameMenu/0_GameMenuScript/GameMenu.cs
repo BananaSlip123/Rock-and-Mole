@@ -33,6 +33,7 @@ public class GameMenu : MonoBehaviour
         Pause,
         Settings,
         RunInventory,
+        GameOver,
     }
 
     public Windows CurrentWindow

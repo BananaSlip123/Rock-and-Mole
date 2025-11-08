@@ -6,6 +6,9 @@ using UnityEngine;
 public class ClothStatsScripteableObject : ScriptableObject
 {
     public List<ModifierStats> modifiers = new List<ModifierStats>();
+
+    public int coinsPrice = 0;
+    public List<MaterialCost> costs = new List<MaterialCost>();
 }
 
 public enum Stats
@@ -23,4 +26,11 @@ public struct ModifierStats
 {
     public Stats stat;
     public float value; 
+}
+
+[System.Serializable]
+public struct MaterialCost
+{
+    public MaterialName material;
+    public int cost;
 }

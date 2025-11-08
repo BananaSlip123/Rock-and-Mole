@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 namespace PickaxeStats
 {
@@ -11,5 +12,8 @@ namespace PickaxeStats
         public float critProbability;
 
         public float attackSpeed;
+
+        public int coinsPrice = 0;
+        public List<MaterialCost> costs = new List<MaterialCost>();
     }
 }
