@@ -120,7 +120,7 @@ public class VillageMenuUI : MonoBehaviour
     public void Button_OpenWardrobe() => CurrentWindow = Windows.Wardrobe;
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
     public void Button_OpenMain() => CurrentWindow = Windows.Main;
-    public void Button_ReturnToMenuScene() => SceneManager.LoadScene("1_MAIN_SCENE");
+    public void Button_ReturnToMenuScene() => SceneManager.LoadScene("-1_MAIN_SCENE");
 
     public void onPointer() => eventSystem.SetSelectedGameObject(null);
     public void onNavigation()

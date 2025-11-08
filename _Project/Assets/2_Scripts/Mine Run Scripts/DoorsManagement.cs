@@ -10,7 +10,7 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
 
     void Awake()
     {
-        access = GameObject.Find("PlayerStats").GetComponent<PlayerStats>(); ;
+        access = GameObject.Find("PlayerStats").GetComponent<PlayerStats>();
         doors = GameObject.FindGameObjectsWithTag("Door");   
         
         foreach(GameObject go in doors)

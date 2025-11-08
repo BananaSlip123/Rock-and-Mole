@@ -68,7 +68,7 @@ public class MainMenuUI : MonoBehaviour
         if (GameData.NeedsTutorial)
             SceneManager.LoadScene("0_Tutorial");
         else
-            SceneManager.LoadScene("2_VILLAGE_SCENE");
+            SceneManager.LoadScene("1_VILLAGE_SCENE");
     }
 
     public void onPointer() => eventSystem.SetSelectedGameObject(null);

@@ -687,56 +687,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232484249}
   m_CullTransparentMesh: 1
---- !u!1 &237699187
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 237699189}
-  - component: {fileID: 237699188}
-  m_Layer: 0
-  m_Name: AudioManager Singleton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &237699188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237699187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29900850552df0a439c606a6036c080a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicEntries:
-  - type: 0
-    clip: {fileID: 0}
-  - type: 0
-    clip: {fileID: 0}
-  audioEntries: []
---- !u!4 &237699189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237699187}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.016092975, y: 0.57873744, z: -4.151268}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &245802883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,6 +1289,63 @@ RectTransform:
   m_AnchoredPosition: {x: 240.6, y: -182.12999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &640983136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8064312674010917515, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335656333974908151, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335656333974908151, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335656333974908151, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335656333974908151, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335656333974908151, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335656333974908151, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335656333974908151, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335656333974908151, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335656333974908151, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335656333974908151, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d09dcd5dcf7442a4cb22a723ebc508ff, type: 3}
 --- !u!1 &661318727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1741,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830996778}
   m_CullTransparentMesh: 1
+--- !u!1 &858169840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 858169842}
+  - component: {fileID: 858169841}
+  m_Layer: 0
+  m_Name: PlayerStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &858169841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858169840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310d3ff3e029ce9469f0af0fe0182ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNumber: 0
+  actualPickaxe: {fileID: 0}
+  actualCloth: {fileID: 0}
+--- !u!4 &858169842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858169840}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.690235, y: 47.531975, z: -26.798824}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &889498749
 GameObject:
   m_ObjectHideFlags: 0
@@ -4341,10 +4395,6 @@ MonoBehaviour:
     m_ActionId: 68441674-6d9a-4ff8-ab32-0594858722ca
     m_ActionName: 'Player/Pause[/Keyboard/escape]'
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ad7dca80-6684-4b0d-9cf7-de60ab6db4e2
-    m_ActionName: 'Player/Inventory[/Keyboard/tab]'
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 889498750}
         m_TargetAssemblyTypeName: MainMenuUI, MainMenu
@@ -4428,6 +4478,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9f5f1c03-f299-442f-b624-fcc12d01c23d
     m_ActionName: 'CallOutDialog/PassDialog[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7a64b9a3-10d8-4500-a9cd-4b3ccd2ea46b
+    m_ActionName: 'Player/PressA[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 63e3b80f-3268-4037-a87c-1f9611c151dc
+    m_ActionName: 'UI/Inventory[/Keyboard/tab]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
@@ -5429,4 +5487,5 @@ SceneRoots:
   - {fileID: 1949124301}
   - {fileID: 245802887}
   - {fileID: 793743039}
-  - {fileID: 237699189}
+  - {fileID: 858169842}
+  - {fileID: 640983136}
