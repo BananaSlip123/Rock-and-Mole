@@ -106,7 +106,13 @@ public class VillageMenuUI : MonoBehaviour
     #endregion
 
     #region PUBLIC FUNCS
-    public void Button_OpenPause() => CurrentWindow = Windows.Pause;
+    public void Button_Pause()
+    {
+        if (CurrentWindow == Windows.Main)
+            CurrentWindow = Windows.Pause;
+        else
+            CurrentWindow = Windows.Main;
+    }
 
     public void Button_Inventory()
     {

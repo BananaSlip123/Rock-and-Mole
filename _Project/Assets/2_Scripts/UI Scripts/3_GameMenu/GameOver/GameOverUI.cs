@@ -24,20 +24,24 @@ public class GameOverUI : MonoBehaviour
         set
         {
             if (value == null) return;
-            foreach (MaterialInfoUI mat in materialsInfo)
+
+            int idx = 0;
+            foreach(MaterialName key in value.Keys)
             {
-                MaterialName key = mat.MaterialAssigned;
-                
-                if (value.ContainsKey(key) && value[key]!= 0)
+                if (value.ContainsKey(key) && value[key] != 0)
                 {
-                    mat.gameObject.SetActive(true);
-                    mat.Amount = value[key];
-                    mat.MaterialAssigned = key;
+                    if (idx >= materialsInfo.Length) 
+                        throw new System.Exception("Tiene que haber mas huecos en el array que posibles valores de material");
+
+                    materialsInfo[idx].gameObject.SetActive(true);
+                    materialsInfo[idx].Amount = value[key];
+                    materialsInfo[idx].MaterialAssigned = key;
                 }
-                else
-                {
-                    mat.gameObject.SetActive(false);
-                }
+            }
+            //desactivar el resto
+            for(; idx < materialsInfo.Length; idx++)
+            {
+                materialsInfo[idx].gameObject.SetActive(false);
             }
         }
     }
