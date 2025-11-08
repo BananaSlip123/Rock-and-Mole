@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 //using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 public class GameMenu : MonoBehaviour
 {
     #region SERIALIZABLE
@@ -12,14 +13,16 @@ public class GameMenu : MonoBehaviour
     [SerializeField] GameObject go_settingsWindow;
     [SerializeField] GameObject go_runInventoryWindow;
     [SerializeField] GameObject go_runInventoryInfoWindow;
+    [SerializeField] GameObject go_gameOverWindow;
     [Header("LIFE BAR")]
     [SerializeField] GameObject go_lifeBar;
     [Header("INPUT NAVIGATION")]
-    //[SerializeField] PlayerInput playerInput;
     [SerializeField] InputMapsManager playerInputMapsManager;
     [SerializeField] EventSystem eventSystem;
     [SerializeField] Selectable firstSelected_settings;
     [SerializeField] Selectable firstSelected_pause;
+    [Header("References")]
+    [SerializeField] DamageableComponent playerDamageableComponent;
     #endregion
 
     #region PRIVATE VARS
@@ -50,6 +53,14 @@ public class GameMenu : MonoBehaviour
     }
     #endregion
     #region PRIVATE FUNCS
+    private void OnEnable()
+    {
+        playerDamageableComponent.OnDeath += OnPlayerDeath;
+    }
+    private void OnDisable()
+    {
+        playerDamageableComponent.OnDeath -= OnPlayerDeath;
+    }
     private void Start()
     {
         SwitchWindow(null, Windows.Main);
@@ -64,6 +75,7 @@ public class GameMenu : MonoBehaviour
         go_runInventoryWindow.SetActive(nextWindow == Windows.RunInventory);
         go_runInventoryInfoWindow.SetActive(nextWindow == Windows.RunInventory);
         go_lifeBar.SetActive(isMain);
+        go_gameOverWindow.SetActive(nextWindow == Windows.GameOver);
 
         bool isInit = !lastWindow.HasValue;
 
@@ -99,6 +111,19 @@ public class GameMenu : MonoBehaviour
     #endregion
 
     #region PUBLIC FUNCS
+    public void OnPlayerVictory(Dictionary<MaterialName, int> materialesConseguidos)
+    {
+
+    }
+    public void OnPlayerDeath(Dictionary<MaterialName, int> materialesConseguidos)
+    {
+        CurrentWindow = Windows.GameOver;
+        go_gameOverWindow.GetComponent<GameOverUI>().MaterialsToShow = materialesConseguidos;
+    }
+    public void Button_ReturnToVillage()
+    {
+        SceneManager.LoadScene("2_VILLAGE_SCENE");
+    }
     public void Button_OpenPause() => CurrentWindow = Windows.Pause;
     public void Button_Inventory()
     {

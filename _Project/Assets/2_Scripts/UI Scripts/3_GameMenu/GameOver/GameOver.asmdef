@@ -3,7 +3,9 @@
     "rootNamespace": "",
     "references": [
         "Unity.TextMeshPro",
-        "MaterialInfo"
+        "MaterialInfo",
+        "GameDataAssembly",
+        "PlayerComponents"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

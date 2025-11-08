@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 public class GameOverUI : MonoBehaviour
 {
     [Header("Texts")]
@@ -14,10 +15,31 @@ public class GameOverUI : MonoBehaviour
     }
     private void OnEnable()
     {
-        foreach (MaterialInfoUI mat in materialsInfo)
+        PlayerStats playerStats = FindFirstObjectByType<PlayerStats>();
+        if (playerStats != null)
+            RoomNumber = playerStats.roomNumber;
+    }
+    public Dictionary<MaterialName,int> MaterialsToShow
+    {
+        set
         {
-            //mat.Amount = ;
-            //mat.MaterialAssigned = ;
+            if (value == null) return;
+            foreach (MaterialInfoUI mat in materialsInfo)
+            {
+                MaterialName key = mat.MaterialAssigned;
+                
+                if (value.ContainsKey(key) && value[key]!= 0)
+                {
+                    mat.gameObject.SetActive(true);
+                    mat.Amount = value[key];
+                    mat.MaterialAssigned = key;
+                }
+                else
+                {
+                    mat.gameObject.SetActive(false);
+                }
+            }
         }
     }
+    
 }

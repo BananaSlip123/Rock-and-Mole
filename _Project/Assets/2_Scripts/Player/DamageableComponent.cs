@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,6 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     private bool hasBeenDamaged = false;
 
     [SerializeField] private int health = 50;
-
     public int Health
     {
         get => health;
@@ -24,6 +24,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     }
 
     public Action<int> OnHealthChange;
+    public Action<Dictionary<MaterialName, int>> OnDeath;
 
     public void SetHealth(int health)
     {
@@ -67,7 +68,6 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     private void Death()
     {
         Destroy(this.gameObject);
-        GameData.Put_RunInventory_Into_Inventory(70);
-        SceneManager.LoadScene("2_VILLAGE_SCENE");
+        OnDeath?.Invoke(GameData.Put_RunInventory_Into_Inventory(70));
     }
 }
