@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifiers:
   - stat: 0
-    value: 0
+    value: 50
   - stat: 2
     value: 4
   coinsPrice: 0

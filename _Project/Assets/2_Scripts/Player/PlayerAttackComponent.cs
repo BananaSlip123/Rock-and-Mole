@@ -55,9 +55,9 @@ namespace PlayerComponents
 
                 if (timeHitbox >= TIME_HITBOX)
                 {
-                    animator.SetBool("Atacar", false);
-                    animatorPickaxe.SetBool("Atacar", false);
-                    HidePickaxe.instance.HidePickaxeAnimation(false);
+                    animator?.SetBool("Atacar", false);
+                    animatorPickaxe?.SetBool("Atacar", false);
+                    //HidePickaxe.instance.HidePickaxeAnimation(false);
                     attackHitbox.enabled = false;
                     timeHitbox = 0f;
 
@@ -80,12 +80,12 @@ namespace PlayerComponents
                 isInCooldown = true;
                 ActiveHitbox();
 
-                if (!animator.GetBool("Atacar"))
+                if (animator != null && !animator.GetBool("Atacar"))
                     animator.SetBool("Atacar", true);
 
-                animatorPickaxe.SetBool("Atacar", true);
+                animatorPickaxe?.SetBool("Atacar", true);
 
-                HidePickaxe.instance.HidePickaxeAnimation(true);
+                //HidePickaxe.instance.HidePickaxeAnimation(true);
 
                 //Reproducir sonido de ataque a enemigo
                 AudioManager.Instance.PlayAudio(AudioManager.AudioType.AttackToEnemySound);

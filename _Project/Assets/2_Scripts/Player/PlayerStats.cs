@@ -117,7 +117,6 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        if (SceneManager.GetActiveScene().name == "-1_MAIN_SCENE") return;
         FindComponents();
 
         ChangeSomething(actualPickaxe, actualCloth);
