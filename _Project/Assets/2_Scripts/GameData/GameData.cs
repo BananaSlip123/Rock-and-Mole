@@ -160,7 +160,37 @@ public static class GameData
             .ToList();
     }
 
+    public static string MaterialName2String(MaterialName name)
+    {
+        switch (name)
+        {
+            case MaterialName.Ambar:
+                return "Ámbar";
+            case MaterialName.Bronce:
+                return "Bronce";
+            case MaterialName.Carbon:
+                return "Carbón";
+            case MaterialName.Cuarzo:
+                return "Cuarzo";
+            case MaterialName.Diamante:
+                return "Diamante";
+            case MaterialName.Esmeralda:
+                return "Esmeralda";
+            case MaterialName.Hierro:
+                return "Hierro";
+            case MaterialName.Obsidiana:
+                return "Obsidiana";
+            case MaterialName.RolloTela:
+                return "Rollo de Tela";
+            case MaterialName.Rubi:
+                return "Rubí";
+            default:
+                return "NotAssigned";
+        }
+
+    }
     #endregion
+
 }
 
 public class PersistentInventory
@@ -267,6 +297,7 @@ public class Inventory
     Action _onInventoryChange; //cuando se borra o añade un material
                                // Dictionary<MaterialName, Action<int>> _dict_onSlotValueChange = new Dictionary<MaterialName, Action<int>>(); //cuando cambia un valor
     Action<MaterialName> _onMaterialDeleted;
+    public Action<MaterialName, int> OnMaterialsEarned;
     Action _onMaterialAdded;
     public Inventory()
     {
@@ -290,6 +321,8 @@ public class Inventory
     public void AddObject(MaterialName name, int amount)
     {
         if (amount <= 0) throw new Exception("Must be positive number");
+
+        OnMaterialsEarned?.Invoke(name,amount);
 
         int oldVal = _objectsAmount[name];
         _objectsAmount[name] = oldVal + amount;
