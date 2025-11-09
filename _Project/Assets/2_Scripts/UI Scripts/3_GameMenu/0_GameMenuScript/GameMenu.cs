@@ -14,6 +14,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField] GameObject go_runInventoryWindow;
     [SerializeField] GameObject go_runInventoryInfoWindow;
     [SerializeField] GameObject go_gameOverWindow;
+    [SerializeField] GameObject go_materialsCollectedWindow;
     [Header("LIFE BAR")]
     [SerializeField] GameObject go_lifeBar;
     [Header("INPUT NAVIGATION")]
@@ -72,6 +73,7 @@ public class GameMenu : MonoBehaviour
     {
         bool isMain = nextWindow == Windows.Main;
         go_mainWindow.SetActive(isMain);
+        go_materialsCollectedWindow.SetActive(isMain);
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
         go_pauseWindow.SetActive(nextWindow == Windows.Pause);
         go_runInventoryWindow.SetActive(nextWindow == Windows.RunInventory);
