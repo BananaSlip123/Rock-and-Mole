@@ -9,7 +9,7 @@ namespace PlayerComponents
     public class PlayerAttackComponent : MonoBehaviour, IAttackComponent
     {
         [SerializeField] public float COOLDOWN = 0.4f;
-        const float TIME_HITBOX = 0.1f;
+        const float TIME_HITBOX = 1.5f;
 
         private float timeToAttack = 0f;
         private float timeHitbox = 0f;
@@ -26,6 +26,8 @@ namespace PlayerComponents
         [SerializeField] PickaxeStatsScripteableObject actualPickaxeStats;
         [SerializeField] Animator animator;
         [SerializeField] Animator animatorPickaxe;
+
+        AnimatorStateInfo stateInfo;
 
 
         void FixedUpdate()
@@ -52,16 +54,18 @@ namespace PlayerComponents
 
                 if (IsHitingAnEnemy(localEnemies))
                     DoDamage(localEnemies);
-
-                if (timeHitbox >= TIME_HITBOX)
-                {
-                    animator?.SetBool("Atacar", false);
-                    animatorPickaxe?.SetBool("Atacar", false);
-                    //HidePickaxe.instance.HidePickaxeAnimation(false);
+                if(timeHitbox == 0.4f)
                     attackHitbox.enabled = false;
+                else if (timeHitbox >= TIME_HITBOX)
+                {                                     
+                    //HidePickaxe.instance.HidePickaxeAnimation(false);
+                    
                     timeHitbox = 0f;
 
-                    foreach(Collider c in hitColliders)
+                    animator?.SetBool("Atacar", false);
+                    animatorPickaxe?.SetBool("Atacar", false);
+
+                    foreach (Collider c in hitColliders)
                     {
                         if (c != null)
                         {
