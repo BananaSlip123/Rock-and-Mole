@@ -25,10 +25,6 @@ namespace PlayerComponents
         [SerializeField] Collider attackHitbox;
         [SerializeField] PickaxeStatsScripteableObject actualPickaxeStats;
         [SerializeField] Animator animator;
-        [SerializeField] Animator animatorPickaxe;
-
-        AnimatorStateInfo stateInfo;
-
 
         void FixedUpdate()
         {
@@ -58,12 +54,11 @@ namespace PlayerComponents
                     attackHitbox.enabled = false;
                 else if (timeHitbox >= TIME_HITBOX)
                 {                                     
-                    //HidePickaxe.instance.HidePickaxeAnimation(false);
+                    HidePickaxe.instance.HidePickaxeAnimation(false);
                     
                     timeHitbox = 0f;
 
                     animator?.SetBool("Atacar", false);
-                    animatorPickaxe?.SetBool("Atacar", false);
 
                     foreach (Collider c in hitColliders)
                     {
@@ -87,9 +82,7 @@ namespace PlayerComponents
                 if (animator != null && !animator.GetBool("Atacar"))
                     animator.SetBool("Atacar", true);
 
-                animatorPickaxe?.SetBool("Atacar", true);
-
-                //HidePickaxe.instance.HidePickaxeAnimation(true);
+                HidePickaxe.instance.HidePickaxeAnimation(true);
 
                 //Reproducir sonido de ataque a enemigo
                 AudioManager.Instance.PlayAudio(AudioManager.AudioType.AttackToEnemySound);
