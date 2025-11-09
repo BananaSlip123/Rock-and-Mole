@@ -24,7 +24,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     }
 
     public Action<int> OnHealthChange;
-    public Action<Dictionary<MaterialName, int>> OnDeath;
+    public Action OnDeath;
 
     public void SetHealth(int health)
     {
@@ -68,6 +68,6 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     private void Death()
     {
         Destroy(this.gameObject);
-        OnDeath?.Invoke(GameData.Put_RunInventory_Into_Inventory(70));
+        OnDeath?.Invoke();
     }
 }

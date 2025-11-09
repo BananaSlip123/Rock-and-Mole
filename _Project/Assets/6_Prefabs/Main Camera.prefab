@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt_roomsNumber: {fileID: 5208842760641333079}
+  go_deathPenalty: {fileID: 7142047188733924299}
   materialsInfo:
   - {fileID: 3658209580543194967}
   - {fileID: 2262753588247722521}
@@ -837,8 +838,9 @@ MonoBehaviour:
   go_lifeBar: {fileID: 2885767181034849346}
   playerInputMapsManager: {fileID: 0}
   eventSystem: {fileID: 0}
-  firstSelected_settings: {fileID: 5066071465174379282}
+  firstSelected_settings: {fileID: 6736383075686771078}
   firstSelected_pause: {fileID: 28525407975318807}
+  firstSelected_gameOver: {fileID: 9093255657814312779}
   playerDamageableComponent: {fileID: 0}
 --- !u!1 &5043103866068411423
 GameObject:
@@ -1068,8 +1070,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9060904287015019711}
   m_HandleRect: {fileID: 2419223250444334910}
   m_Direction: 2
-  m_Value: 1.0000019
-  m_Size: 0.60680157
+  m_Value: 0.9999995
+  m_Size: 0.6068015
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1738,7 +1740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 167.6}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &918082687307737883
@@ -3876,22 +3878,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6342483598332486897, guid: 2c8fa728a0fe5a949983103b2807704a, type: 3}
   m_PrefabInstance: {fileID: 6837263002535799687}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5066071465174379282 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1777966728293580949, guid: 2c8fa728a0fe5a949983103b2807704a, type: 3}
-  m_PrefabInstance: {fileID: 6837263002535799687}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6611886801281257061 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 369561775301436898, guid: 2c8fa728a0fe5a949983103b2807704a, type: 3}
   m_PrefabInstance: {fileID: 6837263002535799687}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6736383075686771078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 260829235874251265, guid: 2c8fa728a0fe5a949983103b2807704a, type: 3}
+  m_PrefabInstance: {fileID: 6837263002535799687}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6926909310344214085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4626,7 +4628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4765505780789060827, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
       propertyPath: m_Name
-      value: Reanudar
+      value: Regresar
       objectReference: {fileID: 0}
     - target: {fileID: 6657990571546763172, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
       propertyPath: m_Pivot.x
@@ -4730,6 +4732,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6657990571546763172, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
   m_PrefabInstance: {fileID: 8462708294325934301}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9093255657814312779 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 810700213665259414, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
+  m_PrefabInstance: {fileID: 8462708294325934301}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8895127210744095356
 PrefabInstance:
   m_ObjectHideFlags: 0

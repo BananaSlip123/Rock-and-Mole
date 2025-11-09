@@ -215,6 +215,20 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         ChangePickaxe(newPickaxe);
         ChangeClothes(newCloth);
     }
+    public void ChangeSomething(PickaxeStatsScripteableObject newPickaxe)
+    {
+        ResetStats();
+
+        ChangePickaxe(newPickaxe);
+        ChangeClothes(actualCloth);
+    }
+    public void ChangeSomething(ClothStatsScripteableObject newCloth)
+    {
+        ResetStats();
+
+        ChangePickaxe(actualPickaxe);
+        ChangeClothes(newCloth);
+    }
 
     public void ResetStats()
     {

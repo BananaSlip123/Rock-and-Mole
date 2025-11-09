@@ -21,7 +21,12 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
 
     public void ChooseRoom(IDoorBehaviour puerta)
     {
-        if(access.roomNumber >= NUMBER_TO_BOSS - 1)
+        if(access.roomNumber == NUMBER_TO_BOSS)
+        {
+            puerta.ChooseBehaviour(3);
+            return;
+        }
+        else if(access.roomNumber == NUMBER_TO_BOSS - 1)
         {
             puerta.ChooseBehaviour(2);
             return;
@@ -60,4 +65,5 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
             door.GetComponent<IActiveNoMoreEnemies>().Active();
         }
     }
+    
 }

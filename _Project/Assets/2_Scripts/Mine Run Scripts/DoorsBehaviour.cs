@@ -6,12 +6,12 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
 {
     Action enterBehaviour;
     [SerializeField] Collider hitbox;
-
     enum typeOfBehaviour
     {
         Combat,
         Mining,
-        Boss
+        Boss,
+        Victory,
     }
 
     enum typeOfEvent
@@ -34,6 +34,9 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
                 break;
             case (int)typeOfBehaviour.Boss:
                 ChangeBehaviour(BossBehaviour);
+                break;
+            case (int)typeOfBehaviour.Victory:
+                ChangeBehaviour(VictoryBehaviour);
                 break;
         }
     }
@@ -112,5 +115,10 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     {
         SceneManager.LoadScene("8_BossRoom");
     }
+    private void VictoryBehaviour()
+    {
+        FindAnyObjectByType<GameMenu>().OnPlayerVictory();
+    }
+
     #endregion
 }

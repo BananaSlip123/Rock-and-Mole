@@ -21,6 +21,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField] EventSystem eventSystem;
     [SerializeField] Selectable firstSelected_settings;
     [SerializeField] Selectable firstSelected_pause;
+    [SerializeField] Selectable firstSelected_gameOver;
     [Header("References")]
     [SerializeField] DamageableComponent playerDamageableComponent;
     #endregion
@@ -28,6 +29,7 @@ public class GameMenu : MonoBehaviour
     #region PRIVATE VARS
     Windows _currentWindow = Windows.Main;
     RunInventoryUI inventoryReference;
+    
     #endregion
     #region PUBLIC VARS
     public enum Windows
@@ -109,18 +111,26 @@ public class GameMenu : MonoBehaviour
             }
             else firstSlot.Select();
         }
+        else if (CurrentWindow == Windows.GameOver)
+            firstSelected_gameOver.Select();
     }
     #endregion
 
     #region PUBLIC FUNCS
-    public void OnPlayerVictory(Dictionary<MaterialName, int> materialesConseguidos)
-    {
-
-    }
-    public void OnPlayerDeath(Dictionary<MaterialName, int> materialesConseguidos)
+    public void OnPlayerVictory()
     {
         CurrentWindow = Windows.GameOver;
-        go_gameOverWindow.GetComponent<GameOverUI>().MaterialsToShow = materialesConseguidos;
+        GameOverUI gameOverUI = go_gameOverWindow.GetComponent<GameOverUI>();
+        gameOverUI.MaterialsToShow = GameData.Put_RunInventory_Into_Inventory(100);
+        gameOverUI.IsDefeat = false;
+
+    }
+    public void OnPlayerDeath()
+    {
+        CurrentWindow = Windows.GameOver;
+        GameOverUI gameOverUI = go_gameOverWindow.GetComponent<GameOverUI>();
+        gameOverUI.MaterialsToShow = GameData.Put_RunInventory_Into_Inventory(70);
+        gameOverUI.IsDefeat = true;
     }
     public void Button_ReturnToVillage()
     {

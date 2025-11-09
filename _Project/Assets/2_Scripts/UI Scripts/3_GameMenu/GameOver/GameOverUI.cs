@@ -5,10 +5,18 @@ public class GameOverUI : MonoBehaviour
 {
     [Header("Texts")]
     [SerializeField] TextMeshProUGUI txt_roomsNumber;
+    [SerializeField] GameObject go_deathPenalty;
 
     [Header("Materials")]
     [SerializeField] MaterialInfoUI[] materialsInfo;
 
+    public bool IsDefeat
+    {
+        set
+        {
+            go_deathPenalty.SetActive(value);
+        }
+    }
     int RoomNumber
     {
         set => txt_roomsNumber.text = value.ToString();
@@ -17,7 +25,10 @@ public class GameOverUI : MonoBehaviour
     {
         PlayerStats playerStats = FindFirstObjectByType<PlayerStats>();
         if (playerStats != null)
+        {
             RoomNumber = playerStats.roomNumber;
+        }
+            
     }
     public Dictionary<MaterialName,int> MaterialsToShow
     {
