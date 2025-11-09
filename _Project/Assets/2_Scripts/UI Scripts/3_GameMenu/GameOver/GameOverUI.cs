@@ -36,6 +36,8 @@ public class GameOverUI : MonoBehaviour
                     materialsInfo[idx].gameObject.SetActive(true);
                     materialsInfo[idx].Amount = value[key];
                     materialsInfo[idx].MaterialAssigned = key;
+
+                    idx++;
                 }
             }
             //desactivar el resto
