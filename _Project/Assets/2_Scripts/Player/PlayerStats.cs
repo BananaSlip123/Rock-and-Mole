@@ -119,7 +119,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
 
     public PickaxeStatsScripteableObject currentPickaxe
     {
-        get => EquipmentManager.CurrentPickAxeData;
+        get => EquipmentManager.CurrentPickaxeData;
     }
     public ClothStatsScripteableObject currentChestCloth
     {
@@ -136,7 +136,14 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         FindComponents();
         OnEquipmentChange();
     }
-
+    private void OnEnable()
+    {
+        EquipmentManager.OnEquipmentChange += OnEquipmentChange;
+    }
+    private void OnDisable()
+    {
+        EquipmentManager.OnEquipmentChange += OnEquipmentChange;
+    }
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneChange;
@@ -216,13 +223,15 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
 
     public void OnEquipmentChange()
     {
-        if (currentPickaxe == null || currentChestCloth == null || currentHelmet == null)
-            return;
-
         ResetStats();
-        ChangePickaxe(currentPickaxe);
-        ChangeClothes(currentChestCloth);
-        ChangeClothes(currentHelmet);
+
+        Debug.Log("Equipamiento Actualizado");
+        if (currentPickaxe != null)
+            ChangePickaxe(currentPickaxe);
+        if (currentChestCloth != null)
+            ChangeClothes(currentChestCloth);
+        if (currentHelmet != null)
+            ChangeClothes(currentHelmet);
     }
     public void ChangeSomething(PickaxeStatsScripteableObject newPickaxe)
     {

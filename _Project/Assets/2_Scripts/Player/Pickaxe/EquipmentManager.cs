@@ -41,7 +41,7 @@ public class EquipmentManager : MonoBehaviour
         get
         {
             if (!_pickAxeLevel.HasValue)
-                _pickAxeLevel = PlayerPrefs.GetInt("PickAxeLevel", 1);
+                _pickAxeLevel = PlayerPrefs.GetInt("PickAxeLevel", 0);
             return _pickAxeLevel.Value;
         }
         set
@@ -52,6 +52,7 @@ public class EquipmentManager : MonoBehaviour
                 PlayerPrefs.SetInt("PickAxeLevel", value);
                 PlayerPrefs.Save();
                 OnPickaxeLevelChange?.Invoke(value);
+                OnEquipmentChange?.Invoke();
             }
         }
     }
@@ -71,6 +72,7 @@ public class EquipmentManager : MonoBehaviour
                 PlayerPrefs.SetString("C_Helmet", value);
                 PlayerPrefs.Save();
                 OnCurrentHelmetChange?.Invoke(value);
+                OnEquipmentChange?.Invoke();
             }
         }
     }
@@ -90,10 +92,11 @@ public class EquipmentManager : MonoBehaviour
                 PlayerPrefs.SetString("C_Chest", value);
                 PlayerPrefs.Save();
                 OnCurrentChestClothChange?.Invoke(value);
+                OnEquipmentChange?.Invoke();
             }
         }
     }
-    public static PickaxeStatsScripteableObject CurrentPickAxeData
+    public static PickaxeStatsScripteableObject CurrentPickaxeData
     {
         get => Pickaxes[PickAxeLevel].data;
     }
@@ -119,6 +122,7 @@ public class EquipmentManager : MonoBehaviour
     public static Action<int> OnPickaxeLevelChange = null;
     public static Action<string> OnCurrentChestClothChange = null;
     public static Action<string> OnCurrentHelmetChange = null;
+    public static Action OnEquipmentChange = null;
     public static Action<string> OnUnlockedHelmet = null;
     public static Action<string> OnUnlockedChestCloth = null;
 
