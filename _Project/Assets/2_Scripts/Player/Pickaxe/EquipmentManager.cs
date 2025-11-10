@@ -99,11 +99,11 @@ public class EquipmentManager : MonoBehaviour
     }
     public static ClothStatsScripteableObject CurrentHelmetData
     {
-        get => Helmets[CurrentHelmet].data;
+        get => Helmets.ContainsKey(CurrentHelmet) ? Helmets[CurrentHelmet].data : null;
     }
     public static ClothStatsScripteableObject CurrentChestClothData
     {
-        get => ChestCloths[CurrentChestCloth].data;
+        get => ChestCloths.ContainsKey(CurrentChestCloth) ? ChestCloths[CurrentChestCloth].data : null;
     }
     #endregion
     #region PUBLIC FIELDS

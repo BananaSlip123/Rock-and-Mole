@@ -117,19 +117,25 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     PlayerAttackComponent playerAttack;
     PlayerMovementComponent playerSpeed;
 
-    public PickaxeStatsScripteableObject actualPickaxe;
-    public ClothStatsScripteableObject actualCloth;
+    public PickaxeStatsScripteableObject currentPickaxe
+    {
+        get => EquipmentManager.CurrentPickAxeData;
+    }
+    public ClothStatsScripteableObject currentChestCloth
+    {
+        get => EquipmentManager.CurrentChestClothData;
+    }
+    public ClothStatsScripteableObject currentHelmet
+    {
+        get => EquipmentManager.CurrentHelmetData;
+    }
 
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         FindComponents();
-
-        ChangeSomething(actualPickaxe, actualCloth);
-
-        
+        OnEquipmentChange();
     }
-
 
     void Start()
     {
@@ -208,25 +214,28 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         attackSpeed -= newPickaxe.attackSpeed;
     }
 
-    public void ChangeSomething(PickaxeStatsScripteableObject newPickaxe, ClothStatsScripteableObject newCloth)
+    public void OnEquipmentChange()
     {
-        ResetStats();
+        if (currentPickaxe == null || currentChestCloth == null || currentHelmet == null)
+            return;
 
-        ChangePickaxe(newPickaxe);
-        ChangeClothes(newCloth);
+        ResetStats();
+        ChangePickaxe(currentPickaxe);
+        ChangeClothes(currentChestCloth);
+        ChangeClothes(currentHelmet);
     }
     public void ChangeSomething(PickaxeStatsScripteableObject newPickaxe)
     {
         ResetStats();
 
         ChangePickaxe(newPickaxe);
-        ChangeClothes(actualCloth);
+        ChangeClothes(currentChestCloth);
     }
     public void ChangeSomething(ClothStatsScripteableObject newCloth)
     {
         ResetStats();
 
-        ChangePickaxe(actualPickaxe);
+        ChangePickaxe(currentPickaxe);
         ChangeClothes(newCloth);
     }
 
