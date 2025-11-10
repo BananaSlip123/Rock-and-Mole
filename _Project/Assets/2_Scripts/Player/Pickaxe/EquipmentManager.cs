@@ -51,7 +51,7 @@ public class EquipmentManager : MonoBehaviour
                 _pickAxeLevel = value;
                 PlayerPrefs.SetInt("PickAxeLevel", value);
                 PlayerPrefs.Save();
-                OnPickaxeLevelChange?.Invoke(value);
+                OnPickaxeLevelChange?.Invoke();
                 OnEquipmentChange?.Invoke();
             }
         }
@@ -119,7 +119,7 @@ public class EquipmentManager : MonoBehaviour
     //se identifican por nombre
     #endregion
     #region CALLBACKS
-    public static Action<int> OnPickaxeLevelChange = null;
+    public static Action OnPickaxeLevelChange = null;
     public static Action<string> OnCurrentChestClothChange = null;
     public static Action<string> OnCurrentHelmetChange = null;
     public static Action OnEquipmentChange = null;
