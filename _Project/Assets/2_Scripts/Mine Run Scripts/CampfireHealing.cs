@@ -1,11 +1,17 @@
 using UnityEngine;
 using PlayerComponents;
+using System.Collections;
 
 public class CampfireHealing : MonoBehaviour
 {
     [SerializeField] const int healing = 20;
     PlayerController player;
     PlayerStats stats;
+
+    [SerializeField] Animator birdAnimator;
+    [SerializeField] Animator heartAnimator;
+
+    [SerializeField] GameObject heart;
 
     bool healed = false;
 
@@ -37,8 +43,25 @@ public class CampfireHealing : MonoBehaviour
     private void HealPlayer()
     {
         Debug.Log("Me estoy curando");
-        stats.HealPlayer(healing);
+        
+        birdAnimator.SetBool("isHealing", true);
+        heart.SetActive(true);
+        //heartAnimator.SetBool("isRotating", true);
+        
+        StartCoroutine(WaitAnimation());
+        //stats.HealPlayer(healing);
+        Debug.Log("He hecho la curación");
         player.pressButtonA = null;
         healed = true;
+    }
+
+    private IEnumerator WaitAnimation()
+    {
+        yield return null;
+
+        yield return new WaitForSeconds(4.5f);
+
+        heart.SetActive(false);
+        stats.HealPlayer(healing);
     }
 }
