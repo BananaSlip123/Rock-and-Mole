@@ -59,6 +59,7 @@ public static class GameData
             }
         }
     }
+    public static Action<int> OnCoinsChange = null;
     public static bool NeedsTutorial
     {
         get
@@ -78,11 +79,21 @@ public static class GameData
             }
         }
     }
-    public static Action<int> OnCoinsChange = null;
+    
     #endregion
 
     #region PRIVATE FUNCS
+    private static MaterialRarity RandomRarity()
+    {
+        float random = UnityEngine.Random.Range(0f, 1f);
 
+        if (random < 0.4)
+            return MaterialRarity.Common;
+        else if (random < 0.65)
+            return MaterialRarity.Rare;
+        else
+            return MaterialRarity.Very_Rare;
+    }
     #endregion
 
     #region PUBLIC FUNCS
@@ -134,17 +145,7 @@ public static class GameData
         return generated;
     }
 
-    private static MaterialRarity RandomRarity()
-    {
-        float random = UnityEngine.Random.Range(0f,1f);
-
-        if (random < 0.4)
-            return MaterialRarity.Common;
-        else if (random < 0.65)
-            return MaterialRarity.Rare;
-        else
-            return MaterialRarity.Very_Rare;
-    }
+    
 
     public static MaterialName RandomMaterial(MaterialRarity rarity)
     {
@@ -368,3 +369,4 @@ public enum MaterialRarity
     Rare,
     Very_Rare
 }
+

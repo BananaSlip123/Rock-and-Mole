@@ -3217,6 +3217,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447269828}
   m_CullTransparentMesh: 1
+--- !u!1 &1447418269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1447418271}
+  - component: {fileID: 1447418270}
+  m_Layer: 0
+  m_Name: GameDataAssigner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1447418270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447418269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111ff6668098bc7419dd0116d27c9688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickaxes:
+  - Data: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
+    Model: {fileID: 0}
+  cloths:
+  - Data: {fileID: 0}
+    Model: {fileID: 0}
+--- !u!4 &1447418271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447418269}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -58.93864, y: 75.31666, z: -50.75367}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1486973112 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1972634062688634915, guid: 7e07f7cf7c525104bbf27dcb8c51a2d6, type: 3}
@@ -5000,7 +5050,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 463025328}
   m_Direction: 2
   m_Value: 1.0000011
-  m_Size: 0.2912432
+  m_Size: 0.29118192
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5489,3 +5539,4 @@ SceneRoots:
   - {fileID: 793743039}
   - {fileID: 640983136}
   - {fileID: 2000462395}
+  - {fileID: 1447418271}

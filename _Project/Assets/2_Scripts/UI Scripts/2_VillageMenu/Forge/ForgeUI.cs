@@ -20,6 +20,8 @@ public class ForgeUI : MonoBehaviour
     [Header("Materials")]
     [SerializeField] MaterialInfoUI[] materialsInfo;
 
+    //lista de todas los picos 
+
     int BaseDamage
     {
         set => txt_baseDamage.text = value.ToString();
