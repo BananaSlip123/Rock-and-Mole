@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChestLoot : MonoBehaviour
 {
     PlayerController player;
+    Animator animator;
 
     bool opened = false;
 
@@ -12,6 +13,8 @@ public class ChestLoot : MonoBehaviour
     {
         GameObject p = GameObject.FindGameObjectWithTag("Player");
         player = p.GetComponent<PlayerController>();
+
+        animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +38,9 @@ public class ChestLoot : MonoBehaviour
     private void OpenChest()
     {
         Debug.Log("Estoy abriendo el cofre");
+
+        animator.SetBool("isOpened", true);
+
         Dictionary<MaterialName, int> materialsGenerated = GameData.MaterialsChest(5);
 
         foreach(MaterialName material in materialsGenerated.Keys)
