@@ -200,8 +200,11 @@ public class EquipmentManager : MonoBehaviour
         Pickaxes = new Pickaxe[pickaxes.Length];
         for(int i = 0; i< Pickaxes.Length; i++)
         {
-            Pickaxes[i].data = pickaxes[i].data;
-            Pickaxes[i].model = pickaxes[i].model;
+            Pickaxes[i] = new Pickaxe
+            {
+                data = pickaxes[i].data,
+                model = pickaxes[i].model
+            };
         }
 
         foreach(ClothAssigner chestCloth in chestCloths)
