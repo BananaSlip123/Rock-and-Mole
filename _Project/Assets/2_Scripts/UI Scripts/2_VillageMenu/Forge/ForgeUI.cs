@@ -17,6 +17,9 @@ public class ForgeUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI txt_bonusAttackSpeed;
     [SerializeField] TextMeshProUGUI txt_bonusCriticProbability;
 
+    [Header("Other")]
+    [SerializeField] Transform tr_pickAxeModelPosition;
+
     [Header("Materials")]
     [SerializeField] MaterialInfoUI[] materialsInfo;
 

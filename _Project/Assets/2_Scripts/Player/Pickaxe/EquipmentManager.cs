@@ -28,7 +28,11 @@ public class EquipmentManager : MonoBehaviour
     #region STATIC FIELDS
     static bool _init = false;
     static int? _pickAxeLevel = null;
-    static int PickAxeLevel
+    static string _currentHelmet = null;
+    static string _currentChestCloth = null;
+    static string _defaultHelmet = null;
+    static string _defaultChestCloth = null;
+    public static int PickAxeLevel
     {
         get
         {
@@ -41,12 +45,61 @@ public class EquipmentManager : MonoBehaviour
             if (!_pickAxeLevel.HasValue || value != _pickAxeLevel.Value)
             {
                 _pickAxeLevel = value;
-                PlayerPrefs.SetInt("PickAxeLevel", _pickAxeLevel.Value);
+                PlayerPrefs.SetInt("PickAxeLevel", value);
+                PlayerPrefs.Save();
+            }
+        }
+    }
+    public static string CurrentHelmet
+    {
+        get
+        {
+            if (_currentHelmet == null || _currentHelmet == "")
+                _currentHelmet = PlayerPrefs.GetString("C_Helmet", _defaultHelmet);
+            return _currentHelmet;
+        }
+        set
+        {
+            if (value != _currentHelmet)
+            {
+                _currentHelmet = value;
+                PlayerPrefs.SetString("C_Helmet", value);
+                PlayerPrefs.Save();
+            }
+        }
+    }
+    public static string CurrentChestCloth
+    {
+        get
+        {
+            if (_currentChestCloth == null || _currentChestCloth == "")
+                _currentChestCloth = PlayerPrefs.GetString("C_Chest", _defaultChestCloth);
+            return _currentChestCloth;
+        }
+        set
+        {
+            if (value != _currentChestCloth)
+            {
+                _currentChestCloth = value;
+                PlayerPrefs.SetString("C_Chest", value);
                 PlayerPrefs.Save();
             }
         }
     }
     public static Pickaxe[] Pickaxes; //se identifican por nivel (ya q se va mejorando el pico)
+
+    public static PickaxeStatsScripteableObject CurrentPickAxeData
+    {
+        get => Pickaxes[PickAxeLevel].data;
+    }
+    public static ClothStatsScripteableObject CurrentHelmetData
+    {
+        get => Helmets[CurrentHelmet].data;
+    }
+    public static ClothStatsScripteableObject CurrentChestClothData
+    {
+        get => ChestCloths[CurrentChestCloth].data;
+    }
     public static SortedDictionary<string, Cloth> ChestCloths = new SortedDictionary<string, Cloth>(); //se identifican por nombre
     public static SortedDictionary<string, Cloth> Helmets = new SortedDictionary<string, Cloth>(); //se identifican por nombre
     #endregion
@@ -113,6 +166,9 @@ public class EquipmentManager : MonoBehaviour
                 helmet.model
             ));
         }
+
+        _defaultChestCloth = chestCloths[0].data.name;
+        _defaultHelmet = helmets[0].data.name;
 
         _init = true;
     }
