@@ -10,12 +10,13 @@ public class MaterialInfoUI : MonoBehaviour
 
     [SerializeField] Image img_imageComponent;
     [SerializeField] TextMeshProUGUI txt_amount;
+    [SerializeField] MaterialsData_SO materials;
 
-    private int _amount;
+    private int _amount = -1;
     private MaterialName _materialAssigned;
-    public static Dictionary<MaterialName, SlotUI.IconData> Icons
+    public static Dictionary<MaterialName, MaterialsData.IconData> Icons
     {
-        get => SlotUI.Icons;
+       get => MaterialsData.Icons;
     }
     public int Amount
     {
@@ -25,7 +26,7 @@ public class MaterialInfoUI : MonoBehaviour
             if (value != _amount)
             {
                 _amount = value;
-                txt_amount.text = value.ToString();
+                txt_amount.text = "x" + value.ToString();
             }
         }
     }

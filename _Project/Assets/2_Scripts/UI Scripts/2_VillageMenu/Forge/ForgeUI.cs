@@ -4,11 +4,11 @@ using PickaxeStats;
 using System;
 using System.Collections.Generic;
 using System.Collections;
-using System.Runtime.CompilerServices;
 public class ForgeUI : MonoBehaviour
 {
     #region SERIALIZABLE FIELDS
     [Header("Texts Stats")]
+    [SerializeField] TextMeshProUGUI txt_name;
     [SerializeField] TextMeshProUGUI txt_baseDamage;
     [SerializeField] TextMeshProUGUI txt_criticDamage;
     [SerializeField] TextMeshProUGUI txt_attackSpeed;
@@ -35,6 +35,10 @@ public class ForgeUI : MonoBehaviour
     private GameObject currentModel = null;
     #endregion
     #region PRIVATE PROPERTIES
+    string Name
+    {
+        set => txt_name.text = value;
+    }
     int BaseDamage
     {
         set => txt_baseDamage.text = value.ToString();
@@ -136,7 +140,10 @@ public class ForgeUI : MonoBehaviour
     }
     #endregion
     #region PRIVATE FUNCS
-
+    private void Awake()
+    {
+        go_error.SetActive(false);
+    }
     private void OnEnable()
     {
         UpdateUI();
@@ -159,6 +166,7 @@ public class ForgeUI : MonoBehaviour
 
     void UpdateCurrentPickaxe(PickaxeStatsScripteableObject value)
     {
+        Name = value.name;
         int baseDamage = value.damage;
         BaseDamage = baseDamage;
         CriticDamage = (int)(baseDamage * value.critMultiplier);
@@ -178,10 +186,10 @@ public class ForgeUI : MonoBehaviour
         {
             int currentDamage = CurrentPickaxe.damage;
             int bonus = value.damage - currentDamage;
-            BaseDamage = bonus;
-            CriticDamage = (int)(value.damage * value.critMultiplier - currentDamage * CurrentPickaxe.critMultiplier);
-            AttackSpeed = value.attackSpeed - CurrentPickaxe.attackSpeed;
-            CriticProbability = value.critProbability - CurrentPickaxe.critProbability;
+            BonusBaseDamage = bonus;
+            BonusCriticDamage = (int)(value.damage * value.critMultiplier - currentDamage * CurrentPickaxe.critMultiplier);
+            BonusAttackSpeed = value.attackSpeed - CurrentPickaxe.attackSpeed;
+            BonusCriticProbability = value.critProbability - CurrentPickaxe.critProbability;
         }
     }
     private void UpdatePrice()
@@ -200,10 +208,15 @@ public class ForgeUI : MonoBehaviour
         {
             if (i + 1 < materialsInfo.Length)
             {
+                materialsInfo[i + 1].gameObject.SetActive(true);
                 materialsInfo[i + 1].Amount = NextLevelPickaxe.costs[i].cost;
                 materialsInfo[i + 1].MaterialAssigned = NextLevelPickaxe.costs[i].material;
             }
             else throw new Exception("Debes meter más huecos de material en el array materialsInfo");
+        }
+        for(int i = NextLevelPickaxe.costs.Count; i < materialsInfo.Length - 1;i++)
+        {
+            materialsInfo[i + 1].gameObject.SetActive(false);
         }
     }
 
@@ -243,8 +256,8 @@ public class ForgeUI : MonoBehaviour
         
         currentModel.transform.parent = tr_pickaxeModelPosition.parent;
         currentModel.transform.localPosition = tr_pickaxeModelPosition.localPosition;
-       // currentModel.transform.localRotation = tr_pickaxeModelPosition.localRotation;
-       // currentModel.transform.localScale = tr_pickaxeModelPosition.localScale;
+        currentModel.transform.localRotation = tr_pickaxeModelPosition.localRotation;
+        currentModel.transform.localScale = tr_pickaxeModelPosition.localScale;
     }
     private void ShowErrorMessage()
     {

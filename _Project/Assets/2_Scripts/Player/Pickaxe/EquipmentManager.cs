@@ -209,6 +209,12 @@ public class EquipmentManager : MonoBehaviour
     {
         if (_init) return;
 
+#if UNITY_EDITOR
+        PickAxeLevel = 0;
+        CurrentHelmet = _defaultHelmet;
+        CurrentChestCloth = _defaultChestCloth;
+#endif
+
         Pickaxes = new Pickaxe[pickaxes.Length];
         for(int i = 0; i< Pickaxes.Length; i++)
         {

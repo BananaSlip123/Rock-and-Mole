@@ -1,10 +1,8 @@
 {
-    "name": "MaterialInfo",
+    "name": "MaterialsData",
     "rootNamespace": "",
     "references": [
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:c17ff5bc373c31248bba58abb3013523",
-        "GUID:727ee58af7365a441bcd0568a32962a1"
+        "GUID:c17ff5bc373c31248bba58abb3013523"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
