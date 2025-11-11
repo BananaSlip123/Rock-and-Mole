@@ -28,12 +28,11 @@ public class AudioManager : MonoBehaviour
     public enum MusicType
     {
         MenuMusic,
-        VillageMusic,
+        TownMusic,
         EnemyFightMusic,
         StoreMusic,
         StoreMusic2,
-        MineMusic,
-        TownMusic,
+        MineMusic
         //las que sean
     }
 
@@ -47,6 +46,7 @@ public class AudioManager : MonoBehaviour
         AttackToPlayerSound,
         ClickerSound,
         MineSound,
+        Explosion,
         CollectObjectsSound
         //las que sean
     }
