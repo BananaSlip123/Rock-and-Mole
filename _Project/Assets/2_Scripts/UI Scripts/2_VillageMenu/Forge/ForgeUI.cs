@@ -43,9 +43,9 @@ public class ForgeUI : MonoBehaviour
     {
         set => txt_baseDamage.text = value.ToString();
     }
-    int CriticDamage
+    float CriticDamage
     {
-        set => txt_criticDamage.text = value.ToString();
+        set => txt_criticDamage.text = "x" + value.ToString();
     }
     float AttackSpeed
     {
@@ -74,7 +74,7 @@ public class ForgeUI : MonoBehaviour
                 txt_bonusBaseDamage.text = "";
         }
     }
-    int? BonusCriticDamage
+    float? BonusCriticDamage
     {
         set
         {
@@ -169,7 +169,8 @@ public class ForgeUI : MonoBehaviour
         Name = value.name;
         int baseDamage = value.damage;
         BaseDamage = baseDamage;
-        CriticDamage = (int)(baseDamage * value.critMultiplier);
+       // CriticDamage = (int)(baseDamage * value.critMultiplier);
+        CriticDamage = value.critMultiplier;
         AttackSpeed = value.attackSpeed;
         CriticProbability = value.critProbability;
     }
@@ -187,7 +188,8 @@ public class ForgeUI : MonoBehaviour
             int currentDamage = CurrentPickaxe.damage;
             int bonus = value.damage - currentDamage;
             BonusBaseDamage = bonus;
-            BonusCriticDamage = (int)(value.damage * value.critMultiplier - currentDamage * CurrentPickaxe.critMultiplier);
+            //BonusCriticDamage = (int)(value.damage * value.critMultiplier - currentDamage * CurrentPickaxe.critMultiplier);
+            BonusCriticDamage = value.critMultiplier - CurrentPickaxe.critMultiplier;
             BonusAttackSpeed = value.attackSpeed - CurrentPickaxe.attackSpeed;
             BonusCriticProbability = value.critProbability - CurrentPickaxe.critProbability;
         }

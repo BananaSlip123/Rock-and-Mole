@@ -8,7 +8,6 @@ public static class GameData
     //acceso publico y estático, necesita dependencia de assemblies para ser usada
     //usado por algún singleton o algo
     #region PRIVATE VARS
-    static bool _isLoaded = false;
     const int INVENTORY_SIZE = 12;
 
     static int _coins = -1;
@@ -237,6 +236,10 @@ public class PersistentInventory
     }
     
     public int GetAmount(MaterialName key) => _objectsAmount[key];
+    public void ResetObjectAmount(MaterialName name)
+    {
+        TryRemoveObject(name, GetAmount(name));
+    }
     public void AddObject(MaterialName name, int amount)
     {
         if (amount <= 0) throw new Exception("Must be positive number");
@@ -319,6 +322,10 @@ public class Inventory
     }
 
     public int GetAmount(MaterialName key) => _objectsAmount[key];
+    public void ResetObjectAmount(MaterialName name)
+    {
+        TryRemoveObject(name, GetAmount(name));
+    }
     public void AddObject(MaterialName name, int amount)
     {
         if (amount <= 0) throw new Exception("Must be positive number");

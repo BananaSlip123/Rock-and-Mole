@@ -18,6 +18,7 @@ public class GameDataPlayModeInit : MonoBehaviour
 
         foreach (MaterialName key in typeof(MaterialName).GetEnumValues())
         {
+            GameData.Inventory.ResetObjectAmount(key); //vuelve a 0 (persistencia ejem)
             GameData.Inventory.AddObject(key, materialsAmount);
         }
 
