@@ -11,8 +11,9 @@ public class EnemyGenerator : MonoBehaviour, IEnemyGenerator
         float random = UnityEngine.Random.Range(minMaxEnemies.x, minMaxEnemies.y);
 
         for (int i = 0; i < random; i++)
-        {           
-            SpawnEnemy(enemiesPrefabs[0]);
+        {
+            int randomIndex = UnityEngine.Random.Range(0, enemiesPrefabs.Length);
+            SpawnEnemy(enemiesPrefabs[randomIndex]);
             LevelManager.instance.EnemyHasSpawned();
         }
 

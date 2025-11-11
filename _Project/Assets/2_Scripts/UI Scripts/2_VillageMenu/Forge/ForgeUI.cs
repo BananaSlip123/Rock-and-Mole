@@ -4,8 +4,10 @@ using PickaxeStats;
 using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.Runtime.CompilerServices;
 public class ForgeUI : MonoBehaviour
 {
+    #region SERIALIZABLE FIELDS
     [Header("Texts Stats")]
     [SerializeField] TextMeshProUGUI txt_baseDamage;
     [SerializeField] TextMeshProUGUI txt_criticDamage;
@@ -18,14 +20,21 @@ public class ForgeUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI txt_bonusAttackSpeed;
     [SerializeField] TextMeshProUGUI txt_bonusCriticProbability;
 
-    [Header("Other")]
-    [SerializeField] Transform tr_pickAxeModelPosition;
+    [Header("Game Objects & Transforms")]
+    [SerializeField] Transform tr_pickaxeModelPosition;
     [SerializeField] GameObject go_error;
+    [SerializeField] GameObject go_maxLevelWindow;
+    [SerializeField] GameObject go_materialsWindow;
+    [SerializeField] GameObject go_buyButton;
 
     [Header("Materials")]
     [SerializeField] MaterialInfoUI[] materialsInfo;
-
+    #endregion
+    #region PRIVATE FIELDS
     private Coroutine currentFade;
+    private GameObject currentModel = null;
+    #endregion
+    #region PRIVATE PROPERTIES
     int BaseDamage
     {
         set => txt_baseDamage.text = value.ToString();
@@ -36,18 +45,18 @@ public class ForgeUI : MonoBehaviour
     }
     float AttackSpeed
     {
-        set 
+        set
         {
             int percent = (int)(value * 100);
             txt_attackSpeed.text = "+" + percent.ToString() + "%";
-        } 
+        }
     }
     float CriticProbability
     {
         set
         {
             int percent = (int)(value * 100);
-            txt_criticProbability.text = "+"+percent.ToString()+"%";
+            txt_criticProbability.text = "+" + percent.ToString() + "%";
         }
     }
 
@@ -56,7 +65,7 @@ public class ForgeUI : MonoBehaviour
         set
         {
             if (value.HasValue)
-                txt_bonusBaseDamage.text = "+"+value.ToString();
+                txt_bonusBaseDamage.text = "+" + value.ToString();
             else
                 txt_bonusBaseDamage.text = "";
         }
@@ -105,6 +114,48 @@ public class ForgeUI : MonoBehaviour
     {
         get => EquipmentManager.Pickaxes[CurrentLevel].data;
     }
+    PickaxeStatsScripteableObject NextLevelPickaxe
+    {
+        get
+        {
+            if (IsMaxed) return null;
+            return EquipmentManager.Pickaxes[CurrentLevel + 1].data;
+        }
+    }
+    int CurrentLevel
+    {
+        get => EquipmentManager.PickAxeLevel; //lee valor actual de la clase
+    }
+    int MaxLevel
+    {
+        get => EquipmentManager.MaxLevel; //lee valor actual de la clase
+    }
+    bool IsMaxed
+    {
+        get => CurrentLevel == MaxLevel;
+    }
+    #endregion
+    #region PRIVATE FUNCS
+
+    private void OnEnable()
+    {
+        UpdateUI();
+
+        EquipmentManager.OnPickaxeLevelChange += UpdateUI;
+    }
+
+    private void OnDisable()
+    {
+        EquipmentManager.OnPickaxeLevelChange -= UpdateUI;
+    }
+
+    private void UpdateUI()
+    {
+        UpdateCurrentPickaxe(CurrentPickaxe);
+        UpdateNextLevelPickaxe(NextLevelPickaxe);
+        UpdatePrice();
+        ActualiceModel();
+    }
 
     void UpdateCurrentPickaxe(PickaxeStatsScripteableObject value)
     {
@@ -113,12 +164,6 @@ public class ForgeUI : MonoBehaviour
         CriticDamage = (int)(baseDamage * value.critMultiplier);
         AttackSpeed = value.attackSpeed;
         CriticProbability = value.critProbability;
-    }
-
-    PickaxeStatsScripteableObject NextLevelPickaxe
-    {
-        //get => EquipmentManager.Pickaxes?[CurrentLevel+1]?.data;
-        get => EquipmentManager.Pickaxes[CurrentLevel+1]?.data;
     }
     private void UpdateNextLevelPickaxe(PickaxeStatsScripteableObject value)
     {
@@ -139,29 +184,67 @@ public class ForgeUI : MonoBehaviour
             CriticProbability = value.critProbability - CurrentPickaxe.critProbability;
         }
     }
-    int CurrentLevel
+    private void UpdatePrice()
     {
-        get => EquipmentManager.PickAxeLevel; //lee valor actual de la clase
+        bool isMaxed = IsMaxed;
+
+        go_maxLevelWindow.SetActive(isMaxed);
+        go_materialsWindow.SetActive(!isMaxed);
+        go_buyButton.SetActive(!isMaxed);
+
+        if (isMaxed) return;
+        
+        materialsInfo[0].Amount = NextLevelPickaxe.coinsPrice;
+
+        for (int i = 0; i < NextLevelPickaxe.costs.Count; i++)
+        {
+            if (i + 1 < materialsInfo.Length)
+            {
+                materialsInfo[i + 1].Amount = NextLevelPickaxe.costs[i].cost;
+                materialsInfo[i + 1].MaterialAssigned = NextLevelPickaxe.costs[i].material;
+            }
+            else throw new Exception("Debes meter más huecos de material en el array materialsInfo");
+        }
     }
 
-    #region PRIVATE FUNCS
-
-    private void OnEnable()
+    private bool HaveEnoughMaterials()
     {
-        UpdateUI();
+        bool hasEnoughMaterials = true;
 
-        EquipmentManager.OnPickaxeLevelChange += UpdateUI;
+        foreach (MaterialCost materialCost in NextLevelPickaxe.costs)
+        {
+            bool enough = GameData.Inventory.GetAmount(materialCost.material) >= materialCost.cost;
+            if (!enough) hasEnoughMaterials = false;
+        }
+        return hasEnoughMaterials;
+    }
+    private void DecreaseMaterials()
+    {
+        foreach (MaterialCost materialCost in NextLevelPickaxe.costs)
+        {
+            bool success = GameData.Inventory.TryRemoveObject(materialCost.material, materialCost.cost);
+            if (!success) throw new Exception("Not enough materials");
+        }
+    }
+    private bool HaveEnoughCoins()
+    {
+        return GameData.Coins >= NextLevelPickaxe.coinsPrice;
+    }
+    private void DecreaseCoins()
+    {
+        GameData.Coins -= NextLevelPickaxe.coinsPrice;
     }
 
-    private void OnDisable()
+    private void ActualiceModel()
     {
-        EquipmentManager.OnPickaxeLevelChange -= UpdateUI;
-    }
+        if (currentModel != null) Destroy(currentModel);
 
-    private void UpdateUI()
-    {
-        UpdateCurrentPickaxe(CurrentPickaxe);
-        UpdateNextLevelPickaxe(NextLevelPickaxe);
+        currentModel = Instantiate(EquipmentManager.CurrentPickaxe.model);
+        
+        currentModel.transform.parent = tr_pickaxeModelPosition.parent;
+        currentModel.transform.localPosition = tr_pickaxeModelPosition.localPosition;
+       // currentModel.transform.localRotation = tr_pickaxeModelPosition.localRotation;
+       // currentModel.transform.localScale = tr_pickaxeModelPosition.localScale;
     }
     private void ShowErrorMessage()
     {
@@ -201,12 +284,23 @@ public class ForgeUI : MonoBehaviour
         currentFade = null;
     }
     #endregion
-   
-
     #region PUBLIC FUNCS
     public void OnBuyButtonPressed()
     {
-
+        if (IsMaxed) return;
+        if (HaveEnoughMaterials() && HaveEnoughCoins())
+        {
+            //restar costo
+            DecreaseMaterials();
+            DecreaseCoins();
+            //subir el nivel del arma
+            EquipmentManager.PickAxeLevel++;
+        }
+        else
+        {
+            ShowErrorMessage();
+        }
+        //La ui deberia actualizarse sola al recibir callback de equipment manager
     }
     #endregion
 }

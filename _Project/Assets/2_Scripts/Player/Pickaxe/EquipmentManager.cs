@@ -36,6 +36,10 @@ public class EquipmentManager : MonoBehaviour
     static string _defaultChestCloth = null;
     #endregion
     #region PUBLIC PROPERTIES
+    public static int MaxLevel
+    {
+        get => Pickaxes.Length - 1;
+    }
     public static int PickAxeLevel
     {
         get
@@ -95,6 +99,10 @@ public class EquipmentManager : MonoBehaviour
                 OnEquipmentChange?.Invoke();
             }
         }
+    }
+    public static Pickaxe CurrentPickaxe
+    {
+        get => Pickaxes[PickAxeLevel];
     }
     public static PickaxeStatsScripteableObject CurrentPickaxeData
     {

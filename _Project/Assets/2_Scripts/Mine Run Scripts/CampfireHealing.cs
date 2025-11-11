@@ -18,8 +18,9 @@ public class CampfireHealing : MonoBehaviour
     void Awake()
     {
         GameObject p = GameObject.FindGameObjectWithTag("Player");
+        GameObject ps = GameObject.Find("PlayerStats");
         player = p.GetComponent<PlayerController>();
-        stats = p.GetComponent<PlayerStats>();
+        stats = ps.GetComponent<PlayerStats>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,7 +49,7 @@ public class CampfireHealing : MonoBehaviour
         heart.SetActive(true);
         //heartAnimator.SetBool("isRotating", true);
         
-        StartCoroutine(WaitAnimation());
+        //StartCoroutine(WaitAnimation());
         //stats.HealPlayer(healing);
         Debug.Log("He hecho la curación");
         player.pressButtonA = null;
@@ -57,11 +58,9 @@ public class CampfireHealing : MonoBehaviour
 
     private IEnumerator WaitAnimation()
     {
-        yield return null;
-
         yield return new WaitForSeconds(4.5f);
 
         heart.SetActive(false);
-        stats.HealPlayer(healing);
+        stats?.HealPlayer(healing);
     }
 }

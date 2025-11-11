@@ -225,6 +225,7 @@ public class ShopUI : MonoBehaviour
             bool selled = GameData.Inventory.TryRemoveObject(_materialSelected, _selectedAmount);
             if (selled)
                 GameData.Coins += _profit;
+            else ShowErrorMessage();
         }
         else
         {

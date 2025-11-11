@@ -138,6 +138,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     }
     private void OnEnable()
     {
+        OnEquipmentChange();
         EquipmentManager.OnEquipmentChange += OnEquipmentChange;
     }
     private void OnDisable()
@@ -158,6 +159,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             roomNumber = 0;
 
             playerHealth.SetHealth(health);
+            playerSpeed.speed = speed;
         }
         else
         {

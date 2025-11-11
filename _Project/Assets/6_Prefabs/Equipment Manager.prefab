@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8271498286413834923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3090163795105732648}
+  - component: {fileID: 5330206305313992258}
+  m_Layer: 0
+  m_Name: Equipment Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3090163795105732648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8271498286413834923}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5330206305313992258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8271498286413834923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111ff6668098bc7419dd0116d27c9688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickaxes:
+  - data: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
+    model: {fileID: 5984181934303887349, guid: 230f1339a96559247850af1db50e1be2, type: 3}
+  - data: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
+    model: {fileID: 5984181934303887349, guid: 230f1339a96559247850af1db50e1be2, type: 3}
+  chestCloths:
+  - data: {fileID: 11400000, guid: 29f03d92d9e823b4fbd490d993c8cbac, type: 2}
+    model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
+  helmets:
+  - data: {fileID: 11400000, guid: 29f03d92d9e823b4fbd490d993c8cbac, type: 2}
+    model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
