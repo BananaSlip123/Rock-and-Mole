@@ -46,13 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickaxes:
   - data: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
-    model: {fileID: 5984181934303887349, guid: 230f1339a96559247850af1db50e1be2, type: 3}
-  - data: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
-    model: {fileID: 5984181934303887349, guid: 230f1339a96559247850af1db50e1be2, type: 3}
-  - data: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
-    model: {fileID: 5984181934303887349, guid: 230f1339a96559247850af1db50e1be2, type: 3}
-  - data: {fileID: 11400000, guid: 2d61fee0b8e2baf4b958276e668be79b, type: 2}
-    model: {fileID: 5984181934303887349, guid: 230f1339a96559247850af1db50e1be2, type: 3}
+    model: {fileID: 568505487004580767, guid: 6fe2da00abff00b46ad9f9d03f0d0a2d, type: 3}
+  - data: {fileID: 11400000, guid: e127f1713f010e749b644b0ab8fa5984, type: 2}
+    model: {fileID: 5625302314037304399, guid: e23b8f2d78922984ea8c11a717ea1270, type: 3}
+  - data: {fileID: 11400000, guid: 1ca462f8ed4369d4480f5747aad092e2, type: 2}
+    model: {fileID: 5908020576988389703, guid: 9297e5a45ecc7704c974d4954e6b7b5c, type: 3}
+  - data: {fileID: 11400000, guid: 09aaeb3f0c9b48c488c7bae4800a6692, type: 2}
+    model: {fileID: 6269313036529647478, guid: cd282f7d919fb8e4e9b9ea4703095582, type: 3}
+  - data: {fileID: 11400000, guid: 062708ca786b33943b3aac92dbe45121, type: 2}
+    model: {fileID: 6678174839223608796, guid: abde703ee0fda4f4a9eb902be0f66326, type: 3}
   chestCloths:
   - data: {fileID: 11400000, guid: 29f03d92d9e823b4fbd490d993c8cbac, type: 2}
     model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}

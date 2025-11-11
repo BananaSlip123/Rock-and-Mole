@@ -254,10 +254,10 @@ public class ForgeUI : MonoBehaviour
 
         currentModel = Instantiate(EquipmentManager.CurrentPickaxe.model);
         
-        currentModel.transform.parent = tr_pickaxeModelPosition.parent;
-        currentModel.transform.localPosition = tr_pickaxeModelPosition.localPosition;
-        currentModel.transform.localRotation = tr_pickaxeModelPosition.localRotation;
-        currentModel.transform.localScale = tr_pickaxeModelPosition.localScale;
+        currentModel.transform.parent = tr_pickaxeModelPosition;
+        currentModel.transform.localPosition = new Vector3();
+        currentModel.transform.localEulerAngles = new Vector3();
+        currentModel.transform.localScale = new Vector3(1,1,1);
     }
     private void ShowErrorMessage()
     {
