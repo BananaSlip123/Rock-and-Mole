@@ -7,18 +7,21 @@ public class GameDataPlayModeInit : MonoBehaviour
 
     [SerializeField] bool needsTutorial = false;
     [SerializeField] int materialsAmount = 200;
+
+#if UNITY_EDITOR
     private void Awake()
     {
         if (_init) return;
         _init = true;
 
-#if UNITY_EDITOR
         GameData.NeedsTutorial = needsTutorial;
 
         foreach (MaterialName key in typeof(MaterialName).GetEnumValues())
         {
             GameData.Inventory.AddObject(key, materialsAmount);
         }
-#endif
+
+        Debug.Log("GameData inicializado para Play Mode en Editor");
     }
+#endif
 }
