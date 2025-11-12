@@ -49,7 +49,7 @@ public class CampfireHealing : MonoBehaviour
         heart.SetActive(true);
         //heartAnimator.SetBool("isRotating", true);
         
-        //StartCoroutine(WaitAnimation());
+        StartCoroutine(WaitAnimation());
         //stats.HealPlayer(healing);
         Debug.Log("He hecho la curación");
         player.pressButtonA = null;
