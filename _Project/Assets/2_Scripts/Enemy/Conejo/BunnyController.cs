@@ -41,4 +41,14 @@ public class BunnyController : MonoBehaviour, IStateMachineComponent
         lastState.Exit();
         actualState.Enter();
     }
+
+    public void GenerateGameObject(Transform enemyTransform)
+    {
+        Instantiate(explosion, enemyTransform.position, enemyTransform.rotation).SetActive(true);
+    }
+
+    public void DestroyGameObject(GameObject d)
+    {
+        Destroy(d);
+    }
 }

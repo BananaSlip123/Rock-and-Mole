@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
-public class BunnyAttackComponent : MonoBehaviour, IStateComponent, IAttackComponent
+public class BunnyAttackComponent : IStateComponent, IAttackComponent
 {
 
     const float COOLDOWN = 2.5f;
@@ -59,10 +59,11 @@ public class BunnyAttackComponent : MonoBehaviour, IStateComponent, IAttackCompo
         playerHealth.RecieveDamage(damage);
         hasAttacked = true;
 
-        Instantiate(explosion, enemyTransform.position, enemyTransform.rotation).SetActive(true);
+        BunnyController m = (BunnyController)mStateMachine;
+        m.GenerateGameObject(enemyTransform);
 
         enemyTransform.GetComponent<BunnyDamageableComponent>().Exploded();
-        Destroy(enemyTransform.gameObject);
+        m.DestroyGameObject(enemyTransform.gameObject);
     }
 
     public void Enter()
