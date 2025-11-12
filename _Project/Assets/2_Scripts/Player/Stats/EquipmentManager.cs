@@ -75,7 +75,7 @@ public class EquipmentManager : MonoBehaviour
                 _currentHelmet = value;
                 PlayerPrefs.SetString("C_Helmet", value);
                 PlayerPrefs.Save();
-                OnCurrentHelmetChange?.Invoke(value);
+                OnCurrentHelmetChange?.Invoke();
                 OnEquipmentChange?.Invoke();
             }
         }
@@ -95,7 +95,7 @@ public class EquipmentManager : MonoBehaviour
                 _currentChestCloth = value;
                 PlayerPrefs.SetString("C_Chest", value);
                 PlayerPrefs.Save();
-                OnCurrentChestClothChange?.Invoke(value);
+                OnCurrentChestClothChange?.Invoke();
                 OnEquipmentChange?.Invoke();
             }
         }
@@ -128,8 +128,8 @@ public class EquipmentManager : MonoBehaviour
     #endregion
     #region CALLBACKS
     public static Action OnPickaxeLevelChange = null;
-    public static Action<string> OnCurrentChestClothChange = null;
-    public static Action<string> OnCurrentHelmetChange = null;
+    public static Action OnCurrentChestClothChange = null;
+    public static Action OnCurrentHelmetChange = null;
     public static Action OnEquipmentChange = null;
     public static Action<string> OnUnlockedHelmet = null;
     public static Action<string> OnUnlockedChestCloth = null;

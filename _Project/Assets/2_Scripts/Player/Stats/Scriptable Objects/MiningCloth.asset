@@ -17,5 +17,7 @@ MonoBehaviour:
     value: 10
   - stat: 2
     value: 4
+  - stat: 2
+    value: 4
   coinsPrice: 0
   costs: []
