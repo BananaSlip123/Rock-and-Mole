@@ -45,7 +45,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
 
     private void Death()
     {
-        //animator.SetBool("Morir", true);
+        animator.SetBool("Morir", true);
 
         //Reproducir sonido de muerte
         AudioManager.Instance.PlayAudio(AudioManager.AudioType.DeathEnemySound);

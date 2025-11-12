@@ -21,21 +21,17 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
     Transform enemyTransform;
     Transform playerTransform;
 
-    GameObject explosion;
-
     Collider attackHitbox;
 
     Animator animator;
 
-    public BunnyAttackComponent(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t, Animator a, GameObject c)
+    public BunnyAttackComponent(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t, Animator a)
     {
         mStateMachine = m;
         enemyTransform = e;
         playerTransform = t;
         playerHealth = p;
         animator = a;
-
-        explosion = c;
     }
 
     public BunnyAttackComponent(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t, GameObject c)
@@ -44,8 +40,6 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
         enemyTransform = e;
         playerTransform = t;
         playerHealth = p;
-
-        explosion = c;
     }
 
     public void ActiveHitbox()
@@ -71,7 +65,7 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
         attackHitbox = enemyTransform.GetChild(0).GetComponent<Collider>();
         ActiveHitbox();
         //Debug.Log("ESTOY ATACANDO");
-        //animator.SetBool("Atacar", true);
+        animator.SetBool("Atacar", true);
 
         //Debug.Log("DURACION: " + animator.GetCurrentAnimatorStateInfo(0).length);
         //TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(0).length;
@@ -79,7 +73,7 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
 
     public void Exit()
     {
-        //animator.SetBool("Atacar", false);
+        animator.SetBool("Atacar", false);
     }
 
     public void FixedUpdate()
@@ -100,8 +94,8 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
         }
         else
         {
-            mStateMachine.ChangeState(new BunnyChaseState(enemyTransform, mStateMachine, explosion));
-            //mStateMachine.ChangeState(new BunnyChaseState(enemyTransform, mStateMachine, animator));
+            //mStateMachine.ChangeState(new BunnyChaseState(enemyTransform, mStateMachine, explosion));
+            mStateMachine.ChangeState(new BunnyChaseState(enemyTransform, mStateMachine, animator));
         }
     }
 

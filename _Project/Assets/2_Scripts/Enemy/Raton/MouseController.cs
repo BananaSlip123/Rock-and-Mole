@@ -5,11 +5,11 @@ public class MouseController : MonoBehaviour, IStateMachineComponent
     [SerializeField] IStateComponent actualState;
     [SerializeField] IStateComponent lastState;
 
-    //[SerializeField] Animator animator;
+    [SerializeField] Animator animator;
 
     void Awake()
     {
-        actualState = new MouseWanderState(this, transform); //, animator);
+        actualState = new MouseWanderState(this, transform, animator);
         actualState.Enter();
     }
 

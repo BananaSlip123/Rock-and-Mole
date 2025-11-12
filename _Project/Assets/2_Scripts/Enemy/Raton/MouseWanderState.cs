@@ -32,10 +32,11 @@ public class MouseWanderState : IStateComponent, IMoveComponent
         Up_Right
     }
 
-    public MouseWanderState(IStateMachineComponent stateMachine, Transform transform)
+    public MouseWanderState(IStateMachineComponent stateMachine, Transform transform, Animator a)
     {
         mStateMachine = stateMachine;
         enemyTransform = transform;
+        animator = a;
     }
 
     public void Enter()
@@ -65,7 +66,7 @@ public class MouseWanderState : IStateComponent, IMoveComponent
         if (player)
         {
             //mStateMachine.ChangeState(new MouseAttackComponent(enemyTransform, mStateMachine, animator));
-            mStateMachine.ChangeState(new MouseAttackComponent(enemyTransform, GameObject.FindGameObjectWithTag("Player").transform, mStateMachine));
+            mStateMachine.ChangeState(new MouseAttackComponent(enemyTransform, GameObject.FindGameObjectWithTag("Player").transform, animator, mStateMachine));
             //Debug.Log("He detectado al jugador");
             return;
         }

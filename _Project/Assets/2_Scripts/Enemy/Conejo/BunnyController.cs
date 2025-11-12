@@ -5,10 +5,11 @@ public class BunnyController : MonoBehaviour, IStateMachineComponent
     [SerializeField] IStateComponent actualState;
     [SerializeField] IStateComponent lastState;
     [SerializeField] GameObject explosion;
+    [SerializeField] Animator animator;
 
     void Awake()
     {
-        actualState = new BunnyWanderState(this, transform, explosion); //, animator);
+        actualState = new BunnyWanderState(this, transform, animator);
         actualState.Enter();
     }
 

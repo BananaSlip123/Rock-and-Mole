@@ -22,11 +22,14 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
     Transform enemyTransform;
     Transform playerPosition;
 
-    public MouseAttackComponent(Transform enemy, Transform player, IStateMachineComponent stateM)
+    Animator animator;
+
+    public MouseAttackComponent(Transform enemy, Transform player, Animator a, IStateMachineComponent stateM)
     {
         enemyTransform = enemy;
         playerPosition = player;
         mStateMachine = stateM;
+        animator = a;
     }
 
     public void ActiveHitbox()
@@ -44,20 +47,20 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
     {
         //attackHitbox = enemyTransform.GetChild(1).GetComponent<Collider>();
         //Debug.Log("ESTOY ATACANDO");
-        //animator.SetBool("Atacar", true);
+        animator.SetBool("Atacar", true);
 
         pool = GameObject.FindGameObjectWithTag("PoolBullet").GetComponent<IObjectPool>();
     }
 
     public void Exit()
     {
-        //animator.SetBool("Atacar", false);
+        animator.SetBool("Atacar", false);
     }
 
     public void FixedUpdate()
     {
         if (!PlayerInRange())
-            mStateMachine.ChangeState(new MouseWanderState(mStateMachine, enemyTransform));
+            mStateMachine.ChangeState(new MouseWanderState(mStateMachine, enemyTransform, animator));
 
         if (isInCooldown)
         {

@@ -20,8 +20,6 @@ public class BunnyWanderState : IStateComponent, IMoveComponent
 
     Animator animator;
 
-    GameObject explosion;
-
     enum Directions
     {
         Up,
@@ -34,11 +32,11 @@ public class BunnyWanderState : IStateComponent, IMoveComponent
         Up_Right
     }
 
-    public BunnyWanderState(IStateMachineComponent stateMachine, Transform transform, GameObject c)
+    public BunnyWanderState(IStateMachineComponent stateMachine, Transform transform, Animator c)
     {
         mStateMachine = stateMachine;
         enemyTransform = transform;
-        explosion = c;
+        animator = c;
     }
 
     public void Enter()
@@ -67,8 +65,7 @@ public class BunnyWanderState : IStateComponent, IMoveComponent
 
         if (player)
         {
-            //mStateMachine.ChangeState(new MouseAttackComponent(enemyTransform, mStateMachine, animator));
-            mStateMachine.ChangeState(new BunnyChaseState(enemyTransform, mStateMachine, explosion));
+            mStateMachine.ChangeState(new BunnyAttackComponent( mStateMachine, enemyTransform, GameObject.Find("Player").GetComponent<IDamageableComponent>(), GameObject.Find("Player").transform,animator));
             //Debug.Log("He detectado al jugador");
             return;
         }
