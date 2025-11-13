@@ -66,9 +66,9 @@ MonoBehaviour:
     model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
   helmets:
   - data: {fileID: 11400000, guid: 5302d52c804ff894596297e5cb2652f9, type: 2}
-    model: {fileID: 0}
+    model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
   - data: {fileID: 11400000, guid: a7579a797c06e134bb52c6c51ad3947d, type: 2}
-    model: {fileID: 0}
+    model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
 --- !u!1 &6021474099910856360
 GameObject:
   m_ObjectHideFlags: 0

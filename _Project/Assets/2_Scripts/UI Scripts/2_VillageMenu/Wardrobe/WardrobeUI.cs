@@ -277,6 +277,10 @@ public class WardrobeUI : MonoBehaviour
     }
     private void OnEnable()
     {
+        _selectedHelmetID = EquipmentManager.CurrentHelmetID;
+        Debug.Log(SelectedHelmetID);
+        _selectedChestClothID = EquipmentManager.CurrentChestClothID;
+        Debug.Log(SelectedChestClothID);
         WardrobeModeProperty = WardrobeMode.chestCloth;
     }
     private void OnChestClothMode()
@@ -333,8 +337,6 @@ public class WardrobeUI : MonoBehaviour
 
     void UpdateEquippedCloth(ClothStatsScripteableObject equipped, Dictionary<Stats, float> equippedDict)
     {
-        Name = equipped.name;
-
         foreach (Stats stat in typeof(Stats).GetEnumValues())
         {
             switch (stat)
@@ -355,6 +357,7 @@ public class WardrobeUI : MonoBehaviour
     private void UpdateSelectedCloth(ClothStatsScripteableObject selected, ClothStatsScripteableObject equipped,
         Dictionary<Stats, float> selectedDict, Dictionary<Stats, float> equippedDict)
     {
+        Name = selected.name;
 
         if (selected == equipped)
         {
@@ -478,7 +481,7 @@ public class WardrobeUI : MonoBehaviour
 
                 nextIndex = (currentIndex + placesToMove + numberOfElements) % numberOfElements;
 
-                SelectedChestClothID = OrderedChestCloths[EquipmentManager.GetOrderChestCloth(_selectedChestClothID)];
+                SelectedChestClothID = OrderedChestCloths[nextIndex];
                 break;
         }
     }

@@ -183,7 +183,7 @@ public class EquipmentManager : MonoBehaviour
             get
             {
                 if (!_unLocked.HasValue)
-                    _unLocked = PlayerPrefs.GetInt("C"+ Name, 1) == 1; //por defecto es true
+                    _unLocked = PlayerPrefs.GetInt("C"+ Name, 1) != 1; //por defecto es false
                 return _unLocked.Value;
             }
             set
@@ -235,12 +235,6 @@ public class EquipmentManager : MonoBehaviour
     {
         if (_init) return;
 
-#if UNITY_EDITOR
-        PickAxeLevel = 0;
-        CurrentHelmetID = _defaultHelmet;
-        CurrentChestClothID = _defaultChestCloth;
-#endif
-
         Pickaxes = new Pickaxe[pickaxes.Length];
         for (int i = 0; i < Pickaxes.Length; i++)
         {
@@ -277,7 +271,13 @@ public class EquipmentManager : MonoBehaviour
         keysOrdered_helmet = Helmets.Keys.ToArray<string>();
         for (int i = 0; i < keysOrdered_helmet.Length; i++)
             keysOrder_helmet.Add(keysOrdered_helmet[i], i);
-        
+
+#if UNITY_EDITOR
+        PickAxeLevel = 0;
+        CurrentHelmetID = _defaultHelmet;
+        CurrentChestClothID = _defaultChestCloth;
+#endif
+
         _init = true;
     }
     #endregion
