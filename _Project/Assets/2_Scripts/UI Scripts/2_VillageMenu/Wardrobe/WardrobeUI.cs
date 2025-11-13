@@ -189,11 +189,11 @@ public class WardrobeUI : MonoBehaviour
     }
     ClothStatsScripteableObject SelectedHelmet
     {
-        get => EquipmentManager.Helmets[_selectedHelmetID].data;
+        get => EquipmentManager.Helmets[SelectedHelmetID].data;
     }
     ClothStatsScripteableObject SelectedChestCloth
     {
-        get => EquipmentManager.ChestCloths[_selectedChestClothID].data;
+        get => EquipmentManager.ChestCloths[SelectedChestClothID].data;
     }
     ClothStatsScripteableObject SelectedCloth
     {

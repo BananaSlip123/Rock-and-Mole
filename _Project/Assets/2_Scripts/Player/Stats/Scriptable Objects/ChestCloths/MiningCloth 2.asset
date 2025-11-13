@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 839cb0e0fff13c44b80bf068bde102b6, type: 3}
-  m_Name: MiningCloth
+  m_Name: MiningCloth 2
   m_EditorClassIdentifier: 
   modifiers:
   - stat: 0
     value: 10
-  - stat: 2
-    value: 4
   - stat: 2
     value: 4
   coinsPrice: 0

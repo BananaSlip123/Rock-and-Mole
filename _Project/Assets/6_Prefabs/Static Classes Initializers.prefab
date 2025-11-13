@@ -56,11 +56,19 @@ MonoBehaviour:
   - data: {fileID: 11400000, guid: 062708ca786b33943b3aac92dbe45121, type: 2}
     model: {fileID: 6678174839223608796, guid: abde703ee0fda4f4a9eb902be0f66326, type: 3}
   chestCloths:
-  - data: {fileID: 11400000, guid: 29f03d92d9e823b4fbd490d993c8cbac, type: 2}
+  - data: {fileID: 11400000, guid: 5302d52c804ff894596297e5cb2652f9, type: 2}
+    model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
+  - data: {fileID: 11400000, guid: a7579a797c06e134bb52c6c51ad3947d, type: 2}
+    model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
+  - data: {fileID: 11400000, guid: 9ef6ac94aa2f78d46b169ecfa8690978, type: 2}
+    model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
+  - data: {fileID: 11400000, guid: 1460ace5e222a8c4bada702e05588dfa, type: 2}
     model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
   helmets:
-  - data: {fileID: 11400000, guid: 29f03d92d9e823b4fbd490d993c8cbac, type: 2}
-    model: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
+  - data: {fileID: 11400000, guid: 5302d52c804ff894596297e5cb2652f9, type: 2}
+    model: {fileID: 0}
+  - data: {fileID: 11400000, guid: a7579a797c06e134bb52c6c51ad3947d, type: 2}
+    model: {fileID: 0}
 --- !u!1 &6021474099910856360
 GameObject:
   m_ObjectHideFlags: 0

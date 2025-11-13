@@ -11577,6 +11577,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2834588616137534832, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
+      propertyPath: helmets.Array.data[0].model
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
+    - target: {fileID: 2834588616137534832, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
+      propertyPath: helmets.Array.data[1].model
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
     - target: {fileID: 3090163795105732648, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
