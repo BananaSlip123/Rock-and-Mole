@@ -62,7 +62,7 @@ public class EquipmentManager : MonoBehaviour
             }
         }
     }
-    public static string CurrentHelmet
+    public static string CurrentHelmetID
     {
         get
         {
@@ -82,7 +82,7 @@ public class EquipmentManager : MonoBehaviour
             }
         }
     }
-    public static string CurrentChestCloth
+    public static string CurrentChestClothID
     {
         get
         {
@@ -106,17 +106,25 @@ public class EquipmentManager : MonoBehaviour
     {
         get => Pickaxes[PickAxeLevel];
     }
+    public static ChestCloth CurrentChestCloth
+    {
+        get => ChestCloths[CurrentChestClothID];
+    }
+    public static Helmet CurrentHelmet
+    {
+        get => Helmets[CurrentHelmetID];
+    }
     public static PickaxeStatsScripteableObject CurrentPickaxeData
     {
         get => Pickaxes[PickAxeLevel].data;
     }
     public static ClothStatsScripteableObject CurrentHelmetData
     {
-        get => Helmets.ContainsKey(CurrentHelmet) ? Helmets[CurrentHelmet].data : null;
+        get => Helmets.ContainsKey(CurrentHelmetID) ? Helmets[CurrentHelmetID].data : null;
     }
     public static ClothStatsScripteableObject CurrentChestClothData
     {
-        get => ChestCloths.ContainsKey(CurrentChestCloth) ? ChestCloths[CurrentChestCloth].data : null;
+        get => ChestCloths.ContainsKey(CurrentChestClothID) ? ChestCloths[CurrentChestClothID].data : null;
     }
 
     public static int NumberOfChestCloths
@@ -148,8 +156,8 @@ public class EquipmentManager : MonoBehaviour
     public static Action OnCurrentChestClothChange = null;
     public static Action OnCurrentHelmetChange = null;
     public static Action OnEquipmentChange = null;
-    public static Action<string> OnUnlockedHelmet = null;
-    public static Action<string> OnUnlockedChestCloth = null;
+    public static Action OnUnlockedHelmet = null;
+    public static Action OnUnlockedChestCloth = null;
 
     #endregion
 
@@ -186,11 +194,11 @@ public class EquipmentManager : MonoBehaviour
                     int value2Int = value ? 1 : 0;
                     PlayerPrefs.SetInt("C" + Name, value2Int);
                     PlayerPrefs.Save();
-                    OnUnlockedChanged(value);
+                    OnUnlockedChanged();
                 }
             }
         }
-        protected abstract void OnUnlockedChanged(bool newValue);
+        protected abstract void OnUnlockedChanged();
         public Cloth(ClothStatsScripteableObject data, GameObject model)
         {
             this.data = data;
@@ -204,9 +212,9 @@ public class EquipmentManager : MonoBehaviour
         {
         }
 
-        protected override void OnUnlockedChanged(bool newValue)
+        protected override void OnUnlockedChanged()
         {
-            OnUnlockedHelmet?.Invoke(Name);
+            OnUnlockedHelmet?.Invoke();
         }
     }
 
@@ -216,9 +224,9 @@ public class EquipmentManager : MonoBehaviour
         {
         }
 
-        protected override void OnUnlockedChanged(bool newValue)
+        protected override void OnUnlockedChanged()
         {
-            OnUnlockedChestCloth?.Invoke(Name);
+            OnUnlockedChestCloth?.Invoke();
         }
     }
     #endregion
@@ -229,8 +237,8 @@ public class EquipmentManager : MonoBehaviour
 
 #if UNITY_EDITOR
         PickAxeLevel = 0;
-        CurrentHelmet = _defaultHelmet;
-        CurrentChestCloth = _defaultChestCloth;
+        CurrentHelmetID = _defaultHelmet;
+        CurrentChestClothID = _defaultChestCloth;
 #endif
 
         Pickaxes = new Pickaxe[pickaxes.Length];

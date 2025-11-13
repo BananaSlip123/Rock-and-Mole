@@ -4,13 +4,15 @@ using PickaxeStats;
 using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.Linq;
+
 public class WardrobeUI : MonoBehaviour
 {
     #region SERIALIZABLE FIELDS
     [Header("Texts Stats")]
     [SerializeField] TextMeshProUGUI txt_name;
     [SerializeField] TextMeshProUGUI txt_lifePoints;
-    [SerializeField] TextMeshProUGUI txt_attackSpeed; 
+    [SerializeField] TextMeshProUGUI txt_attackSpeed;
     [SerializeField] TextMeshProUGUI txt_movementSpeed;
 
     [Header("Texts After Change")]
@@ -36,9 +38,17 @@ public class WardrobeUI : MonoBehaviour
     #region PRIVATE FIELDS
     private Coroutine currentFade;
     private GameObject currentChestClothPrefab = null;
-
+    private GameObject currentHelmetPrefab = null;
+    enum WardrobeMode
+    {
+        helmet = 0, chestCloth = 1
+    }
     WardrobeMode _wardrobeMode = WardrobeMode.chestCloth;
-    enum WardrobeMode { helmet = 0, chestCloth = 1}
+    enum ButtonState
+    {
+        buy = 0, equip = 1, equipped = 2
+    }
+    ButtonState? _buttonState = null;
 
     string _selectedHelmetID;
     string _selectedChestClothID;
@@ -92,9 +102,22 @@ public class WardrobeUI : MonoBehaviour
         set
         {
             if (value.HasValue)
-                txt_bonusLifePoints.text = "+" + value.ToString();
-            else
-                txt_bonusLifePoints.text = "";
+            {
+                if (value > 0)
+                {
+                    txt_bonusLifePoints.color = color_buff;
+                    txt_bonusLifePoints.text = "+" + value.ToString();
+                    return;
+                }
+                if (value < 0)
+                {
+                    txt_bonusLifePoints.color = color_deBuff;
+                    txt_bonusLifePoints.text = value.ToString();
+                    return;
+                }
+
+            }
+            txt_bonusLifePoints.text = "";
         }
     }
     float? BonusAttackSpeed
@@ -104,12 +127,21 @@ public class WardrobeUI : MonoBehaviour
             if (value.HasValue)
             {
                 int percent = (int)(value * 100);
-                txt_bonusAttackSpeed.text = "+" + percent.ToString() + "%";
+
+                if (value > 0)
+                {
+                    txt_bonusAttackSpeed.color = color_buff;
+                    txt_bonusAttackSpeed.text = "+" + percent.ToString() + "%";
+                    return;
+                }
+                if (value < 0)
+                {
+                    txt_bonusAttackSpeed.color = color_deBuff;
+                    txt_bonusAttackSpeed.text = percent.ToString() + "%";
+                    return;
+                }
             }
-            else
-            {
-                txt_bonusAttackSpeed.text = "";
-            }
+            txt_bonusAttackSpeed.text = "";
         }
     }
     float? BonusMovementSpeed
@@ -119,15 +151,24 @@ public class WardrobeUI : MonoBehaviour
             if (value.HasValue)
             {
                 int percent = (int)(value * 100);
-                txt_bonusMovementSpeed.text = "+" + percent.ToString() + "%";
+                if (value > 0)
+                {
+                    txt_bonusMovementSpeed.color = color_buff;
+                    txt_bonusMovementSpeed.text = "+" + percent.ToString() + "%";
+                    return;
+                }
+                if (value < 0)
+                {
+                    txt_bonusMovementSpeed.color = color_deBuff;
+                    txt_bonusMovementSpeed.text = percent.ToString() + "%";
+                    return;
+                }
             }
-            else
-            {
-                txt_bonusMovementSpeed.text = "";
-            }
+            txt_bonusMovementSpeed.text = "";
+
         }
     }
-    
+
     string SelectedHelmetID
     {
         get => _selectedHelmetID;
@@ -158,7 +199,7 @@ public class WardrobeUI : MonoBehaviour
     {
         get
         {
-            switch (_wardrobeMode)
+            switch (WardrobeModeProperty)
             {
                 case WardrobeMode.helmet: return SelectedHelmet;
                 case WardrobeMode.chestCloth: return SelectedChestCloth;
@@ -170,11 +211,50 @@ public class WardrobeUI : MonoBehaviour
     {
         get
         {
-            switch (_wardrobeMode)
+            switch (WardrobeModeProperty)
             {
                 case WardrobeMode.helmet: return EquipmentManager.CurrentHelmetData;
                 case WardrobeMode.chestCloth: return EquipmentManager.CurrentChestClothData;
                 default: return null;
+            }
+        }
+    }
+
+    bool IsUnlockedSelectedCloth
+    {
+        get
+        {
+            switch (WardrobeModeProperty)
+            {
+                case WardrobeMode.helmet:
+                    return EquipmentManager.Helmets[SelectedHelmetID].UnLocked;
+                case WardrobeMode.chestCloth:
+                    return EquipmentManager.ChestCloths[SelectedChestClothID].UnLocked;
+                default: throw new NotImplementedException();
+            }
+        }
+    }
+    ButtonState ButtonStateProperty
+    {
+        get => _buttonState.Value;
+        set
+        {
+            if (!_buttonState.HasValue || _buttonState.Value != value)
+            {
+                _buttonState = value;
+                go_materialsWindow.SetActive(value == ButtonState.buy);
+                switch (value)
+                {
+                    case ButtonState.buy:
+                        txt_button_BuyOrEquip.text = "Comprar";
+                        break;
+                    case ButtonState.equip:
+                        txt_button_BuyOrEquip.text = "Equipar";
+                        break;
+                    case ButtonState.equipped:
+                        txt_button_BuyOrEquip.text = "Equipado";
+                        break;
+                }
             }
         }
     }
@@ -203,12 +283,18 @@ public class WardrobeUI : MonoBehaviour
     {
         EquipmentManager.OnCurrentChestClothChange += UpdateUI;
         EquipmentManager.OnCurrentHelmetChange -= UpdateUI; //si no lo tiene asignado no hace nada
+        EquipmentManager.OnUnlockedChestCloth += OnUnlocked;
+        EquipmentManager.OnUnlockedHelmet -= OnUnlocked;
+
         UpdateUI();
     }
     private void OnHelmetMode()
     {
         EquipmentManager.OnCurrentChestClothChange -= UpdateUI;
         EquipmentManager.OnCurrentHelmetChange += UpdateUI;
+        EquipmentManager.OnUnlockedChestCloth -= OnUnlocked;
+        EquipmentManager.OnUnlockedHelmet += OnUnlocked;
+
         UpdateUI();
     }
 
@@ -216,67 +302,122 @@ public class WardrobeUI : MonoBehaviour
     {
         EquipmentManager.OnCurrentChestClothChange -= UpdateUI;
         EquipmentManager.OnCurrentHelmetChange -= UpdateUI;
-    }
 
+        EquipmentManager.OnUnlockedHelmet -= OnUnlocked;
+        EquipmentManager.OnUnlockedChestCloth -= OnUnlocked;
+    }
+    private void OnUnlocked()
+    {
+        ButtonStateProperty = ButtonState.equip;
+    }
     private void UpdateUI()
     {
-        UpdateEquippedCloth(EquippedCloth); //refleja los stats base
-        UpdateSelectedCloth(SelectedCloth); //refleja las mejoras etc
+        ClothStatsScripteableObject equipped = EquippedCloth;
+        ClothStatsScripteableObject selected = SelectedCloth;
 
-        UpdatePrice(); //precio si no esta comprado
+        Dictionary<Stats, float> equippedDict = equipped.modifiers
+             .GroupBy(mod => mod.stat)
+             .ToDictionary(group => group.Key, group => group.Sum(mod => mod.value));
+
+        Dictionary<Stats, float> selectedDict = selected.modifiers
+             .GroupBy(mod => mod.stat)
+             .ToDictionary(group => group.Key, group => group.Sum(mod => mod.value));
+
+        UpdateEquippedCloth(equipped, equippedDict); //refleja los stats base
+        UpdateSelectedCloth(selected, equipped, selectedDict, equippedDict); //refleja las mejoras etc
+
+        UpdatePrice(selected); //precio si no esta comprado
 
         ActualiceModel();
     }
 
-    void UpdateEquippedCloth(ClothStatsScripteableObject value)
+    void UpdateEquippedCloth(ClothStatsScripteableObject equipped, Dictionary<Stats, float> equippedDict)
     {
-        Name = value.name;
-       // int baseDamage = value.damage;
-       // LifePoints = baseDamage;
-       //// CriticDamage = (int)(baseDamage * value.critMultiplier);
-       // AttackSpeed = value.attackSpeed;
-       // MovementSpeed = value.critProbability;
+        Name = equipped.name;
+
+        foreach (Stats stat in typeof(Stats).GetEnumValues())
+        {
+            switch (stat)
+            {
+                case Stats.health:
+                    LifePoints = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.health] : 0;
+                    break;
+                case Stats.speed:
+                    MovementSpeed = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.speed] : 0;
+                    break;
+                case Stats.attackSpeed:
+                    AttackSpeed = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.attackSpeed] : 0;
+                    break;
+            }
+        }
+
     }
-    private void UpdateSelectedCloth(ClothStatsScripteableObject value)
+    private void UpdateSelectedCloth(ClothStatsScripteableObject selected, ClothStatsScripteableObject equipped,
+        Dictionary<Stats, float> selectedDict, Dictionary<Stats, float> equippedDict)
     {
-        if (value == null)
+
+        if (selected == equipped)
         {
             BonusLifePoints = null;
             BonusMovementSpeed = null;
             BonusAttackSpeed = null;
             BonusMovementSpeed = null;
+
+            ButtonStateProperty = ButtonState.equipped;
+            return;
         }
+        if (IsUnlockedSelectedCloth)
+            ButtonStateProperty = ButtonState.equip;
         else
+            ButtonStateProperty = ButtonState.buy;
+
+        foreach (Stats stat in typeof(Stats).GetEnumValues())
         {
-            
+            switch (stat)
+            {
+                case Stats.health:
+                    int e_lifePoints = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.health] : 0;
+                    int s_lifePoints = (selectedDict.ContainsKey(stat)) ? (int)selectedDict[Stats.health] : 0;
+                    BonusLifePoints = s_lifePoints - e_lifePoints;
+                    break;
+                case Stats.speed:
+                    int e_speed = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.speed] : 0;
+                    int s_speed = (selectedDict.ContainsKey(stat)) ? (int)selectedDict[Stats.speed] : 0;
+                    BonusMovementSpeed = s_speed - e_speed;
+                    break;
+                case Stats.attackSpeed:
+                    int e_attackSpeed = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.attackSpeed] : 0;
+                    int s_attackSpeed = (selectedDict.ContainsKey(stat)) ? (int)selectedDict[Stats.attackSpeed] : 0;
+                    BonusAttackSpeed = s_attackSpeed - e_attackSpeed;
+                    break;
+            }
         }
     }
-    private void UpdatePrice()
+    private void UpdatePrice(ClothStatsScripteableObject selected)
     {
-        bool isUnlocked = false;
+        bool isUnlocked = IsUnlockedSelectedCloth;
+
         go_materialsWindow.SetActive(!isUnlocked);
-        
 
         if (isUnlocked) return;
-        
-        materialsInfo[0].Amount = SelectedCloth.coinsPrice;
 
-        for (int i = 0; i < SelectedCloth.costs.Count; i++)
+        materialsInfo[0].Amount = selected.coinsPrice;
+
+        for (int i = 0; i < selected.costs.Count; i++)
         {
             if (i + 1 < materialsInfo.Length)
             {
                 materialsInfo[i + 1].gameObject.SetActive(true);
-                materialsInfo[i + 1].Amount = SelectedCloth.costs[i].cost;
-                materialsInfo[i + 1].MaterialAssigned = SelectedCloth.costs[i].material;
+                materialsInfo[i + 1].Amount = selected.costs[i].cost;
+                materialsInfo[i + 1].MaterialAssigned = selected.costs[i].material;
             }
             else throw new Exception("Debes meter más huecos de material en el array materialsInfo");
         }
-        for(int i = SelectedCloth.costs.Count; i < materialsInfo.Length - 1;i++)
+        for (int i = selected.costs.Count; i < materialsInfo.Length - 1; i++)
         {
             materialsInfo[i + 1].gameObject.SetActive(false);
         }
     }
-
     private bool HaveEnoughMaterials()
     {
         bool hasEnoughMaterials = true;
@@ -307,10 +448,11 @@ public class WardrobeUI : MonoBehaviour
 
     private void ActualiceModel()
     {
-        //if (currentModel != null) Destroy(currentModel);
+        if (currentChestClothPrefab != null) Destroy(currentChestClothPrefab);
+        if (currentHelmetPrefab != null) Destroy(currentHelmetPrefab);
 
-        //currentModel = Instantiate(EquipmentManager.CurrentPickaxe.model);
-        
+        currentChestClothPrefab = Instantiate(EquipmentManager.CurrentChestCloth.model);
+        currentHelmetPrefab = Instantiate(EquipmentManager.CurrentHelmet.model);
         //currentModel.transform.parent = tr_pickaxeModelPosition;
         //currentModel.transform.localPosition = new Vector3();
         //currentModel.transform.localEulerAngles = new Vector3();
@@ -320,13 +462,14 @@ public class WardrobeUI : MonoBehaviour
     private void ChangeSelectedCloth(int placesToMove)
     {
         int currentIndex, numberOfElements, nextIndex;
-        switch (_wardrobeMode)
+        switch (WardrobeModeProperty)
         {
             case WardrobeMode.helmet:
                 currentIndex = EquipmentManager.GetOrderHelmet(SelectedHelmetID);
                 numberOfElements = EquipmentManager.NumberOfHelmets;
 
                 nextIndex = (currentIndex + placesToMove + numberOfElements) % numberOfElements;
+
                 SelectedHelmetID = OrderedHelmets[nextIndex];
                 break;
             case WardrobeMode.chestCloth:
@@ -334,9 +477,49 @@ public class WardrobeUI : MonoBehaviour
                 numberOfElements = EquipmentManager.NumberOfChestCloths;
 
                 nextIndex = (currentIndex + placesToMove + numberOfElements) % numberOfElements;
+
                 SelectedChestClothID = OrderedChestCloths[EquipmentManager.GetOrderChestCloth(_selectedChestClothID)];
                 break;
         }
+    }
+
+    private void BuySelectedCloth()
+    {
+
+        if (HaveEnoughMaterials() && HaveEnoughCoins())
+        {
+            //restar costo
+            DecreaseMaterials();
+            DecreaseCoins();
+
+            //Comprar objeto
+            switch (WardrobeModeProperty)
+            {
+                case WardrobeMode.helmet:
+                    EquipmentManager.Helmets[SelectedHelmetID].UnLocked = true;
+                    break;
+                case WardrobeMode.chestCloth:
+                    EquipmentManager.ChestCloths[SelectedHelmetID].UnLocked = true;
+                    break;
+            }
+        }
+        else
+        {
+            ShowErrorMessage();
+        }
+    }
+    private void EquipSelectedCloth()
+    {
+        switch (WardrobeModeProperty)
+        {
+            case WardrobeMode.helmet:
+                EquipmentManager.CurrentHelmetID = SelectedHelmetID;
+                break;
+            case WardrobeMode.chestCloth:
+                EquipmentManager.CurrentChestClothID = SelectedChestClothID;
+                break;
+        }
+        ButtonStateProperty = ButtonState.equipped;
     }
     private void ShowErrorMessage()
     {
@@ -379,25 +562,22 @@ public class WardrobeUI : MonoBehaviour
     #region PUBLIC FUNCS
     public void OnButtonBuyOrEquip()
     {
-        //if (IsMaxed) return;
-        //if (HaveEnoughMaterials() && HaveEnoughCoins())
-        //{
-        //    //restar costo
-        //    DecreaseMaterials();
-        //    DecreaseCoins();
-        //    //subir el nivel del arma
-        //    EquipmentManager.PickAxeLevel++;
-        //}
-        //else
-        //{
-        //    ShowErrorMessage();
-        //}
-        ////La ui deberia actualizarse sola al recibir callback de equipment manager
+        switch (ButtonStateProperty)
+        {
+            case ButtonState.buy:
+                BuySelectedCloth();
+                break;
+            case ButtonState.equip:
+                EquipSelectedCloth();
+                break;
+            case ButtonState.equipped: break;//el boton no hace nada
+            default: break;
+        }
     }
     public void OnButtonChange()
     {
-        int currentMode = (int)_wardrobeMode;
-        int nextMode = (currentMode + 1)%2;
+        int currentMode = (int)WardrobeModeProperty;
+        int nextMode = (currentMode + 1) % 2;
         WardrobeModeProperty = (WardrobeMode)nextMode;
     }
     public void OnButtonLeftArrow()
