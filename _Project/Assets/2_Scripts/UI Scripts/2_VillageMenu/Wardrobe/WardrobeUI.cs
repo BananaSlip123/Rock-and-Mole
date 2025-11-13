@@ -128,11 +128,29 @@ public class WardrobeUI : MonoBehaviour
         }
     }
     
-    ClothStatsScripteableObject _selectedHelmet
+    string SelectedHelmetID
+    {
+        get => _selectedHelmetID;
+        set
+        {
+            _selectedHelmetID = value;
+            UpdateUI();
+        }
+    }
+    string SelectedChestClothID
+    {
+        get => _selectedChestClothID;
+        set
+        {
+            _selectedChestClothID = value;
+            UpdateUI();
+        }
+    }
+    ClothStatsScripteableObject SelectedHelmet
     {
         get => EquipmentManager.Helmets[_selectedHelmetID].data;
     }
-    ClothStatsScripteableObject _selectedChestCloth
+    ClothStatsScripteableObject SelectedChestCloth
     {
         get => EquipmentManager.ChestCloths[_selectedChestClothID].data;
     }
@@ -142,8 +160,8 @@ public class WardrobeUI : MonoBehaviour
         {
             switch (_wardrobeMode)
             {
-                case WardrobeMode.helmet: return _selectedHelmet;
-                case WardrobeMode.chestCloth: return _selectedChestCloth;
+                case WardrobeMode.helmet: return SelectedHelmet;
+                case WardrobeMode.chestCloth: return SelectedChestCloth;
                 default: return null;
             }
         }
@@ -160,6 +178,17 @@ public class WardrobeUI : MonoBehaviour
             }
         }
     }
+
+    string[] OrderedChestCloths
+    {
+        get => EquipmentManager.keysOrdered_chestCloth;
+    }
+    string[] OrderedHelmets
+    {
+        get => EquipmentManager.keysOrdered_helmet;
+    }
+
+
     #endregion
     #region PRIVATE FUNCS
     private void Awake()
@@ -191,7 +220,7 @@ public class WardrobeUI : MonoBehaviour
 
     private void UpdateUI()
     {
-        UpdateEqquipedCloth(EquippedCloth); //refleja los stats base
+        UpdateEquippedCloth(EquippedCloth); //refleja los stats base
         UpdateSelectedCloth(SelectedCloth); //refleja las mejoras etc
 
         UpdatePrice(); //precio si no esta comprado
@@ -199,7 +228,7 @@ public class WardrobeUI : MonoBehaviour
         ActualiceModel();
     }
 
-    void UpdateEqquipedCloth(ClothStatsScripteableObject value)
+    void UpdateEquippedCloth(ClothStatsScripteableObject value)
     {
         Name = value.name;
        // int baseDamage = value.damage;
@@ -287,6 +316,28 @@ public class WardrobeUI : MonoBehaviour
         //currentModel.transform.localEulerAngles = new Vector3();
         //currentModel.transform.localScale = new Vector3(1,1,1);
     }
+
+    private void ChangeSelectedCloth(int placesToMove)
+    {
+        int currentIndex, numberOfElements, nextIndex;
+        switch (_wardrobeMode)
+        {
+            case WardrobeMode.helmet:
+                currentIndex = EquipmentManager.GetOrderHelmet(SelectedHelmetID);
+                numberOfElements = EquipmentManager.NumberOfHelmets;
+
+                nextIndex = (currentIndex + placesToMove + numberOfElements) % numberOfElements;
+                SelectedHelmetID = OrderedHelmets[nextIndex];
+                break;
+            case WardrobeMode.chestCloth:
+                currentIndex = EquipmentManager.GetOrderChestCloth(SelectedChestClothID);
+                numberOfElements = EquipmentManager.NumberOfChestCloths;
+
+                nextIndex = (currentIndex + placesToMove + numberOfElements) % numberOfElements;
+                SelectedChestClothID = OrderedChestCloths[EquipmentManager.GetOrderChestCloth(_selectedChestClothID)];
+                break;
+        }
+    }
     private void ShowErrorMessage()
     {
         // Detener fade anterior y comenzar uno nuevo
@@ -351,11 +402,11 @@ public class WardrobeUI : MonoBehaviour
     }
     public void OnButtonLeftArrow()
     {
-
+        ChangeSelectedCloth(-1);
     }
     public void OnButtonRightArrow()
     {
-
+        ChangeSelectedCloth(1);
     }
     #endregion
 }

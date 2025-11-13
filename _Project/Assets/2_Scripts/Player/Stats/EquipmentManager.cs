@@ -2,6 +2,8 @@ using UnityEngine;
 using PickaxeStats;
 using System.Collections.Generic;
 using System;
+using System.Linq;
+using System.Globalization;
 public class EquipmentManager : MonoBehaviour
 {
     //Se coloca en el main
@@ -116,6 +118,15 @@ public class EquipmentManager : MonoBehaviour
     {
         get => ChestCloths.ContainsKey(CurrentChestCloth) ? ChestCloths[CurrentChestCloth].data : null;
     }
+
+    public static int NumberOfChestCloths
+    {
+        get => ChestCloths.Count;
+    }
+    public static int NumberOfHelmets
+    {
+        get => Helmets.Count;
+    }
     #endregion
     #region PUBLIC FIELDS
     #region DATA
@@ -125,6 +136,12 @@ public class EquipmentManager : MonoBehaviour
     //se identifican por nombre
     public static SortedDictionary<string, Helmet> Helmets { get; private set; } = new SortedDictionary<string, Helmet>();
     //se identifican por nombre
+
+    private static Dictionary<string, int> keysOrder_chestCloth = new Dictionary<string, int>();
+    private static Dictionary<string, int> keysOrder_helmet = new Dictionary<string, int>();
+
+    public static string[] keysOrdered_chestCloth;
+    public static string[] keysOrdered_helmet;
     #endregion
     #region CALLBACKS
     public static Action OnPickaxeLevelChange = null;
@@ -205,6 +222,7 @@ public class EquipmentManager : MonoBehaviour
         }
     }
     #endregion
+    #region PRIVATE FUNCS
     private void Awake()
     {
         if (_init) return;
@@ -216,7 +234,7 @@ public class EquipmentManager : MonoBehaviour
 #endif
 
         Pickaxes = new Pickaxe[pickaxes.Length];
-        for(int i = 0; i< Pickaxes.Length; i++)
+        for (int i = 0; i < Pickaxes.Length; i++)
         {
             Pickaxes[i] = new Pickaxe
             {
@@ -225,9 +243,9 @@ public class EquipmentManager : MonoBehaviour
             };
         }
 
-        foreach(ClothAssigner chestCloth in chestCloths)
+        foreach (ClothAssigner chestCloth in chestCloths)
         {
-            ChestCloths.Add(chestCloth.data.name,new ChestCloth(
+            ChestCloths.Add(chestCloth.data.name, new ChestCloth(
                 chestCloth.data,
                 chestCloth.model
             ));
@@ -243,6 +261,21 @@ public class EquipmentManager : MonoBehaviour
         _defaultChestCloth = chestCloths[0].data.name;
         _defaultHelmet = helmets[0].data.name;
 
+        //Para el acceso desde la tienda
+        keysOrdered_chestCloth = ChestCloths.Keys.ToArray<string>();
+        for (int i = 0; i < keysOrdered_chestCloth.Length; i++)
+            keysOrder_chestCloth.Add(keysOrdered_chestCloth[i], i);
+        
+        keysOrdered_helmet = Helmets.Keys.ToArray<string>();
+        for (int i = 0; i < keysOrdered_helmet.Length; i++)
+            keysOrder_helmet.Add(keysOrdered_helmet[i], i);
+        
         _init = true;
     }
+    #endregion
+    #region PUBLIC FUNCS
+    public static int GetOrderChestCloth(string id) => keysOrder_chestCloth[id];
+    public static int GetOrderHelmet(string id) => keysOrder_helmet[id];
+    #endregion
+
 }
