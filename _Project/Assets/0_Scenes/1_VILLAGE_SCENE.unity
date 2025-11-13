@@ -3785,7 +3785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6657990571546763172, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 117
+      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: 6657990571546763172, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -10879,7 +10879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1804141004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11578,13 +11578,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2834588616137534832, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
-      propertyPath: helmets.Array.data[0].model
-      value: 
-      objectReference: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
-    - target: {fileID: 2834588616137534832, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
-      propertyPath: helmets.Array.data[1].model
-      value: 
-      objectReference: {fileID: 919132149155446097, guid: a130d6cf64b37ef4db604b771860f499, type: 3}
+      propertyPath: chestCloths.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3090163795105732648, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
