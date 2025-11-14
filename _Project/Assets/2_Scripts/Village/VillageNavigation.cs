@@ -8,6 +8,7 @@ public class VillageNavigation : MonoBehaviour
     [SerializeField] VillageMenuUI villageMenuUI;
     [SerializeField] GameObject go_village;
     [SerializeField] GameObject go_shop;
+    [SerializeField] GameObject go_forge;
 
     //[SerializeField] GameObject go_forge;
 
@@ -23,7 +24,21 @@ public class VillageNavigation : MonoBehaviour
         set
         {
             go_village.SetActive(value == Locations.village);
+            go_forge.SetActive(value == Locations.forge);
             go_shop.SetActive(value == Locations.shop);
+
+            switch (value)
+            {
+                case Locations.shop:
+                        AudioManager.Instance?.PlayMusic(AudioManager.MusicType.StoreMusic);
+                    break;
+                case Locations.village:
+                    AudioManager.Instance?.PlayMusic(AudioManager.MusicType.TownMusic);
+                    break;
+                case Locations.forge:
+                    AudioManager.Instance?.PlayMusic(AudioManager.MusicType.StoreMusic);
+                    break;
+            }
         }
     }
 
@@ -32,7 +47,6 @@ public class VillageNavigation : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -43,34 +57,19 @@ public class VillageNavigation : MonoBehaviour
     #region PUBLIC FUNCS
     public void OnShopEntry()
     {
-
-        // Reproducir música de tienda
-        if (AudioManager.Instance != null)
-            AudioManager.Instance.PlayMusic(AudioManager.MusicType.StoreMusic);
-            //AudioManager.Instance.PlayMusic(AudioManager.MusicType.StoreMusic2);
-
-
         //q te meta en la tienda por dentro
         Location = Locations.shop;
-
     }
     public void OnSellInteraction() => villageMenuUI.Button_OpenShop();
     public void OnWardrobeInteraction() => villageMenuUI.Button_OpenWardrobe();
     public void OnForgeEntry()
     {
         //q te meta en la forja por dentro
-        OnForgeInteraction(); //de momento hasta tener modelo de la forja por dentro
+        Location = Locations.forge;
     }
     public void OnForgeInteraction() => villageMenuUI.Button_OpenForge();
     public void OnVillageEntry()
     {
-
-        AudioManager.Instance.PlayMusic(AudioManager.MusicType.TownMusic);
-
-
-        //sales de la forja/tienda/mina a la calle
-        //villageMenuUI.Button_OpenMain();
-
         Location = Locations.village;
     }
     public void OnMineEntry()

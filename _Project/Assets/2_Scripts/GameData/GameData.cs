@@ -238,7 +238,9 @@ public class PersistentInventory
     public int GetAmount(MaterialName key) => _objectsAmount[key];
     public void ResetObjectAmount(MaterialName name)
     {
-        TryRemoveObject(name, GetAmount(name));
+        int amount = GetAmount(name);
+        if(amount>0)
+            TryRemoveObject(name, amount);
     }
     public void AddObject(MaterialName name, int amount)
     {
