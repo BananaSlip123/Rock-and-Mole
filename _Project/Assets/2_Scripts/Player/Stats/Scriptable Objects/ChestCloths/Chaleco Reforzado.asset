@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifiers:
   - stat: 0
-    value: 15
+    value: 100
   - stat: 2
-    value: 4
+    value: 0
   - stat: 5
-    value: 1
+    value: 0
   coinsPrice: 0
   costs: []

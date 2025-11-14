@@ -156,8 +156,8 @@ public class EquipmentManager : MonoBehaviour
     public static Action OnCurrentChestClothChange = null;
     public static Action OnCurrentHelmetChange = null;
     public static Action OnEquipmentChange = null;
-    public static Action OnUnlockedHelmet = null;
-    public static Action OnUnlockedChestCloth = null;
+    public static Action<string> OnUnlockedHelmet = null;
+    public static Action<string> OnUnlockedChestCloth = null;
 
     #endregion
 
@@ -194,11 +194,11 @@ public class EquipmentManager : MonoBehaviour
                     int value2Int = value ? 1 : 0;
                     PlayerPrefs.SetInt("C" + Name, value2Int);
                     PlayerPrefs.Save();
-                    OnUnlockedChanged();
+                    OnUnlockedChanged(Name);
                 }
             }
         }
-        protected abstract void OnUnlockedChanged();
+        protected abstract void OnUnlockedChanged(string name);
         public Cloth(ClothStatsScripteableObject data, GameObject model)
         {
             this.data = data;
@@ -212,9 +212,9 @@ public class EquipmentManager : MonoBehaviour
         {
         }
 
-        protected override void OnUnlockedChanged()
+        protected override void OnUnlockedChanged(string name)
         {
-            OnUnlockedHelmet?.Invoke();
+            OnUnlockedHelmet?.Invoke(name);
         }
     }
 
@@ -224,9 +224,9 @@ public class EquipmentManager : MonoBehaviour
         {
         }
 
-        protected override void OnUnlockedChanged()
+        protected override void OnUnlockedChanged(string name)
         {
-            OnUnlockedChestCloth?.Invoke();
+            OnUnlockedChestCloth?.Invoke(name);
         }
     }
     #endregion
@@ -259,9 +259,12 @@ public class EquipmentManager : MonoBehaviour
                 helmet.model
             ));
         }
-
+        
         _defaultChestCloth = chestCloths[0].data.name;
         _defaultHelmet = helmets[0].data.name;
+
+        ChestCloths[_defaultChestCloth].UnLocked = true;
+        Helmets[_defaultHelmet].UnLocked = true;
 
         //Para el acceso desde la tienda
         keysOrdered_chestCloth = ChestCloths.Keys.ToArray<string>();

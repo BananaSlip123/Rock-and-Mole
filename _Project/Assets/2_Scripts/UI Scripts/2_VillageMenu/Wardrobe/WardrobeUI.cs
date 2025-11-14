@@ -85,7 +85,10 @@ public class WardrobeUI : MonoBehaviour
         set
         {
             int percent = (int)(value * 100);
-            txt_attackSpeed.text = "+" + percent.ToString() + "%";
+            if(value >= 0)
+                txt_attackSpeed.text = "+" + percent.ToString() + "%";
+            else
+                txt_attackSpeed.text = percent.ToString() + "%";
         }
     }
     float MovementSpeed
@@ -93,7 +96,10 @@ public class WardrobeUI : MonoBehaviour
         set
         {
             int percent = (int)(value * 100);
-            txt_movementSpeed.text = "+" + percent.ToString() + "%";
+            if (value >= 0)
+                txt_movementSpeed.text = "+" + percent.ToString() + "%";
+            else
+                txt_movementSpeed.text = percent.ToString() + "%";
         }
     }
 
@@ -105,16 +111,19 @@ public class WardrobeUI : MonoBehaviour
             {
                 if (value > 0)
                 {
+                    Debug.Log("valor positivo");
                     txt_bonusLifePoints.color = color_buff;
                     txt_bonusLifePoints.text = "+" + value.ToString();
                     return;
                 }
                 if (value < 0)
                 {
+                    Debug.Log("valor negativo");
                     txt_bonusLifePoints.color = color_deBuff;
                     txt_bonusLifePoints.text = value.ToString();
                     return;
                 }
+                Debug.Log("valor 0");
 
             }
             txt_bonusLifePoints.text = "";
@@ -285,6 +294,7 @@ public class WardrobeUI : MonoBehaviour
     }
     private void OnChestClothMode()
     {
+        txt_button_Change.text = "Mostrar Cascos";
         EquipmentManager.OnCurrentChestClothChange += UpdateUI;
         EquipmentManager.OnCurrentHelmetChange -= UpdateUI; //si no lo tiene asignado no hace nada
         EquipmentManager.OnUnlockedChestCloth += OnUnlocked;
@@ -294,6 +304,7 @@ public class WardrobeUI : MonoBehaviour
     }
     private void OnHelmetMode()
     {
+        txt_button_Change.text = "Mostrar Petos";
         EquipmentManager.OnCurrentChestClothChange -= UpdateUI;
         EquipmentManager.OnCurrentHelmetChange += UpdateUI;
         EquipmentManager.OnUnlockedChestCloth -= OnUnlocked;
@@ -310,9 +321,10 @@ public class WardrobeUI : MonoBehaviour
         EquipmentManager.OnUnlockedHelmet -= OnUnlocked;
         EquipmentManager.OnUnlockedChestCloth -= OnUnlocked;
     }
-    private void OnUnlocked()
+    private void OnUnlocked(string name)
     {
-        ButtonStateProperty = ButtonState.equip;
+        if(name == SelectedCloth.name)
+            ButtonStateProperty = ButtonState.equip;
     }
     private void UpdateUI()
     {
@@ -345,10 +357,10 @@ public class WardrobeUI : MonoBehaviour
                     LifePoints = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.health] : 0;
                     break;
                 case Stats.speed:
-                    MovementSpeed = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.speed] : 0;
+                    MovementSpeed = (equippedDict.ContainsKey(stat)) ? equippedDict[Stats.speed] : 0;
                     break;
                 case Stats.attackSpeed:
-                    AttackSpeed = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.attackSpeed] : 0;
+                    AttackSpeed = (equippedDict.ContainsKey(stat)) ? equippedDict[Stats.attackSpeed] : 0;
                     break;
             }
         }
@@ -364,7 +376,6 @@ public class WardrobeUI : MonoBehaviour
             BonusLifePoints = null;
             BonusMovementSpeed = null;
             BonusAttackSpeed = null;
-            BonusMovementSpeed = null;
 
             ButtonStateProperty = ButtonState.equipped;
             return;
@@ -376,22 +387,19 @@ public class WardrobeUI : MonoBehaviour
 
         foreach (Stats stat in typeof(Stats).GetEnumValues())
         {
+            float equippedValue = (equippedDict.ContainsKey(stat)) ? equippedDict[stat] : 0;
+            float selectedValue = (selectedDict.ContainsKey(stat)) ? selectedDict[stat] : 0;
+
             switch (stat)
             {
                 case Stats.health:
-                    int e_lifePoints = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.health] : 0;
-                    int s_lifePoints = (selectedDict.ContainsKey(stat)) ? (int)selectedDict[Stats.health] : 0;
-                    BonusLifePoints = s_lifePoints - e_lifePoints;
+                    BonusLifePoints = (int)(selectedValue - equippedValue);
                     break;
                 case Stats.speed:
-                    int e_speed = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.speed] : 0;
-                    int s_speed = (selectedDict.ContainsKey(stat)) ? (int)selectedDict[Stats.speed] : 0;
-                    BonusMovementSpeed = s_speed - e_speed;
+                    BonusMovementSpeed = selectedValue - equippedValue;
                     break;
                 case Stats.attackSpeed:
-                    int e_attackSpeed = (equippedDict.ContainsKey(stat)) ? (int)equippedDict[Stats.attackSpeed] : 0;
-                    int s_attackSpeed = (selectedDict.ContainsKey(stat)) ? (int)selectedDict[Stats.attackSpeed] : 0;
-                    BonusAttackSpeed = s_attackSpeed - e_attackSpeed;
+                    BonusAttackSpeed = selectedValue - equippedValue;
                     break;
             }
         }
@@ -399,8 +407,6 @@ public class WardrobeUI : MonoBehaviour
     private void UpdatePrice(ClothStatsScripteableObject selected)
     {
         bool isUnlocked = IsUnlockedSelectedCloth;
-
-        go_materialsWindow.SetActive(!isUnlocked);
 
         if (isUnlocked) return;
 
@@ -502,7 +508,7 @@ public class WardrobeUI : MonoBehaviour
                     EquipmentManager.Helmets[SelectedHelmetID].UnLocked = true;
                     break;
                 case WardrobeMode.chestCloth:
-                    EquipmentManager.ChestCloths[SelectedHelmetID].UnLocked = true;
+                    EquipmentManager.ChestCloths[SelectedChestClothID].UnLocked = true;
                     break;
             }
         }
@@ -522,7 +528,7 @@ public class WardrobeUI : MonoBehaviour
                 EquipmentManager.CurrentChestClothID = SelectedChestClothID;
                 break;
         }
-        ButtonStateProperty = ButtonState.equipped;
+        //ButtonStateProperty = ButtonState.equipped;
     }
     private void ShowErrorMessage()
     {
@@ -581,6 +587,7 @@ public class WardrobeUI : MonoBehaviour
     {
         int currentMode = (int)WardrobeModeProperty;
         int nextMode = (currentMode + 1) % 2;
+
         WardrobeModeProperty = (WardrobeMode)nextMode;
     }
     public void OnButtonLeftArrow()

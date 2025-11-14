@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 839cb0e0fff13c44b80bf068bde102b6, type: 3}
-  m_Name: "T\xFAnica de Minero"
+  m_Name: Casco de minero
   m_EditorClassIdentifier: 
   modifiers:
   - stat: 0
-    value: 15
+    value: 50
   - stat: 2
-    value: 0.3
+    value: 0
   - stat: 5
-    value: 0.3
-  coinsPrice: 300
-  costs:
-  - material: 3
-    cost: 30
-  - material: 2
-    cost: 20
+    value: 0
+  coinsPrice: 0
+  costs: []
