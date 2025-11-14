@@ -855,7 +855,7 @@ MonoBehaviour:
   - {fileID: 8745906388893361377, guid: 24de28893993b434c9332113310431d5, type: 3}
   - {fileID: 1147742003135382438, guid: d781de6c220496c4baad2238f22a0ab3, type: 3}
   - {fileID: 8794141086313116863, guid: 60619a99ca3794147a21d977474c0cf9, type: 3}
-  minMaxRock: {x: 0, y: 0}
+  minMaxRock: {x: 5, y: 10}
 --- !u!4 &3455571595068013535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7cc0dc65561c2c44891f14ca765a3c6d, type: 3}
