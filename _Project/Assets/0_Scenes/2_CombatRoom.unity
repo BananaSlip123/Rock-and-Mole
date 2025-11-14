@@ -259,6 +259,18 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8689513497403756678, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689513497403756678, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689513497403756678, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8758680433641810749, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: eventSystem
       value: 
@@ -490,7 +502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 322460608975118494, guid: 0e4ce64cd1c029548ab967f8733e39a2, type: 3}
+  - {fileID: 8435075856760029710, guid: 650f1f83b739f4f428f113a4a90fe5f4, type: 3}
+  - {fileID: 7219440432664611313, guid: 5dff4d18d64c2cf41bc05de8090f191c, type: 3}
   nEnemies: 0
   spawnEnemy: 1
 --- !u!4 &1533434712
