@@ -6,6 +6,9 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
 {
     Action enterBehaviour;
     [SerializeField] Collider hitbox;
+    [SerializeField] GameObject combat;
+    [SerializeField] GameObject interrogation;
+    [SerializeField] GameObject mining;
     enum typeOfBehaviour
     {
         Combat,
@@ -27,9 +30,11 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
         switch(behaviour)
         {
             case (int) typeOfBehaviour.Combat:
+                Instantiate(combat);
                 ChangeBehaviour(CombatBehaviour);
                 break;
             case (int) typeOfBehaviour.Mining:
+                Instantiate(mining);
                 ChangeBehaviour(MiningBehaviour);
                 break;
             case (int)typeOfBehaviour.Boss:
@@ -43,7 +48,8 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
 
     public void ChooseEvent(int tEvent)
     {
-        switch(tEvent)
+        Instantiate(interrogation);
+        switch (tEvent)
         {
             case (int) typeOfEvent.Campament:
                 ChangeBehaviour(CampamentBehaviour);
