@@ -100,9 +100,9 @@ public class GameMenu : MonoBehaviour
     void UpdateSelectedButton()
     {
         if (CurrentWindow == Windows.Settings)
-            firstSelected_settings.Select();
+            firstSelected_settings?.Select();
         else if (CurrentWindow == Windows.Pause)
-            firstSelected_pause.Select();
+            firstSelected_pause?.Select();
         else if (CurrentWindow == Windows.RunInventory)
         {
             Selectable firstSlot = inventoryReference.FirstElementToSelect;
@@ -114,7 +114,7 @@ public class GameMenu : MonoBehaviour
             else firstSlot.Select();
         }
         else if (CurrentWindow == Windows.GameOver)
-            firstSelected_gameOver.Select();
+            firstSelected_gameOver?.Select();
     }
     #endregion
 

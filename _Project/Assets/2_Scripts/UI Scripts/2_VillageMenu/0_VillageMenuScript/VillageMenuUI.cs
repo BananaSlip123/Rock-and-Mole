@@ -89,9 +89,9 @@ public class VillageMenuUI : MonoBehaviour
     void UpdateSelectedButton()
     {
         if (CurrentWindow == Windows.Settings)
-            firstSelected_settings.Select();
+            firstSelected_settings?.Select();
         else if (CurrentWindow == Windows.Pause)
-            firstSelected_pause.Select();
+            firstSelected_pause?.Select();
         else if (CurrentWindow == Windows.InventoryInfo || CurrentWindow == Windows.Shop)
         {
             Selectable firstSlot = inventoryReference.FirstElementToSelect;
@@ -99,9 +99,9 @@ public class VillageMenuUI : MonoBehaviour
             else firstSlot.Select();
         }
         else if (CurrentWindow == Windows.Wardrobe)
-            firstSelected_wardrobe.Select();
+            firstSelected_wardrobe?.Select();
         else if (CurrentWindow == Windows.Forge)
-            firstSelected_forge.Select();
+            firstSelected_forge?.Select();
     }
     #endregion
 
