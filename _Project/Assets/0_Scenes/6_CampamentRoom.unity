@@ -338,8 +338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 6861679683833383776, guid: bd730d31b23c74343b437e1133fcab5b, type: 3}
-  - {fileID: 6833131129856199954, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+  - {fileID: 1594480170214503397, guid: d202efc1834d90146b9b5d4207b194b3, type: 3}
+  - {fileID: 9033999729402450896, guid: 156ed400969357a4392d6b634c16b5fc, type: 3}
   nEnemies: 0
   spawnEnemy: 1
 --- !u!4 &2137725474
