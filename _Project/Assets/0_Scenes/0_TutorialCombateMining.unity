@@ -621,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 1398587318}
     - target: {fileID: 9218333551506586987, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 65.90003
+      value: 65.90007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_PointAction: {fileID: 341775079}
   m_MoveAction: {fileID: 1673614038}
   m_SubmitAction: {fileID: 1222894008}
-  m_CancelAction: {fileID: 0}
+  m_CancelAction: {fileID: 7481524496990998337, guid: 5975711f5a388e64cb8dee3dec339645, type: 3}
   m_LeftClickAction: {fileID: 1103545836}
   m_MiddleClickAction: {fileID: 919841617}
   m_RightClickAction: {fileID: 714029718}
