@@ -39,7 +39,7 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
     public void Attack()
     {
         Vector3 direction = playerPosition.position - enemyTransform.position;
-        Quaternion rotation = Quaternion.LookRotation(direction.normalized, Vector3.up);
+        Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
         enemyTransform.rotation = rotation;
         Debug.Log("He atacado");       
         pool.Get().Init(playerPosition.position - enemyTransform.position, enemyTransform.position);
