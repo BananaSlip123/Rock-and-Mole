@@ -122,3 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitbox: {fileID: 4626864356801169401}
+  combat: {fileID: 919132149155446097, guid: 543e694e0e2786e429335f549d2c9953, type: 3}
+  interrogation: {fileID: 919132149155446097, guid: b4ce101aeb128da44a7d9561751fd5eb, type: 3}
+  mining: {fileID: 919132149155446097, guid: ed81b665c99ae6549a48b26239020f4c, type: 3}
