@@ -105,6 +105,10 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7525073666777224752}
+    - target: {fileID: 3390667089863221846, guid: 2f01edc73969315479e666196310494e, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPointer
+      objectReference: {fileID: 0}
     - target: {fileID: 8559116585686124911, guid: 2f01edc73969315479e666196310494e, type: 3}
       propertyPath: m_Name
       value: Topito
@@ -267,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691896747284942343, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_Value
-      value: 1.0000017
+      value: 1.0000007
       objectReference: {fileID: 0}
     - target: {fileID: 6868441561298026386, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_Name

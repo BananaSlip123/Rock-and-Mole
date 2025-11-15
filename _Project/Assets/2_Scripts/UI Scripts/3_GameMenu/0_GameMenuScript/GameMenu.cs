@@ -155,7 +155,19 @@ public class GameMenu : MonoBehaviour
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
     public void Button_OpenMain() => CurrentWindow = Windows.Main;
 
-    public void onPointer() => eventSystem?.SetSelectedGameObject(null);
+    public void OnPointer()
+    {
+        if (eventSystem?.currentSelectedGameObject != null)
+        {
+            GameObject selected = eventSystem.currentSelectedGameObject;
+            bool isInputField = selected.GetComponent<InputField>() != null ||
+                          selected.GetComponent<TMPro.TMP_InputField>() != null;
+
+            if (isInputField) return;
+        }
+
+        eventSystem.SetSelectedGameObject(null);
+    }
     public void onNavigation()
     {
         if (eventSystem?.currentSelectedGameObject == null)

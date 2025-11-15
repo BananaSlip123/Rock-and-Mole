@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "InventoryUI",
-        "InputMapsManager"
+        "InputMapsManager",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
