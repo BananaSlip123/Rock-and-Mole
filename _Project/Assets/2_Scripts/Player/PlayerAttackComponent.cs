@@ -15,6 +15,7 @@ namespace PlayerComponents
         private float timeHitbox = 0f;
 
         private bool isInCooldown = false;
+        private bool isAttacking = false;
 
         public int damage;
         public float critMultiplier;
@@ -41,7 +42,7 @@ namespace PlayerComponents
                 return;
             }
 
-            if(attackHitbox.enabled)
+            if(isAttacking)
             {
                 timeHitbox += Time.fixedDeltaTime;
                                    
@@ -50,13 +51,15 @@ namespace PlayerComponents
 
                 if (IsHitingAnEnemy(localEnemies))
                     DoDamage(localEnemies);
-                if(timeHitbox == 0.4f)
-                    attackHitbox.enabled = false;
+                Debug.Log(timeHitbox);
+                if(timeHitbox >= 0.4f && timeHitbox <= 0.42f)
+                    attackHitbox.enabled = false;                  
                 else if (timeHitbox >= TIME_HITBOX)
                 {                                     
                     HidePickaxe.instance.HidePickaxeAnimation(false);
-                    
+
                     timeHitbox = 0f;
+                    isAttacking = false;
 
                     animator?.SetBool("Atacar", false);
 
@@ -94,6 +97,7 @@ namespace PlayerComponents
         public void ActiveHitbox()
         {
             attackHitbox.enabled = true;
+            isAttacking = true;
         }
 
         public void DoDamage(Collider[] hitColliders)
