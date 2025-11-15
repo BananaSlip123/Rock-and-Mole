@@ -213,7 +213,7 @@ MonoBehaviour:
   m_PointAction: {fileID: 605551327}
   m_MoveAction: {fileID: 82898924}
   m_SubmitAction: {fileID: 52917160}
-  m_CancelAction: {fileID: 0}
+  m_CancelAction: {fileID: 7481524496990998337, guid: 5975711f5a388e64cb8dee3dec339645, type: 3}
   m_LeftClickAction: {fileID: 26487423}
   m_MiddleClickAction: {fileID: 515058796}
   m_RightClickAction: {fileID: 502864430}
