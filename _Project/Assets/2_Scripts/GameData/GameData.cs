@@ -33,7 +33,16 @@ public static class GameData
 
     public readonly static Dictionary<MaterialName, MaterialRarity> MaterialsRarity = new Dictionary<MaterialName, MaterialRarity>
     {
-        { MaterialName.Hierro, MaterialRarity.Common }
+        { MaterialName.Hierro, MaterialRarity.Common },
+        { MaterialName.Carbon, MaterialRarity.Common },
+        { MaterialName.Bronce, MaterialRarity.Rare },
+        { MaterialName.Cuarzo, MaterialRarity.Rare },
+        { MaterialName.Obsidiana, MaterialRarity.Very_Rare },
+        { MaterialName.RolloTela, MaterialRarity.Very_Rare },
+        { MaterialName.Ambar, MaterialRarity.Common },
+        { MaterialName.Esmeralda, MaterialRarity.Common },
+        { MaterialName.Rubi, MaterialRarity.Rare },
+        { MaterialName.Diamante, MaterialRarity.Very_Rare }
     };
 
     public static PersistentInventory Inventory => _inventory;
@@ -86,9 +95,9 @@ public static class GameData
     {
         float random = UnityEngine.Random.Range(0f, 1f);
 
-        if (random < 0.4)
+        if (random < 0.5)
             return MaterialRarity.Common;
-        else if (random < 0.65)
+        else if (random < 0.85)
             return MaterialRarity.Rare;
         else
             return MaterialRarity.Very_Rare;

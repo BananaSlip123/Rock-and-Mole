@@ -43,9 +43,12 @@ public class ChestLoot : MonoBehaviour
 
         Dictionary<MaterialName, int> materialsGenerated = GameData.MaterialsChest(5);
 
+        int i = 0;
         foreach(MaterialName material in materialsGenerated.Keys)
         {
             GameData.RunInventory.AddObject(material, materialsGenerated[material]);
+            Debug.Log("HE AÑADIDO: " + material.ToString() + " " + i);
+            i++;
         }
         
         player.pressButtonA = null;

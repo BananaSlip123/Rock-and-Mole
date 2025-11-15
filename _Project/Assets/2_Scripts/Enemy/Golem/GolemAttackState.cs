@@ -9,7 +9,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     private float timeToAttack = 0f;
     private float timeHitbox = 0f;
 
-    private bool isInCooldown = false;
+    private bool isInCooldown = true;
 
     int damage = 5;
 
@@ -63,7 +63,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     }
 
     public void FixedUpdate()
-    {
+    {        
         if (isInCooldown)
         {
             //animator.SetBool("Atacar", false);
@@ -86,18 +86,20 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
             if(timeHitbox >= 0.7f)
                 ActiveHitbox();
-        }                  
-    }
+        }
 
-    void IStateComponent.Update()
-    {
         if (timeHitbox >= TIME_HITBOX)
         {
             animator.SetBool("Atacar", false);
             attackHitbox.enabled = false;
             timeHitbox = 0f;
-            isInCooldown = true;     
-        }
+            isInCooldown = true;
+        }        
+    }
+
+    void IStateComponent.Update()
+    {
+        
     }
 
     private bool IsHitingPlayer()
