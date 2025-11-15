@@ -238,7 +238,7 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator SwitchMusicCoroutine(AudioClip newClip)
     {
-        float fadeDuration = 1.5f; // segundos
+        float fadeDuration = 0.5f; // segundos
         float startVolume = musicSource.volume;
 
         // Fade out
