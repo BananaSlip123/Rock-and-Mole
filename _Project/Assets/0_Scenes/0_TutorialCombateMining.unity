@@ -408,6 +408,10 @@ PrefabInstance:
       value: 'UI/Pause[/Keyboard/escape]'
       objectReference: {fileID: 0}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -424,6 +428,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -435,6 +443,10 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1177003781}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -452,12 +464,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 765718207}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPassDialog
       objectReference: {fileID: 0}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -476,6 +496,10 @@ PrefabInstance:
       value: Button_Pause
       objectReference: {fileID: 0}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TutorialScript, Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TutorialScript, Tutorial
       objectReference: {fileID: 0}
@@ -490,6 +514,10 @@ PrefabInstance:
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameMenu, GameMenuGestion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -565,7 +593,7 @@ PrefabInstance:
       objectReference: {fileID: 1398587318}
     - target: {fileID: 9218333551506586987, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 65.90013
+      value: 65.900055
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
