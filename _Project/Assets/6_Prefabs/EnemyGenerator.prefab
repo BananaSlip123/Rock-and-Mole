@@ -124,4 +124,6 @@ MonoBehaviour:
   enemiesPrefabs:
   - {fileID: 3666153045942041263, guid: 2cc472ce8692def4d8fd611cfcacb381, type: 3}
   - {fileID: 666173133458897332, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
+  - {fileID: 8878699387242084105, guid: 2f3244d01e651b1409f00c2753fbee4d, type: 3}
+  pool: {fileID: 6201362744478251093, guid: 69862c6b45b72344b9361daba04c3377, type: 3}
   minMaxEnemies: {x: 1, y: 3}

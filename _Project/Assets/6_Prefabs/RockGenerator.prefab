@@ -123,6 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rockPrefabs:
   - {fileID: 6991048077422677485, guid: 1d53f19ee4ecb394aa8a92ea4233cca7, type: 3}
-  limitX: {x: -30, y: -25}
-  limitZ: {x: -30, y: -20}
+  - {fileID: 6991048077422677485, guid: 51b5e2eff251ee34caa7c6fec0f90c1e, type: 3}
+  - {fileID: 6991048077422677485, guid: 54a09be2f30faf54591d879dd352ed0e, type: 3}
   minMaxRock: {x: 2, y: 5}

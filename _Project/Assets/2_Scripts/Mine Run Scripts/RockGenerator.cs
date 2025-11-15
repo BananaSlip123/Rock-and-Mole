@@ -9,11 +9,12 @@ public class RockGenerator : MonoBehaviour, IEnemyGenerator
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        float random = UnityEngine.Random.Range(minMaxRock.x, minMaxRock.y);
+        int random = UnityEngine.Random.Range(minMaxRock.x, minMaxRock.y + 1);
 
         for (int i = 0; i < random; i++)
         {
-            SpawnEnemy(rockPrefabs[0]);
+            int randomType = UnityEngine.Random.Range(0,rockPrefabs.Length);
+            SpawnEnemy(rockPrefabs[randomType]);
         }
 
         gameObject.SetActive(false);

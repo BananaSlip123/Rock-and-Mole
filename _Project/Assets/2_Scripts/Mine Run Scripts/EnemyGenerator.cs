@@ -4,7 +4,10 @@ using UnityEngine;
 public class EnemyGenerator : MonoBehaviour, IEnemyGenerator
 {
     [SerializeField] GameObject[] enemiesPrefabs;
+    [SerializeField] GameObject pool;
     [SerializeField] Vector2Int minMaxEnemies;
+
+    static bool firstTime = true;
 
     void Start()
     {
@@ -13,10 +16,17 @@ public class EnemyGenerator : MonoBehaviour, IEnemyGenerator
         for (int i = 0; i < random; i++)
         {
             int randomIndex = UnityEngine.Random.Range(0, enemiesPrefabs.Length);
+            if(firstTime && randomIndex == 2)
+            {
+                firstTime = false;
+                Instantiate(pool);
+            }
+                
             SpawnEnemy(enemiesPrefabs[randomIndex]);
             LevelManager.instance.EnemyHasSpawned();
         }
 
+        firstTime = true;
         gameObject.SetActive(false);
     }
 
