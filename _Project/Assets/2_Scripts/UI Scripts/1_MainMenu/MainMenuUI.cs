@@ -51,11 +51,11 @@ public class MainMenuUI : MonoBehaviour
     void UpdateSelectedButton( )
     {
         if (current == Windows.Main)
-            firstSelected_main.Select();
+            firstSelected_main?.Select();
         else if (current == Windows.Settings)
-            firstSelected_settings.Select();
+            firstSelected_settings?.Select();
         else if (current == Windows.Credits)
-            firstSelected_credits.Select();
+            firstSelected_credits?.Select();
     }
     #endregion
 
