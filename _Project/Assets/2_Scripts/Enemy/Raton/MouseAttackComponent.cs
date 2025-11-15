@@ -1,4 +1,3 @@
-using UnityEditorInternal;
 using UnityEngine;
 
 public class MouseAttackComponent : IStateComponent, IAttackComponent
