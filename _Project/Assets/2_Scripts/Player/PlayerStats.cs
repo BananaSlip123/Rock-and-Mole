@@ -201,7 +201,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
                 health += (int) mod.value;
                 break;
             case Stats.speed:
-                speed += mod.value;
+                speed += speed * mod.value;
                 break;
             case Stats.critMultiplier:
                 critMultiplier += mod.value;
@@ -212,6 +212,9 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             case Stats.damage:
                 damage += (int) mod.value;
                 break;
+            case Stats.attackSpeed:
+                attackSpeed -= attackSpeed * mod.value;
+                break;
         }
     }
 
@@ -220,7 +223,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         damage += newPickaxe.damage;
         critMultiplier += newPickaxe.critMultiplier;
         critProbability += newPickaxe.critProbability;
-        attackSpeed -= newPickaxe.attackSpeed;
+        attackSpeed -= attackSpeed*newPickaxe.attackSpeed;
     }
 
     public void OnEquipmentChange()
@@ -252,7 +255,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
 
     public void ResetStats()
     {
-        health = 50;
+        health = 0;
         damage = 0;
         critMultiplier = 0;
         critProbability = 0;
