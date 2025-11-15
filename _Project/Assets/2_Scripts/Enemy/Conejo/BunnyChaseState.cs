@@ -3,7 +3,7 @@ using UnityEngine;
 public class BunnyChaseState : IStateComponent, IMoveComponent
 {
     Transform enemyTransform;
-    [SerializeField] float speed = 2.5f;
+    [SerializeField] float speed = 3.5f;
     float radiusToAttack = 1f;
     float radiusToStopChasing = 6f;
 
