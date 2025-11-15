@@ -65,7 +65,7 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
         attackHitbox = enemyTransform.GetChild(0).GetComponent<Collider>();
         ActiveHitbox();
         //Debug.Log("ESTOY ATACANDO");
-        animator.SetBool("Atacar", true);
+        animator.SetBool("Morir", true);
 
         //Debug.Log("DURACION: " + animator.GetCurrentAnimatorStateInfo(0).length);
         //TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(0).length;
@@ -73,14 +73,14 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
 
     public void Exit()
     {
-        animator.SetBool("Atacar", false);
+        animator.SetBool("Morir", false);
     }
 
     public void FixedUpdate()
     {
         if (IsHitingPlayer())
         {
-            //animator.SetBool("Atacar", false);
+            //animator.SetBool("Morir", false);
             timeToAttack += Time.fixedDeltaTime;
 
             if (timeToAttack >= COOLDOWN)

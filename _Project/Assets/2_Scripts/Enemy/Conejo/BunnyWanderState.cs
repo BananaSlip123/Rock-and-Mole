@@ -65,7 +65,7 @@ public class BunnyWanderState : IStateComponent, IMoveComponent
 
         if (player)
         {
-            mStateMachine.ChangeState(new BunnyAttackComponent( mStateMachine, enemyTransform, GameObject.FindGameObjectWithTag("Player").GetComponent<IDamageableComponent>(), GameObject.FindGameObjectWithTag("Player").transform,animator));
+            mStateMachine.ChangeState(new BunnyChaseState(enemyTransform, mStateMachine, animator));
             //Debug.Log("He detectado al jugador");
             return;
         }

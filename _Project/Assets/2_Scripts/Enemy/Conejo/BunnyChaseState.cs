@@ -5,7 +5,7 @@ public class BunnyChaseState : IStateComponent, IMoveComponent
     Transform enemyTransform;
     [SerializeField] float speed = 2.5f;
     float radiusToAttack = 1f;
-    float radiusToStopChasing = 4f;
+    float radiusToStopChasing = 6f;
 
     Vector3 playerPosition;
 
