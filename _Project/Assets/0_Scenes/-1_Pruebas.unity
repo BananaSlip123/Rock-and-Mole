@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3095466945312835306, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 35eb0bf58dad3a04d8419a6821bc2aa4, type: 2}
     - target: {fileID: 3619511605535715795, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_Name
       value: Jugador
@@ -225,9 +229,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4642499115317809558, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 62637e6cf2d0ad949bc3cb38d553bd16, type: 2}
     - target: {fileID: 6411353102807914056, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.3376284
