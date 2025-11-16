@@ -283,9 +283,10 @@ public class EquipmentManager : MonoBehaviour
         //        CurrentHelmetID = _defaultHelmet;
         //        CurrentChestClothID = _defaultChestCloth;
         //#endif
-        PickAxeLevel = PickAxeLevel; //el getter carga de disco, el setter llama a los callbacks
-        CurrentChestClothID = CurrentChestClothID;
-        CurrentHelmetID = CurrentHelmetID;
+        //PickAxeLevel = PickAxeLevel; //el getter carga de disco, el setter llama a los callbacks
+        OnEquipmentChange?.Invoke();
+        //CurrentChestClothID = CurrentChestClothID;
+       // CurrentHelmetID = CurrentHelmetID;
 
         Debug.Log("DATOS: " + CurrentPickaxeData);
 

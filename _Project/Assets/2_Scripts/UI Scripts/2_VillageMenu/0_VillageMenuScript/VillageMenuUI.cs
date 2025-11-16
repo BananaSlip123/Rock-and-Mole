@@ -79,8 +79,11 @@ public class VillageMenuUI : MonoBehaviour
         bool isInit = !lastWindow.HasValue;
 
         if (isMain && (isInit || lastWindow.Value != Windows.Main)) //si isInit entra en el if y no accede a value
-            //playerInputMapsManager.SwitchCurrentActionMap("Player");
-            playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
+        {
+            if (!GameData.NeedsTutorial || !isInit)
+                //playerInputMapsManager.SwitchCurrentActionMap("Player");
+                playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
+        }
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
             //playerInputMapsManager.SwitchCurrentActionMap("UI");
             playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.uiNavigation;

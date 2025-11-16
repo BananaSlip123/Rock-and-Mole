@@ -12,7 +12,7 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
     private bool isInCooldown = true;
     private bool hasAttacked = false;
 
-    int damage = 20;
+    int damage = 40;
 
     IStateMachineComponent mStateMachine;
 

@@ -163,12 +163,15 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         }
         else
         {
+            Debug.Log("ESTOY PASANDO LA VIDA CORRECTA:" + actualHealth);
             playerHealth.SetHealth(actualHealth);
             playerAttack.critMultiplier = critMultiplier;
             playerAttack.critProbability = critProbability;
             playerAttack.damage = damage;
             playerSpeed.speed = speed;
             playerAttack.COOLDOWN = attackSpeed;
+
+            Debug.Log("ESTOY PASANDO LA VIDA CORRECTA?????:" + playerHealth.Health);
 
             roomNumber += 1;
         }       
@@ -237,7 +240,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     public void OnEquipmentChange()
     {
         ResetStats();
-        Debug.Log("ENUM: " + Stats.speed);
+        //Debug.Log("ENUM: " + currentChestCloth.name + " " + currentHelmet.name);
         Debug.Log("Equipamiento Actualizado");
         Debug.Log(currentPickaxe);
         if (currentPickaxe != null)

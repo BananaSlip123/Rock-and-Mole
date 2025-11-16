@@ -8,7 +8,7 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
     private float timeToAttack = 0f;
     private float timeHitbox = 0f;
 
-    private bool isInCooldown = false;
+    private bool isInCooldown = true;
 
     int damage = 5;
 

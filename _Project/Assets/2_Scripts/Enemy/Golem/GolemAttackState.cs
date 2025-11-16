@@ -6,12 +6,14 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     const float COOLDOWN = 2.5f;
     float TIME_HITBOX = 0.1f;
 
+    float radiusToAttack = 1f;
+
     private float timeToAttack = 0f;
     private float timeHitbox = 0f;
 
     private bool isInCooldown = true;
 
-    int damage = 5;
+    int damage = 20;
 
     IStateMachineComponent mStateMachine;
 
@@ -40,7 +42,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     public void Attack()
     {
-        animator.SetBool("Atacar", true);
+        //animator.SetBool("Atacar", true);
         playerHealth.RecieveDamage(damage);
     }
 
@@ -48,13 +50,18 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     {
         attackHitbox = enemyTransform.GetChild(1).GetComponent<Collider>();
         //Debug.Log("ESTOY ATACANDO");
-        animator.SetBool("Atacar", true);
+        //animator.SetBool("Atacar", true);
 
         Debug.Log("DURACION: " + animator.GetCurrentAnimatorStateInfo(0).length);
-        //TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(0).length;
+        //TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(1).length;
 
         if (enemyTransform.gameObject.name == "GolemBoss")
-            damage = 20;
+        {
+            damage = 60;
+            radiusToAttack = 5f;
+            TIME_HITBOX = 0.5f;
+        }
+            
     }
 
     public void Exit()
@@ -81,11 +88,15 @@ public class GolemAttackState : IStateComponent, IAttackComponent
         {           
             timeHitbox += Time.fixedDeltaTime;
 
-            if (IsHitingPlayer())
-                Attack();
+            animator.SetBool("Atacar", true);
 
-            if(timeHitbox >= 0.7f)
+            if (timeHitbox >= 0.4f)
+            {
                 ActiveHitbox();
+                if (IsHitingPlayer())
+                    Attack();
+
+            }              
         }
 
         if (timeHitbox >= TIME_HITBOX)
@@ -120,7 +131,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     private bool TakePlayerPosition()
     {
-        Collider[] p = Physics.OverlapSphere(enemyTransform.position, 1f);
+        Collider[] p = Physics.OverlapSphere(enemyTransform.position, radiusToAttack);
 
         foreach (Collider c in p)
         {

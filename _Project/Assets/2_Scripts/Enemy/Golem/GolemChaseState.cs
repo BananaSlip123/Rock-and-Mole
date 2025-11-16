@@ -26,7 +26,7 @@ public class GolemChaseState : IStateComponent, IMoveComponent
         }    
         else
         {
-            radiusToAttack = 5f;
+            radiusToAttack = 7f;
             radiusToStopChasing = 10f;
         }
             

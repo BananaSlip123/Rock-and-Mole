@@ -1108,6 +1108,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1483825394832866830, guid: cdb61766f03a0474e8e6a5da4d75170c, type: 3}
+      propertyPath: health
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 4055948021385153351, guid: cdb61766f03a0474e8e6a5da4d75170c, type: 3}
       propertyPath: m_Name
       value: GolemBoss

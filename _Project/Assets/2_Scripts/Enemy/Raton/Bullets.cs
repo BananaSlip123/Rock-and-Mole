@@ -4,8 +4,8 @@ using UnityEngine;
 public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent, IAttackComponent
 {
     Vector3 direction;
-    const float SPEED = 5f;
-    const int DAMAGE = 10;
+    const float SPEED = 10f;
+    const int DAMAGE = 25;
 
     float TIME_DESPAWN = 5f;
     float timeToDespawn = 0f;
