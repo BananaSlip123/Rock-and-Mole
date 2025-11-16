@@ -9,6 +9,8 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     [SerializeField] GameObject combat;
     [SerializeField] GameObject interrogation;
     [SerializeField] GameObject mining;
+    [SerializeField] GameObject skull;
+    [SerializeField] GameObject position;
     enum typeOfBehaviour
     {
         Combat,
@@ -30,14 +32,15 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
         switch(behaviour)
         {
             case (int) typeOfBehaviour.Combat:
-                Instantiate(combat);
+                Instantiate(combat, position.transform.position, Quaternion.Euler(0,transform.rotation.eulerAngles.y + 90, 0));
                 ChangeBehaviour(CombatBehaviour);
                 break;
             case (int) typeOfBehaviour.Mining:
-                Instantiate(mining);
+                Instantiate(mining, position.transform.position, Quaternion.Euler(0, transform.rotation.eulerAngles.y + 90, 0));
                 ChangeBehaviour(MiningBehaviour);
                 break;
             case (int)typeOfBehaviour.Boss:
+                Instantiate(skull, position.transform.position, Quaternion.Euler(0, transform.rotation.eulerAngles.y + 90, 0));
                 ChangeBehaviour(BossBehaviour);
                 break;
             case (int)typeOfBehaviour.Victory:
@@ -48,7 +51,7 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
 
     public void ChooseEvent(int tEvent)
     {
-        Instantiate(interrogation);
+        Instantiate(interrogation, position.transform.position, Quaternion.Euler(0, transform.rotation.eulerAngles.y + 90, 0));
         switch (tEvent)
         {
             case (int) typeOfEvent.Campament:
