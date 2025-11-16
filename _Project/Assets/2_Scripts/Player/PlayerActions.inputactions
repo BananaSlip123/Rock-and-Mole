@@ -896,7 +896,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "PassDialog",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -907,7 +907,7 @@
                     "path": "<DualShockGamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "PassDialog",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -918,7 +918,7 @@
                     "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "PassDialog",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -929,7 +929,7 @@
                     "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "PassDialog",
                     "isComposite": false,
                     "isPartOfComposite": false
