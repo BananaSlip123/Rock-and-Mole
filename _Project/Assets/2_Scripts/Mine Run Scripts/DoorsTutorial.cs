@@ -6,6 +6,7 @@ public class DoorsTutorial : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemies
 {
     [SerializeField] Collider hitbox;
     [SerializeField] string escena;
+    bool enter = false;
 
     public void Active()
     {
@@ -29,11 +30,14 @@ public class DoorsTutorial : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemies
 
     public void EnterToRoom()
     {
+        enter = true;
         SceneManager.LoadScene(escena);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
+        if (enter || !other.CompareTag("Player"))
+            return;
         EnterToRoom();
     }
 }

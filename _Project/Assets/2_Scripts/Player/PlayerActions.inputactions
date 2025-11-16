@@ -34,18 +34,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause",
+                    "name": "PressA",
                     "type": "Button",
-                    "id": "68441674-6d9a-4ff8-ab32-0594858722ca",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Inventory",
-                    "type": "Button",
-                    "id": "ad7dca80-6684-4b0d-9cf7-de60ab6db4e2",
+                    "id": "7a64b9a3-10d8-4500-a9cd-4b3ccd2ea46b",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -264,45 +255,23 @@
                 },
                 {
                     "name": "",
-                    "id": "b2dec4cf-a106-44f6-ac86-f1c3989edb3a",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d4e92340-e68e-481a-9580-b349df64f224",
-                    "path": "<Gamepad>/start",
+                    "id": "11c5fcd8-48a3-44a1-ace8-c7d23c76fb58",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Pause",
+                    "action": "PressA",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1bfd9caf-6a65-4694-89b2-3c02739926a3",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "60e6d8fb-76db-4ad3-937a-ef9a99d50ac0",
-                    "path": "<Keyboard>/tab",
+                    "id": "be0a0c7d-9a56-442b-949f-7f896e687d35",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Inventory",
+                    "action": "PressA",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -317,6 +286,24 @@
                     "type": "PassThrough",
                     "id": "26fedea4-0eb4-40c7-9469-aaa84cee9cc1",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "95396361-fc60-466d-8117-6375b6977a93",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "63e3b80f-3268-4037-a87c-1f9611c151dc",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -679,6 +666,50 @@
                 },
                 {
                     "name": "",
+                    "id": "5684915c-9a54-4576-adea-9d0cfd14e745",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "51381130-50c8-40a8-9e1f-77ec336f9c4b",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b70c5f0-4768-4273-82b8-78b549b13a68",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "16f127ba-9600-4fde-8154-28db66bac415",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7fe62e6f-59d6-42dd-99d7-a6e03d5b0e28",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
@@ -865,7 +896,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "PassDialog",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -876,7 +907,7 @@
                     "path": "<DualShockGamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "PassDialog",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -887,7 +918,7 @@
                     "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "PassDialog",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -898,7 +929,7 @@
                     "path": "<SwitchProControllerHID>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "PassDialog",
                     "isComposite": false,
                     "isPartOfComposite": false

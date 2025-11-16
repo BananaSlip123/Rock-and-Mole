@@ -62,34 +62,7 @@ public class InventoryInfoUI : MonoBehaviour
     }
     string MaterialSelected2String
     {
-        get
-        {
-            switch (_materialSelected)
-            {
-                case MaterialName.Ambar:
-                    return "Ámbar";
-                case MaterialName.Bronce:
-                    return "Lingote de Bronce";
-                case MaterialName.Carbon:
-                    return "Carbón";
-                case MaterialName.Cuarzo:
-                    return "Cuarzo";
-                case MaterialName.Diamante:
-                    return "Diamante";
-                case MaterialName.Esmeralda:
-                    return "Esmeralda";
-                case MaterialName.Hierro:
-                    return "Lingote de Hierro";
-                case MaterialName.Obsidiana:
-                    return "Obsidiana";
-                case MaterialName.RolloTela:
-                    return "Rollo de Tela";
-                case MaterialName.Rubi:
-                    return "Rubí";
-                default:
-                    return "NotAssigned";
-            }
-        }
+        get => GameData.MaterialName2String(_materialSelected);
     }
     #endregion
     #region PUBLIC VARS

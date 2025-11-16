@@ -8,7 +8,6 @@ public static class GameData
     //acceso publico y estático, necesita dependencia de assemblies para ser usada
     //usado por algún singleton o algo
     #region PRIVATE VARS
-    static bool _isLoaded = false;
     const int INVENTORY_SIZE = 12;
 
     static int _coins = -1;
@@ -22,15 +21,38 @@ public static class GameData
     {
         { MaterialName.Hierro, 4 },
         { MaterialName.Carbon, 8 },
-        { MaterialName.Bronce, 8 },
-        { MaterialName.Cuarzo, 15 },
-        { MaterialName.Obsidiana, 15 },
-        { MaterialName.RolloTela, 30 },
+        { MaterialName.Bronce, 25 },
+        { MaterialName.Cuarzo, 50 },
+        { MaterialName.Obsidiana, 50 },
+        { MaterialName.RolloTela, 50 },
         { MaterialName.Ambar, 8 },
-        { MaterialName.Esmeralda, 10 },
-        { MaterialName.Rubi, 15 },
+        { MaterialName.Esmeralda, 50 },
+        { MaterialName.Rubi, 75 },
         { MaterialName.Diamante, 100 }
     };
+
+    public readonly static Dictionary<MaterialName, MaterialRarity> MaterialsRarity = new Dictionary<MaterialName, MaterialRarity>
+    {
+        { MaterialName.Hierro, MaterialRarity.Common },
+        { MaterialName.Carbon, MaterialRarity.Common },
+        { MaterialName.Bronce, MaterialRarity.Rare },
+        { MaterialName.Cuarzo, MaterialRarity.Rare },
+        { MaterialName.Obsidiana, MaterialRarity.Very_Rare },
+        { MaterialName.RolloTela, MaterialRarity.Very_Rare },
+        { MaterialName.Ambar, MaterialRarity.Common },
+        { MaterialName.Esmeralda, MaterialRarity.Common },
+        { MaterialName.Rubi, MaterialRarity.Rare },
+        { MaterialName.Diamante, MaterialRarity.Very_Rare }
+    };
+
+    public readonly static Dictionary<EnemyName, List<MaterialName>> MaterialsByEnemy = new Dictionary<EnemyName, List<MaterialName>>
+    {
+        { EnemyName.Mouse,new List<MaterialName>() { MaterialName.Ambar, MaterialName.Cuarzo, MaterialName.RolloTela } },
+        { EnemyName.Bunny, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Carbon, MaterialName.Rubi, MaterialName.Obsidiana, MaterialName.Diamante }},
+        { EnemyName.Golem, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Esmeralda, MaterialName.Bronce, MaterialName.Hierro, MaterialName.Diamante } },
+        { EnemyName.GolemBoss,new List<MaterialName>() { MaterialName.Rubi, MaterialName.Esmeralda, MaterialName.Bronce, MaterialName.Obsidiana, MaterialName.Diamante, MaterialName.Bronce } }
+    };
+
     public static PersistentInventory Inventory => _inventory;
     public static Inventory RunInventory => _runInventory;
 
@@ -53,6 +75,7 @@ public static class GameData
             }
         }
     }
+    public static Action<int> OnCoinsChange = null;
     public static bool NeedsTutorial
     {
         get
@@ -63,7 +86,7 @@ public static class GameData
         }
         set
         {
-            if(value != _needsTutorial.Value)
+            if(!_needsTutorial.HasValue || value != _needsTutorial.Value)
             {
                 _needsTutorial = value;
                 int value2Int = value ?  1 : 0;
@@ -72,11 +95,21 @@ public static class GameData
             }
         }
     }
-    public static Action<int> OnCoinsChange = null;
+    
     #endregion
 
     #region PRIVATE FUNCS
+    private static MaterialRarity RandomRarity()
+    {
+        float random = UnityEngine.Random.Range(0f, 1f);
 
+        if (random < 0.5)
+            return MaterialRarity.Common;
+        else if (random < 0.85)
+            return MaterialRarity.Rare;
+        else
+            return MaterialRarity.Very_Rare;
+    }
     #endregion
 
     #region PUBLIC FUNCS
@@ -111,7 +144,97 @@ public static class GameData
         _inventory.SaveData();
     }
 
+    public static Dictionary<MaterialName, int> MaterialsChest(int amount)
+    {
+        Dictionary<MaterialName, int> generated = new Dictionary<MaterialName, int>();
+        MaterialRarity rarity;
+        MaterialName material;
+
+        for (int i = 0; i < amount; i++)
+        {
+            rarity = RandomRarity();
+            material = RandomMaterial(rarity);
+            if (!generated.TryAdd(material, 1))
+                generated[material] += 1;
+        }
+
+        return generated;
+    }
+
+    public static Dictionary<MaterialName, int> EnemyLoot(int amount, EnemyName type)
+    {
+        Dictionary<MaterialName, int> generated = new Dictionary<MaterialName, int>();
+        MaterialRarity rarity;
+        MaterialName material;
+
+        for (int i = 0; i < amount; i++)
+        {
+            rarity = RandomRarity();
+            material = EnemyMaterial(type,rarity);
+            if (!generated.TryAdd(material, 1))
+                generated[material] += 1;
+        }
+
+        return generated;
+    }
+    public static MaterialName EnemyMaterial(EnemyName type, MaterialRarity rarity)
+    {
+        List<MaterialName> sortedMaterials = SortedMaterialsByRarityAndEnemy(rarity, type);
+        return sortedMaterials[UnityEngine.Random.Range(0, sortedMaterials.Count)];
+    }
+
+    public static MaterialName RandomMaterial(MaterialRarity rarity)
+    {
+        List<MaterialName> sortedMaterials = SortedMaterialsByRarity(rarity);
+        return sortedMaterials[UnityEngine.Random.Range(0,sortedMaterials.Count)];
+    }
+
+    public static List<MaterialName> SortedMaterialsByRarity(MaterialRarity rarity)
+    {
+        return MaterialsRarity
+            .Where(pair => pair.Value == rarity)
+            .Select(pair => pair.Key)
+            .ToList();
+    }
+
+    public static List<MaterialName> SortedMaterialsByRarityAndEnemy(MaterialRarity rarity, EnemyName type)
+    {
+        return MaterialsByEnemy[type]
+            .Where(material => MaterialsRarity.TryGetValue(material, out var matRarity) && matRarity == rarity)
+            .ToList();
+    }
+
+    public static string MaterialName2String(MaterialName name)
+    {
+        switch (name)
+        {
+            case MaterialName.Ambar:
+                return "Ámbar";
+            case MaterialName.Bronce:
+                return "Bronce";
+            case MaterialName.Carbon:
+                return "Carbón";
+            case MaterialName.Cuarzo:
+                return "Cuarzo";
+            case MaterialName.Diamante:
+                return "Diamante";
+            case MaterialName.Esmeralda:
+                return "Esmeralda";
+            case MaterialName.Hierro:
+                return "Hierro";
+            case MaterialName.Obsidiana:
+                return "Obsidiana";
+            case MaterialName.RolloTela:
+                return "Rollo de Tela";
+            case MaterialName.Rubi:
+                return "Rubí";
+            default:
+                return "NotAssigned";
+        }
+
+    }
     #endregion
+
 }
 
 public class PersistentInventory
@@ -157,6 +280,12 @@ public class PersistentInventory
     }
     
     public int GetAmount(MaterialName key) => _objectsAmount[key];
+    public void ResetObjectAmount(MaterialName name)
+    {
+        int amount = GetAmount(name);
+        if(amount>0)
+            TryRemoveObject(name, amount);
+    }
     public void AddObject(MaterialName name, int amount)
     {
         if (amount <= 0) throw new Exception("Must be positive number");
@@ -218,6 +347,7 @@ public class Inventory
     Action _onInventoryChange; //cuando se borra o añade un material
                                // Dictionary<MaterialName, Action<int>> _dict_onSlotValueChange = new Dictionary<MaterialName, Action<int>>(); //cuando cambia un valor
     Action<MaterialName> _onMaterialDeleted;
+    public Action<MaterialName, int> OnMaterialsEarned;
     Action _onMaterialAdded;
     public Inventory()
     {
@@ -238,9 +368,15 @@ public class Inventory
     }
 
     public int GetAmount(MaterialName key) => _objectsAmount[key];
+    public void ResetObjectAmount(MaterialName name)
+    {
+        TryRemoveObject(name, GetAmount(name));
+    }
     public void AddObject(MaterialName name, int amount)
     {
         if (amount <= 0) throw new Exception("Must be positive number");
+
+        OnMaterialsEarned?.Invoke(name,amount);
 
         int oldVal = _objectsAmount[name];
         _objectsAmount[name] = oldVal + amount;
@@ -279,3 +415,19 @@ public enum MaterialName
     Rubi,
     Diamante,
 }
+
+public enum MaterialRarity
+{
+    Common,
+    Rare,
+    Very_Rare
+}
+
+public enum EnemyName
+{
+    Bunny,
+    Golem,
+    Mouse,
+    GolemBoss
+}
+

@@ -4,14 +4,16 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 {
 
     const float COOLDOWN = 2.5f;
-    const float TIME_HITBOX = 0.1f;
+    float TIME_HITBOX = 0.5f;
+
+    float radiusToAttack = 1f;
 
     private float timeToAttack = 0f;
     private float timeHitbox = 0f;
 
-    private bool isInCooldown = false;
+    private bool isInCooldown = true;
 
-    int damage = 5;
+    int damage = 20;
 
     IStateMachineComponent mStateMachine;
 
@@ -40,17 +42,27 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     public void Attack()
     {
+        //animator.SetBool("Atacar", true);
+        Debug.Log("ATACO");
         playerHealth.RecieveDamage(damage);
     }
 
     public void Enter()
     {
         attackHitbox = enemyTransform.GetChild(1).GetComponent<Collider>();
-        Debug.Log("ESTOY ATACANDO");
-        animator.SetBool("Atacar", true);
+        //Debug.Log("ESTOY ATACANDO");
+        //animator.SetBool("Atacar", true);
+
+        Debug.Log("DURACION: " + animator.GetCurrentAnimatorStateInfo(0).length);
+        //TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(1).length;
 
         if (enemyTransform.gameObject.name == "GolemBoss")
-            damage = 20;
+        {
+            damage = 60;
+            radiusToAttack = 5f;
+            TIME_HITBOX = 0.5f;
+        }
+            
     }
 
     public void Exit()
@@ -59,9 +71,10 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     }
 
     public void FixedUpdate()
-    {
+    {        
         if (isInCooldown)
         {
+            //animator.SetBool("Atacar", false);
             timeToAttack += Time.fixedDeltaTime;
 
             if (timeToAttack >= COOLDOWN)
@@ -69,47 +82,51 @@ public class GolemAttackState : IStateComponent, IAttackComponent
                 isInCooldown = false;
                 timeToAttack = 0f;
 
-                mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine, animator));
+                //mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine, animator));
             }
-
-            return;
         }
         else
-        {
-            ActiveHitbox();
-        }           
-
-        if (attackHitbox.enabled)
-        {
+        {           
             timeHitbox += Time.fixedDeltaTime;
 
-            if (isHitingPlayer())
-                Attack();
+            animator.SetBool("Atacar", true);
 
-            if (timeHitbox >= TIME_HITBOX)
+            if (timeHitbox >= 0.4f)
             {
-                attackHitbox.enabled = false;
-                timeHitbox = 0f;
-                isInCooldown = true;
-                playerHealth.ResetHasBeenDamaged();               
-            }
+                ActiveHitbox();
+                if (IsHitingPlayer())
+                    Attack();
+            }              
         }
+
+        if (timeHitbox >= TIME_HITBOX)
+        {
+            animator.SetBool("Atacar", false);
+            attackHitbox.enabled = false;
+            timeHitbox = 0f;
+            isInCooldown = true;
+        }        
     }
 
     void IStateComponent.Update()
     {
+        Vector3 direction = playerTransform.position - enemyTransform.position;
+        Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
+        enemyTransform.rotation = rotation;
 
+        if (!TakePlayerPosition())
+            mStateMachine.ChangeState(new GolemChaseState(enemyTransform, mStateMachine, animator));
     }
 
-    private bool isHitingPlayer()
+    private bool IsHitingPlayer()
     {
-        Collider[] p = Physics.OverlapBox(enemyTransform.position, attackHitbox.bounds.size/2, Quaternion.identity);
+        Collider[] p = Physics.OverlapBox(attackHitbox.bounds.center, attackHitbox.bounds.extents, attackHitbox.transform.rotation);
 
         foreach (Collider c in p)
         {
             if (c.CompareTag("Player"))
             {
-                return true;
+                return !playerHealth.GetHasBeenDamaged();
             }
         }
 
@@ -118,7 +135,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     private bool TakePlayerPosition()
     {
-        Collider[] p = Physics.OverlapSphere(enemyTransform.position, 0.2f);
+        Collider[] p = Physics.OverlapSphere(enemyTransform.position, radiusToAttack);
 
         foreach (Collider c in p)
         {

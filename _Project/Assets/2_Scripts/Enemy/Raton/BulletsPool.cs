@@ -1,16 +1,32 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletsPool : MonoBehaviour
+public class BulletsPool : MonoBehaviour, IObjectPool
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    Queue<IPooleableObject> bullets = new Queue<IPooleableObject>();
+    [SerializeField] GameObject prefab;
+
+    const short LIMIT = 40;
+
+    void Awake()
     {
-        
+        IPrototype cloneable = prefab.GetComponent<IPrototype>();
+
+        for(int i = 0; i < LIMIT; i++)
+        {
+            IPooleableObject objectToEnqueue = (IPooleableObject)cloneable.Clone();
+            objectToEnqueue.SetActive(false);
+            bullets.Enqueue(objectToEnqueue);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public IPooleableObject Get()
     {
-        
+        return bullets.Dequeue();
+    }
+
+    public void Release(IPooleableObject o)
+    {
+        bullets.Enqueue(o);
     }
 }

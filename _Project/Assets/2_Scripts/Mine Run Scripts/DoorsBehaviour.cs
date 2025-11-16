@@ -6,11 +6,18 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
 {
     Action enterBehaviour;
     [SerializeField] Collider hitbox;
-
+    [SerializeField] GameObject combat;
+    [SerializeField] GameObject interrogation;
+    [SerializeField] GameObject mining;
+    [SerializeField] GameObject skull;
+    [SerializeField] GameObject position;
+    bool enter = false;
     enum typeOfBehaviour
     {
         Combat,
         Mining,
+        Boss,
+        Victory,
     }
 
     enum typeOfEvent
@@ -26,17 +33,27 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
         switch(behaviour)
         {
             case (int) typeOfBehaviour.Combat:
+                Instantiate(combat, position.transform.position, Quaternion.Euler(0,transform.rotation.eulerAngles.y + 90, 0));
                 ChangeBehaviour(CombatBehaviour);
                 break;
             case (int) typeOfBehaviour.Mining:
+                Instantiate(mining, position.transform.position, Quaternion.Euler(0, transform.rotation.eulerAngles.y + 90, 0));
                 ChangeBehaviour(MiningBehaviour);
+                break;
+            case (int)typeOfBehaviour.Boss:
+                Instantiate(skull, position.transform.position, Quaternion.Euler(0, transform.rotation.eulerAngles.y + 90, 0));
+                ChangeBehaviour(BossBehaviour);
+                break;
+            case (int)typeOfBehaviour.Victory:
+                ChangeBehaviour(VictoryBehaviour);
                 break;
         }
     }
 
     public void ChooseEvent(int tEvent)
     {
-        switch(tEvent)
+        Instantiate(interrogation, position.transform.position, Quaternion.Euler(0, transform.rotation.eulerAngles.y + 90, 0));
+        switch (tEvent)
         {
             case (int) typeOfEvent.Campament:
                 ChangeBehaviour(CampamentBehaviour);
@@ -55,7 +72,8 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
 
     public void EnterToRoom()
     {
-        enterBehaviour.Invoke();
+        enter = true;
+        enterBehaviour?.Invoke();
     }
 
     public void ChangeBehaviour(Action behaviour)
@@ -67,9 +85,11 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     {
         hitbox.enabled = true;
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Player") || enter)
+            return;
+        Debug.Log("HE ENTRADO A UNA PUERTA SUUUU: " + other.name);
         EnterToRoom();
     }
 
@@ -102,6 +122,16 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     private void RescueBehaviour()
     {
         SceneManager.LoadScene("5_RescueRoom");
-    }   
+    }
+
+    private void BossBehaviour()
+    {
+        SceneManager.LoadScene("8_BossRoom");
+    }
+    private void VictoryBehaviour()
+    {
+        FindAnyObjectByType<GameMenu>().OnPlayerVictory();
+    }
+
     #endregion
 }
