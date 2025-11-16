@@ -30,6 +30,8 @@ namespace PlayerComponents
         /// </summary>
         public void OnAttack(InputAction.CallbackContext context)
         {
+            if (attackComponent.isAttacking)
+               return;
             attackComponent.Attack();
         }
 
