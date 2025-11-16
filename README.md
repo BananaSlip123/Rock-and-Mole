@@ -76,6 +76,8 @@ El protagonista, un joven topo, vive en un pueblo subterráneo que depende de lo
 
 Las salas pueden contener enemigos, recursos mineros, cofres o eventos únicos. El objetivo es llegar lo más lejos posible, recolectar materiales valiosos y regresar al pueblo para mejorar el equipo. La partida termina si el jugador es derrotado o si logra llegar al final del nivel y vencer al jefe.
 
+En la run las salas son predefinidas, con cierta aleatoriedad en la generación de enemigos y rocas. Hay una pool de salas en el level manager, lo que hace que cada vez que entre el jugador a la escena sea una estructura de salas que se pueda repetir pero la organización cantidad y tipo de enemigos pueda variar.
+
 **Dificultad progresiva:** La dificultad aumenta conforme se desciende en la mina. Los enemigos se vuelven más agresivos, aparecen nuevos tipos de enemigos y los recursos se vuelven más escasos. La intensidad de cada run está determinada por la profundidad, el tipo de enemigos y la combinación de salas.
 
 **Combate:** El sistema de combate es en tiempo real, con un enfoque táctico. El jugador ataca con su pico, puede esquivar con un dash y debe aprender los patrones de los enemigos para sobrevivir. Cada criatura tiene comportamientos definidos.
@@ -306,8 +308,8 @@ Las misiones se integran dentro de los eventos, especialmente en las salas de re
 
 <br>
   
-## 5. INTERFAZ  
-### 5.1. DIAGRAMA DE FLUJO
+# 5. INTERFAZ  
+## 5.1. DIAGRAMA DE FLUJO
 
 A continuación se muestra el diagrama de flujo de las interfaces del juego, donde se representa cómo se conectan entre sí las distintas pantallas y menús mediante el uso de botones. Las pantallas de herrería, tienda y armario se abren cuando el jugador viaja a esos sitios dentro de la aldea y pulsa el botón de interactuar. 
 
@@ -316,7 +318,7 @@ A continuación se muestra el diagrama de flujo de las interfaces del juego, don
 
 <br>
 
-### 5.2. PANTALLAS EN EL MENÚ PRINCIPAL  
+## 5.2. PANTALLAS EN EL MENÚ PRINCIPAL  
 
 ![Imagen del menú inicial](/Fotos_README/menuInicial.png "Menú inicial")  
 <div align="center"><p><i>Imagen 2: Pantalla principal del menú inicial.</i></p></div>  
@@ -333,7 +335,7 @@ A continuación se muestra el diagrama de flujo de las interfaces del juego, don
 
 <br>
 
-### 5.3. PANTALLAS DE PAUSA Y AJUSTES EN PARTIDA
+## 5.3. PANTALLAS DE PAUSA Y AJUSTES EN PARTIDA
 
 ![Imagen del menú de pausa](/Fotos_README/pausa.png "Menú de pausa")  
 <div align="center"><p><i>Imagen 5: Pantalla de pausa en partida.</i></p></div>  
@@ -345,7 +347,7 @@ A continuación se muestra el diagrama de flujo de las interfaces del juego, don
 
 <br>
 
-### 5.4. INTERFAZ PRINCIPAL EN PARTIDA Y EN LA ALDEA  
+## 5.4. INTERFAZ PRINCIPAL EN PARTIDA Y EN LA ALDEA  
 
 La pantalla principal sirve para abrir el baúl dentro de la villa o la mochila desde dentro de las minas, aunque también se puede abrir con el teclado o el mando. Dentro de las minas se le muestra al jugador sus puntos de vida, mediante una barra luminosa.  
 
@@ -359,7 +361,7 @@ La pantalla principal sirve para abrir el baúl dentro de la villa o la mochila 
 
 <br>
 
-### 5.5. PANTALLA DE BAÚL Y DE MOCHILA  
+## 5.5. PANTALLA DE BAÚL Y DE MOCHILA  
 
 Mientras el usuario está en la mina puede ver que materiales ha conseguido en ella y cierta información relevante. Cuando llegue a la aldea se le guardarán parte de los materiales de la mochila dentro del baúl, y podrá verlos todos del mismo modo.  
 
@@ -373,7 +375,7 @@ Mientras el usuario está en la mina puede ver que materiales ha conseguido en e
 
 <br>
 
-### 5.6. PANTALLA DE VENTA  
+## 5.6. PANTALLA DE VENTA  
 
 Se muestra cuando el usuario viaja a la tienda dentro de la aldea e interacciona con el tendero. En ella se le permite seleccionar materiales de su baúl y venderlos.  
 
@@ -382,7 +384,7 @@ Se muestra cuando el usuario viaja a la tienda dentro de la aldea e interacciona
 
 <br>  
 
-### 5.7. PANTALLA DE HERRERÍA  
+## 5.7. PANTALLA DE HERRERÍA  
 
 Cuando el usuario viaja a la herrería dentro de la aldea se le permite interactuar con el herrero para gastar sus materiales en la mejora del pico.  
 
@@ -391,7 +393,7 @@ Cuando el usuario viaja a la herrería dentro de la aldea se le permite interact
 
 <br>  
 
-### 5.8. PANTALLA DE ARMARIO  
+## 5.8. PANTALLA DE ARMARIO  
 
 Dentro de la tienda de venta, el usuario también puede abrir un armario para comprar y equipar diferentes prendas como cascos y petos.  
 
@@ -400,7 +402,7 @@ Dentro de la tienda de venta, el usuario también puede abrir un armario para co
 
 <br>    
 
-### 5.9. PANTALLA DE DERROTA  
+## 5.9. PANTALLA DE DERROTA  
 
 Cuando el jugador muere o completa una run, se le muestra un menú de derrota con los materiales conseguidos y un botón para volver a la aldea.  
 
@@ -413,11 +415,11 @@ Cuando el jugador muere o completa una run, se le muestra un menú de derrota co
 
 <br>
 
-## 6. MÚSICA Y EFECTOS DE SONIDO
+# 6. MÚSICA Y EFECTOS DE SONIDO
 
 El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experiencia del jugador. La música y los efectos de sonido están diseñados para ser coherentes con la estética visual y narrativa del juego. 
 
-### 6.1. MÚSICA   
+## 6.1. MÚSICA   
 
 * Música ambiental para el pueblo:
      * Audio original: [Easy Winner](https://youtu.be/NdCBT_VHnUk)
@@ -434,7 +436,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
      * Audio original: [Spanish Folk Songs](https://youtu.be/9OT9bQdU-SI)
      * Modificaciones: Recorte y aumento de velocidad al 200%.
 
-### 6.2. EFECTOS DE SONIDO  
+## 6.2. EFECTOS DE SONIDO  
 
 * Sonido de jugador caminando:
      * Audio original: [Sonido caminar](https://youtube.com/shorts/S64xVwJrmys?si=oVvlcTmIRvenMPw6)
@@ -454,7 +456,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 <br>
 
-### 7. EQUIPO
+# 7. EQUIPO
 
 **Lara Sánchez Sanz:** Modelado y animación 3D de personajes.  
 **Jesús Mercado Rioja:** Diseño 2D y modelado 3D de escenarios.  
@@ -469,9 +471,9 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 <br>
 
-### 8. POSTMORTEM
-#### 8.1. INDIVIDUAL
-##### 8.1.1. QUÉ SALIÓ BIEN
+# 8. POSTMORTEM
+## 8.1. INDIVIDUAL
+### 8.1.1. QUÉ SALIÓ BIEN
 
 **Ana María Caamaño del Amo:** se ha conseguido entregar una beta con la mayoría de las salas que se habían pensado, además de tener un aspecto visual más cercano a lo deseado. Respecto al apartado artístico, se han implementado y modelado muchos elementos de forma bastante más rápida que en la versión anterior.
 
@@ -487,7 +489,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 
 
-##### 8.1.2. QUÉ SALIÓ MAL
+### 8.1.2. QUÉ SALIÓ MAL
 
 **Ana María Caamaño del Amo:** en la última entrega se comenzó usando Trello y cuanto más avanzaba el desarrollo su uso descendió, en esta entrega ha sido peor; ya que ni siquiera se ha utilizado en absoluto y se ha favorecido la comunicación directa. Otra cosa serían las redes sociales, las cuales han estado completamente inactivas durante la gran mayoría del desarrollo. 
 
@@ -503,7 +505,7 @@ A la hora de implementar ciertas funcionalidades de la UI que dependían del des
 
 **Santiago Varela Rey:** a pesar de que se completaron las tareas de sonido y música, todavía hubo momentos en los que la planificación podría haber sido más efectiva. Algunas integraciones se dejaron para etapas tardías del desarrollo y han requerido de la ayuda de otros miembros del equipo que estaban disponibles. Además, una de las piezas musicales tuvo que ser reemplazada por incumplimiento del copyright en los días previos a la entrega.
 
-##### 8.1.3. QUÉ SE PUEDE MEJORAR
+### 8.1.3. QUÉ SE PUEDE MEJORAR
 
 **Ana María Caamaño del Amo:** algo a mejorar sería la comunicación, algo que ya fue mencionado en la anterior entrega. Habría que utilizar las herramientas proporcionadas para asegurar que todo el mundo tenga claro el estado del proyecto de forma más obvia. Otra cosa a mejorar sería la gestión del tiempo, ya que debido a unos factores externos se ha empezado esta fase de desarrollo bastante más tarde de lo que se debería y el resultado podría haber quedado incluso mejor.
 
@@ -518,7 +520,7 @@ A la hora de implementar ciertas funcionalidades de la UI que dependían del des
 **Santiago Varela Rey:** Para próximas entregas sería recomendable establecer un pipeline más eficiente para los archivos de audio, definiendo mejor la estructura de carpetas, nombres y buses de mezcla. Otra mejora sería terminar antes las tareas sonoras principales para disponer de más margen para la mezcla fina y el pulido final.
   
 
-##### 8.1.4. CONCLUSIÓN
+### 8.1.4. CONCLUSIÓN
 
 **Ana María Caamaño del Amo:** a pesar de los problemas que han surgido y el comienzo tardío, se ha conseguido entregar una versión beta bastante completa con la mayoría de lo que teníamos en mente implementado.
 
@@ -533,23 +535,195 @@ A la hora de implementar ciertas funcionalidades de la UI que dependían del des
 **Santiago Varela Rey:** estoy satisfecho con la ampliación y mejora del apartado sonoro en esta entrega. La implementación de nuevos efectos y música ha contribuido a hacer el juego más coherente y con mayor personalidad audiovisual. Aunque la planificación podría haberse optimizado, el resultado final es positivo y sirve como una base sólida para seguir refinando el audio.
   
 
-#### 8.2. GRUPAL
-##### 8.2.1. QUÉ SALIÓ BIEN
+## 8.2. GRUPAL
+### 8.2.1. QUÉ SALIÓ BIEN
 
 La fase beta ha supuesto un avance significativo para el proyecto, logrando entregar una versión más completa y cercana a lo que se había planteado inicialmente. Se han cumplido los plazos y se han implementado mejoras notables en todos los apartados. El resultado ha superado en muchos aspectos lo esperado, consolidando una base sólida sobre la que seguir trabajando.  
 
-##### 8.2.2. QUÉ SALIÓ MAL
+### 8.2.2. QUÉ SALIÓ MAL
 
 Los principales problemas han estado relacionados con la gestión del tiempo y la comunicación interna. El uso de herramientas colaborativas como Trello se abandonó progresivamente, lo que dificultó la coordinación y provocó retrasos en la integración del trabajo en Unity. Además, la carga de trabajo simultánea con otras asignaturas redujo la cantidad de tiempo para pulir errores y realizar más pruebas.
 
 
-##### 8.2.3. QUÉ SE PUEDE MEJORAR
+### 8.2.3. QUÉ SE PUEDE MEJORAR
 
 De cara al Gold Release, en el equipo coincidimos en la necesidad de reforzar la comunicación y la organización, estableciendo un flujo de trabajo más eficiente y asegurando que las tareas estén con antelación para facilitar la integración en Unity.
 
 A nivel técnico, estaría bien dedicar más tiempo a ampliar y dar variedad tanto a los escenarios como los personajes, así como mejorar ciertos aspectos de la música y la programación.   
 
-##### 8.2.4. CONCLUSIÓN
+### 8.2.4. CONCLUSIÓN
 
 En conclusión, el equipo está satisfecho con el resultado de la beta. A pesar de las dificultades, se ha conseguido evolucionar el juego tanto técnica como visualmente, y la motivación para la siguiente fase es alta. La experiencia adquirida para esta entrega servirá para optimizar procesos y asegurar que la versión final alcance un nivel aún más pulido y completo.
+
+<br>
+<br>
+
+# ANEXOS  
+## ANEXO 1: TURNAROUND DE OTTO  
+
+En este anexo se presentan las vistas en 2D y 3D del personaje Otto, utilizadas para el modelado y animación.  
+
+![Imagen del turnaround de Otto](/Fotos_README/turnaroundOtto.png "Turnaround de Otto")  
+<div align="center"><p><i>Imagen A1.1: Turnaround de Otto en 2D.</i></p></div>  
+
+<br><br> 
+
+![Imagen del turnaround de Otto 3D](/Fotos_README/turnaroundOtto3D.png "Turnaround de Otto 3D")  
+<div align="center"><p><i>Imagen A1.2: Turnaround de Otto en 3D.</i></p></div>  
+
+<br>
+
+## ANEXO 2: BEAUTY DE OTTO   
+
+En este anexo se incluye el beauty render del personaje Otto, mostrando su aspecto final tras el proceso de modelado, texturizado y animación.  
+
+<div align="center"><img src="/Fotos_README/beautyOtto.png" alt="Beauty de Otto" width="400"></img></div>  
+<div align="center"><p><i>Imagen A2.1: Beauty de Otto en 2D.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/beautyOtto3D.png" alt="Beauty de Otto en 3D" width="400"></img></div>  
+<div align="center"><p><i>Imagen A2.2: Beauty de Otto en 3D.</i></p></div>  
+<br>
+
+## ANEXO 3: ARMAS Y ARMADURAS  
+
+En este anexo se recopilan los diseños finales de las armas y armaduras disponibles en Rock & Mole.   
+
+![Imagen de las armaduras](/Fotos_README/armaduras.png "Armaduras")  
+<div align="center"><p><i>Imagen A3.1: Armaduras.</i></p></div>  
+
+<br><br>
+
+![Imagen de los cascos](/Fotos_README/cascos.png "Cascos")  
+<div align="center"><p><i>Imagen A3.2: Cascos.</i></p></div>  
+
+<br><br> 
+
+![Imagen de los picos](/Fotos_README/picos.png "Picos")  
+<div align="center"><p><i>Imagen A3.3: Picos.</i></p></div>  
+
+<br>
+
+## ANEXO 4: TURNAROUND DE LOS ENEMIGOS  
+
+En este anexo se presentan los turnarounds en 2D y 3D de los enemigos principales del juego, mostrando sus vistas completas para el modelado y la animación.  
+
+![Imagen del turnaround del gólem grande](/Fotos_README/turnaroundGolemGrande.png "Turnaround del golem grande")  
+<div align="center"><p><i>Imagen A4.1: Turnaround del gólem grande en 2D.</i></p></div>  
+
+<br><br> 
+
+![Imagen del turnaround del gólem grande en 3D](/Fotos_README/turnaroundGolemGrande.png "Turnaround del golem grande en 3D")  
+<div align="center"><p><i>Imagen A4.2: Turnaround del gólem grande en 3D.</i></p></div>  
+
+<br><br>
+
+![Imagen del turnaround del gólem pequeño](/Fotos_README/turnaroundGolemPequeno.png "Turnaround del gólem pequeño")  
+<div align="center"><p><i>Imagen A4.3: Turnaround del gólem pequeño en 2D.</i></p></div>  
+
+<br><br> 
+
+![Imagen del turnaround del gólem pequeño en 3D](/Fotos_README/turnaroundGolemPequeno3D.png "Turnaround del gólem pequeño en 3D")  
+<div align="center"><p><i>Imagen A4.4: Turnaround del gólem pequeño en 3D.</i></p></div>  
+
+<br><br>
+
+![Imagen del turnaround del conejo](/Fotos_README/turnaroundConejo.png "Turnaround del conejo")  
+<div align="center"><p><i>Imagen A4.5: Turnaround del conejo en 2D.</i></p></div>  
+
+<br><br>
+
+![Imagen del turnaround de la rata](/Fotos_README/turnaroundRata.png "Turnaround de la rata")  
+<div align="center"><p><i>Imagen A4.6: Turnaround de la rata en 2D.</i></p></div>  
+
+<br>
+
+## ANEXO 5: BEAUTY DE LOS ENEMIGOS  
+
+En este anexo se presentan los beauty finales de los enemigos del juego.  
+
+<div align="center"><img src="/Fotos_README/beautyGolem.png" alt="Beauty del gólem" width="400"></img></div>  
+<div align="center"><p><i>Imagen A5.1: Beauty del gólem grande en 2D.</i></p></div>  
+<br>
+
+## ANEXO 6: TURNAROUND DE LOS NPCS  
+
+En este anexo se presentan los turnarounds en 2D de los NPCs principales del juego, mostrando todas sus vistas completas para modelado y animación.
+
+![Imagen del turnaround del herrero](/Fotos_README/turnaroundHerrero.png "Turnaround del herrero")  
+<div align="center"><p><i>Imagen A6.1: Turnaround del tendero y el herrero en 2D.</i></p></div>  
+
+<br><br>
+
+![Imagen del turnaround del pájaro](/Fotos_README/turnaroundPajaro.png "Turnaround del pájaro")  
+<div align="center"><p><i>Imagen A6.2: Turnaround del pájaro en 2D.</i></p></div>  
+
+<br>
+
+## ANEXO 7: CONCEPTS DE ESCENARIOS  
+
+En este anexo se incluyen los concepts arts de los escenarios del juego, que muestran las ideas visuales y propuestas para los distintos ambientes.  
+
+<div align="center"><img src="/Fotos_README/conceptAldea.png" alt="Concept del pueblo" width="500"></img></div>  
+<div align="center"><p><i>Imagen A7.1: Concept art del pueblo.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/conceptHerreria.png" alt="Concept de la herrería" width="500"></img></div>  
+<div align="center"><p><i>Imagen A7.2: Concept art de la herrería.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/conceptMina.png" alt="Concept de la mina" width="500"></img></div>  
+<div align="center"><p><i>Imagen A7.3: Concept art de la mina.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/conceptArmario.png" alt="Concept de la tienda de ropa" width="500"></img></div>  
+<div align="center"><p><i>Imagen A7.4: Concept art de la tienda de ropa.</i></p></div>  
+<br>
+
+## ANEXO 8: PROPS   
+
+En este anexo se recopilan los props diseñados para los escenarios del juego, elementos secundarios que enriquecen la ambientación y aportan coherencia visual al entorno.  
+
+<div align="center"><img src="/Fotos_README/cofre.png" alt="Cofre" width="500"></img></div>  
+<div align="center"><p><i>Imagen A8.1: Cofre.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/jaula.png" alt="Jaula" width="500"></img></div>  
+<div align="center"><p><i>Imagen A8.2: Jaula.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/roca1.png" alt="Diseño de un tipo de roca" width="500"></img></div>  
+<div align="center"><img src="/Fotos_README/roca2.png" alt="Diseño de un segundo tipo de roca" width="500"></img></div>  
+<div align="center"><img src="/Fotos_README/roca3.png" alt="Diseño de tercer tipo de roca" width="500"></img></div>  
+<div align="center"><p><i>Imagen A8.3: Rocas.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/pala.png" alt="Pala" width="300"></img></div>  
+<div align="center"><p><i>Imagen A8.4: Pala.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/barril.png" alt="Barril" width="500"></img></div>  
+<div align="center"><p><i>Imagen A8.5: Barril.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/cajas.png" alt="Cajas" width="500"></img></div>  
+<div align="center"><p><i>Imagen A8.6: Cajas.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/vagon.png" alt="Vagón" width="500"></img></div>  
+<div align="center"><p><i>Imagen A8.7: Vagón.</i></p></div>  
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
