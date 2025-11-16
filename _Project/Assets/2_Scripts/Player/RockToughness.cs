@@ -28,6 +28,7 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
 
     public void RecieveDamage(int damage)
     {
+        Debug.Log("ME HAN GOLEPADO");
         numberOfHits++;
         hasBeenHit = true;
         if (numberOfHits == toughness)

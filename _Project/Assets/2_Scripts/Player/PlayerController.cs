@@ -45,7 +45,7 @@ namespace PlayerComponents
 
         public void OnDash(InputAction.CallbackContext context)
         {
-            dashComponent.DoSpecialSkill();
+            dashComponent.InitializeSpecialSkill();
         }
 
         public void OnButtonA(InputAction.CallbackContext context)

@@ -32,7 +32,7 @@ public class DoorsTutorial : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemies
         SceneManager.LoadScene(escena);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         EnterToRoom();
     }

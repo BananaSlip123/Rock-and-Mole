@@ -753,15 +753,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 755313831365385528, guid: ae0d5ba52e6b4af43818cddda8b1e1a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1074787077042849121, guid: ae0d5ba52e6b4af43818cddda8b1e1a9, type: 3}
       propertyPath: m_Name
       value: SalaTutorialCombat
       objectReference: {fileID: 0}
+    - target: {fileID: 1991473732755675212, guid: ae0d5ba52e6b4af43818cddda8b1e1a9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4651168587300693356, guid: ae0d5ba52e6b4af43818cddda8b1e1a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1835318633}
   m_SourcePrefab: {fileID: 100100000, guid: ae0d5ba52e6b4af43818cddda8b1e1a9, type: 3}
+--- !u!1 &1835318631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4651168587300693356, guid: ae0d5ba52e6b4af43818cddda8b1e1a9, type: 3}
+  m_PrefabInstance: {fileID: 1835318630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1835318632 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 6834810750839798253, guid: ae0d5ba52e6b4af43818cddda8b1e1a9, type: 3}
+  m_PrefabInstance: {fileID: 1835318630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1835318633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835318631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4867cef33236e54394578a3c4cf54d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 1835318632}
+  escena: 0_TutorialCombateMining
 --- !u!1 &2012610011
 GameObject:
   m_ObjectHideFlags: 0
