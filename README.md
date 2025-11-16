@@ -208,40 +208,46 @@ La progresión del jugador se basa en la mejora del equipo mediante los material
 
 ### 4.5.1. MEJORA DE ARMA - PICO
 
-El pico es el arma principal del jugador. Se mejora en la herrería, utilizando materiales específicos. Cada nivel incrementa el daño y la velocidad de ataque.
+El pico es el arma principal del jugador. Se mejora en la herrería, utilizando materiales específicos. Cada nivel incrementa tanto el daño y la velocidad de ataque, como la probabilidad y el daño de los ataques críticos. 
 
 | Nivel | Nombre | Efecto | Precio de mejora |
 | :---: | :----: | :----: | :----: |
-| 1 | Pico oxidado | Daño básico | Arma inicial |
-| 2 | Pico reforzado | +10% daño y +10% velocidad de ataque | 70 monedas y 15 lingotes de hierro |
-| 3 | Pico afilado | +15% daño y +20% velocidad de ataque | 100 monedas, 25 lingotes de hierro y 5 piedras de carbón |
-| 4 | Pico endurecido | +20% daño y +30% velocidad de ataque | 200 monedas, 40 lingotes, 10 piedras de carbón y 5 piedras de obsidiana |
-| 5 | Pico maestro | +30% daño y +40% velocidad de ataque | 300 monedas, 45 lingotes de hierro, 15 piedras de carbón y 15 piedras de obsidiana |
+| 1 | Pico oxidado | 10 puntos de daño básico, x1.25 de daño crítico, 5% de probabilidad de crítico y 0% de velocidad de ataque extra | Arma inicial |
+| 2 | Pico reforzado | 12 puntos de daño básico, x2 de daño crítico, 6% de probabilidad de crítico y 5% de velocidad de ataque extra | 70 monedas y 15 lingotes de hierro |
+| 3 | Pico afilado | 15 puntos de daño básico, x2.5 de daño crítico, 8% de probabilidad de crítico y 10% de velocidad de ataque extra | 100 monedas, 25 lingotes de hierro y 5 piedras de carbón |
+| 4 | Pico endurecido | 20 puntos de daño básico, x3 de daño crítico, 10% de probabilidad de crítico y 15% de velocidad de ataque extra | 200 monedas, 40 lingotes, 10 piedras de carbón y 5 piedras de obsidiana |
+| 5 | Pico maestro | 30 puntos de daño básico, x5 de daño crítico, 15% de probabilidad de crítico y 20% de velocidad de ataque extra | 300 monedas, 45 lingotes de hierro, 15 piedras de carbón y 15 piedras de obsidiana |
+
+<div align="center"><p><i>Tabla 3: Mejoras de armas.</i></p></div>
 
 <br>
 
 ### 4.5.2. VESTUARIO - PRENDAS DEL TOPO
 
-Las prendas modifican la velocidad de movimiento y la defensa del jugador. Se adquieren en la tienda de ropa, utilizando rollos de tela o lingotes de bronce.
+Las prendas modifican la velocidad de movimiento, velocidad de ataque y la defensa del jugador. Se adquieren en la tienda de ropa, utilizando rollos de tela y lingotes de bronce.
 
 | Nombre | Efecto | Precio |
 | :---: | :----: | :----: |
-| Chaleco reforzado | Sin efectos | Prenda inicial |
-| Túnica de minero | +15% velocidad y -25% defensa | 300 monedas y 30 rollos de tela |
-| Armadura pesada | +25% defensa y -15% velocidad | 300 monedas y 50 lingotes de bronce | 
+| Chaleco reforzado | 100 puntos de vida, +0% velocidad y +0% velocidad de ataque | Prenda inicial |
+| Túnica de minero | 60 puntos de vida, +30% velocidad y +30% velocidad de ataque | 300 monedas, 30 rollos de tela y 20 lingotes de bronce |
+| Armadura pesada | 170 puntos de vida, -30% velocidad y -30% velocidad de ataque | 300 monedas, 10 rollos de tela y 60 lingotes de bronce | 
+
+<div align="center"><p><i>Tabla 4: Prendas del torso.</i></p></div>
 
 <br>
   
 ### 4.5.3. VESTUARIO - CASCOS
 
-Los cascos afectan la iluminación, la defensa y la velocidad. Se fabrican en la tienda de ropa, utilizando lingotes de bronce y cristales de cuarzo.
+Los cascos afectan la defensa, la velocidad y la velocidad de ataque. Se fabrican en la tienda de ropa, utilizando lingotes de bronce y cristales de cuarzo.
 
 | Nombre | Efecto | Precio |
 | :---: | :----: | :----: |
-| Casco de minero | Iluminación básica | Casco inicial |
-| Casco reforzado | +50% iluminación, +10% defensa y -5% velocidad | 200 monedas, 10 lingotes de bronce y 5 piedras de cuerzo |
-| Casco blindado | +50% iluminación, +25% defensa y -5% velocidad | 800 monedas, 50 lingotes de bronce y 15 piedras de cuarzo |
-| Casco ligero | +50% iluminación y +5% velocidad | 180 monedas, 10 lingotes de bronce y 5 piedras de cuarzo |
+| Casco de minero | 50 puntos de vida, +0% velocidad y +0% velocidad de ataque | Casco inicial |
+| Casco reforzado | 70 puntos de vida, +10% velocidad y +10% velocidad de ataque | 200 monedas, 10 lingotes de bronce y 5 piedras de cuerzo |
+| Casco blindado | 120 puntos de vida, -20% velocidad y +30% velocidad de ataque | 800 monedas, 50 lingotes de bronce y 15 piedras de cuarzo |
+| Casco ligero | 50 puntos de vida, +30% velocidad y +50% velocidad de ataque | 500 monedas, 30 lingotes de bronce y 10 piedras de cuarzo |
+
+<div align="center"><p><i>Tabla 5: Cascos.</i></p></div>
 
 <br>
   
@@ -251,18 +257,20 @@ Durante la exploración de la mina, el jugador puede recolectar materiales que s
 
 **Materiales de venta:** Valiosos por su rareza o belleza, se venden en la tienda de ropa para obtener monedas.
 
-| Nombre | Rareza | Precio |
+| Nombre | Rareza | Beneficio |
 | :---: | :----: | :----: |
 | Ámbar | Común | 8 monedas |
-| Esmeralda | Raro | 10 monedas |
-| Rubí | Raro | 15 monedas |
+| Esmeralda | Raro | 50 monedas |
+| Rubí | Raro | 70 monedas |
 | Diamante | Muy raro | 100 monedas |
+
+<div align="center"><p><i>Tabla 6: Materiales para la venta.</i></p></div>
 
 <br>
 
 **Materiales de mejora:** Utilizados para mejorar el equipo, aunque también pueden venderse.
 
-| Nombre | Utilidad | Rareza | Precio |
+| Nombre | Utilidad | Rareza | Beneficio |
 | :---: | :----: | :----: | :-------: |
 | Lingotes de hierro | Mejora de armas | Común | 4 monedas |
 | Carbón | Mejora de armas | Raro | 15 monedas |
@@ -270,6 +278,8 @@ Durante la exploración de la mina, el jugador puede recolectar materiales que s
 | Cristales de cuarzo | Fabricación de cascos | Muy raro | 50 monedas |
 | Rollos de tela | Fabricación de prendas | Muy raro | 50 monedas |
 | Cristales de obsidiana | Mejora de armas | Muy raro | 50 monedas |
+
+<div align="center"><p><i>Tabla 7: Materiales para mejorar.</i></p></div>
 
 <br>
 
