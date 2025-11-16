@@ -64,6 +64,21 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
         if (!PlayerInRange())
             mStateMachine.ChangeState(new MouseWanderState(mStateMachine, enemyTransform, animator));
 
+        Collider[] p = Physics.OverlapSphere(enemyTransform.position, 2f);
+        bool player = false;
+
+        foreach (Collider detected in p)
+        {
+            if (detected.CompareTag("Player"))
+            {
+                player = true;
+                break;
+            }
+        }
+
+        if(player)
+            mStateMachine.ChangeState(new MouseRunawayState(mStateMachine, enemyTransform, GameObject.FindGameObjectWithTag("Player").transform, animator));
+
         if (isInCooldown)
         {
             timeToAttack += Time.fixedDeltaTime;
