@@ -48,12 +48,12 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
         float random = 0f;
 
         if(SceneManager.GetActiveScene().name == "4_TreasureRoom")
-        {
-            random = 0.7f;
+        {         
+            random = 0.4f;
         }
         else if(SceneManager.GetActiveScene().name == "6_CampamentRoom")
         {
-            random = 0.4f;
+            random = 0.7f;
         }
         else
         {
@@ -75,6 +75,7 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
 
     public void ThereIsNoEnemies()
     {
+        Debug.Log("ABRO PUERTAS");
         foreach (GameObject door in doors)
         {
             door.GetComponent<IActiveNoMoreEnemies>().Active();

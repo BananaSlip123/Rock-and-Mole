@@ -11,6 +11,7 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     [SerializeField] GameObject mining;
     [SerializeField] GameObject skull;
     [SerializeField] GameObject position;
+    bool enter = false;
     enum typeOfBehaviour
     {
         Combat,
@@ -71,6 +72,7 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
 
     public void EnterToRoom()
     {
+        enter = true;
         enterBehaviour?.Invoke();
     }
 
@@ -85,6 +87,9 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Player") || enter)
+            return;
+        Debug.Log("HE ENTRADO A UNA PUERTA SUUUU: " + other.name);
         EnterToRoom();
     }
 

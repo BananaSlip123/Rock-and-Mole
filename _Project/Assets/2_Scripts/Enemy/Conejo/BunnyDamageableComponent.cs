@@ -24,6 +24,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
 
     public void RecieveDamage(int damage)
     {
+        Debug.Log("CONEJO :" + damage);
         health -= damage;
         hasBeenDamaged = true;
 
@@ -40,13 +41,13 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
     public void ResetHasBeenDamaged()
     {
         hasBeenDamaged = false;
-        Debug.Log("He salido del area");
+        Debug.Log("CONEJO He salido del area");
     }
 
     private void Death()
     {
         animator.SetBool("Morir", true);
-
+        DeathLogic();
         //Reproducir sonido de muerte
         AudioManager.Instance.PlayAudio(AudioManager.AudioType.DeathEnemySound);
     }
@@ -58,7 +59,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
         if (LevelManager.instance != null)
         {
             LevelManager.instance.EnemyDead();
-            GameData.RunInventory.AddObject(MaterialName.Hierro, Random.Range(1, 4));
+            GameData.RunInventory.AddObject(MaterialName.Carbon, Random.Range(1, 4));
         }
     }
 
