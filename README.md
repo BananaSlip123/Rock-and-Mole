@@ -262,7 +262,7 @@ Durante la exploración de la mina, el jugador puede recolectar materiales que s
 | Nombre | Rareza | Beneficio |
 | :---: | :----: | :----: |
 | Ámbar | Común | 8 monedas |
-| Esmeralda | Raro | 50 monedas |
+| Esmeralda | Común | 50 monedas |
 | Rubí | Raro | 70 monedas |
 | Diamante | Muy raro | 100 monedas |
 
