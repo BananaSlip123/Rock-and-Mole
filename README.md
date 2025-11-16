@@ -304,67 +304,56 @@ Durante la exploración de la mina, el jugador puede encontrarse con salas espec
 
 Las misiones se integran dentro de los eventos, especialmente en las salas de rescate. Cuando el jugador encuentra un NPC atrapado, se activa la misión de rescatarlo de los enemigos. Si tiene éxito, el NPC puede ofrecer una recompensa directa, un intercambio de objetos o desbloquear contenido adicional. Estas misiones aportan variedad narrativa y recompensas únicas dentro de la estructura de las runs.
 
+<br>
   
 ## 5. INTERFAZ  
 ### 5.1. DIAGRAMA DE FLUJO
 
-A continuación se muestra el diagrama de flujo de las interfaces del juego, donde se representa cómo se conectan entre sí las distintas pantallas y menús.
+A continuación se muestra el diagrama de flujo de las interfaces del juego, donde se representa cómo se conectan entre sí las distintas pantallas y menús mediante el uso de botones. Las pantallas de herrería, tienda y armario se abren cuando el jugador viaja a esos sitios dentro de la aldea y pulsa el botón de interactuar. 
 
 ![Imagen del diagrama de flujo de las interfaces](/Fotos_README/Flujo_de_interfaces.png "Diagrama de flujo de las interfaces")  
-<div align="center"><p><i>Imagen 1: Diagrama de flujo de las interfaces</i></p></div>
+<div align="center"><p><i>Imagen 1: Diagrama de flujo de las interfaces</i></p></div>  
+
+<br>
 
 ---
 
-## 6. ARTE
+## 6. MÚSICA Y EFECTOS DE SONIDO
 
-En este apartado se muestran los elementos visuales principales del juego, aquellos que aportan un estilo y características únicas.  
+El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experiencia del jugador. La música y los efectos de sonido están diseñados para ser coherentes con la estética visual y narrativa del juego. 
 
+### 6.1. MÚSICA   
 
-### 6.1. ARTE 2D  
+* Música ambiental para el pueblo:
+     * Audio original: [Easy Winner](https://youtu.be/NdCBT_VHnUk)
+     * Modificaciones: Recorte y reducción de velocidad y tono al 80%.
+     * Audio original: [Pavane for a Dead Princess](https://youtu.be/q9tcHoD6r0c)
+     * Modificaciones: Recorte y reducción de velocidad al 95%.
+* Música ambiental para la mina:
+     * Audio original: [Arebesque No. 1](https://youtu.be/cVYH-7QGE-A) y [Debussy](https://youtu.be/_CUC2-S1NMI)
+     * Modificaciones: Recorte, reducción de velocidad y tono al 95% y eco.
+* Música para la tienda:
+     * Audio original: [Je te veux](https://youtu.be/wbT9DeULzU4)
+     * Modificaciones: Recorte y reducción de velocidad y tono al 80%.
+* Música para combate contra enemigos:
+     * Audio original: [Spanish Folk Songs](https://youtu.be/9OT9bQdU-SI)
+     * Modificaciones: Recorte y aumento de velocidad al 200%.
 
-#### 6.1.1. CONCEPTS
+### 6.2. EFECTOS DE SONIDO  
 
-<div align="center"><img src="/_Project/Assets/Concept_art/Objetos_personaje.png" alt="Objetos que lleva el personaje encima" width="400"></img></div>  
-<div align="center"><p><i>Imagen 2: Diseño de los objetos que lleva el personaje encima</i></p></div>  
-<br><br>
-<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_topo.PNG" alt="Diseño del protagonista" width="400"></img></div> 
-<div align="center"><p><i>Imagen 3: Diseño del protagonista</i></p></div>
-<br><br>
-<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_vagon.PNG" alt="Diseño de la vagoneta" width="400"></img></div>  
-<div align="center"><p><i>Imagen 4: Diseño de la vagoneta</i></p></div>
-<br><br>
-<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_barril.png" alt="Diseño del barril" width="400"></img></div>  
-<div align="center"><p><i>Imagen 5: Diseño del barril</i></p></div>
-<br><br>
-<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_cajas.PNG" alt="Diseño de las cajas" width="400"></img></div>  
-<div align="center"><p><i>Imagen 6: Diseño de las cajas</i></p></div>
-<br><br>
-<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_golem.png" alt="Diseño del golem" width="400"></img></div>  
-<div align="center"><p><i>Imagen 7: Diseño del golem</i></p></div>
-<br><br>
-<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_rocas.png" alt="Diseño del primer set de rocas" width="400"></img></div>  
-<div align="center"><p><i>Imagen 8: Diseño del primer set de rocas</i></p></div>
-<br><br>
-<div align="center"><img src="/_Project/Assets/Concept_art/Turnaround_rocas2.PNG" alt="Diseño del segundo set de rocas" width="400"></img></div>  
-<div align="center"><p><i>Imagen 9: Diseño del segundo set de rocas</i></p></div>
-<br><br>
-
-### 6.2. MÚSICA Y EFECTOS DE SONIDO
-
-El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experiencia del jugador. La música y los efectos de sonido están diseñados para ser coherentes con la estética visual y narrativa del juego.  
-
-#### 6.3.1. MÚSICA
-
-* Música ambiental para el pueblo.
-* Música ambiental para la mina.
-* Música para la tienda.
-* Música para combate contra enemigos.
-
-#### 6.3.2. EFECTOS DE SONIDO
-
-* Sonido de jugador caminando.
-* Sonido de jugador atacando.
-* Sonido de enemigo muerto.
+* Sonido de jugador caminando:
+     * Audio original: [Sonido caminar](https://youtube.com/shorts/S64xVwJrmys?si=oVvlcTmIRvenMPw6)
+     * Modificaciones: Recorte y reducción de tono al 70%.
+* Sonido de jugador atacando:
+     * Audio original: [Sonido ataque](https://youtube.com/shorts/S64xVwJrmys?si=oVvlcTmIRvenMPw6)
+     * Modificaciones: Recorte y aumento de tono al 120%.
+* Sonido de enemigo muerto:
+     * Audio original: [Sonido muerte enemigo](https://youtube.com/shorts/S64xVwJrmys?si=oVvlcTmIRvenMPw6)
+     * Modificaciones:  Recorte y reducción de tono al 80%.
+* Sonido de hoguera:
+     * Audio original: [Sonido hoguera](https://www.youtube.com/watch?v=GdwhlKKw0Lc&pp=ygUKZmlyZSBzb3VuZA%3D%3D)
+     * Modificaciones: Recorte y reducción de la velocidad al 80%.
+<br>
 
 ---
 
