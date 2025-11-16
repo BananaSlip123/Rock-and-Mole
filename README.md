@@ -613,7 +613,7 @@ En este anexo se presentan los turnarounds en 2D y 3D de los enemigos principale
 
 <br><br> 
 
-![Imagen del turnaround del gólem grande en 3D](/Fotos_README/turnaroundGolemGrande.png "Turnaround del golem grande en 3D")  
+![Imagen del turnaround del gólem grande en 3D](/Fotos_README/turnaroundGolemGrande3D.png "Turnaround del golem grande en 3D")  
 <div align="center"><p><i>Imagen A4.2: Turnaround del gólem grande en 3D.</i></p></div>  
 
 <br><br>
