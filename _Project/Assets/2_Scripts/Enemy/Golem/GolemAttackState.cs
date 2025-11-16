@@ -4,7 +4,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 {
 
     const float COOLDOWN = 2.5f;
-    float TIME_HITBOX = 0.1f;
+    float TIME_HITBOX = 0.5f;
 
     float radiusToAttack = 1f;
 
@@ -43,6 +43,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     public void Attack()
     {
         //animator.SetBool("Atacar", true);
+        Debug.Log("ATACO");
         playerHealth.RecieveDamage(damage);
     }
 
@@ -95,7 +96,6 @@ public class GolemAttackState : IStateComponent, IAttackComponent
                 ActiveHitbox();
                 if (IsHitingPlayer())
                     Attack();
-
             }              
         }
 
