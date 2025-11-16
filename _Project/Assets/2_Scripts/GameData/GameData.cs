@@ -45,6 +45,14 @@ public static class GameData
         { MaterialName.Diamante, MaterialRarity.Very_Rare }
     };
 
+    public readonly static Dictionary<EnemyName, List<MaterialName>> MaterialsByEnemy = new Dictionary<EnemyName, List<MaterialName>>
+    {
+        { EnemyName.Mouse,new List<MaterialName>() { MaterialName.Ambar, MaterialName.Cuarzo, MaterialName.RolloTela } },
+        { EnemyName.Bunny, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Carbon, MaterialName.Rubi, MaterialName.Obsidiana, MaterialName.Diamante }},
+        { EnemyName.Golem, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Esmeralda, MaterialName.Bronce, MaterialName.Hierro, MaterialName.Diamante } },
+        { EnemyName.GolemBoss,new List<MaterialName>() { MaterialName.Rubi, MaterialName.Esmeralda, MaterialName.Bronce, MaterialName.Obsidiana, MaterialName.Diamante, MaterialName.Bronce } }
+    };
+
     public static PersistentInventory Inventory => _inventory;
     public static Inventory RunInventory => _runInventory;
 
@@ -153,7 +161,27 @@ public static class GameData
         return generated;
     }
 
-    
+    public static Dictionary<MaterialName, int> EnemyLoot(int amount, EnemyName type)
+    {
+        Dictionary<MaterialName, int> generated = new Dictionary<MaterialName, int>();
+        MaterialRarity rarity;
+        MaterialName material;
+
+        for (int i = 0; i < amount; i++)
+        {
+            rarity = RandomRarity();
+            material = EnemyMaterial(type,rarity);
+            if (!generated.TryAdd(material, 1))
+                generated[material] += 1;
+        }
+
+        return generated;
+    }
+    public static MaterialName EnemyMaterial(EnemyName type, MaterialRarity rarity)
+    {
+        List<MaterialName> sortedMaterials = SortedMaterialsByRarityAndEnemy(rarity, type);
+        return sortedMaterials[UnityEngine.Random.Range(0, sortedMaterials.Count)];
+    }
 
     public static MaterialName RandomMaterial(MaterialRarity rarity)
     {
@@ -166,6 +194,13 @@ public static class GameData
         return MaterialsRarity
             .Where(pair => pair.Value == rarity)
             .Select(pair => pair.Key)
+            .ToList();
+    }
+
+    public static List<MaterialName> SortedMaterialsByRarityAndEnemy(MaterialRarity rarity, EnemyName type)
+    {
+        return MaterialsByEnemy[type]
+            .Where(material => MaterialsRarity.TryGetValue(material, out var matRarity) && matRarity == rarity)
             .ToList();
     }
 
@@ -386,5 +421,13 @@ public enum MaterialRarity
     Common,
     Rare,
     Very_Rare
+}
+
+public enum EnemyName
+{
+    Bunny,
+    Golem,
+    Mouse,
+    GolemBoss
 }
 

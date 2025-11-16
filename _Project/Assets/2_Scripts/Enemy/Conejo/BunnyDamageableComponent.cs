@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
@@ -8,6 +9,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
     [SerializeField] Animator animator;
     private float timeToDeath = 0f;
     const float TIME_TO_DEATH = 1f;
+    [SerializeField] EnemyName tipoEnemigo;
 
     private void FixedUpdate()
     {
@@ -59,7 +61,16 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
         if (LevelManager.instance != null)
         {
             LevelManager.instance.EnemyDead();
-            GameData.RunInventory.AddObject(MaterialName.Carbon, Random.Range(1, 4));
+
+            Dictionary<MaterialName, int> materialsGenerated = GameData.EnemyLoot(UnityEngine.Random.Range(2, 4), tipoEnemigo);
+
+            int i = 0;
+            foreach (MaterialName material in materialsGenerated.Keys)
+            {
+                GameData.RunInventory.AddObject(material, materialsGenerated[material]);
+                Debug.Log("HE AÑADIDO: " + material.ToString() + " " + i);
+                i++;
+            }
         }
     }
 

@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   animator: {fileID: 4699844431084929266}
+  tipoEnemigo: 2
 --- !u!1001 &8782433502658772414
 PrefabInstance:
   m_ObjectHideFlags: 0
