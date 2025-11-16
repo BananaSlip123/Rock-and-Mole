@@ -93,7 +93,7 @@ public class MouseRunawayState : IStateComponent, IMoveComponent
     public void Move()
     {
         Vector3 direction = enemyTransform.position - playerTransform.position;
-        enemyTransform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(direction.x, 0, direction.z), speed);
+        enemyTransform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(direction.x, 0, direction.z).normalized, speed);
         Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-direction.z, 0, direction.x).normalized), Vector3.up);
         enemyTransform.rotation = rotation;
     }

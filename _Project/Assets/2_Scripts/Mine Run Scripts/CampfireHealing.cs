@@ -4,7 +4,7 @@ using System.Collections;
 
 public class CampfireHealing : MonoBehaviour
 {
-    [SerializeField] const int healing = 20;
+    [SerializeField] const int healing = 40;
     PlayerController player;
     PlayerStats stats;
 
