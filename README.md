@@ -122,19 +122,19 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 * **Sexo**: Masculino.
 * **Especie:** Topo.
 * **Edad**: 22 años.
-* **Personalidad**: Otto es un personaje tranquilo y sereno, capaz de mantener la calma incluso en situaciones extremas. Esta actitud le permite tomar decisiones con cabeza fría, aunque a veces lo lleva a asumir riesgos que otros evitarían. Tiene una curiosidad natural y un fuerte sentido de responsabilidad hacia su comunidad, lo que lo impulsa a seguir adelante pese al peligro.
-* **Aspecto físico**: De estatura y complexión media, Otto viste con ropa de trabajo desgastada por el uso: una camiseta y un peto cubiertos de tierra y marcas de desgaste. Lleva siempre un casco de minero naranja con luz frontal, esencial para explorar zonas oscuras. Su mochila grande y resistente le permite transportar los objetos que encuentra en sus expediciones por la mina.
+* **Personalidad:** Otto es un personaje tranquilo y sereno, capaz de mantener la calma incluso en situaciones extremas. Esta actitud le permite tomar decisiones con cabeza fría, aunque a veces lo lleva a asumir riesgos que otros evitarían. Tiene una curiosidad natural y un fuerte sentido de responsabilidad hacia su comunidad, lo que lo impulsa a seguir adelante pese al peligro.
+* **Aspecto físico:** De estatura y complexión media, Otto viste con ropa de trabajo desgastada por el uso: una camiseta y un peto cubiertos de tierra y marcas de desgaste. Lleva siempre un casco de minero naranja con luz frontal, esencial para explorar zonas oscuras. Su mochila grande y resistente le permite transportar los objetos que encuentra en sus expediciones por la mina.
 * **Rol:** Otto es el personaje principal controlado por el jugador. Su rol combina exploración y comercio: recorre las profundidades de la mina en busca de recursos, enfrentando peligros y recolectando objetos que luego puede intercambiar para ayudar a su comunidad.
-* **Trasfondo**: Vive en un pueblo subterráneo que depende de los minerales de una antigua mina. Tras un misterioso cierre, la mina se volvió peligrosa y oscura. Para salvar a su comunidad y descubrir qué ocurrió, Otto decide adentrarse en sus profundidades, enfrentando criaturas corrompidas y buscando recuperar los recursos perdidos.
+* **Trasfondo:** Vive en un pueblo subterráneo que depende de los minerales de una antigua mina. Tras un misterioso cierre, la mina se volvió peligrosa y oscura. Para salvar a su comunidad y descubrir qué ocurrió, Otto decide adentrarse en sus profundidades, enfrentando criaturas corrompidas y buscando recuperar los recursos perdidos.
 
 **Vendedor:**
 
 * **Nombre:** Telmo.
 * **Sexo**: Masculino.
 * **Especie:** Topo.
-* **Edad**: 28 años.
-* **Personalidad**: Telmo es extrovertido, hablador y siempre está al tanto de las últimas tendencias, incluso bajo tierra. Tiene un gran sentido del humor y una actitud comercial muy marcada: siempre intenta convencer al jugador de que necesita una nueva prenda. Aun así, se preocupa por el bienestar del pueblo y colabora activamente con los exploradores.
-* **Aspecto físico**: Telmo viste con ropa llamativa y colorida. Su tienda está decorada con telas, maniquíes y luces cálidas que contrastan con el resto del pueblo.
+* **Edad:** 28 años.
+* **Personalidad:** Telmo es extrovertido, hablador y siempre está al tanto de las últimas tendencias, incluso bajo tierra. Tiene un gran sentido del humor y una actitud comercial muy marcada: siempre intenta convencer al jugador de que necesita una nueva prenda. Aun así, se preocupa por el bienestar del pueblo y colabora activamente con los exploradores.
+* **Aspecto físico:** Telmo viste con ropa llamativa y colorida. Su tienda está decorada con telas, maniquíes y luces cálidas que contrastan con el resto del pueblo.
 * **Rol:** Compra objetos del jugador y vende armaduras y vestimentas. Telmo regenta la tienda de ropa del pueblo. Aunque su local parece especializado en moda, es el lugar donde el jugador puede vender los materiales recogidos en la mina y adquirir nuevas piezas de equipo.
 * **Trasfondo**: Antes del cierre de la mina, Telmo se dedicaba exclusivamente a la moda subterránea. Sin embargo, con la crisis de recursos, adaptó su negocio para ayudar a los exploradores, convirtiendo su tienda en un punto clave para el intercambio de materiales y la mejora del equipo.
 
@@ -143,43 +143,64 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 * **Nombre:** Bruno.
 * **Sexo**: Masculino.
 * **Especie:** Topo.
-* **Edad**: 45 años.
-* **Personalidad**: Bruno es serio, meticuloso y reservado. Habla poco, pero cuando lo hace, sus palabras son precisas. Tiene un fuerte sentido del deber y se toma muy en serio su trabajo como herrero. Aunque no lo demuestre abiertamente, se preocupa por la seguridad del jugador y del pueblo.
-* **Aspecto físico**: De complexión robusta, Bruno siempre está cubierto de hollín. Lleva un mandil de cuero y guantes gruesos. Su taller está lleno de herramientas, yunques y brasas encendidas, con un ambiente cálido y ruidoso.
+* **Edad:** 45 años.
+* **Personalidad:** Bruno es serio, meticuloso y reservado. Habla poco, pero cuando lo hace, sus palabras son precisas. Tiene un fuerte sentido del deber y se toma muy en serio su trabajo como herrero. Aunque no lo demuestre abiertamente, se preocupa por la seguridad del jugador y del pueblo.
+* **Aspecto físico:** De complexión robusta, Bruno siempre está cubierto de hollín. Lleva un mandil de cuero y guantes gruesos. Su taller está lleno de herramientas, yunques y brasas encendidas, con un ambiente cálido y ruidoso.
 * **Rol:** Mejora armas. Bruno es el herrero del pueblo. Se encarga de reforzar el pico, la armadura y el casco del jugador utilizando los materiales obtenidos en la mina. Su taller es el corazón del progreso mecánico del juego.
-* **Trasfondo**: Bruno proviene de una larga tradición de herreros subterráneos. Desde joven ha trabajado el metal, y su habilidad para forjar herramientas resistentes lo convirtió en una figura clave del pueblo. Con la mina cerrada, su papel se volvió aún más importante, ya que sin su ayuda, los exploradores no podrían mejorar su equipo ni sobrevivir a los peligros del subsuelo.
+* **Trasfondo:** Bruno proviene de una larga tradición de herreros subterráneos. Desde joven ha trabajado el metal, y su habilidad para forjar herramientas resistentes lo convirtió en una figura clave del pueblo. Con la mina cerrada, su papel se volvió aún más importante, ya que sin su ayuda, los exploradores no podrían mejorar su equipo ni sobrevivir a los peligros del subsuelo.
 
 **Aldeanos:**
 
 * **Especie:** Variadas (musarañas, ratones, topos, tejones, etc).
-* **Personalidad**: Los aldeanos son diversos en carácter y actitud. Algunos son curiosos y entusiastas, otros más temerosos o escépticos. En conjunto, representan el alma del pueblo: una comunidad unida que observa con atención los avances del jugador y reacciona a sus logros o fracasos.
+* **Personalidad:** Los aldeanos son diversos en carácter y actitud. Algunos son curiosos y entusiastas, otros más temerosos o escépticos. En conjunto, representan el alma del pueblo: una comunidad unida que observa con atención los avances del jugador y reacciona a sus logros o fracasos.
 * **Rol:** Ambientación, dan consejos, reaccionan al progreso del jugador. Los aldeanos aportan vida al pueblo. Algunos ofrecen consejos útiles, otros comentan los avances del jugador.
-* **Trasfondo**: Los aldeanos han vivido durante generaciones en el pueblo subterráneo, dependiendo de la mina como fuente de recursos. El cierre repentino los dejó en una situación crítica, pero mantienen la esperanza gracias a los esfuerzos del jugador. Su presencia constante refuerza la sensación de comunidad y da contexto emocional al progreso del juego.
+* **Trasfondo:** Los aldeanos han vivido durante generaciones en el pueblo subterráneo, dependiendo de la mina como fuente de recursos. El cierre repentino los dejó en una situación crítica, pero mantienen la esperanza gracias a los esfuerzos del jugador. Su presencia constante refuerza la sensación de comunidad y da contexto emocional al progreso del juego.
 
 <br>
 
   
 ## 4.4. ENEMIGOS
-### 4.4.1. GOLEMS
+### 4.4.1. GÓLEMS
 
 * **Tipo:** Enemigo estándar.
-* **Comportamiento:** Cuando el jugador entra en su área de detección, el golem lo persigue y ataca.
+* **Comportamiento:** Cuando el jugador entra en su área de detección, el gólem lo persigue y ataca.
 * **Características:** daño y velocidad moderados. Su presencia es común en las salas de combate.
 * **Función:** Introduce al jugador en el sistema de combate básico y sirve como enemigo recurrente.
 
-**Golem pequeño:** 
+**Gólem pequeño:** 
 
-* **Tipo:** Enemigo menor
+* **Tipo:** Enemigo menor.
+* **Trasfondo:** Estos pequeños enemigos habitan en la mina como extensiones fragmentadas del gólem de roca. No tienen voluntad propia ni inteligencia, pero actúan por instinto defensivo. Su origen suele estar ligado a la división de un gólem mayor tras ser derrotado, aunque también pueden aparecer por sí solos en zonas corrompidas.
+* **Características:** Los fragmentos de gólem tienen menor daño y velocidad que otros enemigos, pero suelen aparecer en grupo, lo que aumenta la presión sobre el jugador. Su tamaño reducido y baja resistencia los convierte en blancos fáciles, aunque su número puede complicar el combate si no se gestionan bien. Su aspecto recuerda a pequeñas criaturas de piedra, con formas irregulares que conservan parte de la textura del gólem original.
 * **Comportamiento:** Persigue al jugador si entra en su área, pero con menor alcance.
-* **Características:** Menor daño y velocidad. Aparecen en grupo o como resultado de la división del golem grande.
 * **Función:** Añade presión en combate por número. Su baja resistencia permite al jugador practicar esquivas y ataques rápidos.
 
-**Golem grande:**
+**Gólem grande:**
 
-* **Tipo:** Mini-jefe de nivel.
-* **Comportamiento:** Posee un área de detección más amplia y causa mayor daño.
-* **Características:** Al ser derrotado, se divide en dos golems pequeños, lo que prolonga el combate.
-* **Función:** Marca el final de un nivel. Su derrota permite completar la run actual. Representa un desafío táctico por su tamaño y transformación.
+* **Tipo:** Enemigo estándar.
+* **Trasfondo:**  El gólem de roca habita en las profundidades de la mina desde tiempos antiguos. Su existencia está ligada a la protección del entorno subterráneo. No tiene conciencia ni emociones: su único propósito es defender la mina de cualquier intruso. Con el cierre misterioso de la mina, su comportamiento se ha vuelto más agresivo, atacando a todo aquel que se acerque.
+* **Características:**  Tiene un daño y una velocidad moderados, lo que lo convierte en una amenaza constante pero manejable para el jugador. Su gran tamaño y cuerpo formado por bloques de roca le dan una apariencia imponente, aunque mantiene una silueta natural que se integra con el entorno de la mina. Es común encontrarlo en las salas de combate, donde aparece con frecuencia como enemigo recurrente.
+* **Comportamiento:** Cuando el jugador entra en su área de detección, el gólem lo persigue y ataca.
+* **Función:** Introduce al jugador en el sistema de combate básico y sirve como enemigo recurrente.
+<br>
+
+### 4.4.2. RATAS
+
+* **Tipo:** Enemigo a distancia.
+* **Trasfondo:** Estas ratas han sido corrompidas por la energía cristalina que emana de las profundidades de la mina. Su cuerpo está parcialmente cubierto por fragmentos de cristal que han alterado su comportamiento y les han otorgado habilidades ofensivas. Antes eran simples animales, pero ahora defienden la mina con una agresividad inusual, como si estuvieran conectadas a su núcleo.
+* **Características:** De tamaño pequeño y movimientos ágiles, las ratas tienen baja resistencia pero compensan con ataques a distancia. Los cristales incrustados en su cuerpo les permiten lanzar proyectiles afilados que dañan al jugador desde lejos. Su aspecto es inquietante: pelaje desgastado, ojos brillantes y zonas del cuerpo cubiertas por cristales que emiten un leve resplandor.
+* **Comportamiento:** Las ratas vagan por la sala hasta que el jugador entra en su área de detección. En ese momento, se detienen y comienzan a disparar cristales desde la distancia. Si el jugador abandona su área, dejan de atacar y vuelven a su patrón de movimiento errático.
+* **Función:** Introducen el combate a distancia y obligan al jugador a moverse, esquivar y priorizar objetivos. Su presencia en salas combinadas con enemigos cuerpo a cuerpo añade variedad táctica y refuerza la necesidad de gestionar el espacio.
+<br>
+
+### 4.4.3. BARRILES
+
+* **Tipo:** Enemigo Kamikaze.
+* **Trasfondo:** Estos conejos han encontrado una forma peculiar de defender la mina: se esconden dentro de barriles reforzados y se lanzan contra los intrusos. Se desconoce si actúan por voluntad propia o si han sido manipulados por la corrupción que afecta a la mina. Lo que está claro es que su método es tan absurdo como efectivo.
+* **Características:** De tamaño medio, los barriles explosivos se mueven rápidamente en línea recta hacia el jugador. Al impactar o al acercarse lo suficiente, detonan causando daño en área. Su diseño es cómico pero peligroso: un barril con patas, orejas asomando por la tapa y una mecha encendida que indica su inminente explosión.
+* **Comportamiento:** Al detectar al jugador, corren directamente hacia él sin detenerse. No atacan de forma convencional, sino que explotan al contacto o tras unos segundos. Si el jugador logra esquivarlos, pueden explotar sin causar daño, pero en espacios cerrados su amenaza aumenta.
+* **Función:** Sirven para añadir tensión y dinamismo en combate. Obligan al jugador a moverse constantemente y a estar atento al entorno.
+<br>
 
 ## 4.5. ARMAS Y ARMADURAS
 
