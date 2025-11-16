@@ -278,11 +278,14 @@ public class EquipmentManager : MonoBehaviour
         for (int i = 0; i < keysOrdered_helmet.Length; i++)
             keysOrder_helmet.Add(keysOrdered_helmet[i], i);
 
-#if UNITY_EDITOR
-        PickAxeLevel = 0;
-        CurrentHelmetID = _defaultHelmet;
-        CurrentChestClothID = _defaultChestCloth;
-#endif
+        //#if UNITY_EDITOR
+        //        PickAxeLevel = 0;
+        //        CurrentHelmetID = _defaultHelmet;
+        //        CurrentChestClothID = _defaultChestCloth;
+        //#endif
+        PickAxeLevel = PickAxeLevel; //el getter carga de disco, el setter llama a los callbacks
+        CurrentChestClothID = CurrentChestClothID;
+        CurrentHelmetID = CurrentHelmetID;
 
         _init = true;
     }

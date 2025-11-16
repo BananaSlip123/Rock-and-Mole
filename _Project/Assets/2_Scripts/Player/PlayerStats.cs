@@ -134,7 +134,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     {
         DontDestroyOnLoad(this.gameObject);
         FindComponents();
-        OnEquipmentChange();
+        //OnEquipmentChange();
     }
     private void OnEnable()
     {
@@ -143,7 +143,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     }
     private void OnDisable()
     {
-        EquipmentManager.OnEquipmentChange += OnEquipmentChange;
+        EquipmentManager.OnEquipmentChange -= OnEquipmentChange;
     }
     void Start()
     {
@@ -240,13 +240,16 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         Debug.Log("ENUM: " + Stats.speed);
         Debug.Log("Equipamiento Actualizado");
         Debug.Log(currentPickaxe);
-        //if (currentPickaxe != null)
+        if (currentPickaxe != null)
             ChangePickaxe(currentPickaxe);
-       // if (currentChestCloth != null)
+        else throw new Exception("Pico nulo");
+        if (currentChestCloth != null)
             ChangeClothes(currentChestCloth);
-       // if (currentHelmet != null)
+        else throw new Exception("Peto nulo");
+        if (currentHelmet != null)
             ChangeClothes(currentHelmet);
-        
+        else throw new Exception("Casco nulo");
+
     }
     public void ChangeSomething(PickaxeStatsScripteableObject newPickaxe)
     {
