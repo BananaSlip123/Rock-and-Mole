@@ -262,7 +262,7 @@ Durante la exploración de la mina, el jugador puede recolectar materiales que s
 | Nombre | Rareza | Beneficio |
 | :---: | :----: | :----: |
 | Ámbar | Común | 8 monedas |
-| Esmeralda | Raro | 50 monedas |
+| Esmeralda | Común | 50 monedas |
 | Rubí | Raro | 70 monedas |
 | Diamante | Muy raro | 100 monedas |
 
@@ -477,7 +477,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Ana María Caamaño del Amo:** se ha conseguido entregar una beta con la mayoría de las salas que se habían pensado, además de tener un aspecto visual más cercano a lo deseado. Respecto al apartado artístico, se han implementado y modelado muchos elementos de forma bastante más rápida que en la versión anterior.
 
-**Javier Martín Mulero:** se han cumplido los plazos establecidos por el equipo, llegando a hacer incluso más de lo que se había pensado en un principio para la alfa. El desarrollo del juego en todos sus apartados está siendo correcto.
+**Javier Martín Mulero:** el proyecto ha ido medianamente bien, por mi parte, la programación la dejé casi acabada al final de la beta, lo que me ha permitido arreglar bugs y ayudar a Unai con su parte de programación.
 
 **Lara Sánchez Sanz:** durante esta entrega he conseguido completar y mejorar el modelado y la animación de los personajes principales y enemigos. El flujo de trabajo ha sido más ágil que en la versión anterior, lo que ha permitido integrar los modelos y animación en Unity sin grandes problemas. Estoy realmente satisfecha con la variedad de personajes y animaciones implementadas. 
 
@@ -493,7 +493,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Ana María Caamaño del Amo:** en la última entrega se comenzó usando Trello y cuanto más avanzaba el desarrollo su uso descendió, en esta entrega ha sido peor; ya que ni siquiera se ha utilizado en absoluto y se ha favorecido la comunicación directa. Otra cosa serían las redes sociales, las cuales han estado completamente inactivas durante la gran mayoría del desarrollo. 
 
-**Javier Martín Mulero:** no considero que haya una mala organización pero si hay una mala comunicación entre todos los miembros del equipo. Además hay elementos de diseño que se han cambiado a mitad de la alfa. Por último, hay miembros del equipo que no han usado del todo bien la tabla de Trello que tenemos para organizar las tareas para la alfa, olvidándose de marcarlas como completadas una vez hechas o una vez empezadas a hacer no ponerlas como que se estaban haciendo.
+**Javier Martín Mulero:** en esta entrega la comunicación con algunos de los miembros del equipo no ha sido tan buena, por no decir mala. Además, hay cosas que se han quedado fuera, como un tipo de evento (rescate) por falta de tiempo, la lógica de las salas estaba hecha faltaban los detalles como el modelo del NPC a rescatar y su interacción. Por último, las redes sociales no se actualizaron.
 
 **Lara Sánchez Sanz:** el principal problema ha sido la gestión del tiempo. Al tener que compaginar este trabajo con otras asignaturas lo que no ha permitido desarrollar el juego al nivel que teníamos esperado. Además la falta de herramientas de organización ha dificultado la coordinación con los compañeros, lo que provocó que algunas integraciones se hicieran más tarde de lo previsto.
 
@@ -509,7 +509,7 @@ A la hora de implementar ciertas funcionalidades de la UI que dependían del des
 
 **Ana María Caamaño del Amo:** algo a mejorar sería la comunicación, algo que ya fue mencionado en la anterior entrega. Habría que utilizar las herramientas proporcionadas para asegurar que todo el mundo tenga claro el estado del proyecto de forma más obvia. Otra cosa a mejorar sería la gestión del tiempo, ya que debido a unos factores externos se ha empezado esta fase de desarrollo bastante más tarde de lo que se debería y el resultado podría haber quedado incluso mejor.
 
-**Javier Martín Mulero:** haría que la comunicación fuera diferente; sobre todo, más directa entre los compañeros del equipo. De cara a la beta en la parte del código, intentar mejorarlo ya que hay sistemas del juego que no considero que estén bien programados.Aún así, creo que la alfa ha salido bastante bien a pesar de que ha habido algún problema.
+**Javier Martín Mulero:** haría que la comunicación fuera diferente, ya lo dije en el anterior pero lo vuelvo a recalcar. Por lo demás, no me parece que haya que mejorar nada más. La comunicación con Unai ha sido buena para integrar el código, de otra forma se hubiera tardado mucho más.
 
 **Lara Sánchez Sanz:** sería recomendable organizar mejor los elementos que afectan a varias áreas de trabajo,  de modo que elementos como las animaciones estén listos con antelación para facilitar el trabajo en otros apartados. También considero importante reforzar la comunicación y el uso de herramientas colaborativas, ya que con respecto de la entrega alfa esto ha empeorado. A nivel técnico, me gustaría dedicar más tiempo al pulido de las animaciones y modelados.
 
@@ -524,7 +524,7 @@ A la hora de implementar ciertas funcionalidades de la UI que dependían del des
 
 **Ana María Caamaño del Amo:** a pesar de los problemas que han surgido y el comienzo tardío, se ha conseguido entregar una versión beta bastante completa con la mayoría de lo que teníamos en mente implementado.
 
-**Javier Martín Mulero:** creo que a todos nos ha gustado cómo ha quedado la alfa, más completa de la que lo habíamos planteado. Personalmente, creo que es un impacto positivo en el equipo que haya salido así y de cara a la beta si mejoramos lo que ha salido mal seguro que sale mejor que la alfa.
+**Javier Martín Mulero:**  la beta ha salido bien, tiene lo que tiene que tener, aunque a mi me hubiera gustado incluir todo lo que se tenía pensado.
 
 **Lara Sánchez Sanz:** estoy contenta con el resultado obtenido en la beta, se que podría haber sido mejor, pero realmente ha salido mejor de lo que esperaba, lo que junto con la mejora en la fluidez del trabajo me motiva a perfeccionar aún más el aspecto del trabajo, incluso a crear nuevos elementos.
 
