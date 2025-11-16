@@ -7,15 +7,15 @@ using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour, IPlayerStats
 {
     public int roomNumber = 0;
-
     private int _actualHealth;
     public int actualHealth
     {
         get => _actualHealth;
         private set
-        {
-            if (value != actualHealth)
+        {           
+            if (value != _actualHealth)
             {
+                
                 if (value > health)
                     _actualHealth = health;
                 else
@@ -177,7 +177,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     private void FindComponents()
     {
         GameObject go = GameObject.FindGameObjectWithTag("Player");
-
+        
         if (go == null)
             return;
         playerHealth = go.GetComponent<DamageableComponent>();
@@ -187,8 +187,10 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
 
     public void ChangeClothes(ClothStatsScripteableObject newCloth)
     {
+        Debug.Log("Estoy cambiando la ropa: " + newCloth.name);
         foreach(ModifierStats mod in newCloth.modifiers)
         {
+            Debug.Log("HOLA SOY: " + mod.stat);
             SetModifier(mod);
         }
     }
@@ -198,6 +200,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         switch (mod.stat)
         {
             case Stats.health:
+                Debug.Log("vida:" + _actualHealth);
                 health += (int) mod.value;
                 break;
             case Stats.speed:
@@ -215,28 +218,35 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             case Stats.attackSpeed:
                 attackSpeed -= attackSpeed * mod.value;
                 break;
+            default:
+                Debug.Log("No reconozco enum");
+                break;
         }
     }
 
     public void ChangePickaxe(PickaxeStatsScripteableObject newPickaxe)
-    {
+    {     
         damage += newPickaxe.damage;
         critMultiplier += newPickaxe.critMultiplier;
         critProbability += newPickaxe.critProbability;
         attackSpeed -= attackSpeed*newPickaxe.attackSpeed;
+
+        Debug.Log("DAÑO: " + _damage);
     }
 
     public void OnEquipmentChange()
     {
         ResetStats();
-
+        Debug.Log("ENUM: " + Stats.speed);
         Debug.Log("Equipamiento Actualizado");
-        if (currentPickaxe != null)
+        Debug.Log(currentPickaxe);
+        //if (currentPickaxe != null)
             ChangePickaxe(currentPickaxe);
-        if (currentChestCloth != null)
+       // if (currentChestCloth != null)
             ChangeClothes(currentChestCloth);
-        if (currentHelmet != null)
+       // if (currentHelmet != null)
             ChangeClothes(currentHelmet);
+        
     }
     public void ChangeSomething(PickaxeStatsScripteableObject newPickaxe)
     {

@@ -243,6 +243,9 @@ public class EquipmentManager : MonoBehaviour
                 data = pickaxes[i].data,
                 model = pickaxes[i].model
             };
+
+
+            Debug.Log("PICOS: " + pickaxes[i].data);
         }
 
         foreach (ClothAssigner chestCloth in chestCloths)

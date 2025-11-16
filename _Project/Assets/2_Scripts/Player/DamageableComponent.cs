@@ -8,7 +8,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 {
     private bool hasBeenDamaged = false;
 
-    [SerializeField] private int health = 50;
+    [SerializeField] private int health = 0;
     public int Health
     {
         get => health;
@@ -45,7 +45,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 
         if(Health <= 0)
             Death();
-        Debug.Log("Me han quitado vida");
+        Debug.Log("Me han quitado vida :" + damage + " me queda: "+ Health);
     }
 
     public bool GetHasBeenDamaged()
