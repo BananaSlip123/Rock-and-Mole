@@ -521,7 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rooms: []
   nEnemies: 0
-  spawnEnemy: 1
+  spawnEnemy: 0
 --- !u!4 &769295073
 Transform:
   m_ObjectHideFlags: 0
