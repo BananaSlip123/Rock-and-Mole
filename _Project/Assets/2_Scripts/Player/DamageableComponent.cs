@@ -14,17 +14,20 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         get => health;
         private set
         {
-            if(value != health)
-            {
-                health = value;
-                OnHealthChange?.Invoke(value);
-            }
+            health = value;
+            OnHealthChange?.Invoke(value);
             
         }
     }
 
     public Action<int> OnHealthChange;
     public Action OnDeath;
+    PlayerStats player;
+
+    private void Awake()
+    {
+        player = GameObject.Find("PlayerStats").GetComponent<PlayerStats>();
+    }
 
     public void SetHealth(int health)
     {
@@ -33,7 +36,8 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 
     public void RecieveDamage(int damage)
     {
-        Health -= damage;
+        //Health -= damage;
+        player.HealPlayer(-damage);
 
         if(!hasBeenDamaged)
         {

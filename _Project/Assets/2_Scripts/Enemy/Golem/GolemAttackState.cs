@@ -6,12 +6,14 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     const float COOLDOWN = 2.5f;
     float TIME_HITBOX = 0.1f;
 
+    float radiusToAttack = 1f;
+
     private float timeToAttack = 0f;
     private float timeHitbox = 0f;
 
     private bool isInCooldown = true;
 
-    int damage = 5;
+    int damage = 20;
 
     IStateMachineComponent mStateMachine;
 
@@ -54,7 +56,11 @@ public class GolemAttackState : IStateComponent, IAttackComponent
         //TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(0).length;
 
         if (enemyTransform.gameObject.name == "GolemBoss")
-            damage = 20;
+        {
+            damage = 60;
+            radiusToAttack = 5f;
+        }
+            
     }
 
     public void Exit()
@@ -120,7 +126,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     private bool TakePlayerPosition()
     {
-        Collider[] p = Physics.OverlapSphere(enemyTransform.position, 1f);
+        Collider[] p = Physics.OverlapSphere(enemyTransform.position, radiusToAttack);
 
         foreach (Collider c in p)
         {
