@@ -1,0 +1,19 @@
+{
+    "name": "GameOver",
+    "rootNamespace": "",
+    "references": [
+        "Unity.TextMeshPro",
+        "MaterialInfo",
+        "GameDataAssembly",
+        "PlayerComponents"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

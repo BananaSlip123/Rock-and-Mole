@@ -1,0 +1,19 @@
+{
+    "name": "MineAssemby",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8cb876c56ff9054478fa90b8c26431b8",
+        "GUID:b69b9941861653241852ac36aa4f2140",
+        "GUID:c17ff5bc373c31248bba58abb3013523",
+        "GUID:8f6d2aef0b2b9f14daef6803491adb58"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
