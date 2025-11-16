@@ -12651,8 +12651,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1.1
+  m_Color: {r: 0.9433962, g: 0.7086842, b: 0.24474904, a: 1}
+  m_Intensity: 0.24
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -12866,9 +12866,69 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1423344585}
     m_Modifications:
+    - target: {fileID: 598422759071488687, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 598422759071488687, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 598422759071488687, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 763035586399358446, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540187217733859926, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_Range
+      value: 5.0422053
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729879754520943980, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729879754520943980, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016511584266369227, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_Range
+      value: 4.3744335
+      objectReference: {fileID: 0}
+    - target: {fileID: 3804718170957453362, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3804718170957453362, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103805539692641685, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_Range
+      value: 4.7365665
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217810500706690510, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217810500706690510, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158880608379749687, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_Range
+      value: 4.5156393
+      objectReference: {fileID: 0}
+    - target: {fileID: 7002365993626239950, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951297934534109072, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_Range
+      value: 4.731693
       objectReference: {fileID: 0}
     - target: {fileID: 8076017591031803809, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
       propertyPath: m_LocalScale.x
@@ -12926,9 +12986,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8307295363746449257, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307295363746449257, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.99
+      objectReference: {fileID: 0}
     - target: {fileID: 8887879812592563483, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
       propertyPath: m_Name
       value: AldeaMina
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952233070979097399, guid: 0169ad6b389cdb4459c1bffe06efbd0d, type: 3}
+      propertyPath: m_Range
+      value: 3.5513978
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

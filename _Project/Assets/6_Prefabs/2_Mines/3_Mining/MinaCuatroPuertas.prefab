@@ -547,6 +547,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FarolilloConAplique (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7545591447380615155, guid: f3666d33894f9044892617d430121b0e, type: 3}
+      propertyPath: m_Range
+      value: 3.968544
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477618620668608266, guid: f3666d33894f9044892617d430121b0e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477618620668608266, guid: f3666d33894f9044892617d430121b0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.62
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2479,6 +2491,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FarolilloConAplique
       objectReference: {fileID: 0}
+    - target: {fileID: 7545591447380615155, guid: f3666d33894f9044892617d430121b0e, type: 3}
+      propertyPath: m_Range
+      value: 3.895812
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477618620668608266, guid: f3666d33894f9044892617d430121b0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.68
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2647,11 +2667,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 422195305718344127, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_Size
-      value: 0.6068012
+      value: 0.6068011
       objectReference: {fileID: 0}
     - target: {fileID: 422195305718344127, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_Value
-      value: 0.99999326
+      value: 0.99999744
       objectReference: {fileID: 0}
     - target: {fileID: 2790324730820272144, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_AnchoredPosition.y
