@@ -42,7 +42,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     public void Attack()
     {
-        animator.SetBool("Atacar", true);
+        //animator.SetBool("Atacar", true);
         playerHealth.RecieveDamage(damage);
     }
 
@@ -50,15 +50,16 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     {
         attackHitbox = enemyTransform.GetChild(1).GetComponent<Collider>();
         //Debug.Log("ESTOY ATACANDO");
-        animator.SetBool("Atacar", true);
+        //animator.SetBool("Atacar", true);
 
         Debug.Log("DURACION: " + animator.GetCurrentAnimatorStateInfo(0).length);
-        //TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(0).length;
+        //TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(1).length;
 
         if (enemyTransform.gameObject.name == "GolemBoss")
         {
             damage = 60;
             radiusToAttack = 5f;
+            TIME_HITBOX = 0.5f;
         }
             
     }
@@ -87,11 +88,15 @@ public class GolemAttackState : IStateComponent, IAttackComponent
         {           
             timeHitbox += Time.fixedDeltaTime;
 
-            if (IsHitingPlayer())
-                Attack();
+            animator.SetBool("Atacar", true);
 
-            if(timeHitbox >= 0.7f)
+            if (timeHitbox >= 0.4f)
+            {
                 ActiveHitbox();
+                if (IsHitingPlayer())
+                    Attack();
+
+            }              
         }
 
         if (timeHitbox >= TIME_HITBOX)
