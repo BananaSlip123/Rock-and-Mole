@@ -153,7 +153,7 @@ MonoBehaviour:
   - {fileID: 4609473120354656708, guid: fec99fa1d3b8e7540831c7cd9436efa1, type: 3}
   - {fileID: 8345876925786625123, guid: ce239a7581a1c8e45a8114f3a52c6b8d, type: 3}
   nEnemies: 0
-  spawnEnemy: 1
+  spawnEnemy: 0
 --- !u!4 &1172723073
 Transform:
   m_ObjectHideFlags: 0
