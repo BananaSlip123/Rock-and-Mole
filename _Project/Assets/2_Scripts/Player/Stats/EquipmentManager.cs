@@ -287,6 +287,8 @@ public class EquipmentManager : MonoBehaviour
         CurrentChestClothID = CurrentChestClothID;
         CurrentHelmetID = CurrentHelmetID;
 
+        Debug.Log("DATOS: " + CurrentPickaxeData);
+
         _init = true;
     }
     #endregion

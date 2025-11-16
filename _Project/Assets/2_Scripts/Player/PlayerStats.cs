@@ -187,7 +187,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
 
     public void ChangeClothes(ClothStatsScripteableObject newCloth)
     {
-        Debug.Log("Estoy cambiando la ropa: " + newCloth.name);
+        //Debug.Log("Estoy cambiando la ropa: " + newCloth.name);
         foreach(ModifierStats mod in newCloth.modifiers)
         {
             Debug.Log("HOLA SOY: " + mod.stat);
@@ -242,13 +242,13 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         Debug.Log(currentPickaxe);
         if (currentPickaxe != null)
             ChangePickaxe(currentPickaxe);
-        else throw new Exception("Pico nulo");
+        //else throw new Exception("Pico nulo");
         if (currentChestCloth != null)
             ChangeClothes(currentChestCloth);
-        else throw new Exception("Peto nulo");
+        //else throw new Exception("Peto nulo");
         if (currentHelmet != null)
             ChangeClothes(currentHelmet);
-        else throw new Exception("Casco nulo");
+        //else throw new Exception("Casco nulo");
 
     }
     public void ChangeSomething(PickaxeStatsScripteableObject newPickaxe)
