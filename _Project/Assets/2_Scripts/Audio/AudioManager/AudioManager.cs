@@ -168,6 +168,14 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region PUBLIC FUNCS
+    public void SetMusicVolume(float volume)
+    {
+        musicSource.volume = Mathf.Clamp01(volume);
+    }
+    public void SetSFXVolume(float volume)
+    {
+        sfxSource.volume = Mathf.Clamp01(volume);
+    }
     public void PlayMusic(MusicType type)
 {
     if (!musicDictionary.TryGetValue(type, out AudioClip clip))
