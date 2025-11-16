@@ -1,5 +1,5 @@
 # <div align="center"> ROCK & MOLE </div>
-<div align="center">GAME DESIGN DOCUMENT - v0.1.0</div>
+<div align="center">GAME DESIGN DOCUMENT - v0.2.0</div>
 
 <br><br><br><br>
 
@@ -25,8 +25,6 @@ Banana Slip
 **Eventos especiales y salas únicas:** Durante la exploración el jugador puede encontrar eventos especiales con salas únicas: cofres raros, zonas oscuras, rescates de NPCs o campamentos de descanso. Estos eventos aportan dinamismo y rejugabilidad.
 
 **Gestión y comercio en el pueblo:** Fuera de la mina el jugador interactúa con NPCs que permiten vender objetos y mejorar equipo. El pueblo funciona como centro de operaciones, ofreciendo una pausa entre runs y reforzando el vínculo con la historia.
-
-**Gestión activa de la tienda:** El jugador no solo vende los objetos recolectados, sino que gestiona su propia tienda dentro del pueblo. Puede decidir qué objetos poner a la venta, establecer los precios de cada uno, y observar cómo reaccionan los aldeanos ante sus decisiones comerciales.  Esta mecánica añade una capa estratégica y económica al juego.
 
 **Diseño escalable y expansible:** El juego está diseñado para crecer: nuevos biomas, enemigos, materiales y eventos pueden añadirse fácilmente gracias a una arquitectura modular. Esto permite actualizaciones constantes y contenido adicional sin comprometer la estabilidad del sistema base.
 
@@ -99,6 +97,9 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 | Moverse | Teclas WASD         | Joystick izquierdo | Joystick izquierdo | Joystick izquierdo |
 | Atacar | Click izquierdo | RT (gatillo derecho) | R2 (gatillo derecho) | ZR (gatillo derecho) |
 | Dash | Shift | LT (gatillo izquierdo) | L2 (gatillo izquierdo) | ZL (gatillo izquierdo) |
+| Interactuar | E | X | □ | Y |  
+
+<div align="center"><p><i>Tabla 1: Controles de personaje.</i></p></div>
 
 <br>  
 
@@ -107,7 +108,9 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 | Pausa | Esc         | ≡ | Options | + |
 | Inventario | Tab | Y | △ | X |
 | Aceptar | Clic | A | X | A |
-| Diálogos | Espacio/Clic | A | X | A |
+| Diálogos | Espacio/Clic | A | X | A |  
+
+<div align="center"><p><i>Tabla 2: Controles de interfaces.</i></p></div>
 
 <br>
 
@@ -116,25 +119,44 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 **Protagonista:**
 
 * **Nombre:** Otto.
+* **Sexo**: Masculino.
 * **Especie:** Topo.
-* **Rol:** Explorador y comerciante. Es el personaje controlado por el jugador.
+* **Edad**: 22 años.
+* **Personalidad**: Otto es un personaje tranquilo y sereno, capaz de mantener la calma incluso en situaciones extremas. Esta actitud le permite tomar decisiones con cabeza fría, aunque a veces lo lleva a asumir riesgos que otros evitarían. Tiene una curiosidad natural y un fuerte sentido de responsabilidad hacia su comunidad, lo que lo impulsa a seguir adelante pese al peligro.
+* **Aspecto físico**: De estatura y complexión media, Otto viste con ropa de trabajo desgastada por el uso: una camiseta y un peto cubiertos de tierra y marcas de desgaste. Lleva siempre un casco de minero naranja con luz frontal, esencial para explorar zonas oscuras. Su mochila grande y resistente le permite transportar los objetos que encuentra en sus expediciones por la mina.
+* **Rol:** Otto es el personaje principal controlado por el jugador. Su rol combina exploración y comercio: recorre las profundidades de la mina en busca de recursos, enfrentando peligros y recolectando objetos que luego puede intercambiar para ayudar a su comunidad.
+* **Trasfondo**: Vive en un pueblo subterráneo que depende de los minerales de una antigua mina. Tras un misterioso cierre, la mina se volvió peligrosa y oscura. Para salvar a su comunidad y descubrir qué ocurrió, Otto decide adentrarse en sus profundidades, enfrentando criaturas corrompidas y buscando recuperar los recursos perdidos.
 
 **Vendedor:**
 
 * **Nombre:** Telmo.
-* **Especie:** Ratón.
+* **Sexo**: Masculino.
+* **Especie:** Topo.
+* **Edad**: 28 años.
+* **Personalidad**: Telmo es extrovertido, hablador y siempre está al tanto de las últimas tendencias, incluso bajo tierra. Tiene un gran sentido del humor y una actitud comercial muy marcada: siempre intenta convencer al jugador de que necesita una nueva prenda. Aun así, se preocupa por el bienestar del pueblo y colabora activamente con los exploradores.
+* **Aspecto físico**: Telmo viste con ropa llamativa y colorida. Su tienda está decorada con telas, maniquíes y luces cálidas que contrastan con el resto del pueblo.
 * **Rol:** Compra objetos del jugador y vende armaduras y vestimentas. Telmo regenta la tienda de ropa del pueblo. Aunque su local parece especializado en moda, es el lugar donde el jugador puede vender los materiales recogidos en la mina y adquirir nuevas piezas de equipo.
+* **Trasfondo**: Antes del cierre de la mina, Telmo se dedicaba exclusivamente a la moda subterránea. Sin embargo, con la crisis de recursos, adaptó su negocio para ayudar a los exploradores, convirtiendo su tienda en un punto clave para el intercambio de materiales y la mejora del equipo.
 
 **Herrero:**
 
 * **Nombre:** Bruno.
+* **Sexo**: Masculino.
 * **Especie:** Topo.
+* **Edad**: 45 años.
+* **Personalidad**: Bruno es serio, meticuloso y reservado. Habla poco, pero cuando lo hace, sus palabras son precisas. Tiene un fuerte sentido del deber y se toma muy en serio su trabajo como herrero. Aunque no lo demuestre abiertamente, se preocupa por la seguridad del jugador y del pueblo.
+* **Aspecto físico**: De complexión robusta, Bruno siempre está cubierto de hollín. Lleva un mandil de cuero y guantes gruesos. Su taller está lleno de herramientas, yunques y brasas encendidas, con un ambiente cálido y ruidoso.
 * **Rol:** Mejora armas. Bruno es el herrero del pueblo. Se encarga de reforzar el pico, la armadura y el casco del jugador utilizando los materiales obtenidos en la mina. Su taller es el corazón del progreso mecánico del juego.
+* **Trasfondo**: Bruno proviene de una larga tradición de herreros subterráneos. Desde joven ha trabajado el metal, y su habilidad para forjar herramientas resistentes lo convirtió en una figura clave del pueblo. Con la mina cerrada, su papel se volvió aún más importante, ya que sin su ayuda, los exploradores no podrían mejorar su equipo ni sobrevivir a los peligros del subsuelo.
 
 **Aldeanos:**
 
 * **Especie:** Variadas (musarañas, ratones, topos, tejones, etc).
+* **Personalidad**: Los aldeanos son diversos en carácter y actitud. Algunos son curiosos y entusiastas, otros más temerosos o escépticos. En conjunto, representan el alma del pueblo: una comunidad unida que observa con atención los avances del jugador y reacciona a sus logros o fracasos.
 * **Rol:** Ambientación, dan consejos, reaccionan al progreso del jugador. Los aldeanos aportan vida al pueblo. Algunos ofrecen consejos útiles, otros comentan los avances del jugador.
+* **Trasfondo**: Los aldeanos han vivido durante generaciones en el pueblo subterráneo, dependiendo de la mina como fuente de recursos. El cierre repentino los dejó en una situación crítica, pero mantienen la esperanza gracias a los esfuerzos del jugador. Su presencia constante refuerza la sensación de comunidad y da contexto emocional al progreso del juego.
+
+<br>
 
   
 ## 4.4. ENEMIGOS
