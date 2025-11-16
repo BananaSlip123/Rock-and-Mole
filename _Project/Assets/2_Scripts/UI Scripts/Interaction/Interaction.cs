@@ -22,7 +22,8 @@ public class Interaction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             texto.color = available;
-            playerController.pressButtonA = Interact;
+            if(playerController != null)
+                playerController.pressButtonA = Interact;
         }
     }
 
@@ -31,11 +32,12 @@ public class Interaction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             texto.color = notAvailable;
-            playerController.pressButtonA = null;
+            if (playerController != null)
+                playerController.pressButtonA = null;
         }
     }
     private void Interact()
     {
-        onInteraction.Invoke();
+        onInteraction?.Invoke();
     }
 }
