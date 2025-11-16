@@ -271,7 +271,7 @@ RectTransform:
   m_GameObject: {fileID: 3956650995001022294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.90000004, y: 0.90000004, z: 0.90000004}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1819267961058394471}
@@ -513,37 +513,6 @@ MonoBehaviour:
   img_lightBorder: {fileID: 5721889133485517820}
   txt_amount: {fileID: 4631977656034626724}
   go_Info: {fileID: 1245654543337454272}
-  inspectorIcons:
-  - _name: 0
-    _sprite: {fileID: 21300000, guid: 0c6929e8fe8fb9049bfc4df216080a6b, type: 3}
-    _color: {r: 0.915, g: 0.915, b: 0.915, a: 1}
-  - _name: 1
-    _sprite: {fileID: 21300000, guid: 3443d0a64e8525f4aae655e0304e1317, type: 3}
-    _color: {r: 0.4113207, g: 0.4113207, b: 0.4113207, a: 1}
-  - _name: 2
-    _sprite: {fileID: 21300000, guid: 0c6929e8fe8fb9049bfc4df216080a6b, type: 3}
-    _color: {r: 1, g: 0.8182824, b: 0.2471698, a: 1}
-  - _name: 3
-    _sprite: {fileID: 21300000, guid: 8b04ae19018f8cd42be895f0febaaa73, type: 3}
-    _color: {r: 1, g: 0.69143337, b: 0.53396225, a: 1}
-  - _name: 4
-    _sprite: {fileID: 21300000, guid: 34e295fe49e2ad54a8e88424b24f88f5, type: 3}
-    _color: {r: 0.390566, g: 1, b: 0.9611814, a: 1}
-  - _name: 5
-    _sprite: {fileID: 21300000, guid: 3b326c19660ceb442a7755f59d182df2, type: 3}
-    _color: {r: 0.7672654, g: 0.39215684, b: 1, a: 1}
-  - _name: 6
-    _sprite: {fileID: 21300000, guid: a116c3e5ed030c944bdd470640f0c95d, type: 3}
-    _color: {r: 1, g: 0.68917847, b: 0, a: 1}
-  - _name: 7
-    _sprite: {fileID: 21300000, guid: a116c3e5ed030c944bdd470640f0c95d, type: 3}
-    _color: {r: 0.07747769, g: 1, b: 0, a: 1}
-  - _name: 8
-    _sprite: {fileID: 21300000, guid: 34e295fe49e2ad54a8e88424b24f88f5, type: 3}
-    _color: {r: 1, g: 0.1490565, b: 0.15472944, a: 1}
-  - _name: 9
-    _sprite: {fileID: 21300000, guid: 988779d5f58b95042b89f5a8abf9160b, type: 3}
-    _color: {r: 0.8584906, g: 0.99541605, b: 1, a: 1}
 --- !u!222 &2574480364183842791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -760,7 +729,7 @@ RectTransform:
   m_GameObject: {fileID: 8357811271394065585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2}
-  m_LocalScale: {x: 14, y: 14, z: 14}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 831062111207679475}
@@ -792,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4666667, g: 0.39607847, b: 0.30980393, a: 1}
+  m_Color: {r: 0.312, g: 0.26480672, b: 0.20712607, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

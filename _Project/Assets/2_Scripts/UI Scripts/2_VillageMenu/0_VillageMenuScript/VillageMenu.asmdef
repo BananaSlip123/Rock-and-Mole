@@ -2,8 +2,10 @@
     "name": "VillageMenuGestion",
     "rootNamespace": "",
     "references": [
-        "Unity.InputSystem",
-        "InventoryUI"
+        "InventoryUI",
+        "InputMapsManager",
+        "Unity.TextMeshPro",
+        "GameDataAssembly"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

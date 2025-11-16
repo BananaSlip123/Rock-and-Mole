@@ -15,9 +15,9 @@ public class VillageDoor : MonoBehaviour
         { DoorType.villageEntry, () => { VillageNavigation.Instance?.OnVillageEntry(); } },
         { DoorType.minesEntry, () => { VillageNavigation.Instance?.OnMineEntry(); } },
 
-        { DoorType.shopMenuEntry, () => { VillageNavigation.Instance?.OnSellInteraction(); } },
-        { DoorType.wardrobeMenuEntry, () => { VillageNavigation.Instance?.OnWardrobeInteraction(); } },
-        { DoorType.forgeMenuEntry, () => { VillageNavigation.Instance?.OnForgeInteraction(); } },
+        //{ DoorType.shopMenuEntry, () => { VillageNavigation.Instance?.OnSellInteraction(); } },
+        //{ DoorType.wardrobeMenuEntry, () => { VillageNavigation.Instance?.OnWardrobeInteraction(); } },
+        //{ DoorType.forgeMenuEntry, () => { VillageNavigation.Instance?.OnForgeInteraction(); } },
     };
     public enum DoorType
     {
@@ -26,9 +26,9 @@ public class VillageDoor : MonoBehaviour
         villageEntry,
         minesEntry,
 
-        shopMenuEntry,
-        wardrobeMenuEntry,
-        forgeMenuEntry,
+        //shopMenuEntry,
+        //wardrobeMenuEntry,
+        //forgeMenuEntry,
     }
     private void Awake()
     {

@@ -8,21 +8,24 @@ namespace PlayerComponents
 {
     public class PlayerAttackComponent : MonoBehaviour, IAttackComponent
     {
-        const float COOLDOWN = 0.2f;
-        const float TIME_HITBOX = 0.1f;
+        [SerializeField] public float COOLDOWN = 0.4f;
+        const float TIME_HITBOX = 1.5f;
 
         private float timeToAttack = 0f;
         private float timeHitbox = 0f;
 
         private bool isInCooldown = false;
+        private bool isAttacking = false;
+
+        public int damage;
+        public float critMultiplier;
+        public float critProbability;
 
         private Queue<Collider> hitColliders = new Queue<Collider>();
 
         [SerializeField] Collider attackHitbox;
         [SerializeField] PickaxeStatsScripteableObject actualPickaxeStats;
         [SerializeField] Animator animator;
-        [SerializeField] Animator animatorPickaxe;
-
 
         void FixedUpdate()
         {
@@ -39,7 +42,7 @@ namespace PlayerComponents
                 return;
             }
 
-            if(attackHitbox.enabled)
+            if(isAttacking)
             {
                 timeHitbox += Time.fixedDeltaTime;
                                    
@@ -48,16 +51,19 @@ namespace PlayerComponents
 
                 if (IsHitingAnEnemy(localEnemies))
                     DoDamage(localEnemies);
-
-                if (timeHitbox >= TIME_HITBOX)
-                {
-                    animator.SetBool("Atacar", false);
-                    animatorPickaxe.SetBool("Atacar", false);
+                Debug.Log(timeHitbox);
+                if(timeHitbox >= 0.4f && timeHitbox <= 0.42f)
+                    attackHitbox.enabled = false;                  
+                else if (timeHitbox >= TIME_HITBOX)
+                {                                     
                     HidePickaxe.instance.HidePickaxeAnimation(false);
-                    attackHitbox.enabled = false;
-                    timeHitbox = 0f;
 
-                    foreach(Collider c in hitColliders)
+                    timeHitbox = 0f;
+                    isAttacking = false;
+
+                    animator?.SetBool("Atacar", false);
+
+                    foreach (Collider c in hitColliders)
                     {
                         if (c != null)
                         {
@@ -76,21 +82,22 @@ namespace PlayerComponents
                 isInCooldown = true;
                 ActiveHitbox();
 
-                if (!animator.GetBool("Atacar"))
+                if (animator != null && !animator.GetBool("Atacar"))
                     animator.SetBool("Atacar", true);
 
-                animatorPickaxe.SetBool("Atacar", true);
-
                 HidePickaxe.instance.HidePickaxeAnimation(true);
+
+                //Reproducir sonido de ataque a enemigo
+                AudioManager.Instance.PlayAudio(AudioManager.AudioType.AttackToEnemySound);
             }
             //else
                 //Debug.Log("Estoy en cooldown");
-            
         }
 
         public void ActiveHitbox()
         {
             attackHitbox.enabled = true;
+            isAttacking = true;
         }
 
         public void DoDamage(Collider[] hitColliders)
@@ -101,7 +108,13 @@ namespace PlayerComponents
                 {
                     if (!hitCollider.gameObject.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
                     {
-                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(actualPickaxeStats.damage);
+                        float hitCrit = Random.Range(0,1);
+                        int damage = this.damage;
+                        if(hitCrit < critProbability)
+                        {
+                            damage = (int) (critMultiplier * damage);
+                        }
+                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(damage);
                         Debug.Log("He golpeado a: " + hitCollider.gameObject.name);
                     }
                 }

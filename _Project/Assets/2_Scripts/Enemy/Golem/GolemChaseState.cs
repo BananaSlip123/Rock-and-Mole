@@ -26,10 +26,28 @@ public class GolemChaseState : IStateComponent, IMoveComponent
         }    
         else
         {
-            radiusToAttack = 10f;
-            radiusToStopChasing = 15f;
+            radiusToAttack = 7f;
+            radiusToStopChasing = 10f;
         }
             
+    }
+
+    public GolemChaseState(Transform e, IStateMachineComponent mStateMachine)
+    {
+        enemyTransform = e;
+        this.mStateMachine = mStateMachine;
+
+        if (animator.CompareTag("Chikito"))
+        {
+            radiusToAttack = 2f;
+            radiusToStopChasing = 5f;
+        }
+        else
+        {
+            radiusToAttack = 5f;
+            radiusToStopChasing = 10f;
+        }
+
     }
 
     public void Enter()
@@ -54,6 +72,7 @@ public class GolemChaseState : IStateComponent, IMoveComponent
             Move();
             if ((enemyTransform.position - playerPosition).magnitude < radiusToAttack)
             {
+                //Debug.Log("DISTANCIA: " + (enemyTransform.position - playerPosition).magnitude);
                 mStateMachine.ChangeState(new GolemAttackState(mStateMachine, enemyTransform, GameObject.FindGameObjectWithTag("Player").GetComponent<IDamageableComponent>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(), animator));
             }
         }
@@ -71,7 +90,7 @@ public class GolemChaseState : IStateComponent, IMoveComponent
     public void Move()
     {
         Vector3 direction = playerPosition - enemyTransform.position;
-        Vector3 positionToMove = VectorConverter.SetVectorToIsoCoords((direction).normalized, speed);
+        Vector3 positionToMove = speed * Time.fixedDeltaTime * direction.normalized;
         positionToMove.y = 0;
         Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
         enemyTransform.position += positionToMove;

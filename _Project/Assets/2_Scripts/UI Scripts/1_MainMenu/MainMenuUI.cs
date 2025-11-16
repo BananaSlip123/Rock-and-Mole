@@ -13,6 +13,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] GameObject go_closeIcon;
     [Header("INPUT NAVIGATION")]
     [SerializeField] PlayerInput playerInput;
+
     [SerializeField] EventSystem eventSystem;
     [SerializeField] Selectable firstSelected_main;
     [SerializeField] Selectable firstSelected_settings;
@@ -50,11 +51,11 @@ public class MainMenuUI : MonoBehaviour
     void UpdateSelectedButton( )
     {
         if (current == Windows.Main)
-            firstSelected_main.Select();
+            firstSelected_main?.Select();
         else if (current == Windows.Settings)
-            firstSelected_settings.Select();
+            firstSelected_settings?.Select();
         else if (current == Windows.Credits)
-            firstSelected_credits.Select();
+            firstSelected_credits?.Select();
     }
     #endregion
 
@@ -67,7 +68,7 @@ public class MainMenuUI : MonoBehaviour
         if (GameData.NeedsTutorial)
             SceneManager.LoadScene("0_Tutorial");
         else
-            SceneManager.LoadScene("2_VILLAGE_SCENE");
+            SceneManager.LoadScene("1_VILLAGE_SCENE");
     }
 
     public void onPointer() => eventSystem.SetSelectedGameObject(null);

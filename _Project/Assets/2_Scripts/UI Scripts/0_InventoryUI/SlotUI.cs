@@ -11,32 +11,12 @@ public class SlotUI : MonoBehaviour
     [SerializeField] Image img_lightBorder;
     [SerializeField] TextMeshProUGUI txt_amount;
     [SerializeField] GameObject go_Info;//cuando desactivemos el objeto del inventario, q ocultamos
-    [SerializeField] IconDataInspector[] inspectorIcons;
 
-    [System.Serializable]
-    public class IconDataInspector
+    static Dictionary<MaterialName, MaterialsData.IconData> Icons
     {
-        // Sin constructor público - se inicializa desde inspector
-        // Pero desde código no se puede modificar una vez creado
-        [SerializeField] private MaterialName _name;
-        [SerializeField] private Sprite _sprite;
-        [SerializeField] private Color _color;
-        public MaterialName Name => _name;
-        public Sprite Sprite => _sprite;
-        public Color Color => _color;
+        get => MaterialsData.Icons;
     }
-    public readonly struct IconData
-    {
-        private readonly Sprite _sprite;
-        private readonly Color _color;
-        public IconData(Sprite sprite, Color color){ _sprite = sprite; _color = color; }
-        public Sprite Sprite => _sprite;
-        public Color Color => _color;
-    }
-    #endregion
-    #region STATIC VARS
-    static bool IsInit = false;
-    static Dictionary<MaterialName, IconData> Icons = new Dictionary<MaterialName, IconData>();
+
     #endregion
 
     #region PRIVATE VARS
@@ -112,14 +92,6 @@ public class SlotUI : MonoBehaviour
     void Init()
     {
         Selected = false;
-        if (!IsInit) //las variables estáticas queremos q las inicialice solo uno, nos da igual quien sea
-        {
-            IsInit = true;
-            foreach (IconDataInspector elem in inspectorIcons)
-            {
-                Icons.TryAdd(elem.Name, new IconData(elem.Sprite, elem.Color));
-            }
-        }
     }
     #endregion
     #region PUBLIC FUNCS

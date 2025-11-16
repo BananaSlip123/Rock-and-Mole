@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class VillageMenuUI : MonoBehaviour
@@ -19,7 +19,8 @@ public class VillageMenuUI : MonoBehaviour
    // [SerializeField] GameObject go_closeIcon;
     
     [Header("INPUT NAVIGATION")]
-    [SerializeField] PlayerInput playerInput;
+    //[SerializeField] PlayerInput playerInput;
+    [SerializeField] InputMapsManager playerInputMapsManager;
     [SerializeField] EventSystem eventSystem;
     [SerializeField] Selectable firstSelected_pause;
     [SerializeField] Selectable firstSelected_settings;
@@ -48,6 +49,8 @@ public class VillageMenuUI : MonoBehaviour
         get => _currentWindow;
         set
         {
+            Debug.Log("Current Window: "+_currentWindow.ToString());
+            Debug.Log("Next Window: " + value.ToString());
             SwitchWindow(_currentWindow, value);
             _currentWindow = value;
             UpdateSelectedButton();
@@ -55,7 +58,7 @@ public class VillageMenuUI : MonoBehaviour
     }
     #endregion
     #region PRIVATE FUNCS
-    private void Awake()
+    private void Start()
     {
         SwitchWindow(null, Windows.Main);
         inventoryReference = go_inventory.GetComponent<InventoryUI>();
@@ -76,19 +79,22 @@ public class VillageMenuUI : MonoBehaviour
         bool isInit = !lastWindow.HasValue;
 
         if (isMain && (isInit || lastWindow.Value != Windows.Main)) //si isInit entra en el if y no accede a value
-            playerInput.SwitchCurrentActionMap("Player");
+        {
+            if (!GameData.NeedsTutorial || !isInit)
+                //playerInputMapsManager.SwitchCurrentActionMap("Player");
+                playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
+        }
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
-            playerInput.SwitchCurrentActionMap("UI");
-
-        //go_closeIcon.SetActive(nextWindow != Windows.Main && nextWindow != Windows.Pause);
+            //playerInputMapsManager.SwitchCurrentActionMap("UI");
+            playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.uiNavigation;
     }
 
     void UpdateSelectedButton()
     {
         if (CurrentWindow == Windows.Settings)
-            firstSelected_settings.Select();
+            firstSelected_settings?.Select();
         else if (CurrentWindow == Windows.Pause)
-            firstSelected_pause.Select();
+            firstSelected_pause?.Select();
         else if (CurrentWindow == Windows.InventoryInfo || CurrentWindow == Windows.Shop)
         {
             Selectable firstSlot = inventoryReference.FirstElementToSelect;
@@ -96,26 +102,51 @@ public class VillageMenuUI : MonoBehaviour
             else firstSlot.Select();
         }
         else if (CurrentWindow == Windows.Wardrobe)
-            firstSelected_wardrobe.Select();
+            firstSelected_wardrobe?.Select();
         else if (CurrentWindow == Windows.Forge)
-            firstSelected_forge.Select();
+            firstSelected_forge?.Select();
     }
     #endregion
 
     #region PUBLIC FUNCS
-    public void Button_OpenPause() => CurrentWindow = Windows.Pause;
-    public void Button_OpenInventory() => CurrentWindow = Windows.InventoryInfo;
+    public void Button_Pause()
+    {
+        if (CurrentWindow == Windows.Main)
+            CurrentWindow = Windows.Pause;
+        else
+            CurrentWindow = Windows.Main;
+    }
+
+    public void Button_Inventory()
+    {
+        if (CurrentWindow == Windows.InventoryInfo || CurrentWindow  == Windows.Shop)
+            CurrentWindow = Windows.Main;
+        else
+            CurrentWindow = Windows.InventoryInfo;
+    }
     public void Button_OpenShop() => CurrentWindow = Windows.Shop;
     public void Button_OpenForge() => CurrentWindow = Windows.Forge;
     public void Button_OpenWardrobe() => CurrentWindow = Windows.Wardrobe;
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
     public void Button_OpenMain() => CurrentWindow = Windows.Main;
-    public void Button_ReturnToMenuScene() => SceneManager.LoadScene("1_MAIN_SCENE");
+    public void Button_ReturnToMenuScene() => SceneManager.LoadScene("-1_MAIN_SCENE");
 
-    public void onPointer() => eventSystem.SetSelectedGameObject(null);
+    public void OnPointer()
+    {
+        if (eventSystem?.currentSelectedGameObject != null)
+        {
+            GameObject selected = eventSystem.currentSelectedGameObject;
+            bool isInputField = selected.GetComponent<InputField>() != null ||
+                          selected.GetComponent<TMPro.TMP_InputField>() != null;
+
+            if (isInputField) return;
+        }
+
+        eventSystem.SetSelectedGameObject(null);
+    }
     public void onNavigation()
     {
-        if (eventSystem.currentSelectedGameObject == null)
+        if (eventSystem.currentSelectedGameObject == null || !eventSystem.currentSelectedGameObject.activeInHierarchy)
         {
             UpdateSelectedButton();
         }

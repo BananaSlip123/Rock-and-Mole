@@ -4,19 +4,17 @@ public class RockGenerator : MonoBehaviour, IEnemyGenerator
 {
     [SerializeField] GameObject[] rockPrefabs;
 
-    [SerializeField] Vector2Int limitX;
-    [SerializeField] Vector2Int limitZ;
     [SerializeField] Vector2Int minMaxRock;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        float random = UnityEngine.Random.Range(minMaxRock.x, minMaxRock.y);
+        int random = UnityEngine.Random.Range(minMaxRock.x, minMaxRock.y + 1);
 
         for (int i = 0; i < random; i++)
         {
-            SpawnEnemy(rockPrefabs[0]);
-            LevelManager.instance.EnemyHasSpawned();
+            int randomType = UnityEngine.Random.Range(0,rockPrefabs.Length);
+            SpawnEnemy(rockPrefabs[randomType]);
         }
 
         gameObject.SetActive(false);
@@ -25,8 +23,6 @@ public class RockGenerator : MonoBehaviour, IEnemyGenerator
     public void SpawnEnemy(GameObject prefab)
     {
         Collider collider = GetComponent<Collider>();
-        //float randomZ = UnityEngine.Random.Range(limitZ.x, limitZ.y);
-        //float randomX = UnityEngine.Random.Range(limitX.x, limitX.y);
 
         float randomX = UnityEngine.Random.Range(collider.bounds.min.x,collider.bounds.max.x);
         float randomZ = UnityEngine.Random.Range(collider.bounds.min.z, collider.bounds.max.z);

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,36 +8,48 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 {
     private bool hasBeenDamaged = false;
 
-    [SerializeField] private int health = 50;
-
+    [SerializeField] private int health = 0;
     public int Health
     {
         get => health;
         private set
         {
-            if(value != health)
-            {
-                health = value;
-                OnHealthChange?.Invoke(value);
-            }
+            health = value;
+            OnHealthChange?.Invoke(value);
             
         }
     }
 
     public Action<int> OnHealthChange;
-    private void FixedUpdate()
+    public Action OnDeath;
+    PlayerStats player;
+
+    private void Awake()
     {
-        
+        player = GameObject.Find("PlayerStats").GetComponent<PlayerStats>();
+    }
+
+    public void SetHealth(int health)
+    {
+        Health = health;
     }
 
     public void RecieveDamage(int damage)
     {
-        Health -= damage;
-        hasBeenDamaged = true;
+        //Health -= damage;
+        player.HealPlayer(-damage);
+
+        if(!hasBeenDamaged)
+        {
+            hasBeenDamaged = true;
+
+            ResetHasBeenDamaged();
+        }
+        
 
         if(Health <= 0)
             Death();
-        Debug.Log("Me han quitado vida");
+        Debug.Log("Me han quitado vida :" + damage + " me queda: "+ Health);
     }
 
     public bool GetHasBeenDamaged()
@@ -45,14 +59,19 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 
     public void ResetHasBeenDamaged()
     {
+        StartCoroutine(InvencivilityTime());
+    }
+
+    IEnumerator InvencivilityTime()
+    {
+        yield return new WaitForSeconds(2f);
+
         hasBeenDamaged = false;
-        Debug.Log("He salido del area");
     }
 
     private void Death()
     {
         Destroy(this.gameObject);
-        GameData.Put_RunInventory_Into_Inventory(70);
-        SceneManager.LoadScene("2_VILLAGE_SCENE");
+        OnDeath?.Invoke();
     }
 }

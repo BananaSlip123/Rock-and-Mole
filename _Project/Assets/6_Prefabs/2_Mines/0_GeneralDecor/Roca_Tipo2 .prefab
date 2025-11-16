@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1896236368387210024
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.953888
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.606022
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      propertyPath: m_Name
+      value: 'Roca_Tipo2 '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4057359358978130563}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2311005469793596809}
+  m_SourcePrefab: {fileID: 100100000, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+--- !u!1 &1626258235900577401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2edc06d133ed2d94a8c51c2d5f7a5a7d, type: 3}
+  m_PrefabInstance: {fileID: 1896236368387210024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4057359358978130563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626258235900577401}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3132801, y: 0.647233, z: 0.6940155}
+  m_Center: {x: 0.22277069, y: 0.37432837, z: -0.25094795}
+--- !u!65 &2311005469793596809
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626258235900577401}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4066019, y: 0.35892734, z: 0.37360573}
+  m_Center: {x: -0.13585615, y: 0.22946467, z: -0.09521961}

@@ -6,15 +6,15 @@ namespace PlayerComponents
     public class PlayerMovementComponent : MonoBehaviour, IMoveComponent, ISkillComponent
     {
         #region Movimiento
-        [SerializeField] private float speed;
+        [SerializeField] public float speed;
         [SerializeField] Transform go;
 
         private bool isMoving = false;
         #endregion
 
         #region Dash
-        const float COOLDOWN = 0.2f;
-        const float DASH_TIME = 1f;
+        const float COOLDOWN = 1f;
+        const float DASH_TIME = 0.1f;
 
         float timeCooldown = 0f;
         float timeDashing = 0f;
@@ -36,12 +36,18 @@ namespace PlayerComponents
                 movement = Vector2.zero;
 
                 animator.SetBool("Andar", false);
+
+                //Detener sonido de caminar
+                AudioManager.Instance.StopAudio(AudioManager.AudioType.WalkSound);
                 return;
             }
 
             isMoving = true;
             movement = valor;
             animator.SetBool("Andar", true);
+
+            //Reproducir sonido de caminar si no se está reproduciendo
+            AudioManager.Instance.PlayLoopedAudio(AudioManager.AudioType.WalkSound);
         }
 
         public bool IsPlayerDashing()
@@ -79,7 +85,7 @@ namespace PlayerComponents
 
         public void InitializeSpecialSkill()
         {
-            if (IsInCooldown)
+            if (IsInCooldown || isDashing)
                 return;
 
             timeCooldown = 0;
@@ -90,7 +96,10 @@ namespace PlayerComponents
         }
 
         public void DoSpecialSkill()
-        {                        
+        {
+            if (IsInCooldown)
+                return;
+
             transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y), speedDash);           
 
             if(timeDashing < DASH_TIME)
