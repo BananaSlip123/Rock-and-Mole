@@ -158,7 +158,8 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         {
             roomNumber = 0;
 
-            playerHealth.SetHealth(health);
+            Debug.Log("ESTOY PASANDO LA VIDA CORRECTA:" + health);
+            actualHealth = health;
             playerSpeed.speed = speed;
         }
         else

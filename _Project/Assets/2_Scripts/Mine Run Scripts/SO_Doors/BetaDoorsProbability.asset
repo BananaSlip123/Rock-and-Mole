@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BetaDoorsProbability
   m_EditorClassIdentifier: 
   combatProb: 0.4
-  miningProb: 0.35
+  miningProb: 0.75
   eventProb: 1
   campamentProb: 0.5
   rescueProb: 0
