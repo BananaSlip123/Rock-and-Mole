@@ -221,6 +221,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &642490001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7338556533889864097, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_Name
+      value: SalaTutorialCombatMining
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970275015080856347, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970275015080856347, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970275015080856347, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970275015080856347, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970275015080856347, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970275015080856347, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970275015080856347, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970275015080856347, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970275015080856347, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970275015080856347, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f351cf06d65f90d4fa8b162f16b6d154, type: 3}
 --- !u!1 &756953942
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +584,18 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4408108198152510172, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408108198152510172, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408108198152510172, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6246935884496427875, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 110.31
@@ -593,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 1398587318}
     - target: {fileID: 9218333551506586987, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 65.900055
+      value: 65.9002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1086,6 +1155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SalaTutorialCombateMining
       objectReference: {fileID: 0}
+    - target: {fileID: 4786095570420602860, guid: 368fccf6332e1b140ae5acc7644da3b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1510883928987300506, guid: 368fccf6332e1b140ae5acc7644da3b8, type: 3}
     m_RemovedGameObjects: []
@@ -1131,3 +1204,4 @@ SceneRoots:
   - {fileID: 371162226}
   - {fileID: 1398587319}
   - {fileID: 1505181113}
+  - {fileID: 642490001}
