@@ -584,6 +584,26 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4328044369882156702, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328044369882156702, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328044369882156702, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328044369882156702, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328044369882156702, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 4408108198152510172, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -662,7 +682,7 @@ PrefabInstance:
       objectReference: {fileID: 1398587318}
     - target: {fileID: 9218333551506586987, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 65.9002
+      value: 65.90015
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
