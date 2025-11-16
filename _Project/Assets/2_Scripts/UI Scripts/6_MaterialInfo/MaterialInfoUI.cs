@@ -10,7 +10,6 @@ public class MaterialInfoUI : MonoBehaviour
 
     [SerializeField] Image img_imageComponent;
     [SerializeField] TextMeshProUGUI txt_amount;
-    [SerializeField] MaterialsData_SO materials;
 
     private int _amount = -1;
     private MaterialName _materialAssigned;
@@ -35,13 +34,9 @@ public class MaterialInfoUI : MonoBehaviour
         get => _materialAssigned;
         set
         {
-
-            if (value != _materialAssigned)
-            {
-                _materialAssigned = value;
-                img_imageComponent.sprite = Icons[value].Sprite;
-                img_imageComponent.color = Icons[value].Color;
-            }
+            _materialAssigned = value;
+            img_imageComponent.sprite = Icons[value].Sprite;
+            img_imageComponent.color = Icons[value].Color;
         }
     }
 }
