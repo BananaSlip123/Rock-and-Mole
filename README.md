@@ -316,6 +316,99 @@ A continuación se muestra el diagrama de flujo de las interfaces del juego, don
 
 <br>
 
+### 5.2. PANTALLAS EN EL MENÚ PRINCIPAL  
+
+![Imagen del menú inicial](/Fotos_README/menuInicial.png "Menú inicial")  
+<div align="center"><p><i>Imagen 2: Pantalla principal del menú inicial.</i></p></div>  
+
+<br>
+
+![Imagen de los créditos](/Fotos_README/creditos.png "Pantalla de créditos")  
+<div align="center"><p><i>Imagen 3: Pantalla de créditos, con scroll vertical.</i></p></div>  
+
+<br>
+
+![Imagen de los ajustes](/Fotos_README/ajustes.png "Pantalla de ajustes desde el menú principal")  
+<div align="center"><p><i>Imagen 4: Ajustes de sonido dentro del menú principal.</i></p></div>  
+
+<br>
+
+### 5.3. PANTALLAS DE PAUSA Y AJUSTES EN PARTIDA
+
+![Imagen del menú de pausa](/Fotos_README/pausa.png "Menú de pausa")  
+<div align="center"><p><i>Imagen 5: Pantalla de pausa en partida.</i></p></div>  
+
+<br>
+
+![Imagen de los ajustes](/Fotos_README/ajustesPartida.png "Pantalla de ajustes desde la partida")  
+<div align="center"><p><i>Imagen 6: Ajustes de sonido dentro de partida.</i></p></div>  
+
+<br>
+
+### 5.4. INTERFAZ PRINCIPAL EN PARTIDA Y EN LA ALDEA  
+
+La pantalla principal sirve para abrir el baúl dentro de la villa o la mochila desde dentro de las minas, aunque también se puede abrir con el teclado o el mando. Dentro de las minas se le muestra al jugador sus puntos de vida, mediante una barra luminosa.  
+
+![Imagen de la interfaz en la mina](/Fotos_README/interfazMina.png "Interfaz principal en la mina")  
+<div align="center"><p><i>Imagen 7: Interfaz principal en la mina.</i></p></div>  
+
+<br>
+
+![Imagen de la interfaz en la aldea](/Fotos_README/interfazAldea.png "Interfaz principal en la aldea")  
+<div align="center"><p><i>Imagen 8: Interfaz principal en la aldea.</i></p></div>  
+
+<br>
+
+### 5.5. PANTALLA DE BAÚL Y DE MOCHILA  
+
+Mientras el usuario está en la mina puede ver que materiales ha conseguido en ella y cierta información relevante. Cuando llegue a la aldea se le guardarán parte de los materiales de la mochila dentro del baúl, y podrá verlos todos del mismo modo.  
+
+![Imagen de la interfaz de la mochila en la mina](/Fotos_README/interfazMochilaMina.png "Interfaz de la mochila en la mina")  
+<div align="center"><p><i>Imagen 9: Interfaz de mochila en las minas.</i></p></div>  
+
+<br>
+
+![Imagen de la interfaz del baúl en la aldea](/Fotos_README/interfazBaulAldea.png "Interfaz de baúl en la aldea")  
+<div align="center"><p><i>Imagen 10: Interfaz de baúl en la aldea.</i></p></div>  
+
+<br>
+
+### 5.6. PANTALLA DE VENTA  
+
+Se muestra cuando el usuario viaja a la tienda dentro de la aldea e interacciona con el tendero. En ella se le permite seleccionar materiales de su baúl y venderlos.  
+
+![Imagen de la interfaz de venta](/Fotos_README/interfazVenta.png "Interfaz de venta")  
+<div align="center"><p><i>Imagen 11: Interfaz de venta.</i></p></div>  
+
+<br>  
+
+### 5.7. PANTALLA DE HERRERÍA  
+
+Cuando el usuario viaja a la herrería dentro de la aldea se le permite interactuar con el herrero para gastar sus materiales en la mejora del pico.  
+
+![Imagen de la interfaz de herrería](/Fotos_README/interfazHerreria.png "Interfaz de herrería")  
+<div align="center"><p><i>Imagen 12: Interfaz de herrería.</i></p></div>  
+
+<br>  
+
+### 5.8. PANTALLA DE ARMARIO  
+
+Dentro de la tienda de venta, el usuario también puede abrir un armario para comprar y equipar diferentes prendas como cascos y petos.  
+
+![Imagen de la interfaz de armario](/Fotos_README/pantallaArmario.png "Interfaz de armario")  
+<div align="center"><p><i>Imagen 13: Interfaz de armario.</i></p></div>  
+
+<br>    
+
+### 5.9. PANTALLA DE DERROTA  
+
+Cuando el jugador muere o completa una run, se le muestra un menú de derrota con los materiales conseguidos y un botón para volver a la aldea.  
+
+![Imagen de la interfaz de fin de partida](/Fotos_README/interfazDerrota.png "Interfaz de fin de partida")  
+<div align="center"><p><i>Imagen 14: Interfaz de fin de partida.</i></p></div>  
+
+<br> 
+
 ---
 
 <br>
