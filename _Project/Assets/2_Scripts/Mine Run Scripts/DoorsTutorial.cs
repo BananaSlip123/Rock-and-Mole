@@ -36,7 +36,7 @@ public class DoorsTutorial : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemies
 
     private void OnTriggerEnter(Collider other)
     {
-        if (enter)
+        if (enter || !other.CompareTag("Player"))
             return;
         EnterToRoom();
     }
