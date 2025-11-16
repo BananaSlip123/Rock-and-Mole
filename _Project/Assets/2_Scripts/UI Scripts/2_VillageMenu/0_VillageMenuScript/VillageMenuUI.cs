@@ -146,7 +146,7 @@ public class VillageMenuUI : MonoBehaviour
     }
     public void onNavigation()
     {
-        if (eventSystem.currentSelectedGameObject == null)
+        if (eventSystem.currentSelectedGameObject == null || !eventSystem.currentSelectedGameObject.activeInHierarchy)
         {
             UpdateSelectedButton();
         }
