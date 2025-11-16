@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4725776091764106034}
+  - component: {fileID: 9009764748197416767}
   - component: {fileID: 740119390985172694}
   - component: {fileID: 4922531950227314865}
   m_Layer: 0
@@ -117,6 +118,20 @@ RectTransform:
   m_AnchoredPosition: {x: 57.66992, y: 43.04}
   m_SizeDelta: {x: 354.8, y: 45.3}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &9009764748197416767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3459304646768897297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc71158f869d0cf40bfe8590dbd3c166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 6061063790191137255}
+  volumeType: 1
 --- !u!222 &740119390985172694
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -225,6 +240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7228592023735209134}
+  - component: {fileID: 6677402365029969984}
   - component: {fileID: 4196797134108308746}
   - component: {fileID: 7542301796280029890}
   m_Layer: 0
@@ -254,6 +270,20 @@ RectTransform:
   m_AnchoredPosition: {x: 57.66992, y: 69.39}
   m_SizeDelta: {x: 354.8, y: 50}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &6677402365029969984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619914543073141086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc71158f869d0cf40bfe8590dbd3c166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 260829235874251265}
+  volumeType: 0
 --- !u!222 &4196797134108308746
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -632,6 +662,26 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 260829235874251265}
+    - target: {fileID: 1532177544839540512, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532177544839540512, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532177544839540512, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532177544839540512, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VolumeSlidersController, AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532177544839540512, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3268377038584287241, guid: 20b54864b6478794b92a83d9da318f2a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
