@@ -8,8 +8,8 @@ public class LifeBarUI : MonoBehaviour
     int MaxLife = 0;
     private void OnEnable()
     {
-        MaxLife = damageableComponent.Health;
-        OnHealthChange(MaxLife);
+        MaxLife = GameObject.Find("PlayerStats").GetComponent<PlayerStats>().health;
+        OnHealthChange(GameObject.Find("PlayerStats").GetComponent<PlayerStats>().actualHealth);
         damageableComponent.OnHealthChange += OnHealthChange;
     }
     private void OnDisable()=> damageableComponent.OnHealthChange -= OnHealthChange;
