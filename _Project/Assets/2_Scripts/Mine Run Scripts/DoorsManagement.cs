@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
 {
@@ -44,7 +45,21 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
 
     public void ChooseEventType(IDoorBehaviour puerta)
     {
-        float random = Random.Range(0f, 0.99f);
+        float random = 0f;
+
+        if(SceneManager.GetActiveScene().name == "4_TreasureRoom")
+        {
+            random = 0.7f;
+        }
+        else if(SceneManager.GetActiveScene().name == "6_CampamentRoom")
+        {
+            random = 0.4f;
+        }
+        else
+        {
+            random = Random.Range(0f, 0.99f);
+        }
+        
 
         Debug.Log("RANDOM EVENT: " + random);
 
