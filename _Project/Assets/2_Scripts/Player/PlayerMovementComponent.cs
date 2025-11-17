@@ -13,6 +13,10 @@ namespace PlayerComponents
         [SerializeField] Transform go;
 
         private bool isMoving = false;
+
+        Quaternion rotation;
+
+        Vector2 directionRotation;
         #endregion
 
         #region Dash
@@ -42,7 +46,6 @@ namespace PlayerComponents
             {
                 isMoving = false;
                 movement = Vector2.zero;
-
                 animator.SetBool("Andar", false);
 
                 //Detener sonido de caminar
@@ -50,8 +53,10 @@ namespace PlayerComponents
                 return;
             }
 
+            //directionRotation = movement;
             isMoving = true;
             movement = valor;
+            directionRotation = movement;
             animator.SetBool("Andar", true);
 
             //Reproducir sonido de caminar si no se está reproduciendo
@@ -65,10 +70,9 @@ namespace PlayerComponents
 
         public void Move()
         {
-            Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-movement.y, 0, movement.x).normalized), Vector3.up);
+            rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-directionRotation.y, 0, directionRotation.x).normalized), Vector3.up);
 
             transform.rotation = rotation;
-
 
             Vector3 direction = VectorConverter.VectorConeverter(new Vector3(movement.x, 0, movement.y).normalized);
 
@@ -96,7 +100,7 @@ namespace PlayerComponents
             if (!isMoving)
                 return;
 
-            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);           
+            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);
         }
 
         public void InitializeSpecialSkill()

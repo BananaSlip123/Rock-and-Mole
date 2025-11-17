@@ -5914,6 +5914,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuracionTresPuertas
       objectReference: {fileID: 0}
+    - target: {fileID: 1230342864800805042, guid: a9b76b4fa74b3b7458ddb84114c6c0e0, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
