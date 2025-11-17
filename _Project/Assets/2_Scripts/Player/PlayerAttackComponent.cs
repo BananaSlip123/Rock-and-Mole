@@ -15,7 +15,7 @@ namespace PlayerComponents
         private float timeHitbox = 0f;
 
         private bool isInCooldown = false;
-        private bool isAttacking = false;
+        public bool isAttacking = false;
 
         public int damage;
         public float critMultiplier;
@@ -26,7 +26,10 @@ namespace PlayerComponents
         [SerializeField] Collider attackHitbox;
         [SerializeField] PickaxeStatsScripteableObject actualPickaxeStats;
         [SerializeField] Animator animator;
-
+        private void Update()
+        {
+            
+        }
         void FixedUpdate()
         {
             if (isInCooldown)
