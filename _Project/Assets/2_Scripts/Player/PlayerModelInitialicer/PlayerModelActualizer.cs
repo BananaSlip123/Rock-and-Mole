@@ -5,21 +5,34 @@ public class PlayerModelActualizer : MonoBehaviour
 {
     [SerializeField] Transform t_modelTransform;
     [SerializeField] GameObject go_currentModel;
-    [SerializeField] PlayerAttackComponent playerAttackComponent;
-    [SerializeField] PlayerMovementComponent playerMovementComponent;
+
+    PlayerAttackComponent playerAttackComponent;
+    PlayerMovementComponent playerMovementComponent;
 
     GameObject go_currentHelmetModel = null;
     GameObject go_currentPickAxeModel = null;
 
     ChestClothGetter chestClothGetter = null;
 
+    private void Awake()
+    {
+        playerAttackComponent = GetComponent<PlayerAttackComponent>();
+        playerMovementComponent = GetComponent<PlayerMovementComponent>();
+    }
+
     private void OnEnable()
     {
+        OnEquipmentChange();
 
+        EquipmentManager.OnCurrentChestClothChange += OnEquipmentChange;
+        EquipmentManager.OnCurrentHelmetChange += OnHelmetChange;
+        EquipmentManager.OnPickaxeLevelChange += OnPickAxeChange;
     }
     private void OnDisable()
     {
-        
+        EquipmentManager.OnCurrentChestClothChange += OnEquipmentChange;
+        EquipmentManager.OnCurrentHelmetChange += OnHelmetChange;
+        EquipmentManager.OnPickaxeLevelChange += OnPickAxeChange;
     }
 
     private void OnEquipmentChange()
@@ -40,9 +53,15 @@ public class PlayerModelActualizer : MonoBehaviour
     private void OnHelmetChange()
     {
         if (go_currentHelmetModel != null) Destroy(go_currentHelmetModel);
+
+        Transform parentToAssign = chestClothGetter.bone_Helmet;
+        go_currentHelmetModel = Instantiate(EquipmentManager.CurrentHelmet.model, parentToAssign);
     }
     private void OnPickAxeChange()
     {
         if (go_currentPickAxeModel != null) Destroy(go_currentPickAxeModel);
+
+        Transform parentToAssign = chestClothGetter.bone_PickAxeHand;
+        go_currentPickAxeModel = Instantiate(EquipmentManager.CurrentPickaxe.model, parentToAssign);
     }
 }
