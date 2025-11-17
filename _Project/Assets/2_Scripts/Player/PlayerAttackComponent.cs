@@ -24,8 +24,7 @@ namespace PlayerComponents
         private Queue<Collider> hitColliders = new Queue<Collider>();
 
         [SerializeField] Collider attackHitbox;
-        [SerializeField] PickaxeStatsScripteableObject actualPickaxeStats;
-        [SerializeField] Animator animator;
+        public Animator animator;
         private void Update()
         {
             

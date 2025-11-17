@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bbbda15e4fc9345a7e1e054ca15f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAnimation: {fileID: 4051229710125991802}
+  playerAnimator: {fileID: 4051229710125991802}
   bone_Helmet: {fileID: 4786266963208746873}
   bone_PickAxeHand: {fileID: 7973691488759812397}
   bone_PickAxeBack: {fileID: 8006589579569793154}

@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 3044609527401565277}
   - component: {fileID: 3390667089863221846}
   - component: {fileID: 7419851051377191263}
+  - component: {fileID: 8997948541469709779}
   - component: {fileID: 7072675569967448827}
   - component: {fileID: 1411762379138361720}
   - component: {fileID: 777582931479185327}
@@ -423,6 +424,20 @@ MonoBehaviour:
   uiActionMap: UI
   playerActionMap: Player
   callOutActionMap: CallOutDialog
+--- !u!114 &8997948541469709779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559116585686124911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c298012a68bb3144897e38807d49a585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t_modelTransform: {fileID: 7595338976446420984}
+  go_currentModel: {fileID: 5492702617969363912}
 --- !u!114 &7072675569967448827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,7 +469,6 @@ MonoBehaviour:
   critMultiplier: 0
   critProbability: 0
   attackHitbox: {fileID: 2638161093646874771}
-  actualPickaxeStats: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
   animator: {fileID: 4126267417450325827}
 --- !u!114 &777582931479185327
 MonoBehaviour:
@@ -510,7 +524,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5137669144641805438, guid: 7f7b43770238052439de2dd7938c6442, type: 3}
       propertyPath: m_Name
-      value: Chaleco_Reforzado_Pref
+      value: Debug Model
       objectReference: {fileID: 0}
     - target: {fileID: 5478482098701223620, guid: 7f7b43770238052439de2dd7938c6442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -565,5 +579,10 @@ Animator:
 --- !u!4 &5148229282041713010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5478482098701223620, guid: 7f7b43770238052439de2dd7938c6442, type: 3}
+  m_PrefabInstance: {fileID: 825659771929499574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5492702617969363912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5137669144641805438, guid: 7f7b43770238052439de2dd7938c6442, type: 3}
   m_PrefabInstance: {fileID: 825659771929499574}
   m_PrefabAsset: {fileID: 0}

@@ -26,7 +26,7 @@ namespace PlayerComponents
         #endregion
 
         private Vector2 movement = new Vector2();
-        [SerializeField] Animator animator;
+        public Animator animator;
 
         public void IsMoving(Vector2 valor)
         {
