@@ -449,6 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   COOLDOWN: 0.4
+  isAttacking: 0
   damage: 0
   critMultiplier: 0
   critProbability: 0
@@ -471,7 +472,7 @@ MonoBehaviour:
   go: {fileID: 0}
   speedDash: 20
   isDashing: 0
-  animator: {fileID: 0}
+  animator: {fileID: 4126267417450325827}
 --- !u!114 &5167273528164019003
 MonoBehaviour:
   m_ObjectHideFlags: 0
