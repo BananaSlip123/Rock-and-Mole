@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 using static UnityEngine.GraphicsBuffer;
 
 namespace PlayerComponents
 {
     public class PlayerMovementComponent : MonoBehaviour, IMoveComponent, ISkillComponent
     {
+        LayerMask layerMask;
+
         #region Movimiento
         [SerializeField] public float speed;
         [SerializeField] Transform go;
@@ -27,6 +30,11 @@ namespace PlayerComponents
 
         private Vector2 movement = new Vector2();
         [SerializeField] Animator animator;
+
+        private void Awake()
+        {
+            layerMask = LayerMask.GetMask("Wall");
+        }
 
         public void IsMoving(Vector2 valor)
         {
@@ -57,6 +65,17 @@ namespace PlayerComponents
 
         public void Move()
         {
+            Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-movement.y, 0, movement.x).normalized), Vector3.up);
+
+            transform.rotation = rotation;
+
+
+            Vector3 direction = VectorConverter.VectorConeverter(new Vector3(movement.x, 0, movement.y).normalized);
+
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, direction, out hit, 0.5f, layerMask))           
+                return;
+
             if (isDashing)
             {
                 DoSpecialSkill();
@@ -77,10 +96,7 @@ namespace PlayerComponents
             if (!isMoving)
                 return;
 
-            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);
-            Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-movement.y, 0, movement.x).normalized), Vector3.up);
-
-            transform.rotation = rotation;
+            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);           
         }
 
         public void InitializeSpecialSkill()
