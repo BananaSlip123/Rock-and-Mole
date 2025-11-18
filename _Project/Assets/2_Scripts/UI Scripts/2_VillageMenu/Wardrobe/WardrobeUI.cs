@@ -460,8 +460,8 @@ public class WardrobeUI : MonoBehaviour
         if (currentChestClothPrefab != null) Destroy(currentChestClothPrefab);
         if (currentHelmetPrefab != null) Destroy(currentHelmetPrefab);
 
-        currentChestClothPrefab = Instantiate(EquipmentManager.CurrentChestCloth.model);
-        currentHelmetPrefab = Instantiate(EquipmentManager.CurrentHelmet.model);
+       // currentChestClothPrefab = Instantiate(EquipmentManager.CurrentChestCloth.model);
+        //currentHelmetPrefab = Instantiate(EquipmentManager.CurrentHelmet.model);
         //currentModel.transform.parent = tr_pickaxeModelPosition;
         //currentModel.transform.localPosition = new Vector3();
         //currentModel.transform.localEulerAngles = new Vector3();

@@ -45,9 +45,9 @@ public class PlayerModelActualizer : MonoBehaviour
     }
     private void OnDisable()
     {
-        EquipmentManager.OnCurrentChestClothChange += OnEquipmentChange;
-        EquipmentManager.OnCurrentHelmetChange += OnHelmetChange;
-        EquipmentManager.OnPickaxeLevelChange += OnPickAxeChange;
+        EquipmentManager.OnCurrentChestClothChange -= OnEquipmentChange;
+        EquipmentManager.OnCurrentHelmetChange -= OnHelmetChange;
+        EquipmentManager.OnPickaxeLevelChange -= OnPickAxeChange;
 
         playerAttackComponent.onIsAttackingChange -= OnPickAxePositionChange;
     }

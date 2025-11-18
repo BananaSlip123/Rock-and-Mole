@@ -85,10 +85,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3044609527401565277, guid: 2f01edc73969315479e666196310494e, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3390667089863221846, guid: 2f01edc73969315479e666196310494e, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -299,11 +295,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691896747284942343, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_Size
-      value: 0.6068019
+      value: 0.60680145
       objectReference: {fileID: 0}
     - target: {fileID: 6691896747284942343, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_Value
-      value: 0.9999986
+      value: 0.9999993
       objectReference: {fileID: 0}
     - target: {fileID: 6868441561298026386, guid: 1316e9090d365c445b5b55702d156457, type: 3}
       propertyPath: m_Name
