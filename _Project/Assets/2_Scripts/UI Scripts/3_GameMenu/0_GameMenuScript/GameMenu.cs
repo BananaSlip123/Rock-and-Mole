@@ -15,6 +15,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField] GameObject go_runInventoryInfoWindow;
     [SerializeField] GameObject go_gameOverWindow;
     [SerializeField] GameObject go_materialsCollectedWindow;
+    [SerializeField] GameObject go_interactionWindow;
     [Header("LIFE BAR")]
     [SerializeField] GameObject go_lifeBar;
     [Header("INPUT NAVIGATION")]
@@ -30,7 +31,7 @@ public class GameMenu : MonoBehaviour
     #region PRIVATE VARS
     Windows _currentWindow = Windows.Main;
     RunInventoryUI inventoryReference;
-    
+    bool _canInteract = false;
     #endregion
     #region PUBLIC VARS
     public enum Windows
@@ -41,7 +42,16 @@ public class GameMenu : MonoBehaviour
         RunInventory,
         GameOver,
     }
+    public bool ShowInteractWindow
+    {
+        get => _canInteract;
+        set
+        {
+            _canInteract = value;
 
+            go_interactionWindow.SetActive(_canInteract && CurrentWindow == Windows.Main);
+        }
+    }
     public Windows CurrentWindow
     {
         get => _currentWindow;
@@ -49,8 +59,11 @@ public class GameMenu : MonoBehaviour
         {
             Debug.Log("Current Window: " + _currentWindow.ToString());
             Debug.Log("Next Window: " + value.ToString());
-            SwitchWindow(_currentWindow, value);
+
+            Windows lastWindow = _currentWindow;
             _currentWindow = value;
+
+            SwitchWindow(lastWindow, _currentWindow);
             UpdateSelectedButton();
         }
     }
@@ -72,6 +85,9 @@ public class GameMenu : MonoBehaviour
     void SwitchWindow(Windows? lastWindow, Windows nextWindow)
     {
         bool isMain = nextWindow == Windows.Main;
+
+        ShowInteractWindow = _canInteract;
+
         go_mainWindow.SetActive(isMain);
         go_materialsCollectedWindow.SetActive(isMain);
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
