@@ -1,15 +1,22 @@
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 using static UnityEngine.GraphicsBuffer;
 
 namespace PlayerComponents
 {
     public class PlayerMovementComponent : MonoBehaviour, IMoveComponent, ISkillComponent
     {
+        LayerMask layerMask;
+
         #region Movimiento
         [SerializeField] public float speed;
         [SerializeField] Transform go;
 
         private bool isMoving = false;
+
+        Quaternion rotation;
+
+        Vector2 directionRotation;
         #endregion
 
         #region Dash
@@ -28,13 +35,17 @@ namespace PlayerComponents
         private Vector2 movement = new Vector2();
         public Animator animator;
 
+        private void Awake()
+        {
+            layerMask = LayerMask.GetMask("Wall");
+        }
+
         public void IsMoving(Vector2 valor)
         {
             if (valor == Vector2.zero)
             {
                 isMoving = false;
                 movement = Vector2.zero;
-
                 animator.SetBool("Andar", false);
 
                 //Detener sonido de caminar
@@ -42,8 +53,10 @@ namespace PlayerComponents
                 return;
             }
 
+            //directionRotation = movement;
             isMoving = true;
             movement = valor;
+            directionRotation = movement;
             animator.SetBool("Andar", true);
 
             //Reproducir sonido de caminar si no se está reproduciendo
@@ -57,6 +70,16 @@ namespace PlayerComponents
 
         public void Move()
         {
+            rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-directionRotation.y, 0, directionRotation.x).normalized), Vector3.up);
+
+            transform.rotation = rotation;
+
+            Vector3 direction = VectorConverter.VectorConeverter(new Vector3(movement.x, 0, movement.y).normalized);
+
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, direction, out hit, 0.5f, layerMask))           
+                return;
+
             if (isDashing)
             {
                 DoSpecialSkill();
@@ -78,9 +101,6 @@ namespace PlayerComponents
                 return;
 
             transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);
-            Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-movement.y, 0, movement.x).normalized), Vector3.up);
-
-            transform.rotation = rotation;
         }
 
         public void InitializeSpecialSkill()

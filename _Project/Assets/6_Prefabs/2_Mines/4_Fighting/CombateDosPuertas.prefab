@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 3508052457604277227}
   - component: {fileID: 2134908202395232003}
   - component: {fileID: 3416665334590651960}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 5561324592702941302}
   - component: {fileID: 5882923398416055315}
   - component: {fileID: 5204065455704845532}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 6225766893871052506}
   - component: {fileID: 6367914707037060065}
   - component: {fileID: 2062407474136868100}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 9028260939638361707}
   - component: {fileID: 3944063858541519550}
   - component: {fileID: 6928807277428098426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 8968542243297063314}
   - component: {fileID: 6713588420296033945}
   - component: {fileID: 6204112361822672610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 4376026953583906141}
   - component: {fileID: 1130883586079786867}
   - component: {fileID: 6116439775578277877}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -892,7 +892,7 @@ GameObject:
   - component: {fileID: 4533950680819896704}
   - component: {fileID: 4270360754405669736}
   - component: {fileID: 8481719527788770527}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'Roca_Tipo2 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 5454380443708941171}
   - component: {fileID: 1413583963441323903}
   - component: {fileID: 6070727451494973436}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1315,7 @@ GameObject:
   - component: {fileID: 1594589734105210226}
   - component: {fileID: 993560989765741306}
   - component: {fileID: 6873806309471372344}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1508,7 +1508,7 @@ GameObject:
   - component: {fileID: 6387409775633952203}
   - component: {fileID: 1254456776754173666}
   - component: {fileID: 4161426387357008646}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BaseCarreta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1823,7 +1823,7 @@ GameObject:
   - component: {fileID: 3198903816035166936}
   - component: {fileID: 2126872242101982709}
   - component: {fileID: 1377811873059892232}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1909,7 +1909,7 @@ GameObject:
   - component: {fileID: 275785656394370328}
   - component: {fileID: 1528560117489274147}
   - component: {fileID: 1857140410946690416}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BarraRuedas1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1995,7 +1995,7 @@ GameObject:
   - component: {fileID: 9105869810658833009}
   - component: {fileID: 4189793067705334947}
   - component: {fileID: 3480741419440454115}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2082,7 +2082,7 @@ GameObject:
   - component: {fileID: 1219142909845393688}
   - component: {fileID: 306826583580858159}
   - component: {fileID: 4285850630754053526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2190,7 +2190,7 @@ GameObject:
   - component: {fileID: 811888563761281071}
   - component: {fileID: 6047856961227236941}
   - component: {fileID: 3097360503918816647}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2366,7 +2366,7 @@ GameObject:
   - component: {fileID: 9107876502535324565}
   - component: {fileID: 4062662865199403910}
   - component: {fileID: 701518567456080802}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rueda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2452,7 +2452,7 @@ GameObject:
   - component: {fileID: 1668064072558560102}
   - component: {fileID: 6640505088790911953}
   - component: {fileID: 2609019805008303267}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BarraRuedas2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2634,7 +2634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 626702268993746886}
   - component: {fileID: 263379861237180049}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2694,7 +2694,7 @@ GameObject:
   - component: {fileID: 8142035677398985892}
   - component: {fileID: 7208780970213800046}
   - component: {fileID: 4854377016526371758}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2947,7 +2947,7 @@ GameObject:
   - component: {fileID: 3600060570930218535}
   - component: {fileID: 7098324560140239168}
   - component: {fileID: 3250744426776118255}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3198,7 +3198,7 @@ GameObject:
   - component: {fileID: 1596563178339054132}
   - component: {fileID: 2669764276899754737}
   - component: {fileID: 2977489327801397832}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rueda2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3371,7 +3371,7 @@ GameObject:
   - component: {fileID: 3010526167187440782}
   - component: {fileID: 6843161123980934564}
   - component: {fileID: 737381464422096117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3564,7 +3564,7 @@ GameObject:
   - component: {fileID: 6855996316482405260}
   - component: {fileID: 2642529764007199720}
   - component: {fileID: 2375687041286867766}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rueda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4080,7 +4080,7 @@ GameObject:
   - component: {fileID: 6893141351158699505}
   - component: {fileID: 7176764555919436628}
   - component: {fileID: 9030087550424900558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rueda2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4339,7 +4339,7 @@ GameObject:
   - component: {fileID: 7834683800037139998}
   - component: {fileID: 3916198822037109243}
   - component: {fileID: 6254882976660462204}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BarraRuedas2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4425,7 +4425,7 @@ GameObject:
   - component: {fileID: 3439875229230869729}
   - component: {fileID: 4186782586766067695}
   - component: {fileID: 5453214178796013399}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rueda3.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4512,7 +4512,7 @@ GameObject:
   - component: {fileID: 8650177491511401138}
   - component: {fileID: 4833918169630480398}
   - component: {fileID: 7699479711737254818}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4790,7 +4790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3205234927417560964}
   - component: {fileID: 5191131433426612042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Carreta (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4937,7 +4937,7 @@ GameObject:
   - component: {fileID: 1809724059213997508}
   - component: {fileID: 3971819801786224116}
   - component: {fileID: 2254078867086789985}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rueda4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5027,7 +5027,7 @@ GameObject:
   - component: {fileID: 4737020695361588745}
   - component: {fileID: 6161175127258848077}
   - component: {fileID: 2311263173061918801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: group_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5553,7 +5553,7 @@ GameObject:
   - component: {fileID: 4212106574516429478}
   - component: {fileID: 1176822449617233201}
   - component: {fileID: 8109382044515297828}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BarraRuedas1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5781,7 +5781,7 @@ GameObject:
   - component: {fileID: 2022777095007548268}
   - component: {fileID: 8873351834973220120}
   - component: {fileID: 1474732585852518216}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6014,7 +6014,7 @@ GameObject:
   - component: {fileID: 921387011517834118}
   - component: {fileID: 7840351204396407039}
   - component: {fileID: 2535673178493842273}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Roca_Tipo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6290,7 +6290,7 @@ GameObject:
   - component: {fileID: 869981502256999623}
   - component: {fileID: 5417100147638576452}
   - component: {fileID: 496146928238897487}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6518,7 +6518,7 @@ GameObject:
   - component: {fileID: 5859812066261786251}
   - component: {fileID: 7698803273036163282}
   - component: {fileID: 3214958032900301010}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6604,7 +6604,7 @@ GameObject:
   - component: {fileID: 3138575125039359851}
   - component: {fileID: 8710920028319262763}
   - component: {fileID: 6499794760014524087}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rueda4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6776,7 +6776,7 @@ GameObject:
   - component: {fileID: 7975705673019572802}
   - component: {fileID: 6458092556266442979}
   - component: {fileID: 3733929648596628817}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6862,7 +6862,7 @@ GameObject:
   - component: {fileID: 7564537577639137813}
   - component: {fileID: 4649666765821702202}
   - component: {fileID: 7056134693781851596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7161,7 +7161,7 @@ GameObject:
   - component: {fileID: 1602223266107575865}
   - component: {fileID: 5651745537423823180}
   - component: {fileID: 5200720314091270184}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7334,7 +7334,7 @@ GameObject:
   - component: {fileID: 9064344411336549554}
   - component: {fileID: 3027456745114224835}
   - component: {fileID: 4369481633654079991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7710,7 +7710,7 @@ GameObject:
   - component: {fileID: 731573501178042796}
   - component: {fileID: 1538814410970413795}
   - component: {fileID: 8620116893475924677}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7797,7 +7797,7 @@ GameObject:
   - component: {fileID: 1523112769207713200}
   - component: {fileID: 6322456125720889739}
   - component: {fileID: 3877182124995063469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7905,7 +7905,7 @@ GameObject:
   - component: {fileID: 5691239033145899666}
   - component: {fileID: 3138473266817582133}
   - component: {fileID: 6443020022376480263}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8185,7 +8185,7 @@ GameObject:
   - component: {fileID: 2263778794410135059}
   - component: {fileID: 6510494374601629766}
   - component: {fileID: 8473572557994649006}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BaseCarreta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8443,7 +8443,7 @@ GameObject:
   - component: {fileID: 4034359239356536031}
   - component: {fileID: 2145986555907131569}
   - component: {fileID: 5032042941145568173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rueda3.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8771,7 +8771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6256706975783680313}
   - component: {fileID: 5978416387368632927}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8830,7 +8830,7 @@ GameObject:
   - component: {fileID: 8017482127706593144}
   - component: {fileID: 2290339346753036576}
   - component: {fileID: 4318554154883187533}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8917,7 +8917,7 @@ GameObject:
   - component: {fileID: 8447825855691373993}
   - component: {fileID: 7095440225310076687}
   - component: {fileID: 4221294431587093349}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: group_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9025,7 +9025,7 @@ GameObject:
   - component: {fileID: 9109357498340967083}
   - component: {fileID: 2290706659274385520}
   - component: {fileID: 5758948598410216624}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9197,7 +9197,7 @@ GameObject:
   - component: {fileID: 1357543080775198594}
   - component: {fileID: 1596238915270751165}
   - component: {fileID: 3790984932141346963}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9284,7 +9284,7 @@ GameObject:
   - component: {fileID: 4847850600418159499}
   - component: {fileID: 799469538577997265}
   - component: {fileID: 4945181318313763289}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9391,7 +9391,7 @@ GameObject:
   - component: {fileID: 4780902630455618924}
   - component: {fileID: 7936894840353420503}
   - component: {fileID: 4709505007748526672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9476,7 +9476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5405529744229667523}
   - component: {fileID: 3509417512064184886}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Carreta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9538,7 +9538,7 @@ GameObject:
   - component: {fileID: 9057306962720187961}
   - component: {fileID: 5153371927111720746}
   - component: {fileID: 3102097001657879999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9733,7 +9733,7 @@ GameObject:
   - component: {fileID: 7486790508300462406}
   - component: {fileID: 4095758517811994012}
   - component: {fileID: 2857054176175972297}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9841,7 +9841,7 @@ GameObject:
   - component: {fileID: 430839004150257395}
   - component: {fileID: 4219301971171130368}
   - component: {fileID: 7441789122441915410}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja_Tipo2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9948,7 +9948,7 @@ GameObject:
   - component: {fileID: 33035950245193961}
   - component: {fileID: 936536435060473471}
   - component: {fileID: 5787849357021741392}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10120,7 +10120,7 @@ GameObject:
   - component: {fileID: 235277614192545593}
   - component: {fileID: 4893737958953678656}
   - component: {fileID: 5072458053445126091}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cubo.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}

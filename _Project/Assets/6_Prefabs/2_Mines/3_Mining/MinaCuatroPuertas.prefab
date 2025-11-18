@@ -1740,9 +1740,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -7489899043802158696, guid: 7cc0dc65561c2c44891f14ca765a3c6d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7cc0dc65561c2c44891f14ca765a3c6d, type: 3}
       propertyPath: m_Name
       value: RocasCuatroPuertas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867088128146089108, guid: 7cc0dc65561c2c44891f14ca765a3c6d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

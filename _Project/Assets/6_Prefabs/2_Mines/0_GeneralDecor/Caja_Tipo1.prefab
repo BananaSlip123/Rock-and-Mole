@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caja_Tipo1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b9793a85443734d8c66e2016ed421d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -491,6 +491,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5792958998278712553}
     m_Modifications:
+    - target: {fileID: 854787878976334583, guid: fb180228941135f4080c777dd718219a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1566561795655930281, guid: fb180228941135f4080c777dd718219a, type: 3}
       propertyPath: m_Name
       value: Roca_Tipo1
@@ -546,6 +550,30 @@ PrefabInstance:
     - target: {fileID: 2231070771138349843, guid: fb180228941135f4080c777dd718219a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511770778604042109, guid: fb180228941135f4080c777dd718219a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4938597632915468306, guid: fb180228941135f4080c777dd718219a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406777935242438630, guid: fb180228941135f4080c777dd718219a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868400352857033145, guid: fb180228941135f4080c777dd718219a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571967871520826334, guid: fb180228941135f4080c777dd718219a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762629270866862515, guid: fb180228941135f4080c777dd718219a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1374,6 +1402,18 @@ PrefabInstance:
     - target: {fileID: 2151156649628802243, guid: fcda8955ae32952439104bc6f1b6d8ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970235337184308553, guid: fcda8955ae32952439104bc6f1b6d8ee, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198767119138240294, guid: fcda8955ae32952439104bc6f1b6d8ee, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438115004227669219, guid: fcda8955ae32952439104bc6f1b6d8ee, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2878,9 +2918,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -7489899043802158696, guid: 50bccfafe51b2304ba06f8000afe4ae2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 50bccfafe51b2304ba06f8000afe4ae2, type: 3}
       propertyPath: m_Name
       value: PeleaTresPuertas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867088128146089108, guid: 50bccfafe51b2304ba06f8000afe4ae2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3242,6 +3290,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5792958998278712553}
     m_Modifications:
+    - target: {fileID: 2495713921233500946, guid: c2850207bc309b1439af388c3c522ca7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949466401993687920, guid: c2850207bc309b1439af388c3c522ca7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6145959784273876098, guid: c2850207bc309b1439af388c3c522ca7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3937008
@@ -3297,6 +3353,18 @@ PrefabInstance:
     - target: {fileID: 6773701297092382264, guid: c2850207bc309b1439af388c3c522ca7, type: 3}
       propertyPath: m_Name
       value: Caja_Tipo3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941364436653579063, guid: c2850207bc309b1439af388c3c522ca7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116824283380497118, guid: c2850207bc309b1439af388c3c522ca7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221515848319725677, guid: c2850207bc309b1439af388c3c522ca7, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
