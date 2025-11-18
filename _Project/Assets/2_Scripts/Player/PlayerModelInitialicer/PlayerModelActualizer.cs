@@ -11,7 +11,6 @@ public class PlayerModelActualizer : MonoBehaviour
 
     GameObject go_currentHelmetModel = null;
     GameObject go_currentPickAxeModel = null;
-
     ChestClothGetter chestClothGetter = null;
 
     public enum PickaxePosition { hand, back }
@@ -26,7 +25,6 @@ public class PlayerModelActualizer : MonoBehaviour
             UpdatePickaxePosition();
         }
     }
-
     private void Awake()
     {
         playerAttackComponent = GetComponent<PlayerAttackComponent>();
@@ -67,7 +65,9 @@ public class PlayerModelActualizer : MonoBehaviour
         Destroy(go_currentModel);
         
         //go_currentModel = Instantiate(EquipmentManager.CurrentChestCloth.model, new Vector3(), new Quaternion(), t_modelTransform);
-        go_currentModel = Instantiate(EquipmentManager.CurrentChestCloth.model, t_modelTransform);
+        go_currentModel = Instantiate(EquipmentManager.CurrentChestCloth.model);
+        AssignParent(go_currentModel.transform, t_modelTransform);
+
 
         chestClothGetter = go_currentModel.GetComponent<ChestClothGetter>();
 
@@ -81,8 +81,10 @@ public class PlayerModelActualizer : MonoBehaviour
     {
         if (go_currentHelmetModel != null) Destroy(go_currentHelmetModel);
 
+        go_currentHelmetModel = Instantiate(EquipmentManager.CurrentHelmet.model);
         Transform parentToAssign = chestClothGetter.bone_Helmet;
-        go_currentHelmetModel = Instantiate(EquipmentManager.CurrentHelmet.model, parentToAssign);
+
+        AssignParent(go_currentHelmetModel.transform, parentToAssign);
     }
     private void OnPickAxeChange()
     {
@@ -104,14 +106,13 @@ public class PlayerModelActualizer : MonoBehaviour
         else
             parentToAssign = chestClothGetter.bone_PickAxeBack;
 
-        MovePickaxe(parentToAssign);
+        AssignParent(go_currentPickAxeModel.transform, parentToAssign);
     }
-    void MovePickaxe(Transform newParent)
+    void AssignParent(Transform objectTransform,  Transform parentTransform)
     {
-        go_currentPickAxeModel.transform.SetParent(newParent);
-
-        go_currentPickAxeModel.transform.localPosition = new Vector3();
-        go_currentPickAxeModel.transform.localEulerAngles = new Vector3();
-        go_currentPickAxeModel.transform.localScale = new Vector3(1, 1, 1);
+        objectTransform.SetParent(parentTransform);
+        objectTransform.localPosition = new Vector3();
+        objectTransform.localEulerAngles = new Vector3();
+        objectTransform.localScale = new Vector3(1, 1, 1);
     }
 }
