@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5625302314037304399
+--- !u!1 &3791017150057227406
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,78 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7326345421718040539}
+  - component: {fileID: 2484632971799930704}
+  - component: {fileID: 5053169651595906072}
+  - component: {fileID: 192666030127004313}
   m_Layer: 0
-  m_Name: Pico_Reforzado
+  m_Name: Pico_Afilado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7326345421718040539
+--- !u!4 &2484632971799930704
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5625302314037304399}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -134.7602, y: 0, z: -30.864923}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8060414373809130749}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7904565228316394476
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8060414373809130749}
-  - component: {fileID: 4418954031606630498}
-  - component: {fileID: 8728420104315852651}
-  m_Layer: 0
-  m_Name: Pico_Reforzado
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8060414373809130749
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7904565228316394476}
+  m_GameObject: {fileID: 3791017150057227406}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.02, z: 0}
-  m_LocalScale: {x: 7.885958, y: 7.885958, z: 7.885958}
+  m_LocalPosition: {x: 0, y: 0.12, z: 0}
+  m_LocalScale: {x: 8.298149, y: 8.298148, z: 8.298148}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7326345421718040539}
+  m_Father: {fileID: 5623109885753776265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4418954031606630498
+--- !u!33 &5053169651595906072
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7904565228316394476}
-  m_Mesh: {fileID: 5175237191446748819, guid: 3b197b47f21d1c746a48448e5ad8457f, type: 3}
---- !u!23 &8728420104315852651
+  m_GameObject: {fileID: 3791017150057227406}
+  m_Mesh: {fileID: 8499326320123009928, guid: d2f00c005f687734889110ba7a374f1a, type: 3}
+--- !u!23 &192666030127004313
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7904565228316394476}
+  m_GameObject: {fileID: 3791017150057227406}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -96,9 +64,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2307239291601667372, guid: 3b197b47f21d1c746a48448e5ad8457f, type: 3}
-  - {fileID: -5551113492511710874, guid: 3b197b47f21d1c746a48448e5ad8457f, type: 3}
-  - {fileID: -6535512506995588235, guid: 3b197b47f21d1c746a48448e5ad8457f, type: 3}
+  - {fileID: -3762733216258241708, guid: d2f00c005f687734889110ba7a374f1a, type: 3}
+  - {fileID: -5359039811943686545, guid: d2f00c005f687734889110ba7a374f1a, type: 3}
+  - {fileID: -6868914989936822799, guid: d2f00c005f687734889110ba7a374f1a, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120,3 +88,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5908020576988389703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5623109885753776265}
+  m_Layer: 0
+  m_Name: Pico_Afilado
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5623109885753776265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908020576988389703}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2484632971799930704}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
