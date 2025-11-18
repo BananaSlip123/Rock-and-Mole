@@ -34,6 +34,11 @@ public class WardrobeUI : MonoBehaviour
 
     [Header("Materials")]
     [SerializeField] MaterialInfoUI[] materialsInfo;
+
+    [Header("Transforms Models")]
+    [SerializeField] Transform t_helmetTransform;
+    [SerializeField] Transform t_chestClothTransform;
+
     #endregion
     #region PRIVATE FIELDS
     private Coroutine currentFade;
@@ -460,12 +465,29 @@ public class WardrobeUI : MonoBehaviour
         if (currentChestClothPrefab != null) Destroy(currentChestClothPrefab);
         if (currentHelmetPrefab != null) Destroy(currentHelmetPrefab);
 
-       // currentChestClothPrefab = Instantiate(EquipmentManager.CurrentChestCloth.model);
-        //currentHelmetPrefab = Instantiate(EquipmentManager.CurrentHelmet.model);
-        //currentModel.transform.parent = tr_pickaxeModelPosition;
-        //currentModel.transform.localPosition = new Vector3();
-        //currentModel.transform.localEulerAngles = new Vector3();
-        //currentModel.transform.localScale = new Vector3(1,1,1);
+        currentHelmetPrefab = Instantiate(EquipmentManager.Helmets[SelectedHelmetID].model);
+
+        switch (WardrobeModeProperty)
+        {
+            case WardrobeMode.helmet:
+                //En este caso se verá el casco en grande
+                AssignParent(currentHelmetPrefab.transform, t_helmetTransform);
+
+                break;
+            case WardrobeMode.chestCloth:
+                //En este caso se verá cuerpo conpleto
+
+                currentChestClothPrefab = Instantiate(EquipmentManager.ChestCloths[SelectedChestClothID].model);
+                AssignParent(currentChestClothPrefab.transform, t_chestClothTransform);
+
+                Transform transformForHelmet = currentChestClothPrefab.GetComponent<ChestClothGetter>().bone_Helmet;
+                AssignParent(currentHelmetPrefab.transform, transformForHelmet);
+
+                break;
+        }
+        
+
+        
     }
 
     private void ChangeSelectedCloth(int placesToMove)
@@ -597,6 +619,14 @@ public class WardrobeUI : MonoBehaviour
     public void OnButtonRightArrow()
     {
         ChangeSelectedCloth(1);
+    }
+
+    void AssignParent(Transform objectTransform, Transform parentTransform)
+    {
+        objectTransform.SetParent(parentTransform);
+        objectTransform.localPosition = new Vector3();
+        objectTransform.localEulerAngles = new Vector3();
+        objectTransform.localScale = new Vector3(1, 1, 1);
     }
     #endregion
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class ChestClothGetter : MonoBehaviour
 {
     //lo tienen los petos
