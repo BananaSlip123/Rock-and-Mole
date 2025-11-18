@@ -14,10 +14,25 @@ public class PlayerModelActualizer : MonoBehaviour
 
     ChestClothGetter chestClothGetter = null;
 
+    public enum PickaxePosition { hand, back }
+
+    PickaxePosition _pickaxePosition;
+    public PickaxePosition PickaxePositionProperty
+    {
+        private get => _pickaxePosition;
+        set
+        {
+            _pickaxePosition = value;
+            UpdatePickaxePosition();
+        }
+    }
+
     private void Awake()
     {
         playerAttackComponent = GetComponent<PlayerAttackComponent>();
         playerMovementComponent = GetComponent<PlayerMovementComponent>();
+
+        PickaxePositionProperty = PickaxePosition.back;
     }
 
     private void OnEnable()
@@ -27,12 +42,24 @@ public class PlayerModelActualizer : MonoBehaviour
         EquipmentManager.OnCurrentChestClothChange += OnEquipmentChange;
         EquipmentManager.OnCurrentHelmetChange += OnHelmetChange;
         EquipmentManager.OnPickaxeLevelChange += OnPickAxeChange;
+
+        playerAttackComponent.onIsAttackingChange += OnPickAxePositionChange;
     }
     private void OnDisable()
     {
         EquipmentManager.OnCurrentChestClothChange += OnEquipmentChange;
         EquipmentManager.OnCurrentHelmetChange += OnHelmetChange;
         EquipmentManager.OnPickaxeLevelChange += OnPickAxeChange;
+
+        playerAttackComponent.onIsAttackingChange -= OnPickAxePositionChange;
+    }
+
+    void OnPickAxePositionChange(bool isAttacking)
+    {
+        if (isAttacking)
+            PickaxePositionProperty = PickaxePosition.hand;
+        else
+            PickaxePositionProperty = PickaxePosition.back;
     }
 
     private void OnEquipmentChange()
@@ -61,7 +88,30 @@ public class PlayerModelActualizer : MonoBehaviour
     {
         if (go_currentPickAxeModel != null) Destroy(go_currentPickAxeModel);
 
-        Transform parentToAssign = chestClothGetter.bone_PickAxeHand;
-        go_currentPickAxeModel = Instantiate(EquipmentManager.CurrentPickaxe.model, parentToAssign);
+        go_currentPickAxeModel = Instantiate(EquipmentManager.CurrentPickaxe.model);
+        UpdatePickaxePosition();
+    }
+
+    void UpdatePickaxePosition()
+    {
+        bool hasPickaxe = go_currentPickAxeModel != null;
+        if (!hasPickaxe) return;
+
+        Transform parentToAssign;
+
+        if (_pickaxePosition == PickaxePosition.hand)
+            parentToAssign = chestClothGetter.bone_PickAxeHand;
+        else
+            parentToAssign = chestClothGetter.bone_PickAxeBack;
+
+        MovePickaxe(parentToAssign);
+    }
+    void MovePickaxe(Transform newParent)
+    {
+        go_currentPickAxeModel.transform.SetParent(newParent);
+
+        go_currentPickAxeModel.transform.localPosition = new Vector3();
+        go_currentPickAxeModel.transform.localEulerAngles = new Vector3();
+        go_currentPickAxeModel.transform.localScale = new Vector3(1, 1, 1);
     }
 }

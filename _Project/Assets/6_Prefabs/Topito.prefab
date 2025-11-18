@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 1411762379138361720}
   - component: {fileID: 777582931479185327}
   - component: {fileID: 5167273528164019003}
-  - component: {fileID: 2463134159168281087}
   m_Layer: 6
   m_Name: Topito
   m_TagString: Player
@@ -438,8 +437,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t_modelTransform: {fileID: 7595338976446420984}
   go_currentModel: {fileID: 5492702617969363912}
-  playerAttackComponent: {fileID: 1411762379138361720}
-  playerMovementComponent: {fileID: 777582931479185327}
 --- !u!114 &7072675569967448827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,20 +499,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
---- !u!114 &2463134159168281087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8559116585686124911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 316c27e545ce7d14ca78bf887097de8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkingPickaxe: {fileID: 3517026021879150828}
-  attackPickaxe: {fileID: 3517026021879150828}
 --- !u!1001 &825659771929499574
 PrefabInstance:
   m_ObjectHideFlags: 0
