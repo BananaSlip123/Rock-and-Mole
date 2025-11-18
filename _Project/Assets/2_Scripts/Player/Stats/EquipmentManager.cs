@@ -8,8 +8,10 @@ public class EquipmentManager : MonoBehaviour
 {
     //Se coloca en el main
     //se le asignan las referencias y las guarda de forma estática
-    
+
     #region SERIALIZABLE FIELDS
+    enum StartInEditorModePosibilities { allLocked, allUnlocked, chargeFromDisk }
+    [SerializeField] StartInEditorModePosibilities editorModeStart;
     [System.Serializable]
     public struct PickaxeAssigner
     {
@@ -263,6 +265,10 @@ public class EquipmentManager : MonoBehaviour
         _defaultChestCloth = chestCloths[0].data.name;
         _defaultHelmet = helmets[0].data.name;
 
+#if UNITY_EDITOR
+        EditorModeStart();
+#endif
+
         ChestCloths[_defaultChestCloth].UnLocked = true;
         Helmets[_defaultHelmet].UnLocked = true;
 
@@ -278,14 +284,45 @@ public class EquipmentManager : MonoBehaviour
         //Avisar d q se inicializó player data
         OnEquipmentChange?.Invoke();
 
-        foreach (KeyValuePair<string, ChestCloth> c in ChestCloths)
-        {
-            Debug.Log("Name: "+ c.Key);
-            Debug.Log("Unlocked: "+ c.Value.UnLocked);
-        }
 
         _init = true;
     }
+#if UNITY_EDITOR
+    private void EditorModeStart()
+    {
+        if (editorModeStart == StartInEditorModePosibilities.allLocked)
+        {
+            foreach (KeyValuePair<string, ChestCloth> c in ChestCloths)
+            {
+                c.Value.UnLocked = false;
+            }
+
+            CurrentChestClothID = _defaultChestCloth;
+
+            foreach (KeyValuePair<string, Helmet> h in Helmets)
+            {
+                h.Value.UnLocked = false;
+            }
+
+            CurrentHelmetID = _defaultHelmet;
+
+            PickAxeLevel = 0;
+        }
+        else if (editorModeStart == StartInEditorModePosibilities.allUnlocked)
+        {
+            foreach (KeyValuePair<string, ChestCloth> c in ChestCloths)
+            {
+                c.Value.UnLocked = true;
+            }
+
+            foreach (KeyValuePair<string, Helmet> h in Helmets)
+            {
+                h.Value.UnLocked = true;
+            }
+            PickAxeLevel = MaxLevel;
+        }
+    }
+#endif
     #endregion
     #region PUBLIC FUNCS
     public static int GetOrderChestCloth(string id) => keysOrder_chestCloth[id];

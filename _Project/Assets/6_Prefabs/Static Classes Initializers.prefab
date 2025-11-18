@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111ff6668098bc7419dd0116d27c9688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editorModeStart: 0
   pickaxes:
   - data: {fileID: 11400000, guid: 0b77839411892ed48bb705e8275ef666, type: 2}
     model: {fileID: 568505487004580767, guid: 6fe2da00abff00b46ad9f9d03f0d0a2d, type: 3}

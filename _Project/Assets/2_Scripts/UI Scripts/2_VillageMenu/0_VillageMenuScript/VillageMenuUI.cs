@@ -14,6 +14,8 @@ public class VillageMenuUI : MonoBehaviour
     [SerializeField] GameObject go_shopWindow;
     [SerializeField] GameObject go_forgeWindow;
     [SerializeField] GameObject go_wardrobeWindow;
+    [SerializeField] GameObject go_interactionWindow;
+
     [Header("COMMON ELEMENTS")] //elementos compartidos por varias ventanas
     [SerializeField] GameObject go_inventory; //used by shop & inventory windows
    // [SerializeField] GameObject go_closeIcon;
@@ -31,8 +33,9 @@ public class VillageMenuUI : MonoBehaviour
     #region PRIVATE VARS
     Windows _currentWindow = Windows.Main;
     InventoryUI inventoryReference;
+    bool _canInteract = false;
     #endregion
-    #region PUBLIC VARS
+    #region PUBLIC VARS / PROPETIES
     public enum Windows
     {
         Main,
@@ -43,7 +46,16 @@ public class VillageMenuUI : MonoBehaviour
         Forge,
         Wardrobe,
     }
-
+    public bool ShowInteractWindow
+    {
+        get => _canInteract;
+        set
+        {
+            _canInteract = value;
+            
+            go_interactionWindow.SetActive(_canInteract && CurrentWindow == Windows.Main);
+        }
+    }
     public Windows CurrentWindow
     {
         get => _currentWindow;
@@ -51,8 +63,11 @@ public class VillageMenuUI : MonoBehaviour
         {
             Debug.Log("Current Window: "+_currentWindow.ToString());
             Debug.Log("Next Window: " + value.ToString());
-            SwitchWindow(_currentWindow, value);
+
+            Windows lastWindow = _currentWindow;
             _currentWindow = value;
+
+            SwitchWindow(lastWindow, _currentWindow);
             UpdateSelectedButton();
         }
     }
@@ -67,14 +82,18 @@ public class VillageMenuUI : MonoBehaviour
     {
         bool isMain = nextWindow == Windows.Main;
         go_mainWindow.SetActive(isMain);
+
+        ShowInteractWindow = _canInteract;
+
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
-        go_pauseWindow.SetActive(nextWindow == Windows.Pause);
-        go_inventoryWindow.SetActive(nextWindow == Windows.InventoryInfo);
+        
         go_shopWindow.SetActive(nextWindow == Windows.Shop);
         go_forgeWindow.SetActive(nextWindow == Windows.Forge);
+        go_pauseWindow.SetActive(nextWindow == Windows.Pause);
         go_wardrobeWindow.SetActive(nextWindow == Windows.Wardrobe);
-
+        go_inventoryWindow.SetActive(nextWindow == Windows.InventoryInfo);
         go_inventory.SetActive(nextWindow == Windows.Shop || nextWindow == Windows.InventoryInfo);
+        
 
         bool isInit = !lastWindow.HasValue;
 

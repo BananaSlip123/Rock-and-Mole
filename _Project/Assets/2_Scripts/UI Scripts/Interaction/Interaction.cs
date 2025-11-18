@@ -9,6 +9,8 @@ public class Interaction : MonoBehaviour
     [SerializeField] TextMeshPro texto;
     [Header("Callback")]
     [SerializeField] UnityEvent onInteraction;
+    [SerializeField] UnityEvent onEnter;
+    [SerializeField] UnityEvent onExit;
 
     Color available = new Color(1,1,0.9f,1);
     Color notAvailable = new Color(1,1,0.7f,0.6f);
@@ -21,6 +23,8 @@ public class Interaction : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            onEnter.Invoke();
+
             texto.color = available;
             if(playerController != null)
                 playerController.pressButtonA = Interact;
@@ -31,6 +35,8 @@ public class Interaction : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            onExit.Invoke();
+
             texto.color = notAvailable;
             if (playerController != null)
                 playerController.pressButtonA = null;
