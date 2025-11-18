@@ -116,20 +116,16 @@ public class WardrobeUI : MonoBehaviour
             {
                 if (value > 0)
                 {
-                    Debug.Log("valor positivo");
                     txt_bonusLifePoints.color = color_buff;
                     txt_bonusLifePoints.text = "+" + value.ToString();
                     return;
                 }
                 if (value < 0)
                 {
-                    Debug.Log("valor negativo");
                     txt_bonusLifePoints.color = color_deBuff;
                     txt_bonusLifePoints.text = value.ToString();
                     return;
                 }
-                Debug.Log("valor 0");
-
             }
             txt_bonusLifePoints.text = "";
         }
@@ -292,9 +288,7 @@ public class WardrobeUI : MonoBehaviour
     private void OnEnable()
     {
         _selectedHelmetID = EquipmentManager.CurrentHelmetID;
-        Debug.Log(SelectedHelmetID);
         _selectedChestClothID = EquipmentManager.CurrentChestClothID;
-        Debug.Log(SelectedChestClothID);
         WardrobeModeProperty = WardrobeMode.chestCloth;
     }
     private void OnChestClothMode()
@@ -485,9 +479,6 @@ public class WardrobeUI : MonoBehaviour
 
                 break;
         }
-        
-
-        
     }
 
     private void ChangeSelectedCloth(int placesToMove)
