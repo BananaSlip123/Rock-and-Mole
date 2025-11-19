@@ -637,8 +637,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 1099.0,
-            "y": 256.0000305175781
+            "x": 2053.599853515625,
+            "y": 987.2000732421875
         },
         "m_Blocks": [
             {
@@ -1570,11 +1570,11 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.0,
-    "m_FloatType": 0,
+    "m_Value": 0.009999999776482582,
+    "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
-        "y": 1.0
+        "y": 0.05000000074505806
     }
 }
 
@@ -2508,7 +2508,7 @@
     "m_ZWriteControl": 0,
     "m_ZTestMode": 4,
     "m_AlphaMode": 0,
-    "m_RenderFace": 2,
+    "m_RenderFace": 0,
     "m_AlphaClip": false,
     "m_CustomEditorGUI": ""
 }

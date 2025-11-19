@@ -507,6 +507,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7595338976446420984}
     m_Modifications:
+    - target: {fileID: 5099002985089708459, guid: 7f7b43770238052439de2dd7938c6442, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099002985089708459, guid: 7f7b43770238052439de2dd7938c6442, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bc15b244def89454ba826e42f6bb0f47, type: 2}
     - target: {fileID: 5137669144641805438, guid: 7f7b43770238052439de2dd7938c6442, type: 3}
       propertyPath: m_Name
       value: Debug Model
