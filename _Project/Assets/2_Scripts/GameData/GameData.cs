@@ -197,6 +197,12 @@ public static class GameData
        // return generated;
     }
 
+    public static void MaterialsRock(MaterialName material)
+    {
+        int materialAmount = RandomAmount(MaterialsRarity[material]);
+        RunInventory.AddObject(material, materialAmount);
+    }
+
     //public static Dictionary<MaterialName, int> EnemyLoot(int amount, EnemyName type)
     public static void EnemyLoot(int amount, EnemyName type)
     {

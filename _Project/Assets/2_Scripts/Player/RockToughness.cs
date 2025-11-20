@@ -21,20 +21,20 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
     private void DestroyRock()
     {
         float random = Random.Range(0f, 1f);
-        if ( random < 0.25f)
-            GameData.RunInventory.AddObject(MaterialName.Carbon, Random.Range(1, 3));
-        else if(random < 0.5f)
-            GameData.RunInventory.AddObject(MaterialName.Hierro, Random.Range(1, 3));
+        if (random < 0.25f)
+            GameData.MaterialsRock(MaterialName.Carbon);
+        else if (random < 0.5f)
+            GameData.MaterialsRock(MaterialName.Hierro);
         else if (random < 0.65f)
-            GameData.RunInventory.AddObject(MaterialName.Bronce, Random.Range(1, 3));
+            GameData.MaterialsRock(MaterialName.Bronce);
         else if (random < 0.8f)
-            GameData.RunInventory.AddObject(MaterialName.Cuarzo, Random.Range(1, 3));
+            GameData.MaterialsRock(MaterialName.Cuarzo);
         else if (random < 0.9f)
-            GameData.RunInventory.AddObject(MaterialName.Rubi, Random.Range(1, 3));
+            GameData.MaterialsRock(MaterialName.Rubi);
         else if (random < 0.95f)
-            GameData.RunInventory.AddObject(MaterialName.Diamante, 1);
+            GameData.MaterialsRock(MaterialName.Diamante);
         else
-            GameData.RunInventory.AddObject(MaterialName.Obsidiana, 1);
+            GameData.MaterialsRock(MaterialName.Obsidiana);
 
         Destroy(gameObject);       
     }
