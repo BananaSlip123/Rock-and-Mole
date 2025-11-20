@@ -91,11 +91,16 @@ public class GameMenu : MonoBehaviour
         go_mainWindow.SetActive(isMain);
         go_materialsCollectedWindow.SetActive(isMain);
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
-        go_pauseWindow.SetActive(nextWindow == Windows.Pause);
         go_runInventoryWindow.SetActive(nextWindow == Windows.RunInventory);
         go_runInventoryInfoWindow.SetActive(nextWindow == Windows.RunInventory);
         go_lifeBar.SetActive(isMain);
         go_gameOverWindow.SetActive(nextWindow == Windows.GameOver);
+
+        bool isPause = nextWindow == Windows.Pause;
+        go_pauseWindow.SetActive(isPause);
+
+        if (isPause) Time.timeScale = 0;
+        else Time.timeScale = 1;
 
         bool isInit = !lastWindow.HasValue;
 
