@@ -10,7 +10,9 @@ public class TutorialScript : MonoBehaviour
 	[SerializeField] TutorialScene scene;
 	[SerializeField] string[] dialogsToShow;
     CallOut callOut;
-	enum TutorialScene
+
+    GameObject[] enemigosEscena;
+    enum TutorialScene
 	{
 		Village,
 		Room1,
@@ -41,6 +43,8 @@ public class TutorialScript : MonoBehaviour
 		callOut = go_callOut.GetComponent<CallOut>();
 		if (callOut == null) throw new System.Exception("go_CallOut must have a callout component");
 
+        enemigosEscena = GameObject.FindGameObjectsWithTag("Enemy");
+
         InitCallOut();
     }
     private void OnDisable()
@@ -58,6 +62,9 @@ public class TutorialScript : MonoBehaviour
     {
         Debug.Log("Init");
         callOut.enabled = true;
+
+        foreach (GameObject enemy in enemigosEscena) enemy.SetActive(false);
+
         callOut.gameObject.SetActive(true);
         callOut.OnCallOutDisable += DialogEnded;
         callOut.StartCallOut(dialogsToShow);
@@ -67,6 +74,7 @@ public class TutorialScript : MonoBehaviour
 		Debug.Log("fin");
         if (scene == TutorialScene.Village)
             GameData.NeedsTutorial = false;
+        foreach (GameObject enemy in enemigosEscena) enemy.SetActive(true);
         this.gameObject.SetActive(false);
     }
     #endregion

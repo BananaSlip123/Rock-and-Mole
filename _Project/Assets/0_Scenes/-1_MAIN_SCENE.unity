@@ -622,7 +622,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2261848913020136784, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
       propertyPath: needsTutorial
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3090163795105732648, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5089,7 +5089,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 463025328}
   m_Direction: 2
   m_Value: 1.0000011
-  m_Size: 0.29103634
+  m_Size: 0.29124314
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
