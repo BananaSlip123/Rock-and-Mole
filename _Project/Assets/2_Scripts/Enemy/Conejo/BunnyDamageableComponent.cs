@@ -62,15 +62,16 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
         {
             LevelManager.instance.EnemyDead();
 
-            Dictionary<MaterialName, int> materialsGenerated = GameData.EnemyLoot(UnityEngine.Random.Range(2, 4), tipoEnemigo);
+            //Dictionary<MaterialName, int> materialsGenerated = GameData.EnemyLoot(UnityEngine.Random.Range(2, 4), tipoEnemigo);
+            GameData.EnemyLoot(UnityEngine.Random.Range(2, 4), tipoEnemigo);
 
-            int i = 0;
-            foreach (MaterialName material in materialsGenerated.Keys)
-            {
-                GameData.RunInventory.AddObject(material, materialsGenerated[material]);
-                Debug.Log("HE AÑADIDO: " + material.ToString() + " " + i);
-                i++;
-            }
+            //int i = 0;
+            //foreach (MaterialName material in materialsGenerated.Keys)
+            //{
+            //    GameData.RunInventory.AddObject(material, materialsGenerated[material]);
+            //    Debug.Log("HE AÑADIDO: " + material.ToString() + " " + i);
+            //    i++;
+            //}
         }
     }
 

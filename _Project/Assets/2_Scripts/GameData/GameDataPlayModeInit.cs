@@ -6,6 +6,7 @@ public class GameDataPlayModeInit : MonoBehaviour
     static bool _init = false;
 
     [SerializeField] bool needsTutorial = false;
+    [SerializeField] bool getFromDisc = false;
     [SerializeField] int materialsAmount = 200;
     [SerializeField] int coinsAmount = 4000;
 
@@ -17,10 +18,13 @@ public class GameDataPlayModeInit : MonoBehaviour
 
         GameData.NeedsTutorial = needsTutorial;
 
+        if (getFromDisc) return;
         foreach (MaterialName key in typeof(MaterialName).GetEnumValues())
         {
+            
             GameData.Inventory.ResetObjectAmount(key); //vuelve a 0 (persistencia ejem)
-            GameData.Inventory.AddObject(key, materialsAmount);
+            if (materialsAmount > 0)
+                GameData.Inventory.AddObject(key, materialsAmount);
         }
 
         GameData.Coins = coinsAmount;
