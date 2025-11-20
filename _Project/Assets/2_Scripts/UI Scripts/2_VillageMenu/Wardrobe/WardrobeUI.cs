@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using UnityEngine.UI;
 
 public class WardrobeUI : MonoBehaviour
 {
@@ -22,7 +23,9 @@ public class WardrobeUI : MonoBehaviour
 
     [Header("Dynamic Button Texts")]
     [SerializeField] TextMeshProUGUI txt_button_BuyOrEquip;
-    [SerializeField] TextMeshProUGUI txt_button_Change;
+    //[SerializeField] TextMeshProUGUI txt_button_Change;
+    [SerializeField] Image img_helmetButtonBackground;
+    [SerializeField] Image img_chestClothButtonBackground;
 
     [Header("Game Objects & Transforms")]
     [SerializeField] GameObject go_error;
@@ -44,6 +47,8 @@ public class WardrobeUI : MonoBehaviour
     private Coroutine currentFade;
     private GameObject currentChestClothPrefab = null;
     private GameObject currentHelmetPrefab = null;
+
+    Color changeButtonsColor;
     enum WardrobeMode
     {
         helmet = 0, chestCloth = 1
@@ -284,6 +289,7 @@ public class WardrobeUI : MonoBehaviour
     private void Awake()
     {
         go_error.SetActive(false);
+        changeButtonsColor = img_helmetButtonBackground.color;
     }
     private void OnEnable()
     {
@@ -293,7 +299,9 @@ public class WardrobeUI : MonoBehaviour
     }
     private void OnChestClothMode()
     {
-        txt_button_Change.text = "Mostrar Cascos";
+        img_helmetButtonBackground.color = new Color(0,0,0,0);
+        img_chestClothButtonBackground.color = changeButtonsColor;
+
         EquipmentManager.OnCurrentChestClothChange += UpdateUI;
         EquipmentManager.OnCurrentHelmetChange -= UpdateUI; //si no lo tiene asignado no hace nada
         EquipmentManager.OnUnlockedChestCloth += OnUnlocked;
@@ -303,7 +311,9 @@ public class WardrobeUI : MonoBehaviour
     }
     private void OnHelmetMode()
     {
-        txt_button_Change.text = "Mostrar Petos";
+        img_helmetButtonBackground.color = changeButtonsColor;
+        img_chestClothButtonBackground.color = new Color(0, 0, 0, 0);
+
         EquipmentManager.OnCurrentChestClothChange -= UpdateUI;
         EquipmentManager.OnCurrentHelmetChange += UpdateUI;
         EquipmentManager.OnUnlockedChestCloth -= OnUnlocked;
@@ -596,12 +606,24 @@ public class WardrobeUI : MonoBehaviour
             default: break;
         }
     }
-    public void OnButtonChange()
-    {
-        int currentMode = (int)WardrobeModeProperty;
-        int nextMode = (currentMode + 1) % 2;
+    //public void OnButtonChange()
+    //{
+    //    int currentMode = (int)WardrobeModeProperty;
+    //    int nextMode = (currentMode + 1) % 2;
 
-        WardrobeModeProperty = (WardrobeMode)nextMode;
+    //    WardrobeModeProperty = (WardrobeMode)nextMode;
+    //}
+
+    public void OnButtonHelmet()
+    {
+        if (WardrobeModeProperty == WardrobeMode.helmet) return;
+        WardrobeModeProperty = WardrobeMode.helmet;
+    }
+
+    public void OnButtonChestCloth()
+    {
+        if (WardrobeModeProperty == WardrobeMode.chestCloth) return;
+        WardrobeModeProperty = WardrobeMode.chestCloth;
     }
     public void OnButtonLeftArrow()
     {
