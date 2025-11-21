@@ -3,7 +3,22 @@ guid: b4ce101aeb128da44a7d9561751fd5eb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Casco.002
+    second: {fileID: 2100000, guid: 5a2e2f81f2ce54b4c87aaa2214d0360e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal.002
+    second: {fileID: 2100000, guid: 799efd8efcf7965408d13d524fd1afb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plumas.003
+    second: {fileID: 2100000, guid: 16f39fc5208e9434eb2c8422c46828f5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -68,8 +83,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 180
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

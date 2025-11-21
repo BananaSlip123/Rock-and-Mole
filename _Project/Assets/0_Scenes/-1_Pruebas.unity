@@ -131,13 +131,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conejo
       objectReference: {fileID: 0}
-    - target: {fileID: 666173133458897332, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1358231042624466481, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.95908326
+      value: 0.99736583
       objectReference: {fileID: 0}
     - target: {fileID: 1358231042624466481, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -145,19 +141,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1358231042624466481, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.2409515
+      value: -3.3080094
       objectReference: {fileID: 0}
     - target: {fileID: 1358231042624466481, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.31001386
       objectReference: {fileID: 0}
     - target: {fileID: 1358231042624466481, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1358231042624466481, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.95073205
       objectReference: {fileID: 0}
     - target: {fileID: 1358231042624466481, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -169,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1358231042624466481, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 1223.88
       objectReference: {fileID: 0}
     - target: {fileID: 1358231042624466481, guid: 0673ab0a24597f04399edbbd9a92240f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -6163,11 +6159,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 6.29
       objectReference: {fileID: 0}
     - target: {fileID: 2205250088669373141, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6200,6 +6196,10 @@ PrefabInstance:
     - target: {fileID: 5044491591228737559, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
       propertyPath: m_Name
       value: PuntoLuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615999054909790603, guid: 30d4c198a91e27a45b820b95015bbdac, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6554,10 +6554,6 @@ PrefabInstance:
     - target: {fileID: 3666153045942041263, guid: 2cc472ce8692def4d8fd611cfcacb381, type: 3}
       propertyPath: m_Name
       value: Golem
-      objectReference: {fileID: 0}
-    - target: {fileID: 3666153045942041263, guid: 2cc472ce8692def4d8fd611cfcacb381, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5234894442509112267, guid: 2cc472ce8692def4d8fd611cfcacb381, type: 3}
       propertyPath: m_LocalPosition.x
