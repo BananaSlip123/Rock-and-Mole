@@ -118,7 +118,7 @@ namespace PlayerComponents
                         {
                             damage = (int) (critMultiplier * damage);
                         }
-                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(damage);
+                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(damage, 0.5f, 0.5f);
                         Debug.Log("He golpeado a: " + hitCollider.gameObject.name);
                     }
                 }

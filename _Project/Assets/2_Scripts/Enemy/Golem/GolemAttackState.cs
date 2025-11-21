@@ -44,7 +44,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     {
         //animator.SetBool("Atacar", true);
         Debug.Log("ATACO");
-        playerHealth.RecieveDamage(damage);
+        playerHealth.RecieveDamage(damage, 0.5f, 0.1f);
     }
 
     public void Enter()

@@ -24,7 +24,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
         */
     }
 
-    public void RecieveDamage(int damage)
+    public void RecieveDamage(int damage, float duration, float magnitude)
     {
         Debug.Log("CONEJO :" + damage);
         health -= damage;

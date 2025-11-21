@@ -50,7 +50,7 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
     public void Attack()
     {
         //animator.SetBool("Atacar", true);
-        playerHealth.RecieveDamage(damage);
+        playerHealth.RecieveDamage(damage, 1f, 0.75f);
         hasAttacked = true;
 
         BunnyController m = (BunnyController)mStateMachine;

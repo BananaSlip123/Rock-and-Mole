@@ -39,7 +39,7 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
         Destroy(gameObject);       
     }
 
-    public void RecieveDamage(int damage)
+    public void RecieveDamage(int damage, float duration, float magnitude)
     {
         Debug.Log("ME HAN GOLEPADO");
         numberOfHits++;

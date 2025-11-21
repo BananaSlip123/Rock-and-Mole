@@ -22,7 +22,7 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
         }
     }
 
-    public void RecieveDamage(int damage)
+    public void RecieveDamage(int damage, float duration, float magnitude)
     {
         health -= damage;
         hasBeenDamaged = true;

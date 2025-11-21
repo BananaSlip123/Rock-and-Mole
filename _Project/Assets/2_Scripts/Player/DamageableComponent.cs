@@ -35,12 +35,12 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         Health = health;
     }
 
-    public void RecieveDamage(int damage)
+    public void RecieveDamage(int damage, float duration, float magnitude)
     {
         //Health -= damage;
 
         player.HealPlayer(-damage);
-        StartCoroutine(camera.Shake(0.5f,0.5f));
+        StartCoroutine(camera.Shake(duration,magnitude));
 
         if(!hasBeenDamaged)
         {
