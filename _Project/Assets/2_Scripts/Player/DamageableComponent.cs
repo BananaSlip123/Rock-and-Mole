@@ -23,6 +23,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     public Action<int> OnHealthChange;
     public Action OnDeath;
     PlayerStats player;
+    [SerializeField]CameraShake camera;
 
     private void Awake()
     {
@@ -37,7 +38,9 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     public void RecieveDamage(int damage)
     {
         //Health -= damage;
+
         player.HealPlayer(-damage);
+        StartCoroutine(camera.Shake(0.5f,0.5f));
 
         if(!hasBeenDamaged)
         {
