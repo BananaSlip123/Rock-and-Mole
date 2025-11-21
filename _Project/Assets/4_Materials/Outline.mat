@@ -41,7 +41,7 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _Fade: 250
-    - _Thickness: 0.00004
+    - _Thickness: 0.003
     m_Colors:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

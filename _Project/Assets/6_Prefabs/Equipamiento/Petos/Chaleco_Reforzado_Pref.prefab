@@ -161,6 +161,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chaleco_Reforzado_Pref
       objectReference: {fileID: 0}
+    - target: {fileID: 958861272315367556, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 958861272315367556, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bc15b244def89454ba826e42f6bb0f47, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -4837074373544219043, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
