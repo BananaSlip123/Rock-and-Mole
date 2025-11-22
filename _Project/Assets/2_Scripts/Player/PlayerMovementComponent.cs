@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
 using static UnityEngine.GraphicsBuffer;
@@ -7,6 +8,7 @@ namespace PlayerComponents
     public class PlayerMovementComponent : MonoBehaviour, IMoveComponent, ISkillComponent
     {
         LayerMask layerMask;
+        [SerializeField] GameObject trail;
 
         #region Movimiento
         [SerializeField] public float speed;
@@ -108,6 +110,7 @@ namespace PlayerComponents
             if (IsInCooldown || isDashing)
                 return;
 
+            StartCoroutine(ActiveTrail());
             timeCooldown = 0;
             timeDashing = 0;
             isDashing = true;
@@ -128,10 +131,19 @@ namespace PlayerComponents
             {
                 isDashing = false;
                 IsInCooldown = true;
-                timeDashing = 0f;
+                timeDashing = 0f;                
 
                 Debug.Log("He terminado el dash");
             }
+        }
+
+        IEnumerator ActiveTrail()
+        {
+            trail.SetActive(true);
+
+            yield return new WaitForSeconds(DASH_TIME + 0.2f);
+
+            trail.SetActive(false);
         }
     }
 }
