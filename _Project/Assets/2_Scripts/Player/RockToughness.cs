@@ -4,6 +4,7 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
 {
     [SerializeField]int toughness = 2;
     [SerializeField] float numberProbability = 0.10f;
+    [SerializeField] GameObject sparks;
 
     int numberOfHits = 0;
     bool hasBeenHit = false;
@@ -43,6 +44,7 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
     {
         Debug.Log("ME HAN GOLEPADO");
         numberOfHits++;
+        sparks.SetActive(true);
         hasBeenHit = true;
         if (numberOfHits == toughness)
             DestroyRock();
@@ -51,6 +53,7 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
     public void ResetHasBeenDamaged()
     {
         hasBeenHit = false;
+        sparks.SetActive(false);
     }
 
     public bool GetHasBeenDamaged()
