@@ -55,6 +55,11 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         Debug.Log("Me han quitado vida :" + damage + " me queda: "+ Health);
     }
 
+    public void SetHasBeenDamaged(bool change)
+    {
+        hasBeenDamaged = change;
+    }
+
     public bool GetHasBeenDamaged()
     {
         return hasBeenDamaged;

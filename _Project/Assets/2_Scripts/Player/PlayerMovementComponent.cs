@@ -22,7 +22,7 @@ namespace PlayerComponents
         #endregion
 
         #region Dash
-        const float COOLDOWN = 1f;
+        const float COOLDOWN = 0.5f;
         const float DASH_TIME = 0.1f;
 
         float timeCooldown = 0f;
@@ -32,14 +32,18 @@ namespace PlayerComponents
         bool IsInCooldown = false;
 
         public bool isDashing = false;
+        Vector2 movementDash;
         #endregion
 
         private Vector2 movement = new Vector2();
         public Animator animator;
 
+        DamageableComponent damageable;
+
         private void Awake()
         {
             layerMask = LayerMask.GetMask("Wall");
+            damageable = GetComponent<DamageableComponent>();
         }
 
         public void IsMoving(Vector2 valor)
@@ -72,10 +76,13 @@ namespace PlayerComponents
 
         public void Move()
         {
-            rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-directionRotation.y, 0, directionRotation.x).normalized), Vector3.up);
+            if(!isDashing)
+            {
+                rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-directionRotation.y, 0, directionRotation.x).normalized), Vector3.up);
 
-            transform.rotation = rotation;
-
+                transform.rotation = rotation;
+            }
+            
             Vector3 direction = VectorConverter.VectorConeverter(new Vector3(movement.x, 0, movement.y).normalized);
 
             RaycastHit hit;
@@ -114,6 +121,10 @@ namespace PlayerComponents
             timeCooldown = 0;
             timeDashing = 0;
             isDashing = true;
+            movementDash = movement;
+
+            damageable.SetHasBeenDamaged(true);
+            
 
             Debug.Log("He iniciado el dash");
         }
@@ -123,7 +134,7 @@ namespace PlayerComponents
             if (IsInCooldown)
                 return;
 
-            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y), speedDash);           
+            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movementDash.x, 0, movementDash.y), speedDash);           
 
             if(timeDashing < DASH_TIME)
                 timeDashing += Time.fixedDeltaTime;
@@ -131,7 +142,9 @@ namespace PlayerComponents
             {
                 isDashing = false;
                 IsInCooldown = true;
-                timeDashing = 0f;                
+                timeDashing = 0f;
+                movementDash = Vector2.zero;
+                damageable.SetHasBeenDamaged(false);
 
                 Debug.Log("He terminado el dash");
             }
@@ -141,7 +154,7 @@ namespace PlayerComponents
         {
             trail.SetActive(true);
 
-            yield return new WaitForSeconds(DASH_TIME + 0.2f);
+            yield return new WaitForSeconds(DASH_TIME + 0.05f);
 
             trail.SetActive(false);
         }
