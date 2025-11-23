@@ -9,6 +9,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     private bool hasBeenDamaged = false;
 
     [SerializeField] private int health = 0;
+    [SerializeField] private bool isInmortal = false; //en algunas salas de tutorial ser inmortal
     public int Health
     {
         get => health;
@@ -28,6 +29,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     private void Awake()
     {
         player = GameObject.Find("PlayerStats").GetComponent<PlayerStats>();
+        if (!GameData.NeedsTutorial && isInmortal) isInmortal = false;
     }
 
     public void SetHealth(int health)
@@ -50,7 +52,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         }
         
 
-        if(Health <= 0)
+        if(Health <= 0 && !isInmortal)
             Death();
         Debug.Log("Me han quitado vida :" + damage + " me queda: "+ Health);
     }
