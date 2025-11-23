@@ -43,6 +43,6 @@ Material:
     - _Fade: 250
     - _Thickness: 0.009
     m_Colors:
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _OutlineColor: {r: 0.3962264, g: 0.3270737, b: 0.3270737, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
