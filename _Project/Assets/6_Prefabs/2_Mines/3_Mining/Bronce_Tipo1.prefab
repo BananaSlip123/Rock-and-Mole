@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bronce_Tipo1
       objectReference: {fileID: 0}
+    - target: {fileID: 4531912228224351498, guid: 705d0a5698c79ca49af7b1b8dfa4d5a3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

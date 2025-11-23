@@ -3,7 +3,27 @@ guid: 3493e7f688fe0f24d89722e57c6445fa
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HierroRoca
+    second: {fileID: 2100000, guid: e84089a339dd67d4f943fa5003ac0734, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HierroRoca.001
+    second: {fileID: 2100000, guid: dbf1ef785f4bde749b6a0952cf746150, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HierroRoca.002
+    second: {fileID: 2100000, guid: a6845bbdb76651a43a89028121962227, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RocaRuido.002
+    second: {fileID: 2100000, guid: 64e31bed42c3e4b4da13dec1e203af48, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -68,8 +88,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 120
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

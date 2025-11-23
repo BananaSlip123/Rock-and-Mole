@@ -3,7 +3,32 @@ guid: 4ec0bc1bb43d3364f917ebb41f732c54
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carbon
+    second: {fileID: 2100000, guid: cd1fd279f4442f14aa7523e29773f890, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carbon.001
+    second: {fileID: 2100000, guid: 730d71eb46aa66e4ebb9545e0823abc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carbon.002
+    second: {fileID: 2100000, guid: 9f3d144f7b2e11c419308531a8ab2141, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carbon.003
+    second: {fileID: 2100000, guid: 8fe367d73ed4c6347adeb221245cdcb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RocaRuido.003
+    second: {fileID: 2100000, guid: b77404eea2b28c74ba1d46d2560ea7f7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -68,8 +93,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 120
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

@@ -3,7 +3,32 @@ guid: df4a1e8b3858189468c446e436f95b72
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CuarzoRoca
+    second: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CuarzoRoca.001
+    second: {fileID: 2100000, guid: f60c508dc781f4e4ab9fde89487c069b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CuarzoRoca.002
+    second: {fileID: 2100000, guid: 41c99abddcb23a9499aec82f2a71e223, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CuarzoRoca.003
+    second: {fileID: 2100000, guid: 503a64e45ac3c164aaf5ae828740a2c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RocaRuido.004
+    second: {fileID: 2100000, guid: c6c189cc677813841bbe3353549901af, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -68,8 +93,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 120
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

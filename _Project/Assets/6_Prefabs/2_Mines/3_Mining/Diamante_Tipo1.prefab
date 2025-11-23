@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Diamante_Tipo1
       objectReference: {fileID: 0}
+    - target: {fileID: 3805879448417164763, guid: 94c7d849c870099448118a93ec8adc9a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

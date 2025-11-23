@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hierro_Tipo1
       objectReference: {fileID: 0}
+    - target: {fileID: 2332884666418946586, guid: 3493e7f688fe0f24d89722e57c6445fa, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

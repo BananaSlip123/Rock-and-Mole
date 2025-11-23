@@ -3,7 +3,32 @@ guid: 6eef851386a108d47911c499e6891713
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obsidiana
+    second: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obsidiana.001
+    second: {fileID: 2100000, guid: 97ea065f513fdb54394936091c6bdce8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obsidiana.002
+    second: {fileID: 2100000, guid: 5c93e03e2c3294144906dfd3615029eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obsidiana.003
+    second: {fileID: 2100000, guid: fac3d0f6469a5224b9cc032c959062e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RocaRuido.005
+    second: {fileID: 2100000, guid: 8cc4beb1ff8fc0e4899b82c788d3780c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -68,8 +93,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 120
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

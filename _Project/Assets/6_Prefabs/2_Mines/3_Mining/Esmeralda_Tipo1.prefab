@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8153132162935188204, guid: 918be2b94cd86854d8cc3f64749c9fa0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     - target: {fileID: 919132149155446097, guid: 918be2b94cd86854d8cc3f64749c9fa0, type: 3}
       propertyPath: m_Name
       value: Esmeralda_Tipo1
