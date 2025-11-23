@@ -3,7 +3,22 @@ guid: 3b197b47f21d1c746a48448e5ad8457f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madera.002
+    second: {fileID: 2100000, guid: fbc5b94d0e61de64f9b023a0cb612164, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.051
+    second: {fileID: 2100000, guid: afbf049a8f9f0d54dba4c3b11742442e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalOScuro.002
+    second: {fileID: 2100000, guid: a3756d88e410c4345aeaeb47f104c47a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -68,8 +83,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 180
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

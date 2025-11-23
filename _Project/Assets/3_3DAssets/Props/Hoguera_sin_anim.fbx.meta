@@ -3,7 +3,17 @@ guid: 42060391d76543c4eae0a7cb1b2b7da5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tronco
+    second: {fileID: 2100000, guid: e277e83f41923864089fde60ee2e8cfa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TroncoInterior
+    second: {fileID: 2100000, guid: d28ea038cd0e3f549a5bfe41516134df, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -68,8 +78,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 120
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
