@@ -10516,9 +10516,10 @@ MonoBehaviour:
   - "\xA1Un buen pico te ayuda a acabar m\xE1s r\xE1pido con los enemigos!"
   - "En la tienda podr\xE1s vender materiales y comprar equipamiento."
   - "Dentro del ba\xFAl podr\xE1s ver los materiales que traes de tus expediciones."
-  - "Desde la vagoneta podr\xE1s recoger los materiales que te env\xEDes desde la
-    mina."
-  - "Si quieres volver a bajar a la mina, solo dir\xEDgete a esa puerta del fondo."
+  - "Tambi\xE9n, desde la vagoneta podr\xE1s recoger los materiales que te env\xEDes
+    desde la mina."
+  - "Y por \xFAltimo, si quieres volver a bajar a la mina, solo dir\xEDgete a esa
+    puerta del fondo."
 --- !u!1 &1541318219
 GameObject:
   m_ObjectHideFlags: 0
