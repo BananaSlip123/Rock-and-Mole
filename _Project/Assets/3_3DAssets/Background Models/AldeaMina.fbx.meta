@@ -3,7 +3,72 @@ guid: 3f0172a814223fc4783d8d8fb2661680
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: D07_Ochre_Flame
+    second: {fileID: 2100000, guid: 736d251572117814185df0153bbcf60b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_Mirror_01
+    second: {fileID: 2100000, guid: 65991d7b8977bf54aba9aec3fba4aa3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_Mirror_01.001
+    second: {fileID: 2100000, guid: 20f6868c4bdfd0b4c8eefa5f5218b49a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M05_Graphite_Haze
+    second: {fileID: 2100000, guid: 9c94959135a13e342a3ec1a4c14fd30f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M06_Steel_Smoke
+    second: {fileID: 2100000, guid: b06c11b567a0c374581717cfc5533ded, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M06_Steel_Smoke.001
+    second: {fileID: 2100000, guid: f15dce4e617dab34e88a4e8fc35e4972, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 4cefef299ae124b498f06cddd97efa0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: fae42dbd45a0b534cbb1af094ef08cda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 562775cbde8000d47816b686afb9b26e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 99c4f6da83556304d9d7458751baf7db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ty_Brown1.001
+    second: {fileID: 2100000, guid: 69d56609c32af0b4e94aa683afa20649, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ty_Brown2.001
+    second: {fileID: 2100000, guid: c70de6c619bbfc246a6364035459258e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ty_Gray1.001
+    second: {fileID: 2100000, guid: 294fbffc38da61f4aa1b8a310057ec61, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -69,7 +134,7 @@ ModelImporter:
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
