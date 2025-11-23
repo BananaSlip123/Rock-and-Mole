@@ -3,7 +3,57 @@ guid: 95693ade72763f74a884eca730b3616e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Camiseta.001
+    second: {fileID: 2100000, guid: b2631559e488a474e942b87a929c2ce4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cinturon
+    second: {fileID: 2100000, guid: 2abc31ce2e298934dba22218d3ed3a15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cristal
+    second: {fileID: 2100000, guid: 6b4d2d6a5b3b159459a3190e9e4dfac3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ojo1
+    second: {fileID: 2100000, guid: 9e269b686d175cb42a897a6d0bab166f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ojo2
+    second: {fileID: 2100000, guid: b7be6a92a20620f4398ae58e457dcacf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orejas
+    second: {fileID: 2100000, guid: 03ca6731ef57e1345be0d2263067e16d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pantalon.001
+    second: {fileID: 2100000, guid: 918b98c3d9df3b640bfb1d613cc4d6d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pendiente
+    second: {fileID: 2100000, guid: 15a4b6661060b4f44a9ca5c95d924b81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piel
+    second: {fileID: 2100000, guid: b3d29f3e25ae6934e8b7eb16eb775177, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piel.002
+    second: {fileID: 2100000, guid: 8188618cd5a993d4eb05f6e968ee44ca, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -329,8 +379,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 80
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
