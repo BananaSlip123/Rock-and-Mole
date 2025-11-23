@@ -5420,7 +5420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.0048675537, y: 18.660004}
+  m_AnchoredPosition: {x: -0.0048675537, y: 18.660034}
   m_SizeDelta: {x: 1, y: 2.06}
   m_Pivot: {x: 0.5, y: 0.15}
 --- !u!1001 &777192636
@@ -10513,11 +10513,13 @@ MonoBehaviour:
   - "\xA1No hay lugar m\xE1s acogedor que el hogar!"
   - "Al volver de la mina podr\xE1s visitar la tienda y la forja."
   - "En la forja, el herrero te podr\xE1 ayudar a mejorar el pico."
-  - "Un buen pico te ayuda a picar m\xE1s r\xE1pido..."
-  - "\xA1Y a ser implacable contra los enemigos!"
+  - "\xA1Un buen pico te ayuda a acabar m\xE1s r\xE1pido con los enemigos!"
   - "En la tienda podr\xE1s vender materiales y comprar equipamiento."
   - "Dentro del ba\xFAl podr\xE1s ver los materiales que traes de tus expediciones."
-  - "Si quieres volver a bajar a la mina, solo dir\xEDgete a esa puerta de all\xED."
+  - "Tambi\xE9n, desde la vagoneta podr\xE1s recoger los materiales que te env\xEDes
+    desde la mina."
+  - "Y por \xFAltimo, si quieres volver a bajar a la mina, solo dir\xEDgete a esa
+    puerta del fondo."
 --- !u!1 &1541318219
 GameObject:
   m_ObjectHideFlags: 0
@@ -12873,7 +12875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 285.9, y: -27.62005}
+  m_AnchoredPosition: {x: 285.90002, y: -27.62005}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1930147801
@@ -14430,7 +14432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 185.1, y: -3.9000468}
+  m_AnchoredPosition: {x: 185.09998, y: -3.9000468}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2053551665
