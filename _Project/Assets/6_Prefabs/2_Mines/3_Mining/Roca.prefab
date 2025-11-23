@@ -5011,33 +5011,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1906213446129836447, guid: 8f47cc16e4ccb4447ad0cb91ce587676, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -1906213446129836447, guid: 8f47cc16e4ccb4447ad0cb91ce587676, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 78f1895879623a4478bb65db2a7024f3, type: 2}
-    - target: {fileID: -1906213446129836447, guid: 8f47cc16e4ccb4447ad0cb91ce587676, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 16348e480c6fb1748b5135693942e779, type: 2}
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     - target: {fileID: 919132149155446097, guid: 8f47cc16e4ccb4447ad0cb91ce587676, type: 3}
       propertyPath: m_Name
       value: Roca_Picar_Tipo1
       objectReference: {fileID: 0}
     - target: {fileID: 4021418894583249723, guid: 8f47cc16e4ccb4447ad0cb91ce587676, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4021418894583249723, guid: 8f47cc16e4ccb4447ad0cb91ce587676, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 78f1895879623a4478bb65db2a7024f3, type: 2}
-    - target: {fileID: 4021418894583249723, guid: 8f47cc16e4ccb4447ad0cb91ce587676, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 773d5882e8eef034fa3ab8a6845b5e64, type: 2}
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
