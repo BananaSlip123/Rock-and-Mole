@@ -19,7 +19,7 @@ public class MaterialChanger : MonoBehaviour
 
         for (int i = 0; i < meshRenderers.Length; i++)
         {
-            initialMaterials[i] = meshRenderers[i].materials;
+            initialMaterials.Add(meshRenderers[i].materials);
         }
     }
 
