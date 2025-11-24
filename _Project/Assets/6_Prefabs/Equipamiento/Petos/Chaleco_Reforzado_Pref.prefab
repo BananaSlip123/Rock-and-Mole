@@ -196,6 +196,9 @@ PrefabInstance:
       addedObject: {fileID: 8735345026767971887}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7784341549271505480}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 3618122689313845493}
   m_SourcePrefab: {fileID: 100100000, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
 --- !u!4 &3401821466207459852 stripped
@@ -211,6 +214,11 @@ Transform:
 --- !u!4 &4615490420302228288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8394631531082806673, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
+  m_PrefabInstance: {fileID: 5444221981804273967}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5099002985089708459 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 958861272315367556, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
   m_PrefabInstance: {fileID: 5444221981804273967}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5137669144641805438 stripped
@@ -234,6 +242,21 @@ MonoBehaviour:
   bone_Helmet: {fileID: 1630470358915519190}
   bone_PickAxeHand: {fileID: 5990348111150578495}
   bone_PickAxeBack: {fileID: 8665085277616418901}
+--- !u!114 &7784341549271505480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137669144641805438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f52a1f57aef3428b5a25764b1ed9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 5099002985089708459}
+  temporalMaterialDuration: 0.2
 --- !u!95 &3618122689313845493
 Animator:
   serializedVersion: 7

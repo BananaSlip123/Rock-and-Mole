@@ -232,6 +232,9 @@ PrefabInstance:
       addedObject: {fileID: 6539845706574099784}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9355884961e15cb46a07cd483f279b9b, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5207211270628878658}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9355884961e15cb46a07cd483f279b9b, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4051229710125991802}
   m_SourcePrefab: {fileID: 100100000, guid: 9355884961e15cb46a07cd483f279b9b, type: 3}
 --- !u!4 &285745417883161769 stripped
@@ -260,6 +263,21 @@ MonoBehaviour:
   bone_Helmet: {fileID: 4786266963208746873}
   bone_PickAxeHand: {fileID: 7973691488759812397}
   bone_PickAxeBack: {fileID: 8006589579569793154}
+--- !u!114 &5207211270628878658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339464564629709719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f52a1f57aef3428b5a25764b1ed9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 376582559735713346}
+  temporalMaterialDuration: 0.2
 --- !u!95 &4051229710125991802
 Animator:
   serializedVersion: 7
@@ -282,6 +300,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!137 &376582559735713346 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 958861272315367556, guid: 9355884961e15cb46a07cd483f279b9b, type: 3}
+  m_PrefabInstance: {fileID: 610076022256901830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7840517900423276005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1965696349810115805, guid: 9355884961e15cb46a07cd483f279b9b, type: 3}

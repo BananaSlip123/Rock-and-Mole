@@ -1,34 +1,50 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MaterialChanger : MonoBehaviour
 {
-    [SerializeField] Renderer meshRenderer;
+    [SerializeField] Renderer[] meshRenderers;
     [SerializeField] float temporalMaterialDuration;
-    Material[] initialMaterials;
-
-    void Awake()
-    {
-        initialMaterials = meshRenderer.materials;
-    }
-
+    List<Material[]> initialMaterials;
     public void AssignTemporalMaterial(Material temporalMat)
     {
         StartCoroutine(ChangeColor(temporalMat));
     }
-    void AssignMatToRenderer(Material[] mats) => meshRenderer.materials = mats; 
-    void AssignMatToRenderer(Material mat)
+
+    #region PRIVATE FUNCS
+    void Awake()
+    {
+        initialMaterials = new List<Material[]>(meshRenderers.Length);
+
+        for (int i = 0; i < meshRenderers.Length; i++)
+        {
+            initialMaterials[i] = meshRenderers[i].materials;
+        }
+    }
+
+    
+    void AssignMatToRenderers(List<Material[]> mats)
+    {
+        for (int i = 0; i < meshRenderers.Length; i++) meshRenderers[i].materials = mats[i];
+    }
+
+    void AssignMatToRenderers(Material[] mat)
+    {
+        for (int i = 0; i < meshRenderers.Length; i++) meshRenderers[i].materials = mat;
+    }
+    void AssignMatToRenderers(Material mat)
     {
         Material[] matToArray = new Material[1];
         matToArray[0] = mat;
-        AssignMatToRenderer(matToArray);
-    }
-        
-    IEnumerator ChangeColor(Material temporalMat)
-    {
-        AssignMatToRenderer(temporalMat);
-        yield return new WaitForSeconds(temporalMaterialDuration);
-        AssignMatToRenderer(initialMaterials);
+        AssignMatToRenderers(matToArray);
     }
 
+    IEnumerator ChangeColor(Material temporalMat)
+    {
+        AssignMatToRenderers(temporalMat);
+        yield return new WaitForSeconds(temporalMaterialDuration);
+        AssignMatToRenderers(initialMaterials);
+    }
+    #endregion
 }
