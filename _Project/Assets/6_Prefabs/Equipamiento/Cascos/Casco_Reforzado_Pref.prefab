@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4613184923414658665}
+  - component: {fileID: 413900655403183320}
   m_Layer: 5
   m_Name: Casco_Reforzado_Pref
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   - {fileID: 7229152542405467519}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &413900655403183320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6446618116644594871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f52a1f57aef3428b5a25764b1ed9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 8365497000714528272}
+  temporalMaterialDuration: 0.2
 --- !u!1001 &7194960631870388884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,5 +124,10 @@ PrefabInstance:
 --- !u!4 &7229152542405467519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b5beaf7b12c0ce840acec7b07806128e, type: 3}
+  m_PrefabInstance: {fileID: 7194960631870388884}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8365497000714528272 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: b5beaf7b12c0ce840acec7b07806128e, type: 3}
   m_PrefabInstance: {fileID: 7194960631870388884}
   m_PrefabAsset: {fileID: 0}

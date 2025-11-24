@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2811216495434257136}
+  - component: {fileID: -7645895094722707956}
   m_Layer: 5
   m_Name: Casco_Ligero_Pref
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   - {fileID: 1860687762042901676}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7645895094722707956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385333802160638548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f52a1f57aef3428b5a25764b1ed9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 691673584663539651}
+  temporalMaterialDuration: 0.2
 --- !u!1001 &2186714034853032775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97,6 +113,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed81b665c99ae6549a48b26239020f4c, type: 3}
+--- !u!23 &691673584663539651 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: ed81b665c99ae6549a48b26239020f4c, type: 3}
+  m_PrefabInstance: {fileID: 2186714034853032775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1860687762042901676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ed81b665c99ae6549a48b26239020f4c, type: 3}
