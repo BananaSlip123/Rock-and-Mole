@@ -284,4 +284,5 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     {
         actualHealth += healing;
     }
+    public void HealPlayer() => actualHealth = health;
 }

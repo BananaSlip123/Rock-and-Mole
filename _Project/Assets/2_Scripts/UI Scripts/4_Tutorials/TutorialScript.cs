@@ -33,13 +33,15 @@ public class TutorialScript : MonoBehaviour
     {
         Debug.Log("Start");
         if (dialogsToShow.Length == 0) return;
-        //GameData.NeedsTutorial = true;
 
         if (!GameData.NeedsTutorial)
 		{
             gameObject.SetActive(false);
 			return;
         }
+
+        if (scene == TutorialScene.Room3) FindAnyObjectByType<PlayerStats>().HealPlayer();
+
 		callOut = go_callOut.GetComponent<CallOut>();
 		if (callOut == null) throw new System.Exception("go_CallOut must have a callout component");
 

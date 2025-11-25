@@ -39,7 +39,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
 
     public void RecieveDamage(int damage, float duration, float magnitude)
     {
-        //Health -= damage;
+        if (isInmortal && (Health <= 35 || Health <= damage)) return;
 
         player.HealPlayer(-damage);
         StartCoroutine(camera.Shake(duration,magnitude));
@@ -52,7 +52,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         }
         
 
-        if(Health <= 0 && !isInmortal)
+        if(Health <= 0)
             Death();
         Debug.Log("Me han quitado vida :" + damage + " me queda: "+ Health);
     }

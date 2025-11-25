@@ -110,6 +110,9 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     void IStateComponent.Update()
     {
+        if (playerTransform == null) return;
+        if (enemyTransform == null) return;
+
         Vector3 direction = playerTransform.position - enemyTransform.position;
         Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
         enemyTransform.rotation = rotation;
