@@ -47,10 +47,10 @@ public class MaterialChanger : MonoBehaviour
         material.color = new Color(1,0,0);
         AssignMatToRenderers(material);
 
-        yield return new WaitForSeconds(temporalMaterialDuration);
-        material = new Material(Shader.Find("Unlit/Color"));
-        material.color = new Color(1, 1, 1);
-        AssignMatToRenderers(material);
+        //yield return new WaitForSeconds(temporalMaterialDuration);
+        //material = new Material(Shader.Find("Unlit/Color"));
+        //material.color = new Color(1, 0.3f, 0.3f);
+        //AssignMatToRenderers(material);
 
         yield return new WaitForSeconds(0.06f);
         AssignMatToRenderers(initialMaterials);
