@@ -7,9 +7,9 @@ public class MaterialChanger : MonoBehaviour
     [SerializeField] Renderer[] meshRenderers;
     [SerializeField] float temporalMaterialDuration;
     List<Material[]> initialMaterials;
-    public void AssignTemporalMaterial(Material temporalMat)
+    public void AssignTemporalMaterial()
     {
-        StartCoroutine(ChangeColor(temporalMat));
+        StartCoroutine(ChangeColor());
     }
 
     #region PRIVATE FUNCS
@@ -40,10 +40,19 @@ public class MaterialChanger : MonoBehaviour
         AssignMatToRenderers(matToArray);
     }
 
-    IEnumerator ChangeColor(Material temporalMat)
+    IEnumerator ChangeColor()
     {
-        AssignMatToRenderers(temporalMat);
+        //Material material = new Material(Shader.Find("Unlit/Color"));
+        Material material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
+        material.color = new Color(1,0,0);
+        AssignMatToRenderers(material);
+
         yield return new WaitForSeconds(temporalMaterialDuration);
+        material = new Material(Shader.Find("Unlit/Color"));
+        material.color = new Color(1, 1, 1);
+        AssignMatToRenderers(material);
+
+        yield return new WaitForSeconds(0.06f);
         AssignMatToRenderers(initialMaterials);
     }
     #endregion

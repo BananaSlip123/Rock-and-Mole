@@ -8,6 +8,7 @@ public class PlayerModelActualizer : MonoBehaviour
 
     PlayerAttackComponent playerAttackComponent;
     PlayerMovementComponent playerMovementComponent;
+    DamageableComponent playerDamageableComponent;
 
     GameObject go_currentHelmetModel = null;
     GameObject go_currentPickAxeModel = null;
@@ -29,6 +30,7 @@ public class PlayerModelActualizer : MonoBehaviour
     {
         playerAttackComponent = GetComponent<PlayerAttackComponent>();
         playerMovementComponent = GetComponent<PlayerMovementComponent>();
+        playerDamageableComponent = GetComponent<DamageableComponent>();
 
         PickaxePositionProperty = PickaxePosition.back;
     }
@@ -42,6 +44,7 @@ public class PlayerModelActualizer : MonoBehaviour
         EquipmentManager.OnPickaxeLevelChange += OnPickAxeChange;
 
         playerAttackComponent.onIsAttackingChange += OnPickAxePositionChange;
+        playerDamageableComponent.OnDamageReceive += OnDamageReceived;
     }
     private void OnDisable()
     {
@@ -51,7 +54,11 @@ public class PlayerModelActualizer : MonoBehaviour
 
         playerAttackComponent.onIsAttackingChange -= OnPickAxePositionChange;
     }
-
+    void OnDamageReceived()
+    {
+        go_currentModel.GetComponent<MaterialChanger>().AssignTemporalMaterial();
+        go_currentHelmetModel.GetComponent<MaterialChanger>().AssignTemporalMaterial();
+    }
     void OnPickAxePositionChange(bool isAttacking)
     {
         if (isAttacking)

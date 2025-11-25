@@ -17,11 +17,11 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         {
             health = value;
             OnHealthChange?.Invoke(value);
-            
         }
     }
 
     public Action<int> OnHealthChange;
+    public Action OnDamageReceive;
     public Action OnDeath;
     PlayerStats player;
     [SerializeField]CameraShake camera;
@@ -42,12 +42,13 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         if (isInmortal && (Health <= 35 || Health <= damage)) return;
 
         player.HealPlayer(-damage);
+        OnDamageReceive?.Invoke();
+
         StartCoroutine(camera.Shake(duration,magnitude));
 
         if(!hasBeenDamaged)
         {
             hasBeenDamaged = true;
-
             ResetHasBeenDamaged();
         }
         

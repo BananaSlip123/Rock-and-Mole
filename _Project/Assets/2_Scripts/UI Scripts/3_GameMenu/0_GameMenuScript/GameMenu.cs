@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Collections.Generic;
 public class GameMenu : MonoBehaviour
 {
     #region SERIALIZABLE
@@ -106,15 +104,11 @@ public class GameMenu : MonoBehaviour
 
         if (isMain && (isInit || lastWindow.Value != Windows.Main)) 
         {
-            //si isInit entra en el if y no accede a value
-            //playerInputMapsManager.SwitchCurrentActionMap("Player");
-
             //si es init y estamos en tutorial no se llama, ya q se llamara a el mapa TutorialCallout
             if (!GameData.NeedsTutorial || !isInit)
                 playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
         }   
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
-            //playerInputMapsManager.SwitchCurrentActionMap("UI");
             playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.uiNavigation;
     }
 
