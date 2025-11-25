@@ -115,7 +115,7 @@ Material:
     - _DstBlendAlpha: 0
     - _EdgeDiffuse: 0
     - _EdgeDistanceAttenuation: 1
-    - _EdgeRim: 0.3
+    - _EdgeRim: 0.1
     - _EdgeRimOffset: 0
     - _EdgeShadowAttenuation: 1
     - _EdgeSpecular: 0.5
