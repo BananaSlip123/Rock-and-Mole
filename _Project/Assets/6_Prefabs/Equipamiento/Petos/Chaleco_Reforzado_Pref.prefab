@@ -201,6 +201,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3618122689313845493}
   m_SourcePrefab: {fileID: 100100000, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
+--- !u!23 &3196283202745214679 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1741000043269453832, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
+  m_PrefabInstance: {fileID: 5444221981804273967}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3401821466207459852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1965696349810115805, guid: 43ebc494fcd11da4facaeae9ceebf75e, type: 3}
@@ -256,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderers:
   - {fileID: 5099002985089708459}
+  - {fileID: 3196283202745214679}
   temporalMaterialDuration: 0.2
 --- !u!95 &3618122689313845493
 Animator:

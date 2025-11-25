@@ -277,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderers:
   - {fileID: 376582559735713346}
+  - {fileID: 8043944913104476478}
   temporalMaterialDuration: 0.2
 --- !u!95 &4051229710125991802
 Animator:
@@ -308,6 +309,11 @@ SkinnedMeshRenderer:
 --- !u!4 &7840517900423276005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1965696349810115805, guid: 9355884961e15cb46a07cd483f279b9b, type: 3}
+  m_PrefabInstance: {fileID: 610076022256901830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8043944913104476478 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1741000043269453832, guid: 9355884961e15cb46a07cd483f279b9b, type: 3}
   m_PrefabInstance: {fileID: 610076022256901830}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8660143660983099921 stripped
