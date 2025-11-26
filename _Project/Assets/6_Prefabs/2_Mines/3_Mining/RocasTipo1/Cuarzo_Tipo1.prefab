@@ -48,9 +48,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7524023999189708606, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -6539265782956533714, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -3380754059454538783, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -397160978398721733, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
     - target: {fileID: 919132149155446097, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: m_Name
       value: Cuarzo_Tipo1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: m_TagString
+      value: Rock
       objectReference: {fileID: 0}
     - target: {fileID: 8929359384835270919, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

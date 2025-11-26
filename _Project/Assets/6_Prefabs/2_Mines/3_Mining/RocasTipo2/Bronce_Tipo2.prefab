@@ -48,10 +48,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7012414958811185283, guid: bae1f90772230b34985139cae7d3590b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8b2442c3b86e0a441a5e37e14fd94826, type: 2}
+    - target: {fileID: -3246169111469554592, guid: bae1f90772230b34985139cae7d3590b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8b2442c3b86e0a441a5e37e14fd94826, type: 2}
+    - target: {fileID: -2317682872459418832, guid: bae1f90772230b34985139cae7d3590b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8b2442c3b86e0a441a5e37e14fd94826, type: 2}
+    - target: {fileID: -1975496199846937012, guid: bae1f90772230b34985139cae7d3590b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8b2442c3b86e0a441a5e37e14fd94826, type: 2}
     - target: {fileID: 919132149155446097, guid: bae1f90772230b34985139cae7d3590b, type: 3}
       propertyPath: m_Name
       value: Bronce_Tipo2
       objectReference: {fileID: 0}
+    - target: {fileID: 7044260224444820843, guid: bae1f90772230b34985139cae7d3590b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

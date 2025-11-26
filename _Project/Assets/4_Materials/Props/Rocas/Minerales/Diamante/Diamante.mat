@@ -101,7 +101,7 @@ Material:
     - _EdgeRim: 0.3
     - _EdgeRimOffset: 0
     - _EdgeShadowAttenuation: 1
-    - _EdgeSpecular: 0.5
+    - _EdgeSpecular: 0
     - _EdgeSpecularOffset: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
@@ -115,7 +115,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RimThreshold: 0
-    - _Smoothnes: 1
+    - _Smoothnes: 0.82
     - _Smoothness: 0.91818184
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

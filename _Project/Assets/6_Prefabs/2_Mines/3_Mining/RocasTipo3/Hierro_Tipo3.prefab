@@ -48,10 +48,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6809115364629179500, guid: 2847d567dd122304788d93beb70b0e37, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e84089a339dd67d4f943fa5003ac0734, type: 2}
+    - target: {fileID: -5422408947125425046, guid: 2847d567dd122304788d93beb70b0e37, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e84089a339dd67d4f943fa5003ac0734, type: 2}
+    - target: {fileID: -3142511370425605485, guid: 2847d567dd122304788d93beb70b0e37, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e84089a339dd67d4f943fa5003ac0734, type: 2}
     - target: {fileID: 919132149155446097, guid: 2847d567dd122304788d93beb70b0e37, type: 3}
       propertyPath: m_Name
       value: Hierro_Tipo3
       objectReference: {fileID: 0}
+    - target: {fileID: 4030987779474910300, guid: 2847d567dd122304788d93beb70b0e37, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
+    - target: {fileID: 7413805891362666807, guid: 2847d567dd122304788d93beb70b0e37, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e84089a339dd67d4f943fa5003ac0734, type: 2}
+    - target: {fileID: 8157994639084718776, guid: 2847d567dd122304788d93beb70b0e37, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e84089a339dd67d4f943fa5003ac0734, type: 2}
+    - target: {fileID: 8981551249336387805, guid: 2847d567dd122304788d93beb70b0e37, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e84089a339dd67d4f943fa5003ac0734, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9042852359529945024, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
     - target: {fileID: -8679921383154817045, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.853561
@@ -48,10 +52,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -896152576489572182, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
+    - target: {fileID: 855268448986093089, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
     - target: {fileID: 919132149155446097, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
       propertyPath: m_Name
       value: Esmeralda_Tipo3
       objectReference: {fileID: 0}
+    - target: {fileID: 1840634230928613618, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
+    - target: {fileID: 3741288721215096755, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -48,10 +48,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7414668892577405967, guid: a6e2fcf4cb253ec43b12f39f646d467c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
+    - target: {fileID: -7078377983051143509, guid: a6e2fcf4cb253ec43b12f39f646d467c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
+    - target: {fileID: -3636849352110967586, guid: a6e2fcf4cb253ec43b12f39f646d467c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     - target: {fileID: 919132149155446097, guid: a6e2fcf4cb253ec43b12f39f646d467c, type: 3}
       propertyPath: m_Name
       value: Esmeralda_Tipo2
       objectReference: {fileID: 0}
+    - target: {fileID: 3940173572842327789, guid: a6e2fcf4cb253ec43b12f39f646d467c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
+    - target: {fileID: 8529106076226230662, guid: a6e2fcf4cb253ec43b12f39f646d467c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

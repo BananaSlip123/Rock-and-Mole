@@ -48,10 +48,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8579379767259363381, guid: f22668950d7d57f49b574a4fdaf25ef5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -3397016386723035797, guid: f22668950d7d57f49b574a4fdaf25ef5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -1573906048353196204, guid: f22668950d7d57f49b574a4fdaf25ef5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     - target: {fileID: 919132149155446097, guid: f22668950d7d57f49b574a4fdaf25ef5, type: 3}
       propertyPath: m_Name
       value: Cuarzo_Tipo3
       objectReference: {fileID: 0}
+    - target: {fileID: 8599235312099343398, guid: f22668950d7d57f49b574a4fdaf25ef5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

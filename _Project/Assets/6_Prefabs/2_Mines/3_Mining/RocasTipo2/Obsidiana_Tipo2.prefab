@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8985489907438513328, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: -8871774231758139760, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
     - target: {fileID: -8679921383154817045, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.225975
@@ -48,10 +56,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8560232095645983421, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: -1511924346408179013, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: -588695227226490418, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: 511280244836920199, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     - target: {fileID: 919132149155446097, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
       propertyPath: m_Name
       value: Obsidiana_Tipo2
       objectReference: {fileID: 0}
+    - target: {fileID: 1490901348094965805, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: 2028856379551129727, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: 4770985777327126088, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: 6791544308923105105, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
