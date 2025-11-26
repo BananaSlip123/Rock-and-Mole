@@ -9043,18 +9043,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CART WINDOW VILLAGE
       objectReference: {fileID: 0}
-    - target: {fileID: 7158781339019853459, guid: 63972d6fc6f8f6145b3df18f6806df3e, type: 3}
-      propertyPath: m_text
-      value: No tienes materiales para recoger
-      objectReference: {fileID: 0}
-    - target: {fileID: 8835534895312206860, guid: 63972d6fc6f8f6145b3df18f6806df3e, type: 3}
-      propertyPath: m_text
-      value: "Guardar en el ba\xFAl"
-      objectReference: {fileID: 0}
-    - target: {fileID: 9100299716632650335, guid: 63972d6fc6f8f6145b3df18f6806df3e, type: 3}
-      propertyPath: m_text
-      value: Materiales en la carreta
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
