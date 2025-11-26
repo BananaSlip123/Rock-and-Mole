@@ -10,6 +10,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
     private float timeToDeath = 0f;
     const float TIME_TO_DEATH = 1f;
     [SerializeField] EnemyName tipoEnemigo;
+    [SerializeField] MaterialChanger changer;
 
     private void FixedUpdate()
     {
@@ -32,6 +33,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
 
         if (health <= 0)
             Death();
+        changer.AssignTemporalMaterial();
         Debug.Log("Me han quitado vida");
     }
 

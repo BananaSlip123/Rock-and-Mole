@@ -10,6 +10,12 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
     private float timeToDeath = 0f;
     const float TIME_TO_DEATH = 1f;
     [SerializeField] EnemyName tipoEnemigo;
+    MaterialChanger changer;
+
+    void Start()
+    {
+        changer = GetComponent<MaterialChanger>();
+    }
 
     private void FixedUpdate()
     {
@@ -29,6 +35,7 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
 
         if(health <= 0)
             Death();
+        changer.AssignTemporalMaterial();
         Debug.Log("Me han quitado vida");
     }
 

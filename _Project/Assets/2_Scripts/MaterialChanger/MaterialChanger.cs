@@ -11,6 +11,11 @@ public class MaterialChanger : MonoBehaviour
     {
         StartCoroutine(ChangeColor());
     }
+    public void AssignTemporalMaterial(Material material)
+    {
+        StartCoroutine(ChangeColor(material));
+    }
+
 
     #region PRIVATE FUNCS
     void Awake()
@@ -23,10 +28,15 @@ public class MaterialChanger : MonoBehaviour
         }
     }
 
-    
+
     void AssignMatToRenderers(List<Material[]> mats)
     {
         for (int i = 0; i < meshRenderers.Length; i++) meshRenderers[i].materials = mats[i];
+    }
+
+    public void AssignDefaultMat()
+    {
+        for (int i = 0; i < meshRenderers.Length; i++) meshRenderers[i].materials = initialMaterials[i];
     }
 
     void AssignMatToRenderers(Material[] mat)
@@ -54,6 +64,20 @@ public class MaterialChanger : MonoBehaviour
 
         yield return new WaitForSeconds(0.06f);
         AssignMatToRenderers(initialMaterials);
+    }
+
+    IEnumerator ChangeColor(Material material)
+    {
+        //Material material = new Material(Shader.Find("Unlit/Color"));
+        yield return new WaitForSeconds(0.06f);
+        AssignMatToRenderers(material);
+
+        //yield return new WaitForSeconds(temporalMaterialDuration);
+        //material = new Material(Shader.Find("Unlit/Color"));
+        //material.color = new Color(1, 0.3f, 0.3f);
+        //AssignMatToRenderers(material);
+
+        
     }
     #endregion
 }

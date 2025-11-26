@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4542339628906375947}
   - component: {fileID: 1921032584563998797}
   - component: {fileID: 623913944763096519}
+  - component: {fileID: 8465580351897119115}
   m_Layer: 3
   m_Name: Rata
   m_TagString: Enemy
@@ -114,6 +115,21 @@ MonoBehaviour:
   health: 50
   animator: {fileID: 4699844431084929266}
   tipoEnemigo: 2
+--- !u!114 &8465580351897119115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878699387242084105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f52a1f57aef3428b5a25764b1ed9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 3641416694006871928}
+  temporalMaterialDuration: 0
 --- !u!1001 &8782433502658772414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,7 +140,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 95693ade72763f74a884eca730b3616e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.122
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 95693ade72763f74a884eca730b3616e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -174,6 +190,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4699844431084929266}
   m_SourcePrefab: {fileID: 100100000, guid: 95693ade72763f74a884eca730b3616e, type: 3}
+--- !u!137 &3641416694006871928 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3789337572786582842, guid: 95693ade72763f74a884eca730b3616e, type: 3}
+  m_PrefabInstance: {fileID: 8782433502658772414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8439764859955577071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 95693ade72763f74a884eca730b3616e, type: 3}

@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 6492011257291420484}
   - component: {fileID: 1483825394832866830}
   - component: {fileID: 8699259758503681789}
+  - component: {fileID: 9181550069914603480}
   m_Layer: 3
   m_Name: GolemBoss
   m_TagString: Enemy
@@ -168,6 +169,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &9181550069914603480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4055948021385153351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f52a1f57aef3428b5a25764b1ed9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 9064033971930133349}
+  temporalMaterialDuration: 0.2
 --- !u!1001 &2772905086243065157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,3 +440,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!137 &9064033971930133349 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -2615821021834133984, guid: a573edcea8b7f034583f028060db7a9d, type: 3}
+  m_PrefabInstance: {fileID: 2772905086243065157}
+  m_PrefabAsset: {fileID: 0}

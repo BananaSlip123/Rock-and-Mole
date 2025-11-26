@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 718123770884307660}
   - component: {fileID: 7416262397294858059}
   - component: {fileID: 1298708713649014139}
+  - component: {fileID: 2798920442867677560}
   m_Layer: 3
   m_Name: Conejo
   m_TagString: Enemy
@@ -117,6 +118,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2798920442867677560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666173133458897332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f52a1f57aef3428b5a25764b1ed9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 695713316193567868}
+  - {fileID: 2864402941946940700}
+  - {fileID: 4002759630093166598}
+  temporalMaterialDuration: 0
 --- !u!1 &8234661505634160133
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +284,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8910229230544078089}
   m_SourcePrefab: {fileID: 100100000, guid: 8d36ec5b50a29c540b17ac164930b904, type: 3}
+--- !u!137 &695713316193567868 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7949389518089694613, guid: 8d36ec5b50a29c540b17ac164930b904, type: 3}
+  m_PrefabInstance: {fileID: 1732113215828448791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1497686685737806662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d36ec5b50a29c540b17ac164930b904, type: 3}
@@ -296,6 +319,16 @@ Animator:
 --- !u!4 &2270670420678783484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d36ec5b50a29c540b17ac164930b904, type: 3}
+  m_PrefabInstance: {fileID: 1732113215828448791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &2864402941946940700 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4626933469008487669, guid: 8d36ec5b50a29c540b17ac164930b904, type: 3}
+  m_PrefabInstance: {fileID: 1732113215828448791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4002759630093166598 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5799198811732771311, guid: 8d36ec5b50a29c540b17ac164930b904, type: 3}
   m_PrefabInstance: {fileID: 1732113215828448791}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3039059913205864685

@@ -1,3 +1,4 @@
+using Codice.CM.Common;
 using System.Collections;
 using UnityEditor;
 using UnityEngine;
@@ -24,6 +25,8 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
     Collider attackHitbox;
 
     Animator animator;
+
+    MaterialChanger changer;
 
     public BunnyAttackComponent(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t, Animator a)
     {
@@ -67,6 +70,7 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
         //Debug.Log("ESTOY ATACANDO");
         animator.SetBool("Morir", true);
 
+        changer = enemyTransform.GetComponent<MaterialChanger>();
         //Debug.Log("DURACION: " + animator.GetCurrentAnimatorStateInfo(0).length);
         //TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(0).length;
     }
@@ -74,6 +78,8 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
     public void Exit()
     {
         animator.SetBool("Morir", false);
+        changer.AssignDefaultMat();
+        enemyTransform.localScale = Vector3.one;
     }
 
     public void FixedUpdate()
@@ -82,6 +88,13 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
         {
             //animator.SetBool("Morir", false);
             timeToAttack += Time.fixedDeltaTime;
+
+            Material material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
+            material.color = new Color(1, 0.5f + Mathf.PingPong(Time.time * 2f + timeToAttack, 0.5f), 0);
+
+            changer.AssignTemporalMaterial(material);
+
+            enemyTransform.GetChild(2).localScale = Vector3.one * (0.5f + Mathf.PingPong(Time.time * 4f + timeToAttack, 1f));
 
             if (timeToAttack >= COOLDOWN)
             {

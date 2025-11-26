@@ -57,7 +57,7 @@ public class PlayerModelActualizer : MonoBehaviour
     void OnDamageReceived()
     {
         go_currentModel.GetComponent<MaterialChanger>().AssignTemporalMaterial();
-        go_currentHelmetModel.GetComponent<MaterialChanger>().AssignTemporalMaterial();
+        go_currentHelmetModel?.GetComponent<MaterialChanger>().AssignTemporalMaterial();
     }
     void OnPickAxePositionChange(bool isAttacking)
     {
