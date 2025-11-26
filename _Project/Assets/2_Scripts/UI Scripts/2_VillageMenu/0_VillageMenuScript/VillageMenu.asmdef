@@ -5,7 +5,8 @@
         "InventoryUI",
         "InputMapsManager",
         "Unity.TextMeshPro",
-        "GameDataAssembly"
+        "GameDataAssembly",
+        "Unity.InputSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

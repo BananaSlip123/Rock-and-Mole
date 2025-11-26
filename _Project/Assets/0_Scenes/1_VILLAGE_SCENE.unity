@@ -5552,6 +5552,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002487706911268651, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -9053,6 +9057,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2183504608537123778, guid: 63972d6fc6f8f6145b3df18f6806df3e, type: 3}
   m_PrefabInstance: {fileID: 1245719275}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1245719277 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6036385793604705976, guid: 63972d6fc6f8f6145b3df18f6806df3e, type: 3}
+  m_PrefabInstance: {fileID: 1245719275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1245719278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4463949155363763403, guid: 63972d6fc6f8f6145b3df18f6806df3e, type: 3}
+  m_PrefabInstance: {fileID: 1245719275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1289799886
 GameObject:
   m_ObjectHideFlags: 0
@@ -9259,7 +9279,7 @@ MonoBehaviour:
   go_pauseWindow: {fileID: 1421712437}
   go_settingsWindow: {fileID: 113889450}
   go_inventoryWindow: {fileID: 1170272645}
-  go_cartWindow: {fileID: 0}
+  go_cartWindow: {fileID: 1245719278}
   go_shopWindow: {fileID: 1194614126}
   go_forgeWindow: {fileID: 1014381173}
   go_wardrobeWindow: {fileID: 1804141003}
@@ -9271,7 +9291,7 @@ MonoBehaviour:
   firstSelected_settings: {fileID: 2067439405}
   firstSelected_forge: {fileID: 1141063893}
   firstSelected_wardrobe: {fileID: 719091188}
-  firstSelected_cart: {fileID: 0}
+  firstSelected_cart: {fileID: 1245719277}
 --- !u!4 &1376804734
 Transform:
   m_ObjectHideFlags: 0

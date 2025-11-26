@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 public class GameMenu : MonoBehaviour
 {
     #region SERIALIZABLE
@@ -163,7 +164,17 @@ public class GameMenu : MonoBehaviour
     {
         if (CurrentWindow == Windows.Main)
             CurrentWindow = Windows.Pause;
-        else if (CurrentWindow == Windows.Pause)
+        else
+            CurrentWindow = Windows.Main;
+    }
+    public void Button_Pause(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed)
+            return;
+
+        if (CurrentWindow == Windows.Main)
+            CurrentWindow = Windows.Pause;
+        else
             CurrentWindow = Windows.Main;
     }
     public void Button_Inventory()

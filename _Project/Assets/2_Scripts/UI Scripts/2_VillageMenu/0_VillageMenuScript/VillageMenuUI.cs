@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 public class VillageMenuUI : MonoBehaviour
 {
     #region SERIALIZABLE
@@ -102,11 +102,9 @@ public class VillageMenuUI : MonoBehaviour
         if (isMain && (isInit || lastWindow.Value != Windows.Main)) //si isInit entra en el if y no accede a value
         {
             if (!GameData.NeedsTutorial || !isInit)
-                //playerInputMapsManager.SwitchCurrentActionMap("Player");
                 playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
         }
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
-            //playerInputMapsManager.SwitchCurrentActionMap("UI");
             playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.uiNavigation;
     }
 
@@ -136,12 +134,23 @@ public class VillageMenuUI : MonoBehaviour
     {
         if (CurrentWindow == Windows.Main)
             CurrentWindow = Windows.Pause;
-        else if(CurrentWindow == Windows.Pause)
+        else
+            CurrentWindow = Windows.Main;
+    }
+    public void Button_Pause(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed)
+            return; 
+        
+        if (CurrentWindow == Windows.Main)
+            CurrentWindow = Windows.Pause;
+        else
             CurrentWindow = Windows.Main;
     }
 
     public void Button_Inventory()
     {
+        Debug.Log("Tab action called");
         if (CurrentWindow == Windows.InventoryInfo || CurrentWindow  == Windows.Shop)
             CurrentWindow = Windows.Main;
         else
