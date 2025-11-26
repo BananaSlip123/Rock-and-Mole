@@ -1,7 +1,10 @@
 {
     "name": "CartUI",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:46dab3105bacede4a8d0ee3999b04998",
+        "GUID:c17ff5bc373c31248bba58abb3013523"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

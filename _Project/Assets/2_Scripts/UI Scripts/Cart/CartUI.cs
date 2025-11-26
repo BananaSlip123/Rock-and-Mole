@@ -6,6 +6,9 @@ public class CartUI : MonoBehaviour
     //En partida muestra materiales conseguidos en mochila, y botón de enviar a la aldea
 
     [SerializeField] Scene scene;
+    [SerializeField] MaterialInfoUI[] materialInfoUIs;
+    [SerializeField] GameObject go_button;
+    [SerializeField] GameObject go_noMaterialsSignal;
     enum Scene { village, game}
     private void OnEnable()
     {
@@ -14,5 +17,10 @@ public class CartUI : MonoBehaviour
     private void OnDisable()
     {
         
+    }
+
+    public void OnButtonPressed()
+    {
+
     }
 }

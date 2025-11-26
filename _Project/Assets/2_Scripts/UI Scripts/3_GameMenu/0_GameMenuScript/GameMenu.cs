@@ -11,6 +11,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField] GameObject go_settingsWindow;
     [SerializeField] GameObject go_runInventoryWindow;
     [SerializeField] GameObject go_runInventoryInfoWindow;
+    [SerializeField] GameObject go_cartWindow;
     [SerializeField] GameObject go_gameOverWindow;
     [SerializeField] GameObject go_materialsCollectedWindow;
     [SerializeField] GameObject go_interactionWindow;
@@ -22,6 +23,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField] Selectable firstSelected_settings;
     [SerializeField] Selectable firstSelected_pause;
     [SerializeField] Selectable firstSelected_gameOver;
+    [SerializeField] Selectable firstSelected_cart;
     [Header("References")]
     [SerializeField] DamageableComponent playerDamageableComponent;
     #endregion
@@ -39,6 +41,7 @@ public class GameMenu : MonoBehaviour
         Settings,
         RunInventory,
         GameOver,
+        Cart,
     }
     public bool ShowInteractWindow
     {
@@ -88,6 +91,7 @@ public class GameMenu : MonoBehaviour
 
         go_mainWindow.SetActive(isMain);
         go_materialsCollectedWindow.SetActive(isMain);
+        go_cartWindow.SetActive(nextWindow == Windows.Cart);
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
         go_runInventoryWindow.SetActive(nextWindow == Windows.RunInventory);
         go_runInventoryInfoWindow.SetActive(nextWindow == Windows.RunInventory);
@@ -130,6 +134,8 @@ public class GameMenu : MonoBehaviour
         }
         else if (CurrentWindow == Windows.GameOver)
             firstSelected_gameOver?.Select();
+        else if (CurrentWindow == Windows.Cart)
+            firstSelected_cart?.Select();
     }
     #endregion
 
@@ -157,7 +163,7 @@ public class GameMenu : MonoBehaviour
     {
         if (CurrentWindow == Windows.Main)
             CurrentWindow = Windows.Pause;
-        else
+        else if (CurrentWindow == Windows.Pause)
             CurrentWindow = Windows.Main;
     }
     public void Button_Inventory()
@@ -167,6 +173,7 @@ public class GameMenu : MonoBehaviour
         else
             CurrentWindow = Windows.RunInventory;
     }
+    public void Button_Cart() => CurrentWindow = Windows.Cart;
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
     public void Button_OpenMain() => CurrentWindow = Windows.Main;
 

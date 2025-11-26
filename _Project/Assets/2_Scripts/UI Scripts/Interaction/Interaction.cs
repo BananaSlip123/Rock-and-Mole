@@ -12,8 +12,8 @@ public class Interaction : MonoBehaviour
     [SerializeField] UnityEvent onEnter;
     [SerializeField] UnityEvent onExit;
 
-    Color available = new Color(1,1,0.9f,1);
-    Color notAvailable = new Color(1,1,0.7f,0.6f);
+    Color available = new (1,1,0.9f,1);
+    Color notAvailable = new (1,1,0.7f,0.6f);
     void Awake()
     {
         texto.color = notAvailable;

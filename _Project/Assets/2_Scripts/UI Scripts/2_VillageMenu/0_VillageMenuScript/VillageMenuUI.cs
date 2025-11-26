@@ -11,6 +11,7 @@ public class VillageMenuUI : MonoBehaviour
     [SerializeField] GameObject go_pauseWindow;
     [SerializeField] GameObject go_settingsWindow;
     [SerializeField] GameObject go_inventoryWindow;
+    [SerializeField] GameObject go_cartWindow;
     [SerializeField] GameObject go_shopWindow;
     [SerializeField] GameObject go_forgeWindow;
     [SerializeField] GameObject go_wardrobeWindow;
@@ -18,16 +19,15 @@ public class VillageMenuUI : MonoBehaviour
 
     [Header("COMMON ELEMENTS")] //elementos compartidos por varias ventanas
     [SerializeField] GameObject go_inventory; //used by shop & inventory windows
-   // [SerializeField] GameObject go_closeIcon;
     
     [Header("INPUT NAVIGATION")]
-    //[SerializeField] PlayerInput playerInput;
     [SerializeField] InputMapsManager playerInputMapsManager;
     [SerializeField] EventSystem eventSystem;
     [SerializeField] Selectable firstSelected_pause;
     [SerializeField] Selectable firstSelected_settings;
     [SerializeField] Selectable firstSelected_forge;
     [SerializeField] Selectable firstSelected_wardrobe;
+    [SerializeField] Selectable firstSelected_cart;
 
     #endregion
     #region PRIVATE VARS
@@ -45,6 +45,7 @@ public class VillageMenuUI : MonoBehaviour
         Shop,
         Forge,
         Wardrobe,
+        Cart,
     }
     public bool ShowInteractWindow
     {
@@ -86,8 +87,9 @@ public class VillageMenuUI : MonoBehaviour
         ShowInteractWindow = _canInteract;
 
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
-        
+
         go_shopWindow.SetActive(nextWindow == Windows.Shop);
+        go_cartWindow.SetActive(nextWindow == Windows.Cart);
         go_forgeWindow.SetActive(nextWindow == Windows.Forge);
         go_pauseWindow.SetActive(nextWindow == Windows.Pause);
         go_wardrobeWindow.SetActive(nextWindow == Windows.Wardrobe);
@@ -124,6 +126,8 @@ public class VillageMenuUI : MonoBehaviour
             firstSelected_wardrobe?.Select();
         else if (CurrentWindow == Windows.Forge)
             firstSelected_forge?.Select();
+        else if (CurrentWindow == Windows.Cart)
+            firstSelected_cart?.Select();
     }
     #endregion
 
@@ -132,7 +136,7 @@ public class VillageMenuUI : MonoBehaviour
     {
         if (CurrentWindow == Windows.Main)
             CurrentWindow = Windows.Pause;
-        else
+        else if(CurrentWindow == Windows.Pause)
             CurrentWindow = Windows.Main;
     }
 
@@ -143,6 +147,7 @@ public class VillageMenuUI : MonoBehaviour
         else
             CurrentWindow = Windows.InventoryInfo;
     }
+    public void Button_Cart() => CurrentWindow = Windows.Cart;
     public void Button_OpenShop() => CurrentWindow = Windows.Shop;
     public void Button_OpenForge() => CurrentWindow = Windows.Forge;
     public void Button_OpenWardrobe() => CurrentWindow = Windows.Wardrobe;
