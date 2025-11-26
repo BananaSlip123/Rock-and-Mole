@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.379295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.837692
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,10 +48,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8275946926569423540, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd1fd279f4442f14aa7523e29773f890, type: 2}
+    - target: {fileID: -4874310832719901258, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd1fd279f4442f14aa7523e29773f890, type: 2}
+    - target: {fileID: -4133894123281633004, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd1fd279f4442f14aa7523e29773f890, type: 2}
+    - target: {fileID: 135093849756608175, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd1fd279f4442f14aa7523e29773f890, type: 2}
     - target: {fileID: 476301134048523039, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
+    - target: {fileID: 866379372738713312, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd1fd279f4442f14aa7523e29773f890, type: 2}
     - target: {fileID: 919132149155446097, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
       propertyPath: m_Name
       value: Carbon_Tipo3
@@ -60,21 +80,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 8992439168518973349, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd1fd279f4442f14aa7523e29773f890, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6905686018626975292}
+      addedObject: {fileID: 883714056974959946}
   m_SourcePrefab: {fileID: 100100000, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
 --- !u!1 &3288298589155420937 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9dfd985183d44744a8b9450bf64e36b0, type: 3}
   m_PrefabInstance: {fileID: 2405779772539655768}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &6905686018626975292
-CapsuleCollider:
+--- !u!65 &883714056974959946
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91,8 +115,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.39048505
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0.01, y: 0, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 0.67, y: 0.99, z: 0.6}
+  m_Center: {x: -0.07, y: 0, z: 0.1}

@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9042852359529945024, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
     - target: {fileID: -8679921383154817045, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.853561
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.287695
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,6 +52,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -896152576489572182, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
+    - target: {fileID: 855268448986093089, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
     - target: {fileID: 919132149155446097, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
       propertyPath: m_Name
       value: Esmeralda_Tipo3
@@ -56,6 +68,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 1840634230928613618, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
     - target: {fileID: 3741288721215096755, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -66,15 +82,15 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7621041930041354566}
+      addedObject: {fileID: -1314573279939871150}
   m_SourcePrefab: {fileID: 100100000, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
 --- !u!1 &7273492355786200934 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
   m_PrefabInstance: {fileID: 7508005336992377399}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &7621041930041354566
-CapsuleCollider:
+--- !u!65 &-1314573279939871150
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91,8 +107,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.39048505
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0.01, y: 0, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 0.67, y: 0.99, z: 0.6}
+  m_Center: {x: -0.07, y: 0, z: 0.1}

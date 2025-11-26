@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.391928
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00000023841858
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.084912
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -52,6 +52,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
+    - target: {fileID: -1692463023634372211, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fdc060fc9c7343468b653d93237ad4b, type: 2}
+    - target: {fileID: -519596610616590792, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fdc060fc9c7343468b653d93237ad4b, type: 2}
+    - target: {fileID: -285623460176421265, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fdc060fc9c7343468b653d93237ad4b, type: 2}
     - target: {fileID: 919132149155446097, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       propertyPath: m_Name
       value: Ambar_Tipo3
@@ -60,21 +72,37 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 1737263732736389796, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fdc060fc9c7343468b653d93237ad4b, type: 2}
+    - target: {fileID: 2874649275076155482, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fdc060fc9c7343468b653d93237ad4b, type: 2}
+    - target: {fileID: 5221389146508281727, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fdc060fc9c7343468b653d93237ad4b, type: 2}
+    - target: {fileID: 8976962224165931754, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fdc060fc9c7343468b653d93237ad4b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8586249564084124881}
+      addedObject: {fileID: -2160059945635645665}
   m_SourcePrefab: {fileID: 100100000, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
 --- !u!1 &5028834761687077226 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
   m_PrefabInstance: {fileID: 5263418527174601787}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &8586249564084124881
-CapsuleCollider:
+--- !u!65 &-2160059945635645665
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91,8 +119,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.39048505
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0.01, y: 0, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 0.67, y: 0.99, z: 0.6}
+  m_Center: {x: -0.07, y: 0, z: 0.1}

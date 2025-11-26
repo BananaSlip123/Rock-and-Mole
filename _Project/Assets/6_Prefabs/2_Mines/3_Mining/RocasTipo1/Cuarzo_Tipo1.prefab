@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.043179
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000000059604645
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.032564
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,6 +48,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7524023999189708606, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -6539265782956533714, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -3380754059454538783, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -397160978398721733, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
     - target: {fileID: 919132149155446097, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: m_Name
       value: Cuarzo_Tipo1
@@ -66,15 +82,15 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6264453086955154063}
+      addedObject: {fileID: 8773313262761589440}
   m_SourcePrefab: {fileID: 100100000, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
 --- !u!1 &7269904126593310255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
   m_PrefabInstance: {fileID: 7503712318831764350}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &6264453086955154063
-CapsuleCollider:
+--- !u!65 &8773313262761589440
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91,8 +107,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.84750855
-  m_Height: 3.0167532
-  m_Direction: 1
-  m_Center: {x: 0.027508616, y: -0.45000005, z: -0.120000005}
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.67, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
