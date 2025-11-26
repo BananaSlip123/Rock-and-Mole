@@ -74,18 +74,13 @@ public class VillageNavigation : MonoBehaviour
     }
     public void OnMineEntry()
     {
-        //escena de mina
-        int random = Random.Range(0,2);
-        if(random == 0)
-        {
-            SceneManager.LoadScene("3_MiningRoom");
-            AudioManager.Instance.PlayMusic(AudioManager.MusicType.MineMusic);
-        }
-        else
-        {
-            SceneManager.LoadScene("2_CombatRoom");
-            AudioManager.Instance.PlayMusic(AudioManager.MusicType.EnemyFightMusic);
-        }
+        //escena de combate
+        /*
+        SceneManager.LoadScene("2_CombatRoom");
+        AudioManager.Instance.PlayMusic(AudioManager.MusicType.EnemyFightMusic);
+        */
+
+        SceneManager.LoadScene("2_CombatRoom");
     }
     #endregion
 }

@@ -14,6 +14,7 @@ public class RockGenerator : MonoBehaviour, IEnemyGenerator
         for (int i = 0; i < random; i++)
         {
             int randomType = UnityEngine.Random.Range(0,rockPrefabs.Length);
+            Debug.Log("INDEX: " + randomType);
             SpawnEnemy(rockPrefabs[randomType]);
         }
 
