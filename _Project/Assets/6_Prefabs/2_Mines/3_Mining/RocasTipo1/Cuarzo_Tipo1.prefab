@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cuarzo_Tipo1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 8929359384835270919, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -59,5 +63,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6264453086955154063}
   m_SourcePrefab: {fileID: 100100000, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+--- !u!1 &7269904126593310255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+  m_PrefabInstance: {fileID: 7503712318831764350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &6264453086955154063
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269904126593310255}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.84750855
+  m_Height: 3.0167532
+  m_Direction: 1
+  m_Center: {x: 0.027508616, y: -0.45000005, z: -0.120000005}

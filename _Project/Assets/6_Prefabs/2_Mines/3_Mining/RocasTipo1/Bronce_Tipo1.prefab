@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bronce_Tipo1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 705d0a5698c79ca49af7b1b8dfa4d5a3, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4531912228224351498, guid: 705d0a5698c79ca49af7b1b8dfa4d5a3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -59,5 +63,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 705d0a5698c79ca49af7b1b8dfa4d5a3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8214003002512212437}
   m_SourcePrefab: {fileID: 100100000, guid: 705d0a5698c79ca49af7b1b8dfa4d5a3, type: 3}
+--- !u!1 &2704209557375368220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 705d0a5698c79ca49af7b1b8dfa4d5a3, type: 3}
+  m_PrefabInstance: {fileID: 2974101515773280589}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &8214003002512212437
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2704209557375368220}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8461255
+  m_Height: 3.0167532
+  m_Direction: 1
+  m_Center: {x: -0.047970414, y: -0.45000005, z: -0.04590404}

@@ -56,8 +56,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obsidiana_Tipo1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6eef851386a108d47911c499e6891713, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6eef851386a108d47911c499e6891713, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4754866466318136362}
   m_SourcePrefab: {fileID: 100100000, guid: 6eef851386a108d47911c499e6891713, type: 3}
+--- !u!1 &4073886568439353963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6eef851386a108d47911c499e6891713, type: 3}
+  m_PrefabInstance: {fileID: 3767318185642897210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &4754866466318136362
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4073886568439353963}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.92700875
+  m_Height: 3.0167532
+  m_Direction: 1
+  m_Center: {x: 0.107008815, y: -0.45000005, z: -0.120000005}

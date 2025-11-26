@@ -52,8 +52,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: Esmeralda_Tipo3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741288721215096755, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7621041930041354566}
   m_SourcePrefab: {fileID: 100100000, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+--- !u!1 &7273492355786200934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 63794ab9c0c03f94aa44bde4b91571e6, type: 3}
+  m_PrefabInstance: {fileID: 7508005336992377399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &7621041930041354566
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7273492355786200934}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.39048505
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0.01, y: 0, z: 0}
