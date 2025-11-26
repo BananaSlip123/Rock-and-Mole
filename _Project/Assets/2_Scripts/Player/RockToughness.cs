@@ -5,6 +5,7 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
     [SerializeField]int toughness = 2;
     [SerializeField] float numberProbability = 0.10f;
     [SerializeField] GameObject sparks;
+    [SerializeField] MaterialName rockType;
 
     int numberOfHits = 0;
     bool hasBeenHit = false;
@@ -22,20 +23,8 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
     private void DestroyRock()
     {
         float random = Random.Range(0f, 1f);
-        if (random < 0.25f)
-            GameData.MaterialsRock(MaterialName.Carbon);
-        else if (random < 0.5f)
-            GameData.MaterialsRock(MaterialName.Hierro);
-        else if (random < 0.65f)
-            GameData.MaterialsRock(MaterialName.Bronce);
-        else if (random < 0.8f)
-            GameData.MaterialsRock(MaterialName.Cuarzo);
-        else if (random < 0.9f)
-            GameData.MaterialsRock(MaterialName.Rubi);
-        else if (random < 0.95f)
-            GameData.MaterialsRock(MaterialName.Diamante);
-        else
-            GameData.MaterialsRock(MaterialName.Obsidiana);
+
+        GameData.MaterialsRock(rockType);
 
         Destroy(gameObject);       
     }
@@ -58,6 +47,7 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
 
     public bool GetHasBeenDamaged()
     {
+        
         return hasBeenHit;
     }
 }
