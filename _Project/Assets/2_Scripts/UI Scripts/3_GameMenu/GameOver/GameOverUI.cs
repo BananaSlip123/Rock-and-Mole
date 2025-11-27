@@ -30,7 +30,7 @@ public class GameOverUI : MonoBehaviour
         }
             
     }
-    public Dictionary<MaterialName,int> MaterialsToShow
+    public SortedDictionary<MaterialName,int> MaterialsToShow
     {
         set
         {

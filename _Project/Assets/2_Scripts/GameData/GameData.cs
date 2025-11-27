@@ -13,6 +13,7 @@ public static class GameData
     static int _coins = -1;
     static bool? _needsTutorial = null;
     static PersistentInventory _inventory = new PersistentInventory("INV");//q materiales y en q cantidad  tienes
+    static PersistentInventory _cartInventory = new PersistentInventory("CART");//los q consigues en cada run
     static Inventory _runInventory = new Inventory();//los q consigues en cada run
 
     #endregion
@@ -54,6 +55,7 @@ public static class GameData
     };
 
     public static PersistentInventory Inventory => _inventory;
+    public static PersistentInventory CartInventory => _cartInventory;
     public static Inventory RunInventory => _runInventory;
 
     public static int Coins
@@ -157,11 +159,11 @@ public static class GameData
     #endregion
 
     #region PUBLIC FUNCS
-    public static Dictionary<MaterialName, int> Put_RunInventory_Into_Inventory(int savedPercent)
+    public static SortedDictionary<MaterialName, int> Put_RunInventory_Into_Inventory(int savedPercent)
     {
         if (savedPercent > 100 || savedPercent < 0) throw new Exception("Invalid percent insert");
 
-        Dictionary<MaterialName, int> MaterialsCollected = new Dictionary<MaterialName, int>();
+        SortedDictionary<MaterialName, int> MaterialsCollected = new SortedDictionary<MaterialName, int>();
 
         foreach(KeyValuePair<MaterialName,int> materialData in RunInventory.Objects.ToArray())
         {
@@ -320,6 +322,13 @@ public class PersistentInventory
         int amount = GetAmount(name);
         if(amount>0)
             TryRemoveObject(name, amount);
+    }
+    public void AddObjects(SortedDictionary<MaterialName, int> objectsToAdd)
+    {
+        foreach (KeyValuePair<MaterialName, int> objectToAdd in objectsToAdd)
+        {
+            AddObject(objectToAdd.Key, objectToAdd.Value);
+        }
     }
     public void AddObject(MaterialName name, int amount)
     {

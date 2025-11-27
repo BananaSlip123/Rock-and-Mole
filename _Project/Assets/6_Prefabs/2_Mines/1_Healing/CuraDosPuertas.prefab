@@ -5816,6 +5816,10 @@ PrefabInstance:
       value: Carreta Interactuable
       objectReference: {fileID: 0}
     - target: {fileID: 4169830768092301682, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 4468448388453956697}
+    - target: {fileID: 4169830768092301682, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
       propertyPath: onExit.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6312,6 +6316,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67e97edf890733046aa851b3f969eeda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4468448388453956697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8836784198322339718, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+  m_PrefabInstance: {fileID: 4945390317852378079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699909058e2a56a40a16b1563c5854b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &5219504106969068081
