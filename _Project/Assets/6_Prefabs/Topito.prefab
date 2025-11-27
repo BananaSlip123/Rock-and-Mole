@@ -155,6 +155,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2109121608549882400}
   - {fileID: 7227193336029743961}
   - {fileID: 5295836290825846852}
   - {fileID: 7595338976446420984}
@@ -268,7 +269,19 @@ MonoBehaviour:
     m_ActionId: b4f3fc40-4ed4-4f6a-8ac6-490ed6ca987a
     m_ActionName: 'Player/Fire[/Mouse/leftButton]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
+        m_MethodName: onNavigation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 26fedea4-0eb4-40c7-9469-aaa84cee9cc1
     m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
@@ -300,7 +313,19 @@ MonoBehaviour:
     m_ActionId: 9f5f1c03-f299-442f-b624-fcc12d01c23d
     m_ActionName: 'CallOutDialog/PassDialog[/Keyboard/space]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
+        m_MethodName: OnPointer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 85b2db0b-c0f2-4b2d-902d-5f134e1dcfb9
     m_ActionName: 'UI/Point[/Mouse/position,/Pen/position]'
   - m_PersistentCalls:
@@ -348,11 +373,35 @@ MonoBehaviour:
     m_ActionId: 7a64b9a3-10d8-4500-a9cd-4b3ccd2ea46b
     m_ActionName: 'Player/PressA[/Keyboard/e]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
+        m_MethodName: Button_Inventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 63e3b80f-3268-4037-a87c-1f9611c151dc
     m_ActionName: 'UI/Inventory[/Keyboard/tab]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, GameMenuGestion
+        m_MethodName: Button_Pause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 95396361-fc60-466d-8117-6375b6977a93
     m_ActionName: 'UI/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -526,6 +575,68 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5137669144641805438, guid: 7f7b43770238052439de2dd7938c6442, type: 3}
   m_PrefabInstance: {fileID: 825659771929499574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1911502109166492488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2636274778658534371}
+    m_Modifications:
+    - target: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.656
+      objectReference: {fileID: 0}
+    - target: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.512
+      objectReference: {fileID: 0}
+    - target: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7063314
+      objectReference: {fileID: 0}
+    - target: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.03310655
+      objectReference: {fileID: 0}
+    - target: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7063314
+      objectReference: {fileID: 0}
+    - target: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.033106558
+      objectReference: {fileID: 0}
+    - target: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 5.367
+      objectReference: {fileID: 0}
+    - target: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5115747194660332367, guid: 96e69723a64784049a7349fedf714247, type: 3}
+      propertyPath: m_Name
+      value: LuzCasco
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96e69723a64784049a7349fedf714247, type: 3}
+--- !u!4 &2109121608549882400 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 559044384066109800, guid: 96e69723a64784049a7349fedf714247, type: 3}
+  m_PrefabInstance: {fileID: 1911502109166492488}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4952836092545251922
 PrefabInstance:
