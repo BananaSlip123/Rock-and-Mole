@@ -50,6 +50,7 @@ MonoBehaviour:
   toughness: 5
   numberProbability: 0.1
   sparks: {fileID: 4705488330014192354}
+  rockType: 0
 --- !u!65 &956824575918119219
 BoxCollider:
   m_ObjectHideFlags: 0
