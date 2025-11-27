@@ -146,12 +146,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1607905980363471019, guid: 0ad2609db03e449478d1d8fb91206a84, type: 3}
       propertyPath: m_Intensity
-      value: 10.55
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2549928671195097795, guid: 0ad2609db03e449478d1d8fb91206a84, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2703867151596004269, guid: 0ad2609db03e449478d1d8fb91206a84, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b06c11b567a0c374581717cfc5533ded, type: 2}
     - target: {fileID: 2949515674120585280, guid: 0ad2609db03e449478d1d8fb91206a84, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.87
@@ -216,6 +220,14 @@ PrefabInstance:
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3259698257306538741, guid: 0ad2609db03e449478d1d8fb91206a84, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3259698257306538741, guid: 0ad2609db03e449478d1d8fb91206a84, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cba7fb18e217f1d4bafecf6673775b7d, type: 2}
     - target: {fileID: 3411520529072930566, guid: 0ad2609db03e449478d1d8fb91206a84, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.201
@@ -312,6 +324,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.01854796
       objectReference: {fileID: 0}
+    - target: {fileID: 8141718957175035598, guid: 0ad2609db03e449478d1d8fb91206a84, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b06c11b567a0c374581717cfc5533ded, type: 2}
     - target: {fileID: 8385554409211623220, guid: 0ad2609db03e449478d1d8fb91206a84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.277407

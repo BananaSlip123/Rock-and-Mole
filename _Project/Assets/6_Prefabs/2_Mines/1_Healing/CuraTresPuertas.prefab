@@ -347,6 +347,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8680235311773688053}
     m_Modifications:
+    - target: {fileID: 308093829073896241, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b06c11b567a0c374581717cfc5533ded, type: 2}
     - target: {fileID: 720059931886202365, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
@@ -355,9 +359,33 @@ PrefabInstance:
       propertyPath: m_Range
       value: 2.5512333
       objectReference: {fileID: 0}
+    - target: {fileID: 2601364345037213365, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601364345037213365, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cba7fb18e217f1d4bafecf6673775b7d, type: 2}
     - target: {fileID: 3458490878373398011, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.603
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649339324975509047, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+      propertyPath: m_Color.b
+      value: 0.09411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649339324975509047, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649339324975509047, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649339324975509047, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+      propertyPath: m_Intensity
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3912258164625760841, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
       propertyPath: m_LocalRotation.w
@@ -455,6 +483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuracionTresPuertas
       objectReference: {fileID: 0}
+    - target: {fileID: 7036903289620494733, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b06c11b567a0c374581717cfc5533ded, type: 2}
     - target: {fileID: 7855836564939445578, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -541,8 +573,39 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6169922846816360360, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
       insertIndex: 21
       addedObject: {fileID: 4569662450507289763}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 577719439584593056, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4667215667698098842}
   m_SourcePrefab: {fileID: 100100000, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+--- !u!1 &2160796555999725609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 577719439584593056, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
+  m_PrefabInstance: {fileID: 1583237095626329225}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4667215667698098842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2160796555999725609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &3978081282726838161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2507434178054157080, guid: 0618d59cb940b28429549bf8ed7b49ed, type: 3}
@@ -661,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4375484125338224106, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.66
+      value: 9.203
       objectReference: {fileID: 0}
     - target: {fileID: 4375484125338224106, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
       propertyPath: m_LocalPosition.z

@@ -377,6 +377,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2502371018656076155, guid: 582d2039ffc2c1347b00e6ce48a95a61, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b06c11b567a0c374581717cfc5533ded, type: 2}
     - target: {fileID: 2745082655992574081, guid: 582d2039ffc2c1347b00e6ce48a95a61, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.541473
@@ -417,6 +421,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 2755395631032231056, guid: 582d2039ffc2c1347b00e6ce48a95a61, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755395631032231056, guid: 582d2039ffc2c1347b00e6ce48a95a61, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cba7fb18e217f1d4bafecf6673775b7d, type: 2}
     - target: {fileID: 3266146076313627195, guid: 582d2039ffc2c1347b00e6ce48a95a61, type: 3}
       propertyPath: m_Name
       value: CofreCuatroPuertas

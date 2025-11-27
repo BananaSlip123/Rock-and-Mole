@@ -2922,6 +2922,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -2467237040824427441, guid: 50bccfafe51b2304ba06f8000afe4ae2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b06c11b567a0c374581717cfc5533ded, type: 2}
+    - target: {fileID: -1048821835999242667, guid: 50bccfafe51b2304ba06f8000afe4ae2, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1048821835999242667, guid: 50bccfafe51b2304ba06f8000afe4ae2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cba7fb18e217f1d4bafecf6673775b7d, type: 2}
     - target: {fileID: 919132149155446097, guid: 50bccfafe51b2304ba06f8000afe4ae2, type: 3}
       propertyPath: m_Name
       value: PeleaTresPuertas
