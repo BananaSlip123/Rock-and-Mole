@@ -13,7 +13,7 @@ public class ExplosionDisappear : MonoBehaviour
 
     private IEnumerator DestroyExplosion()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
 
         Destroy(this.gameObject);
     }

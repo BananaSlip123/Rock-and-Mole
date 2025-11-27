@@ -79,7 +79,7 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
         animator.SetBool("Morir", false);
         changer.StopAllCoroutines();
         changer.AssignDefaultMat();
-        enemyTransform.GetChild(2).localScale = Vector3.one;
+        enemyTransform.GetChild(1).localScale = Vector3.one;
     }
 
     public void FixedUpdate()
@@ -94,7 +94,7 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
 
             changer.AssignTemporalMaterial(material);
 
-            enemyTransform.GetChild(2).localScale = Vector3.one * (0.75f + Mathf.PingPong(Time.time + 3f * timeToAttack, 0.5f));
+            enemyTransform.GetChild(1).localScale = Vector3.one * (0.75f + Mathf.PingPong(Time.time + 3f * timeToAttack, 0.5f));
 
             if (timeToAttack >= COOLDOWN)
             {
