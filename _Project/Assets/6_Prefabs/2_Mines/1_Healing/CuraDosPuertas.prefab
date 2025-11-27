@@ -6889,6 +6889,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: puertaSalas
       objectReference: {fileID: 0}
+    - target: {fileID: 1582936955958587283, guid: 83ddd89aaaa55f64ca0a3602fc276b19, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804781629398322738, guid: 83ddd89aaaa55f64ca0a3602fc276b19, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
