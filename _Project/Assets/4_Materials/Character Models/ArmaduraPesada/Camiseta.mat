@@ -104,7 +104,7 @@ Material:
     - _DstBlend: 0
     - _EdgeDiffuse: 0
     - _EdgeDistanceAttenuation: 1
-    - _EdgeRim: 0
+    - _EdgeRim: 0.3
     - _EdgeRimOffset: 0
     - _EdgeShadowAttenuation: 1
     - _EdgeSpecular: 0.5
@@ -131,7 +131,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Ambient: {r: 0.425265, g: 0.2882254, b: 0.4811321, a: 0}
-    - _Color: {r: 0.09376113, g: 0.42131937, b: 0.46226418, a: 1}
+    - _Color: {r: 0.3529412, g: 0.4, b: 0.40784314, a: 1}
     - _Cutoff_Thresholds: {r: -0.02, g: 0.02, b: 0, a: 0}
     - _DiffuseColor: {r: 0.5503293, g: 0.73219454, b: 0.7830189, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
