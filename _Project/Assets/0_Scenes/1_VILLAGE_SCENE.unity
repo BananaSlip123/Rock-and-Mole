@@ -8967,6 +8967,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 38.199997
       objectReference: {fileID: 0}
+    - target: {fileID: 491264209941915031, guid: 63972d6fc6f8f6145b3df18f6806df3e, type: 3}
+      propertyPath: cartInteraction
+      value: 
+      objectReference: {fileID: 4045570109102168430}
     - target: {fileID: 2183504608537123778, guid: 63972d6fc6f8f6145b3df18f6806df3e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -15767,14 +15771,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2772726711182215223, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4031573846687817552, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4045570109102168430}
     - targetCorrespondingSourceObject: {fileID: 4322745141118476157, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
+--- !u!1 &4045570109102168428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6015889005509014989, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
+  m_PrefabInstance: {fileID: 4045570109102168427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4045570109102168429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4031573846687817552, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
+  m_PrefabInstance: {fileID: 4045570109102168427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4045570109102168430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045570109102168429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164762c354fe25645b863c59730b69de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go_interactionComponent: {fileID: 4045570109102168428}
+  villageMenuUI: {fileID: 1376804733}
 --- !u!224 &4148162253115781517 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8651960600355615022, guid: 4e238cdd6641e0643ad8523681f2afed, type: 3}

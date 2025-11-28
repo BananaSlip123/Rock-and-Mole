@@ -31,13 +31,15 @@ public class CartUI : MonoBehaviour
     {
         if (scene == Scene.village)
         {
-            GameData.Inventory.AddObjects(GameData.CartInventory.Objects);
+            GameData.Inventory.TransferObjects(GameData.CartInventory);
         } 
         else if (scene == Scene.game)
         {
-            GameData.CartInventory.AddObjects(GameData.RunInventory.Objects);
+            GameData.CartInventory.TransferObjects(GameData.RunInventory);
         }
         OnUpdate();
+
+        FindAnyObjectByType<ACartInteraction>().OnCartMenuClose();
     }
 
     public SortedDictionary<MaterialName, int> MaterialsToShow

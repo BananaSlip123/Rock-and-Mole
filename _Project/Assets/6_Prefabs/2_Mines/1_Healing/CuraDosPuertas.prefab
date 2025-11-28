@@ -5811,6 +5811,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9204834567724835801}
     m_Modifications:
+    - target: {fileID: 2772726711182215223, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
+      propertyPath: gameMenu
+      value: 
+      objectReference: {fileID: 3229046760787170799}
     - target: {fileID: 4031573846687817552, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
       propertyPath: m_Name
       value: Carreta Interactuable
@@ -5973,6 +5977,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4375484125338224106, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
   m_PrefabInstance: {fileID: 3610804623196662912}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1470024971575714999 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2772726711182215223, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
+  m_PrefabInstance: {fileID: 3610804623196662912}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f333baa2f25b9409c037fac662b1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3701998425488831246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6273,6 +6288,10 @@ PrefabInstance:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 4224532493111478521}
+    - target: {fileID: 7556028546568315808, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
+      propertyPath: cartInteraction
+      value: 
+      objectReference: {fileID: 1470024971575714999}
     - target: {fileID: 7773920056866300657, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

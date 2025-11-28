@@ -1,10 +1,10 @@
 {
-    "name": "CartUI",
+    "name": "CartInteraction",
     "rootNamespace": "",
     "references": [
-        "GUID:46dab3105bacede4a8d0ee3999b04998",
-        "GUID:c17ff5bc373c31248bba58abb3013523",
-        "GUID:25631bbf753ba7746b1873255cc978f0"
+        "GUID:3586ab61397ff724ebdfc948934c6465",
+        "GUID:8f6d2aef0b2b9f14daef6803491adb58",
+        "GUID:c17ff5bc373c31248bba58abb3013523"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

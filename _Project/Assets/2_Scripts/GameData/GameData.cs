@@ -294,10 +294,22 @@ public class PersistentInventory
         {
             int savedValue = PlayerPrefs.GetInt(_name + material.ToString(), 0);
             _objectsAmount.Add(material, savedValue);
-
-           // _dict_onSlotValueChange.Add(material,null);
         }
         
+    }
+
+    public bool IsEmpty
+    {
+        get
+        {
+            if (Objects == null || Objects.Count == 0) return true;
+
+            foreach (int amount in Objects.Values)
+                if (amount > 0) return false;
+            
+
+            return true;
+        }
     }
     public void SubscribeToInventoryChange(Action action) => _onInventoryChange += action;//se recarga el inventario entero en la UI
     public void SubscribeToMaterialDeleted(Action<MaterialName> action) => _onMaterialDeleted += action;
@@ -323,12 +335,27 @@ public class PersistentInventory
         if(amount>0)
             TryRemoveObject(name, amount);
     }
-    public void AddObjects(SortedDictionary<MaterialName, int> objectsToAdd)
+    public void TransferObjects(Inventory inventory)
     {
-        foreach (KeyValuePair<MaterialName, int> objectToAdd in objectsToAdd)
+        foreach (KeyValuePair<MaterialName, int> objectToAdd in inventory.Objects)
         {
-            AddObject(objectToAdd.Key, objectToAdd.Value);
+            if (objectToAdd.Value > 0)
+            {
+                AddObject(objectToAdd.Key, objectToAdd.Value);
+            }
         }
+        inventory.RemoveAll();
+    }
+    public void TransferObjects(PersistentInventory inventory)
+    {
+        foreach (KeyValuePair<MaterialName, int> objectToAdd in inventory.Objects)
+        {
+            if(objectToAdd.Value > 0)
+            {
+                AddObject(objectToAdd.Key, objectToAdd.Value);
+            }
+        }
+        inventory.RemoveAll();
     }
     public void AddObject(MaterialName name, int amount)
     {
@@ -346,8 +373,8 @@ public class PersistentInventory
     {
         //si tenemos 5 piedras e intentamos quitar 6 mantenemos las 5 y devolvemos false
         //se usará al comprar objetos con materiales
-        if (amount <= 0) throw new Exception("Must be positive number");
-        
+        if (amount <= 0) return false;
+
         int newAmount = _objectsAmount[name] - amount;
 
         if (newAmount < 0) return false;
@@ -365,20 +392,21 @@ public class PersistentInventory
         return true;
     }
 
-    public void SaveData()
-    {
-        foreach (MaterialName key in _objectsAmount.Keys)
-        {
-            PlayerPrefs.SetInt(_name + key.ToString(), _objectsAmount[key]);
-        }
-        PlayerPrefs.Save();
-    }
-
     void SaveMaterial(MaterialName material)
     {
         PlayerPrefs.SetInt(_name + material.ToString(), _objectsAmount[material]);
         PlayerPrefs.Save();
     } 
+
+    public void RemoveAll()
+    {
+        Objects.Keys.ToList().ForEach(key => Objects[key] = 0);
+
+        foreach(MaterialName material in Objects.Keys)
+            SaveMaterial(material);
+
+        _onInventoryChange?.Invoke();
+    }
     
 }
 
@@ -401,6 +429,19 @@ public class Inventory
         }
 
     }
+    public bool IsEmpty
+    {
+        get
+        {
+            if (Objects == null || Objects.Count == 0) return true;
+
+            foreach (int amount in Objects.Values)
+                if (amount > 0) return false;
+
+
+            return true;
+        }
+    }
     public void SubscribeToInventoryChange(Action action) => _onInventoryChange += action;//se recarga el inventario entero en la UI
     public void SubscribeToMaterialDeleted(Action<MaterialName> action) => _onMaterialDeleted += action;
     public void SubscribeToMaterialAdded(Action action) => _onMaterialAdded += action;
@@ -414,7 +455,9 @@ public class Inventory
     public int GetAmount(MaterialName key) => _objectsAmount[key];
     public void ResetObjectAmount(MaterialName name)
     {
-        TryRemoveObject(name, GetAmount(name));
+        int amount = GetAmount(name);
+        if (amount > 0)
+            TryRemoveObject(name, amount);
     }
     public void AddObject(MaterialName name, int amount)
     {
@@ -432,7 +475,7 @@ public class Inventory
     {
         //si tenemos 5 piedras e intentamos quitar 6 mantenemos las 5 y devolvemos false
         //se usará al comprar objetos con materiales
-        if (amount <= 0) throw new Exception("Must be positive number");
+        if (amount <= 0) return false;
 
         int newAmount = _objectsAmount[name] - amount;
 
@@ -444,6 +487,12 @@ public class Inventory
         _onInventoryChange?.Invoke();
 
         return true;
+    }
+
+    public void RemoveAll()
+    {
+        Objects.Keys.ToList().ForEach(key => Objects[key] = 0);
+        _onInventoryChange?.Invoke();
     }
 }
 public enum MaterialName

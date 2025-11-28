@@ -645,6 +645,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8680235311773688053}
     m_Modifications:
+    - target: {fileID: 2772726711182215223, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
+      propertyPath: gameMenu
+      value: 
+      objectReference: {fileID: 7419583270769320449}
     - target: {fileID: 4031573846687817552, guid: 8e8cab1945c4eca43a1fecf34c27d99c, type: 3}
       propertyPath: m_Name
       value: Carreta Interactuable

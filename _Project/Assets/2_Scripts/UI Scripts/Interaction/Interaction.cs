@@ -35,15 +35,28 @@ public class Interaction : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            onExit.Invoke();
-
-            texto.color = notAvailable;
-            if (playerController != null)
-                playerController.pressButtonA = null;
+            OnExit();
         }
+    }
+    private void OnExit()
+    {
+        onExit.Invoke();
+
+        texto.color = notAvailable;
+        if (playerController != null)
+            playerController.pressButtonA = null;
     }
     private void Interact()
     {
         onInteraction?.Invoke();
+    }
+
+    private void OnDisable()
+    {
+        OnExit();
+    }
+    private void OnDestroy()
+    {
+        OnExit();
     }
 }
