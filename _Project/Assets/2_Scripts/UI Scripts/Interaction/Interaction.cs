@@ -52,8 +52,8 @@ public class Interaction : MonoBehaviour
     private void Interact()
     {
         onInteraction?.Invoke();
-
-        Destroy(this.gameObject);
+        if(destroyAfterInteraction)
+            Destroy(this.gameObject);
     }
 
     private void OnDisable()
