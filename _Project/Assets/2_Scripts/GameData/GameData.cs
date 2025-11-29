@@ -50,7 +50,7 @@ public static class GameData
     {
         { EnemyName.Mouse,new List<MaterialName>() { MaterialName.Ambar, MaterialName.Hierro, MaterialName.Bronce, MaterialName.Carbon, MaterialName.Cuarzo, MaterialName.RolloTela } },
         { EnemyName.Bunny, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Hierro, MaterialName.Bronce, MaterialName.Carbon, MaterialName.Rubi, MaterialName.Obsidiana }},
-        { EnemyName.Golem, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Hierro, MaterialName.Carbon, MaterialName.Esmeralda, MaterialName.Bronce } },
+        { EnemyName.Golem, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Hierro, MaterialName.Carbon, MaterialName.Esmeralda, MaterialName.Bronce, MaterialName.Obsidiana } },
         { EnemyName.GolemBoss,new List<MaterialName>() { MaterialName.Rubi, MaterialName.Esmeralda, MaterialName.Hierro, MaterialName.Cuarzo, MaterialName.Obsidiana, MaterialName.Bronce } }
     };
 
@@ -117,11 +117,8 @@ public static class GameData
     static MaterialName EnemyMaterial(EnemyName type, MaterialRarity rarity)
     {
         List<MaterialName> sortedMaterials;
-        do
-        {
-            sortedMaterials = SortedMaterialsByRarityAndEnemy(rarity, type);
-            Debug.Log(sortedMaterials.Count);
-        } while (sortedMaterials.Count == 0);
+        sortedMaterials = SortedMaterialsByRarityAndEnemy(rarity, type);
+        Debug.Log(sortedMaterials.Count);
         return sortedMaterials[UnityEngine.Random.Range(0, sortedMaterials.Count)];
     }
 
