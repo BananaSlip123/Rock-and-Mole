@@ -4,6 +4,9 @@ using UnityEngine.Events;
 using TMPro;
 public class Interaction : MonoBehaviour
 {
+    [Header ("General")]
+    [SerializeField] bool destroyAfterInteraction = false;
+
     [Header ("References")]
     [SerializeField] PlayerController playerController;
     [SerializeField] TextMeshPro texto;
@@ -49,6 +52,8 @@ public class Interaction : MonoBehaviour
     private void Interact()
     {
         onInteraction?.Invoke();
+
+        Destroy(this.gameObject);
     }
 
     private void OnDisable()

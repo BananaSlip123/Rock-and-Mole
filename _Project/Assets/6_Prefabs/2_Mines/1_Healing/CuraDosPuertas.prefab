@@ -7216,11 +7216,23 @@ PrefabInstance:
       value: -0.0069503784
       objectReference: {fileID: 0}
     - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 4468448388453956697}
+    - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
+      propertyPath: destroyAfterInteraction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
       propertyPath: onExit.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
@@ -7256,6 +7268,22 @@ PrefabInstance:
       value: set_ShowInteractWindow
       objectReference: {fileID: 0}
     - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6120217211579403442}
+    - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HealPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
       propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameMenu, GameMenuGestion
       objectReference: {fileID: 0}
@@ -7268,11 +7296,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CampfireHealing, MineAssemby
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
       propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909177715102783710, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7367,6 +7403,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0015251988, y: 0.005888412, z: 0.004567876}
   m_Center: {x: -0.000004599567, y: 0.0022442802, z: -0.0000015272484}
+--- !u!114 &6120217211579403442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3025005419894473266, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
+  m_PrefabInstance: {fileID: 9013280955613122176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fec74c20bd8f749bca1d2eb7ce93d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7349594576013423222 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1795416820446395638, guid: 8e00e64703730964cac76b72a7ec766d, type: 3}
