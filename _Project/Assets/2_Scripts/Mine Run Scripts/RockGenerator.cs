@@ -28,7 +28,7 @@ public class RockGenerator : MonoBehaviour, IEnemyGenerator
         float randomX = UnityEngine.Random.Range(collider.bounds.min.x,collider.bounds.max.x);
         float randomZ = UnityEngine.Random.Range(collider.bounds.min.z, collider.bounds.max.z);
 
-        Quaternion random = Quaternion.Euler(UnityEngine.Random.Range(0f,360f), UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f));
+        Quaternion random = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f),0f);
 
         Instantiate(prefab, new Vector3(randomX, transform.position.y, randomZ), random);
     }
