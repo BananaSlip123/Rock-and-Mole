@@ -4,7 +4,7 @@ public class PlantController : MonoBehaviour, IStateMachineComponent
 {
     [SerializeField] IStateComponent actualState;
     [SerializeField] IStateComponent lastState;
-    [SerializeField] GameObject explosion;
+
     [SerializeField] Animator animator;
 
     void Awake()
@@ -45,7 +45,7 @@ public class PlantController : MonoBehaviour, IStateMachineComponent
 
     public void GenerateGameObject(Transform enemyTransform)
     {
-        Instantiate(explosion, enemyTransform.position, enemyTransform.rotation).SetActive(true);
+        //Instantiate(explosion, enemyTransform.position, enemyTransform.rotation).SetActive(true);
     }
 
     public void DestroyGameObject(GameObject d)
