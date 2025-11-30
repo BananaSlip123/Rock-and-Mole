@@ -71,7 +71,10 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     }
 
     public void FixedUpdate()
-    {        
+    {
+        if (playerTransform == null) return;
+        if (enemyTransform == null) return;
+
         if (isInCooldown)
         {
             //animator.SetBool("Atacar", false);

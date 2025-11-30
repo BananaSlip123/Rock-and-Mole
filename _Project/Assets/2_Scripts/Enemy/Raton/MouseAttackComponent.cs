@@ -58,6 +58,9 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
 
     public void FixedUpdate()
     {
+        if (playerPosition == null) return;
+        if (enemyTransform == null) return;
+
         if (!PlayerInRange())
             mStateMachine.ChangeState(new MouseWanderState(mStateMachine, enemyTransform, animator));
 
@@ -93,6 +96,9 @@ public class MouseAttackComponent : IStateComponent, IAttackComponent
 
     void IStateComponent.Update()
     {
+        if (playerPosition == null) return;
+        if (enemyTransform == null) return;
+
         Vector3 direction = playerPosition.position - enemyTransform.position;
         Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
         enemyTransform.rotation = rotation;
