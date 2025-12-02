@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pico Endurecido
   m_EditorClassIdentifier: 
   damage: 20
+  damageShoot: 14
   critMultiplier: 3
   critProbability: 0.1
   attackSpeed: 0.15

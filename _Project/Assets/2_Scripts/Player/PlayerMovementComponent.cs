@@ -18,7 +18,7 @@ namespace PlayerComponents
 
         Quaternion rotation;
 
-        Vector2 directionRotation;
+        public Vector2 directionRotation;
         #endregion
 
         #region Dash
@@ -35,7 +35,7 @@ namespace PlayerComponents
         Vector2 movementDash;
         #endregion
 
-        private Vector2 movement = new Vector2();
+        public Vector2 movement = new Vector2();
         public Animator animator;
 
         DamageableComponent damageable;
@@ -44,6 +44,7 @@ namespace PlayerComponents
         {
             layerMask = LayerMask.GetMask("Wall");
             damageable = GetComponent<DamageableComponent>();
+            directionRotation = VectorConverter.VectorConeverter(Vector3.forward);
         }
 
         public void IsMoving(Vector2 valor)
@@ -121,7 +122,7 @@ namespace PlayerComponents
             timeCooldown = 0;
             timeDashing = 0;
             isDashing = true;
-            movementDash = movement;
+            movementDash = directionRotation;
 
             damageable.SetHasBeenDamaged(true);
             
@@ -134,7 +135,7 @@ namespace PlayerComponents
             if (IsInCooldown)
                 return;
 
-            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movementDash.x, 0, movementDash.y), speedDash);           
+            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movementDash.x, 0f, movementDash.y), speedDash);           
 
             if(timeDashing < DASH_TIME)
                 timeDashing += Time.fixedDeltaTime;
