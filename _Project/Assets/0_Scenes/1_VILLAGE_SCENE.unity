@@ -9055,6 +9055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CART WINDOW VILLAGE
       objectReference: {fileID: 0}
+    - target: {fileID: 4463949155363763403, guid: 63972d6fc6f8f6145b3df18f6806df3e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5795835096993782920, guid: 63972d6fc6f8f6145b3df18f6806df3e, type: 3}
       propertyPath: m_IsActive
       value: 1
