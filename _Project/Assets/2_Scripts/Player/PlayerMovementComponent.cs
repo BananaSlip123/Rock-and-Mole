@@ -60,6 +60,8 @@ namespace PlayerComponents
                 return;
             }
 
+            Debug.Log("VALOR: " + valor);
+
             //directionRotation = movement;
             isMoving = true;
             movement = valor;
@@ -122,7 +124,10 @@ namespace PlayerComponents
             timeCooldown = 0;
             timeDashing = 0;
             isDashing = true;
-            movementDash = directionRotation;
+
+            if (!animator.GetBool("Andar")) animator.SetBool("Andar", true);
+
+            movementDash = directionRotation.normalized;
 
             damageable.SetHasBeenDamaged(true);
             
@@ -141,6 +146,8 @@ namespace PlayerComponents
                 timeDashing += Time.fixedDeltaTime;
             else
             {
+                if(!isMoving)
+                    animator.SetBool("Andar", false);
                 isDashing = false;
                 IsInCooldown = true;
                 timeDashing = 0f;
