@@ -4,7 +4,7 @@ using System.Collections;
 
 public class CampfireHealing : MonoBehaviour
 {
-    [SerializeField] const int healing = 40;
+    [SerializeField] const int healing = 50;
     PlayerStats stats;
 
     [SerializeField] Animator birdAnimator;
@@ -37,7 +37,7 @@ public class CampfireHealing : MonoBehaviour
 
     private IEnumerator WaitAnimation()
     {
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(1.0f);
 
         heart.SetActive(false);
         stats?.HealPlayer(healing);
