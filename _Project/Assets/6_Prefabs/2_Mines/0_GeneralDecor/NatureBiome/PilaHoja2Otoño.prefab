@@ -51,11 +51,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 60ca23e58df53a246a92fe11e766a34c, type: 2}
+      objectReference: {fileID: 2100000, guid: 7c985f507e15aa44b9e4e5b34cbebfab, type: 2}
     - target: {fileID: -7511558181221131132, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 60ca23e58df53a246a92fe11e766a34c, type: 2}
+      objectReference: {fileID: 2100000, guid: 7c985f507e15aa44b9e4e5b34cbebfab, type: 2}
     - target: {fileID: 919132149155446097, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
       propertyPath: m_Name
       value: "PilaHoja2Oto\xF1o"
