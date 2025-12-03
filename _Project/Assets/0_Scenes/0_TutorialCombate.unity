@@ -700,6 +700,8 @@ MonoBehaviour:
   - "Necesitar\xE1s el CLICK IZQUIERDO o el GATILLO DERECHO del mando."
   - "Y si ves que te van a dar\u2026 usa el dash para esquivar."
   - Activa el dash con SHIFT o con el GATILLO IZQUIERDO.
+  - "Si est\xE1n lejos, puedes lanzarles el pico, \xA1aunque les har\xE1s menos da\xF1o!"
+  - Lanza el pico con el CLICK DERECHO o la FLECHA IZQUIERDA si usas mando.
 --- !u!4 &1123508947
 Transform:
   m_ObjectHideFlags: 0

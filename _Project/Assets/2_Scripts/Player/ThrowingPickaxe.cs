@@ -1,4 +1,4 @@
-using Codice.CM.Common;
+using System;
 using UnityEngine;
 
 public class ThrowingPickaxe : MonoBehaviour
@@ -39,7 +39,7 @@ public class ThrowingPickaxe : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Enemigo") && !other.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
+        if(other.CompareTag("Enemy") && !other.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
         {
             float hitCrit = UnityEngine.Random.Range(0, 1);
             int damage = this.damage;
@@ -52,10 +52,10 @@ public class ThrowingPickaxe : MonoBehaviour
         else if(other.CompareTag("Player") && isReturning)
         {            
             seconds = 0f;
-            shoot.isShooting = false;
-            Destroy(this.gameObject);
+            shoot.IsShooting = false;
+            
         }
-        else if(other.CompareTag("Wall"))
+        else if(other.gameObject.layer.ToString() == "Wall")
         {
             seconds = 100f;
         }

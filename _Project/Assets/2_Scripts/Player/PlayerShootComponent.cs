@@ -1,23 +1,35 @@
 using PlayerComponents;
+using System;
 using UnityEngine;
 
 public class PlayerShootComponent : MonoBehaviour, IAttackComponent
 {
-    public bool isShooting = false;
+    public bool _isShooting;
+    public bool IsShooting{
+        get => _isShooting;
+        set
+        {
+            _isShooting = value;
+            onIsShootingChange.Invoke(value);
+            throwingPickaxeComponent?.gameObject.SetActive(value);
+        }
+    }
 
-    [SerializeField]GameObject pickaxe;
-    ThrowingPickaxe throwing;
+    [SerializeField] ThrowingPickaxe throwingPickaxeComponent;
 
     public int damage;
     public float critMultiplier;
     public float critProbability;
 
+    public Action<bool> onIsShootingChange;
+
     private void Awake()
     {
-        throwing = pickaxe.GetComponent<ThrowingPickaxe>();
-        throwing.player = transform;
-        throwing.shoot = this;
+        throwingPickaxeComponent.player = transform;
+        throwingPickaxeComponent.shoot = this;
         AssignStats();
+
+        IsShooting = false;
     }
 
     public void ActiveHitbox()
@@ -27,16 +39,15 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
 
     public void Attack()
     {
-        isShooting = true;
+        IsShooting = true;
         Vector2 dir = GetComponent<PlayerMovementComponent>().directionRotation;
-        throwing.dir = new Vector3(dir.x,0f,dir.y);
-        Instantiate(pickaxe, pickaxe.transform.position, pickaxe.transform.rotation).SetActive(true);      
+        throwingPickaxeComponent.dir = new Vector3(dir.x,0f,dir.y);    
     }
 
     void AssignStats()
     {
-        throwing.damage = damage;
-        throwing.critMultiplier = critMultiplier;
-        throwing.critProbability = critProbability;
+        throwingPickaxeComponent.damage = damage;
+        throwingPickaxeComponent.critMultiplier = critMultiplier;
+        throwingPickaxeComponent.critProbability = critProbability;
     }
 }

@@ -4,9 +4,11 @@ using UnityEngine;
 public class PlayerModelActualizer : MonoBehaviour
 {
     [SerializeField] Transform t_modelTransform;
+    [SerializeField] Transform t_shootTransform;
     [SerializeField] GameObject go_currentModel;
 
     PlayerAttackComponent playerAttackComponent;
+    PlayerShootComponent playerShootComponent;
     PlayerMovementComponent playerMovementComponent;
     DamageableComponent playerDamageableComponent;
 
@@ -14,7 +16,10 @@ public class PlayerModelActualizer : MonoBehaviour
     GameObject go_currentPickAxeModel = null;
     ChestClothGetter chestClothGetter = null;
 
-    public enum PickaxePosition { hand, back }
+    bool isAttacking;
+    bool isShooting;
+
+    public enum PickaxePosition { hand, back, throwing }
 
     PickaxePosition _pickaxePosition;
     public PickaxePosition PickaxePositionProperty
@@ -31,6 +36,7 @@ public class PlayerModelActualizer : MonoBehaviour
         playerAttackComponent = GetComponent<PlayerAttackComponent>();
         playerMovementComponent = GetComponent<PlayerMovementComponent>();
         playerDamageableComponent = GetComponent<DamageableComponent>();
+        playerShootComponent = GetComponent<PlayerShootComponent>();
 
         PickaxePositionProperty = PickaxePosition.back;
     }
@@ -43,8 +49,9 @@ public class PlayerModelActualizer : MonoBehaviour
         EquipmentManager.OnCurrentHelmetChange += OnHelmetChange;
         EquipmentManager.OnPickaxeLevelChange += OnPickAxeChange;
 
-        playerAttackComponent.onIsAttackingChange += OnPickAxePositionChange;
+        playerAttackComponent.onIsAttackingChange += OnIsAttackingChange;
         playerDamageableComponent.OnDamageReceive += OnDamageReceived;
+        playerShootComponent.onIsShootingChange += OnIsShootingChange;
     }
     private void OnDisable()
     {
@@ -52,15 +59,32 @@ public class PlayerModelActualizer : MonoBehaviour
         EquipmentManager.OnCurrentHelmetChange -= OnHelmetChange;
         EquipmentManager.OnPickaxeLevelChange -= OnPickAxeChange;
 
-        playerAttackComponent.onIsAttackingChange -= OnPickAxePositionChange;
+        playerAttackComponent.onIsAttackingChange -= OnIsAttackingChange;
+        playerShootComponent.onIsShootingChange -= OnIsShootingChange;
     }
     void OnDamageReceived()
     {
         go_currentModel.GetComponent<MaterialChanger>().AssignTemporalMaterial();
         go_currentHelmetModel?.GetComponent<MaterialChanger>().AssignTemporalMaterial();
     }
-    void OnPickAxePositionChange(bool isAttacking)
+    void OnIsAttackingChange(bool newValue)
     {
+        isAttacking = newValue;
+        OnPickAxePositionChange();
+    }
+    void OnIsShootingChange(bool newValue)
+    {
+        isShooting = newValue;
+        OnPickAxePositionChange();
+    }
+    void OnPickAxePositionChange()
+    {
+        if (isShooting)
+        {
+            PickaxePositionProperty = PickaxePosition.throwing;
+            return;
+        }
+            
         if (isAttacking)
             PickaxePositionProperty = PickaxePosition.hand;
         else
@@ -110,8 +134,10 @@ public class PlayerModelActualizer : MonoBehaviour
 
         if (_pickaxePosition == PickaxePosition.hand)
             parentToAssign = chestClothGetter.bone_PickAxeHand;
-        else
+        else if(_pickaxePosition == PickaxePosition.back)
             parentToAssign = chestClothGetter.bone_PickAxeBack;
+        else
+            parentToAssign = t_shootTransform;
 
         AssignParent(go_currentPickAxeModel.transform, parentToAssign);
     }

@@ -31,7 +31,7 @@ namespace PlayerComponents
         /// </summary>
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if (attackComponent.isAttacking || shootComponent.isShooting)
+            if (attackComponent.isAttacking || shootComponent.IsShooting)
                return;
             attackComponent.Attack();
         }
@@ -39,7 +39,7 @@ namespace PlayerComponents
         public void OnShoot(InputAction.CallbackContext context)
         {
             Debug.Log("Estoy disparando");
-            if (shootComponent.isShooting)
+            if (shootComponent.IsShooting)
                 return;
             Debug.Log("Estoy disparando");
             shootComponent.Attack();
