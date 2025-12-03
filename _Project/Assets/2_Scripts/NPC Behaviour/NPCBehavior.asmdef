@@ -6,7 +6,9 @@
         "CallOut",
         "GameDataAssembly",
         "InputMapsManager",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Interfaces",
+        "Interaction"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

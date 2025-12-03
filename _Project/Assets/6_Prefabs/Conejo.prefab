@@ -90,7 +90,7 @@ MonoBehaviour:
   health: 50
   animator: {fileID: 8910229230544078089}
   tipoEnemigo: 0
-  changer: {fileID: 0}
+  changer: {fileID: 2798920442867677560}
 --- !u!54 &1298708713649014139
 Rigidbody:
   m_ObjectHideFlags: 0

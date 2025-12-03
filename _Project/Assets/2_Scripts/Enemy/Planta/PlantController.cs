@@ -16,14 +16,22 @@ public class PlantController : MonoBehaviour, IStateMachineComponent
     // Update is called once per frame
     void Update()
     {
+        if (IsPaused) return;
         MUpdate();
     }
 
     void FixedUpdate()
     {
+        if (IsPaused) return;
         MFixedUpdate();
     }
-
+    
+    bool _isPaused;
+    public bool IsPaused
+    {
+        get => _isPaused;
+        set => _isPaused = value;
+    }
     public void MUpdate()
     {
         actualState.Update();

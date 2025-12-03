@@ -6,7 +6,7 @@ public class BunnyController : MonoBehaviour, IStateMachineComponent
     [SerializeField] IStateComponent lastState;
     [SerializeField] GameObject explosion;
     [SerializeField] Animator animator;
-
+    
     void Awake()
     {
         actualState = new BunnyWanderState(this, transform, animator);
@@ -16,14 +16,21 @@ public class BunnyController : MonoBehaviour, IStateMachineComponent
     // Update is called once per frame
     void Update()
     {
+        if (IsPaused) return;
         MUpdate();
     }
 
     void FixedUpdate()
     {
+        if (IsPaused) return;
         MFixedUpdate();
     }
-
+    bool _isPaused;
+    public bool IsPaused
+    {
+        get => _isPaused;
+        set => _isPaused = value;
+    }
     public void MUpdate()
     {
         actualState.Update();

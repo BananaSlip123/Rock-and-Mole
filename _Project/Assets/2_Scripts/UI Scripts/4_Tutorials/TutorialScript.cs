@@ -26,8 +26,8 @@ public class TutorialScript : MonoBehaviour
     private void OnEnable()
     {
         Debug.Log("Enable");
-        //playerInputMapsManager.SwitchCurrentActionMap("CallOutDialog");
-        playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.tutorialCallOut;
+
+        playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.callOut;
     }
     private void Start()
     {

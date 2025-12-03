@@ -29,7 +29,7 @@ public class InputMapsManager : MonoBehaviour
             Debug.Log("El mapa de accion es: "+ value.ToString());
             switch (value)
             {
-                case InputMap.tutorialCallOut:
+                case InputMap.callOut:
                     map_UI.Disable();
                     map_Player.Disable();
                     map_CallOut.Enable();
@@ -51,7 +51,7 @@ public class InputMapsManager : MonoBehaviour
     }
     public enum InputMap
     {
-        tutorialCallOut,
+        callOut,
         uiNavigation,
         playerAndUi,
     }
