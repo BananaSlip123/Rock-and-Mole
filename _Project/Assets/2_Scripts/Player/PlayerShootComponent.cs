@@ -10,7 +10,7 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
         set
         {
             _isShooting = value;
-            onIsShootingChange.Invoke(value);
+            onIsShootingChange?.Invoke(value);
             throwingPickaxeComponent?.gameObject.SetActive(value);
         }
     }
