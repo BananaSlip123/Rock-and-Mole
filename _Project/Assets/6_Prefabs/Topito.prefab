@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 133067544208948853}
   - component: {fileID: 224630495550211095}
   m_Layer: 6
-  m_Name: TransformPicoArrojadizo
+  m_Name: PicoArrojadizo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.2194, y: -0.035, z: 0.0053082}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2636274778658534371}
@@ -49,9 +49,9 @@ MonoBehaviour:
   damage: 0
   critMultiplier: 0
   critProbability: 0
-  shoot: {fileID: 0}
+  shoot: {fileID: 7737650645284490803}
   dir: {x: 0, y: 0, z: 0}
-  player: {fileID: 0}
+  player: {fileID: 2636274778658534371}
   speed: 10
   seconds: 0
 --- !u!65 &133067544208948853
@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t_modelTransform: {fileID: 7595338976446420984}
-  t_shootTransform: {fileID: 0}
+  t_shootTransform: {fileID: 6371853483304805762}
   go_currentModel: {fileID: 5492702617969363912}
 --- !u!114 &7072675569967448827
 MonoBehaviour:
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isShooting: 0
-  throwingPickaxeComponent: {fileID: 0}
+  throwingPickaxeComponent: {fileID: 1959651502657161770}
   damage: 0
   critMultiplier: 0
   critProbability: 0
