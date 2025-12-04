@@ -62,6 +62,7 @@ public class NPCBehavior : MonoBehaviour
     void onRoomCleaned()
     {
         isRoomCleaned = true;
+        interaction.gameObject.SetActive(true);
     }
     private void OnStartInteraction()
     {
@@ -105,6 +106,7 @@ public class NPCBehavior : MonoBehaviour
         if (isRoomCleaned)
         {
             GameData.MaterialsChest(4);
+            interaction.gameObject.SetActive(false);
         }
         else if (currentInteraction == 0)
         {
