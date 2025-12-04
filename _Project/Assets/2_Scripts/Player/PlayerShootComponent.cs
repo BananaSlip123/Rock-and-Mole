@@ -16,6 +16,7 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
     }
 
     [SerializeField] ThrowingPickaxe throwingPickaxeComponent;
+    [SerializeField] Transform t_pickaxeSpawnTransform;
 
     public int damage;
     public float critMultiplier;
@@ -25,8 +26,10 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
 
     private void Awake()
     {
+        throwingPickaxeComponent.ResetValues();
         throwingPickaxeComponent.player = transform;
         throwingPickaxeComponent.shoot = this;
+        throwingPickaxeComponent.gameObject.transform.parent = null;
         AssignStats();
 
         IsShooting = false;
@@ -41,7 +44,9 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
     {
         IsShooting = true;
         Vector2 dir = GetComponent<PlayerMovementComponent>().directionRotation;
-        throwingPickaxeComponent.dir = new Vector3(dir.x,0f,dir.y);    
+        throwingPickaxeComponent.dir = new Vector3(dir.x,0f,dir.y);
+        throwingPickaxeComponent.ResetValues();
+        throwingPickaxeComponent.gameObject.transform.SetPositionAndRotation(t_pickaxeSpawnTransform.position, t_pickaxeSpawnTransform.rotation);
     }
 
     void AssignStats()

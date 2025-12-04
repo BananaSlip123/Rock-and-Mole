@@ -9,11 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6371853483304805762}
-  - component: {fileID: 1959651502657161770}
-  - component: {fileID: 133067544208948853}
-  - component: {fileID: 224630495550211095}
   m_Layer: 6
-  m_Name: PicoArrojadizo
+  m_Name: Transform PicoArrojadizo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,77 +28,10 @@ Transform:
   m_LocalPosition: {x: 1.2194, y: -0.035, z: 0.0053082}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 8965280269658343823}
   m_Father: {fileID: 2636274778658534371}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1959651502657161770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246052782309687107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a0290a59ca76a24b8f330fe35af9f5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  critMultiplier: 0
-  critProbability: 0
-  shoot: {fileID: 7737650645284490803}
-  dir: {x: 0, y: 0, z: 0}
-  player: {fileID: 2636274778658534371}
-  speed: 10
-  seconds: 0
---- !u!65 &133067544208948853
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246052782309687107}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.6319761, y: 0.6709434, z: 0.2682826}
-  m_Center: {x: 0.0021647916, y: -7.841318e-17, z: 0.0064944397}
---- !u!54 &224630495550211095
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246052782309687107}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 136
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 84
-  m_CollisionDetection: 1
 --- !u!1 &3517026021879150828
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +149,130 @@ Transform:
   - {fileID: 4743877351447749136}
   m_Father: {fileID: 2636274778658534371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8143516104461502278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8965280269658343823}
+  - component: {fileID: 6162595284554428867}
+  - component: {fileID: 6055753948725778132}
+  - component: {fileID: 1976735109741285545}
+  - component: {fileID: 1335504874052611082}
+  m_Layer: 6
+  m_Name: PicoArrojadizo (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8965280269658343823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143516104461502278}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6371853483304805762}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &6162595284554428867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143516104461502278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0290a59ca76a24b8f330fe35af9f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  critMultiplier: 0
+  critProbability: 0
+  shoot: {fileID: 7737650645284490803}
+  dir: {x: 0, y: 0, z: 0}
+  player: {fileID: 2636274778658534371}
+  speed: 10
+  seconds: 0
+--- !u!135 &6055753948725778132
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143516104461502278}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 72
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 183
+  m_LayerOverridePriority: 1
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.44
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1976735109741285545
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143516104461502278}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 200
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 84
+  m_CollisionDetection: 1
+--- !u!135 &1335504874052611082
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143516104461502278}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 11
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.06
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8559116585686124911
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +599,7 @@ MonoBehaviour:
   uiActionMap: UI
   playerActionMap: Player
   callOutActionMap: CallOutDialog
+  CurrentInputMap: 0
 --- !u!114 &8997948541469709779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,7 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t_modelTransform: {fileID: 7595338976446420984}
-  t_shootTransform: {fileID: 6371853483304805762}
+  t_shootTransform: {fileID: 8965280269658343823}
   go_currentModel: {fileID: 5492702617969363912}
 --- !u!114 &7072675569967448827
 MonoBehaviour:
@@ -641,7 +696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isShooting: 0
-  throwingPickaxeComponent: {fileID: 1959651502657161770}
+  throwingPickaxeComponent: {fileID: 6162595284554428867}
+  t_pickaxeSpawnTransform: {fileID: 6371853483304805762}
   damage: 0
   critMultiplier: 0
   critProbability: 0

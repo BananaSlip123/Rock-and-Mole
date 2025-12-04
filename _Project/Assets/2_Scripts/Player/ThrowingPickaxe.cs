@@ -9,21 +9,30 @@ public class ThrowingPickaxe : MonoBehaviour
     public float critMultiplier;
     public float critProbability;
 
-    bool isReturning = false;
 
     public PlayerShootComponent shoot;
     public Vector3 dir;
-
     public Transform player;
 
-    float MAX_SECONDS = 1f;
-    [SerializeField]float speed = 100f;
+    const float MAX_SECONDS = 1f;
+    const float WALL_SECONDS = 0.4f;
+    const float ATTACK_SPEED = 40f;
+    const float RETURN_SPEED = 10f;
+    [SerializeField] float speed = ATTACK_SPEED;
     public float seconds = 0f;
+    bool isReturning = false;
+
+    public void ResetValues()
+    {
+        isReturning = false;
+        seconds = 0f;
+        speed = ATTACK_SPEED;
+    }
 
     // Update is called once per frame
     public void FixedUpdate()
     {
-        if(seconds <= MAX_SECONDS)
+        if(seconds < MAX_SECONDS)
         {
             IsMoving(dir);
 
@@ -32,7 +41,7 @@ public class ThrowingPickaxe : MonoBehaviour
         else
         {
             isReturning = true;
-            speed = 10f;
+            speed = RETURN_SPEED;
             ReturnPickaxe(player.position);         
         }        
     }
@@ -55,9 +64,10 @@ public class ThrowingPickaxe : MonoBehaviour
             shoot.IsShooting = false;
             
         }
-        else if(other.gameObject.layer.ToString() == "Wall")
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
-            seconds = 100f;
+            seconds = MAX_SECONDS - WALL_SECONDS;
+            speed = 0;
         }
     }
 

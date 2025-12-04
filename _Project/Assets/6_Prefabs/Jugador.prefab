@@ -41,6 +41,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6411353102807914056}
     m_Modifications:
+    - target: {fileID: 246052782309687107, guid: 2f01edc73969315479e666196310494e, type: 3}
+      propertyPath: m_Name
+      value: Transform Lanzamiento PicoArrojadizo
+      objectReference: {fileID: 0}
     - target: {fileID: 777582931479185327, guid: 2f01edc73969315479e666196310494e, type: 3}
       propertyPath: go
       value: 
