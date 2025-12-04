@@ -139,6 +139,7 @@ public class CallOut : MonoBehaviour
 
     void AdvanceDialog()
     {
+        Debug.Log("Avanzo en dialogo");
         if(_currentDialog == _dialogs.Length-1) //saltas el ultimo
         {
             StateValue = State.disabled;

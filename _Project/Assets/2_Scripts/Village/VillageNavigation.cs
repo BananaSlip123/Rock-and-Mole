@@ -74,13 +74,8 @@ public class VillageNavigation : MonoBehaviour
     }
     public void OnMineEntry()
     {
-        //escena de combate
-        /*
-        SceneManager.LoadScene("2_CombatRoom");
-        AudioManager.Instance.PlayMusic(AudioManager.MusicType.EnemyFightMusic);
-        */
-
-        SceneManager.LoadScene("2_CombatRoom");
+        //SceneManager.LoadScene("2_CombatRoom");
+        SceneManager.LoadScene("5_RescueRoom");
     }
     #endregion
 }

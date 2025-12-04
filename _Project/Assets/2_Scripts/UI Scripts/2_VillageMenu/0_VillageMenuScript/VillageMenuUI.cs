@@ -150,7 +150,6 @@ public class VillageMenuUI : MonoBehaviour
 
     public void Button_Inventory()
     {
-        Debug.Log("Tab action called");
         if (CurrentWindow == Windows.InventoryInfo || CurrentWindow  == Windows.Shop)
             CurrentWindow = Windows.Main;
         else

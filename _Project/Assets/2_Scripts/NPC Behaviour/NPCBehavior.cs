@@ -36,6 +36,7 @@ public class NPCBehavior : MonoBehaviour
     #region PRIVATE FUNCS
     private void Start()
     {
+        interaction.gameObject.SetActive(true);
         // Recorre todos los GameObjects raíz de la escena
         GameObject[] rootGameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
 
@@ -46,14 +47,17 @@ public class NPCBehavior : MonoBehaviour
             enemies.AddRange(rootObject.GetComponentsInChildren<IStateMachineComponent>(true));
         }
 
+
     }
     private void OnEnable()
     {
         LevelManager.instance.onRoomCleaned += onRoomCleaned;
+        callOut.OnCallOutDisable += OnFinishInteraction;
     }
     private void OnDisable()
     {
         LevelManager.instance.onRoomCleaned -= onRoomCleaned;
+        callOut.OnCallOutDisable -= OnFinishInteraction;
     }
     void onRoomCleaned()
     {
@@ -61,13 +65,10 @@ public class NPCBehavior : MonoBehaviour
     }
     private void OnStartInteraction()
     {
-        if (!isRoomCleaned && currentInteraction > 1) return;
-
         gameMenu.CurrentWindow = GameMenu.Windows.MainLifeBarInvisible;
 
         callOut.gameObject.SetActive(true);
-        callOut.OnCallOutDisable += OnFinishInteraction;
-
+        
         playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.callOut;
 
         foreach (IStateMachineComponent enemy in enemies)
@@ -111,7 +112,7 @@ public class NPCBehavior : MonoBehaviour
         }
         else if (currentInteraction == 1)
         {
-            
+            interaction.gameObject.SetActive(false);
         }
 
     }
@@ -121,14 +122,16 @@ public class NPCBehavior : MonoBehaviour
     #region PUBLIC FUNCS
     public void OnInteraction() //Cuando pulsas E
     {
+        if (!isRoomCleaned && currentInteraction > 1) return;
         OnStartInteraction();
     }
     public void OnPassDialog(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Performed)
             return;
+        if (!isRoomCleaned && currentInteraction > 1) return;
 
-        callOut.OnInteraction();   
+        callOut.OnInteraction();
     }
     #endregion
 }
