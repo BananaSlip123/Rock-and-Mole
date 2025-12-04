@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class NPCBehavior : MonoBehaviour
 {
     [SerializeField] CallOut callOut;
+    [SerializeField] GameMenu gameMenu;
     [SerializeField] InputMapsManager playerInputMapsManager;
     [SerializeField] Interaction interaction;
 
@@ -62,10 +63,13 @@ public class NPCBehavior : MonoBehaviour
     {
         if (!isRoomCleaned && currentInteraction > 1) return;
 
+        gameMenu.CurrentWindow = GameMenu.Windows.MainLifeBarInvisible;
+
         callOut.gameObject.SetActive(true);
         callOut.OnCallOutDisable += OnFinishInteraction;
 
         playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.callOut;
+
         foreach (IStateMachineComponent enemy in enemies)
         {
             if(enemy != null)
@@ -86,6 +90,8 @@ public class NPCBehavior : MonoBehaviour
     }
     void OnFinishInteraction()
     {
+        gameMenu.CurrentWindow = GameMenu.Windows.Main;
+
         callOut.gameObject.SetActive(false);
         playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
 

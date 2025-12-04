@@ -11,6 +11,8 @@ public class InputMapsManager : MonoBehaviour
     [SerializeField] private string playerActionMap = "Player";
     [SerializeField] private string callOutActionMap = "CallOutDialog";
 
+    [SerializeField] public InputMap CurrentInputMap;
+
     bool _isInit = false;
     InputMap? delayedInputMap = null;
     InputActionMap map_UI;
@@ -27,6 +29,7 @@ public class InputMapsManager : MonoBehaviour
                 return;
             }
             Debug.Log("El mapa de accion es: "+ value.ToString());
+            CurrentInputMap = value;//debug
             switch (value)
             {
                 case InputMap.callOut:
@@ -49,6 +52,7 @@ public class InputMapsManager : MonoBehaviour
             }
         }
     }
+    [System.Serializable]
     public enum InputMap
     {
         callOut,

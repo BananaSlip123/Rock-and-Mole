@@ -21,7 +21,7 @@ public class TutorialScript : MonoBehaviour
 		Room4
 	}
 
-    public void OnPassDialog()=> callOut.OnInteraction();
+    public void OnPassDialog()=> callOut?.OnInteraction();
 
     private void OnEnable()
     {

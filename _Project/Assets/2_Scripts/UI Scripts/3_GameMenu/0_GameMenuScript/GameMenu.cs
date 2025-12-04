@@ -38,6 +38,7 @@ public class GameMenu : MonoBehaviour
     public enum Windows
     {
         Main,
+        MainLifeBarInvisible,
         Pause,
         Settings,
         RunInventory,
@@ -86,7 +87,7 @@ public class GameMenu : MonoBehaviour
     }
     void SwitchWindow(Windows? lastWindow, Windows nextWindow)
     {
-        bool isMain = nextWindow == Windows.Main;
+        bool isMain = nextWindow == Windows.Main || nextWindow == Windows.MainLifeBarInvisible;
 
         ShowInteractWindow = _canInteract;
 
@@ -96,7 +97,7 @@ public class GameMenu : MonoBehaviour
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
         go_runInventoryWindow.SetActive(nextWindow == Windows.RunInventory);
         go_runInventoryInfoWindow.SetActive(nextWindow == Windows.RunInventory);
-        go_lifeBar.SetActive(isMain);
+        go_lifeBar.SetActive(nextWindow == Windows.Main);
         go_gameOverWindow.SetActive(nextWindow == Windows.GameOver);
 
         bool isPause = nextWindow == Windows.Pause;
