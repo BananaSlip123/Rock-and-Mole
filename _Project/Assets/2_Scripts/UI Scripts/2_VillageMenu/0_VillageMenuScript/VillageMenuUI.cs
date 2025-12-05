@@ -16,6 +16,7 @@ public class VillageMenuUI : MonoBehaviour
     [SerializeField] GameObject go_forgeWindow;
     [SerializeField] GameObject go_wardrobeWindow;
     [SerializeField] GameObject go_interactionWindow;
+    [SerializeField] GameObject go_biomeSelectorWindow;
 
     [Header("COMMON ELEMENTS")] //elementos compartidos por varias ventanas
     [SerializeField] GameObject go_inventory; //used by shop & inventory windows
@@ -28,6 +29,7 @@ public class VillageMenuUI : MonoBehaviour
     [SerializeField] Selectable firstSelected_forge;
     [SerializeField] Selectable firstSelected_wardrobe;
     [SerializeField] Selectable firstSelected_cart;
+    [SerializeField] Selectable firstSelected_biomeSelector;
 
     #endregion
     #region PRIVATE VARS
@@ -46,6 +48,7 @@ public class VillageMenuUI : MonoBehaviour
         Forge,
         Wardrobe,
         Cart,
+        BiomeSelector,
     }
     public bool ShowInteractWindow
     {
@@ -95,7 +98,7 @@ public class VillageMenuUI : MonoBehaviour
         go_wardrobeWindow.SetActive(nextWindow == Windows.Wardrobe);
         go_inventoryWindow.SetActive(nextWindow == Windows.InventoryInfo);
         go_inventory.SetActive(nextWindow == Windows.Shop || nextWindow == Windows.InventoryInfo);
-        
+        go_biomeSelectorWindow.SetActive(nextWindow == Windows.BiomeSelector);
 
         bool isInit = !lastWindow.HasValue;
 
@@ -126,6 +129,8 @@ public class VillageMenuUI : MonoBehaviour
             firstSelected_forge?.Select();
         else if (CurrentWindow == Windows.Cart)
             firstSelected_cart?.Select();
+        else if (CurrentWindow == Windows.BiomeSelector)
+            firstSelected_biomeSelector?.Select();
     }
     #endregion
 
