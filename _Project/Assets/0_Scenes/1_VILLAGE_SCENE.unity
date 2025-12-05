@@ -1327,10 +1327,10 @@ RectTransform:
   - {fileID: 473834704}
   m_Father: {fileID: 1466376690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.5, y: -50.389954}
-  m_SizeDelta: {x: -89.400024, y: -235.58002}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -9.5, y: 62.2}
+  m_SizeDelta: {x: 330.59998, y: 54.419983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &272565967
 MonoBehaviour:
@@ -7954,7 +7954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1014381174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9204,6 +9204,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6657990571546763172, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
   m_PrefabInstance: {fileID: 1179028252}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1179028254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 810700213665259414, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
+  m_PrefabInstance: {fileID: 1179028252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1188384451
 GameObject:
   m_ObjectHideFlags: 0
@@ -10008,7 +10019,7 @@ MonoBehaviour:
   go_forgeWindow: {fileID: 1014381173}
   go_wardrobeWindow: {fileID: 1804141003}
   go_interactionWindow: {fileID: 2340062442721241849}
-  go_biomeSelectorWindow: {fileID: 0}
+  go_biomeSelectorWindow: {fileID: 369561776929557812}
   go_inventory: {fileID: 1433211459}
   playerInputMapsManager: {fileID: 777192638}
   eventSystem: {fileID: 1164654194}
@@ -10017,7 +10028,7 @@ MonoBehaviour:
   firstSelected_forge: {fileID: 1141063893}
   firstSelected_wardrobe: {fileID: 719091188}
   firstSelected_cart: {fileID: 1245719277}
-  firstSelected_biomeSelector: {fileID: 0}
+  firstSelected_biomeSelector: {fileID: 1179028254}
 --- !u!4 &1376804734
 Transform:
   m_ObjectHideFlags: 0

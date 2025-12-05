@@ -103,7 +103,7 @@ public class GameMenu : MonoBehaviour
         bool isPause = nextWindow == Windows.Pause;
         go_pauseWindow.SetActive(isPause);
 
-        if (isPause) Time.timeScale = 0;
+        if (!isMain) Time.timeScale = 0;
         else Time.timeScale = 1;
 
         bool isInit = !lastWindow.HasValue;
@@ -159,6 +159,7 @@ public class GameMenu : MonoBehaviour
     }
     public void Button_ReturnToVillage()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("1_VILLAGE_SCENE");
     }
     public void Button_Pause()

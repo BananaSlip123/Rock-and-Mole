@@ -57,7 +57,7 @@ public class VillageMenuUI : MonoBehaviour
         {
             _canInteract = value;
             
-            go_interactionWindow.SetActive(_canInteract && CurrentWindow == Windows.Main);
+            go_interactionWindow?.SetActive(_canInteract && CurrentWindow == Windows.Main);
         }
     }
     public Windows CurrentWindow
