@@ -12,11 +12,26 @@ public class DoorsManagement : MonoBehaviour, IDoorsManagement, INoMoreEnemies
     void Awake()
     {
         access = GameObject.Find("PlayerStats").GetComponent<PlayerStats>();
-        doors = GameObject.FindGameObjectsWithTag("Door");   
-        
+        doors = GameObject.FindGameObjectsWithTag("Door");
+
+        Debug.Log("PUERTAS: " + doors.Length);
+
         foreach(GameObject go in doors)
         {
             ChooseRoom(go.GetComponent<IDoorBehaviour>());
+        }
+    }
+
+    private void Update()
+    {
+        if(doors.Length == 0)
+        {
+            doors = GameObject.FindGameObjectsWithTag("Door");
+
+            foreach (GameObject go in doors)
+            {
+                ChooseRoom(go.GetComponent<IDoorBehaviour>());
+            }
         }
     }
 
