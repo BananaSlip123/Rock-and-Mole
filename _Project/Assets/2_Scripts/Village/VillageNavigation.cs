@@ -75,7 +75,8 @@ public class VillageNavigation : MonoBehaviour
     public void OnMineEntry()
     {
         //SceneManager.LoadScene("2_CombatRoom");
-        SceneManager.LoadScene("5_RescueRoom");
+        //SceneManager.LoadScene("5_RescueRoom");
+        SceneManager.LoadScene("7_DarkRoom");
     }
     #endregion
 }
