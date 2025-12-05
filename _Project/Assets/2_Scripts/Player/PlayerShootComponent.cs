@@ -30,9 +30,15 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
         throwingPickaxeComponent.player = transform;
         throwingPickaxeComponent.shoot = this;
         throwingPickaxeComponent.gameObject.transform.parent = null;
-        AssignStats();
+
+        
 
         IsShooting = false;
+    }
+
+    private void Start()
+    {
+        AssignStats();
     }
 
     public void ActiveHitbox()
@@ -50,9 +56,11 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
     }
 
     void AssignStats()
-    {
+    {       
         throwingPickaxeComponent.damage = damage;
         throwingPickaxeComponent.critMultiplier = critMultiplier;
         throwingPickaxeComponent.critProbability = critProbability;
+
+        Debug.Log("Asignacion stats: " + throwingPickaxeComponent.damage + " " + damage);
     }
 }

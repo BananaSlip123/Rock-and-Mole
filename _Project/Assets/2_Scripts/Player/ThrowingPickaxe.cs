@@ -14,9 +14,9 @@ public class ThrowingPickaxe : MonoBehaviour
     public Vector3 dir;
     public Transform player;
 
-    const float MAX_SECONDS = 1f;
+    const float MAX_SECONDS = 0.7f;
     const float WALL_SECONDS = 0.4f;
-    const float ATTACK_SPEED = 40f;
+    const float ATTACK_SPEED = 14f;
     const float RETURN_SPEED = 10f;
     [SerializeField] float speed = ATTACK_SPEED;
     public float seconds = 0f;
@@ -56,6 +56,8 @@ public class ThrowingPickaxe : MonoBehaviour
             {
                 damage = (int)(critMultiplier * damage);
             }
+
+            Debug.Log("DAÑO A HACER PICO: " + damage);
             other.GetComponent<IDamageableComponent>().RecieveDamage(damage, 0.5f, 0.5f);
         }
         else if(other.CompareTag("Player") && isReturning)
@@ -64,16 +66,24 @@ public class ThrowingPickaxe : MonoBehaviour
             shoot.IsShooting = false;
             
         }
-        else if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Wall") && !isReturning)
         {
             seconds = MAX_SECONDS - WALL_SECONDS;
             speed = 0;
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy") && other.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
+        {
+            other.GetComponent<IDamageableComponent>().ResetHasBeenDamaged();
+        }
+    }
+
     public void IsMoving(Vector3 m)
     {
-        transform.position += VectorConverter.SetVectorToIsoCoords(m, speed);
+        transform.position += VectorConverter.SetVectorToIsoCoords(m.normalized, speed);
         transform.rotation *= Quaternion.Euler(0f, 0f, 25f);
     }
     

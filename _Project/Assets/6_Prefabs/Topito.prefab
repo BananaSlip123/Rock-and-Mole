@@ -161,7 +161,6 @@ GameObject:
   - component: {fileID: 6162595284554428867}
   - component: {fileID: 6055753948725778132}
   - component: {fileID: 1976735109741285545}
-  - component: {fileID: 1335504874052611082}
   m_Layer: 6
   m_Name: PicoArrojadizo (1)
   m_TagString: Untagged
@@ -250,29 +249,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 84
+  m_Constraints: 126
   m_CollisionDetection: 1
---- !u!135 &1335504874052611082
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8143516104461502278}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 11
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.06
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8559116585686124911
 GameObject:
   m_ObjectHideFlags: 0

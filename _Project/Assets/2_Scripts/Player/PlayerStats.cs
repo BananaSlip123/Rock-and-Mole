@@ -189,6 +189,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             playerShoot.damage = damageS;
             playerShoot.critMultiplier = critMultiplier;
             playerShoot.critProbability = critProbability;
+            Debug.Log("DAMAGE SHOOT: " + damageS + " " + playerShoot.damage);
 
             playerSpeed.speed = speed;
 
@@ -259,7 +260,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         attackSpeed -= attackSpeed*newPickaxe.attackSpeed;
         damageS += newPickaxe.damageShoot;
 
-        Debug.Log("DAÑO: " + _damage);
+        Debug.Log("DAÑO: " + newPickaxe.damageShoot);
     }
 
     public void OnEquipmentChange()
@@ -298,6 +299,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     {
         health = 0;
         damage = 0;
+        damageS = 0;
         critMultiplier = 0;
         critProbability = 0;
         speed = 5f;
