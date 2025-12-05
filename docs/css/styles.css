@@ -497,7 +497,15 @@ progress {
 
 .lead {
   font-size: 1.25rem;
-  font-weight: 300;
+  margin-bottom: 5rem;
+}
+
+.lead-no-margin {
+  font-size: 1.25rem;
+}
+
+.lead-image {
+  margin-bottom: 3rem;
 }
 
 .display-1 {
@@ -613,7 +621,7 @@ progress {
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #fff;
+  background-color: var(--bs-dark-golden);
   border: 0.125rem solid var(--bs-border-color);
   border-radius: 0.5rem;
   max-width: 100%;
@@ -8005,6 +8013,10 @@ textarea.form-control-lg {
   text-align: center !important;
 }
 
+.text-center-fixed {
+  text-align: justify;
+}
+
 .text-decoration-none {
   text-decoration: none !important;
 }
@@ -10849,6 +10861,12 @@ html {
   font-size: 2.25rem;
   line-height: 2rem;
 }
+
+.page-section .page-section-heading-2 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
 @media (min-width: 992px) {
   .page-section .page-section-heading {
     font-size: 3rem;
@@ -10987,6 +11005,10 @@ html {
 .masthead {
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/portfolio/SplashArt.png"); /*Poner la imagen del splash art*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .masthead .masthead-heading {
   font-size: 2.75rem;
