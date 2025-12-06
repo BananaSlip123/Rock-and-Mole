@@ -10,12 +10,10 @@ public class VillageNavigation : MonoBehaviour
     [SerializeField] GameObject go_shop;
     [SerializeField] GameObject go_forge;
 
-    //[SerializeField] GameObject go_forge;
-
     enum Locations
     {
         village,
-        shop, 
+        shop,
         forge,
     }
 
@@ -30,11 +28,13 @@ public class VillageNavigation : MonoBehaviour
             switch (value)
             {
                 case Locations.shop:
-                        AudioManager.Instance?.PlayMusic(AudioManager.MusicType.StoreMusic);
+                    AudioManager.Instance?.PlayMusic(AudioManager.MusicType.StoreMusic);
                     break;
+
                 case Locations.village:
                     AudioManager.Instance?.PlayMusic(AudioManager.MusicType.TownMusic);
                     break;
+
                 case Locations.forge:
                     AudioManager.Instance?.PlayMusic(AudioManager.MusicType.StoreMusic);
                     break;
@@ -51,33 +51,41 @@ public class VillageNavigation : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
+
         Location = Locations.village;
     }
-    #region PUBLIC FUNCS
+
+    // ======================
+    //   PUBLIC FUNCTIONS
+    // ======================
+
     public void OnShopEntry()
     {
-        //q te meta en la tienda por dentro
         Location = Locations.shop;
     }
+
     public void OnSellInteraction() => villageMenuUI.Button_OpenShop();
+
     public void OnWardrobeInteraction() => villageMenuUI.Button_OpenWardrobe();
+
     public void OnForgeEntry()
     {
-        //q te meta en la forja por dentro
         Location = Locations.forge;
     }
+
     public void OnForgeInteraction() => villageMenuUI.Button_OpenForge();
+
     public void OnVillageEntry()
     {
         Location = Locations.village;
     }
+
     public void OnMineEntry()
     {
         //SceneManager.LoadScene("2_CombatRoom");
         //SceneManager.LoadScene("5_RescueRoom");
         SceneManager.LoadScene("7_DarkRoom");
     }
-    #endregion
 }
-
