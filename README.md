@@ -18,7 +18,7 @@ Banana Slip
 
 **Exploración modular y rejugable:** La mina está compuesta por salas diseñadas manualmente que se reorganizan aleatoriamente en cada partida. 
 
-**Combate estratégico y ágil:** El jugador combate con un pico en enfrentamientos cuerpo a cuerpo contra enemigos con patrones definidos, lo que obliga a pensar tácticamente. La dificultad aumenta con la profundidad.
+**Combate estratégico y ágil:** El jugador combate con un pico en enfrentamientos, ya sea a corta distancia (golpeando con el pico) o a larga distancia (lanzando el pico), contra enemigos con patrones definidos, lo que obliga a pensar tácticamente. La dificultad aumenta con la profundidad.
 
 **Mejora persistente de equipo:** Aunque cada run reinicia la mina, el progreso de armas y armaduras se conservan. Los materiales recolectados permiten mejorar el pico, la vestimenta y el casco. Esta progresión persistente motiva al jugador a seguir explorando.
 
@@ -80,7 +80,7 @@ En la run las salas son predefinidas, con cierta aleatoriedad en la generación 
 
 **Dificultad progresiva:** La dificultad aumenta conforme se desciende en la mina. Los enemigos se vuelven más agresivos, aparecen nuevos tipos de enemigos y los recursos se vuelven más escasos. La intensidad de cada run está determinada por la profundidad, el tipo de enemigos y la combinación de salas.
 
-**Combate:** El sistema de combate es en tiempo real, con un enfoque táctico. El jugador ataca con su pico, puede esquivar con un dash y debe aprender los patrones de los enemigos para sobrevivir. Cada criatura tiene comportamientos definidos.
+**Combate:** El sistema de combate es en tiempo real, con un enfoque táctico. El jugador ataca con su pico a corta distancia, además de poder lanzar el pico para poder dañar a enemigos a larga distancia, puede esquivar con un dash y debe aprender los patrones de los enemigos para sobrevivir. Cada criatura tiene comportamientos definidos. 
 
 **Recursos y minería:** Los materiales recogidos en la mina tienen un doble propósito: pueden venderse en la tienda gestionada por el jugador para obtener dinero o utilizarse en la herrería y en la tienda de ropa para mejorar el pico, la armadura y el casco. La gestión de estos recursos es clave para progresar en el juego.
 
@@ -192,7 +192,7 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 * **Tipo:** Enemigo a distancia.
 * **Trasfondo:** Estas ratas han sido corrompidas por la energía cristalina que emana de las profundidades de la mina. Su cuerpo está parcialmente cubierto por fragmentos de cristal que han alterado su comportamiento y les han otorgado habilidades ofensivas. Antes eran simples animales, pero ahora defienden la mina con una agresividad inusual, como si estuvieran conectadas a su núcleo.
 * **Características:** De tamaño pequeño y movimientos ágiles, las ratas tienen baja resistencia pero compensan con ataques a distancia. Los cristales incrustados en su cuerpo les permiten lanzar proyectiles afilados que dañan al jugador desde lejos. Su aspecto es inquietante: pelaje desgastado, ojos brillantes y zonas del cuerpo cubiertas por cristales que emiten un leve resplandor.
-* **Comportamiento:** Las ratas vagan por la sala hasta que el jugador entra en su área de detección. En ese momento, se detienen y comienzan a disparar cristales desde la distancia. Si el jugador abandona su área, dejan de atacar y vuelven a su patrón de movimiento errático.
+* **Comportamiento:** Las ratas vagan por la sala hasta que el jugador entra en su área de detección. En ese momento, se detienen y comienzan a disparar cristales desde la distancia. Si el jugador abandona su área, dejan de atacar y vuelven a su patrón de movimiento errático. Si el jugador se acerca demasiado empezará a huir de él.
 * **Función:** Introducen el combate a distancia y obligan al jugador a moverse, esquivar y priorizar objetivos. Su presencia en salas combinadas con enemigos cuerpo a cuerpo añade variedad táctica y refuerza la necesidad de gestionar el espacio.
 <br>
 
@@ -203,6 +203,15 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 * **Características:** De tamaño medio, los barriles explosivos se mueven rápidamente en línea recta hacia el jugador. Al impactar o al acercarse lo suficiente, detonan causando daño en área. Su diseño es cómico pero peligroso: un barril con patas, orejas asomando por la tapa y una mecha encendida que indica su inminente explosión.
 * **Comportamiento:** Al detectar al jugador, corren directamente hacia él sin detenerse. No atacan de forma convencional, sino que explotan al contacto o tras unos segundos. Si el jugador logra esquivarlos, pueden explotar sin causar daño, pero en espacios cerrados su amenaza aumenta.
 * **Función:** Sirven para añadir tensión y dinamismo en combate. Obligan al jugador a moverse constantemente y a estar atento al entorno.
+<br>
+
+### 4.4.4. PLANTAS CARNÍVORAS
+
+* **Tipo:** Enemigo Torreta.
+* **Trasfondo:** Estas plantas carnívoras han crecido en las profundidades de la mina, alimentadas por la energía corrupta de los cristales. Aunque no pueden desplazarse, han desarrollado un mecanismo defensivo doble: Disparan proyectiles a distancia y, si un intruso se acerca demasiado, utilizan sus mandíbulas para morder con fuerza.
+* **Características:** Su aspecto agresivo y su tamaño, hacen que sean fácilmente reconocibles en la sala. Son resistentes, por lo que requieren varios golpes para ser derrotadas, y su mordisco cercano añade un riesgo adicional para quienes intentan acabar con ella demasiado rápido.
+* **Comportamiento:** Permanece fija en el suelo sin desplazarse por la sala. Cuando el jugador entra en su área lanza proyectiles a distancia, y si el jugador se acerca demasiado, la planta cambia de patrón y utiliza un mordisco potente que inflige gran daño.
+* **Función:** Al estar en el siguiente nivel de la mina, se aumenta la dificultad. Otorga más variedad a la mina. Obliga al jugador a gestionar la distancia de forma estratégica.
 <br>
 
 ## 4.5. ARMAS Y ARMADURAS
