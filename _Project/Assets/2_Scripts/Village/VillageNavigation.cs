@@ -10,12 +10,10 @@ public class VillageNavigation : MonoBehaviour
     [SerializeField] GameObject go_shop;
     [SerializeField] GameObject go_forge;
 
-    //[SerializeField] GameObject go_forge;
-
     enum Locations
     {
         village,
-        shop, 
+        shop,
         forge,
     }
 
@@ -30,11 +28,13 @@ public class VillageNavigation : MonoBehaviour
             switch (value)
             {
                 case Locations.shop:
-                        AudioManager.Instance?.PlayMusic(AudioManager.MusicType.StoreMusic);
+                    AudioManager.Instance?.PlayMusic(AudioManager.MusicType.StoreMusic);
                     break;
+
                 case Locations.village:
                     AudioManager.Instance?.PlayMusic(AudioManager.MusicType.TownMusic);
                     break;
+
                 case Locations.forge:
                     AudioManager.Instance?.PlayMusic(AudioManager.MusicType.StoreMusic);
                     break;
@@ -51,32 +51,43 @@ public class VillageNavigation : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
+
         Location = Locations.village;
     }
-    #region PUBLIC FUNCS
+
+    // ======================
+    //   PUBLIC FUNCTIONS
+    // ======================
+
     public void OnShopEntry()
     {
-        //q te meta en la tienda por dentro
         Location = Locations.shop;
     }
+
     public void OnSellInteraction() => villageMenuUI.Button_OpenShop();
+
     public void OnWardrobeInteraction() => villageMenuUI.Button_OpenWardrobe();
+
     public void OnForgeEntry()
     {
-        //q te meta en la forja por dentro
         Location = Locations.forge;
     }
+
     public void OnForgeInteraction() => villageMenuUI.Button_OpenForge();
+
     public void OnVillageEntry()
     {
         Location = Locations.village;
     }
+
     public void OnMineEntry()
     {
-        //escena de mina
-        int random = Random.Range(0,2);
-        if(random == 0)
+        // Escena de mina
+        int random = Random.Range(0, 2);
+
+        if (random == 0)
         {
             SceneManager.LoadScene("3_MiningRoom");
             AudioManager.Instance.PlayMusic(AudioManager.MusicType.MineMusic);
@@ -85,8 +96,16 @@ public class VillageNavigation : MonoBehaviour
         {
             SceneManager.LoadScene("2_CombatRoom");
             AudioManager.Instance.PlayMusic(AudioManager.MusicType.EnemyFightMusic);
+
+            // ACCESO AL nEnemies DEL LEVELMANAGER
+            if (LevelManager.Instance != null &&
+                LevelManager.Instance.nEnemies <= 0)
+            {
+                // Cuando no hay enemigos, abre las puertas
+                LevelManager.Instance
+                    .GetComponent<INoMoreEnemies>()
+                    ?.ThereIsNoEnemies();
+            }
         }
     }
-    #endregion
 }
-
