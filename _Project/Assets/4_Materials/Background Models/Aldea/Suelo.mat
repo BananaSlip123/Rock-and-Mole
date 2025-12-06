@@ -115,7 +115,7 @@ Material:
     - _EdgeRimOffset: 1.5
     - _EdgeShadowAttenuation: 0.002
     - _EdgeSpecular: 0
-    - _EdgeSpecularOffset: 0
+    - _EdgeSpecularOffset: 2
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
