@@ -46,15 +46,17 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
 
     public void Attack()
     {
-        IsShooting = true;
-        Vector2 dir = GetComponent<PlayerMovementComponent>().directionRotation;
-        throwingPickaxeComponent.dir = new Vector3(dir.x,0f,dir.y);
         throwingPickaxeComponent.ResetValues();
 
         throwingPickaxeComponent.gameObject.transform.parent = t_pickaxeSpawnTransform;
         throwingPickaxeComponent.gameObject.transform.localPosition = new Vector3(0,0,0);
         throwingPickaxeComponent.gameObject.transform.localEulerAngles = new Vector3(0,0,0);
         throwingPickaxeComponent.gameObject.transform.parent = null;
+
+        Vector2 dir = GetComponent<PlayerMovementComponent>().directionRotation;
+        throwingPickaxeComponent.dir = new Vector3(dir.x,0f,dir.y);
+
+        IsShooting = true;
     }
 
     void AssignStats()
