@@ -1,5 +1,7 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] GameObject[] rooms;
@@ -12,9 +14,9 @@ public class LevelManager : MonoBehaviour
 
     INoMoreEnemies doorsManagementEnemies;
 
-    void Awake()
+    public void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -25,29 +27,28 @@ public class LevelManager : MonoBehaviour
 
         doorsManagementEnemies = GetComponent<INoMoreEnemies>();
 
-        if(rooms.Length != 0)
+        if (rooms.Length != 0)
+        {
             Instantiate(rooms[0]);
+        }
     }
 
     private void Start()
     {
-        if(!spawnEnemy)
+        if (!spawnEnemy)
             doorsManagementEnemies.ThereIsNoEnemies();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void EnemyDead()
     {
         nEnemies -= 1;
 
-        if(nEnemies <= 0)
+        if (nEnemies <= 0)
         {
             doorsManagementEnemies.ThereIsNoEnemies();
+
+            // CAMBIO DE MÚSICA AL TERMINAR EL COMBATE
+            //AudioManager.Instance?.PlayMusic(AudioManager.MusicType.MineMusic);
         }
     }
 
