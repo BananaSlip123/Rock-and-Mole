@@ -31,8 +31,6 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
         throwingPickaxeComponent.shoot = this;
         throwingPickaxeComponent.gameObject.transform.parent = null;
 
-        
-
         IsShooting = false;
     }
 
@@ -52,7 +50,11 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
         Vector2 dir = GetComponent<PlayerMovementComponent>().directionRotation;
         throwingPickaxeComponent.dir = new Vector3(dir.x,0f,dir.y);
         throwingPickaxeComponent.ResetValues();
-        throwingPickaxeComponent.gameObject.transform.SetPositionAndRotation(t_pickaxeSpawnTransform.position, t_pickaxeSpawnTransform.rotation);
+
+        throwingPickaxeComponent.gameObject.transform.parent = t_pickaxeSpawnTransform;
+        throwingPickaxeComponent.gameObject.transform.localPosition = new Vector3(0,0,0);
+        throwingPickaxeComponent.gameObject.transform.localEulerAngles = new Vector3(0,0,0);
+        throwingPickaxeComponent.gameObject.transform.parent = null;
     }
 
     void AssignStats()

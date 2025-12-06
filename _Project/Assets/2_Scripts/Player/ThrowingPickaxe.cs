@@ -32,15 +32,20 @@ public class ThrowingPickaxe : MonoBehaviour
     // Update is called once per frame
     public void FixedUpdate()
     {
+        Debug.Log("0_"+seconds);
+        Debug.Log("0_"+isReturning);
         if(seconds < MAX_SECONDS)
         {
             IsMoving(dir);
-
             seconds += Time.fixedDeltaTime;
         }
         else
         {
             isReturning = true;
+
+            if ((transform.position - player.position).sqrMagnitude < 0.005f)
+                shoot.IsShooting = false;
+
             speed = RETURN_SPEED;
             ReturnPickaxe(player.position);         
         }        
@@ -48,8 +53,10 @@ public class ThrowingPickaxe : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Enemy") && !other.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
+        if(other.CompareTag("Enemy"))
         {
+            if (other.GetComponent<IDamageableComponent>().GetHasBeenDamaged()) return;
+
             float hitCrit = UnityEngine.Random.Range(0, 1);
             int damage = this.damage;
             if (hitCrit < critProbability)
@@ -60,14 +67,16 @@ public class ThrowingPickaxe : MonoBehaviour
             Debug.Log("DAÑO A HACER PICO: " + damage);
             other.GetComponent<IDamageableComponent>().RecieveDamage(damage, 0.5f, 0.5f);
         }
-        else if(other.CompareTag("Player") && isReturning)
-        {            
-            seconds = 0f;
+        else if(other.CompareTag("Player"))
+        {
+            if (!isReturning) return;
             shoot.IsShooting = false;
             
         }
-        else if (other.gameObject.layer == LayerMask.NameToLayer("Wall") && !isReturning)
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
+            if (isReturning) return;
+            Debug.Log("0_Wall");
             seconds = MAX_SECONDS - WALL_SECONDS;
             speed = 0;
         }
