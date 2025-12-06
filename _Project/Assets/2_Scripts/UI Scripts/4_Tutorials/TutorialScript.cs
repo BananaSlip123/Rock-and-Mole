@@ -10,7 +10,9 @@ public class TutorialScript : MonoBehaviour
 	[SerializeField] TutorialScene scene;
 	[SerializeField] string[] dialogsToShow;
     CallOut callOut;
-	enum TutorialScene
+
+    GameObject[] enemigosEscena;
+    enum TutorialScene
 	{
 		Village,
 		Room1,
@@ -19,27 +21,31 @@ public class TutorialScript : MonoBehaviour
 		Room4
 	}
 
-    public void OnPassDialog()=> callOut.OnInteraction();
+    public void OnPassDialog()=> callOut?.OnInteraction();
 
     private void OnEnable()
     {
         Debug.Log("Enable");
-        //playerInputMapsManager.SwitchCurrentActionMap("CallOutDialog");
-        playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.tutorialCallOut;
+
+        playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.callOut;
     }
     private void Start()
     {
         Debug.Log("Start");
         if (dialogsToShow.Length == 0) return;
-        //GameData.NeedsTutorial = true;
 
         if (!GameData.NeedsTutorial)
 		{
             gameObject.SetActive(false);
 			return;
         }
+
+        if (scene == TutorialScene.Room3) FindAnyObjectByType<PlayerStats>().HealPlayer();
+
 		callOut = go_callOut.GetComponent<CallOut>();
 		if (callOut == null) throw new System.Exception("go_CallOut must have a callout component");
+
+        enemigosEscena = GameObject.FindGameObjectsWithTag("Enemy");
 
         InitCallOut();
     }
@@ -58,6 +64,9 @@ public class TutorialScript : MonoBehaviour
     {
         Debug.Log("Init");
         callOut.enabled = true;
+
+        foreach (GameObject enemy in enemigosEscena) enemy.SetActive(false);
+
         callOut.gameObject.SetActive(true);
         callOut.OnCallOutDisable += DialogEnded;
         callOut.StartCallOut(dialogsToShow);
@@ -67,6 +76,7 @@ public class TutorialScript : MonoBehaviour
 		Debug.Log("fin");
         if (scene == TutorialScene.Village)
             GameData.NeedsTutorial = false;
+        foreach (GameObject enemy in enemigosEscena) enemy.SetActive(true);
         this.gameObject.SetActive(false);
     }
     #endregion

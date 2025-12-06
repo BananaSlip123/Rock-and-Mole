@@ -44,7 +44,7 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     {
         //animator.SetBool("Atacar", true);
         Debug.Log("ATACO");
-        playerHealth.RecieveDamage(damage);
+        playerHealth.RecieveDamage(damage, 0.5f, 0.1f);
     }
 
     public void Enter()
@@ -71,7 +71,10 @@ public class GolemAttackState : IStateComponent, IAttackComponent
     }
 
     public void FixedUpdate()
-    {        
+    {
+        if (playerTransform == null) return;
+        if (enemyTransform == null) return;
+
         if (isInCooldown)
         {
             //animator.SetBool("Atacar", false);
@@ -110,6 +113,9 @@ public class GolemAttackState : IStateComponent, IAttackComponent
 
     void IStateComponent.Update()
     {
+        if (playerTransform == null) return;
+        if (enemyTransform == null) return;
+
         Vector3 direction = playerTransform.position - enemyTransform.position;
         Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
         enemyTransform.rotation = rotation;

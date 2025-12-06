@@ -1,0 +1,23 @@
+{
+    "name": "NPCBehavior",
+    "rootNamespace": "",
+    "references": [
+        "MineAssemby",
+        "CallOut",
+        "GameDataAssembly",
+        "InputMapsManager",
+        "Unity.InputSystem",
+        "Interfaces",
+        "Interaction",
+        "GameMenuGestion"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

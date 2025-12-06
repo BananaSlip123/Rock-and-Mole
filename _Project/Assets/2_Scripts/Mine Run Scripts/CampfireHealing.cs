@@ -4,8 +4,7 @@ using System.Collections;
 
 public class CampfireHealing : MonoBehaviour
 {
-    [SerializeField] const int healing = 40;
-    PlayerController player;
+    [SerializeField] const int healing = 50;
     PlayerStats stats;
 
     [SerializeField] Animator birdAnimator;
@@ -17,32 +16,13 @@ public class CampfireHealing : MonoBehaviour
 
     void Awake()
     {
-        GameObject p = GameObject.FindGameObjectWithTag("Player");
         GameObject ps = GameObject.Find("PlayerStats");
-        player = p.GetComponent<PlayerController>();
         stats = ps.GetComponent<PlayerStats>();
     }
-
-    private void OnTriggerEnter(Collider other)
+    public void HealPlayer()
     {
-        if(other.CompareTag("Player") && !healed)
-        {
-            Debug.Log("Asigno curacion");
-            player.pressButtonA = HealPlayer;
-        }
-    }
+        if (healed) return;
 
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            Debug.Log("Quito curacion");
-            player.pressButtonA = null;
-        }
-    }
-
-    private void HealPlayer()
-    {
         Debug.Log("Me estoy curando");
         
         birdAnimator.SetBool("isHealing", true);
@@ -52,13 +32,12 @@ public class CampfireHealing : MonoBehaviour
         StartCoroutine(WaitAnimation());
         //stats.HealPlayer(healing);
         Debug.Log("He hecho la curación");
-        player.pressButtonA = null;
         healed = true;
     }
 
     private IEnumerator WaitAnimation()
     {
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(1.0f);
 
         heart.SetActive(false);
         stats?.HealPlayer(healing);

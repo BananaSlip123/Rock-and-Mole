@@ -3,7 +3,27 @@ guid: 6199ce71fe5d08d42b5963695fd6fd60
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Agarres
+    second: {fileID: 2100000, guid: 8128d44b8660530429ede08f1d477aba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cofre_Abajo
+    second: {fileID: 2100000, guid: cbdfd3b34b26f814fb74f42907d0a64c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cofre_Arriba
+    second: {fileID: 2100000, guid: 90f39073056311e4f96b967151f92536, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Llave
+    second: {fileID: 2100000, guid: e6efd34ee73891945b2928f225700c3d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -68,8 +88,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 120
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

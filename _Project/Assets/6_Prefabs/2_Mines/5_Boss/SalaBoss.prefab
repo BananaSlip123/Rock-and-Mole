@@ -127,7 +127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 422195305718344127, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_Value
-      value: 1.0000023
+      value: 0.99999887
       objectReference: {fileID: 0}
     - target: {fileID: 1397535199679150023, guid: 2094556353bf5cb47857be24e58156a6, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -363,6 +363,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059259119656645969}
     m_Modifications:
+    - target: {fileID: 1843967996981718159, guid: 7ab7615db11e693499592d411fc66e07, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b06c11b567a0c374581717cfc5533ded, type: 2}
+    - target: {fileID: 3829288924264949397, guid: 7ab7615db11e693499592d411fc66e07, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829288924264949397, guid: 7ab7615db11e693499592d411fc66e07, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cba7fb18e217f1d4bafecf6673775b7d, type: 2}
     - target: {fileID: 4890683354653693739, guid: 7ab7615db11e693499592d411fc66e07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -406,6 +418,14 @@ PrefabInstance:
     - target: {fileID: 5230053787862617489, guid: 7ab7615db11e693499592d411fc66e07, type: 3}
       propertyPath: m_Name
       value: SalaTutorialBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654916605003405656, guid: 7ab7615db11e693499592d411fc66e07, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214323612228179028, guid: 7ab7615db11e693499592d411fc66e07, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

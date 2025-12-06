@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 public class VillageMenuUI : MonoBehaviour
 {
     #region SERIALIZABLE
@@ -11,28 +11,33 @@ public class VillageMenuUI : MonoBehaviour
     [SerializeField] GameObject go_pauseWindow;
     [SerializeField] GameObject go_settingsWindow;
     [SerializeField] GameObject go_inventoryWindow;
+    [SerializeField] GameObject go_cartWindow;
     [SerializeField] GameObject go_shopWindow;
     [SerializeField] GameObject go_forgeWindow;
     [SerializeField] GameObject go_wardrobeWindow;
+    [SerializeField] GameObject go_interactionWindow;
+    [SerializeField] GameObject go_biomeSelectorWindow;
+
     [Header("COMMON ELEMENTS")] //elementos compartidos por varias ventanas
     [SerializeField] GameObject go_inventory; //used by shop & inventory windows
-   // [SerializeField] GameObject go_closeIcon;
     
     [Header("INPUT NAVIGATION")]
-    //[SerializeField] PlayerInput playerInput;
     [SerializeField] InputMapsManager playerInputMapsManager;
     [SerializeField] EventSystem eventSystem;
     [SerializeField] Selectable firstSelected_pause;
     [SerializeField] Selectable firstSelected_settings;
     [SerializeField] Selectable firstSelected_forge;
     [SerializeField] Selectable firstSelected_wardrobe;
+    [SerializeField] Selectable firstSelected_cart;
+    [SerializeField] Selectable firstSelected_biomeSelector;
 
     #endregion
     #region PRIVATE VARS
     Windows _currentWindow = Windows.Main;
     InventoryUI inventoryReference;
+    bool _canInteract = false;
     #endregion
-    #region PUBLIC VARS
+    #region PUBLIC VARS / PROPETIES
     public enum Windows
     {
         Main,
@@ -42,8 +47,19 @@ public class VillageMenuUI : MonoBehaviour
         Shop,
         Forge,
         Wardrobe,
+        Cart,
+        BiomeSelector,
     }
-
+    public bool ShowInteractWindow
+    {
+        get => _canInteract;
+        set
+        {
+            _canInteract = value;
+            
+            go_interactionWindow?.SetActive(_canInteract && CurrentWindow == Windows.Main);
+        }
+    }
     public Windows CurrentWindow
     {
         get => _currentWindow;
@@ -51,8 +67,11 @@ public class VillageMenuUI : MonoBehaviour
         {
             Debug.Log("Current Window: "+_currentWindow.ToString());
             Debug.Log("Next Window: " + value.ToString());
-            SwitchWindow(_currentWindow, value);
+
+            Windows lastWindow = _currentWindow;
             _currentWindow = value;
+
+            SwitchWindow(lastWindow, _currentWindow);
             UpdateSelectedButton();
         }
     }
@@ -67,25 +86,28 @@ public class VillageMenuUI : MonoBehaviour
     {
         bool isMain = nextWindow == Windows.Main;
         go_mainWindow.SetActive(isMain);
-        go_settingsWindow.SetActive(nextWindow == Windows.Settings);
-        go_pauseWindow.SetActive(nextWindow == Windows.Pause);
-        go_inventoryWindow.SetActive(nextWindow == Windows.InventoryInfo);
-        go_shopWindow.SetActive(nextWindow == Windows.Shop);
-        go_forgeWindow.SetActive(nextWindow == Windows.Forge);
-        go_wardrobeWindow.SetActive(nextWindow == Windows.Wardrobe);
 
+        ShowInteractWindow = _canInteract;
+
+        go_settingsWindow.SetActive(nextWindow == Windows.Settings);
+
+        go_shopWindow.SetActive(nextWindow == Windows.Shop);
+        go_cartWindow.SetActive(nextWindow == Windows.Cart);
+        go_forgeWindow.SetActive(nextWindow == Windows.Forge);
+        go_pauseWindow.SetActive(nextWindow == Windows.Pause);
+        go_wardrobeWindow.SetActive(nextWindow == Windows.Wardrobe);
+        go_inventoryWindow.SetActive(nextWindow == Windows.InventoryInfo);
         go_inventory.SetActive(nextWindow == Windows.Shop || nextWindow == Windows.InventoryInfo);
+        go_biomeSelectorWindow.SetActive(nextWindow == Windows.BiomeSelector);
 
         bool isInit = !lastWindow.HasValue;
 
         if (isMain && (isInit || lastWindow.Value != Windows.Main)) //si isInit entra en el if y no accede a value
         {
             if (!GameData.NeedsTutorial || !isInit)
-                //playerInputMapsManager.SwitchCurrentActionMap("Player");
                 playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
         }
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
-            //playerInputMapsManager.SwitchCurrentActionMap("UI");
             playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.uiNavigation;
     }
 
@@ -105,12 +127,26 @@ public class VillageMenuUI : MonoBehaviour
             firstSelected_wardrobe?.Select();
         else if (CurrentWindow == Windows.Forge)
             firstSelected_forge?.Select();
+        else if (CurrentWindow == Windows.Cart)
+            firstSelected_cart?.Select();
+        else if (CurrentWindow == Windows.BiomeSelector)
+            firstSelected_biomeSelector?.Select();
     }
     #endregion
 
     #region PUBLIC FUNCS
     public void Button_Pause()
     {
+        if (CurrentWindow == Windows.Main)
+            CurrentWindow = Windows.Pause;
+        else
+            CurrentWindow = Windows.Main;
+    }
+    public void Button_Pause(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed)
+            return; 
+        
         if (CurrentWindow == Windows.Main)
             CurrentWindow = Windows.Pause;
         else
@@ -124,6 +160,7 @@ public class VillageMenuUI : MonoBehaviour
         else
             CurrentWindow = Windows.InventoryInfo;
     }
+    public void Button_Cart() => CurrentWindow = Windows.Cart;
     public void Button_OpenShop() => CurrentWindow = Windows.Shop;
     public void Button_OpenForge() => CurrentWindow = Windows.Forge;
     public void Button_OpenWardrobe() => CurrentWindow = Windows.Wardrobe;

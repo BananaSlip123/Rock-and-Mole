@@ -9,6 +9,7 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
     private bool hasBeenDamaged = false;
 
     [SerializeField] private int health = 0;
+    [SerializeField] private bool isInmortal = false; //en algunas salas de tutorial ser inmortal
     public int Health
     {
         get => health;
@@ -16,17 +17,19 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         {
             health = value;
             OnHealthChange?.Invoke(value);
-            
         }
     }
 
     public Action<int> OnHealthChange;
+    public Action OnDamageReceive;
     public Action OnDeath;
     PlayerStats player;
+    [SerializeField]CameraShake camera;
 
     private void Awake()
     {
         player = GameObject.Find("PlayerStats").GetComponent<PlayerStats>();
+        if (!GameData.NeedsTutorial && isInmortal) isInmortal = false;
     }
 
     public void SetHealth(int health)
@@ -34,15 +37,18 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         Health = health;
     }
 
-    public void RecieveDamage(int damage)
+    public void RecieveDamage(int damage, float duration, float magnitude)
     {
-        //Health -= damage;
+        if (isInmortal && (Health <= 35 || Health <= damage)) return;
+
         player.HealPlayer(-damage);
+        OnDamageReceive?.Invoke();
+
+        StartCoroutine(camera.Shake(duration,magnitude));
 
         if(!hasBeenDamaged)
         {
             hasBeenDamaged = true;
-
             ResetHasBeenDamaged();
         }
         
@@ -50,6 +56,11 @@ public class DamageableComponent : MonoBehaviour, IDamageableComponent
         if(Health <= 0)
             Death();
         Debug.Log("Me han quitado vida :" + damage + " me queda: "+ Health);
+    }
+
+    public void SetHasBeenDamaged(bool change)
+    {
+        hasBeenDamaged = change;
     }
 
     public bool GetHasBeenDamaged()

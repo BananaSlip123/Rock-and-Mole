@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.Collections;
-using System.Collections.Generic;
+using System;
+
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] GameObject[] rooms;
@@ -11,6 +10,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] bool spawnEnemy = true;
 
     public static LevelManager instance;
+
+    public Action onRoomCleaned;
 
     INoMoreEnemies doorsManagementEnemies;
 
@@ -35,8 +36,18 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        if (!spawnEnemy)
-            doorsManagementEnemies.ThereIsNoEnemies();
+        if (!spawnEnemy) ThereIsNoEnemies();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    void ThereIsNoEnemies()
+    {
+        doorsManagementEnemies.ThereIsNoEnemies();
+        onRoomCleaned?.Invoke();
     }
 
     public void EnemyDead()
@@ -45,10 +56,7 @@ public class LevelManager : MonoBehaviour
 
         if (nEnemies <= 0)
         {
-            doorsManagementEnemies.ThereIsNoEnemies();
-
-            // CAMBIO DE MÚSICA AL TERMINAR EL COMBATE
-            //AudioManager.Instance?.PlayMusic(AudioManager.MusicType.MineMusic);
+            ThereIsNoEnemies();
         }
     }
 

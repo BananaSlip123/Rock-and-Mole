@@ -7,6 +7,7 @@ namespace PickaxeStats
     public class PickaxeStatsScripteableObject : ScriptableObject
     {
         public int damage;
+        public int damageShoot;
 
         public float critMultiplier;
         public float critProbability;

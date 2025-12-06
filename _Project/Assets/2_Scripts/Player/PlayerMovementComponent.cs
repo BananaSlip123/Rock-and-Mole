@@ -1,19 +1,28 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 using static UnityEngine.GraphicsBuffer;
 
 namespace PlayerComponents
 {
     public class PlayerMovementComponent : MonoBehaviour, IMoveComponent, ISkillComponent
     {
+        LayerMask layerMask;
+        [SerializeField] GameObject trail;
+
         #region Movimiento
         [SerializeField] public float speed;
         [SerializeField] Transform go;
 
         private bool isMoving = false;
+
+        Quaternion rotation;
+
+        public Vector2 directionRotation;
         #endregion
 
         #region Dash
-        const float COOLDOWN = 1f;
+        const float COOLDOWN = 0.5f;
         const float DASH_TIME = 0.1f;
 
         float timeCooldown = 0f;
@@ -23,10 +32,20 @@ namespace PlayerComponents
         bool IsInCooldown = false;
 
         public bool isDashing = false;
+        Vector2 movementDash;
         #endregion
 
-        private Vector2 movement = new Vector2();
-        [SerializeField] Animator animator;
+        public Vector2 movement = new Vector2();
+        public Animator animator;
+
+        DamageableComponent damageable;
+
+        private void Awake()
+        {
+            layerMask = LayerMask.GetMask("Wall");
+            damageable = GetComponent<DamageableComponent>();
+            directionRotation = VectorConverter.VectorConeverter(Vector3.forward);
+        }
 
         public void IsMoving(Vector2 valor)
         {
@@ -34,7 +53,6 @@ namespace PlayerComponents
             {
                 isMoving = false;
                 movement = Vector2.zero;
-
                 animator.SetBool("Andar", false);
 
                 //Detener sonido de caminar
@@ -42,8 +60,12 @@ namespace PlayerComponents
                 return;
             }
 
+            Debug.Log("VALOR: " + valor);
+
+            //directionRotation = movement;
             isMoving = true;
             movement = valor;
+            directionRotation = movement;
             animator.SetBool("Andar", true);
 
             //Reproducir sonido de caminar si no se est� reproduciendo
@@ -60,6 +82,19 @@ namespace PlayerComponents
 
         public void Move()
         {
+            if(!isDashing)
+            {
+                rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-directionRotation.y, 0, directionRotation.x).normalized), Vector3.up);
+
+                transform.rotation = rotation;
+            }
+            
+            Vector3 direction = VectorConverter.VectorConeverter(new Vector3(movement.x, 0, movement.y).normalized);
+
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, direction, out hit, 0.5f, layerMask))           
+                return;
+
             if (isDashing)
             {
                 DoSpecialSkill();
@@ -81,9 +116,6 @@ namespace PlayerComponents
                 return;
 
             transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y),speed);
-            Quaternion rotation = Quaternion.LookRotation(VectorConverter.VectorConeverter(new Vector3(-movement.y, 0, movement.x).normalized), Vector3.up);
-
-            transform.rotation = rotation;
         }
 
         public void InitializeSpecialSkill()
@@ -91,9 +123,17 @@ namespace PlayerComponents
             if (IsInCooldown || isDashing)
                 return;
 
+            StartCoroutine(ActiveTrail());
             timeCooldown = 0;
             timeDashing = 0;
             isDashing = true;
+
+            if (!animator.GetBool("Andar")) animator.SetBool("Andar", true);
+
+            movementDash = directionRotation.normalized;
+
+            damageable.SetHasBeenDamaged(true);
+            
 
             Debug.Log("He iniciado el dash");
         }
@@ -103,18 +143,31 @@ namespace PlayerComponents
             if (IsInCooldown)
                 return;
 
-            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movement.x, 0, movement.y), speedDash);           
+            transform.position += VectorConverter.SetVectorToIsoCoords(new Vector3(movementDash.x, 0f, movementDash.y), speedDash);           
 
             if(timeDashing < DASH_TIME)
                 timeDashing += Time.fixedDeltaTime;
             else
             {
+                if(!isMoving)
+                    animator.SetBool("Andar", false);
                 isDashing = false;
                 IsInCooldown = true;
                 timeDashing = 0f;
+                movementDash = Vector2.zero;
+                damageable.SetHasBeenDamaged(false);
 
                 Debug.Log("He terminado el dash");
             }
+        }
+
+        IEnumerator ActiveTrail()
+        {
+            trail.SetActive(true);
+
+            yield return new WaitForSeconds(DASH_TIME + 0.05f);
+
+            trail.SetActive(false);
         }
     }
 }

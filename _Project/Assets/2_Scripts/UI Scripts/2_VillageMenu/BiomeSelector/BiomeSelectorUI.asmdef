@@ -1,0 +1,16 @@
+{
+    "name": "BiomeSelectorUI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3e296fc13e455d34bb30344df495fbc9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

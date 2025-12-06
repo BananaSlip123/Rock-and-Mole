@@ -13,6 +13,7 @@ public static class GameData
     static int _coins = -1;
     static bool? _needsTutorial = null;
     static PersistentInventory _inventory = new PersistentInventory("INV");//q materiales y en q cantidad  tienes
+    static PersistentInventory _cartInventory = new PersistentInventory("CART");//los q consigues en cada run
     static Inventory _runInventory = new Inventory();//los q consigues en cada run
 
     #endregion
@@ -34,26 +35,27 @@ public static class GameData
     public readonly static Dictionary<MaterialName, MaterialRarity> MaterialsRarity = new Dictionary<MaterialName, MaterialRarity>
     {
         { MaterialName.Hierro, MaterialRarity.Common },
-        { MaterialName.Carbon, MaterialRarity.Common },
-        { MaterialName.Bronce, MaterialRarity.Rare },
+        { MaterialName.Bronce, MaterialRarity.Common },
+        { MaterialName.Carbon, MaterialRarity.Rare },
         { MaterialName.Cuarzo, MaterialRarity.Rare },
-        { MaterialName.Obsidiana, MaterialRarity.Very_Rare },
+        { MaterialName.Ambar, MaterialRarity.Rare },
+        { MaterialName.Esmeralda, MaterialRarity.Rare },
         { MaterialName.RolloTela, MaterialRarity.Very_Rare },
-        { MaterialName.Ambar, MaterialRarity.Common },
-        { MaterialName.Esmeralda, MaterialRarity.Common },
-        { MaterialName.Rubi, MaterialRarity.Rare },
+        { MaterialName.Obsidiana, MaterialRarity.Very_Rare },
+        { MaterialName.Rubi, MaterialRarity.Very_Rare },
         { MaterialName.Diamante, MaterialRarity.Very_Rare }
     };
 
     public readonly static Dictionary<EnemyName, List<MaterialName>> MaterialsByEnemy = new Dictionary<EnemyName, List<MaterialName>>
     {
-        { EnemyName.Mouse,new List<MaterialName>() { MaterialName.Ambar, MaterialName.Cuarzo, MaterialName.RolloTela } },
-        { EnemyName.Bunny, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Carbon, MaterialName.Rubi, MaterialName.Obsidiana, MaterialName.Diamante }},
-        { EnemyName.Golem, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Esmeralda, MaterialName.Bronce, MaterialName.Hierro, MaterialName.Diamante } },
-        { EnemyName.GolemBoss,new List<MaterialName>() { MaterialName.Rubi, MaterialName.Esmeralda, MaterialName.Bronce, MaterialName.Obsidiana, MaterialName.Diamante, MaterialName.Bronce } }
+        { EnemyName.Mouse,new List<MaterialName>() { MaterialName.Ambar, MaterialName.Hierro, MaterialName.Bronce, MaterialName.Carbon, MaterialName.Cuarzo, MaterialName.RolloTela } },
+        { EnemyName.Bunny, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Hierro, MaterialName.Bronce, MaterialName.Carbon, MaterialName.Rubi, MaterialName.Obsidiana }},
+        { EnemyName.Golem, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Hierro, MaterialName.Carbon, MaterialName.Esmeralda, MaterialName.Bronce, MaterialName.Obsidiana } },
+        { EnemyName.GolemBoss,new List<MaterialName>() { MaterialName.Rubi, MaterialName.Esmeralda, MaterialName.Hierro, MaterialName.Cuarzo, MaterialName.Obsidiana, MaterialName.Bronce } }
     };
 
     public static PersistentInventory Inventory => _inventory;
+    public static PersistentInventory CartInventory => _cartInventory;
     public static Inventory RunInventory => _runInventory;
 
     public static int Coins
@@ -99,25 +101,66 @@ public static class GameData
     #endregion
 
     #region PRIVATE FUNCS
+    
     private static MaterialRarity RandomRarity()
     {
         float random = UnityEngine.Random.Range(0f, 1f);
 
-        if (random < 0.5)
+        if (random < 0.7)
             return MaterialRarity.Common;
-        else if (random < 0.85)
+        else if (random < 0.90)
             return MaterialRarity.Rare;
         else
             return MaterialRarity.Very_Rare;
     }
+
+    static MaterialName EnemyMaterial(EnemyName type, MaterialRarity rarity)
+    {
+        List<MaterialName> sortedMaterials;
+        sortedMaterials = SortedMaterialsByRarityAndEnemy(rarity, type);
+        Debug.Log(sortedMaterials.Count);
+        return sortedMaterials[UnityEngine.Random.Range(0, sortedMaterials.Count)];
+    }
+
+    static MaterialName RandomMaterial(MaterialRarity rarity)
+    {
+        List<MaterialName> sortedMaterials = SortedMaterialsByRarity(rarity);
+        return sortedMaterials[UnityEngine.Random.Range(0, sortedMaterials.Count)];
+    }
+
+    private static int RandomAmount(MaterialRarity rarity)
+    {
+        switch (rarity)
+        {
+            case MaterialRarity.Common: return UnityEngine.Random.Range(3, 5);
+            case MaterialRarity.Rare: return UnityEngine.Random.Range(1, 3);
+            case MaterialRarity.Very_Rare: return 1;
+            default: return 1;
+        }
+    }
+    static List<MaterialName> SortedMaterialsByRarity(MaterialRarity rarity)
+    {
+        return MaterialsRarity
+            .Where(pair => pair.Value == rarity)
+            .Select(pair => pair.Key)
+            .ToList();
+    }
+
+    static List<MaterialName> SortedMaterialsByRarityAndEnemy(MaterialRarity rarity, EnemyName type)
+    {
+        return MaterialsByEnemy[type]
+            .Where(material => MaterialsRarity.TryGetValue(material, out var matRarity) && matRarity == rarity)
+            .ToList();
+    }
+
     #endregion
 
     #region PUBLIC FUNCS
-    public static Dictionary<MaterialName, int> Put_RunInventory_Into_Inventory(int savedPercent)
+    public static SortedDictionary<MaterialName, int> Put_RunInventory_Into_Inventory(int savedPercent)
     {
         if (savedPercent > 100 || savedPercent < 0) throw new Exception("Invalid percent insert");
 
-        Dictionary<MaterialName, int> MaterialsCollected = new Dictionary<MaterialName, int>();
+        SortedDictionary<MaterialName, int> MaterialsCollected = new SortedDictionary<MaterialName, int>();
 
         foreach(KeyValuePair<MaterialName,int> materialData in RunInventory.Objects.ToArray())
         {
@@ -136,74 +179,54 @@ public static class GameData
 
         return MaterialsCollected;
     }
-    public static void SaveCrucialData()
-    {
-        //usar player prefbs :)
 
-        //GUARDAR INVENTARIO
-        _inventory.SaveData();
-    }
-
-    public static Dictionary<MaterialName, int> MaterialsChest(int amount)
+   // public static Dictionary<MaterialName, int> MaterialsChest(int amount)
+    public static void MaterialsChest(int amount)
     {
-        Dictionary<MaterialName, int> generated = new Dictionary<MaterialName, int>();
+        //Dictionary<MaterialName, int> generated = new Dictionary<MaterialName, int>();
         MaterialRarity rarity;
         MaterialName material;
-
+        int materialAmount;
         for (int i = 0; i < amount; i++)
         {
             rarity = RandomRarity();
             material = RandomMaterial(rarity);
-            if (!generated.TryAdd(material, 1))
-                generated[material] += 1;
+            materialAmount = RandomAmount(rarity);
+
+            //if (!generated.TryAdd(material, materialAmount))
+            //    generated[material] += materialAmount;
+            RunInventory.AddObject(material,materialAmount);
         }
 
-        return generated;
+       // return generated;
     }
 
-    public static Dictionary<MaterialName, int> EnemyLoot(int amount, EnemyName type)
+    public static void MaterialsRock(MaterialName material)
+    {
+        int materialAmount = RandomAmount(MaterialsRarity[material]);
+        RunInventory.AddObject(material, materialAmount);
+    }
+
+    //public static Dictionary<MaterialName, int> EnemyLoot(int amount, EnemyName type)
+    public static void EnemyLoot(int amount, EnemyName type)
     {
         Dictionary<MaterialName, int> generated = new Dictionary<MaterialName, int>();
         MaterialRarity rarity;
         MaterialName material;
+        int materialAmount;
 
         for (int i = 0; i < amount; i++)
         {
             rarity = RandomRarity();
             material = EnemyMaterial(type,rarity);
-            if (!generated.TryAdd(material, 1))
-                generated[material] += 1;
+            materialAmount = RandomAmount(rarity);
+            //if (!generated.TryAdd(material, 1))
+            //    generated[material] += 1;
+            RunInventory.AddObject(material, materialAmount);
         }
 
-        return generated;
+        //return generated;
     }
-    public static MaterialName EnemyMaterial(EnemyName type, MaterialRarity rarity)
-    {
-        List<MaterialName> sortedMaterials = SortedMaterialsByRarityAndEnemy(rarity, type);
-        return sortedMaterials[UnityEngine.Random.Range(0, sortedMaterials.Count)];
-    }
-
-    public static MaterialName RandomMaterial(MaterialRarity rarity)
-    {
-        List<MaterialName> sortedMaterials = SortedMaterialsByRarity(rarity);
-        return sortedMaterials[UnityEngine.Random.Range(0,sortedMaterials.Count)];
-    }
-
-    public static List<MaterialName> SortedMaterialsByRarity(MaterialRarity rarity)
-    {
-        return MaterialsRarity
-            .Where(pair => pair.Value == rarity)
-            .Select(pair => pair.Key)
-            .ToList();
-    }
-
-    public static List<MaterialName> SortedMaterialsByRarityAndEnemy(MaterialRarity rarity, EnemyName type)
-    {
-        return MaterialsByEnemy[type]
-            .Where(material => MaterialsRarity.TryGetValue(material, out var matRarity) && matRarity == rarity)
-            .ToList();
-    }
-
     public static string MaterialName2String(MaterialName name)
     {
         switch (name)
@@ -237,6 +260,17 @@ public static class GameData
 
 }
 
+public readonly struct PairMaterialAmount
+{
+    public MaterialName materialName { get; }
+    public int amount { get; }
+    public PairMaterialAmount(MaterialName materialName, int amount)
+    {
+        this.materialName = materialName;
+        this.amount = amount;
+    }
+}
+
 public class PersistentInventory
 {
     string _name;
@@ -257,10 +291,22 @@ public class PersistentInventory
         {
             int savedValue = PlayerPrefs.GetInt(_name + material.ToString(), 0);
             _objectsAmount.Add(material, savedValue);
-
-           // _dict_onSlotValueChange.Add(material,null);
         }
         
+    }
+
+    public bool IsEmpty
+    {
+        get
+        {
+            if (Objects == null || Objects.Count == 0) return true;
+
+            foreach (int amount in Objects.Values)
+                if (amount > 0) return false;
+            
+
+            return true;
+        }
     }
     public void SubscribeToInventoryChange(Action action) => _onInventoryChange += action;//se recarga el inventario entero en la UI
     public void SubscribeToMaterialDeleted(Action<MaterialName> action) => _onMaterialDeleted += action;
@@ -286,6 +332,28 @@ public class PersistentInventory
         if(amount>0)
             TryRemoveObject(name, amount);
     }
+    public void TransferObjects(Inventory inventory)
+    {
+        foreach (KeyValuePair<MaterialName, int> objectToAdd in inventory.Objects)
+        {
+            if (objectToAdd.Value > 0)
+            {
+                AddObject(objectToAdd.Key, objectToAdd.Value);
+            }
+        }
+        inventory.RemoveAll();
+    }
+    public void TransferObjects(PersistentInventory inventory)
+    {
+        foreach (KeyValuePair<MaterialName, int> objectToAdd in inventory.Objects)
+        {
+            if(objectToAdd.Value > 0)
+            {
+                AddObject(objectToAdd.Key, objectToAdd.Value);
+            }
+        }
+        inventory.RemoveAll();
+    }
     public void AddObject(MaterialName name, int amount)
     {
         if (amount <= 0) throw new Exception("Must be positive number");
@@ -302,8 +370,8 @@ public class PersistentInventory
     {
         //si tenemos 5 piedras e intentamos quitar 6 mantenemos las 5 y devolvemos false
         //se usará al comprar objetos con materiales
-        if (amount <= 0) throw new Exception("Must be positive number");
-        
+        if (amount <= 0) return false;
+
         int newAmount = _objectsAmount[name] - amount;
 
         if (newAmount < 0) return false;
@@ -321,20 +389,21 @@ public class PersistentInventory
         return true;
     }
 
-    public void SaveData()
-    {
-        foreach (MaterialName key in _objectsAmount.Keys)
-        {
-            PlayerPrefs.SetInt(_name + key.ToString(), _objectsAmount[key]);
-        }
-        PlayerPrefs.Save();
-    }
-
     void SaveMaterial(MaterialName material)
     {
         PlayerPrefs.SetInt(_name + material.ToString(), _objectsAmount[material]);
         PlayerPrefs.Save();
     } 
+
+    public void RemoveAll()
+    {
+        Objects.Keys.ToList().ForEach(key => Objects[key] = 0);
+
+        foreach(MaterialName material in Objects.Keys)
+            SaveMaterial(material);
+
+        _onInventoryChange?.Invoke();
+    }
     
 }
 
@@ -357,6 +426,19 @@ public class Inventory
         }
 
     }
+    public bool IsEmpty
+    {
+        get
+        {
+            if (Objects == null || Objects.Count == 0) return true;
+
+            foreach (int amount in Objects.Values)
+                if (amount > 0) return false;
+
+
+            return true;
+        }
+    }
     public void SubscribeToInventoryChange(Action action) => _onInventoryChange += action;//se recarga el inventario entero en la UI
     public void SubscribeToMaterialDeleted(Action<MaterialName> action) => _onMaterialDeleted += action;
     public void SubscribeToMaterialAdded(Action action) => _onMaterialAdded += action;
@@ -370,7 +452,9 @@ public class Inventory
     public int GetAmount(MaterialName key) => _objectsAmount[key];
     public void ResetObjectAmount(MaterialName name)
     {
-        TryRemoveObject(name, GetAmount(name));
+        int amount = GetAmount(name);
+        if (amount > 0)
+            TryRemoveObject(name, amount);
     }
     public void AddObject(MaterialName name, int amount)
     {
@@ -388,7 +472,7 @@ public class Inventory
     {
         //si tenemos 5 piedras e intentamos quitar 6 mantenemos las 5 y devolvemos false
         //se usará al comprar objetos con materiales
-        if (amount <= 0) throw new Exception("Must be positive number");
+        if (amount <= 0) return false;
 
         int newAmount = _objectsAmount[name] - amount;
 
@@ -400,6 +484,12 @@ public class Inventory
         _onInventoryChange?.Invoke();
 
         return true;
+    }
+
+    public void RemoveAll()
+    {
+        Objects.Keys.ToList().ForEach(key => Objects[key] = 0);
+        _onInventoryChange?.Invoke();
     }
 }
 public enum MaterialName

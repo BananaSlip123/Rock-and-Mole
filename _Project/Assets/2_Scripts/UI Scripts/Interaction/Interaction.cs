@@ -4,14 +4,19 @@ using UnityEngine.Events;
 using TMPro;
 public class Interaction : MonoBehaviour
 {
+    [Header ("General")]
+    [SerializeField] bool destroyAfterInteraction = false;
+
     [Header ("References")]
     [SerializeField] PlayerController playerController;
     [SerializeField] TextMeshPro texto;
     [Header("Callback")]
     [SerializeField] UnityEvent onInteraction;
+    [SerializeField] UnityEvent onEnter;
+    [SerializeField] UnityEvent onExit;
 
-    Color available = new Color(1,1,0.9f,1);
-    Color notAvailable = new Color(1,1,0.7f,0.6f);
+    Color available = new (1,1,0.9f,1);
+    Color notAvailable = new (1,1,0.7f,0.6f);
     void Awake()
     {
         texto.color = notAvailable;
@@ -21,6 +26,8 @@ public class Interaction : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            onEnter.Invoke();
+
             texto.color = available;
             if(playerController != null)
                 playerController.pressButtonA = Interact;
@@ -31,13 +38,30 @@ public class Interaction : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            texto.color = notAvailable;
-            if (playerController != null)
-                playerController.pressButtonA = null;
+            OnExit();
         }
+    }
+    private void OnExit()
+    {
+        onExit.Invoke();
+
+        texto.color = notAvailable;
+        if (playerController != null)
+            playerController.pressButtonA = null;
     }
     private void Interact()
     {
         onInteraction?.Invoke();
+        if(destroyAfterInteraction)
+            Destroy(this.gameObject);
+    }
+
+    private void OnDisable()
+    {
+        OnExit();
+    }
+    private void OnDestroy()
+    {
+        OnExit();
     }
 }

@@ -4,6 +4,8 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
 {
     [SerializeField]int toughness = 2;
     [SerializeField] float numberProbability = 0.10f;
+    [SerializeField] GameObject sparks;
+    [SerializeField] MaterialName rockType;
 
     int numberOfHits = 0;
     bool hasBeenHit = false;
@@ -21,28 +23,17 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
     private void DestroyRock()
     {
         float random = Random.Range(0f, 1f);
-        if ( random < 0.25f)
-            GameData.RunInventory.AddObject(MaterialName.Carbon, Random.Range(1, 3));
-        else if(random < 0.5f)
-            GameData.RunInventory.AddObject(MaterialName.Hierro, Random.Range(1, 3));
-        else if (random < 0.65f)
-            GameData.RunInventory.AddObject(MaterialName.Bronce, Random.Range(1, 3));
-        else if (random < 0.8f)
-            GameData.RunInventory.AddObject(MaterialName.Cuarzo, Random.Range(1, 3));
-        else if (random < 0.9f)
-            GameData.RunInventory.AddObject(MaterialName.Rubi, Random.Range(1, 3));
-        else if (random < 0.95f)
-            GameData.RunInventory.AddObject(MaterialName.Diamante, 1);
-        else
-            GameData.RunInventory.AddObject(MaterialName.Obsidiana, 1);
+
+        GameData.MaterialsRock(rockType);
 
         Destroy(gameObject);       
     }
 
-    public void RecieveDamage(int damage)
+    public void RecieveDamage(int damage, float duration, float magnitude)
     {
         Debug.Log("ME HAN GOLEPADO");
         numberOfHits++;
+        sparks.SetActive(true);
         hasBeenHit = true;
         if (numberOfHits == toughness)
             DestroyRock();
@@ -51,10 +42,12 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
     public void ResetHasBeenDamaged()
     {
         hasBeenHit = false;
+        sparks.SetActive(false);
     }
 
     public bool GetHasBeenDamaged()
     {
+        
         return hasBeenHit;
     }
 }

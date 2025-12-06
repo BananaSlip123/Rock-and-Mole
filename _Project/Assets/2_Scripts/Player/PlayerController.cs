@@ -8,6 +8,7 @@ namespace PlayerComponents
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private PlayerAttackComponent attackComponent;
+        [SerializeField] private PlayerShootComponent shootComponent;
         [SerializeField] private IMoveComponent moveComponent;
         [SerializeField] private ISkillComponent dashComponent;
 
@@ -30,9 +31,18 @@ namespace PlayerComponents
         /// </summary>
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if (attackComponent.isAttacking)
+            if (attackComponent.isAttacking || shootComponent.IsShooting)
                return;
             attackComponent.Attack();
+        }
+
+        public void OnShoot(InputAction.CallbackContext context)
+        {
+            Debug.Log("Estoy disparando");
+            if (shootComponent.IsShooting)
+                return;
+            Debug.Log("Estoy disparando");
+            shootComponent.Attack();
         }
 
         /// <summary>

@@ -96,7 +96,7 @@ public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent, IAttackC
 
     public void Attack()
     {
-        player.RecieveDamage(DAMAGE);
+        player.RecieveDamage(DAMAGE, 0.5f, 0.1f);
 
         ResetObject();
     }

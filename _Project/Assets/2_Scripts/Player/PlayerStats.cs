@@ -54,6 +54,21 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         }
     }
 
+    private int _damageS;
+    public int damageS
+    {
+        get => _damageS;
+        private set
+        {
+            if (value != damageS)
+            {
+                _damageS = value;
+                if (playerShoot != null)
+                    playerShoot.damage = value;
+            }
+        }
+    }
+
     private float _attackSpeed;
     public float attackSpeed
     {
@@ -115,6 +130,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
 
     DamageableComponent playerHealth;
     PlayerAttackComponent playerAttack;
+    PlayerShootComponent playerShoot;
     PlayerMovementComponent playerSpeed;
 
     public PickaxeStatsScripteableObject currentPickaxe
@@ -169,7 +185,14 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
             playerAttack.critMultiplier = critMultiplier;
             playerAttack.critProbability = critProbability;
             playerAttack.damage = damage;
+
+            playerShoot.damage = damageS;
+            playerShoot.critMultiplier = critMultiplier;
+            playerShoot.critProbability = critProbability;
+            Debug.Log("DAMAGE SHOOT: " + damageS + " " + playerShoot.damage);
+
             playerSpeed.speed = speed;
+
             playerAttack.COOLDOWN = attackSpeed;
 
             Debug.Log("ESTOY PASANDO LA VIDA CORRECTA?????:" + playerHealth.Health);
@@ -187,6 +210,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         playerHealth = go.GetComponent<DamageableComponent>();
         playerAttack = go.GetComponent<PlayerAttackComponent>();
         playerSpeed = go.GetComponent<PlayerMovementComponent>();
+        playerShoot = go.GetComponent<PlayerShootComponent>();
     }
 
     public void ChangeClothes(ClothStatsScripteableObject newCloth)
@@ -234,8 +258,9 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         critMultiplier += newPickaxe.critMultiplier;
         critProbability += newPickaxe.critProbability;
         attackSpeed -= attackSpeed*newPickaxe.attackSpeed;
+        damageS += newPickaxe.damageShoot;
 
-        Debug.Log("DAÑO: " + _damage);
+        Debug.Log("DAÑO: " + newPickaxe.damageShoot);
     }
 
     public void OnEquipmentChange()
@@ -274,6 +299,7 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     {
         health = 0;
         damage = 0;
+        damageS = 0;
         critMultiplier = 0;
         critProbability = 0;
         speed = 5f;
@@ -284,4 +310,5 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
     {
         actualHealth += healing;
     }
+    public void HealPlayer() => actualHealth = health;
 }

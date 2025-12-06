@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 using TMPro;
+using UnityEngine.UI;
 public class CallOut : MonoBehaviour
 {
     //Dentro de un prefab (con un cuadro de texto y un botón)
@@ -14,9 +17,26 @@ public class CallOut : MonoBehaviour
 
     #region PRIVATE VARS
     [SerializeField] TextMeshProUGUI txt_callOutTextBox;
+    [SerializeField] Image img_CurrentExpression;
+    [SerializeField] List<Sprite> sprites_CharacterExpressions;
 
     string[] _dialogs;
     int _currentDialog = 0;
+    int _currentExpression = 0;
+    int NumberOfExpressions
+    {
+        get => sprites_CharacterExpressions.Count;
+    }
+    int CurrentExpression
+    {
+        get => _currentExpression;
+        set
+        {
+            _currentExpression = value % NumberOfExpressions;
+            if(NumberOfExpressions > 0)
+                img_CurrentExpression.sprite = sprites_CharacterExpressions[_currentExpression];
+        }
+    }
     State _state = State.disabled;
     #endregion
 
@@ -85,6 +105,7 @@ public class CallOut : MonoBehaviour
     private void Awake()
     {
         this.gameObject.SetActive(false); //un tutorial script lo despierta
+        CurrentExpression = 0;
     }
     IEnumerator DelayedAction(Action a, float seconds)
     {
@@ -118,6 +139,7 @@ public class CallOut : MonoBehaviour
 
     void AdvanceDialog()
     {
+        Debug.Log("Avanzo en dialogo");
         if(_currentDialog == _dialogs.Length-1) //saltas el ultimo
         {
             StateValue = State.disabled;
@@ -126,6 +148,7 @@ public class CallOut : MonoBehaviour
         else
         {
             _currentDialog++;
+            CurrentExpression++;
             StateValue = State.writingText;
         }
     }

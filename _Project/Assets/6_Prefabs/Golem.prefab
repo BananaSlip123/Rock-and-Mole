@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 924566223467400}
   - component: {fileID: 870731423749373896}
   - component: {fileID: 8270225429929596011}
+  - component: {fileID: 2337416933215536430}
   m_Layer: 3
   m_Name: Golem
   m_TagString: Enemy
@@ -115,6 +116,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2337416933215536430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3666153045942041263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f52a1f57aef3428b5a25764b1ed9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 8614278056347520556}
+  temporalMaterialDuration: 0.2
 --- !u!1 &8384177544430010140
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +332,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: dee520fb0fe44414dada5bc94180b564, type: 2}
+    - target: {fileID: 3361828068490660566, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361828068490660566, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 21142acfcde3da745ba01f792e344dfd, type: 2}
     - target: {fileID: 3439300763897880096, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -378,5 +402,10 @@ Animator:
 --- !u!4 &6818790598777430801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
+  m_PrefabInstance: {fileID: 6425383849707668730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8614278056347520556 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3361828068490660566, guid: 3adb51f5db9101b468d69a99bf758372, type: 3}
   m_PrefabInstance: {fileID: 6425383849707668730}
   m_PrefabAsset: {fileID: 0}

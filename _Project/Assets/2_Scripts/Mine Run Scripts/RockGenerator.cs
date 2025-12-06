@@ -14,6 +14,7 @@ public class RockGenerator : MonoBehaviour, IEnemyGenerator
         for (int i = 0; i < random; i++)
         {
             int randomType = UnityEngine.Random.Range(0,rockPrefabs.Length);
+            Debug.Log("INDEX: " + randomType);
             SpawnEnemy(rockPrefabs[randomType]);
         }
 
@@ -27,6 +28,8 @@ public class RockGenerator : MonoBehaviour, IEnemyGenerator
         float randomX = UnityEngine.Random.Range(collider.bounds.min.x,collider.bounds.max.x);
         float randomZ = UnityEngine.Random.Range(collider.bounds.min.z, collider.bounds.max.z);
 
-        Instantiate(prefab, new Vector3(randomX, transform.position.y, randomZ), Quaternion.identity);
+        Quaternion random = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f),0f);
+
+        Instantiate(prefab, new Vector3(randomX, transform.position.y, randomZ), random);
     }
 }

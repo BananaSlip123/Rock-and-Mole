@@ -10,6 +10,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
     private float timeToDeath = 0f;
     const float TIME_TO_DEATH = 1f;
     [SerializeField] EnemyName tipoEnemigo;
+    [SerializeField] MaterialChanger changer;
 
     private void FixedUpdate()
     {
@@ -24,7 +25,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
         */
     }
 
-    public void RecieveDamage(int damage)
+    public void RecieveDamage(int damage, float duration, float magnitude)
     {
         Debug.Log("CONEJO :" + damage);
         health -= damage;
@@ -32,6 +33,7 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
 
         if (health <= 0)
             Death();
+        changer.AssignTemporalMaterial();
         Debug.Log("Me han quitado vida");
     }
 
@@ -62,15 +64,16 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
         {
             LevelManager.instance.EnemyDead();
 
-            Dictionary<MaterialName, int> materialsGenerated = GameData.EnemyLoot(UnityEngine.Random.Range(2, 4), tipoEnemigo);
+            //Dictionary<MaterialName, int> materialsGenerated = GameData.EnemyLoot(UnityEngine.Random.Range(2, 4), tipoEnemigo);
+            GameData.EnemyLoot(UnityEngine.Random.Range(2, 4), tipoEnemigo);
 
-            int i = 0;
-            foreach (MaterialName material in materialsGenerated.Keys)
-            {
-                GameData.RunInventory.AddObject(material, materialsGenerated[material]);
-                Debug.Log("HE AÑADIDO: " + material.ToString() + " " + i);
-                i++;
-            }
+            //int i = 0;
+            //foreach (MaterialName material in materialsGenerated.Keys)
+            //{
+            //    GameData.RunInventory.AddObject(material, materialsGenerated[material]);
+            //    Debug.Log("HE AÑADIDO: " + material.ToString() + " " + i);
+            //    i++;
+            //}
         }
     }
 

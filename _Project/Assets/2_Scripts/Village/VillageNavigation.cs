@@ -84,28 +84,8 @@ public class VillageNavigation : MonoBehaviour
 
     public void OnMineEntry()
     {
-        // Escena de mina
-        int random = Random.Range(0, 2);
-
-        if (random == 0)
-        {
-            SceneManager.LoadScene("3_MiningRoom");
-            AudioManager.Instance.PlayMusic(AudioManager.MusicType.MineMusic);
-        }
-        else
-        {
-            SceneManager.LoadScene("2_CombatRoom");
-            AudioManager.Instance.PlayMusic(AudioManager.MusicType.EnemyFightMusic);
-
-            // ACCESO AL nEnemies DEL LEVELMANAGER
-            if (LevelManager.Instance != null &&
-                LevelManager.Instance.nEnemies <= 0)
-            {
-                // Cuando no hay enemigos, abre las puertas
-                LevelManager.Instance
-                    .GetComponent<INoMoreEnemies>()
-                    ?.ThereIsNoEnemies();
-            }
-        }
+        //SceneManager.LoadScene("2_CombatRoom");
+        //SceneManager.LoadScene("5_RescueRoom");
+        SceneManager.LoadScene("7_DarkRoom");
     }
 }

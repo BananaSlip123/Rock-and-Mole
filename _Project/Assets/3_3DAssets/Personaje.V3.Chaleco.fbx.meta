@@ -3,7 +3,67 @@ guid: 9cd060d3440e6bc488c8d269dc75cdc4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Camiseta.002
+    second: {fileID: 2100000, guid: c69a5c4697cfef34699c799d3fa097dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chaleco.002
+    second: {fileID: 2100000, guid: 976e36065c1f6984e9fb32b728b2bb5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cinturon.002
+    second: {fileID: 2100000, guid: 79610dd8fa5e7ee4ba24f93838c13e5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dientes.002
+    second: {fileID: 2100000, guid: 34681be70c5d2cb4d960765f70c8f164, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gafas.002
+    second: {fileID: 2100000, guid: 8d76da9e1e097314d8af192fe34d4b16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: 52efacc2a922ecd45b131821f6f27eaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.018
+    second: {fileID: 2100000, guid: 1f7ee88c05a1e3f4282ce7980c298875, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.019
+    second: {fileID: 2100000, guid: 7276033004ae6584cb7782e0830299c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal.002
+    second: {fileID: 2100000, guid: 09a934a7d75b92b4c94c524127b09263, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nariz.002
+    second: {fileID: 2100000, guid: 5a9d2caafe526e0469ef7e4b0ea8bc6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pantalon.002
+    second: {fileID: 2100000, guid: 876bb3be6e026ac40886e9b5c9ff1cda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piel.002
+    second: {fileID: 2100000, guid: a32b10875999e204bbcc2c08bbdc6404, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -68,8 +128,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 180
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

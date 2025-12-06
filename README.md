@@ -97,9 +97,10 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 | Acción | Teclado y ratón (PC) | Mando Xbox | Mando PlayStation | Mando Nintendo |
 | :----: | :------------------: | :--------: | :---------------: | :-------------: |
 | Moverse | Teclas WASD         | Joystick izquierdo | Joystick izquierdo | Joystick izquierdo |
-| Atacar | Click izquierdo | RT (gatillo derecho) | R2 (gatillo derecho) | ZR (gatillo derecho) |
+| Atacar | Clic izquierdo | RT (gatillo derecho) | R2 (gatillo derecho) | ZR (gatillo derecho) |
 | Dash | Shift | LT (gatillo izquierdo) | L2 (gatillo izquierdo) | ZL (gatillo izquierdo) |
-| Interactuar | E | X | □ | Y |  
+| Interactuar | E | A | X | A |  
+| Ataque a distancia | Clic derecho | X | □ | Y |
 
 <div align="center"><p><i>Tabla 1: Controles de personaje.</i></p></div>
 
@@ -110,7 +111,7 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 | Pausa | Esc         | ≡ | Options | + |
 | Inventario | Tab | Y | △ | X |
 | Aceptar | Clic | A | X | A |
-| Diálogos | Espacio/Clic | A | X | A |  
+| Diálogos | Espacio | A | X | A |  
 
 <div align="center"><p><i>Tabla 2: Controles de interfaces.</i></p></div>
 

@@ -8,8 +8,10 @@ public class EquipmentManager : MonoBehaviour
 {
     //Se coloca en el main
     //se le asignan las referencias y las guarda de forma estática
-    
+
     #region SERIALIZABLE FIELDS
+    enum StartInEditorModePosibilities { allLocked, allUnlocked, chargeFromDisk }
+    [SerializeField] StartInEditorModePosibilities editorModeStart;
     [System.Serializable]
     public struct PickaxeAssigner
     {
@@ -173,7 +175,7 @@ public class EquipmentManager : MonoBehaviour
     }
     public abstract class Cloth
     {
-        bool? _unLocked;
+        bool? _unLocked = null;
         public ClothStatsScripteableObject data;
         public GameObject model;
 
@@ -183,7 +185,7 @@ public class EquipmentManager : MonoBehaviour
             get
             {
                 if (!_unLocked.HasValue)
-                    _unLocked = PlayerPrefs.GetInt("C"+ Name, 1) != 1; //por defecto es false
+                    _unLocked = PlayerPrefs.GetInt("C"+ Name, 0) == 1; //por defecto es false
                 return _unLocked.Value;
             }
             set
@@ -243,9 +245,6 @@ public class EquipmentManager : MonoBehaviour
                 data = pickaxes[i].data,
                 model = pickaxes[i].model
             };
-
-
-            Debug.Log("PICOS: " + pickaxes[i].data);
         }
 
         foreach (ClothAssigner chestCloth in chestCloths)
@@ -266,6 +265,10 @@ public class EquipmentManager : MonoBehaviour
         _defaultChestCloth = chestCloths[0].data.name;
         _defaultHelmet = helmets[0].data.name;
 
+#if UNITY_EDITOR
+        EditorModeStart();
+#endif
+
         ChestCloths[_defaultChestCloth].UnLocked = true;
         Helmets[_defaultHelmet].UnLocked = true;
 
@@ -278,20 +281,48 @@ public class EquipmentManager : MonoBehaviour
         for (int i = 0; i < keysOrdered_helmet.Length; i++)
             keysOrder_helmet.Add(keysOrdered_helmet[i], i);
 
-        //#if UNITY_EDITOR
-        //        PickAxeLevel = 0;
-        //        CurrentHelmetID = _defaultHelmet;
-        //        CurrentChestClothID = _defaultChestCloth;
-        //#endif
-        //PickAxeLevel = PickAxeLevel; //el getter carga de disco, el setter llama a los callbacks
+        //Avisar d q se inicializó player data
         OnEquipmentChange?.Invoke();
-        //CurrentChestClothID = CurrentChestClothID;
-       // CurrentHelmetID = CurrentHelmetID;
 
-        Debug.Log("DATOS: " + CurrentPickaxeData);
 
         _init = true;
     }
+#if UNITY_EDITOR
+    private void EditorModeStart()
+    {
+        if (editorModeStart == StartInEditorModePosibilities.allLocked)
+        {
+            foreach (KeyValuePair<string, ChestCloth> c in ChestCloths)
+            {
+                c.Value.UnLocked = false;
+            }
+
+            CurrentChestClothID = _defaultChestCloth;
+
+            foreach (KeyValuePair<string, Helmet> h in Helmets)
+            {
+                h.Value.UnLocked = false;
+            }
+
+            CurrentHelmetID = _defaultHelmet;
+
+            PickAxeLevel = 0;
+        }
+        else if (editorModeStart == StartInEditorModePosibilities.allUnlocked)
+        {
+            foreach (KeyValuePair<string, ChestCloth> c in ChestCloths)
+            {
+                c.Value.UnLocked = true;
+            }
+
+            foreach (KeyValuePair<string, Helmet> h in Helmets)
+            {
+                h.Value.UnLocked = true;
+            }
+            PickAxeLevel = MaxLevel;
+        }
+    }
+#endif
     #endregion
     #region PUBLIC FUNCS
     public static int GetOrderChestCloth(string id) => keysOrder_chestCloth[id];

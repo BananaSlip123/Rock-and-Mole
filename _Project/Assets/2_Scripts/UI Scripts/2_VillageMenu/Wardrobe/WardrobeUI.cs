@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using UnityEngine.UI;
 
 public class WardrobeUI : MonoBehaviour
 {
@@ -22,7 +23,9 @@ public class WardrobeUI : MonoBehaviour
 
     [Header("Dynamic Button Texts")]
     [SerializeField] TextMeshProUGUI txt_button_BuyOrEquip;
-    [SerializeField] TextMeshProUGUI txt_button_Change;
+    //[SerializeField] TextMeshProUGUI txt_button_Change;
+    [SerializeField] Image img_helmetButtonBackground;
+    [SerializeField] Image img_chestClothButtonBackground;
 
     [Header("Game Objects & Transforms")]
     [SerializeField] GameObject go_error;
@@ -34,11 +37,18 @@ public class WardrobeUI : MonoBehaviour
 
     [Header("Materials")]
     [SerializeField] MaterialInfoUI[] materialsInfo;
+
+    [Header("Transforms Models")]
+    [SerializeField] Transform t_helmetTransform;
+    [SerializeField] Transform t_chestClothTransform;
+
     #endregion
     #region PRIVATE FIELDS
     private Coroutine currentFade;
     private GameObject currentChestClothPrefab = null;
     private GameObject currentHelmetPrefab = null;
+
+    Color changeButtonsColor;
     enum WardrobeMode
     {
         helmet = 0, chestCloth = 1
@@ -111,20 +121,16 @@ public class WardrobeUI : MonoBehaviour
             {
                 if (value > 0)
                 {
-                    Debug.Log("valor positivo");
                     txt_bonusLifePoints.color = color_buff;
                     txt_bonusLifePoints.text = "+" + value.ToString();
                     return;
                 }
                 if (value < 0)
                 {
-                    Debug.Log("valor negativo");
                     txt_bonusLifePoints.color = color_deBuff;
                     txt_bonusLifePoints.text = value.ToString();
                     return;
                 }
-                Debug.Log("valor 0");
-
             }
             txt_bonusLifePoints.text = "";
         }
@@ -283,18 +289,19 @@ public class WardrobeUI : MonoBehaviour
     private void Awake()
     {
         go_error.SetActive(false);
+        changeButtonsColor = img_helmetButtonBackground.color;
     }
     private void OnEnable()
     {
         _selectedHelmetID = EquipmentManager.CurrentHelmetID;
-        Debug.Log(SelectedHelmetID);
         _selectedChestClothID = EquipmentManager.CurrentChestClothID;
-        Debug.Log(SelectedChestClothID);
         WardrobeModeProperty = WardrobeMode.chestCloth;
     }
     private void OnChestClothMode()
     {
-        txt_button_Change.text = "Mostrar Cascos";
+        img_helmetButtonBackground.color = new Color(0,0,0,0);
+        img_chestClothButtonBackground.color = changeButtonsColor;
+
         EquipmentManager.OnCurrentChestClothChange += UpdateUI;
         EquipmentManager.OnCurrentHelmetChange -= UpdateUI; //si no lo tiene asignado no hace nada
         EquipmentManager.OnUnlockedChestCloth += OnUnlocked;
@@ -304,7 +311,9 @@ public class WardrobeUI : MonoBehaviour
     }
     private void OnHelmetMode()
     {
-        txt_button_Change.text = "Mostrar Petos";
+        img_helmetButtonBackground.color = changeButtonsColor;
+        img_chestClothButtonBackground.color = new Color(0, 0, 0, 0);
+
         EquipmentManager.OnCurrentChestClothChange -= UpdateUI;
         EquipmentManager.OnCurrentHelmetChange += UpdateUI;
         EquipmentManager.OnUnlockedChestCloth -= OnUnlocked;
@@ -460,12 +469,26 @@ public class WardrobeUI : MonoBehaviour
         if (currentChestClothPrefab != null) Destroy(currentChestClothPrefab);
         if (currentHelmetPrefab != null) Destroy(currentHelmetPrefab);
 
-        currentChestClothPrefab = Instantiate(EquipmentManager.CurrentChestCloth.model);
-        currentHelmetPrefab = Instantiate(EquipmentManager.CurrentHelmet.model);
-        //currentModel.transform.parent = tr_pickaxeModelPosition;
-        //currentModel.transform.localPosition = new Vector3();
-        //currentModel.transform.localEulerAngles = new Vector3();
-        //currentModel.transform.localScale = new Vector3(1,1,1);
+        currentHelmetPrefab = Instantiate(EquipmentManager.Helmets[SelectedHelmetID].model);
+
+        switch (WardrobeModeProperty)
+        {
+            case WardrobeMode.helmet:
+                //En este caso se verá el casco en grande
+                AssignParent(currentHelmetPrefab.transform, t_helmetTransform);
+
+                break;
+            case WardrobeMode.chestCloth:
+                //En este caso se verá cuerpo conpleto
+
+                currentChestClothPrefab = Instantiate(EquipmentManager.ChestCloths[SelectedChestClothID].model);
+                AssignParent(currentChestClothPrefab.transform, t_chestClothTransform);
+
+                Transform transformForHelmet = currentChestClothPrefab.GetComponent<ChestClothGetter>().bone_Helmet;
+                AssignParent(currentHelmetPrefab.transform, transformForHelmet);
+
+                break;
+        }
     }
 
     private void ChangeSelectedCloth(int placesToMove)
@@ -583,12 +606,24 @@ public class WardrobeUI : MonoBehaviour
             default: break;
         }
     }
-    public void OnButtonChange()
-    {
-        int currentMode = (int)WardrobeModeProperty;
-        int nextMode = (currentMode + 1) % 2;
+    //public void OnButtonChange()
+    //{
+    //    int currentMode = (int)WardrobeModeProperty;
+    //    int nextMode = (currentMode + 1) % 2;
 
-        WardrobeModeProperty = (WardrobeMode)nextMode;
+    //    WardrobeModeProperty = (WardrobeMode)nextMode;
+    //}
+
+    public void OnButtonHelmet()
+    {
+        if (WardrobeModeProperty == WardrobeMode.helmet) return;
+        WardrobeModeProperty = WardrobeMode.helmet;
+    }
+
+    public void OnButtonChestCloth()
+    {
+        if (WardrobeModeProperty == WardrobeMode.chestCloth) return;
+        WardrobeModeProperty = WardrobeMode.chestCloth;
     }
     public void OnButtonLeftArrow()
     {
@@ -597,6 +632,14 @@ public class WardrobeUI : MonoBehaviour
     public void OnButtonRightArrow()
     {
         ChangeSelectedCloth(1);
+    }
+
+    void AssignParent(Transform objectTransform, Transform parentTransform)
+    {
+        objectTransform.SetParent(parentTransform);
+        objectTransform.localPosition = new Vector3();
+        objectTransform.localEulerAngles = new Vector3();
+        objectTransform.localScale = new Vector3(1, 1, 1);
     }
     #endregion
 }

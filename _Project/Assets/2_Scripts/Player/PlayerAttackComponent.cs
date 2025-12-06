@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using PickaxeStats;
 using System.Collections.Generic;
+using System;
 
 namespace PlayerComponents
 {
@@ -22,10 +23,10 @@ namespace PlayerComponents
         public float critProbability;
 
         private Queue<Collider> hitColliders = new Queue<Collider>();
+        public Action<bool> onIsAttackingChange; //true si ataca, false si deja de atacar
 
         [SerializeField] Collider attackHitbox;
-        [SerializeField] PickaxeStatsScripteableObject actualPickaxeStats;
-        [SerializeField] Animator animator;
+        public Animator animator;
         private void Update()
         {
             
@@ -58,8 +59,8 @@ namespace PlayerComponents
                 if(timeHitbox >= 0.4f && timeHitbox <= 0.42f)
                     attackHitbox.enabled = false;                  
                 else if (timeHitbox >= TIME_HITBOX)
-                {                                     
-                    HidePickaxe.instance.HidePickaxeAnimation(false);
+                {
+                    onIsAttackingChange?.Invoke(false);
 
                     timeHitbox = 0f;
                     isAttacking = false;
@@ -88,7 +89,7 @@ namespace PlayerComponents
                 if (animator != null && !animator.GetBool("Atacar"))
                     animator.SetBool("Atacar", true);
 
-                HidePickaxe.instance.HidePickaxeAnimation(true);
+                onIsAttackingChange?.Invoke(true);
 
                 //Reproducir sonido de ataque a enemigo
                 AudioManager.Instance.PlayAudio(AudioManager.AudioType.AttackToEnemySound);
@@ -111,13 +112,13 @@ namespace PlayerComponents
                 {
                     if (!hitCollider.gameObject.GetComponent<IDamageableComponent>().GetHasBeenDamaged())
                     {
-                        float hitCrit = Random.Range(0,1);
+                        float hitCrit = UnityEngine.Random.Range(0,1);
                         int damage = this.damage;
                         if(hitCrit < critProbability)
                         {
                             damage = (int) (critMultiplier * damage);
                         }
-                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(damage);
+                        hitCollider.gameObject.GetComponent<IDamageableComponent>().RecieveDamage(damage, 0.5f, 0.5f);
                         Debug.Log("He golpeado a: " + hitCollider.gameObject.name);
                     }
                 }

@@ -11,6 +11,7 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     [SerializeField] GameObject mining;
     [SerializeField] GameObject skull;
     [SerializeField] GameObject position;
+    [SerializeField] GameObject planks;
     bool enter = false;
     enum typeOfBehaviour
     {
@@ -84,6 +85,8 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     public void Active()
     {
         hitbox.enabled = true;
+        planks.SetActive(false);
+
     }
     private void OnTriggerEnter(Collider other)
     {

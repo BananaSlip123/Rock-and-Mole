@@ -10,12 +10,14 @@ public class ForgeUI : MonoBehaviour
     [Header("Texts Stats")]
     [SerializeField] TextMeshProUGUI txt_name;
     [SerializeField] TextMeshProUGUI txt_baseDamage;
+    [SerializeField] TextMeshProUGUI txt_baseShootDamage;
     [SerializeField] TextMeshProUGUI txt_criticDamage;
     [SerializeField] TextMeshProUGUI txt_attackSpeed;
     [SerializeField] TextMeshProUGUI txt_criticProbability;
 
     [Header("Texts After Upgrade")]
     [SerializeField] TextMeshProUGUI txt_bonusBaseDamage;
+    [SerializeField] TextMeshProUGUI txt_bonusBaseShootDamage;
     [SerializeField] TextMeshProUGUI txt_bonusCriticDamage;
     [SerializeField] TextMeshProUGUI txt_bonusAttackSpeed;
     [SerializeField] TextMeshProUGUI txt_bonusCriticProbability;
@@ -42,6 +44,10 @@ public class ForgeUI : MonoBehaviour
     int BaseDamage
     {
         set => txt_baseDamage.text = value.ToString();
+    }
+    int BaseShootDamage
+    {
+        set => txt_baseShootDamage.text = value.ToString();
     }
     float CriticDamage
     {
@@ -72,6 +78,16 @@ public class ForgeUI : MonoBehaviour
                 txt_bonusBaseDamage.text = "+" + value.ToString();
             else
                 txt_bonusBaseDamage.text = "";
+        }
+    }
+    int? BonusBaseShootDamage
+    {
+        set
+        {
+            if (value.HasValue)
+                txt_bonusBaseShootDamage.text = "+" + value.ToString();
+            else
+                txt_bonusBaseShootDamage.text = "";
         }
     }
     float? BonusCriticDamage
@@ -167,9 +183,9 @@ public class ForgeUI : MonoBehaviour
     void UpdateCurrentPickaxe(PickaxeStatsScripteableObject value)
     {
         Name = value.name;
-        int baseDamage = value.damage;
-        BaseDamage = baseDamage;
-       // CriticDamage = (int)(baseDamage * value.critMultiplier);
+
+        BaseDamage = value.damage;
+        BaseShootDamage = value.damageShoot;
         CriticDamage = value.critMultiplier;
         AttackSpeed = value.attackSpeed;
         CriticProbability = value.critProbability;
@@ -179,16 +195,15 @@ public class ForgeUI : MonoBehaviour
         if (value == null)
         {
             BonusBaseDamage = null;
+            BonusBaseShootDamage = null;
             BonusCriticDamage = null;
             BonusAttackSpeed = null;
             BonusCriticProbability = null;
         }
         else
         {
-            int currentDamage = CurrentPickaxe.damage;
-            int bonus = value.damage - currentDamage;
-            BonusBaseDamage = bonus;
-            //BonusCriticDamage = (int)(value.damage * value.critMultiplier - currentDamage * CurrentPickaxe.critMultiplier);
+            BonusBaseDamage = value.damage - CurrentPickaxe.damage;
+            BonusBaseShootDamage = value.damageShoot - CurrentPickaxe.damageShoot;
             BonusCriticDamage = value.critMultiplier - CurrentPickaxe.critMultiplier;
             BonusAttackSpeed = value.attackSpeed - CurrentPickaxe.attackSpeed;
             BonusCriticProbability = value.critProbability - CurrentPickaxe.critProbability;

@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8816412140054228094
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.096767426
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.29171324
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.782031
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c985f507e15aa44b9e4e5b34cbebfab, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c985f507e15aa44b9e4e5b34cbebfab, type: 2}
+    - target: {fileID: 919132149155446097, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}
+      propertyPath: m_Name
+      value: "PilaHoja2Oto\xF1o"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 407a89f17b256084aa199bf0a2a01bb0, type: 3}

@@ -1,0 +1,1 @@
+Esta carpeta contiene los scripts que se utilizan para cargar en el jugador y en la ui los diferentes modelos 3D de los cascos, petos o picos

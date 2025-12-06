@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
+using static VolumeSlider;
 
 public class AudioManager : MonoBehaviour
 {
@@ -84,6 +85,9 @@ public class AudioManager : MonoBehaviour
             SetupAudioSources();
             BuildMusicDictionary();
             BuildAudioDictionary();
+
+            musicSource.volume = PlayerPrefs.GetFloat($"{VolumeSlider.VolumeType.Music}Volume", 0.5f);
+            sfxSource.volume = PlayerPrefs.GetFloat($"{VolumeSlider.VolumeType.SFX}Volume", 0.5f);
         }
         else
         {
@@ -171,10 +175,12 @@ public class AudioManager : MonoBehaviour
     public void SetMusicVolume(float volume)
     {
         musicSource.volume = Mathf.Clamp01(volume);
+        PlayerPrefs.SetFloat($"{VolumeSlider.VolumeType.Music}Volume", volume);
     }
     public void SetSFXVolume(float volume)
     {
         sfxSource.volume = Mathf.Clamp01(volume);
+        PlayerPrefs.SetFloat($"{VolumeSlider.VolumeType.SFX}Volume", volume);
     }
     public void PlayMusic(MusicType type)
 {

@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Collections.Generic;
+using UnityEngine.InputSystem;
 public class GameMenu : MonoBehaviour
 {
     #region SERIALIZABLE
@@ -13,8 +12,10 @@ public class GameMenu : MonoBehaviour
     [SerializeField] GameObject go_settingsWindow;
     [SerializeField] GameObject go_runInventoryWindow;
     [SerializeField] GameObject go_runInventoryInfoWindow;
+    [SerializeField] GameObject go_cartWindow;
     [SerializeField] GameObject go_gameOverWindow;
     [SerializeField] GameObject go_materialsCollectedWindow;
+    [SerializeField] GameObject go_interactionWindow;
     [Header("LIFE BAR")]
     [SerializeField] GameObject go_lifeBar;
     [Header("INPUT NAVIGATION")]
@@ -23,6 +24,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField] Selectable firstSelected_settings;
     [SerializeField] Selectable firstSelected_pause;
     [SerializeField] Selectable firstSelected_gameOver;
+    [SerializeField] Selectable firstSelected_cart;
     [Header("References")]
     [SerializeField] DamageableComponent playerDamageableComponent;
     #endregion
@@ -30,18 +32,29 @@ public class GameMenu : MonoBehaviour
     #region PRIVATE VARS
     Windows _currentWindow = Windows.Main;
     RunInventoryUI inventoryReference;
-    
+    bool _canInteract = false;
     #endregion
     #region PUBLIC VARS
     public enum Windows
     {
         Main,
+        MainLifeBarInvisible,
         Pause,
         Settings,
         RunInventory,
         GameOver,
+        Cart,
     }
+    public bool ShowInteractWindow
+    {
+        get => _canInteract;
+        set
+        {
+            _canInteract = value;
 
+            go_interactionWindow.SetActive(_canInteract && CurrentWindow == Windows.Main);
+        }
+    }
     public Windows CurrentWindow
     {
         get => _currentWindow;
@@ -49,8 +62,11 @@ public class GameMenu : MonoBehaviour
         {
             Debug.Log("Current Window: " + _currentWindow.ToString());
             Debug.Log("Next Window: " + value.ToString());
-            SwitchWindow(_currentWindow, value);
+
+            Windows lastWindow = _currentWindow;
             _currentWindow = value;
+
+            SwitchWindow(lastWindow, _currentWindow);
             UpdateSelectedButton();
         }
     }
@@ -71,29 +87,34 @@ public class GameMenu : MonoBehaviour
     }
     void SwitchWindow(Windows? lastWindow, Windows nextWindow)
     {
-        bool isMain = nextWindow == Windows.Main;
+        bool isMain = nextWindow == Windows.Main || nextWindow == Windows.MainLifeBarInvisible;
+
+        ShowInteractWindow = _canInteract;
+
         go_mainWindow.SetActive(isMain);
         go_materialsCollectedWindow.SetActive(isMain);
+        go_cartWindow.SetActive(nextWindow == Windows.Cart);
         go_settingsWindow.SetActive(nextWindow == Windows.Settings);
-        go_pauseWindow.SetActive(nextWindow == Windows.Pause);
         go_runInventoryWindow.SetActive(nextWindow == Windows.RunInventory);
         go_runInventoryInfoWindow.SetActive(nextWindow == Windows.RunInventory);
-        go_lifeBar.SetActive(isMain);
+        go_lifeBar.SetActive(nextWindow == Windows.Main);
         go_gameOverWindow.SetActive(nextWindow == Windows.GameOver);
+
+        bool isPause = nextWindow == Windows.Pause;
+        go_pauseWindow.SetActive(isPause);
+
+        if (!isMain) Time.timeScale = 0;
+        else Time.timeScale = 1;
 
         bool isInit = !lastWindow.HasValue;
 
         if (isMain && (isInit || lastWindow.Value != Windows.Main)) 
         {
-            //si isInit entra en el if y no accede a value
-            //playerInputMapsManager.SwitchCurrentActionMap("Player");
-
             //si es init y estamos en tutorial no se llama, ya q se llamara a el mapa TutorialCallout
             if (!GameData.NeedsTutorial || !isInit)
                 playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.playerAndUi;
         }   
         else if (!isMain && (isInit || lastWindow.Value == Windows.Main))
-            //playerInputMapsManager.SwitchCurrentActionMap("UI");
             playerInputMapsManager.InputMapProperty = InputMapsManager.InputMap.uiNavigation;
     }
 
@@ -115,6 +136,8 @@ public class GameMenu : MonoBehaviour
         }
         else if (CurrentWindow == Windows.GameOver)
             firstSelected_gameOver?.Select();
+        else if (CurrentWindow == Windows.Cart)
+            firstSelected_cart?.Select();
     }
     #endregion
 
@@ -136,10 +159,21 @@ public class GameMenu : MonoBehaviour
     }
     public void Button_ReturnToVillage()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("1_VILLAGE_SCENE");
     }
     public void Button_Pause()
     {
+        if (CurrentWindow == Windows.Main)
+            CurrentWindow = Windows.Pause;
+        else
+            CurrentWindow = Windows.Main;
+    }
+    public void Button_Pause(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed)
+            return;
+
         if (CurrentWindow == Windows.Main)
             CurrentWindow = Windows.Pause;
         else
@@ -152,6 +186,7 @@ public class GameMenu : MonoBehaviour
         else
             CurrentWindow = Windows.RunInventory;
     }
+    public void Button_Cart() => CurrentWindow = Windows.Cart;
     public void Button_OpenSettings() => CurrentWindow = Windows.Settings;
     public void Button_OpenMain() => CurrentWindow = Windows.Main;
 

@@ -25,6 +25,8 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
 
     Animator animator;
 
+    MaterialChanger changer;
+
     public BunnyAttackComponent(IStateMachineComponent m, Transform e, IDamageableComponent p, Transform t, Animator a)
     {
         mStateMachine = m;
@@ -50,7 +52,7 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
     public void Attack()
     {
         //animator.SetBool("Atacar", true);
-        playerHealth.RecieveDamage(damage);
+        playerHealth.RecieveDamage(damage, 1f, 0.75f);
         hasAttacked = true;
 
         BunnyController m = (BunnyController)mStateMachine;
@@ -67,6 +69,7 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
         //Debug.Log("ESTOY ATACANDO");
         animator.SetBool("Morir", true);
 
+        changer = enemyTransform.GetComponent<MaterialChanger>();
         //Debug.Log("DURACION: " + animator.GetCurrentAnimatorStateInfo(0).length);
         //TIME_HITBOX = animator.GetCurrentAnimatorStateInfo(0).length;
     }
@@ -74,6 +77,9 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
     public void Exit()
     {
         animator.SetBool("Morir", false);
+        changer.StopAllCoroutines();
+        changer.AssignDefaultMat();
+        enemyTransform.GetChild(1).localScale = Vector3.one;
     }
 
     public void FixedUpdate()
@@ -82,6 +88,13 @@ public class BunnyAttackComponent : IStateComponent, IAttackComponent
         {
             //animator.SetBool("Morir", false);
             timeToAttack += Time.fixedDeltaTime;
+
+            Material material = new Material(Shader.Find("Universal Render Pipeline/Lit"));
+            material.color = new Color(1, 0.5f + Mathf.PingPong(Time.time + 4f * timeToAttack, 0.5f), 0);
+
+            changer.AssignTemporalMaterial(material);
+
+            enemyTransform.GetChild(1).localScale = Vector3.one * (0.75f + Mathf.PingPong(Time.time + 3f * timeToAttack, 0.5f));
 
             if (timeToAttack >= COOLDOWN)
             {
