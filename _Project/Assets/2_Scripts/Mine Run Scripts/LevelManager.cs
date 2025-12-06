@@ -30,7 +30,15 @@ public class LevelManager : MonoBehaviour
 
         if (rooms.Length != 0)
         {
-            Instantiate(rooms[0]);
+            switch(BiomeManager.CurrentBiome)
+            {
+                case BiomeName.starterMines:
+                    Instantiate(rooms[UnityEngine.Random.Range(0, 2)]);
+                    break;
+                case BiomeName.undergroundForest:
+                    Instantiate(rooms[UnityEngine.Random.Range(2, 4)]);
+                    break;
+            }          
         }
     }
 
