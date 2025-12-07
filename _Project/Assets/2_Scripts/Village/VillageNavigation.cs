@@ -84,8 +84,15 @@ public class VillageNavigation : MonoBehaviour
 
     public void OnMineEntry()
     {
-        //SceneManager.LoadScene("2_CombatRoom");
+        switch (BiomeManager.CurrentBiome)
+        {
+            case BiomeName.starterMines:
+                break;
+            case BiomeName.undergroundForest:
+                break;
+        }
+        SceneManager.LoadScene("2_CombatRoom");
         //SceneManager.LoadScene("5_RescueRoom");
-        SceneManager.LoadScene("7_DarkRoom");
+        //SceneManager.LoadScene("7_DarkRoom");
     }
 }

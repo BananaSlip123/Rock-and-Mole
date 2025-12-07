@@ -28,6 +28,23 @@ public static class BiomeManager
         }
     }
 
+    public static string BiomeNameToString()
+    {
+        return BiomeNameToString(CurrentBiome);
+    }
+    public static string BiomeNameToString(BiomeName biome)
+    {
+        switch (biome)
+        {
+            case BiomeName.starterMines:
+                return "Minas de principiante";
+            case BiomeName.undergroundForest:
+                return "El bosque subterráneo";
+            default:
+                return "UNDEFINED biome name";
+        }
+    }
+
 }
 public class UnlockedBiomes
 {
