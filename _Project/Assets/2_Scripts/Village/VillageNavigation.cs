@@ -81,14 +81,11 @@ public class VillageNavigation : MonoBehaviour
 
     public void OnMineEntry()
     {
-        switch (BiomeManager.CurrentBiome)
-        {
-            case BiomeName.starterMines:
-                break;
-            case BiomeName.undergroundForest:
-                break;
-        }
-        SceneManager.LoadScene("2_CombatRoom");
+        //decirle a village UI q active el menu de villa
+
+        villageMenuUI.Button_OpenBiomeSelector();
+
+        //SceneManager.LoadScene("2_CombatRoom");
         //SceneManager.LoadScene("5_RescueRoom");
         //SceneManager.LoadScene("7_DarkRoom");
     }

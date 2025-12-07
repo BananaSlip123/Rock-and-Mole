@@ -2,7 +2,8 @@
     "name": "BiomeSelectorUI",
     "rootNamespace": "",
     "references": [
-        "GUID:3e296fc13e455d34bb30344df495fbc9"
+        "GUID:3e296fc13e455d34bb30344df495fbc9",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

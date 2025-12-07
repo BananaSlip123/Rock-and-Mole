@@ -6756,9 +6756,9 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnDown: {fileID: 1179028254}
+    m_SelectOnLeft: {fileID: 1778854696}
+    m_SelectOnRight: {fileID: 1778854696}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 0.9073711, b: 0.50377357, a: 1}
@@ -6784,9 +6784,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1804141007}
-        m_TargetAssemblyTypeName: WardrobeUI, Wardrobe
-        m_MethodName: OnButtonLeftArrow
+      - m_Target: {fileID: 6688679799354955656}
+        m_TargetAssemblyTypeName: BiomeSelectorUI, BiomeSelectorUI
+        m_MethodName: ButtonLeft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8779,6 +8779,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5342180666820559103, guid: 4af9d44d824453149aaac33d25828cec, type: 3}
   m_PrefabInstance: {fileID: 1131822930}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1131822932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4830597884540119561, guid: 4af9d44d824453149aaac33d25828cec, type: 3}
+  m_PrefabInstance: {fileID: 1131822930}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1141063891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9327,6 +9332,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1456769559}
     m_Modifications:
+    - target: {fileID: 810700213665259414, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 879343068}
+    - target: {fileID: 810700213665259414, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 879343068}
+    - target: {fileID: 810700213665259414, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 1778854696}
+    - target: {fileID: 810700213665259414, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6688679799354955656}
+    - target: {fileID: 810700213665259414, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonExplore
+      objectReference: {fileID: 0}
+    - target: {fileID: 810700213665259414, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BiomeSelectorUI, BiomeSelectorUI
+      objectReference: {fileID: 0}
     - target: {fileID: 2457702356561362210, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
       propertyPath: m_text
       value: Explorar
@@ -9413,7 +9442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6657990571546763172, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.2
+      value: -9.199997
       objectReference: {fileID: 0}
     - target: {fileID: 6657990571546763172, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9442,12 +9471,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 810700213665259414, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
   m_PrefabInstance: {fileID: 1179028252}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1179028255}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1179028255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4765505780789060827, guid: cd5305428a39efe4191a5c60f66e3e3d, type: 3}
+  m_PrefabInstance: {fileID: 1179028252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1188384451
 GameObject:
   m_ObjectHideFlags: 0
@@ -13326,9 +13360,9 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnDown: {fileID: 1179028254}
+    m_SelectOnLeft: {fileID: 879343068}
+    m_SelectOnRight: {fileID: 879343068}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 0.9073711, b: 0.50377357, a: 1}
@@ -13354,9 +13388,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1804141007}
-        m_TargetAssemblyTypeName: WardrobeUI, Wardrobe
-        m_MethodName: OnButtonRightArrow
+      - m_Target: {fileID: 6688679799354955656}
+        m_TargetAssemblyTypeName: BiomeSelectorUI, BiomeSelectorUI
+        m_MethodName: ButtonRight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16219,7 +16253,7 @@ GameObject:
   - component: {fileID: 2578401323554041365}
   - component: {fileID: 1773503546161752570}
   m_Layer: 0
-  m_Name: title
+  m_Name: txt_name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16514,7 +16548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Entrada minas
+  m_text: Nombre del bioma
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d87ce3a760f77ad4da8e56606dce4603, type: 2}
   m_sharedMaterial: {fileID: 6624265146440007285, guid: d87ce3a760f77ad4da8e56606dce4603, type: 2}
@@ -16541,8 +16575,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -17767,8 +17801,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6747640689662074448}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00007432851}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -17777,8 +17811,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 377.68, y: 60}
+  m_AnchoredPosition: {x: -0.000076293945, y: -50}
+  m_SizeDelta: {x: 416.12, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6295817950136849333
 GameObject:
@@ -17810,10 +17844,10 @@ RectTransform:
   m_LocalScale: {x: 1.0005875, y: 1.0005875, z: 1.0005875}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1778854694}
-  - {fileID: 879343066}
   - {fileID: 6093063916224476326}
   - {fileID: 1456769559}
+  - {fileID: 1778854694}
+  - {fileID: 879343066}
   - {fileID: 504590673}
   - {fileID: 2173027173896952786}
   m_Father: {fileID: 87164205}
@@ -18039,9 +18073,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825115b648fc82e45b98915e40b84ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go_selectBiomeButton: {fileID: 0}
+  txt_BiomeName: {fileID: 1773503546161752570}
+  go_EnabledBiomeUI: {fileID: 1179028255}
+  go_DisabledBiomeUI: {fileID: 1131822932}
+  img_selectedBiomeIcon: {fileID: 959438960}
   spritesDoors:
-  - UnlockedDoorSprite: {fileID: 0}
+  - UnlockedDoorSprite: {fileID: 21300000, guid: 99332cb5977545647a83ffbffb481e66, type: 3}
     LockedDoorSprite: {fileID: 0}
   - UnlockedDoorSprite: {fileID: 21300000, guid: 1d1733bd74d3ace4eb31e08c574f9c6a, type: 3}
     LockedDoorSprite: {fileID: 21300000, guid: 99332cb5977545647a83ffbffb481e66, type: 3}
@@ -18057,7 +18094,7 @@ GameObject:
   - component: {fileID: 4305241381449160883}
   - component: {fileID: 8908120425612615537}
   m_Layer: 0
-  m_Name: TITLE (1)
+  m_Name: name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
