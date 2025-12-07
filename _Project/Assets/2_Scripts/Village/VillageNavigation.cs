@@ -57,10 +57,7 @@ public class VillageNavigation : MonoBehaviour
         Location = Locations.village;
     }
 
-    // ======================
-    //   PUBLIC FUNCTIONS
-    // ======================
-
+    #region PUBLIC FUNCS
     public void OnShopEntry()
     {
         Location = Locations.shop;
@@ -95,4 +92,5 @@ public class VillageNavigation : MonoBehaviour
         //SceneManager.LoadScene("5_RescueRoom");
         //SceneManager.LoadScene("7_DarkRoom");
     }
+    #endregion
 }
