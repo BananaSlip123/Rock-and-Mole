@@ -206,7 +206,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Lanzar+Correr
+      name: GoldLanzarAndar
       takeName: Armature|Lanzar+Correr
       internalID: 3167442709818825739
       firstFrame: 0
