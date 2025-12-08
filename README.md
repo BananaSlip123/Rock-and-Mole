@@ -817,7 +817,7 @@ En este anexo se recopilan los props diseñados para los escenarios del juego, e
 <div align="center"><p><i>Imagen A8.8: Turnaround de la carreta en 2D.</i></p></div>  
 <br><br>
 
-![Imagen del turnaround del pájaro](/Fotos_README/vagoneta3D.png "Vagón en 3D")
+![Imagen del turnaround del pájaro](/Fotos_README/Vagoneta3D.png "Vagón en 3D")
 <div align="center"><p><i>Imagen A8.9: Beauty de la carreta en 3D.</i></p></div>  
 <br><br>
 
