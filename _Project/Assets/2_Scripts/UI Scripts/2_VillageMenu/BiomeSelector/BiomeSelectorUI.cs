@@ -79,7 +79,9 @@ public class BiomeSelectorUI : MonoBehaviour
         if (!BiomeManager.unlockedBiomes[SelectedBiome]) return;
 
         BiomeManager.CurrentBiome = SelectedBiome;
-        SceneManager.LoadScene("2_CombatRoom");
+        //SceneManager.LoadScene("2_CombatRoom");
+        SceneManager.LoadScene("5_RescueRoom");
+        //SceneManager.LoadScene("7_DarkRoom");
     }
     #endregion
 }
