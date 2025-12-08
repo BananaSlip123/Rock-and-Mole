@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour
                     Instantiate(rooms[UnityEngine.Random.Range(0, 2)]);
                     break;
                 case BiomeName.undergroundForest:
-                    Instantiate(rooms[UnityEngine.Random.Range(2, 4)]);
+                    Instantiate(rooms[UnityEngine.Random.Range(2, rooms.Length)]);
                     break;
             }          
         }

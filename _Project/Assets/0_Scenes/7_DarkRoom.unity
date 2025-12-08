@@ -336,6 +336,8 @@ MonoBehaviour:
   rooms:
   - {fileID: 9222727154294587340, guid: f62aac579f954f0478b3c9f537ae3b43, type: 3}
   - {fileID: 2540710322731855815, guid: f8d28652ea7b2b0429b144f4910cf3b7, type: 3}
+  - {fileID: 4682055564752431648, guid: 0d5e31af46c209747931a6b0bb13775d, type: 3}
+  - {fileID: 3973581545088859902, guid: f9c89ce6fc2d0e342afb35fcbc8c0f4a, type: 3}
   nEnemies: 0
   spawnEnemy: 1
 --- !u!4 &1847849774

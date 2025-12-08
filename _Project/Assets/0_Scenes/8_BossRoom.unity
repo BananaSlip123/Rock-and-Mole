@@ -220,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rooms:
   - {fileID: 5354384393362097957, guid: 541a201b4f44ed243a42339859ac339c, type: 3}
+  - {fileID: 6169728636781673669, guid: 16f5f2ff0d4066a469283be910881804, type: 3}
   nEnemies: 1
   spawnEnemy: 1
 --- !u!114 &1615306071
