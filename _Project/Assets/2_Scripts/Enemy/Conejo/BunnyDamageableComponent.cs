@@ -12,8 +12,9 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
     [SerializeField] EnemyName tipoEnemigo;
     [SerializeField] MaterialChanger changer;
 
-    private void FixedUpdate()
+    private void Update()
     {
+        if (GameObject.FindGameObjectWithTag("Player") == null) return;
         /*
         if (animator.GetBool("Morir"))
         {

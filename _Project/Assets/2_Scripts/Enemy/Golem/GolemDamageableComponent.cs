@@ -17,9 +17,15 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
         changer = GetComponent<MaterialChanger>();
     }
 
+    private void Update()
+    {
+        if (GameObject.FindGameObjectWithTag("Player") == null) return;
+    }
+
     private void FixedUpdate()
     {
-        if(animator.GetBool("Morir"))
+        if (GameObject.FindGameObjectWithTag("Player") == null) return;
+        if (animator.GetBool("Morir"))
         {
             timeToDeath += Time.fixedDeltaTime;
 
