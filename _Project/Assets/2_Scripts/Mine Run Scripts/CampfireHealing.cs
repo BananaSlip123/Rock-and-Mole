@@ -25,8 +25,8 @@ public class CampfireHealing : MonoBehaviour
 
         Debug.Log("Me estoy curando");
         
-        birdAnimator.SetBool("isHealing", true);
-        heart.SetActive(true);
+        birdAnimator?.SetBool("isHealing", true);
+        heart?.SetActive(true);
         //heartAnimator.SetBool("isRotating", true);
         
         StartCoroutine(WaitAnimation());
@@ -39,7 +39,7 @@ public class CampfireHealing : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
 
-        heart.SetActive(false);
-        stats?.HealPlayer(healing);
+        heart?.SetActive(false);
+        stats.HealPlayer(healing);
     }
 }
