@@ -640,7 +640,7 @@ En este anexo se recopilan los diseños finales de las armas y armaduras disponi
 
 <br><br>
 
-![Imagen de las armaduras](/Fotos_README/armaduras3D.png "Render armaduras")  
+![Imagen de las armaduras en 3D](/Fotos_README/armaduras3D.png "Render armaduras")  
 <div align="center"><p><i>Imagen A3.2: Armaduras en 3D.</i></p></div>  
 
 <br><br>
@@ -650,7 +650,7 @@ En este anexo se recopilan los diseños finales de las armas y armaduras disponi
 
 <br><br> 
 
-![Imagen de los cascos](/Fotos_README/cascos3D.png "Render cascos")  
+![Imagen de los cascos en 3D](/Fotos_README/cascos3D.png "Render cascos")  
 <div align="center"><p><i>Imagen A3.4: Beauty de los cascos en 3D.</i></p></div>  
 
 <br><br> 
@@ -660,7 +660,7 @@ En este anexo se recopilan los diseños finales de las armas y armaduras disponi
 
 <br><br> 
 
-![Imagen de los picos](/Fotos_README/picos3D.png "Render picos")  
+![Imagen de los picos en 3D](/Fotos_README/picos3D.png "Render picos")  
 <div align="center"><p><i>Imagen A3.6: Beauty de los picos en 3D.</i></p></div>  
 
 <br>
@@ -694,7 +694,7 @@ En este anexo se presentan los turnarounds en 2D y 3D de los enemigos principale
 
 <br><br>
 
-![Imagen del turnaround del conejo](/Fotos_README/turnaroundConejo3D.png "Turnaround del conejo en 3D")  
+![Imagen del turnaround del conejo en 3D](/Fotos_README/turnaroundConejo3D.png "Turnaround del conejo en 3D")  
 <div align="center"><p><i>Imagen A4.6: Turnaround del conejo en 3D.</i></p></div>  
 
 <br><br>
@@ -704,7 +704,7 @@ En este anexo se presentan los turnarounds en 2D y 3D de los enemigos principale
 
 <br><br>
 
-![Imagen del turnaround de la rata](/Fotos_README/turnaroundRata3D.png "Turnaround de la rata en 3D")  
+![Imagen del turnaround de la rata en 3D](/Fotos_README/turnaroundRata3D.png "Turnaround de la rata en 3D")  
 <div align="center"><p><i>Imagen A4.8: Turnaround de la rata en 3D.</i></p></div>  
 
 <br>
@@ -726,12 +726,12 @@ En este anexo se presentan los turnarounds en 2D de los NPCs principales del jue
 
 <br><br>
 
-![Imagen del turnaround del herrero](/Fotos_README/turnaroundHerrero3D.png "Turnaround del herrero en 3D")  
+![Imagen del turnaround del herrero en 3D](/Fotos_README/turnaroundHerrero3D.png "Turnaround del herrero en 3D")  
 <div align="center"><p><i>Imagen A6.2: Turnaround del herrero en 3D.</i></p></div>  
 
 <br><br>
 
-![Imagen del turnaround del herrero](/Fotos_README/turnaroundTenderop3D.png "Turnaround del tendero en 3D")  
+![Imagen del turnaround del tendero en 3D](/Fotos_README/turnaroundTendero3D.png "Turnaround del tendero en 3D")  
 <div align="center"><p><i>Imagen A6.3: Turnaround del tendero en 3D.</i></p></div>  
 
 <br><br>
@@ -741,7 +741,7 @@ En este anexo se presentan los turnarounds en 2D de los NPCs principales del jue
 
 <br><br>
 
-![Imagen del turnaround del pájaro](/Fotos_README/turnaroundPajaro3D.png "Turnaround del pájaro en 3D")  
+![Imagen del turnaround del pájaro en 3D](/Fotos_README/turnaroundPajaro3D.png "Turnaround del pájaro en 3D")  
 <div align="center"><p><i>Imagen A6.5: Turnaround del pájaro en 3D.</i></p></div> 
 
 <br>
@@ -774,9 +774,8 @@ En este anexo se recopilan los props diseñados para los escenarios del juego, e
 <div align="center"><p><i>Imagen A8.1: Turnaround del cofre en 2D.</i></p></div>  
 <br><br>
 
-![Imagen del turnaround del pájaro](/Fotos_README/cofre3D.png "Cofre en 3D")  
-<div align="center"><p><i>Imagen A8.2: Beauty del cofre en 3D.</i></p></div> 
-
+<div align="center"><img src="/Fotos_README/Cofre3D.png" alt="Cofre en 3D" width="500"></img></div>  
+<div align="center"><p><i>Imagen A8.1: Turnaround del cofre en 2D.</i></p></div>  
 <br><br>
 
 <div align="center"><img src="/Fotos_README/jaula.png" alt="Jaula" width="500"></img></div>  
@@ -789,7 +788,7 @@ En este anexo se recopilan los props diseñados para los escenarios del juego, e
 <div align="center"><p><i>Imagen A8.4: Beauty  de rocas en 2D.</i></p></div>  
 <br><br>
 
-![Imagen del turnaround del pájaro](/Fotos_README/Rocas3D.png "Rocas en 3D")  
+<div align="center"><img src="/Fotos_README/Rocas3D.png" alt="Rocas en 3D" width="500"></img></div> 
 <div align="center"><p><i>Imagen A8.5: Beauty  de rocas en 3D.</i></p></div>  
 <br><br>
 
@@ -797,7 +796,7 @@ En este anexo se recopilan los props diseñados para los escenarios del juego, e
 <div align="center"><p><i>Imagen A8.6: Turnaround de la pala en 2D.</i></p></div>  
 <br><br>
 
-![Imagen del turnaround del pájaro](/Fotos_README/pala3D.png "pala en 3D")
+<div align="center"><img src="/Fotos_README/pala3D.png" alt="Pala en 3D" width="300"></img></div>
 <div align="center"><p><i>Imagen A8.7: Beauty de la pala en 3D.</i></p></div>  
 <br><br>
 
@@ -806,30 +805,30 @@ En este anexo se recopilan los props diseñados para los escenarios del juego, e
 <br><br>
 
 <div align="center"><img src="/Fotos_README/cajas.png" alt="Cajas" width="500"></img></div>  
-<div align="center"><p><i>Imagen A8.7: Beauty de las cajas y el barril en 3D.</i></p></div>  
-<br><br>
-
-![Imagen del turnaround del pájaro](/Fotos_README/Cajas3D.png "Cajas y el barril en 3D")
 <div align="center"><p><i>Imagen A8.6: Turnaround de las cajas en 2D.</i></p></div>  
 <br><br>
+
+<div align="center"><img src="/Fotos_README/Cajas3D.png" alt="Cajas y barril en 3D" width="500"></img></div
+<div align="center"><p><i>Imagen A8.7: Beauty de las cajas y el barril en 3D.</i></p></div>  
+<br><br>   
 
 <div align="center"><img src="/Fotos_README/vagon.png" alt="Vagón" width="500"></img></div>  
 <div align="center"><p><i>Imagen A8.8: Turnaround de la carreta en 2D.</i></p></div>  
 <br><br>
 
-![Imagen del turnaround del pájaro](/Fotos_README/Vagoneta3D.png "Vagón en 3D")
+<div align="center"><img src="/Fotos_README/Vagoneta3D.png" alt="Vagón en 3D" width="500"></img></div>
 <div align="center"><p><i>Imagen A8.9: Beauty de la carreta en 3D.</i></p></div>  
 <br><br>
 
-![Imagen del turnaround del pájaro](/Fotos_README/turnaroundHojas.png "Turnaround de hojas en 2D") 
+<div align="center"><img src="/Fotos_README/turnaroundHojas.png" alt="Turnaround de hojas en 2D" width="500"></img></div>
 <div align="center"><p><i>Imagen A8.10: Turnaround de las hojas en 2D.</i></p></div>  
 <br><br>
 
-![Imagen del turnaround del pájaro](/Fotos_README/turnaroundArbustos.png "Turnaround de arbustos en 2D") 
+<div align="center"><img src="/Fotos_README/turnaroundArbustos.png" alt="Turnaround de arbustos en 2D" width="500"></img></div>
 </div> <div align="center"><p><i>Imagen A8.11: Turnaround de los arbustos en 2D.</i></p></div>  
 <br><br>
 
-![Imagen del turnaround del pájaro](/Fotos_README/Arbustos3D.png "Arbustos en 3D") 
+<div align="center"><img src="/Fotos_README/Arbustos3D.png" alt="Arbustos en 3D" width="500"></img></div>
 </div> <div align="center"><p><i>Imagen A8.12: Beauty de los arbustos en 3D.</i></p></div>  
 <br><br>
 
