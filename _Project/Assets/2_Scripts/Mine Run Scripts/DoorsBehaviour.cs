@@ -75,6 +75,7 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     {
         enter = true;
         enterBehaviour?.Invoke();
+        AudioManager.Instance.StopAudio(AudioManager.AudioType.WalkSound);
     }
 
     public void ChangeBehaviour(Action behaviour)

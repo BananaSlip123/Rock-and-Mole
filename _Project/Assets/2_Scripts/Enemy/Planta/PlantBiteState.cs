@@ -45,11 +45,12 @@ class PlantBiteState : IStateComponent, IAttackComponent
     {
         hitbox = enemy.GetChild(1).GetComponent<Collider>();
         playerHealth = player.GetComponent<IDamageableComponent>();
+        animator.SetBool("Morder", true);
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+        animator.SetBool("Morder", false);
     }
 
     public void FixedUpdate()

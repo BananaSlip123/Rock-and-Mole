@@ -11,7 +11,7 @@ internal class PlantShootState : IStateComponent, IAttackComponent
 
     private bool isInCooldown = true;
 
-    const float COOLDOWN = 2.5f;
+    const float COOLDOWN = 1.5f;
     private float timeToAttack = 0f;
 
     public PlantShootState(IStateMachineComponent stateMachineComponent, Transform transform, Transform player, Animator animator)
@@ -25,11 +25,12 @@ internal class PlantShootState : IStateComponent, IAttackComponent
     public void Enter()
     {
         pool = GameObject.FindGameObjectWithTag("PoolBullet").GetComponent<IObjectPool>();
+        animator.SetBool("Dispara", true);
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+        animator.SetBool("Dispara", false);
     }
 
     public void FixedUpdate()
@@ -49,12 +50,15 @@ internal class PlantShootState : IStateComponent, IAttackComponent
         if (isInCooldown)
         {
             timeToAttack += Time.fixedDeltaTime;
-            animator.SetBool("Atacar", false);
+            
+            if(timeToAttack == 1f)
+                animator.SetBool("Dispara", false);
+
             if (timeToAttack >= COOLDOWN)
             {
                 isInCooldown = false;
                 timeToAttack = 0f;
-
+                
             }
 
             return;
@@ -96,7 +100,7 @@ internal class PlantShootState : IStateComponent, IAttackComponent
 
     public void Attack()
     {
-        animator.SetBool("Atacar", true);
+        animator.SetBool("Dispara", true);
         pool.Get().Init(player.position - enemy.position, enemy.position);
     }
 

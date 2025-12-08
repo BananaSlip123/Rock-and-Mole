@@ -51,7 +51,9 @@ public static class GameData
         { EnemyName.Mouse,new List<MaterialName>() { MaterialName.Ambar, MaterialName.Hierro, MaterialName.Bronce, MaterialName.Carbon, MaterialName.Cuarzo, MaterialName.RolloTela } },
         { EnemyName.Bunny, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Hierro, MaterialName.Bronce, MaterialName.Carbon, MaterialName.Rubi, MaterialName.Obsidiana }},
         { EnemyName.Golem, new List<MaterialName>() { MaterialName.Ambar, MaterialName.Hierro, MaterialName.Carbon, MaterialName.Esmeralda, MaterialName.Bronce, MaterialName.Obsidiana } },
-        { EnemyName.GolemBoss,new List<MaterialName>() { MaterialName.Rubi, MaterialName.Esmeralda, MaterialName.Hierro, MaterialName.Cuarzo, MaterialName.Obsidiana, MaterialName.Bronce } }
+        { EnemyName.GolemBoss,new List<MaterialName>() { MaterialName.Rubi, MaterialName.Esmeralda, MaterialName.Hierro, MaterialName.Cuarzo, MaterialName.Obsidiana, MaterialName.Bronce } },
+        { EnemyName.Plant, new List<MaterialName>() {MaterialName.Bronce, MaterialName.Hierro, MaterialName.Cuarzo, MaterialName.RolloTela, MaterialName.Ambar } },
+        { EnemyName.PlantBoss, new List<MaterialName>() {MaterialName.Diamante, MaterialName.Hierro, MaterialName.Cuarzo, MaterialName.RolloTela, MaterialName.RolloTela, MaterialName.Ambar } }
     };
 
     public static PersistentInventory Inventory => _inventory;
@@ -518,6 +520,8 @@ public enum EnemyName
     Bunny,
     Golem,
     Mouse,
-    GolemBoss
+    GolemBoss,
+    Plant,
+    PlantBoss
 }
 

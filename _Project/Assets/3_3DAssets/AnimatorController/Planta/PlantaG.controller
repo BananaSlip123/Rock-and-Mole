@@ -50,7 +50,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8945691123924629249, guid: 58a7af6f1bbc46b418e88a38c8b7c4fa, type: 3}
+  m_Motion: {fileID: -8945691123924629249, guid: fc7ace79be8598545b8103768f88291d, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -159,7 +159,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 3792808157910313314, guid: 58a7af6f1bbc46b418e88a38c8b7c4fa, type: 3}
+  m_Motion: {fileID: 3792808157910313314, guid: fc7ace79be8598545b8103768f88291d, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -187,7 +187,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -9018192775856630282, guid: 58a7af6f1bbc46b418e88a38c8b7c4fa, type: 3}
+  m_Motion: {fileID: -9018192775856630282, guid: fc7ace79be8598545b8103768f88291d, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -227,7 +227,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Planta
+  m_Name: PlantaG
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Morder
@@ -309,7 +309,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 206772786285154739, guid: 58a7af6f1bbc46b418e88a38c8b7c4fa, type: 3}
+  m_Motion: {fileID: 206772786285154739, guid: fc7ace79be8598545b8103768f88291d, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -332,7 +332,7 @@ AnimatorStateMachine:
     m_Position: {x: 740, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -933448016906594495}
-    m_Position: {x: 664, y: 389, z: 0}
+    m_Position: {x: 660, y: 390, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4782254266632652349}
     m_Position: {x: 550, y: 160, z: 0}
