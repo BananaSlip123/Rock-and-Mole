@@ -2050,18 +2050,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FarolilloConAplique (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7545591447380615155, guid: f3666d33894f9044892617d430121b0e, type: 3}
-      propertyPath: m_Range
-      value: 3.8120823
-      objectReference: {fileID: 0}
-    - target: {fileID: 8477618620668608266, guid: f3666d33894f9044892617d430121b0e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8477618620668608266, guid: f3666d33894f9044892617d430121b0e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.88
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2431,14 +2419,6 @@ PrefabInstance:
     - target: {fileID: 6554085446790071012, guid: f3666d33894f9044892617d430121b0e, type: 3}
       propertyPath: m_Name
       value: FarolilloConAplique
-      objectReference: {fileID: 0}
-    - target: {fileID: 7545591447380615155, guid: f3666d33894f9044892617d430121b0e, type: 3}
-      propertyPath: m_Range
-      value: 3.9691362
-      objectReference: {fileID: 0}
-    - target: {fileID: 8477618620668608266, guid: f3666d33894f9044892617d430121b0e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3569,18 +3549,6 @@ PrefabInstance:
     - target: {fileID: 6554085446790071012, guid: f3666d33894f9044892617d430121b0e, type: 3}
       propertyPath: m_Name
       value: FarolilloConAplique (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7545591447380615155, guid: f3666d33894f9044892617d430121b0e, type: 3}
-      propertyPath: m_Range
-      value: 3.9754162
-      objectReference: {fileID: 0}
-    - target: {fileID: 8477618620668608266, guid: f3666d33894f9044892617d430121b0e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8477618620668608266, guid: f3666d33894f9044892617d430121b0e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
