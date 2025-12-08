@@ -22,6 +22,8 @@ public class ThrowingPickaxe : MonoBehaviour
     public float seconds = 0f;
     bool isReturning = false;
 
+    public Animator animator;
+
     public void ResetValues()
     {
         isReturning = false;
@@ -98,6 +100,8 @@ public class ThrowingPickaxe : MonoBehaviour
     
     public void ReturnPickaxe(Vector3 m)
     {
+        if (animator.GetBool("Dispara"))
+            animator.SetBool("Dispara", false);
         transform.position += speed * Time.fixedDeltaTime * (m - transform.position);
         transform.rotation *= Quaternion.Euler(0f, 0f, 30f);
     }
