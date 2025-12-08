@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5051107445752765718}
   m_Layer: 0
   m_Name: PlantaBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 400
   animator: {fileID: 7098643760857626507}
-  tipoEnemigo: 4
+  tipoEnemigo: 5
 --- !u!1 &4414171831275196253
 GameObject:
   m_ObjectHideFlags: 0

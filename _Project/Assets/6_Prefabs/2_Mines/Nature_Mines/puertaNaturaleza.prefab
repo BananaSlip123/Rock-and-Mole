@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: puertaNaturaleza
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cf6103f5529da34080d827b520a5d6a, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 121204859330779623, guid: 1cf6103f5529da34080d827b520a5d6a, type: 3}
