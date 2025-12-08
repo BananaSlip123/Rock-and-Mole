@@ -17,7 +17,7 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
 
     [SerializeField] ThrowingPickaxe throwingPickaxeComponent;
     [SerializeField] Transform t_pickaxeSpawnTransform;
-    [SerializeField] Animator animator;
+    public Animator animator;
 
     public int damage;
     public float critMultiplier;
@@ -31,7 +31,6 @@ public class PlayerShootComponent : MonoBehaviour, IAttackComponent
         throwingPickaxeComponent.player = transform;
         throwingPickaxeComponent.shoot = this;
         throwingPickaxeComponent.gameObject.transform.parent = null;
-        throwingPickaxeComponent.animator = animator;
 
         IsShooting = false;
     }

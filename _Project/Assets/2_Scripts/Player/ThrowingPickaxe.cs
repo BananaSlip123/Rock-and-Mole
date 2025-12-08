@@ -9,7 +9,6 @@ public class ThrowingPickaxe : MonoBehaviour
     public float critMultiplier;
     public float critProbability;
 
-
     public PlayerShootComponent shoot;
     public Vector3 dir;
     public Transform player;
@@ -21,8 +20,6 @@ public class ThrowingPickaxe : MonoBehaviour
     [SerializeField] float speed = ATTACK_SPEED;
     public float seconds = 0f;
     bool isReturning = false;
-
-    public Animator animator;
 
     public void ResetValues()
     {
@@ -49,7 +46,7 @@ public class ThrowingPickaxe : MonoBehaviour
                 shoot.IsShooting = false;
 
             speed = RETURN_SPEED;
-            ReturnPickaxe(player.position);         
+            ReturnPickaxe(player.position);
         }        
     }
 
@@ -100,8 +97,8 @@ public class ThrowingPickaxe : MonoBehaviour
     
     public void ReturnPickaxe(Vector3 m)
     {
-        if (animator.GetBool("Dispara"))
-            animator.SetBool("Dispara", false);
+        if (shoot.animator.GetBool("Dispara"))
+            shoot.animator.SetBool("Dispara", false);
         transform.position += speed * Time.fixedDeltaTime * (m - transform.position);
         transform.rotation *= Quaternion.Euler(0f, 0f, 30f);
     }

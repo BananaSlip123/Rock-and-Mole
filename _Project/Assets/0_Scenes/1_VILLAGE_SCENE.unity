@@ -6415,8 +6415,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: herreria
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 7138554258515695390, guid: e5fba4e7fbe06e94bb9d8dfea48e7cbf, type: 3}
+    - {fileID: 3071635099912667855, guid: e5fba4e7fbe06e94bb9d8dfea48e7cbf, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 305082957344842908, guid: e5fba4e7fbe06e94bb9d8dfea48e7cbf, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5fba4e7fbe06e94bb9d8dfea48e7cbf, type: 3}

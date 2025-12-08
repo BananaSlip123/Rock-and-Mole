@@ -103,6 +103,7 @@ public class PlayerModelActualizer : MonoBehaviour
         chestClothGetter = go_currentModel.GetComponent<ChestClothGetter>();
 
         playerAttackComponent.animator = chestClothGetter.playerAnimator;
+        playerShootComponent.animator = chestClothGetter.playerAnimator;
         playerMovementComponent.animator = chestClothGetter.playerAnimator;
 
         OnPickAxeChange();
