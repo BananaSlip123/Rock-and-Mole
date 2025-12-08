@@ -101,7 +101,13 @@ internal class PlantShootState : IStateComponent, IAttackComponent
     public void Attack()
     {
         animator.SetBool("Dispara", true);
-        pool.Get().Init(player.position - enemy.position, enemy.position);
+        float suma = 2.3f;
+        if(enemy.gameObject.name == "PlantaBoss")
+        {
+            suma = 4f;
+        }
+        Vector3 posBala = new Vector3(enemy.position.x, enemy.position.y + suma, enemy.position.z);
+        pool.Get().Init(player.position - posBala, posBala);
     }
 
     public void ActiveHitbox()
