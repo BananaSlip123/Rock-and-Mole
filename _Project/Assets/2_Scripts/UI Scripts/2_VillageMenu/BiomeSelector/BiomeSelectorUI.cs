@@ -80,7 +80,8 @@ public class BiomeSelectorUI : MonoBehaviour
 
         BiomeManager.CurrentBiome = SelectedBiome;
         //SceneManager.LoadScene("2_CombatRoom");
-        SceneManager.LoadScene("5_RescueRoom");
+        //SceneManager.LoadScene("5_RescueRoom");
+        SceneManager.LoadScene("6_CampamentRoom");
         //SceneManager.LoadScene("7_DarkRoom");
     }
     #endregion
