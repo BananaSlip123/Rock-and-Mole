@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class LevelManager : MonoBehaviour
             Destroy(this);
         }
 
+        int count = 2;
+        if (SceneManager.GetActiveScene().name == "8_BossRoom")
+            count = 1;
+
         doorsManagementEnemies = GetComponent<INoMoreEnemies>();
 
         if (rooms.Length != 0)
@@ -33,10 +38,10 @@ public class LevelManager : MonoBehaviour
             switch(BiomeManager.CurrentBiome)
             {
                 case BiomeName.starterMines:
-                    Instantiate(rooms[UnityEngine.Random.Range(0, 2)]);
+                    Instantiate(rooms[UnityEngine.Random.Range(0, count)]);
                     break;
                 case BiomeName.undergroundForest:
-                    Instantiate(rooms[UnityEngine.Random.Range(2, rooms.Length)]);
+                    Instantiate(rooms[UnityEngine.Random.Range(count, rooms.Length)]);
                     break;
             }          
         }
