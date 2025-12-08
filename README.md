@@ -774,7 +774,7 @@ En este anexo se recopilan los props diseñados para los escenarios del juego, e
 <div align="center"><p><i>Imagen A8.1: Turnaround del cofre en 2D.</i></p></div>  
 <br><br>
 
-<div align="center"><img src="/Fotos_README/Cofre3D.png" alt="Cofre en 3D" width="500"></img></div>  
+<div align="center"><img src="/Fotos_README/cofre3D.png" alt="Cofre en 3D" width="500"></img></div>  
 <div align="center"><p><i>Imagen A8.1: Turnaround del cofre en 2D.</i></p></div>  
 <br><br>
 
@@ -808,7 +808,7 @@ En este anexo se recopilan los props diseñados para los escenarios del juego, e
 <div align="center"><p><i>Imagen A8.6: Turnaround de las cajas en 2D.</i></p></div>  
 <br><br>
 
-<div align="center"><img src="/Fotos_README/Cajas3D.png" alt="Cajas y barril en 3D" width="500"></img></div
+<div align="center"><img src="/Fotos_README/Cajas3D.png" alt="Cajas y barril en 3D" width="500"></img></div>
 <div align="center"><p><i>Imagen A8.7: Beauty de las cajas y el barril en 3D.</i></p></div>  
 <br><br>   
 
