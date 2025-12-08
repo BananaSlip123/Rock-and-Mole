@@ -1,5 +1,4 @@
-﻿using UnityEditorInternal;
-using UnityEngine;
+﻿using UnityEngine;
 
 class PlantBiteState : IStateComponent, IAttackComponent
 {
