@@ -429,14 +429,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CofreCuatroPuertas
       objectReference: {fileID: 0}
-    - target: {fileID: 3409565607207929893, guid: 582d2039ffc2c1347b00e6ce48a95a61, type: 3}
-      propertyPath: m_Size.x
-      value: 1.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 3409565607207929893, guid: 582d2039ffc2c1347b00e6ce48a95a61, type: 3}
-      propertyPath: m_Size.z
-      value: 1.24
-      objectReference: {fileID: 0}
     - target: {fileID: 4704848840850811700, guid: 582d2039ffc2c1347b00e6ce48a95a61, type: 3}
       propertyPath: m_Layer
       value: 7
