@@ -84,10 +84,6 @@ public class VillageNavigation : MonoBehaviour
         //decirle a village UI q active el menu de villa
 
         villageMenuUI.Button_OpenBiomeSelector();
-
-        //SceneManager.LoadScene("2_CombatRoom");
-        //SceneManager.LoadScene("5_RescueRoom");
-        //SceneManager.LoadScene("7_DarkRoom");
     }
     #endregion
 }

@@ -131,10 +131,10 @@ MonoBehaviour:
   txt_callOutTextBox: {fileID: 8836302036902949292}
   img_CurrentExpression: {fileID: 8272989695371933958}
   sprites_CharacterExpressions:
-  - {fileID: 21300000, guid: b845fe5a463689740a5783c9929a76ec, type: 3}
-  - {fileID: 21300000, guid: 73629c3307432ef4995e16359e3d9286, type: 3}
-  - {fileID: 21300000, guid: 6609e3a2d7ec979428d72fb4acacdc0e, type: 3}
-  - {fileID: 21300000, guid: 15460d6ed18fe7b4aaa985d0e166534f, type: 3}
+  - {fileID: 21300000, guid: cd375eb441fae73468b58581bd224339, type: 3}
+  - {fileID: 21300000, guid: 11991b0b5ca029440b40c027a53f36ef, type: 3}
+  - {fileID: 21300000, guid: 2736ef3a6cd320c41b7f8034a006f834, type: 3}
+  - {fileID: 21300000, guid: 1156bcb63368b934a8465dac1066e858, type: 3}
 --- !u!1 &2788659114132840959
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b845fe5a463689740a5783c9929a76ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd375eb441fae73468b58581bd224339, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
