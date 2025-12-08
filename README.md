@@ -82,9 +82,7 @@ En la run las salas son predefinidas, con cierta aleatoriedad en la generación 
 
 **Combate:** El sistema de combate es en tiempo real, con un enfoque táctico. El jugador ataca con su pico a corta distancia, además de poder lanzar el pico para poder dañar a enemigos a larga distancia, puede esquivar con un dash y debe aprender los patrones de los enemigos para sobrevivir. Cada criatura tiene comportamientos definidos. 
 
-**Recursos y minería:** Los materiales recogidos en la mina tienen un doble propósito: pueden venderse en la tienda gestionada por el jugador para obtener dinero o utilizarse en la herrería y en la tienda de ropa para mejorar el pico, la armadura y el casco. La gestión de estos recursos es clave para progresar en el juego.
-
-**Gestión de la tienda:** Al regresar al pueblo, el jugador puede acceder a su propia tienda, donde gestionar la venta de materiales. Puede organizar los objetos que ha recolectado y establecer el precio de cada uno. Los NPCs del pueblo visitan la tienda y, según el precio, la rareza y su interés, pueden comprar o ignorar los productos. Vender a buen precio permite obtener monedas para invertir en mejoras, pero si los precios son demasiado altos, los aldeanos no comprarán. La tienda evoluciona con el progreso del jugador.
+**Recursos y minería:** Los materiales recogidos en la mina tienen un doble propósito: pueden venderse en la tienda para obtener dinero o utilizarse en la herrería y en la tienda de ropa para mejorar el pico, la armadura y el casco. En las zonas de descanso, el jugador puede almacenarlos en una carreta para protegerlos. Si es derrotado, perderá de forma aleatoria un 30% de los materiales que llevaba en el inventario, lo que refuerza la importancia de usar la carreta estratégicamente.
 
 **Progresión del jugador:** Aunque cada run comienza desde cero, el jugador mantiene las mejoras de equipo obtenidas. Esto permite avanzar más en cada intento, enfrentarse a enemigos más fuertes y acceder a salas más complejas.
 
@@ -357,67 +355,105 @@ A continuación se muestra el diagrama de flujo de las interfaces del juego, don
 
 <br>
 
-## 5.4. INTERFAZ PRINCIPAL EN PARTIDA Y EN LA ALDEA  
+## 5.4. PANTALLA DE SALTAR EL TUTORIAL
+
+Aparece al inicio del juego, justo antes de comenzar la primera run. Su función es ofrecer al jugador la posibilidad de omitir el tutorial completo si ya ha jugado anteriormente y conoce las mecánicas básicas.
+
+![Imagen de la interfaz en la mina](/Fotos_README/saltarTutorial.png "Mensaje para saltar el tutorial")  
+<div align="center"><p><i>Imagen 7: Pantalla para saltar el tutorial.</i></p></div>  
+
+<br>
+
+## 5.5. INTERFAZ PRINCIPAL EN PARTIDA Y EN LA ALDEA  
 
 La pantalla principal sirve para abrir el baúl dentro de la villa o la mochila desde dentro de las minas, aunque también se puede abrir con el teclado o el mando. Dentro de las minas se le muestra al jugador sus puntos de vida, mediante una barra luminosa.  
 
 ![Imagen de la interfaz en la mina](/Fotos_README/interfazMina.png "Interfaz principal en la mina")  
-<div align="center"><p><i>Imagen 7: Interfaz principal en la mina.</i></p></div>  
+<div align="center"><p><i>Imagen 8: Interfaz principal en la mina.</i></p></div>  
 
 <br>
 
 ![Imagen de la interfaz en la aldea](/Fotos_README/interfazAldea.png "Interfaz principal en la aldea")  
-<div align="center"><p><i>Imagen 8: Interfaz principal en la aldea.</i></p></div>  
+<div align="center"><p><i>Imagen 9: Interfaz principal en la aldea.</i></p></div>  
 
 <br>
 
-## 5.5. PANTALLA DE BAÚL Y DE MOCHILA  
+## 5.6. PANTALLA DE BAÚL Y DE MOCHILA  
 
 Mientras el usuario está en la mina puede ver que materiales ha conseguido en ella y cierta información relevante. Cuando llegue a la aldea se le guardarán parte de los materiales de la mochila dentro del baúl, y podrá verlos todos del mismo modo.  
 
 ![Imagen de la interfaz de la mochila en la mina](/Fotos_README/interfazMochilaMina.png "Interfaz de la mochila en la mina")  
-<div align="center"><p><i>Imagen 9: Interfaz de mochila en las minas.</i></p></div>  
+<div align="center"><p><i>Imagen 10: Interfaz de mochila en las minas.</i></p></div>  
 
 <br>
 
 ![Imagen de la interfaz del baúl en la aldea](/Fotos_README/interfazBaulAldea.png "Interfaz de baúl en la aldea")  
-<div align="center"><p><i>Imagen 10: Interfaz de baúl en la aldea.</i></p></div>  
+<div align="center"><p><i>Imagen 11: Interfaz de baúl en la aldea.</i></p></div>  
 
 <br>
 
-## 5.6. PANTALLA DE VENTA  
+## 5.7. PANTALLA DE CARRETA 
+
+La pantalla de la carreta aparece en las zonas de descanso dentro de la mina. Su función principal es permitir al jugador guardar los materiales que ha recolectado hasta ese momento en el inventario. Más tarde, al volver a la Aldea, el jugador encontrará otra carreta en la que podrá recuperar esos materiales.
+
+![Imagen de la interfaz de la mochila en la mina](/Fotos_README/interfazCarretaAldea.png "Interfaz de la carreta en la aldea")  
+<div align="center"><p><i>Imagen 12: Interfaz de la carreta en la aldea.</i></p></div>  
+
+<br>
+
+![Imagen de la interfaz del baúl en la aldea](/Fotos_README/interfazCarretaMina.png "Interfaz de la carreta en la mina")  
+<div align="center"><p><i>Imagen 13: Interfaz de la carreta en la aldea.</i></p></div>  
+
+<br>
+
+## 5.8. PANTALLA DE VENTA  
 
 Se muestra cuando el usuario viaja a la tienda dentro de la aldea e interacciona con el tendero. En ella se le permite seleccionar materiales de su baúl y venderlos.  
 
 ![Imagen de la interfaz de venta](/Fotos_README/interfazVenta.png "Interfaz de venta")  
-<div align="center"><p><i>Imagen 11: Interfaz de venta.</i></p></div>  
+<div align="center"><p><i>Imagen 14: Interfaz de venta.</i></p></div>  
 
 <br>  
 
-## 5.7. PANTALLA DE HERRERÍA  
+## 5.9. PANTALLA DE HERRERÍA  
 
 Cuando el usuario viaja a la herrería dentro de la aldea se le permite interactuar con el herrero para gastar sus materiales en la mejora del pico.  
 
 ![Imagen de la interfaz de herrería](/Fotos_README/interfazHerreria.png "Interfaz de herrería")  
-<div align="center"><p><i>Imagen 12: Interfaz de herrería.</i></p></div>  
+<div align="center"><p><i>Imagen 15: Interfaz de herrería.</i></p></div>  
 
 <br>  
 
-## 5.8. PANTALLA DE ARMARIO  
+## 5.10. PANTALLA DE ARMARIO  
 
 Dentro de la tienda de venta, el usuario también puede abrir un armario para comprar y equipar diferentes prendas como cascos y petos.  
 
-![Imagen de la interfaz de armario](/Fotos_README/pantallaArmario.png "Interfaz de armario")  
-<div align="center"><p><i>Imagen 13: Interfaz de armario.</i></p></div>  
+![Imagen de la interfaz de armario](/Fotos_README/pantallaArmario.png "Interfaz de comprar en el armario")  
+<div align="center"><p><i>Imagen 16: Interfaz de comprar prendas en el armario.</i></p></div>  
+
+<br>   
+
+![Imagen de la interfaz de armario](/Fotos_README/pantallaArmario2.png "Interfaz de equipar en el armario")  
+<div align="center"><p><i>Imagen 17: Interfaz de equipar prendas en el armario.</i></p></div>  
 
 <br>    
 
-## 5.9. PANTALLA DE DERROTA  
+![Imagen de la interfaz de armario](/Fotos_README/pantallaArmario3.png "Interfaz de comprar cascos en el armario")  
+<div align="center"><p><i>Imagen 18: Interfaz de comprar prendas en el armario.</i></p></div>  
+
+<br>    
+
+## 5.11. PANTALLA DE FIN DE PARTIDA
 
 Cuando el jugador muere o completa una run, se le muestra un menú de derrota con los materiales conseguidos y un botón para volver a la aldea.  
 
-![Imagen de la interfaz de fin de partida](/Fotos_README/interfazDerrota.png "Interfaz de fin de partida")  
-<div align="center"><p><i>Imagen 14: Interfaz de fin de partida.</i></p></div>  
+![Imagen de la interfaz de fin de partida](/Fotos_README/interfazDerrota.png "Interfaz de fin de partida si se pierde")  
+<div align="center"><p><i>Imagen 19: Interfaz de fin de partida si se pierde.</i></p></div>  
+
+<br> 
+
+![Imagen de la interfaz de fin de partida](/Fotos_README/interfazVictoria.png "Interfaz de fin de partida si se vence al boss")  
+<div align="center"><p><i>Imagen 20: Interfaz de fin de partida si se vence al boss.</i></p></div>  
 
 <br> 
 
