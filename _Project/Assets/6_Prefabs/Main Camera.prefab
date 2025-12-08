@@ -1368,8 +1368,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  offset: {x: -15, y: 20, z: -15}
+  worldOffset: {x: -17.7, y: 24, z: -17.7}
+  distance: 6
   smoothSpeed: 0.125
+  lookAtTarget: 0
+  detachFromParentOnStart: 0
 --- !u!114 &5402026814896280767
 MonoBehaviour:
   m_ObjectHideFlags: 0
