@@ -9,6 +9,7 @@ public class NPCBehavior : MonoBehaviour
     [SerializeField] GameMenu gameMenu;
     [SerializeField] InputMapsManager playerInputMapsManager;
     [SerializeField] Interaction interaction;
+    [SerializeField] Animator animator;
 
     int currentInteraction = 0;
     bool isRoomCleaned = false;
@@ -63,6 +64,7 @@ public class NPCBehavior : MonoBehaviour
     {
         isRoomCleaned = true;
         interaction.gameObject.SetActive(true);
+        animator.SetBool("Rescatado",true);
     }
     private void OnStartInteraction()
     {
