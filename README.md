@@ -555,7 +555,7 @@ A la hora de implementar ciertas funcionalidades de la UI que dependían del des
 
 **Ana María Caamaño del Amo:** algo a mejorar sería la comunicación, algo que ya fue mencionado en la anterior entrega. Habría que utilizar las herramientas proporcionadas para asegurar que todo el mundo tenga claro el estado del proyecto de forma más obvia. Otra cosa a mejorar sería la gestión del tiempo, ya que debido a unos factores externos se ha empezado esta fase de desarrollo bastante más tarde de lo que se debería y el resultado podría haber quedado incluso mejor.
 
-**Javier Martín Mulero:** haría que la comunicación fuera diferente, ya lo dije en el anterior pero lo vuelvo a recalcar. Por lo demás, no me parece que haya que mejorar nada más. La comunicación con Unai ha sido buena para integrar el código, de otra forma se hubiera tardado mucho más.
+**Javier Martín Mulero:** haría que la comunicación y la organización fuera mejor. En la parte de código lo reharía para que tuviera más sentido. Por útlimo, en la parte de dar feedback visual y sonoro al jugador se podría mejorar para una futura actualización, que ahora mismo es donde más margen de mejora hay.
 
 **Lara Sánchez Sanz:** sería recomendable organizar mejor los elementos que afectan a varias áreas de trabajo,  de modo que elementos como las animaciones estén listos con antelación para facilitar el trabajo en otros apartados. También considero importante reforzar la comunicación y el uso de herramientas colaborativas, ya que con respecto de la entrega alfa esto ha empeorado. A nivel técnico, me gustaría dedicar más tiempo al pulido de las animaciones y modelados.
 
