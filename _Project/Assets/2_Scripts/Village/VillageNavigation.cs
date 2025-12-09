@@ -55,12 +55,10 @@ public class VillageNavigation : MonoBehaviour
         }
 
         Location = Locations.village;
+        AudioManager.Instance?.StopAudio();
     }
 
-    // ======================
-    //   PUBLIC FUNCTIONS
-    // ======================
-
+    #region PUBLIC FUNCS
     public void OnShopEntry()
     {
         Location = Locations.shop;
@@ -84,8 +82,9 @@ public class VillageNavigation : MonoBehaviour
 
     public void OnMineEntry()
     {
-        //SceneManager.LoadScene("2_CombatRoom");
-        //SceneManager.LoadScene("5_RescueRoom");
-        SceneManager.LoadScene("7_DarkRoom");
+        //decirle a village UI q active el menu de villa
+
+        villageMenuUI.Button_OpenBiomeSelector();
     }
+    #endregion
 }

@@ -10,14 +10,14 @@ internal class PlantLookingState : IStateComponent
 
     Vector2 directionChoosed = Vector2.zero;
 
-    int directions = 0;
+    int directions = 8;
 
     bool isWaiting = false;
 
     const float MAXMOVE = 2f;
     const float MINMOVE = 1f;
 
-    float timeMovement = 0f;
+    float timeMovement = 1f;
     float actualTimeMovement = 0f;
 
     enum Directions
@@ -42,6 +42,8 @@ internal class PlantLookingState : IStateComponent
     public void Enter()
     {
         directions = Enum.GetValues(typeof(Directions)).Length;
+        animator.SetBool("Morder", false);
+        animator.SetBool("Dispara", false);
     }
 
     public void Exit()
@@ -80,8 +82,9 @@ internal class PlantLookingState : IStateComponent
 
         if (!isWaiting)
         {
-            directionChoosed = InitializeMovement();      
-            enemy.LookAt(directionChoosed);
+            directionChoosed = InitializeMovement();
+            Debug.Log("DIRECCION: " + directionChoosed);
+            enemy.LookAt(new Vector3(directionChoosed.x, 0f, directionChoosed.y));
             timeMovement = UnityEngine.Random.Range(MINMOVE, MAXMOVE);
             isWaiting = true;
         }

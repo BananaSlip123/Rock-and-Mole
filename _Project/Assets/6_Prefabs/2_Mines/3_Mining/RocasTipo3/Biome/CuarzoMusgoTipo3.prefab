@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -4690860587585429728, guid: 4b3fce5c101a7994a8ad4a157b7d7af2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2392219990503733063, guid: 4b3fce5c101a7994a8ad4a157b7d7af2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -1471225684984804049, guid: 4b3fce5c101a7994a8ad4a157b7d7af2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -59,6 +67,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4b3fce5c101a7994a8ad4a157b7d7af2, type: 3}
       propertyPath: m_Name
       value: CuarzoMusgoTipo3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b3fce5c101a7994a8ad4a157b7d7af2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4b3fce5c101a7994a8ad4a157b7d7af2, type: 3}
       propertyPath: m_TagString
@@ -72,6 +84,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: 8615232799486111966, guid: 4b3fce5c101a7994a8ad4a157b7d7af2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131744328832256972, guid: 4b3fce5c101a7994a8ad4a157b7d7af2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -144,6 +164,10 @@ PrefabInstance:
     - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_Name
       value: Spark
+      objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x

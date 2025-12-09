@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84634d842323ea24da69fc6b0b98fcdc, type: 3}
   m_Name: Pico Oxidado
   m_EditorClassIdentifier: 
-  damage: 10
-  damageShoot: 5
-  critMultiplier: 1.25
+  damage: 9
+  damageShoot: 3
+  critMultiplier: 1.5
   critProbability: 0.05
   attackSpeed: 0
   coinsPrice: 0

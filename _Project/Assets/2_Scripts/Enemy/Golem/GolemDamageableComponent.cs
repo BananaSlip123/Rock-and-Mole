@@ -9,17 +9,31 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
     [SerializeField] Animator animator;
     private float timeToDeath = 0f;
     const float TIME_TO_DEATH = 1f;
-    [SerializeField] EnemyName tipoEnemigo;
+    [SerializeField] public EnemyName tipoEnemigo;
     MaterialChanger changer;
+
+    private void Awake()
+    {
+        if (BiomeManager.CurrentBiome == BiomeName.undergroundForest)
+            health = (int)(health*1.5f);
+        else
+            health = (int)(health * 0.8f);
+    }
 
     void Start()
     {
         changer = GetComponent<MaterialChanger>();
     }
 
+    private void Update()
+    {
+        if (GameObject.FindGameObjectWithTag("Player") == null) return;
+    }
+
     private void FixedUpdate()
     {
-        if(animator.GetBool("Morir"))
+        if (GameObject.FindGameObjectWithTag("Player") == null) return;
+        if (animator.GetBool("Morir"))
         {
             timeToDeath += Time.fixedDeltaTime;
 
@@ -60,10 +74,10 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
 
     private void DeathLogic()
     {
-        Destroy(this.gameObject);
-
+        
         if (LevelManager.instance != null)
         {
+            timeToDeath = 0;
             LevelManager.instance.EnemyDead();
 
             //Dictionary<MaterialName, int> materialsGenerated = GameData.EnemyLoot(UnityEngine.Random.Range(2,4),tipoEnemigo);
@@ -77,5 +91,6 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
             //    i++;
             //}
         }
+        Destroy(this.gameObject);
     }
 }

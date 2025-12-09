@@ -26,7 +26,7 @@ public class Interaction : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            onEnter.Invoke();
+            onEnter?.Invoke();
 
             texto.color = available;
             if(playerController != null)
@@ -43,7 +43,7 @@ public class Interaction : MonoBehaviour
     }
     private void OnExit()
     {
-        onExit.Invoke();
+        onExit?.Invoke();
 
         texto.color = notAvailable;
         if (playerController != null)
@@ -62,6 +62,6 @@ public class Interaction : MonoBehaviour
     }
     private void OnDestroy()
     {
-        OnExit();
+        //OnExit();
     }
 }

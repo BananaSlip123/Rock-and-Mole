@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Pico Afilado
   m_EditorClassIdentifier: 
   damage: 15
-  damageShoot: 9
-  critMultiplier: 2.5
-  critProbability: 0.08
+  damageShoot: 5
+  critMultiplier: 1.8
+  critProbability: 0.07
   attackSpeed: 0.1
   coinsPrice: 100
   costs:

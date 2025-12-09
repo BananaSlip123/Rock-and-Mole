@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -115,10 +119,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8246177962252715903, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -7180403863424096399, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
+    - target: {fileID: -7004148494320143699, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -6915847828547136835, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -132,17 +144,33 @@ PrefabInstance:
       value: EsmeraldaMusgoTipo2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
       propertyPath: m_TagString
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519076853153869865, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4960528982157127725, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
+    - target: {fileID: 7039727078038636669, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7129026257608033670, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 85ddaefdfa0f56d45b85371b831c1d8e, type: 2}
+    - target: {fileID: 8323920743114782780, guid: 47a2fc8f4c32de9468085d37d25af0dd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

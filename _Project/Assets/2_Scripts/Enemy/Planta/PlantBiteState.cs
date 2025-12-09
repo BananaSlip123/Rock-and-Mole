@@ -1,5 +1,4 @@
-﻿using UnityEditorInternal;
-using UnityEngine;
+﻿using UnityEngine;
 
 class PlantBiteState : IStateComponent, IAttackComponent
 {
@@ -16,6 +15,7 @@ class PlantBiteState : IStateComponent, IAttackComponent
 
     private float timeToAttack = 0f;
     private float timeHitbox = 0f;
+    private float radius = 3f;
 
     private bool isInCooldown = true;
 
@@ -37,7 +37,6 @@ class PlantBiteState : IStateComponent, IAttackComponent
 
     public void Attack()
     {
-
         playerHealth.RecieveDamage(damage, 0.5f, 0.1f);
     }
 
@@ -45,11 +44,15 @@ class PlantBiteState : IStateComponent, IAttackComponent
     {
         hitbox = enemy.GetChild(1).GetComponent<Collider>();
         playerHealth = player.GetComponent<IDamageableComponent>();
+        animator.SetBool("Morder", true);
+
+        if (enemy.GetComponent<GolemDamageableComponent>().tipoEnemigo == EnemyName.PlantBoss)
+            radius = 5f;
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+        animator.SetBool("Morder", false);
     }
 
     public void FixedUpdate()
@@ -97,11 +100,11 @@ class PlantBiteState : IStateComponent, IAttackComponent
 
         Vector3 direction = player.position - enemy.position;
         Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
-        enemy.rotation = rotation;
+        enemy.rotation = rotation;       
 
-        if (!TakePlayerPosition(3f))
+        if (!TakePlayerPosition(radius))
             plantController.ChangeState(new PlantShootState(plantController, enemy, player, animator));
-        else if(!TakePlayerPosition(10f))
+        else if(!TakePlayerPosition(radius * 3.33f))
             plantController.ChangeState(new PlantLookingState(plantController, enemy, animator));
     }
 

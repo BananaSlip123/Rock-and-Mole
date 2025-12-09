@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -115,10 +119,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8318815934775129868, guid: 75d363c1eb6be85438803cc383570057, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7122023325477904632, guid: 75d363c1eb6be85438803cc383570057, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -3271346135904347976, guid: 75d363c1eb6be85438803cc383570057, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
+    - target: {fileID: -2315149917622338348, guid: 75d363c1eb6be85438803cc383570057, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 406954383926668676, guid: 75d363c1eb6be85438803cc383570057, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 611747130602767509, guid: 75d363c1eb6be85438803cc383570057, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -132,8 +152,16 @@ PrefabInstance:
       value: Ambar_Tipo2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 75d363c1eb6be85438803cc383570057, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75d363c1eb6be85438803cc383570057, type: 3}
       propertyPath: m_TagString
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335324992461528003, guid: 75d363c1eb6be85438803cc383570057, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1613732296502876873, guid: 75d363c1eb6be85438803cc383570057, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

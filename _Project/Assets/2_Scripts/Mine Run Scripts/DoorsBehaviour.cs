@@ -75,6 +75,7 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     {
         enter = true;
         enterBehaviour?.Invoke();
+        AudioManager.Instance.StopAudio(AudioManager.AudioType.WalkSound);
     }
 
     public void ChangeBehaviour(Action behaviour)
@@ -133,8 +134,19 @@ public class DoorsBehaviour : MonoBehaviour, IDoorBehaviour, IActiveNoMoreEnemie
     }
     private void VictoryBehaviour()
     {
+        UnlockNextBiome();
+        
         FindAnyObjectByType<GameMenu>().OnPlayerVictory();
     }
+    private void UnlockNextBiome()
+    {
+        int currentBiomeIdx = (int)BiomeManager.CurrentBiome;
+        int nextBiomeIdx = currentBiomeIdx + 1;
 
+        if (nextBiomeIdx >= BiomeManager.numberOfBiomes) return;
+        if (BiomeManager.unlockedBiomes[(BiomeName)nextBiomeIdx]) return;
+        
+        BiomeManager.unlockedBiomes[(BiomeName)nextBiomeIdx] = true;
+    }
     #endregion
 }

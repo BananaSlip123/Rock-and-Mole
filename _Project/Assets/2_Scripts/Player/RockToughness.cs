@@ -10,6 +10,11 @@ public class RockToughness : MonoBehaviour, IDamageableComponent
     int numberOfHits = 0;
     bool hasBeenHit = false;
 
+    private void Awake()
+    {
+        toughness = UnityEngine.Random.Range(2,6);
+    }
+
     private int GetToughness()
     {
         return toughness;

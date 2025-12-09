@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -123,14 +127,30 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -4159299493341658034, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -2820405519708655573, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -854133155678842600, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -341097175020783997, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 253845770985594935, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: 434725802462772463, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 598701384869918601, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -140,13 +160,29 @@ PrefabInstance:
       value: Cuarzo_Tipo2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
       propertyPath: m_TagString
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060803638580802749, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2084558480978692296, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: 4574871403147126279, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806339038088101954, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5450582414819015192, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -155,10 +191,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: 6361685784827379528, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6969920976687464004, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
+    - target: {fileID: 7993657489613572870, guid: 83ed4ed7292b8be42b4c9828725ee398, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

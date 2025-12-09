@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -119,6 +123,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -1190641223688638019, guid: 868e65cd4bdc9504e8a5daaf2e2ca94a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 828093730159646419, guid: 868e65cd4bdc9504e8a5daaf2e2ca94a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -128,13 +136,33 @@ PrefabInstance:
       value: CuarzoMusgo1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 868e65cd4bdc9504e8a5daaf2e2ca94a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 868e65cd4bdc9504e8a5daaf2e2ca94a, type: 3}
       propertyPath: m_TagString
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241875245957490235, guid: 868e65cd4bdc9504e8a5daaf2e2ca94a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4760040364617359586, guid: 868e65cd4bdc9504e8a5daaf2e2ca94a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: 5549436764855819815, guid: 868e65cd4bdc9504e8a5daaf2e2ca94a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515868798241093941, guid: 868e65cd4bdc9504e8a5daaf2e2ca94a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352047351777008096, guid: 868e65cd4bdc9504e8a5daaf2e2ca94a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7594730803758658999, guid: 868e65cd4bdc9504e8a5daaf2e2ca94a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

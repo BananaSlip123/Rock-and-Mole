@@ -16,13 +16,13 @@ public class MouseController : MonoBehaviour, IStateMachineComponent
     // Update is called once per frame
     void Update()
     {
-        if (IsPaused) return;
+        if (IsPaused || GameObject.FindGameObjectWithTag("Player") == null) return;
         MUpdate();
     }
 
     void FixedUpdate()
     {
-        if (IsPaused) return;
+        if (IsPaused || GameObject.FindGameObjectWithTag("Player") == null) return;
         MFixedUpdate();
     }
     

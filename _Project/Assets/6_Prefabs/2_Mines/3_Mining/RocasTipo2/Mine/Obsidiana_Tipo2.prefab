@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -127,14 +131,46 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: -6337559302922297994, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -6266633982098266275, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -3608095686939212627, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -3246501002375354181, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2309467908701010866, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -1511924346408179013, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: -1439962204808402821, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -1266917941051750775, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -588695227226490418, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: -367695704563012224, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 511280244836920199, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -142,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
       propertyPath: m_Name
       value: Obsidiana_Tipo2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
       propertyPath: m_TagString
@@ -163,6 +203,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: 7727319600170098485, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010867107217668102, guid: d74362d15b9845c47b9618020bd06c3f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

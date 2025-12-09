@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -75,6 +79,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9172085122569060812, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8856015939878169265, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -115,6 +127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7683866506465533456, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -7524023999189708606, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -127,6 +143,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 98841831c99fff644b888cb5f942579a, type: 2}
+    - target: {fileID: -2718253939821277437, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -397160978398721733, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -136,8 +156,16 @@ PrefabInstance:
       value: Cuarzo_Tipo1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: m_TagString
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853689034582686963, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8929359384835270919, guid: df4a1e8b3858189468c446e436f95b72, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

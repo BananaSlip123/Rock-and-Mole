@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -119,13 +123,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8073534643801674404, guid: d05f6b1bdef370447bae4ce7a55a8d94, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4818890132400924910, guid: d05f6b1bdef370447bae4ce7a55a8d94, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -3379267795774322346, guid: d05f6b1bdef370447bae4ce7a55a8d94, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
+    - target: {fileID: -1295115346387703139, guid: d05f6b1bdef370447bae4ce7a55a8d94, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 468900342428910672, guid: d05f6b1bdef370447bae4ce7a55a8d94, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d05f6b1bdef370447bae4ce7a55a8d94, type: 3}
       propertyPath: m_Name
       value: EsmeraldaMusgoTipo3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d05f6b1bdef370447bae4ce7a55a8d94, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d05f6b1bdef370447bae4ce7a55a8d94, type: 3}
       propertyPath: m_TagString
@@ -139,6 +163,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4b4932e1e04eff340aa1d1acd952e84b, type: 2}
+    - target: {fileID: 4148870363384481603, guid: d05f6b1bdef370447bae4ce7a55a8d94, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5441327736590790485, guid: d05f6b1bdef370447bae4ce7a55a8d94, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

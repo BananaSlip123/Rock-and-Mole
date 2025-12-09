@@ -70,9 +70,6 @@ namespace PlayerComponents
 
             //Reproducir sonido de caminar si no se est� reproduciendo
             AudioManager.Instance.PlayLoopedAudio(AudioManager.AudioType.WalkSound);
-
-            //Detener sonido
-            AudioManager.Instance.StopAudio(AudioManager.AudioType.WalkSound);
         }
 
         public bool IsPlayerDashing()

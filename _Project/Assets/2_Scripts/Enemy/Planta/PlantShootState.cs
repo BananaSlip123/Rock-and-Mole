@@ -11,8 +11,9 @@ internal class PlantShootState : IStateComponent, IAttackComponent
 
     private bool isInCooldown = true;
 
-    const float COOLDOWN = 2.5f;
+    const float COOLDOWN = 1.5f;
     private float timeToAttack = 0f;
+    private float radius = 3f;
 
     public PlantShootState(IStateMachineComponent stateMachineComponent, Transform transform, Transform player, Animator animator)
     {
@@ -25,11 +26,15 @@ internal class PlantShootState : IStateComponent, IAttackComponent
     public void Enter()
     {
         pool = GameObject.FindGameObjectWithTag("PoolBullet").GetComponent<IObjectPool>();
+        animator.SetBool("Dispara", true);
+
+        if (enemy.GetComponent<GolemDamageableComponent>().tipoEnemigo == EnemyName.PlantBoss)
+            radius = 5f;
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+        animator.SetBool("Dispara", false);
     }
 
     public void FixedUpdate()
@@ -37,11 +42,11 @@ internal class PlantShootState : IStateComponent, IAttackComponent
         if (player == null) return;
         if (enemy == null) return;
 
-        if (PlayerInRange(3f))
+        if (PlayerInRange(radius))
         {
             plantController.ChangeState(new PlantBiteState(plantController, enemy,player, animator));
         }
-        else if (!PlayerInRange(10f))
+        else if (!PlayerInRange(radius * 3.33f))
         {
             plantController.ChangeState(new PlantLookingState(plantController, enemy, animator));
         }
@@ -49,12 +54,15 @@ internal class PlantShootState : IStateComponent, IAttackComponent
         if (isInCooldown)
         {
             timeToAttack += Time.fixedDeltaTime;
-            animator.SetBool("Atacar", false);
+            
+            if(timeToAttack == 1f)
+                animator.SetBool("Dispara", false);
+
             if (timeToAttack >= COOLDOWN)
             {
                 isInCooldown = false;
                 timeToAttack = 0f;
-
+                
             }
 
             return;
@@ -96,8 +104,14 @@ internal class PlantShootState : IStateComponent, IAttackComponent
 
     public void Attack()
     {
-        animator.SetBool("Atacar", true);
-        pool.Get().Init(player.position - enemy.position, enemy.position);
+        animator.SetBool("Dispara", true);
+        float suma = 2.3f;
+        if(enemy.gameObject.name == "PlantaBoss")
+        {
+            suma = 4f;
+        }
+        Vector3 posBala = new Vector3(enemy.position.x, enemy.position.y + suma, enemy.position.z);
+        pool.Get().Init(player.position - posBala, posBala);
     }
 
     public void ActiveHitbox()

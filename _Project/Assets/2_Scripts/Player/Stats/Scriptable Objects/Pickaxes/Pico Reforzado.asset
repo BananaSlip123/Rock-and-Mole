@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Pico Reforzado
   m_EditorClassIdentifier: 
   damage: 12
-  damageShoot: 6
-  critMultiplier: 2
+  damageShoot: 4
+  critMultiplier: 1.7
   critProbability: 0.06
   attackSpeed: 0.05
   coinsPrice: 70

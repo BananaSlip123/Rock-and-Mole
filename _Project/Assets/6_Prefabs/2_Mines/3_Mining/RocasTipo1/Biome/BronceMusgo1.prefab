@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -123,6 +127,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8b2442c3b86e0a441a5e37e14fd94826, type: 2}
+    - target: {fileID: -4636300777304409883, guid: aa8014b8e96eca142906d433028dcb95, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -1288733144017031944, guid: aa8014b8e96eca142906d433028dcb95, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -140,8 +148,28 @@ PrefabInstance:
       value: BronceMusgo1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aa8014b8e96eca142906d433028dcb95, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa8014b8e96eca142906d433028dcb95, type: 3}
       propertyPath: m_TagString
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971542036940430761, guid: aa8014b8e96eca142906d433028dcb95, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268159708275232852, guid: aa8014b8e96eca142906d433028dcb95, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214726985332892257, guid: aa8014b8e96eca142906d433028dcb95, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727203215764798505, guid: aa8014b8e96eca142906d433028dcb95, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

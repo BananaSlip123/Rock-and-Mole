@@ -201,7 +201,7 @@ public class GameMenu : MonoBehaviour
             if (isInputField) return;
         }
 
-        eventSystem.SetSelectedGameObject(null);
+        eventSystem?.SetSelectedGameObject(null);
     }
     public void onNavigation()
     {

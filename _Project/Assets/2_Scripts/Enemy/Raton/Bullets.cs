@@ -7,7 +7,7 @@ public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent, IAttackC
     const float SPEED = 10f;
     const int DAMAGE = 25;
 
-    float TIME_DESPAWN = 5f;
+    float TIME_DESPAWN = 1.75f;
     float timeToDespawn = 0f;
 
     [SerializeField] GameObject poolO;
@@ -78,7 +78,7 @@ public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent, IAttackC
     public void Move()
     {
         Vector3 positionToMove = VectorConverter.MovingVector((direction).normalized, SPEED);
-        positionToMove.y = 0;
+        //positionToMove.y = 0;
 
         Quaternion rotation = Quaternion.LookRotation(new Vector3(-direction.z, 0, direction.x).normalized, Vector3.up);
         transform.position += positionToMove;

@@ -48,6 +48,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8064085613212345635, guid: f06f31c076c18454c88b522785889070, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -6193360207736892916, guid: f06f31c076c18454c88b522785889070, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5134197305562185641, guid: f06f31c076c18454c88b522785889070, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -4014428480725455214, guid: f06f31c076c18454c88b522785889070, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -60,9 +72,17 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 557f300f1acc42a4282ab70137493f83, type: 2}
+    - target: {fileID: -1447455017377975931, guid: f06f31c076c18454c88b522785889070, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f06f31c076c18454c88b522785889070, type: 3}
       propertyPath: m_Name
       value: CarbonMusgo1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f06f31c076c18454c88b522785889070, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f06f31c076c18454c88b522785889070, type: 3}
       propertyPath: m_TagString
@@ -76,6 +96,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: cd1fd279f4442f14aa7523e29773f890, type: 2}
+    - target: {fileID: 7704090399591547126, guid: f06f31c076c18454c88b522785889070, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -148,6 +172,10 @@ PrefabInstance:
     - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_Name
       value: Spark
+      objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x

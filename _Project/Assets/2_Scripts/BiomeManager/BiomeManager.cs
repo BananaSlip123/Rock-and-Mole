@@ -3,8 +3,8 @@ using UnityEngine;
 
 public static class BiomeManager
 {
-    public static UnlockedBiomes unlockedBiomes;
-    public static int NUMBER_OF_BIOMES = typeof(BiomeName).GetEnumNames().Length;
+    public static UnlockedBiomes unlockedBiomes = new UnlockedBiomes();
+    public static int numberOfBiomes = typeof(BiomeName).GetEnumNames().Length;
 
     private static BiomeName? _currentBiome;
     public static BiomeName CurrentBiome
@@ -25,6 +25,23 @@ public static class BiomeManager
             _currentBiome = value;
             PlayerPrefs.SetInt("CURRENT_BIOME", (int)value);
 
+        }
+    }
+
+    public static string BiomeNameToString()
+    {
+        return BiomeNameToString(CurrentBiome);
+    }
+    public static string BiomeNameToString(BiomeName biome)
+    {
+        switch (biome)
+        {
+            case BiomeName.starterMines:
+                return "Minas de principiante";
+            case BiomeName.undergroundForest:
+                return "Bosque subterráneo";
+            default:
+                return "UNDEFINED biome name";
         }
     }
 

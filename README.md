@@ -18,7 +18,7 @@ Banana Slip
 
 **Exploración modular y rejugable:** La mina está compuesta por salas diseñadas manualmente que se reorganizan aleatoriamente en cada partida. 
 
-**Combate estratégico y ágil:** El jugador combate con un pico en enfrentamientos cuerpo a cuerpo contra enemigos con patrones definidos, lo que obliga a pensar tácticamente. La dificultad aumenta con la profundidad.
+**Combate estratégico y ágil:** El jugador combate con un pico en enfrentamientos, ya sea a corta distancia (golpeando con el pico) o a larga distancia (lanzando el pico), contra enemigos con patrones definidos, lo que obliga a pensar tácticamente. La dificultad aumenta con la profundidad.
 
 **Mejora persistente de equipo:** Aunque cada run reinicia la mina, el progreso de armas y armaduras se conservan. Los materiales recolectados permiten mejorar el pico, la vestimenta y el casco. Esta progresión persistente motiva al jugador a seguir explorando.
 
@@ -80,11 +80,9 @@ En la run las salas son predefinidas, con cierta aleatoriedad en la generación 
 
 **Dificultad progresiva:** La dificultad aumenta conforme se desciende en la mina. Los enemigos se vuelven más agresivos, aparecen nuevos tipos de enemigos y los recursos se vuelven más escasos. La intensidad de cada run está determinada por la profundidad, el tipo de enemigos y la combinación de salas.
 
-**Combate:** El sistema de combate es en tiempo real, con un enfoque táctico. El jugador ataca con su pico, puede esquivar con un dash y debe aprender los patrones de los enemigos para sobrevivir. Cada criatura tiene comportamientos definidos.
+**Combate:** El sistema de combate es en tiempo real, con un enfoque táctico. El jugador ataca con su pico a corta distancia, además de poder lanzar el pico para poder dañar a enemigos a larga distancia, puede esquivar con un dash y debe aprender los patrones de los enemigos para sobrevivir. Cada criatura tiene comportamientos definidos. 
 
-**Recursos y minería:** Los materiales recogidos en la mina tienen un doble propósito: pueden venderse en la tienda gestionada por el jugador para obtener dinero o utilizarse en la herrería y en la tienda de ropa para mejorar el pico, la armadura y el casco. La gestión de estos recursos es clave para progresar en el juego.
-
-**Gestión de la tienda:** Al regresar al pueblo, el jugador puede acceder a su propia tienda, donde gestionar la venta de materiales. Puede organizar los objetos que ha recolectado y establecer el precio de cada uno. Los NPCs del pueblo visitan la tienda y, según el precio, la rareza y su interés, pueden comprar o ignorar los productos. Vender a buen precio permite obtener monedas para invertir en mejoras, pero si los precios son demasiado altos, los aldeanos no comprarán. La tienda evoluciona con el progreso del jugador.
+**Recursos y minería:** Los materiales recogidos en la mina tienen un doble propósito: pueden venderse en la tienda para obtener dinero o utilizarse en la herrería y en la tienda de ropa para mejorar el pico, la armadura y el casco. En las zonas de descanso, el jugador puede almacenarlos en una carreta para protegerlos. Si es derrotado, perderá de forma aleatoria un 30% de los materiales que llevaba en el inventario, lo que refuerza la importancia de usar la carreta estratégicamente.
 
 **Progresión del jugador:** Aunque cada run comienza desde cero, el jugador mantiene las mejoras de equipo obtenidas. Esto permite avanzar más en cada intento, enfrentarse a enemigos más fuertes y acceder a salas más complejas.
 
@@ -192,7 +190,7 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 * **Tipo:** Enemigo a distancia.
 * **Trasfondo:** Estas ratas han sido corrompidas por la energía cristalina que emana de las profundidades de la mina. Su cuerpo está parcialmente cubierto por fragmentos de cristal que han alterado su comportamiento y les han otorgado habilidades ofensivas. Antes eran simples animales, pero ahora defienden la mina con una agresividad inusual, como si estuvieran conectadas a su núcleo.
 * **Características:** De tamaño pequeño y movimientos ágiles, las ratas tienen baja resistencia pero compensan con ataques a distancia. Los cristales incrustados en su cuerpo les permiten lanzar proyectiles afilados que dañan al jugador desde lejos. Su aspecto es inquietante: pelaje desgastado, ojos brillantes y zonas del cuerpo cubiertas por cristales que emiten un leve resplandor.
-* **Comportamiento:** Las ratas vagan por la sala hasta que el jugador entra en su área de detección. En ese momento, se detienen y comienzan a disparar cristales desde la distancia. Si el jugador abandona su área, dejan de atacar y vuelven a su patrón de movimiento errático.
+* **Comportamiento:** Las ratas vagan por la sala hasta que el jugador entra en su área de detección. En ese momento, se detienen y comienzan a disparar cristales desde la distancia. Si el jugador abandona su área, dejan de atacar y vuelven a su patrón de movimiento errático. Si el jugador se acerca demasiado empezará a huir de él.
 * **Función:** Introducen el combate a distancia y obligan al jugador a moverse, esquivar y priorizar objetivos. Su presencia en salas combinadas con enemigos cuerpo a cuerpo añade variedad táctica y refuerza la necesidad de gestionar el espacio.
 <br>
 
@@ -203,6 +201,15 @@ El juego está diseñado para jugarse tanto en PC como en dispositivos móviles.
 * **Características:** De tamaño medio, los barriles explosivos se mueven rápidamente en línea recta hacia el jugador. Al impactar o al acercarse lo suficiente, detonan causando daño en área. Su diseño es cómico pero peligroso: un barril con patas, orejas asomando por la tapa y una mecha encendida que indica su inminente explosión.
 * **Comportamiento:** Al detectar al jugador, corren directamente hacia él sin detenerse. No atacan de forma convencional, sino que explotan al contacto o tras unos segundos. Si el jugador logra esquivarlos, pueden explotar sin causar daño, pero en espacios cerrados su amenaza aumenta.
 * **Función:** Sirven para añadir tensión y dinamismo en combate. Obligan al jugador a moverse constantemente y a estar atento al entorno.
+<br>
+
+### 4.4.4. PLANTAS CARNÍVORAS
+
+* **Tipo:** Enemigo Torreta.
+* **Trasfondo:** Estas plantas carnívoras han crecido en las profundidades de la mina, alimentadas por la energía corrupta de los cristales. Aunque no pueden desplazarse, han desarrollado un mecanismo defensivo doble: Disparan proyectiles a distancia y, si un intruso se acerca demasiado, utilizan sus mandíbulas para morder con fuerza.
+* **Características:** Su aspecto agresivo y su tamaño, hacen que sean fácilmente reconocibles en la sala. Son resistentes, por lo que requieren varios golpes para ser derrotadas, y su mordisco cercano añade un riesgo adicional para quienes intentan acabar con ella demasiado rápido.
+* **Comportamiento:** Permanece fija en el suelo sin desplazarse por la sala. Cuando el jugador entra en su área lanza proyectiles a distancia, y si el jugador se acerca demasiado, la planta cambia de patrón y utiliza un mordisco potente que inflige gran daño.
+* **Función:** Al estar en el siguiente nivel de la mina, se aumenta la dificultad. Otorga más variedad a la mina. Obliga al jugador a gestionar la distancia de forma estratégica.
 <br>
 
 ## 4.5. ARMAS Y ARMADURAS
@@ -348,67 +355,105 @@ A continuación se muestra el diagrama de flujo de las interfaces del juego, don
 
 <br>
 
-## 5.4. INTERFAZ PRINCIPAL EN PARTIDA Y EN LA ALDEA  
+## 5.4. PANTALLA DE SALTAR EL TUTORIAL
+
+Aparece al inicio del juego, justo antes de comenzar la primera run. Su función es ofrecer al jugador la posibilidad de omitir el tutorial completo si ya ha jugado anteriormente y conoce las mecánicas básicas.
+
+![Imagen de la interfaz en la mina](/Fotos_README/saltarTutorial.png "Mensaje para saltar el tutorial")  
+<div align="center"><p><i>Imagen 7: Pantalla para saltar el tutorial.</i></p></div>  
+
+<br>
+
+## 5.5. INTERFAZ PRINCIPAL EN PARTIDA Y EN LA ALDEA  
 
 La pantalla principal sirve para abrir el baúl dentro de la villa o la mochila desde dentro de las minas, aunque también se puede abrir con el teclado o el mando. Dentro de las minas se le muestra al jugador sus puntos de vida, mediante una barra luminosa.  
 
 ![Imagen de la interfaz en la mina](/Fotos_README/interfazMina.png "Interfaz principal en la mina")  
-<div align="center"><p><i>Imagen 7: Interfaz principal en la mina.</i></p></div>  
+<div align="center"><p><i>Imagen 8: Interfaz principal en la mina.</i></p></div>  
 
 <br>
 
 ![Imagen de la interfaz en la aldea](/Fotos_README/interfazAldea.png "Interfaz principal en la aldea")  
-<div align="center"><p><i>Imagen 8: Interfaz principal en la aldea.</i></p></div>  
+<div align="center"><p><i>Imagen 9: Interfaz principal en la aldea.</i></p></div>  
 
 <br>
 
-## 5.5. PANTALLA DE BAÚL Y DE MOCHILA  
+## 5.6. PANTALLA DE BAÚL Y DE MOCHILA  
 
 Mientras el usuario está en la mina puede ver que materiales ha conseguido en ella y cierta información relevante. Cuando llegue a la aldea se le guardarán parte de los materiales de la mochila dentro del baúl, y podrá verlos todos del mismo modo.  
 
 ![Imagen de la interfaz de la mochila en la mina](/Fotos_README/interfazMochilaMina.png "Interfaz de la mochila en la mina")  
-<div align="center"><p><i>Imagen 9: Interfaz de mochila en las minas.</i></p></div>  
+<div align="center"><p><i>Imagen 10: Interfaz de mochila en las minas.</i></p></div>  
 
 <br>
 
 ![Imagen de la interfaz del baúl en la aldea](/Fotos_README/interfazBaulAldea.png "Interfaz de baúl en la aldea")  
-<div align="center"><p><i>Imagen 10: Interfaz de baúl en la aldea.</i></p></div>  
+<div align="center"><p><i>Imagen 11: Interfaz de baúl en la aldea.</i></p></div>  
 
 <br>
 
-## 5.6. PANTALLA DE VENTA  
+## 5.7. PANTALLA DE CARRETA 
+
+La pantalla de la carreta aparece en las zonas de descanso dentro de la mina. Su función principal es permitir al jugador guardar los materiales que ha recolectado hasta ese momento en el inventario. Más tarde, al volver a la Aldea, el jugador encontrará otra carreta en la que podrá recuperar esos materiales.
+
+![Imagen de la interfaz de la mochila en la mina](/Fotos_README/interfazCarretaAldea.png "Interfaz de la carreta en la aldea")  
+<div align="center"><p><i>Imagen 12: Interfaz de la carreta en la aldea.</i></p></div>  
+
+<br>
+
+![Imagen de la interfaz del baúl en la aldea](/Fotos_README/interfazCarretaMina.png "Interfaz de la carreta en la mina")  
+<div align="center"><p><i>Imagen 13: Interfaz de la carreta en la aldea.</i></p></div>  
+
+<br>
+
+## 5.8. PANTALLA DE VENTA  
 
 Se muestra cuando el usuario viaja a la tienda dentro de la aldea e interacciona con el tendero. En ella se le permite seleccionar materiales de su baúl y venderlos.  
 
 ![Imagen de la interfaz de venta](/Fotos_README/interfazVenta.png "Interfaz de venta")  
-<div align="center"><p><i>Imagen 11: Interfaz de venta.</i></p></div>  
+<div align="center"><p><i>Imagen 14: Interfaz de venta.</i></p></div>  
 
 <br>  
 
-## 5.7. PANTALLA DE HERRERÍA  
+## 5.9. PANTALLA DE HERRERÍA  
 
 Cuando el usuario viaja a la herrería dentro de la aldea se le permite interactuar con el herrero para gastar sus materiales en la mejora del pico.  
 
 ![Imagen de la interfaz de herrería](/Fotos_README/interfazHerreria.png "Interfaz de herrería")  
-<div align="center"><p><i>Imagen 12: Interfaz de herrería.</i></p></div>  
+<div align="center"><p><i>Imagen 15: Interfaz de herrería.</i></p></div>  
 
 <br>  
 
-## 5.8. PANTALLA DE ARMARIO  
+## 5.10. PANTALLA DE ARMARIO  
 
 Dentro de la tienda de venta, el usuario también puede abrir un armario para comprar y equipar diferentes prendas como cascos y petos.  
 
-![Imagen de la interfaz de armario](/Fotos_README/pantallaArmario.png "Interfaz de armario")  
-<div align="center"><p><i>Imagen 13: Interfaz de armario.</i></p></div>  
+![Imagen de la interfaz de armario](/Fotos_README/pantallaArmario.png "Interfaz de comprar en el armario")  
+<div align="center"><p><i>Imagen 16: Interfaz de comprar prendas en el armario.</i></p></div>  
+
+<br>   
+
+![Imagen de la interfaz de armario](/Fotos_README/pantallaArmario2.png "Interfaz de equipar en el armario")  
+<div align="center"><p><i>Imagen 17: Interfaz de equipar prendas en el armario.</i></p></div>  
 
 <br>    
 
-## 5.9. PANTALLA DE DERROTA  
+![Imagen de la interfaz de armario](/Fotos_README/pantallaArmario3.png "Interfaz de comprar cascos en el armario")  
+<div align="center"><p><i>Imagen 18: Interfaz de comprar prendas en el armario.</i></p></div>  
+
+<br>    
+
+## 5.11. PANTALLA DE FIN DE PARTIDA
 
 Cuando el jugador muere o completa una run, se le muestra un menú de derrota con los materiales conseguidos y un botón para volver a la aldea.  
 
-![Imagen de la interfaz de fin de partida](/Fotos_README/interfazDerrota.png "Interfaz de fin de partida")  
-<div align="center"><p><i>Imagen 14: Interfaz de fin de partida.</i></p></div>  
+![Imagen de la interfaz de fin de partida](/Fotos_README/interfazDerrota.png "Interfaz de fin de partida si se pierde")  
+<div align="center"><p><i>Imagen 19: Interfaz de fin de partida si se pierde.</i></p></div>  
+
+<br> 
+
+![Imagen de la interfaz de fin de partida](/Fotos_README/interfazVictoria.png "Interfaz de fin de partida si se vence al boss")  
+<div align="center"><p><i>Imagen 20: Interfaz de fin de partida si se vence al boss.</i></p></div>  
 
 <br> 
 
@@ -461,7 +506,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Lara Sánchez Sanz:** Modelado y animación 3D de personajes.  
 **Jesús Mercado Rioja:** Diseño 2D y modelado 3D de escenarios.  
-**Ana María Caamaño del Amo:** Modelado 3D de props.  
+**Ana María Caamaño del Amo:** Modelado y animación 3D de props.  
 **Javier Martín Mulero:** Programación de mecánicas principales.  
 **Unai Pastrana Torres:** Diseño y programación de interfaces.  
 **Santiago Varela Rey:** Música y efectos de sonido.
@@ -478,15 +523,15 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Ana María Caamaño del Amo:** se ha conseguido entregar una beta con la mayoría de las salas que se habían pensado, además de tener un aspecto visual más cercano a lo deseado. Respecto al apartado artístico, se han implementado y modelado muchos elementos de forma bastante más rápida que en la versión anterior.
 
-**Javier Martín Mulero:** el proyecto ha ido medianamente bien, por mi parte, la programación la dejé casi acabada al final de la beta, lo que me ha permitido arreglar bugs y ayudar a Unai con su parte de programación.
+**Javier Martín Mulero:** al final he quedado contento con como ha quedado el proyecto. El apartado visual es bonito y el game feel, lejos de ser perfecto, ha mejorado con respecto a la beta que era el principal problema que había en la beta.
 
 **Lara Sánchez Sanz:** durante esta entrega he conseguido completar y mejorar el modelado y la animación de los personajes principales y enemigos. El flujo de trabajo ha sido más ágil que en la versión anterior, lo que ha permitido integrar los modelos y animación en Unity sin grandes problemas. Estoy realmente satisfecha con la variedad de personajes y animaciones implementadas. 
 
 **Jesús Mercado Rioja:** el proyecto ha ido avanzando correctamente en base a los objetivos que se pusieron al inicio de la fase y se ha logrado evolucionar el juego en el  tiempo estimado, tanto el aspecto artístico del juego como el técnico ha avanzado con la inclusión de nuevos personajes, escenarios y props.
 
-**Unai Pastrana Torres:** Estoy orgulloso con el desempeño de la beta en cuanto al trabajo que me tocó implementar, ya que, conseguí hacer un diseño de interfaz agradable e intuitivo, que recogía todos los menús que planifiqué hacer en esta entrega.
+**Unai Pastrana Torres:** Estoy muy orgulloso tanto de mi trabajo como del de mis compañeros, está última fase ha cumplido con todos los objetivos previstos, y además se ha logrado un mejor resultado de lo que esperaba, con ideas nuevas como el cambio artístico en el renderizado mediante la técnica Cell Shading.
 
-**Santiago Varela Rey:** durante este sprint he ampliado notablemente el apartado sonoro del proyecto. Se han añadido nuevos efectos de sonido y piezas musicales adaptadas a cada situación del juego (combate, muerte, caminar, clickear, música para escenarios, etc.). Además, toda esta nueva implementación se integró correctamente en Unity, asegurando que cada sonido se active en el momento adecuado mediante eventos y triggers. La comunicación con el equipo fue fluida durante el proceso de integración, lo que permitió ajustar los sonidos de forma coherente con la estética cartoon del juego.
+**Santiago Varela Rey:** El apartado sonoro se amplió con nuevas músicas y efectos, y el AudioManager quedó completamente implementado de forma estable para gestionar la mayoría de situaciones del juego. La integración fue fluida y el sonido final es más coherente y pulido que en versiones anteriores.
 
 
 
@@ -494,46 +539,45 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Ana María Caamaño del Amo:** en la última entrega se comenzó usando Trello y cuanto más avanzaba el desarrollo su uso descendió, en esta entrega ha sido peor; ya que ni siquiera se ha utilizado en absoluto y se ha favorecido la comunicación directa. Otra cosa serían las redes sociales, las cuales han estado completamente inactivas durante la gran mayoría del desarrollo. 
 
-**Javier Martín Mulero:** en esta entrega la comunicación con algunos de los miembros del equipo no ha sido tan buena, por no decir mala. Además, hay cosas que se han quedado fuera, como un tipo de evento (rescate) por falta de tiempo, la lógica de las salas estaba hecha faltaban los detalles como el modelo del NPC a rescatar y su interacción. Por último, las redes sociales no se actualizaron.
+**Javier Martín Mulero:** la comunicación ha mejorado con respecto a la beta, pero tampoco considero que sea buena. En la parte de la programación, debido a cambios que se han hecho a última hora se ha tenido que adaptar el código que había a lo nuevo, lo que ha dado algunos problemas, con más tiempo habría que haber hecho el código de 0 para tener en cuenta lo nuevo incluido.
 
 **Lara Sánchez Sanz:** el principal problema ha sido la gestión del tiempo. Al tener que compaginar este trabajo con otras asignaturas lo que no ha permitido desarrollar el juego al nivel que teníamos esperado. Además la falta de herramientas de organización ha dificultado la coordinación con los compañeros, lo que provocó que algunas integraciones se hicieran más tarde de lo previsto.
 
 **Jesús Mercado Rioja:** a pesar de que se planteó en la fase alfa hacer un buen uso de la herramienta Trello para comunicarnos, no se puso en práctica, y de hecho empeoró respecto a la anterior entrega, ya que cayó prácticamente en desuso por lo que a pesar de que nos hemos comunicado entre nosotros de forma grupal, no existía un registro exacto de que estaba hecho y que no, lo que dificultaba el proceso de trabajo. Además, no comenzamos el desarrollo de la beta de la manera más inmediata, forzándonos así a que la carga de trabajo fuera más alta en un menor tiempo.
 
-**Unai Pastrana Torres:** a la hora de llevar a cabo este trabajo al mismo tiempo que realizábamos proyectos de otras asignaturas ha supuesto tener que hacer el trabajo muy rápido sin apenas tiempo para testear adecuadamente el código.
+**Unai Pastrana Torres:** he notado que teníamos menos tiempo de trabajo del que nos gustaría, lo que se tradujo en no poder balancear el juego completamente, sobre todo en cuanto a la cantidad de recursos obtenidos, precios de la tienda, y dificultad de los enemigos de cada bioma.
 
-A la hora de implementar ciertas funcionalidades de la UI que dependían del desarrollo de las animaciones, del modelado del vestuario, o de la programación de la música, tuve el problema de tener que esperar a que se terminaran, lo cual no me dejó el suficiente tiempo para implementarlas desde código de la forma que hubiera querido.
-
-**Santiago Varela Rey:** a pesar de que se completaron las tareas de sonido y música, todavía hubo momentos en los que la planificación podría haber sido más efectiva. Algunas integraciones se dejaron para etapas tardías del desarrollo y han requerido de la ayuda de otros miembros del equipo que estaban disponibles. Además, una de las piezas musicales tuvo que ser reemplazada por incumplimiento del copyright en los días previos a la entrega.
+**Santiago Varela Rey:** persistió un error con la música de combate: al entrar en batalla, la pista previa no se detiene y continúa hasta salir de la mina. No se pudo solucionar a tiempo para la versión final.
 
 ### 8.1.3. QUÉ SE PUEDE MEJORAR
 
 **Ana María Caamaño del Amo:** algo a mejorar sería la comunicación, algo que ya fue mencionado en la anterior entrega. Habría que utilizar las herramientas proporcionadas para asegurar que todo el mundo tenga claro el estado del proyecto de forma más obvia. Otra cosa a mejorar sería la gestión del tiempo, ya que debido a unos factores externos se ha empezado esta fase de desarrollo bastante más tarde de lo que se debería y el resultado podría haber quedado incluso mejor.
 
-**Javier Martín Mulero:** haría que la comunicación fuera diferente, ya lo dije en el anterior pero lo vuelvo a recalcar. Por lo demás, no me parece que haya que mejorar nada más. La comunicación con Unai ha sido buena para integrar el código, de otra forma se hubiera tardado mucho más.
+**Javier Martín Mulero:** haría que la comunicación y la organización fuera mejor. En la parte de código lo reharía para que tuviera más sentido. Por útlimo, en la parte de dar feedback visual y sonoro al jugador se podría mejorar para una futura actualización, que ahora mismo es donde más margen de mejora hay.
 
 **Lara Sánchez Sanz:** sería recomendable organizar mejor los elementos que afectan a varias áreas de trabajo,  de modo que elementos como las animaciones estén listos con antelación para facilitar el trabajo en otros apartados. También considero importante reforzar la comunicación y el uso de herramientas colaborativas, ya que con respecto de la entrega alfa esto ha empeorado. A nivel técnico, me gustaría dedicar más tiempo al pulido de las animaciones y modelados.
 
 **Jesús Mercado Rioja:** se debería de gestionar mejor el tiempo de trabajo, para que así este no se nos acumule. Además deberíamos hacer un buen uso de la herramienta Trello u otras plataformas para dejar constancia de que partes del trabajo ya se han realizado y cuáles quedan por hacer y así conseguir que todo el mundo tenga claro en que tiene que trabajar. 
 
-**Unai Pastrana Torres:** mejorar la comunicación con mis compañeros hubiese supuesto una mejora en aquellas tareas que dependen de mis compañeros, por ejemplo la programación de los ajustes de volumen, o mostrar el equipamiento equipado en la UI. Para mejorar la comunicación propondría dejar muy claro que necesita cada uno de otros compañeros, y dejar terminadas esas tareas con una mayor prioridad. 
+**Unai Pastrana Torres:** mejoraría el orden dentro del proyecto a la hora de organizar assets, ya que algunas carpetas tenían muchos elementos o estaban mal divididos, y también teníamos muchos materiales duplicados o redundantes, e incluso archivos que no se usaban, la Build podría haber sido más liviana si hubiésemos dispuesto de más tiempo para organizar los archivos, así mismo se habrían podido optimizar las mallas, ya que algunas tenían un número de polígonos muy alto para su tamaño en pantalla. 
 
-**Santiago Varela Rey:** Para próximas entregas sería recomendable establecer un pipeline más eficiente para los archivos de audio, definiendo mejor la estructura de carpetas, nombres y buses de mezcla. Otra mejora sería terminar antes las tareas sonoras principales para disponer de más margen para la mezcla fina y el pulido final.
+**Santiago Varela Rey:** de cara a futuras versiones, actualizaciones o mantenimiento, habría que revisar la lógica de transición entre pistas y optimizar la gestión de estados del AudioManager para evitar solapamientos musicales.
   
 
 ### 8.1.4. CONCLUSIÓN
 
 **Ana María Caamaño del Amo:** a pesar de los problemas que han surgido y el comienzo tardío, se ha conseguido entregar una versión beta bastante completa con la mayoría de lo que teníamos en mente implementado.
 
-**Javier Martín Mulero:**  la beta ha salido bien, tiene lo que tiene que tener, aunque a mi me hubiera gustado incluir todo lo que se tenía pensado.
+**Javier Martín Mulero:**  al final de la beta pensaba que el juego no tenía mucho margen de mejora, pero me equivocaba, el juego ha cambiado mucho y las nuevas inclusiones para intentar mejorar el game feel y el QoL han sido acertadas.
 
 **Lara Sánchez Sanz:** estoy contenta con el resultado obtenido en la beta, se que podría haber sido mejor, pero realmente ha salido mejor de lo que esperaba, lo que junto con la mejora en la fluidez del trabajo me motiva a perfeccionar aún más el aspecto del trabajo, incluso a crear nuevos elementos.
 
 **Jesús Mercado Rioja:** la fase beta ha salido mejor de lo esperado, ya que se ha conseguido evolucionar el videojuego tanto técnica como visualmente con la implementación de nuevos elementos (escenarios, personajes, etc.). A pesar de los problemas que han ido surgiendo, el equipo ha sabido resolverlos y aunque se deben pulir algunos detalles, estoy orgulloso del resultado obtenido.
 
-**Unai Pastrana Torres:** en resumen estoy orgulloso del desempeño general de equipo en esta entrega, y de los resultados dentro del juego. Considero que la beta está bastante completa, aunque dejáramos ciertos detalles sin pulir, tenemos una base sólida sobre la que trabajar.
+**Unai Pastrana Torres:** en resumen, estoy orgulloso del desempeño general del equipo en esta entrega final, y de los resultados dentro del juego. Considero que el juego ha quedado mucho más atractivo y divertido de lo que pude pensar en un inicio. Aunque se podrían mejorar cuestiones de eficiencia en el desarrollo y velocidad a la hora de realizar las tareas, los resultados han sido incuestionablemente buenos, para el tiempo del que se disponía.
 
-**Santiago Varela Rey:** estoy satisfecho con la ampliación y mejora del apartado sonoro en esta entrega. La implementación de nuevos efectos y música ha contribuido a hacer el juego más coherente y con mayor personalidad audiovisual. Aunque la planificación podría haberse optimizado, el resultado final es positivo y sirve como una base sólida para seguir refinando el audio.
+**Santiago Varela Rey:** el resultado de la versión final es muy bueno y mejora notablemente al de entregas anteriores. Aunque la planificación podría haberse afinado, el resultado es sólido y estoy satisfecho con el proyecto realizado.
+
   
 
 ## 8.2. GRUPAL
@@ -595,13 +639,28 @@ En este anexo se recopilan los diseños finales de las armas y armaduras disponi
 
 <br><br>
 
-![Imagen de los cascos](/Fotos_README/cascos.png "Cascos")  
-<div align="center"><p><i>Imagen A3.2: Cascos.</i></p></div>  
+![Imagen de las armaduras en 3D](/Fotos_README/armaduras3D.png "Render armaduras")  
+<div align="center"><p><i>Imagen A3.2: Armaduras en 3D.</i></p></div>  
+
+<br><br>
+
+![Imagen de los cascos](/Fotos_README/cascos.png "Turnaround de los cascos")  
+<div align="center"><p><i>Imagen A3.3: Turnaround de los cascos en 2D.</i></p></div>  
 
 <br><br> 
 
-![Imagen de los picos](/Fotos_README/picos.png "Picos")  
-<div align="center"><p><i>Imagen A3.3: Picos.</i></p></div>  
+![Imagen de los cascos en 3D](/Fotos_README/cascos3D.png "Render cascos")  
+<div align="center"><p><i>Imagen A3.4: Beauty de los cascos en 3D.</i></p></div>  
+
+<br><br> 
+
+![Imagen de los picos](/Fotos_README/picos.png "Turnaround de los picos")  
+<div align="center"><p><i>Imagen A3.4: Turnaround de los picos en 2D.</i></p></div>  
+
+<br><br> 
+
+![Imagen de los picos en 3D](/Fotos_README/picos3D.png "Render picos")  
+<div align="center"><p><i>Imagen A3.6: Beauty de los picos en 3D.</i></p></div>  
 
 <br>
 
@@ -634,8 +693,18 @@ En este anexo se presentan los turnarounds en 2D y 3D de los enemigos principale
 
 <br><br>
 
+![Imagen del turnaround del conejo en 3D](/Fotos_README/turnaroundConejo3D.png "Turnaround del conejo en 3D")  
+<div align="center"><p><i>Imagen A4.6: Turnaround del conejo en 3D.</i></p></div>  
+
+<br><br>
+
 ![Imagen del turnaround de la rata](/Fotos_README/turnaroundRata.png "Turnaround de la rata")  
-<div align="center"><p><i>Imagen A4.6: Turnaround de la rata en 2D.</i></p></div>  
+<div align="center"><p><i>Imagen A4.7: Turnaround de la rata en 2D.</i></p></div>  
+
+<br><br>
+
+![Imagen del turnaround de la rata en 3D](/Fotos_README/turnaroundRata3D.png "Turnaround de la rata en 3D")  
+<div align="center"><p><i>Imagen A4.8: Turnaround de la rata en 3D.</i></p></div>  
 
 <br>
 
@@ -651,13 +720,28 @@ En este anexo se presentan los beauty finales de los enemigos del juego.
 
 En este anexo se presentan los turnarounds en 2D de los NPCs principales del juego, mostrando todas sus vistas completas para modelado y animación.
 
-![Imagen del turnaround del herrero](/Fotos_README/turnaroundHerrero.png "Turnaround del herrero")  
+![Imagen del turnaround del herrero](/Fotos_README/turnaroundHerrero.png "Turnaround del herrero y el tendero")  
 <div align="center"><p><i>Imagen A6.1: Turnaround del tendero y el herrero en 2D.</i></p></div>  
 
 <br><br>
 
+![Imagen del turnaround del herrero en 3D](/Fotos_README/turnaroundHerrero3D.png "Turnaround del herrero en 3D")  
+<div align="center"><p><i>Imagen A6.2: Turnaround del herrero en 3D.</i></p></div>  
+
+<br><br>
+
+![Imagen del turnaround del tendero en 3D](/Fotos_README/turnaroundTendero3D.png "Turnaround del tendero en 3D")  
+<div align="center"><p><i>Imagen A6.3: Turnaround del tendero en 3D.</i></p></div>  
+
+<br><br>
+
 ![Imagen del turnaround del pájaro](/Fotos_README/turnaroundPajaro.png "Turnaround del pájaro")  
-<div align="center"><p><i>Imagen A6.2: Turnaround del pájaro en 2D.</i></p></div>  
+<div align="center"><p><i>Imagen A6.4: Turnaround del pájaro en 2D.</i></p></div>  
+
+<br><br>
+
+![Imagen del turnaround del pájaro en 3D](/Fotos_README/turnaroundPajaro3D.png "Turnaround del pájaro en 3D")  
+<div align="center"><p><i>Imagen A6.5: Turnaround del pájaro en 3D.</i></p></div> 
 
 <br>
 
@@ -686,33 +770,65 @@ En este anexo se incluyen los concepts arts de los escenarios del juego, que mue
 En este anexo se recopilan los props diseñados para los escenarios del juego, elementos secundarios que enriquecen la ambientación y aportan coherencia visual al entorno.  
 
 <div align="center"><img src="/Fotos_README/cofre.png" alt="Cofre" width="500"></img></div>  
-<div align="center"><p><i>Imagen A8.1: Cofre.</i></p></div>  
+<div align="center"><p><i>Imagen A8.1: Turnaround del cofre en 2D.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/cofre3D.png" alt="Cofre en 3D" width="500"></img></div>  
+<div align="center"><p><i>Imagen A8.1: Turnaround del cofre en 2D.</i></p></div>  
 <br><br>
 
 <div align="center"><img src="/Fotos_README/jaula.png" alt="Jaula" width="500"></img></div>  
-<div align="center"><p><i>Imagen A8.2: Jaula.</i></p></div>  
+<div align="center"><p><i>Imagen A8.3: Turnaround de la jaula en 2D.</i></p></div>  
 <br><br>
 
 <div align="center"><img src="/Fotos_README/roca1.png" alt="Diseño de un tipo de roca" width="500"></img></div>  
 <div align="center"><img src="/Fotos_README/roca2.png" alt="Diseño de un segundo tipo de roca" width="500"></img></div>  
 <div align="center"><img src="/Fotos_README/roca3.png" alt="Diseño de tercer tipo de roca" width="500"></img></div>  
-<div align="center"><p><i>Imagen A8.3: Rocas.</i></p></div>  
+<div align="center"><p><i>Imagen A8.4: Beauty  de rocas en 2D.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/Rocas3D.png" alt="Rocas en 3D" width="500"></img></div> 
+<div align="center"><p><i>Imagen A8.5: Beauty  de rocas en 3D.</i></p></div>  
 <br><br>
 
 <div align="center"><img src="/Fotos_README/pala.png" alt="Pala" width="300"></img></div>  
-<div align="center"><p><i>Imagen A8.4: Pala.</i></p></div>  
+<div align="center"><p><i>Imagen A8.6: Turnaround de la pala en 2D.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/pala3D.png" alt="Pala en 3D" width="150"></img></div>
+<div align="center"><p><i>Imagen A8.7: Beauty de la pala en 3D.</i></p></div>  
 <br><br>
 
 <div align="center"><img src="/Fotos_README/barril.png" alt="Barril" width="500"></img></div>  
-<div align="center"><p><i>Imagen A8.5: Barril.</i></p></div>  
+<div align="center"><p><i>Imagen A8.5: Turnaround del barril en 2D.</i></p></div>  
 <br><br>
 
 <div align="center"><img src="/Fotos_README/cajas.png" alt="Cajas" width="500"></img></div>  
-<div align="center"><p><i>Imagen A8.6: Cajas.</i></p></div>  
+<div align="center"><p><i>Imagen A8.6: Turnaround de las cajas en 2D.</i></p></div>  
 <br><br>
 
+<div align="center"><img src="/Fotos_README/Cajas3D.png" alt="Cajas y barril en 3D" width="500"></img></div>
+<div align="center"><p><i>Imagen A8.7: Beauty de las cajas y el barril en 3D.</i></p></div>  
+<br><br>   
+
 <div align="center"><img src="/Fotos_README/vagon.png" alt="Vagón" width="500"></img></div>  
-<div align="center"><p><i>Imagen A8.7: Vagón.</i></p></div>  
+<div align="center"><p><i>Imagen A8.8: Turnaround de la carreta en 2D.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/Vagoneta3D.png" alt="Vagón en 3D" width="500"></img></div>
+<div align="center"><p><i>Imagen A8.9: Beauty de la carreta en 3D.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/turnaroundHojas.PNG" alt="Turnaround de hojas en 2D" width="500"></img></div>
+<div align="center"><p><i>Imagen A8.10: Turnaround de las hojas en 2D.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/turnaroundArbustos.PNG" alt="Turnaround de arbustos en 2D" width="500"></img></div>
+</div> <div align="center"><p><i>Imagen A8.11: Turnaround de los arbustos en 2D.</i></p></div>  
+<br><br>
+
+<div align="center"><img src="/Fotos_README/Arbustos3D.png" alt="Arbustos en 3D" width="500"></img></div>
+</div> <div align="center"><p><i>Imagen A8.12: Beauty de los arbustos en 3D.</i></p></div>  
 <br><br>
 
 

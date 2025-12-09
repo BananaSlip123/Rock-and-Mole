@@ -12,8 +12,16 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
     [SerializeField] EnemyName tipoEnemigo;
     [SerializeField] MaterialChanger changer;
 
-    private void FixedUpdate()
+    private void Awake()
     {
+        if (BiomeManager.CurrentBiome == BiomeName.undergroundForest)
+            health = (int)(health * 1.5f);
+        else
+            health = (int)(health * 0.8f);
+    }
+    private void Update()
+    {
+        if (GameObject.FindGameObjectWithTag("Player") == null) return;
         /*
         if (animator.GetBool("Morir"))
         {
@@ -58,7 +66,6 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
 
     private void DeathLogic()
     {
-        Destroy(this.gameObject);
 
         if (LevelManager.instance != null)
         {
@@ -75,6 +82,8 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
             //    i++;
             //}
         }
+
+        Destroy(this.gameObject);
     }
 
     public void Exploded()
