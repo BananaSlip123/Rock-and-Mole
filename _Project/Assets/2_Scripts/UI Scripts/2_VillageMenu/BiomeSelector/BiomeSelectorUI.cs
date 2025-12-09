@@ -80,10 +80,10 @@ public class BiomeSelectorUI : MonoBehaviour
 
         AudioManager.Instance.PlayMusic(AudioManager.MusicType.EnemyFightMusic);
         BiomeManager.CurrentBiome = SelectedBiome;
-        SceneManager.LoadScene("2_CombatRoom");
+        //SceneManager.LoadScene("2_CombatRoom");
         //SceneManager.LoadScene("5_RescueRoom");
 
-        //SceneManager.LoadScene("6_CampamentRoom");
+        SceneManager.LoadScene("6_CampamentRoom");
         //SceneManager.LoadScene("7_DarkRoom");
     }
     #endregion
