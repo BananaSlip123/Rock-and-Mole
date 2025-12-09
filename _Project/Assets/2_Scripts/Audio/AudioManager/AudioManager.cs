@@ -183,20 +183,20 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat($"{VolumeSlider.VolumeType.SFX}Volume", volume);
     }
     public void PlayMusic(MusicType type)
-{
-    if (!musicDictionary.TryGetValue(type, out AudioClip clip))
     {
-        Debug.LogWarning($"No se encontró clip de música para {type}");
-        return;
+        if (!musicDictionary.TryGetValue(type, out AudioClip clip))
+        {
+            Debug.LogWarning($"No se encontró clip de música para {type}");
+            return;
+        }
+
+        // Si ya está sonando la misma canción, no hace nada
+        if (musicSource.clip == clip && musicSource.isPlaying)
+            return;
+
+        // Detiene la música anterior antes de cambiar
+        StartCoroutine(SwitchMusicCoroutine(clip));
     }
-
-    // Si ya está sonando la misma canción, no hace nada
-    if (musicSource.clip == clip && musicSource.isPlaying)
-        return;
-
-    // Detiene la música anterior antes de cambiar
-    StartCoroutine(SwitchMusicCoroutine(clip));
-}
 
     public void PlayAudio(AudioType audioType)
     {
@@ -247,7 +247,18 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-
+    public void StopAudio()
+    {
+        foreach (AudioClip clip in audioDictionary.Values)
+        {
+            if (sfxSource.clip == clip)
+            {
+                sfxSource.Stop();
+                sfxSource.loop = false;
+                sfxSource.clip = null;
+            }
+        }
+    }
 
 
     private IEnumerator SwitchMusicCoroutine(AudioClip newClip)

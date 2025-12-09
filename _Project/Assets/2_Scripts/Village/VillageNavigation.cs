@@ -55,6 +55,7 @@ public class VillageNavigation : MonoBehaviour
         }
 
         Location = Locations.village;
+        AudioManager.Instance?.StopAudio();
     }
 
     #region PUBLIC FUNCS

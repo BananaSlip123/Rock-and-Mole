@@ -38,6 +38,8 @@ public class MainMenuUI : MonoBehaviour
     {
         SwitchWindow(Windows.Main);
         playerInput.SwitchCurrentActionMap("UI");
+        AudioManager.Instance?.StopAudio();
+        AudioManager.Instance?.PlayMusic(AudioManager.MusicType.MenuMusic);
     }
     void SwitchWindow(Windows nextWindow)
     {

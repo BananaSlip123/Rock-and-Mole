@@ -1,5 +1,5 @@
 using UnityEngine;
-//using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;
 
 public class TutorialScript : MonoBehaviour
 {
@@ -21,8 +21,13 @@ public class TutorialScript : MonoBehaviour
 		Room4
 	}
 
-    public void OnPassDialog()=> callOut?.OnInteraction();
+    public void OnPassDialog(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed)
+            return;
 
+        callOut.OnInteraction();
+    }
     private void OnEnable()
     {
         Debug.Log("Enable");
@@ -32,6 +37,8 @@ public class TutorialScript : MonoBehaviour
     private void Start()
     {
         Debug.Log("Start");
+        
+
         if (dialogsToShow.Length == 0) return;
 
         if (!GameData.NeedsTutorial)
@@ -40,6 +47,10 @@ public class TutorialScript : MonoBehaviour
 			return;
         }
 
+        
+
+        if (scene == TutorialScene.Room1) AudioManager.Instance?.PlayMusic(AudioManager.MusicType.MineMusic);
+        if (scene == TutorialScene.Room2) AudioManager.Instance?.PlayMusic(AudioManager.MusicType.EnemyFightMusic);
         if (scene == TutorialScene.Room3) FindAnyObjectByType<PlayerStats>().HealPlayer();
 
 		callOut = go_callOut.GetComponent<CallOut>();
