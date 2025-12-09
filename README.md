@@ -583,7 +583,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 ## 8.2. GRUPAL
 ### 8.2.1. QUÉ SALIÓ BIEN
 
-Como equipo hemos logrado cumplir con los objetivos planteados para esta fase y entregar una versión más completa y pulida del juego. Se implementaron nuevos biomas con personajes y props, se añadió la planta carnívora como enemigo destacado y se amplió el apartado artístico con modelos y animaciones coherentes con la estética cartoon. El cambio al renderizado con Cell Shading aportó un estilo visual más atractivo, mientras que el apartado sonoro se enriqueció con nuevas músicas y efectos, integrados de forma estable mediante el AudioManager. En conjunto, el resultado final mejoró notablemente respecto a versiones anteriores, tanto en game feel como en calidad visual y sonora.  
+Como equipo hemos logrado cumplir con los objetivos planteados para esta fase y entregar una versión más completa y pulida del juego. Se implementaron nuevos biomas con personajes y props, se añadió la planta carnívora como enemigo destacado y se amplió el apartado artístico con modelos y animaciones coherentes con la estética cartoon. El cambio al renderizado con Cel Shading aportó un estilo visual más atractivo, mientras que el apartado sonoro se enriqueció con nuevas músicas y efectos, integrados de forma estable mediante el AudioManager. En conjunto, el resultado final mejoró notablemente respecto a versiones anteriores, tanto en game feel como en calidad visual y sonora.  
 
 ### 8.2.2. QUÉ SALIÓ MAL
 
@@ -595,7 +595,7 @@ Los principales problemas estuvieron relacionados con la gestión del tiempo y l
 
 ### 8.2.4. CONCLUSIÓN
 
-En conclusión, el equipo está satisfecho con el resultado de la Gold Release. A pesar de los problemas de tiempo y coordinación, se ha conseguido entregar una versión sólida que mejora claramente respecto a la beta. El juego cuenta ahora con más contenido, un estilo visual definido gracias al Cell Shading, un apartado sonoro más coherente y un game feel más trabajado. La experiencia adquirida en esta fase servirá para optimizar procesos y asegurar que futuras versiones alcancen un nivel aún más pulido y profesional.
+En conclusión, el equipo está satisfecho con el resultado de la Gold Release. A pesar de los problemas de tiempo y coordinación, se ha conseguido entregar una versión sólida que mejora claramente respecto a la beta. El juego cuenta ahora con más contenido, un estilo visual definido gracias al Cel Shading, un apartado sonoro más coherente y un game feel más trabajado. La experiencia adquirida en esta fase servirá para optimizar procesos y asegurar que futuras versiones alcancen un nivel aún más pulido y profesional.
 
 <br>
 <br>
