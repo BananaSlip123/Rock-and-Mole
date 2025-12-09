@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pico Maestro
   m_EditorClassIdentifier: 
   damage: 20
-  damageShoot: 10
+  damageShoot: 8
   critMultiplier: 2
   critProbability: 0.1
   attackSpeed: 0.2

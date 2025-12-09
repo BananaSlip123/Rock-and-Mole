@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pico Oxidado
   m_EditorClassIdentifier: 
   damage: 10
-  damageShoot: 5
+  damageShoot: 3
   critMultiplier: 1.5
   critProbability: 0.05
   attackSpeed: 0

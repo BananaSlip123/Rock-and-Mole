@@ -12,6 +12,12 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
     [SerializeField] EnemyName tipoEnemigo;
     MaterialChanger changer;
 
+    private void Awake()
+    {
+        if (BiomeManager.CurrentBiome == BiomeName.undergroundForest)
+            health = (int)(health*1.5f);
+    }
+
     void Start()
     {
         changer = GetComponent<MaterialChanger>();
