@@ -16,6 +16,8 @@ public class BunnyDamageableComponent : MonoBehaviour, IDamageableComponent
     {
         if (BiomeManager.CurrentBiome == BiomeName.undergroundForest)
             health = (int)(health * 1.5f);
+        else
+            health = (int)(health * 0.8f);
     }
     private void Update()
     {
