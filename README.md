@@ -529,7 +529,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Jesús Mercado Rioja:** el proyecto ha ido avanzando correctamente en base a los objetivos que se pusieron al inicio de la fase y se ha logrado evolucionar el juego en el  tiempo estimado, tanto el aspecto artístico del juego como el técnico ha avanzado con la inclusión de nuevos personajes, escenarios y props.
 
-**Unai Pastrana Torres:** Estoy muy orgulloso tanto de mi trabajo como del de mis compañeros, está última fase ha cumplido con todos los objetivos previstos, y además se ha logrado un mejor resultado de lo que esperaba, con ideas nuevas como el cambio artístico en el renderizado mediante la técnica CellShading.
+**Unai Pastrana Torres:** Estoy muy orgulloso tanto de mi trabajo como del de mis compañeros, está última fase ha cumplido con todos los objetivos previstos, y además se ha logrado un mejor resultado de lo que esperaba, con ideas nuevas como el cambio artístico en el renderizado mediante la técnica Cell Shading.
 
 **Santiago Varela Rey:** El apartado sonoro se amplió con nuevas músicas y efectos, y el AudioManager quedó completamente implementado de forma estable para gestionar la mayoría de situaciones del juego. La integración fue fluida y el sonido final es más coherente y pulido que en versiones anteriores.
 
@@ -545,7 +545,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Jesús Mercado Rioja:** a pesar de que se planteó en la fase alfa hacer un buen uso de la herramienta Trello para comunicarnos, no se puso en práctica, y de hecho empeoró respecto a la anterior entrega, ya que cayó prácticamente en desuso por lo que a pesar de que nos hemos comunicado entre nosotros de forma grupal, no existía un registro exacto de que estaba hecho y que no, lo que dificultaba el proceso de trabajo. Además, no comenzamos el desarrollo de la beta de la manera más inmediata, forzándonos así a que la carga de trabajo fuera más alta en un menor tiempo.
 
-**Unai Pastrana Torres:** he notado que teníamos menos tiempo de trabajo del que nos gustaría, lo que se tradució en no poder balancear el juego completamente, sobre todo en cuando a la cantidad de recursos obtenidos, precios de la tienda, y dificuldad de los enemigos de cada bioma.
+**Unai Pastrana Torres:** he notado que teníamos menos tiempo de trabajo del que nos gustaría, lo que se tradujo en no poder balancear el juego completamente, sobre todo en cuanto a la cantidad de recursos obtenidos, precios de la tienda, y dificultad de los enemigos de cada bioma.
 
 **Santiago Varela Rey:** persistió un error con la música de combate: al entrar en batalla, la pista previa no se detiene y continúa hasta salir de la mina. No se pudo solucionar a tiempo para la versión final.
 
@@ -559,7 +559,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Jesús Mercado Rioja:** se debería de gestionar mejor el tiempo de trabajo, para que así este no se nos acumule. Además deberíamos hacer un buen uso de la herramienta Trello u otras plataformas para dejar constancia de que partes del trabajo ya se han realizado y cuáles quedan por hacer y así conseguir que todo el mundo tenga claro en que tiene que trabajar. 
 
-**Unai Pastrana Torres:** mejoraría el orden dentro del proyecto a la hora de organizar assets, ya que algunas carpetas tenían muchos elementos o estaban mal divididos, y también teníamos muchos materiales duplicados o redundantes, e incluso archivos que no se usaban, la Build podría haber sido más liviana si hubiesemos dispuesto de más tiempo para organizar los archivos, así mismo se habrían podido optimizar las mallas, ya que algunas tenían un número de polígonos muy alto para su tamaño en pantalla. 
+**Unai Pastrana Torres:** mejoraría el orden dentro del proyecto a la hora de organizar assets, ya que algunas carpetas tenían muchos elementos o estaban mal divididos, y también teníamos muchos materiales duplicados o redundantes, e incluso archivos que no se usaban, la Build podría haber sido más liviana si hubiésemos dispuesto de más tiempo para organizar los archivos, así mismo se habrían podido optimizar las mallas, ya que algunas tenían un número de polígonos muy alto para su tamaño en pantalla. 
 
 **Santiago Varela Rey:** de cara a futuras versiones, actualizaciones o mantenimiento, habría que revisar la lógica de transición entre pistas y optimizar la gestión de estados del AudioManager para evitar solapamientos musicales.
   
