@@ -42,7 +42,7 @@ public class ThrowingPickaxe : MonoBehaviour
         {
             isReturning = true;
 
-            if ((transform.position - player.position).sqrMagnitude < 0.005f)
+            if ((transform.position - player.position).sqrMagnitude < 0.014f)
                 shoot.IsShooting = false;
 
             speed = RETURN_SPEED;
