@@ -496,6 +496,18 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 * Sonido de hoguera:
      * Audio original: [Sonido hoguera](https://www.youtube.com/watch?v=GdwhlKKw0Lc&pp=ygUKZmlyZSBzb3VuZA%3D%3D)
      * Modificaciones: Recorte y reducción de la velocidad al 80%.
+* Sonido de cascada:
+     * Audio original: [Sonido cascada](https://www.youtube.com/watch?v=UEHpUFAyLlY&pp=ygUZY2FzY2FkYSBlZmZlY3RvIGRlIHNvbmlkbw%3D%3D)
+     * Modificaciones: Recorte y reducción de tono al 80% y de volumen.
+* Sonido de cofre abriéndose:
+     * Audio original: [Sonido cofre abriéndose](https://www.youtube.com/watch?v=Rx4yitMyy70&pp=ygUkZWZlY3RvIGRlIHNvbmlkbyBwdWVydGEgY2hpcnJpYW5kb3Nl)
+     * Modificaciones: Recorte.
+* Sonido de jugador siendo atacado:
+     * Audio original: [Sonido jugador siendo atacado](https://www.youtube.com/watch?v=PoWNhL3f4nw&pp=ygUXZWZlY3RvIGRlIHNvbmlkbyBoZXJpZG8%3D)
+     * Modificaciones: Recorte y aumento de velocidad al 110% y de volumen.
+* Sonido de enemigo siendo atacado:
+     * Audio original: [Sonido enemigo siendo atacado](https://www.youtube.com/watch?v=PoWNhL3f4nw&pp=ygUXZWZlY3RvIGRlIHNvbmlkbyBoZXJpZG8%3D)
+     * Modificaciones: Recorte y reducción de velocidad al 80%.
 <br>
 
 ---
