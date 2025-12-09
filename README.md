@@ -574,7 +574,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Jesús Mercado Rioja:** la fase beta ha salido mejor de lo esperado, ya que se ha conseguido evolucionar el videojuego tanto técnica como visualmente con la implementación de nuevos elementos (escenarios, personajes, etc.). A pesar de los problemas que han ido surgiendo, el equipo ha sabido resolverlos y aunque se deben pulir algunos detalles, estoy orgulloso del resultado obtenido.
 
-**Unai Pastrana Torres:** en resumen estoy orgulloso del desempeño general de equipo en esta entrega final, y de los resultados dentro del juego. Considero que el juego ha quedado mucho más atractivo y divertido de lo que pude pensar en un inicio. Aunque se podrían mejorar cuestiones de eficiencia en el desarrollo y velocidad a la hora de realizar las tareas, los resultados han sido incuestionablemente buenos, para el tiempo del que se disponía.
+**Unai Pastrana Torres:** en resumen, estoy orgulloso del desempeño general del equipo en esta entrega final, y de los resultados dentro del juego. Considero que el juego ha quedado mucho más atractivo y divertido de lo que pude pensar en un inicio. Aunque se podrían mejorar cuestiones de eficiencia en el desarrollo y velocidad a la hora de realizar las tareas, los resultados han sido incuestionablemente buenos, para el tiempo del que se disponía.
 
 **Santiago Varela Rey:** el resultado de la versión final es muy bueno y mejora notablemente al de entregas anteriores. Aunque la planificación podría haberse afinado, el resultado es sólido y estoy satisfecho con el proyecto realizado.
 
