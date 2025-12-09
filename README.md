@@ -506,7 +506,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Lara Sánchez Sanz:** Modelado y animación 3D de personajes.  
 **Jesús Mercado Rioja:** Diseño 2D y modelado 3D de escenarios.  
-**Ana María Caamaño del Amo:** Modelado 3D de props.  
+**Ana María Caamaño del Amo:** Modelado y animación 3D de props.  
 **Javier Martín Mulero:** Programación de mecánicas principales.  
 **Unai Pastrana Torres:** Diseño y programación de interfaces.  
 **Santiago Varela Rey:** Música y efectos de sonido.
@@ -796,7 +796,7 @@ En este anexo se recopilan los props diseñados para los escenarios del juego, e
 <div align="center"><p><i>Imagen A8.6: Turnaround de la pala en 2D.</i></p></div>  
 <br><br>
 
-<div align="center"><img src="/Fotos_README/pala3D.png" alt="Pala en 3D" width="300"></img></div>
+<div align="center"><img src="/Fotos_README/pala3D.png" alt="Pala en 3D" width="150"></img></div>
 <div align="center"><p><i>Imagen A8.7: Beauty de la pala en 3D.</i></p></div>  
 <br><br>
 
@@ -820,11 +820,11 @@ En este anexo se recopilan los props diseñados para los escenarios del juego, e
 <div align="center"><p><i>Imagen A8.9: Beauty de la carreta en 3D.</i></p></div>  
 <br><br>
 
-<div align="center"><img src="/Fotos_README/turnaroundHojas.png" alt="Turnaround de hojas en 2D" width="500"></img></div>
+<div align="center"><img src="/Fotos_README/turnaroundHojas.PNG" alt="Turnaround de hojas en 2D" width="500"></img></div>
 <div align="center"><p><i>Imagen A8.10: Turnaround de las hojas en 2D.</i></p></div>  
 <br><br>
 
-<div align="center"><img src="/Fotos_README/turnaroundArbustos.png" alt="Turnaround de arbustos en 2D" width="500"></img></div>
+<div align="center"><img src="/Fotos_README/turnaroundArbustos.PNG" alt="Turnaround de arbustos en 2D" width="500"></img></div>
 </div> <div align="center"><p><i>Imagen A8.11: Turnaround de los arbustos en 2D.</i></p></div>  
 <br><br>
 
