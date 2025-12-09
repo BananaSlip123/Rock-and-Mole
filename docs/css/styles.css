@@ -11021,7 +11021,7 @@ html {
 .masthead {
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/portfolio/SplashArt.png"); /*Poner la imagen del splash art*/
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/img/portfolio/SplashArt.png"); /*Poner la imagen del splash art*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
