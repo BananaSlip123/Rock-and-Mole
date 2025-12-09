@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84634d842323ea24da69fc6b0b98fcdc, type: 3}
   m_Name: Pico Afilado
   m_EditorClassIdentifier: 
-  damage: 15
-  damageShoot: 10
-  critMultiplier: 2.5
-  critProbability: 0.08
+  damage: 16
+  damageShoot: 8
+  critMultiplier: 1.8
+  critProbability: 0.07
   attackSpeed: 0.1
   coinsPrice: 100
   costs:

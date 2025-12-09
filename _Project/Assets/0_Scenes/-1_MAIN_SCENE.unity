@@ -811,7 +811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2261848913020136784, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
       propertyPath: needsTutorial
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2261848913020136784, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
       propertyPath: materialsAmount
@@ -5649,7 +5649,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 463025328}
   m_Direction: 2
   m_Value: 1.0000005
-  m_Size: 0.29362538
+  m_Size: 0.29120204
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

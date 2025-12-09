@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -119,6 +123,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: -4782530135790793498, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4054221708702068384, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -4003835358436395007, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -127,6 +139,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: -3439212679838171634, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -1021989087339959681, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -135,13 +151,25 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 85ddaefdfa0f56d45b85371b831c1d8e, type: 2}
+    - target: {fileID: -359604438061027425, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 771884692694422973, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: 845472278209141479, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
       propertyPath: m_Name
       value: ObsidianaMusgoTipo2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
       propertyPath: m_TagString
@@ -151,6 +179,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5c0bba925085b9c48b365077e5d4a156, type: 2}
+    - target: {fileID: 3459878664674503264, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291125710773662183, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384433021592578344, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535883666627549963, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6862064656338386268, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7450625199306193591, guid: c89df7405e322db4e907b18b27a14d84, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

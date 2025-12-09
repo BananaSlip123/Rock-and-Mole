@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -75,6 +79,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9197180600238192918, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -119,17 +127,41 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2eb12dd9d25145e418fca52d07311be4, type: 2}
+    - target: {fileID: -6396804591823911064, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -1466829687536703811, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -836684036342532533, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2eb12dd9d25145e418fca52d07311be4, type: 2}
+    - target: {fileID: -640102462361919223, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -582839898184338630, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
+    - target: {fileID: -247455593593355491, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 544758704580657422, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
       propertyPath: m_Name
       value: Diamante_Tipo3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 29b1ca165ac1fba438f31fec08bd36be, type: 3}
       propertyPath: m_TagString

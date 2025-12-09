@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Pico Endurecido
   m_EditorClassIdentifier: 
   damage: 18
-  damageShoot: 12
-  critMultiplier: 3
-  critProbability: 0.1
+  damageShoot: 9
+  critMultiplier: 1.9
+  critProbability: 0.08
   attackSpeed: 0.15
   coinsPrice: 600
   costs:

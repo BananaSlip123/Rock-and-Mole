@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -75,6 +79,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8829541976771883687, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -115,6 +123,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5022384708902767882, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4533547442701207706, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -3812237947717845079, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -1861574177406585261, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -127,9 +147,17 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e84089a339dd67d4f943fa5003ac0734, type: 2}
+    - target: {fileID: 906559253442032272, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
       propertyPath: m_Name
       value: Hierro_Tipo2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
       propertyPath: m_TagString
@@ -139,10 +167,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e84089a339dd67d4f943fa5003ac0734, type: 2}
+    - target: {fileID: 3195950446430727827, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5001069186525941540, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
+    - target: {fileID: 5727982688569605849, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6645618764329666883, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -206,6 +242,7 @@ MonoBehaviour:
   toughness: 5
   numberProbability: 0.1
   sparks: {fileID: 3458404581742789400}
+  rockType: 0
 --- !u!4 &8940079716508051214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bf3a2382ad435bd4196133e22626eba7, type: 3}

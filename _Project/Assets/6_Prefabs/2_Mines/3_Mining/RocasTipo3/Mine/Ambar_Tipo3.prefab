@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spark
       objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01666832
@@ -115,6 +119,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8481626931168089968, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7086877420763890723, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -6553823773435716742, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -3398890263828115334, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -3366011609226468603, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -123,6 +143,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2fdc060fc9c7343468b653d93237ad4b, type: 2}
+    - target: {fileID: -1515304965034936912, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -1515254462346247986, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -641204684422771748, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -519596610616590792, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -134,6 +166,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       propertyPath: m_Name
       value: Ambar_Tipo3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       propertyPath: m_TagString
@@ -151,6 +187,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2fdc060fc9c7343468b653d93237ad4b, type: 2}
+    - target: {fileID: 6591142934873424683, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8976962224165931754, guid: cbe70b472aca5094a903838d2eaf9a3a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

@@ -48,17 +48,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8568066920072659216, guid: 4ec0bc1bb43d3364f917ebb41f732c54, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7621136380955528368, guid: 4ec0bc1bb43d3364f917ebb41f732c54, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -7581982314743750584, guid: 4ec0bc1bb43d3364f917ebb41f732c54, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: cd1fd279f4442f14aa7523e29773f890, type: 2}
+    - target: {fileID: -6577237425059042219, guid: 4ec0bc1bb43d3364f917ebb41f732c54, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -1417907971394208475, guid: 4ec0bc1bb43d3364f917ebb41f732c54, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -1382690913883410624, guid: 4ec0bc1bb43d3364f917ebb41f732c54, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4cf272411358ec746ad8caff1fab71ca, type: 2}
+    - target: {fileID: -1348522326760102733, guid: 4ec0bc1bb43d3364f917ebb41f732c54, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4ec0bc1bb43d3364f917ebb41f732c54, type: 3}
       propertyPath: m_Name
       value: Carbon_Tipo1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ec0bc1bb43d3364f917ebb41f732c54, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4ec0bc1bb43d3364f917ebb41f732c54, type: 3}
       propertyPath: m_TagString
@@ -148,6 +172,10 @@ PrefabInstance:
     - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_Name
       value: Spark
+      objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x

@@ -60,22 +60,50 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2eb12dd9d25145e418fca52d07311be4, type: 2}
+    - target: {fileID: 277269044221704489, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
       propertyPath: m_Name
       value: DiamanteMusgoTipo2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
       propertyPath: m_TagString
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609569641858664800, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881019396896200262, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3889454945018026959, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 2eb12dd9d25145e418fca52d07311be4, type: 2}
+    - target: {fileID: 4260161443759818096, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385470135703403051, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6073415260062429699, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 85ddaefdfa0f56d45b85371b831c1d8e, type: 2}
+    - target: {fileID: 8177158696787610019, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8452291259029059865, guid: ca310c12e544e5541b26a7f60411d180, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -152,6 +180,10 @@ PrefabInstance:
     - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_Name
       value: Spark
+      objectReference: {fileID: 0}
+    - target: {fileID: 269960808275285204, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2613158764121361662, guid: 52901ba152ce93246af213b2fc6ebc79, type: 3}
       propertyPath: m_LocalPosition.x

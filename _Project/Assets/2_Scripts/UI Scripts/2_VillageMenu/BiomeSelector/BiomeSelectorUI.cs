@@ -83,8 +83,8 @@ public class BiomeSelectorUI : MonoBehaviour
         //SceneManager.LoadScene("2_CombatRoom");
         //SceneManager.LoadScene("5_RescueRoom");
 
-        SceneManager.LoadScene("6_CampamentRoom");
-        //SceneManager.LoadScene("7_DarkRoom");
+        //SceneManager.LoadScene("6_CampamentRoom");
+        SceneManager.LoadScene("7_DarkRoom");
     }
     #endregion
 }
