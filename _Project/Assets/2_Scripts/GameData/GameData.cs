@@ -134,7 +134,7 @@ public static class GameData
     {
         switch (rarity)
         {
-            case MaterialRarity.Common: return UnityEngine.Random.Range(3, 5);
+            case MaterialRarity.Common: return UnityEngine.Random.Range(1, 4);
             case MaterialRarity.Rare: return UnityEngine.Random.Range(1, 3);
             case MaterialRarity.Very_Rare: return 1;
             default: return 1;

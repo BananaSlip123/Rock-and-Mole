@@ -66,10 +66,10 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
 
     private void DeathLogic()
     {
-        Destroy(this.gameObject);
-
+        
         if (LevelManager.instance != null)
         {
+            timeToDeath = 0;
             LevelManager.instance.EnemyDead();
 
             //Dictionary<MaterialName, int> materialsGenerated = GameData.EnemyLoot(UnityEngine.Random.Range(2,4),tipoEnemigo);
@@ -83,5 +83,6 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
             //    i++;
             //}
         }
+        Destroy(this.gameObject);
     }
 }
