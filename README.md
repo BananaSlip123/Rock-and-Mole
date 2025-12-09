@@ -529,7 +529,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Jesús Mercado Rioja:** se han conseguido completar los objetivos planteados para esta fase, el equipo ha sabido enfrentarse a los diversos problemas que fueran surgiendo durante la fase, permitiendo así que se lograran terminar los avances propuestos, en concreto, se ha logrado implementar un nuevo bioma en la mina con nuevos personajes y props, además de mejorar aquellos aspectos del proyecto con los que no estuviéramos convencidos.
 
-**Unai Pastrana Torres:** Estoy muy orgulloso tanto de mi trabajo como del de mis compañeros, está última fase ha cumplido con todos los objetivos previstos, y además se ha logrado un mejor resultado de lo que esperaba, con ideas nuevas como el cambio artístico en el renderizado mediante la técnica Cel Shading.
+**Unai Pastrana Torres:** Estoy muy orgulloso tanto de mi trabajo como del de mis compañeros, esta última fase ha cumplido con todos los objetivos previstos, y además se ha logrado un mejor resultado de lo que esperaba, con ideas nuevas como el cambio artístico en el renderizado mediante la técnica Cel Shading.
 
 **Santiago Varela Rey:** El apartado sonoro se amplió con nuevas músicas y efectos, y el AudioManager quedó completamente implementado de forma estable para gestionar la mayoría de situaciones del juego. La integración fue fluida y el sonido final es más coherente y pulido que en versiones anteriores.
 
