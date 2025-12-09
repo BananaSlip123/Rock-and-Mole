@@ -531,7 +531,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Unai Pastrana Torres:** Estoy orgulloso con el desempeño de la beta en cuanto al trabajo que me tocó implementar, ya que, conseguí hacer un diseño de interfaz agradable e intuitivo, que recogía todos los menús que planifiqué hacer en esta entrega.
 
-**Santiago Varela Rey:** durante este sprint he ampliado notablemente el apartado sonoro del proyecto. Se han añadido nuevos efectos de sonido y piezas musicales adaptadas a cada situación del juego (combate, muerte, caminar, clickear, música para escenarios, etc.). Además, toda esta nueva implementación se integró correctamente en Unity, asegurando que cada sonido se active en el momento adecuado mediante eventos y triggers. La comunicación con el equipo fue fluida durante el proceso de integración, lo que permitió ajustar los sonidos de forma coherente con la estética cartoon del juego.
+**Santiago Varela Rey:** El apartado sonoro se amplió con nuevas músicas y efectos, y el AudioManager quedó completamente implementado de forma estable para gestionar la mayoría de situaciones del juego. La integración fue fluida y el sonido final es más coherente y pulido que en versiones anteriores.
 
 
 
@@ -549,7 +549,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 A la hora de implementar ciertas funcionalidades de la UI que dependían del desarrollo de las animaciones, del modelado del vestuario, o de la programación de la música, tuve el problema de tener que esperar a que se terminaran, lo cual no me dejó el suficiente tiempo para implementarlas desde código de la forma que hubiera querido.
 
-**Santiago Varela Rey:** a pesar de que se completaron las tareas de sonido y música, todavía hubo momentos en los que la planificación podría haber sido más efectiva. Algunas integraciones se dejaron para etapas tardías del desarrollo y han requerido de la ayuda de otros miembros del equipo que estaban disponibles. Además, una de las piezas musicales tuvo que ser reemplazada por incumplimiento del copyright en los días previos a la entrega.
+**Santiago Varela Rey:** persistió un error con la música de combate: al entrar en batalla, la pista previa no se detiene y continúa hasta salir de la mina. No se pudo solucionar a tiempo para la versión final.
 
 ### 8.1.3. QUÉ SE PUEDE MEJORAR
 
@@ -563,7 +563,7 @@ A la hora de implementar ciertas funcionalidades de la UI que dependían del des
 
 **Unai Pastrana Torres:** mejorar la comunicación con mis compañeros hubiese supuesto una mejora en aquellas tareas que dependen de mis compañeros, por ejemplo la programación de los ajustes de volumen, o mostrar el equipamiento equipado en la UI. Para mejorar la comunicación propondría dejar muy claro que necesita cada uno de otros compañeros, y dejar terminadas esas tareas con una mayor prioridad. 
 
-**Santiago Varela Rey:** Para próximas entregas sería recomendable establecer un pipeline más eficiente para los archivos de audio, definiendo mejor la estructura de carpetas, nombres y buses de mezcla. Otra mejora sería terminar antes las tareas sonoras principales para disponer de más margen para la mezcla fina y el pulido final.
+**Santiago Varela Rey:** de cara a futuras versiones, actualizaciones o mantenimiento, habría que revisar la lógica de transición entre pistas y optimizar la gestión de estados del AudioManager para evitar solapamientos musicales.
   
 
 ### 8.1.4. CONCLUSIÓN
@@ -578,7 +578,8 @@ A la hora de implementar ciertas funcionalidades de la UI que dependían del des
 
 **Unai Pastrana Torres:** en resumen estoy orgulloso del desempeño general de equipo en esta entrega, y de los resultados dentro del juego. Considero que la beta está bastante completa, aunque dejáramos ciertos detalles sin pulir, tenemos una base sólida sobre la que trabajar.
 
-**Santiago Varela Rey:** estoy satisfecho con la ampliación y mejora del apartado sonoro en esta entrega. La implementación de nuevos efectos y música ha contribuido a hacer el juego más coherente y con mayor personalidad audiovisual. Aunque la planificación podría haberse optimizado, el resultado final es positivo y sirve como una base sólida para seguir refinando el audio.
+**Santiago Varela Rey:** el resultado de la versión final es muy bueno y mejora notablemente al de entregas anteriores. Aunque la planificación podría haberse afinado, el resultado es sólido y estoy satisfecho con el proyecto realizado.
+
   
 
 ## 8.2. GRUPAL
