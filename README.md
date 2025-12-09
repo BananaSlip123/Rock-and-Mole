@@ -1,5 +1,5 @@
 # <div align="center"> ROCK & MOLE </div>
-<div align="center">GAME DESIGN DOCUMENT - v0.2.0</div>
+<div align="center">GAME DESIGN DOCUMENT - v1.0.0</div>
 
 <br><br><br><br>
 
