@@ -13,6 +13,7 @@ internal class PlantShootState : IStateComponent, IAttackComponent
 
     const float COOLDOWN = 1.5f;
     private float timeToAttack = 0f;
+    private float radius = 3f;
 
     public PlantShootState(IStateMachineComponent stateMachineComponent, Transform transform, Transform player, Animator animator)
     {
@@ -26,6 +27,9 @@ internal class PlantShootState : IStateComponent, IAttackComponent
     {
         pool = GameObject.FindGameObjectWithTag("PoolBullet").GetComponent<IObjectPool>();
         animator.SetBool("Dispara", true);
+
+        if (enemy.GetComponent<GolemDamageableComponent>().tipoEnemigo == EnemyName.PlantBoss)
+            radius = 5f;
     }
 
     public void Exit()
@@ -38,11 +42,11 @@ internal class PlantShootState : IStateComponent, IAttackComponent
         if (player == null) return;
         if (enemy == null) return;
 
-        if (PlayerInRange(3f))
+        if (PlayerInRange(radius))
         {
             plantController.ChangeState(new PlantBiteState(plantController, enemy,player, animator));
         }
-        else if (!PlayerInRange(10f))
+        else if (!PlayerInRange(radius * 3.33f))
         {
             plantController.ChangeState(new PlantLookingState(plantController, enemy, animator));
         }

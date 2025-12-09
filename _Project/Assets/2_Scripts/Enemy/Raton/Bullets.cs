@@ -7,7 +7,7 @@ public class Bullets : MonoBehaviour, IPooleableObject, IMoveComponent, IAttackC
     const float SPEED = 10f;
     const int DAMAGE = 25;
 
-    float TIME_DESPAWN = 5f;
+    float TIME_DESPAWN = 1.75f;
     float timeToDespawn = 0f;
 
     [SerializeField] GameObject poolO;

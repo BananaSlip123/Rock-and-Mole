@@ -9,7 +9,7 @@ public class GolemDamageableComponent : MonoBehaviour, IDamageableComponent
     [SerializeField] Animator animator;
     private float timeToDeath = 0f;
     const float TIME_TO_DEATH = 1f;
-    [SerializeField] EnemyName tipoEnemigo;
+    [SerializeField] public EnemyName tipoEnemigo;
     MaterialChanger changer;
 
     private void Awake()
