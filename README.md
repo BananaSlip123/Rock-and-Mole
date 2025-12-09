@@ -222,11 +222,11 @@ El pico es el arma principal del jugador. Se mejora en la herrería, utilizando 
 
 | Nivel | Nombre | Efecto | Precio de mejora |
 | :---: | :----: | :----: | :----: |
-| 1 | Pico oxidado | 10 puntos de daño básico, x1.25 de daño crítico, 5% de probabilidad de crítico y 0% de velocidad de ataque extra | Arma inicial |
-| 2 | Pico reforzado | 12 puntos de daño básico, x2 de daño crítico, 6% de probabilidad de crítico y 5% de velocidad de ataque extra | 70 monedas y 15 lingotes de hierro |
-| 3 | Pico afilado | 15 puntos de daño básico, x2.5 de daño crítico, 8% de probabilidad de crítico y 10% de velocidad de ataque extra | 100 monedas, 25 lingotes de hierro y 5 piedras de carbón |
-| 4 | Pico endurecido | 20 puntos de daño básico, x3 de daño crítico, 10% de probabilidad de crítico y 15% de velocidad de ataque extra | 200 monedas, 40 lingotes, 10 piedras de carbón y 5 piedras de obsidiana |
-| 5 | Pico maestro | 30 puntos de daño básico, x5 de daño crítico, 15% de probabilidad de crítico y 20% de velocidad de ataque extra | 300 monedas, 45 lingotes de hierro, 15 piedras de carbón y 15 piedras de obsidiana |
+| 1 | Pico oxidado | 10 puntos de daño básico, 5 puntos de daño a distancia, x1.25 de daño crítico, 5% de probabilidad de crítico y 0% de velocidad de ataque extra | Arma inicial |
+| 2 | Pico reforzado | 12 puntos de daño básico, 9 puntos de daño a distancia, x2 de daño crítico, 6% de probabilidad de crítico y 5% de velocidad de ataque extra | 70 monedas y 15 lingotes de hierro |
+| 3 | Pico afilado | 15 puntos de daño básico, 12 puntos de daño a distancia, x2.5 de daño crítico, 8% de probabilidad de crítico y 10% de velocidad de ataque extra | 100 monedas, 25 lingotes de hierro y 5 piedras de carbón |
+| 4 | Pico endurecido | 20 puntos de daño básico, 16 puntos de daño a distancia, x3 de daño crítico, 10% de probabilidad de crítico y 15% de velocidad de ataque extra | 200 monedas, 40 lingotes, 10 piedras de carbón y 5 piedras de obsidiana |
+| 5 | Pico maestro | 30 puntos de daño básico, 25 puntos de daño a distancia, x5 de daño crítico, 15% de probabilidad de crítico y 20% de velocidad de ataque extra | 300 monedas, 45 lingotes de hierro, 15 piedras de carbón y 15 piedras de obsidiana |
 
 <div align="center"><p><i>Tabla 3: Mejoras de armas.</i></p></div>
 
@@ -270,8 +270,8 @@ Durante la exploración de la mina, el jugador puede recolectar materiales que s
 | Nombre | Rareza | Beneficio |
 | :---: | :----: | :----: |
 | Ámbar | Común | 8 monedas |
-| Esmeralda | Común | 50 monedas |
-| Rubí | Raro | 70 monedas |
+| Esmeralda | Raro | 50 monedas |
+| Rubí | Muy raro | 70 monedas |
 | Diamante | Muy raro | 100 monedas |
 
 <div align="center"><p><i>Tabla 6: Materiales para la venta.</i></p></div>
@@ -283,9 +283,9 @@ Durante la exploración de la mina, el jugador puede recolectar materiales que s
 | Nombre | Utilidad | Rareza | Beneficio |
 | :---: | :----: | :----: | :-------: |
 | Lingotes de hierro | Mejora de armas | Común | 4 monedas |
-| Carbón | Mejora de armas | Raro | 15 monedas |
-| Lingotes de bronce | Fabricación de armaduras y cascos | Raro | 25 monedas |
-| Cristales de cuarzo | Fabricación de cascos | Muy raro | 50 monedas |
+| Carbón | Mejora de armas | Común | 15 monedas |
+| Lingotes de bronce | Fabricación de armaduras y cascos | Común | 25 monedas |
+| Cristales de cuarzo | Fabricación de cascos | Raro | 50 monedas |
 | Rollos de tela | Fabricación de prendas | Muy raro | 50 monedas |
 | Cristales de obsidiana | Mejora de armas | Muy raro | 50 monedas |
 
@@ -521,15 +521,15 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 ## 8.1. INDIVIDUAL
 ### 8.1.1. QUÉ SALIÓ BIEN
 
-**Ana María Caamaño del Amo:** se ha conseguido entregar una beta con la mayoría de las salas que se habían pensado, además de tener un aspecto visual más cercano a lo deseado. Respecto al apartado artístico, se han implementado y modelado muchos elementos de forma bastante más rápida que en la versión anterior.
+**Ana María Caamaño del Amo:** se ha conseguido desarrollar todo lo que se quería para la última entrega de forma satisfactoria, además de arreglar diversos bugs. En el apartado artístico, se han hecho todos los modelos necesarios para el nuevo bioma sin ninguna gran complicación y en el tiempo que se tenía pensado.
 
 **Javier Martín Mulero:** al final he quedado contento con como ha quedado el proyecto. El apartado visual es bonito y el game feel, lejos de ser perfecto, ha mejorado con respecto a la beta que era el principal problema que había en la beta.
 
-**Lara Sánchez Sanz:** durante esta entrega he conseguido completar y mejorar el modelado y la animación de los personajes principales y enemigos. El flujo de trabajo ha sido más ágil que en la versión anterior, lo que ha permitido integrar los modelos y animación en Unity sin grandes problemas. Estoy realmente satisfecha con la variedad de personajes y animaciones implementadas. 
+**Lara Sánchez Sanz:** En esta entrega he conseguido completar el modelado y la animación de la planta carnívora. Estoy satisfecha con cómo ha quedado tanto a nivel visual como en la integración dentro de Unity. El resultado final del proyecto me ha sorprendido bastante siendo una gran mejora con respecto de las versiones anteriores.
 
-**Jesús Mercado Rioja:** el proyecto ha ido avanzando correctamente en base a los objetivos que se pusieron al inicio de la fase y se ha logrado evolucionar el juego en el  tiempo estimado, tanto el aspecto artístico del juego como el técnico ha avanzado con la inclusión de nuevos personajes, escenarios y props.
+**Jesús Mercado Rioja:** se han conseguido completar los objetivos planteados para esta fase, el equipo ha sabido enfrentarse a los diversos problemas que fueran surgiendo durante la fase, permitiendo así que se lograran terminar los avances propuestos, en concreto, se ha logrado implementar un nuevo bioma en la mina con nuevos personajes y props, además de mejorar aquellos aspectos del proyecto con los que no estuviéramos convencidos.
 
-**Unai Pastrana Torres:** Estoy muy orgulloso tanto de mi trabajo como del de mis compañeros, está última fase ha cumplido con todos los objetivos previstos, y además se ha logrado un mejor resultado de lo que esperaba, con ideas nuevas como el cambio artístico en el renderizado mediante la técnica Cell Shading.
+**Unai Pastrana Torres:** Estoy muy orgulloso tanto de mi trabajo como del de mis compañeros, está última fase ha cumplido con todos los objetivos previstos, y además se ha logrado un mejor resultado de lo que esperaba, con ideas nuevas como el cambio artístico en el renderizado mediante la técnica Cel Shading.
 
 **Santiago Varela Rey:** El apartado sonoro se amplió con nuevas músicas y efectos, y el AudioManager quedó completamente implementado de forma estable para gestionar la mayoría de situaciones del juego. La integración fue fluida y el sonido final es más coherente y pulido que en versiones anteriores.
 
@@ -537,44 +537,44 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 ### 8.1.2. QUÉ SALIÓ MAL
 
-**Ana María Caamaño del Amo:** en la última entrega se comenzó usando Trello y cuanto más avanzaba el desarrollo su uso descendió, en esta entrega ha sido peor; ya que ni siquiera se ha utilizado en absoluto y se ha favorecido la comunicación directa. Otra cosa serían las redes sociales, las cuales han estado completamente inactivas durante la gran mayoría del desarrollo. 
+**Ana María Caamaño del Amo:** la mejora de la página web comenzó bastante tarde, por lo que se ha tenido que emplear bastante tiempo para que llegase a estar hecha para la entrega. Si bien ha habido una mejora del uso de las redes sociales, siguen habiéndose usado bastante menos de los que nos hubiera gustado.
 
 **Javier Martín Mulero:** la comunicación ha mejorado con respecto a la beta, pero tampoco considero que sea buena. En la parte de la programación, debido a cambios que se han hecho a última hora se ha tenido que adaptar el código que había a lo nuevo, lo que ha dado algunos problemas, con más tiempo habría que haber hecho el código de 0 para tener en cuenta lo nuevo incluido.
 
-**Lara Sánchez Sanz:** el principal problema ha sido la gestión del tiempo. Al tener que compaginar este trabajo con otras asignaturas lo que no ha permitido desarrollar el juego al nivel que teníamos esperado. Además la falta de herramientas de organización ha dificultado la coordinación con los compañeros, lo que provocó que algunas integraciones se hicieran más tarde de lo previsto.
+**Lara Sánchez Sanz:** El principal problema estuvo en el modelado y la corrección de animaciones para que encajaran con el ritmo del juego. Algunas animaciones no se ajustaban correctamente, lo que afectaba al game feel y obligó a rehacer ciertos movimientos. También hubo dificultades con la gestión del tiempo, lo que limitó el pulido final de los modelos y retrasó la incorporación de algunos assets en Unity.
 
-**Jesús Mercado Rioja:** a pesar de que se planteó en la fase alfa hacer un buen uso de la herramienta Trello para comunicarnos, no se puso en práctica, y de hecho empeoró respecto a la anterior entrega, ya que cayó prácticamente en desuso por lo que a pesar de que nos hemos comunicado entre nosotros de forma grupal, no existía un registro exacto de que estaba hecho y que no, lo que dificultaba el proceso de trabajo. Además, no comenzamos el desarrollo de la beta de la manera más inmediata, forzándonos así a que la carga de trabajo fuera más alta en un menor tiempo.
+**Jesús Mercado Rioja:**  a pesar de que se continuó con el trabajo de manera continua, es decir, inmediatamente después de terminar la fase beta, algunos aspectos del trabajo no se comenzaron a realizar tan rápidamente, como por ejemplo el desarrollo de la página web/portfolio o la estrategía de redes sociales.
 
-**Unai Pastrana Torres:** he notado que teníamos menos tiempo de trabajo del que nos gustaría, lo que se tradujo en no poder balancear el juego completamente, sobre todo en cuanto a la cantidad de recursos obtenidos, precios de la tienda, y dificultad de los enemigos de cada bioma.
+**Unai Pastrana Torres:** he notado que teníamos menos tiempo de trabajo del que nos gustaría, lo que se tradució en no poder balancear el juego completamente, sobre todo en cuando a la cantidad de recursos obtenidos, precios de la tienda, y dificuldad de los enemigos de cada bioma. 
 
-**Santiago Varela Rey:** persistió un error con la música de combate: al entrar en batalla, la pista previa no se detiene y continúa hasta salir de la mina. No se pudo solucionar a tiempo para la versión final.
+**Santiago Varela Rey:** persiste un error con la música de combate: al entrar en batalla, la pista previa no se detiene y continúa hasta salir de la mina. No se pudo solucionar a tiempo para la versión final.
 
 ### 8.1.3. QUÉ SE PUEDE MEJORAR
 
-**Ana María Caamaño del Amo:** algo a mejorar sería la comunicación, algo que ya fue mencionado en la anterior entrega. Habría que utilizar las herramientas proporcionadas para asegurar que todo el mundo tenga claro el estado del proyecto de forma más obvia. Otra cosa a mejorar sería la gestión del tiempo, ya que debido a unos factores externos se ha empezado esta fase de desarrollo bastante más tarde de lo que se debería y el resultado podría haber quedado incluso mejor.
+**Ana María Caamaño del Amo:** si bien la comunicación ha estado mejor en esta fase, todavía podría mejorarse, ya que algunos miembros olvidaban marcar su tarea cuando la finalizaban. Además, los miembros que se encargaban de la programación han tenido que ir cambiando los materiales de los modelos 3D para asignarles el Cel Shading cuando deberíamos haber sido los de arte los que nos encargásemos de eso.
 
 **Javier Martín Mulero:** haría que la comunicación y la organización fuera mejor. En la parte de código lo reharía para que tuviera más sentido. Por útlimo, en la parte de dar feedback visual y sonoro al jugador se podría mejorar para una futura actualización, que ahora mismo es donde más margen de mejora hay.
 
-**Lara Sánchez Sanz:** sería recomendable organizar mejor los elementos que afectan a varias áreas de trabajo,  de modo que elementos como las animaciones estén listos con antelación para facilitar el trabajo en otros apartados. También considero importante reforzar la comunicación y el uso de herramientas colaborativas, ya que con respecto de la entrega alfa esto ha empeorado. A nivel técnico, me gustaría dedicar más tiempo al pulido de las animaciones y modelados.
+**Lara Sánchez Sanz:** de cara a futuros proyectos, sería recomendable organizar mejor los elementos que afectan a varias áreas, como las animaciones, para que estén listos con antelación y faciliten el trabajo de programación y diseño. También me gustaría dedicar más tiempo al acabado final de los modelos y a la variedad de animaciones, para que los personajes y enemigos tengan aún más personalidad.
 
-**Jesús Mercado Rioja:** se debería de gestionar mejor el tiempo de trabajo, para que así este no se nos acumule. Además deberíamos hacer un buen uso de la herramienta Trello u otras plataformas para dejar constancia de que partes del trabajo ya se han realizado y cuáles quedan por hacer y así conseguir que todo el mundo tenga claro en que tiene que trabajar. 
+**Jesús Mercado Rioja:** a pesar de que se han conseguido completar los objetivos propuestos, y la comunicación ha mejorado a través de la creación de un  listado de tareas, este se podría haber usado de mejor manera, ya que no siempre quedaba claro qué tareas se habían completado debido a que no siempre se marcaba que tareas habían terminado y cuáles no, además la implementación de algunas texturas del Cel Shading en algunos de los prefabs fue completada por los programadores del grupo en vez de por los artistas. 
 
-**Unai Pastrana Torres:** mejoraría el orden dentro del proyecto a la hora de organizar assets, ya que algunas carpetas tenían muchos elementos o estaban mal divididos, y también teníamos muchos materiales duplicados o redundantes, e incluso archivos que no se usaban, la Build podría haber sido más liviana si hubiésemos dispuesto de más tiempo para organizar los archivos, así mismo se habrían podido optimizar las mallas, ya que algunas tenían un número de polígonos muy alto para su tamaño en pantalla. 
+**Unai Pastrana Torres:** mejoraría el orden dentro del proyecto a la hora de organizar assets, ya que algunas carpetas tenían muchos elementos o estaban mal divididos, y también teníamos muchos materiales duplicados o redundantes, e incluso archivos que no se usaban, la Build podría haber sido más liviana si hubiesemos dispuesto de más tiempo para organizar los archivos, así mismo se habrían podido optimizar las mallas, ya que algunas tenían un número de polígonos muy alto para su tamaño en pantalla. 
 
 **Santiago Varela Rey:** de cara a futuras versiones, actualizaciones o mantenimiento, habría que revisar la lógica de transición entre pistas y optimizar la gestión de estados del AudioManager para evitar solapamientos musicales.
   
 
 ### 8.1.4. CONCLUSIÓN
 
-**Ana María Caamaño del Amo:** a pesar de los problemas que han surgido y el comienzo tardío, se ha conseguido entregar una versión beta bastante completa con la mayoría de lo que teníamos en mente implementado.
+**Ana María Caamaño del Amo:** el juego ha quedado bastante bien y con todo lo que teníamos pensado implementar, por lo que estoy bastante contenta con el resultado obtenido.
 
 **Javier Martín Mulero:**  al final de la beta pensaba que el juego no tenía mucho margen de mejora, pero me equivocaba, el juego ha cambiado mucho y las nuevas inclusiones para intentar mejorar el game feel y el QoL han sido acertadas.
 
-**Lara Sánchez Sanz:** estoy contenta con el resultado obtenido en la beta, se que podría haber sido mejor, pero realmente ha salido mejor de lo que esperaba, lo que junto con la mejora en la fluidez del trabajo me motiva a perfeccionar aún más el aspecto del trabajo, incluso a crear nuevos elementos.
+**Lara Sánchez Sanz:** Estoy contenta con el resultado final de esta fase. La planta carnívora y los nuevos biomas han enriquecido el apartado visual y han dado más personalidad al juego. Aunque hubo problemas de game feel, el resultado ha sido mucho mejor del que me esperaba quedando un juego bastante pulido.
 
-**Jesús Mercado Rioja:** la fase beta ha salido mejor de lo esperado, ya que se ha conseguido evolucionar el videojuego tanto técnica como visualmente con la implementación de nuevos elementos (escenarios, personajes, etc.). A pesar de los problemas que han ido surgiendo, el equipo ha sabido resolverlos y aunque se deben pulir algunos detalles, estoy orgulloso del resultado obtenido.
+**Jesús Mercado Rioja:** la fase gold-master ha salido mejor de lo esperado, se ha conseguido implementar un nuevo bioma con nuevos personajes y props, también se ha implementado Cel Shading al videojuego y mejorar aspectos anteriores del mismo. Además a pesar de las posibles dificultades que han podido surgir  durante el desarrollo, el equipo ha logrado cumplir así con los objetivos propuestos. 
 
-**Unai Pastrana Torres:** en resumen, estoy orgulloso del desempeño general del equipo en esta entrega final, y de los resultados dentro del juego. Considero que el juego ha quedado mucho más atractivo y divertido de lo que pude pensar en un inicio. Aunque se podrían mejorar cuestiones de eficiencia en el desarrollo y velocidad a la hora de realizar las tareas, los resultados han sido incuestionablemente buenos, para el tiempo del que se disponía.
+**Unai Pastrana Torres:** en resumen estoy orgulloso del desempeño general de equipo en esta entrega final, y de los resultados dentro del juego. Considero que el juego ha quedado mucho más atractivo y divertido de lo que pude pensar en un inicio. Aunque se podrían mejorar cuestiones de eficiencia en el desarrollo y velocidad a la hora de realizar las tareas, los resultados han sido incuestionablemente buenos, para el tiempo del que se disponía.
 
 **Santiago Varela Rey:** el resultado de la versión final es muy bueno y mejora notablemente al de entregas anteriores. Aunque la planificación podría haberse afinado, el resultado es sólido y estoy satisfecho con el proyecto realizado.
 
@@ -583,22 +583,19 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 ## 8.2. GRUPAL
 ### 8.2.1. QUÉ SALIÓ BIEN
 
-La fase beta ha supuesto un avance significativo para el proyecto, logrando entregar una versión más completa y cercana a lo que se había planteado inicialmente. Se han cumplido los plazos y se han implementado mejoras notables en todos los apartados. El resultado ha superado en muchos aspectos lo esperado, consolidando una base sólida sobre la que seguir trabajando.  
+Como equipo hemos logrado cumplir con los objetivos planteados para esta fase y entregar una versión más completa y pulida del juego. Se implementaron nuevos biomas con personajes y props, se añadió la planta carnívora como enemigo destacado y se amplió el apartado artístico con modelos y animaciones coherentes con la estética cartoon. El cambio al renderizado con Cell Shading aportó un estilo visual más atractivo, mientras que el apartado sonoro se enriqueció con nuevas músicas y efectos, integrados de forma estable mediante el AudioManager. En conjunto, el resultado final mejoró notablemente respecto a versiones anteriores, tanto en game feel como en calidad visual y sonora.  
 
 ### 8.2.2. QUÉ SALIÓ MAL
 
-Los principales problemas han estado relacionados con la gestión del tiempo y la comunicación interna. El uso de herramientas colaborativas como Trello se abandonó progresivamente, lo que dificultó la coordinación y provocó retrasos en la integración del trabajo en Unity. Además, la carga de trabajo simultánea con otras asignaturas redujo la cantidad de tiempo para pulir errores y realizar más pruebas.
-
+Los principales problemas estuvieron relacionados con la gestión del tiempo y la coordinación interna. Algunas tareas, como la mejora de la página web o la estrategia de redes sociales, comenzaron tarde y exigieron un esfuerzo extra para llegar a tiempo. En el área artística, ciertas animaciones necesitaron rehacerse para ajustarse al ritmo del juego, lo que retrasó su integración en Unity. También se señalaron dificultades en la organización de assets, con materiales duplicados y mallas poco optimizadas, lo que afectó al peso de la build. En programación, los cambios de última hora obligaron a adaptar código ya existente, generando complicaciones. Finalmente, persiste un error en la música de combate que no se pudo corregir antes de la entrega.
 
 ### 8.2.3. QUÉ SE PUEDE MEJORAR
 
-De cara al Gold Release, en el equipo coincidimos en la necesidad de reforzar la comunicación y la organización, estableciendo un flujo de trabajo más eficiente y asegurando que las tareas estén con antelación para facilitar la integración en Unity.
-
-A nivel técnico, estaría bien dedicar más tiempo a ampliar y dar variedad tanto a los escenarios como los personajes, así como mejorar ciertos aspectos de la música y la programación.   
+Los principales problemas estuvieron relacionados con la gestión del tiempo y la coordinación interna. Algunas tareas, como la mejora de la página web o la estrategia de redes sociales, comenzaron tarde y exigieron un esfuerzo extra para llegar a tiempo. En el área artística, ciertas animaciones necesitaron rehacerse para ajustarse al ritmo del juego, lo que retrasó su integración en Unity. También se señalaron dificultades en la organización de assets, con materiales duplicados y mallas poco optimizadas, lo que afectó al peso de la build. En programación, los cambios de última hora obligaron a adaptar código ya existente, generando complicaciones. Finalmente, persiste un error en la música de combate que no se pudo corregir antes de la entrega.   
 
 ### 8.2.4. CONCLUSIÓN
 
-En conclusión, el equipo está satisfecho con el resultado de la beta. A pesar de las dificultades, se ha conseguido evolucionar el juego tanto técnica como visualmente, y la motivación para la siguiente fase es alta. La experiencia adquirida para esta entrega servirá para optimizar procesos y asegurar que la versión final alcance un nivel aún más pulido y completo.
+En conclusión, el equipo está satisfecho con el resultado de la Gold Release. A pesar de los problemas de tiempo y coordinación, se ha conseguido entregar una versión sólida que mejora claramente respecto a la beta. El juego cuenta ahora con más contenido, un estilo visual definido gracias al Cell Shading, un apartado sonoro más coherente y un game feel más trabajado. La experiencia adquirida en esta fase servirá para optimizar procesos y asegurar que futuras versiones alcancen un nivel aún más pulido y profesional.
 
 <br>
 <br>
