@@ -56,7 +56,7 @@ namespace PlayerComponents
                 if (IsHitingAnEnemy(localEnemies))
                     DoDamage(localEnemies);
                 Debug.Log(timeHitbox);
-                if(timeHitbox >= 0.4f && timeHitbox <= 0.42f)
+                if(timeHitbox >= COOLDOWN && timeHitbox <= 0.42f)
                     attackHitbox.enabled = false;                  
                 else if (timeHitbox >= TIME_HITBOX)
                 {

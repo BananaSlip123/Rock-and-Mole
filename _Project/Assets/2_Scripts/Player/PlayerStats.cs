@@ -268,9 +268,10 @@ public class PlayerStats : MonoBehaviour, IPlayerStats
         ResetStats();
         //Debug.Log("ENUM: " + currentChestCloth.name + " " + currentHelmet.name);
         Debug.Log("Equipamiento Actualizado");
-        Debug.Log(currentPickaxe);
+        Debug.Log(currentPickaxe.attackSpeed);
         if (currentPickaxe != null)
             ChangePickaxe(currentPickaxe);
+        Debug.Log("currentPickaxe.attackSpeed: " + attackSpeed);
         //else throw new Exception("Pico nulo");
         if (currentChestCloth != null)
             ChangeClothes(currentChestCloth);
