@@ -953,6 +953,10 @@ PrefabInstance:
       propertyPath: materialsAmount
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 2834588616137534832, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
+      propertyPath: editorModeStart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3090163795105732648, guid: 6c068d91c1e10cb4092572eba205bf5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
