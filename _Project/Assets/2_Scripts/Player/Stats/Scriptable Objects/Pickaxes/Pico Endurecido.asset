@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84634d842323ea24da69fc6b0b98fcdc, type: 3}
   m_Name: Pico Endurecido
   m_EditorClassIdentifier: 
-  damage: 20
-  damageShoot: 14
+  damage: 18
+  damageShoot: 12
   critMultiplier: 3
   critProbability: 0.1
   attackSpeed: 0.15
-  coinsPrice: 200
+  coinsPrice: 600
   costs:
   - material: 0
     cost: 40

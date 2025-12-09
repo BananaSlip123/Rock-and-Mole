@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pico Afilado
   m_EditorClassIdentifier: 
   damage: 15
-  damageShoot: 9
+  damageShoot: 10
   critMultiplier: 2.5
   critProbability: 0.08
   attackSpeed: 0.1
