@@ -529,7 +529,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Jesús Mercado Rioja:** el proyecto ha ido avanzando correctamente en base a los objetivos que se pusieron al inicio de la fase y se ha logrado evolucionar el juego en el  tiempo estimado, tanto el aspecto artístico del juego como el técnico ha avanzado con la inclusión de nuevos personajes, escenarios y props.
 
-**Unai Pastrana Torres:** Estoy orgulloso con el desempeño de la beta en cuanto al trabajo que me tocó implementar, ya que, conseguí hacer un diseño de interfaz agradable e intuitivo, que recogía todos los menús que planifiqué hacer en esta entrega.
+**Unai Pastrana Torres:** Estoy muy orgulloso tanto de mi trabajo como del de mis compañeros, está última fase ha cumplido con todos los objetivos previstos, y además se ha logrado un mejor resultado de lo que esperaba, con ideas nuevas como el cambio artístico en el renderizado mediante la técnica CellShading.
 
 **Santiago Varela Rey:** durante este sprint he ampliado notablemente el apartado sonoro del proyecto. Se han añadido nuevos efectos de sonido y piezas musicales adaptadas a cada situación del juego (combate, muerte, caminar, clickear, música para escenarios, etc.). Además, toda esta nueva implementación se integró correctamente en Unity, asegurando que cada sonido se active en el momento adecuado mediante eventos y triggers. La comunicación con el equipo fue fluida durante el proceso de integración, lo que permitió ajustar los sonidos de forma coherente con la estética cartoon del juego.
 
@@ -545,9 +545,7 @@ El apartado sonoro busca reforzar la atmósfera del juego y acompañar la experi
 
 **Jesús Mercado Rioja:** a pesar de que se planteó en la fase alfa hacer un buen uso de la herramienta Trello para comunicarnos, no se puso en práctica, y de hecho empeoró respecto a la anterior entrega, ya que cayó prácticamente en desuso por lo que a pesar de que nos hemos comunicado entre nosotros de forma grupal, no existía un registro exacto de que estaba hecho y que no, lo que dificultaba el proceso de trabajo. Además, no comenzamos el desarrollo de la beta de la manera más inmediata, forzándonos así a que la carga de trabajo fuera más alta en un menor tiempo.
 
-**Unai Pastrana Torres:** a la hora de llevar a cabo este trabajo al mismo tiempo que realizábamos proyectos de otras asignaturas ha supuesto tener que hacer el trabajo muy rápido sin apenas tiempo para testear adecuadamente el código.
-
-A la hora de implementar ciertas funcionalidades de la UI que dependían del desarrollo de las animaciones, del modelado del vestuario, o de la programación de la música, tuve el problema de tener que esperar a que se terminaran, lo cual no me dejó el suficiente tiempo para implementarlas desde código de la forma que hubiera querido.
+**Unai Pastrana Torres:** he notado que teníamos menos tiempo de trabajo del que nos gustaría, lo que se tradució en no poder balancear el juego completamente, sobre todo en cuando a la cantidad de recursos obtenidos, precios de la tienda, y dificuldad de los enemigos de cada bioma.
 
 **Santiago Varela Rey:** a pesar de que se completaron las tareas de sonido y música, todavía hubo momentos en los que la planificación podría haber sido más efectiva. Algunas integraciones se dejaron para etapas tardías del desarrollo y han requerido de la ayuda de otros miembros del equipo que estaban disponibles. Además, una de las piezas musicales tuvo que ser reemplazada por incumplimiento del copyright en los días previos a la entrega.
 
@@ -561,7 +559,7 @@ A la hora de implementar ciertas funcionalidades de la UI que dependían del des
 
 **Jesús Mercado Rioja:** se debería de gestionar mejor el tiempo de trabajo, para que así este no se nos acumule. Además deberíamos hacer un buen uso de la herramienta Trello u otras plataformas para dejar constancia de que partes del trabajo ya se han realizado y cuáles quedan por hacer y así conseguir que todo el mundo tenga claro en que tiene que trabajar. 
 
-**Unai Pastrana Torres:** mejorar la comunicación con mis compañeros hubiese supuesto una mejora en aquellas tareas que dependen de mis compañeros, por ejemplo la programación de los ajustes de volumen, o mostrar el equipamiento equipado en la UI. Para mejorar la comunicación propondría dejar muy claro que necesita cada uno de otros compañeros, y dejar terminadas esas tareas con una mayor prioridad. 
+**Unai Pastrana Torres:** mejoraría el orden dentro del proyecto a la hora de organizar assets, ya que algunas carpetas tenían muchos elementos o estaban mal divididos, y también teníamos muchos materiales duplicados o redundantes, e incluso archivos que no se usaban, la Build podría haber sido más liviana si hubiesemos dispuesto de más tiempo para organizar los archivos, así mismo se habrían podido optimizar las mallas, ya que algunas tenían un número de polígonos muy alto para su tamaño en pantalla. 
 
 **Santiago Varela Rey:** Para próximas entregas sería recomendable establecer un pipeline más eficiente para los archivos de audio, definiendo mejor la estructura de carpetas, nombres y buses de mezcla. Otra mejora sería terminar antes las tareas sonoras principales para disponer de más margen para la mezcla fina y el pulido final.
   
@@ -576,7 +574,7 @@ A la hora de implementar ciertas funcionalidades de la UI que dependían del des
 
 **Jesús Mercado Rioja:** la fase beta ha salido mejor de lo esperado, ya que se ha conseguido evolucionar el videojuego tanto técnica como visualmente con la implementación de nuevos elementos (escenarios, personajes, etc.). A pesar de los problemas que han ido surgiendo, el equipo ha sabido resolverlos y aunque se deben pulir algunos detalles, estoy orgulloso del resultado obtenido.
 
-**Unai Pastrana Torres:** en resumen estoy orgulloso del desempeño general de equipo en esta entrega, y de los resultados dentro del juego. Considero que la beta está bastante completa, aunque dejáramos ciertos detalles sin pulir, tenemos una base sólida sobre la que trabajar.
+**Unai Pastrana Torres:** en resumen estoy orgulloso del desempeño general de equipo en esta entrega final, y de los resultados dentro del juego. Considero que el juego ha quedado mucho más atractivo y divertido de lo que pude pensar en un inicio. Aunque se podrían mejorar cuestiones de eficiencia en el desarrollo y velocidad a la hora de realizar las tareas, los resultados han sido incuestionablemente buenos, para el tiempo del que se disponía.
 
 **Santiago Varela Rey:** estoy satisfecho con la ampliación y mejora del apartado sonoro en esta entrega. La implementación de nuevos efectos y música ha contribuido a hacer el juego más coherente y con mayor personalidad audiovisual. Aunque la planificación podría haberse optimizado, el resultado final es positivo y sirve como una base sólida para seguir refinando el audio.
   
